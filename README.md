@@ -1,9 +1,9 @@
 # ComuneMetrics — Cruscotto Civico Comunale
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paniere v2.1](https://img.shields.io/badge/Paniere-v2.1-blue)](docs/PANIERE.md)
+[![Paniere v2.2](https://img.shields.io/badge/Paniere-v2.2-blue)](docs/PANIERE.md)
 [![DCAT-AP_IT](https://img.shields.io/badge/DCAT--AP__IT-2.1-green)](https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html)
-[![OntoPiA](https://img.shields.io/badge/OntoPiA-compliant-blue)](https://schema.gov.it)
+[![schema.gov.it](https://img.shields.io/badge/schema.gov.it-compliant-blue)](https://schema.gov.it)
 
 Piattaforma open source per il **monitoraggio dell'attività amministrativa di un Comune**, alimentata da un paniere standardizzato di OpenData. Strumento di **controllo di gestione** e **rendicontazione politica di mandato**, replicabile in qualunque Comune italiano.
 
@@ -18,7 +18,7 @@ Piattaforma open source per il **monitoraggio dell'attività amministrativa di u
 
 | Componente | Cosa fa | File |
 |---|---|---|
-| **Paniere** | Specifica dei 11 dataset CORE con schema CSV, mapping OntoPiA, esempi Turtle | [`docs/PANIERE.md`](docs/PANIERE.md) |
+| **Paniere** | Specifica dei 11 dataset CORE con schema CSV, mapping schema.gov.it, esempi Turtle | [`docs/PANIERE.md`](docs/PANIERE.md) |
 | **JSON Schema** | Validatori automatici dei CSV (Draft 2020-12) | [`schemas/*.json`](schemas/) |
 | **Dashboard** | Cruscotto single-file HTML con KPI, grafici Chart.js, mappe Leaflet | [`index.html`](index.html) |
 | **Badge system** | ROSSO (0-3) → GIALLO (4-7) → ARANCIONE (8-10) → VERDE (11) → ORO (11+TTL) | dentro `index.html` |
@@ -68,7 +68,7 @@ EOF
 
 1. Genera gli 11 CSV secondo gli schemi in `/schemas/`
 2. Valida ogni CSV con il validatore JSON Schema
-3. Genera la distribuzione TTL via [piersoft/CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) (OntoPiA + DCAT-AP_IT)
+3. Genera la distribuzione TTL via [piersoft/CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) (schema.gov.it + DCAT-AP_IT)
 4. Pubblica su CKAN aggiungendo extras:
    - `paniere_comunemetrics: true`
    - `paniere_dataset_id: <nome>` (es. `popolazione`)
@@ -77,7 +77,7 @@ EOF
 
 ## I 11 dataset CORE
 
-| # | Dataset | Tema EU | Frequenza | Ontologie OntoPiA |
+| # | Dataset | Tema EU | Frequenza | Ontologie schema.gov.it |
 |---|---|---|---|---|
 | 1 | popolazione | SOCI | Annuale | QB + SKOS + CLV |
 | 2 | bilancio | ECON | Annuale | QB + SKOS + COV |
@@ -91,7 +91,7 @@ EOF
 | 10 | delibere | GOVE | Mensile | CPSV-AP + TI + COV + RO + ADMS |
 | 11 | patrimonio | GOVE | Annuale | POI + CLV + SKOS |
 
-Per ognuno: schema CSV completo, mapping per-campo a proprietà RDF OntoPiA, esempio Turtle reale, KPI calcolabili. Tutti i dettagli in [`docs/PANIERE.md`](docs/PANIERE.md).
+Per ognuno: schema CSV completo, mapping per-campo a proprietà RDF schema.gov.it, esempio Turtle reale, KPI calcolabili. Tutti i dettagli in [`docs/PANIERE.md`](docs/PANIERE.md).
 
 ## Architettura
 
@@ -141,7 +141,7 @@ Il meccanismo è **gamification dell'OpenData**:
 ## Standard di riferimento
 
 - **DCAT-AP_IT v2.1** — metadati dataset
-- **OntoPiA / schema.gov.it** — 15 ontologie italiane (CLV, COV, CPV, POI, SM, RO, TI, ADMS, ACCO, PARK, GTFS, Cultural-ON, CPSV-AP, QB, SKOS)
+- **schema.gov.it** — 15 ontologie italiane (CLV, COV, CPV, POI, SM, RO, TI, ADMS, ACCO, PARK, GTFS, Cultural-ON, CPSV-AP, QB, SKOS)
 - **W3C WGS84** — coordinate (`geo:lat` / `geo:long`)
 - **JSON Schema Draft 2020-12** — validazione CSV
 - **Codici IPA** — identità Comuni (IndicePA AgID)
@@ -152,7 +152,7 @@ Il meccanismo è **gamification dell'OpenData**:
 
 ## Roadmap
 
-- [x] **v0.1** — Paniere v2.1 + 11 JSON Schema + Dashboard MVP single-file
+- [x] **v0.1** — Paniere v2.2 + 11 JSON Schema + Dashboard MVP single-file
 - [ ] **v0.2** — Loader CKAN reale via proxy CORS (Cloudflare Worker)
 - [ ] **v0.3** — Federazione SPARQL: query cross-Comune via lod.dati.gov.it
 - [ ] **v0.4** — Modulo "rendicontazione di mandato" con confronto inizio/fine consiliatura
@@ -164,7 +164,7 @@ Il meccanismo è **gamification dell'OpenData**:
 Progetto ideato e sviluppato da [Piersoft](https://github.com/piersoft).
 
 Si appoggia agli strumenti già pubblicati:
-- [piersoft/CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) — generatore TTL OntoPiA
+- [piersoft/CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) — generatore TTL schema.gov.it-compliant
 - [piersoft/ckan-opendata-assistant](https://github.com/piersoft/ckan-opendata-assistant) — dashboard dati.gov.it monitoring
 - [piersoft/dae-puglia-rdf](https://github.com/piersoft/dae-puglia-rdf) — pattern per pipeline RDF/Linked Open Data
 
