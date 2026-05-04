@@ -209,17 +209,19 @@ async function fetchWithTimeout(url, opts = {}, timeout = FETCH_TIMEOUT) {
 
 async function httpGetText(url) {
   // Usato per scaricare CSV/JSON dei dataset dai portali comunali.
-  // I metadata vanno via fetchPackage (Worker MCP).
-  // Retry semplice: 2 tentativi su errore di rete o 5xx, no retry su 4xx.
-  const MAX_RETRIES = 2;
+  // Retry: 3 tentativi su errori di rete o 5xx (server publisher instabile,
+  // tipico Lecce con dati.comune.lecce.it che dà 503 spesso).
+  // No retry su 4xx (404, 410 = link rotto, non recuperabile).
+  const MAX_RETRIES = 3;
   let result = null;
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       const r = await fetchWithTimeout(url);
       if (r.status >= 500 && attempt < MAX_RETRIES) {
-        warn(`  ⚠ HTTP ${r.status} (try ${attempt}), retry in 3s`);
-        await new Promise(rs => setTimeout(rs, 3000));
+        const backoff = 2000 * attempt;
+        warn(`  ⚠ HTTP ${r.status} (try ${attempt}/${MAX_RETRIES}), retry in ${backoff/1000}s`);
+        await new Promise(rs => setTimeout(rs, backoff));
         continue;
       }
       if (!r.ok) {
@@ -240,8 +242,9 @@ async function httpGetText(url) {
       break;
     } catch (e) {
       if (attempt < MAX_RETRIES) {
-        warn(`  ⚠ ${e.name}, retry in 3s`);
-        await new Promise(rs => setTimeout(rs, 3000));
+        const backoff = 2000 * attempt;
+        warn(`  ⚠ ${e.name} (try ${attempt}/${MAX_RETRIES}), retry in ${backoff/1000}s`);
+        await new Promise(rs => setTimeout(rs, backoff));
         continue;
       }
       warn(`  ✗ ${e.name}: ${e.message}`);
@@ -312,6 +315,20 @@ function pickBestResource(resources) {
     return pa - pb;
   });
   return sorted[0];
+}
+
+// Limita la dimensione dei download da portali Opendatasoft (Bologna) aggiungendo
+// `?limit=N` alla URL /exports/{json,csv}. Questo è cruciale per dataset enormi
+// come popolazione Bologna (40+ anni, milioni di righe). 50.000 righe sono più
+// che sufficienti per le metriche aggregate calcolate dai calculator.
+function smartUrl(rawUrl) {
+  if (!rawUrl) return rawUrl;
+  // Pattern Opendatasoft: /api/v2/catalog/datasets/<slug>/exports/<format>
+  if (!/\/api\/v2\/catalog\/datasets\/[^/]+\/exports\/(json|csv|jsonl)/.test(rawUrl)) {
+    return rawUrl;
+  }
+  const sep = rawUrl.includes("?") ? "&" : "?";
+  return `${rawUrl}${sep}limit=${MAX_ROWS_PROCESSED}`;
 }
 
 // ── CSV parser minimale ───────────────────────────────────────────────────────
@@ -465,7 +482,12 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
     return out;
   }
 
-  const text = await httpGetText(res.url);
+  // Applica smartUrl: per portali Opendatasoft aggiunge ?limit=N
+  const fetchUrl = smartUrl(res.url);
+  if (fetchUrl !== res.url) {
+    out.resource_url_fetched = fetchUrl;
+  }
+  const text = await httpGetText(fetchUrl);
   if (!text) {
     out.status = "fetch_error";
     out.error = `Download fallito (${res.format})`;
