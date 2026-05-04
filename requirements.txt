@@ -1,0 +1,5 @@
+# ComuneMetrics builder dependencies
+# Used by .github/workflows/build-data.yml
+pandas>=2.0,<3.0
+requests>=2.31,<3.0
+PyYAML>=6.0,<7.0
