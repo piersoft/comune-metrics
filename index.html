@@ -529,7 +529,7 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.8</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.9</div>
   </div>
 </header>
 
@@ -559,7 +559,7 @@ a:hover { text-decoration: underline; }
       <div class="badge-tier" id="badgeTier">Avanzata</div>
     </div>
     <div class="compliance-info">
-      <h2>Conformità Paniere ComuneMetrics v2.7</h2>
+      <h2>Conformità Paniere ComuneMetrics v2.8</h2>
       <p id="complianceText">
         Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
       </p>
@@ -575,7 +575,7 @@ a:hover { text-decoration: underline; }
     <div class="footer-grid">
       <div>
         <h4>ComuneMetrics</h4>
-        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.7</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.8</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
       </div>
       <div>
         <h4>Standard</h4>
@@ -622,16 +622,16 @@ const MOCK_DATA = {
       popolazione: true, bilancio: true, opere_pubbliche: true,
       pratiche_edilizie: true, servizi_sociali: true, istruzione: true,
       incidenti_stradali: true, rifiuti: true, eventi_culturali: true,
-      delibere: true, patrimonio: true
+      delibere: false, patrimonio: false
     },
     sources: {
       popolazione: "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      bilancio: null,
+      bilancio: "bilancio-di-previsione-previsione-uscite",
       opere_pubbliche: "lavori-in-corso-in-citta",
       pratiche_edilizie: "cila-comunicazioni-inizio-lavori",
       servizi_sociali: "welfare-interventi",
       istruzione: "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      incidenti_stradali: null,
+      incidenti_stradali: "incidenti-stradali2",
       rifiuti: "indicatori-raccolta-differenziata",
       eventi_culturali: "eventi-bologna-agenda-cultura",
       delibere: null,
@@ -651,10 +651,10 @@ const MOCK_DATA = {
       popolazione: true, bilancio: true, opere_pubbliche: false,
       pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
       incidenti_stradali: true, rifiuti: true, eventi_culturali: true,
-      delibere: true, patrimonio: true
+      delibere: false, patrimonio: true
     },
     sources: {
-      popolazione: null,
+      popolazione: "popolazione-legale-al-censimento-2011",
       bilancio: "bilancio-trasparente-spesa-corrente-per-missioni-e-programmi",
       servizi_sociali: "organizzazioni-eroganti-servizi-sociali1",
       istruzione: "istruzione-asili-nido-localizzazione-delle-strutture1",
@@ -681,8 +681,8 @@ const MOCK_DATA = {
       delibere: true, patrimonio: false
     },
     sources: {
-      popolazione: null,
-      bilancio: null,
+      popolazione: "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
+      bilancio: "dentro-il-bilancio-2024",
       servizi_sociali: "siast-servizi-integrati-assistenza-sociale-territoriale",
       istruzione: "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
       incidenti_stradali: "numero-incidenti-stradali-per-quartiere-anno-2014",
@@ -707,13 +707,13 @@ const MOCK_DATA = {
       delibere: true, patrimonio: true
     },
     sources: {
-      popolazione: null,
-      bilancio: null,
+      popolazione: "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
+      bilancio: "consuntivo-2019-comune-di-lecce",
       opere_pubbliche: "open-cantieri-lecce",
       pratiche_edilizie: "elenco-pratiche-sue",
       servizi_sociali: "numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016",
       istruzione: "elenco-e-ubicazione-asili-nido-comunali-lecce",
-      incidenti_stradali: null,
+      incidenti_stradali: "localizzazione-sinistri-dal-2018-lecce",
       rifiuti: "raccolta-rifiuti-2015",
       eventi_culturali: "eventi-culturali-ricorrenti",
       delibere: "albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce",
