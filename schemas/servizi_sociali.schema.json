@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/italia/data/comune-metrics/schemas/servizi_sociali/v2.1",
+  "title": "Paniere ComuneMetrics — servizi_sociali.csv",
+  "description": "Schema di validazione del dataset 'Servizi sociali' del paniere ComuneMetrics. Conforme alla L. 328/2000. Una riga per anno × tipologia servizio.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["anno", "tipologia_servizio", "utenti_serviti", "domande_pervenute", "domande_accolte", "spesa_totale"],
+    "properties": {
+      "anno": {
+        "type": "integer",
+        "minimum": 2000,
+        "maximum": 2050
+      },
+      "tipologia_servizio": {
+        "type": "string",
+        "enum": [
+          "ANZIANI_DOMICILIARE", "ANZIANI_RESIDENZIALE",
+          "MINORI_AFFIDO", "MINORI_ADOZIONI",
+          "DISABILI_DOMICILIARE", "DISABILI_CENTRO_DIURNO",
+          "CONTRIBUTI_ECONOMICI", "EMERGENZA_ABITATIVA",
+          "IMMIGRATI", "DIPENDENZE", "SALUTE_MENTALE", "ALTRO"
+        ],
+        "description": "Tipologia del servizio sociale"
+      },
+      "utenti_serviti": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Numero persone servite nell'anno"
+      },
+      "domande_pervenute": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Domande totali ricevute"
+      },
+      "domande_accolte": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Domande accolte"
+      },
+      "lista_attesa": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Persone in lista d'attesa al 31/12"
+      },
+      "spesa_totale": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Spesa annua per il servizio (€)"
+      },
+      "compartecipazione_utenti": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Compartecipazione utenti (€)"
+      },
+      "popolazione_target": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Popolazione potenzialmente eleggibile"
+      }
+    }
+  }
+}

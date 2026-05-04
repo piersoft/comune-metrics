@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/italia/data/comune-metrics/schemas/delibere/v2.1",
+  "title": "Paniere ComuneMetrics — delibere.csv",
+  "description": "Schema di validazione del dataset 'Delibere e atti' del paniere ComuneMetrics. Conforme al D.Lgs. 33/2013 (Trasparenza) e TUEL D.Lgs. 267/2000. Una riga per atto.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "numero", "tipo", "data_adozione", "data_pubblicazione",
+      "oggetto", "settore", "esito", "url_atto"
+    ],
+    "properties": {
+      "numero": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 50,
+        "description": "Numero atto (per anno solare)"
+      },
+      "tipo": {
+        "type": "string",
+        "enum": [
+          "DELIBERA_GIUNTA", "DELIBERA_CONSIGLIO",
+          "DETERMINA_DIRIGENZIALE", "ORDINANZA_SINDACALE",
+          "DECRETO_SINDACALE"
+        ],
+        "description": "Tipologia atto amministrativo"
+      },
+      "data_adozione": {
+        "type": "string",
+        "format": "date",
+        "description": "Data adozione (ISO 8601)"
+      },
+      "data_pubblicazione": {
+        "type": "string",
+        "format": "date",
+        "description": "Data pubblicazione albo pretorio (ISO 8601)"
+      },
+      "data_esecutivita": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "Data esecutività (ISO 8601)"
+      },
+      "oggetto": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 500,
+        "description": "Oggetto sintetico dell'atto"
+      },
+      "settore": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200,
+        "description": "Settore proponente"
+      },
+      "proponente": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Nome proponente (es. Assessore competente)"
+      },
+      "esito": {
+        "type": "string",
+        "enum": ["APPROVATA", "RESPINTA", "RITIRATA", "RINVIATA"],
+        "description": "Esito della votazione/decisione"
+      },
+      "voti_favorevoli": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Voti favorevoli (per delibere CC)"
+      },
+      "voti_contrari": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Voti contrari (per delibere CC)"
+      },
+      "astenuti": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Astenuti (per delibere CC)"
+      },
+      "url_atto": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https?://",
+        "description": "URL atto integrale (PDF) sull'albo pretorio"
+      }
+    }
+  }
+}

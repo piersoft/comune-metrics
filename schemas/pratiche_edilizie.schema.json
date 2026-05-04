@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/italia/data/comune-metrics/schemas/pratiche_edilizie/v2.1",
+  "title": "Paniere ComuneMetrics — pratiche_edilizie.csv",
+  "description": "Schema di validazione del dataset 'Pratiche edilizie' del paniere ComuneMetrics. Conforme al D.P.R. 380/2001 (Testo Unico Edilizia). Una riga per pratica.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id_pratica", "tipo_pratica", "data_protocollo", "esito", "zona", "categoria_intervento"],
+    "properties": {
+      "id_pratica": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 100,
+        "description": "Identificativo univoco interno (anonimizzato, no dati personali)"
+      },
+      "tipo_pratica": {
+        "type": "string",
+        "enum": ["PDC", "SCIA", "CILA", "CIL", "AGIBILITA", "SANATORIA", "ALTRO"],
+        "description": "Tipologia pratica edilizia"
+      },
+      "data_protocollo": {
+        "type": "string",
+        "format": "date",
+        "description": "Data presentazione (ISO 8601)"
+      },
+      "data_chiusura": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "Data chiusura procedimento (ISO 8601)"
+      },
+      "giorni_lavorazione": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "maximum": 3650,
+        "description": "Giorni effettivi di lavorazione (esclusi tempi sospesi)"
+      },
+      "esito": {
+        "type": "string",
+        "enum": ["IN_LAVORAZIONE", "APPROVATA", "RIGETTATA", "ARCHIVIATA", "SOSPESA"],
+        "description": "Esito della pratica"
+      },
+      "zona": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200,
+        "description": "Quartiere o zona urbanistica"
+      },
+      "categoria_intervento": {
+        "type": "string",
+        "enum": [
+          "NUOVA_COSTRUZIONE", "RISTRUTTURAZIONE", "MANUTENZIONE_STRAORDINARIA",
+          "DEMOLIZIONE", "CAMBIO_DESTINAZIONE", "ALTRO"
+        ],
+        "description": "Categoria di intervento edilizio"
+      },
+      "superficie_mq": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Superficie interessata (m²)"
+      }
+    }
+  }
+}

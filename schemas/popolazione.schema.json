@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/italia/data/comune-metrics/schemas/popolazione/v2.1",
+  "title": "Paniere ComuneMetrics — popolazione.csv",
+  "description": "Schema di validazione del dataset 'Popolazione residente' del paniere ComuneMetrics. Una riga per anno × area sub-comunale × fascia età × genere × cittadinanza.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["anno", "area_sub_comunale", "fascia_eta", "genere", "cittadinanza", "residenti"],
+    "properties": {
+      "anno": {
+        "type": "integer",
+        "minimum": 1986,
+        "maximum": 2050,
+        "description": "Anno di rilevazione (al 31/12)"
+      },
+      "area_sub_comunale": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200,
+        "description": "Quartiere/circoscrizione/zona. Usare 'TOTALE' per dato aggregato a livello comunale."
+      },
+      "fascia_eta": {
+        "type": "string",
+        "enum": ["0-2", "3-5", "6-10", "11-13", "14-18", "19-29", "30-44", "45-64", "65-74", "75+", "TOTALE"],
+        "description": "Fascia d'età standardizzata"
+      },
+      "genere": {
+        "type": "string",
+        "enum": ["M", "F", "TOTALE"],
+        "description": "Genere"
+      },
+      "cittadinanza": {
+        "type": "string",
+        "enum": ["ITA", "STR", "TOTALE"],
+        "description": "Cittadinanza: ITA italiani, STR stranieri, TOTALE aggregato"
+      },
+      "residenti": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Numero residenti"
+      },
+      "nati_anno": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Nati nell'anno (compilare solo per righe con genere=TOTALE e cittadinanza=TOTALE)"
+      },
+      "morti_anno": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Decessi nell'anno (compilare solo per righe TOTALE)"
+      },
+      "iscritti_anno": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Iscritti per immigrazione (compilare solo per righe TOTALE)"
+      },
+      "cancellati_anno": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Cancellati per emigrazione (compilare solo per righe TOTALE)"
+      }
+    }
+  }
+}

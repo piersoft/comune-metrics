@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/italia/data/comune-metrics/schemas/opere_pubbliche/v2.1",
+  "title": "Paniere ComuneMetrics — opere_pubbliche.csv",
+  "description": "Schema di validazione del dataset 'Opere pubbliche' del paniere ComuneMetrics. Conforme al D.Lgs. 36/2023 e codifiche CUP/CIG. Una riga per opera (chiave: cup).",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "cup", "denominazione", "categoria", "programma_triennale",
+      "importo_qe", "data_inizio_prevista", "data_fine_prevista",
+      "stato", "fonte_finanziamento"
+    ],
+    "properties": {
+      "cup": {
+        "type": "string",
+        "pattern": "^[A-Z][0-9]{2}[A-Z][0-9]{11}$",
+        "description": "Codice Unitario Progetto CIPE (15 caratteri: 1 lettera settore + 2 cifre sottosettore + 1 lettera categoria + 11 cifre tra anno/progressivo/CSC)"
+      },
+      "cig": {
+        "type": ["string", "null"],
+        "pattern": "^[0-9A-Z]{10}$",
+        "description": "Codice Identificativo Gara ANAC (10 caratteri alfanumerici)"
+      },
+      "denominazione": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 500,
+        "description": "Titolo dell'opera"
+      },
+      "categoria": {
+        "type": "string",
+        "enum": [
+          "STRADE", "EDIFICI_PUBBLICI", "SCUOLE", "IMPIANTI_SPORTIVI",
+          "VERDE", "ILLUMINAZIONE", "IDRICO", "SOCIALE", "CULTURA", "ALTRO"
+        ],
+        "description": "Categoria opera"
+      },
+      "programma_triennale": {
+        "type": "string",
+        "pattern": "^[0-9]{4}-[0-9]{4}$",
+        "description": "Triennio del Programma Triennale OO.PP. (es. 2024-2026)"
+      },
+      "importo_qe": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Importo Quadro Economico (€)"
+      },
+      "importo_aggiudicazione": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Importo aggiudicazione gara (€), se affidata"
+      },
+      "data_inizio_prevista": {
+        "type": "string",
+        "format": "date",
+        "description": "Data inizio lavori prevista (ISO 8601)"
+      },
+      "data_inizio_effettiva": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "Data inizio lavori effettiva (ISO 8601)"
+      },
+      "data_fine_prevista": {
+        "type": "string",
+        "format": "date",
+        "description": "Data fine lavori prevista (ISO 8601)"
+      },
+      "data_fine_effettiva": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "Data fine lavori effettiva (ISO 8601)"
+      },
+      "stato": {
+        "type": "string",
+        "enum": [
+          "PROGRAMMATA", "PROGETTAZIONE", "GARA", "AGGIUDICATA",
+          "IN_CORSO", "SOSPESA", "COLLAUDO", "CONCLUSA"
+        ],
+        "description": "Stato corrente dell'opera"
+      },
+      "sal_percentuale": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "maximum": 100,
+        "description": "Stato Avanzamento Lavori (0-100)"
+      },
+      "fonte_finanziamento": {
+        "type": "string",
+        "pattern": "^(BILANCIO|MUTUO|PNRR|FESR|STATO|REGIONE|PRIVATI)(\\|(BILANCIO|MUTUO|PNRR|FESR|STATO|REGIONE|PRIVATI))*$",
+        "description": "Una o più fonti separate da pipe (|). Valori ammessi: BILANCIO, MUTUO, PNRR, FESR, STATO, REGIONE, PRIVATI"
+      },
+      "lat": {
+        "type": ["number", "null"],
+        "minimum": 35.0,
+        "maximum": 47.5,
+        "description": "Latitudine WGS84 (gradi decimali, bounding box Italia)"
+      },
+      "lon": {
+        "type": ["number", "null"],
+        "minimum": 6.5,
+        "maximum": 18.6,
+        "description": "Longitudine WGS84 (gradi decimali, bounding box Italia)"
+      },
+      "responsabile_unico": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "RUP — nome cognome"
+      }
+    }
+  }
+}

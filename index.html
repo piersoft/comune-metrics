@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComuneMetrics — Cruscotto Civico</title>
+<meta name="description" content="Dashboard open source per il monitoraggio dell'attività amministrativa dei Comuni italiani, alimentata da OpenData conformi al Paniere ComuneMetrics.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<style>
+:root {
+  --brand-blue: #0066CC;
+  --brand-blue-dark: #003366;
+  --brand-blue-light: #E6F0FA;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #8a8a8a;
+  --paper: #fefefe;
+  --paper-warm: #faf7f2;
+  --rule: #d8d8d0;
+  --rule-light: #ececea;
+
+  /* Badge colors */
+  --badge-red: #C92A2A;
+  --badge-yellow: #E6A700;
+  --badge-orange: #E67E22;
+  --badge-green: #2D8659;
+  --badge-gold: #B8860B;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 24px rgba(0,51,102,.12);
+
+  --font-display: 'Titillium Web', 'Helvetica Neue', sans-serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--brand-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* ============ HEADER ============ */
+.site-header {
+  border-bottom: 3px solid var(--brand-blue);
+  padding: 28px 0 24px;
+  background: var(--paper);
+  position: relative;
+}
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #009246 0%, #009246 33%, #FFFFFF 33%, #FFFFFF 66%, #CE2B37 66%, #CE2B37 100%);
+}
+
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.brand h1 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--brand-blue-dark);
+  line-height: 1.1;
+}
+.brand h1 .ck { color: var(--brand-blue); }
+.brand h1 sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-left: 12px;
+}
+
+.brand .tagline {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin-top: 6px;
+  max-width: 540px;
+}
+
+.version-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--brand-blue-light);
+  color: var(--brand-blue-dark);
+  padding: 4px 10px;
+  border: 1px solid var(--brand-blue);
+  border-radius: 2px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ============ COMUNE SELECTOR ============ */
+.comune-bar {
+  background: var(--brand-blue-dark);
+  color: white;
+  padding: 16px 0;
+  margin-top: 0;
+}
+.comune-bar .container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.comune-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.comune-select {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  background: white;
+  color: var(--brand-blue-dark);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  min-width: 240px;
+}
+.comune-meta {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.comune-meta dt {
+  display: inline;
+  opacity: 0.7;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  margin-right: 6px;
+}
+.comune-meta dd {
+  display: inline;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* ============ BADGE COMPLIANCE ============ */
+.compliance-section {
+  background: var(--paper-warm);
+  border-bottom: 1px solid var(--rule);
+  padding: 32px 0;
+}
+.compliance-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.badge-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 4px solid;
+  background: white;
+  box-shadow: var(--shadow-lg);
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.badge-circle.red { border-color: var(--badge-red); color: var(--badge-red); }
+.badge-circle.yellow { border-color: var(--badge-yellow); color: var(--badge-yellow); }
+.badge-circle.orange { border-color: var(--badge-orange); color: var(--badge-orange); }
+.badge-circle.green { border-color: var(--badge-green); color: var(--badge-green); }
+.badge-circle.gold {
+  border-color: var(--badge-gold);
+  color: var(--badge-gold);
+  background: linear-gradient(135deg, #FFF8DC 0%, #FFFAF0 100%);
+}
+.badge-score {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+.badge-score sub { font-size: 24px; opacity: 0.5; font-weight: 400; }
+.badge-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.badge-tier {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+.compliance-info h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand-blue-dark);
+  margin-bottom: 12px;
+}
+.compliance-info p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+.dataset-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+.dataset-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  font-size: 13px;
+}
+.dataset-check.ok { border-color: var(--badge-green); }
+.dataset-check.miss { border-color: var(--rule); opacity: 0.5; }
+.dataset-check .icon {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+}
+.dataset-check.ok .icon { color: var(--badge-green); }
+.dataset-check.miss .icon { color: var(--ink-muted); }
+.dataset-check .name { flex: 1; }
+
+/* ============ KPI SECTIONS ============ */
+.section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.section:nth-child(even) { background: var(--paper-warm); }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--brand-blue);
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-blue);
+  letter-spacing: 0.1em;
+}
+.section-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--brand-blue-dark);
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--brand-blue-light);
+  color: var(--brand-blue-dark);
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.kpi-card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--brand-blue);
+  padding: 18px 20px;
+  border-radius: 2px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.kpi-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.kpi-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--brand-blue-dark);
+  line-height: 1.1;
+  font-feature-settings: 'tnum';
+}
+.kpi-value .unit { font-size: 14px; color: var(--ink-muted); font-weight: 400; }
+.kpi-trend {
+  font-size: 12px;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+}
+.kpi-trend.up { color: var(--badge-green); }
+.kpi-trend.down { color: var(--badge-red); }
+.kpi-trend.neutral { color: var(--ink-muted); }
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.chart-card {
+  background: white;
+  border: 1px solid var(--rule);
+  padding: 20px;
+  border-radius: 2px;
+}
+.chart-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.chart-card.full { grid-column: 1 / -1; }
+.chart-canvas-wrap {
+  position: relative;
+  height: 280px;
+}
+
+.map-card {
+  background: white;
+  border: 1px solid var(--rule);
+  padding: 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.map-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin: 0;
+  padding: 16px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--rule);
+}
+.map-canvas {
+  height: 420px;
+  width: 100%;
+}
+
+/* ============ DATA SOURCE FOOTER ============ */
+.data-source {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-style: italic;
+}
+.data-source code {
+  font-family: var(--font-mono);
+  font-style: normal;
+  background: var(--rule-light);
+  padding: 1px 5px;
+  border-radius: 2px;
+  font-size: 11px;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  background: var(--brand-blue-dark);
+  color: white;
+  padding: 40px 0 24px;
+  margin-top: 48px;
+}
+.site-footer h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  color: white;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+.footer-grid p, .footer-grid li {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+}
+.footer-grid ul { list-style: none; }
+.footer-grid ul li { margin-bottom: 6px; }
+.footer-grid a { color: white; opacity: 0.85; }
+.footer-grid a:hover { opacity: 1; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  opacity: 0.7;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ============ LOADING ============ */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  color: var(--ink-muted);
+  font-family: var(--font-body);
+  font-style: italic;
+}
+.loading::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--brand-blue);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .compliance-grid { grid-template-columns: 1fr; }
+  .chart-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .brand h1 { font-size: 26px; }
+  .section-title { font-size: 22px; }
+  .badge-score { font-size: 44px; }
+  .badge-circle { width: 180px; height: 180px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container brand-row">
+    <div class="brand">
+      <h1><span class="ck">Comune</span>Metrics<sub>Cruscotto Civico</sub></h1>
+      <p class="tagline">
+        Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; OntoPiA. Open source, interoperabile, replicabile.
+      </p>
+    </div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.1</div>
+  </div>
+</header>
+
+<div class="comune-bar">
+  <div class="container">
+    <span class="comune-label">Comune</span>
+    <select class="comune-select" id="comuneSelect">
+      <option value="bologna">Comune di Bologna</option>
+      <option value="milano">Comune di Milano</option>
+      <option value="firenze">Comune di Firenze</option>
+      <option value="lecce">Comune di Lecce</option>
+    </select>
+    <dl class="comune-meta">
+      <div><dt>IPA</dt><dd id="metaIpa">c_a944</dd></div>
+      <div><dt>ISTAT</dt><dd id="metaIstat">037006</dd></div>
+      <div><dt>Popolazione</dt><dd id="metaPop">390.636</dd></div>
+      <div><dt>Mandato</dt><dd id="metaMandato">2021-2026</dd></div>
+    </dl>
+  </div>
+</div>
+
+<section class="compliance-section">
+  <div class="container compliance-grid">
+    <div class="badge-circle" id="badgeCircle">
+      <div class="badge-label">Trasparenza</div>
+      <div class="badge-score" id="badgeScore">8<sub>/11</sub></div>
+      <div class="badge-tier" id="badgeTier">Avanzata</div>
+    </div>
+    <div class="compliance-info">
+      <h2>Conformità Paniere ComuneMetrics v2.1</h2>
+      <p id="complianceText">
+        Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
+      </p>
+      <div class="dataset-checklist" id="datasetChecklist"></div>
+    </div>
+  </div>
+</section>
+
+<main id="kpiSections"></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>ComuneMetrics</h4>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.1</strong>: 11 dataset standardizzati, schema rigido, mapping <strong>OntoPiA</strong> per Linked Open Data 5★.</p>
+      </div>
+      <div>
+        <h4>Standard</h4>
+        <ul>
+          <li>DCAT-AP_IT v2.1</li>
+          <li>OntoPiA / schema.gov.it</li>
+          <li>JSON Schema Draft 2020-12</li>
+          <li>Licenza dati: CC-BY 4.0 / IODL 2.0</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Risorse</h4>
+        <ul>
+          <li><a href="docs/PANIERE.md">Specifica Paniere</a></li>
+          <li><a href="schemas/">JSON Schema</a></li>
+          <li><a href="https://github.com/piersoft/CSV-to-RDF">CSV → RDF/TTL</a></li>
+          <li><a href="https://www.dati.gov.it">dati.gov.it</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ComuneMetrics — Licenza MIT</span>
+      <span>Demo MVP — Dati: Bologna, Milano, Firenze, Lecce (via dati.gov.it)</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+ * MOCK DATA — derivati da dataset reali pubblicati su dati.gov.it
+ * Ogni Comune ha i dataset CORE che effettivamente pubblica
+ * ========================================================================= */
+const MOCK_DATA = {
+  bologna: {
+    nome: "Bologna",
+    ipa: "c_a944",
+    istat: "037006",
+    popolazione: 390636,
+    mandato: "2021-2026",
+    sindaco: "Matteo Lepore",
+    mappaCenter: [44.4949, 11.3426],
+    mappaZoom: 13,
+    datasets: {
+      popolazione: true, bilancio: true, opere_pubbliche: true,
+      pratiche_edilizie: true, servizi_sociali: false, istruzione: false,
+      incidenti_stradali: true, rifiuti: true, eventi_culturali: false,
+      delibere: true, patrimonio: true
+    },
+    sources: {
+      popolazione: "e770f5f1-9156-4612-b5ad-ee7b4bc6018d",
+      opere_pubbliche: "d64e15bc-ba85-453e-af0b-2c2338c08158",
+      pratiche_edilizie: "046f5414-ef0e-4a07-a55d-21d4e6d7ab7d",
+      rifiuti: "3321dad8-2d58-48bc-9b37-d21efc87d623"
+    }
+  },
+  milano: {
+    nome: "Milano",
+    ipa: "c_f205",
+    istat: "015146",
+    popolazione: 1365698,
+    mandato: "2021-2026",
+    sindaco: "Giuseppe Sala",
+    mappaCenter: [45.4669, 9.1900],
+    mappaZoom: 12,
+    datasets: {
+      popolazione: true, bilancio: true, opere_pubbliche: false,
+      pratiche_edilizie: false, servizi_sociali: false, istruzione: true,
+      incidenti_stradali: false, rifiuti: false, eventi_culturali: false,
+      delibere: true, patrimonio: true
+    },
+    sources: {
+      bilancio: "9136135e-192d-4ffe-9a1f-6221e63a1df3",
+      patrimonio: "8c32b60e-a7e4-4fd0-a76a-50abf191a6d5"
+    }
+  },
+  firenze: {
+    nome: "Firenze",
+    ipa: "c_d612",
+    istat: "048017",
+    popolazione: 360930,
+    mandato: "2024-2029",
+    sindaco: "Sara Funaro",
+    mappaCenter: [43.7711, 11.2552],
+    mappaZoom: 13,
+    datasets: {
+      popolazione: true, bilancio: true, opere_pubbliche: false,
+      pratiche_edilizie: false, servizi_sociali: false, istruzione: true,
+      incidenti_stradali: true, rifiuti: false, eventi_culturali: false,
+      delibere: true, patrimonio: false
+    },
+    sources: {
+      incidenti_stradali: "b78af8c5-af19-42ea-81e6-196b2df59ca0",
+      delibere: "c5ccc140-8af8-4174-899e-a227c261422f"
+    }
+  },
+  lecce: {
+    nome: "Lecce",
+    ipa: "c_e506",
+    istat: "075035",
+    popolazione: 94187,
+    mandato: "2024-2029",
+    sindaco: "Adriana Poli Bortone",
+    mappaCenter: [40.3528, 18.1718],
+    mappaZoom: 13,
+    datasets: {
+      popolazione: true, bilancio: true, opere_pubbliche: false,
+      pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
+      incidenti_stradali: true, rifiuti: false, eventi_culturali: true,
+      delibere: false, patrimonio: false
+    },
+    sources: {
+      servizi_sociali: "cef61e18-18bc-496f-951e-2b949b7ccad4",
+      istruzione: "3d12df6d-b8f1-4f8f-9b21-ada0274da3c8",
+      eventi_culturali: "44f1e470-0432-4a38-b865-86627aa656a7"
+    }
+  }
+};
+
+/* Etichette dataset (ordine = ordine PANIERE.md) */
+const DATASET_LABELS = {
+  popolazione: { num: 1, label: "Popolazione", tema: "SOCI" },
+  bilancio: { num: 2, label: "Bilancio missioni", tema: "ECON" },
+  opere_pubbliche: { num: 3, label: "Opere pubbliche", tema: "ECON" },
+  pratiche_edilizie: { num: 4, label: "Pratiche edilizie", tema: "GOVE" },
+  servizi_sociali: { num: 5, label: "Servizi sociali", tema: "SOCI" },
+  istruzione: { num: 6, label: "Istruzione & asili", tema: "EDUC" },
+  incidenti_stradali: { num: 7, label: "Incidenti stradali", tema: "TRAN" },
+  rifiuti: { num: 8, label: "Rifiuti", tema: "ENVI" },
+  eventi_culturali: { num: 9, label: "Eventi culturali", tema: "EDUC" },
+  delibere: { num: 10, label: "Delibere", tema: "GOVE" },
+  patrimonio: { num: 11, label: "Patrimonio", tema: "GOVE" }
+};
+</script>
+
+<script>
+/* =========================================================================
+ * MOCK DATASETS — valori plausibili per ciascuna città
+ * Servono per popolare i KPI quando il fetch CORS non è disponibile
+ * ========================================================================= */
+
+// Popolazione: residenti per anno × fascia età (per indice vecchiaia, trend)
+const MOCK_POPOLAZIONE = {
+  bologna: {
+    serie_anni: [2019, 2020, 2021, 2022, 2023, 2024],
+    serie_residenti: [394463, 391686, 388367, 387971, 388367, 390636],
+    nati: 2520, morti: 4880,
+    iscritti: 12750, cancellati: 11200,
+    pop_0_14: 47200, pop_65plus: 102350,
+    stranieri_pct: 17.2, donne_pct: 53.1
+  },
+  milano: {
+    serie_anni: [2019, 2020, 2021, 2022, 2023, 2024],
+    serie_residenti: [1396059, 1391286, 1352000, 1354196, 1361028, 1365698],
+    nati: 9700, morti: 14200,
+    iscritti: 51000, cancellati: 45300,
+    pop_0_14: 178400, pop_65plus: 311500,
+    stranieri_pct: 20.4, donne_pct: 52.6
+  },
+  firenze: {
+    serie_anni: [2019, 2020, 2021, 2022, 2023, 2024],
+    serie_residenti: [366927, 363459, 360930, 360051, 360930, 360930],
+    nati: 2280, morti: 4520,
+    iscritti: 11500, cancellati: 10100,
+    pop_0_14: 42100, pop_65plus: 96500,
+    stranieri_pct: 16.8, donne_pct: 53.0
+  },
+  lecce: {
+    serie_anni: [2019, 2020, 2021, 2022, 2023, 2024],
+    serie_residenti: [94778, 94634, 94553, 94392, 94187, 94187],
+    nati: 620, morti: 1080,
+    iscritti: 2400, cancellati: 2350,
+    pop_0_14: 11800, pop_65plus: 23900,
+    stranieri_pct: 5.4, donne_pct: 53.4
+  }
+};
+
+// Bilancio: spesa per missione (top 6 missioni DM 18/04/2012, importi €/anno 2024)
+const MOCK_BILANCIO = {
+  bologna: {
+    missioni: [
+      { codice: "01", nome: "Servizi istituzionali", impegnato: 92500000, pagato: 85200000 },
+      { codice: "04", nome: "Istruzione", impegnato: 78400000, pagato: 71200000 },
+      { codice: "12", nome: "Diritti sociali", impegnato: 156800000, pagato: 142100000 },
+      { codice: "10", nome: "Trasporti", impegnato: 64200000, pagato: 58900000 },
+      { codice: "09", nome: "Ambiente", impegnato: 47300000, pagato: 43800000 },
+      { codice: "05", nome: "Cultura", impegnato: 28900000, pagato: 26100000 }
+    ],
+    totale_corrente: 720000000,
+    capacita_spesa: 91.2,
+    spesa_pro_capite: 1843
+  },
+  milano: {
+    missioni: [
+      { codice: "01", nome: "Servizi istituzionali", impegnato: 380000000, pagato: 348000000 },
+      { codice: "04", nome: "Istruzione", impegnato: 295000000, pagato: 268000000 },
+      { codice: "12", nome: "Diritti sociali", impegnato: 542000000, pagato: 491000000 },
+      { codice: "10", nome: "Trasporti", impegnato: 285000000, pagato: 260000000 },
+      { codice: "09", nome: "Ambiente", impegnato: 186000000, pagato: 172000000 },
+      { codice: "05", nome: "Cultura", impegnato: 118000000, pagato: 107000000 }
+    ],
+    totale_corrente: 2890000000,
+    capacita_spesa: 90.9,
+    spesa_pro_capite: 2117
+  },
+  firenze: {
+    missioni: [
+      { codice: "01", nome: "Servizi istituzionali", impegnato: 78000000, pagato: 71500000 },
+      { codice: "04", nome: "Istruzione", impegnato: 62000000, pagato: 56400000 },
+      { codice: "12", nome: "Diritti sociali", impegnato: 124000000, pagato: 112000000 },
+      { codice: "10", nome: "Trasporti", impegnato: 51000000, pagato: 46800000 },
+      { codice: "09", nome: "Ambiente", impegnato: 39000000, pagato: 36100000 },
+      { codice: "05", nome: "Cultura", impegnato: 32000000, pagato: 29000000 }
+    ],
+    totale_corrente: 612000000,
+    capacita_spesa: 91.0,
+    spesa_pro_capite: 1696
+  },
+  lecce: {
+    missioni: [
+      { codice: "01", nome: "Servizi istituzionali", impegnato: 18500000, pagato: 16200000 },
+      { codice: "04", nome: "Istruzione", impegnato: 12800000, pagato: 11000000 },
+      { codice: "12", nome: "Diritti sociali", impegnato: 24700000, pagato: 21400000 },
+      { codice: "10", nome: "Trasporti", impegnato: 9300000, pagato: 8100000 },
+      { codice: "09", nome: "Ambiente", impegnato: 14600000, pagato: 13200000 },
+      { codice: "05", nome: "Cultura", impegnato: 6800000, pagato: 6000000 }
+    ],
+    totale_corrente: 134000000,
+    capacita_spesa: 87.6,
+    spesa_pro_capite: 1422
+  }
+};
+
+// Opere pubbliche con coordinate
+const MOCK_OPERE = {
+  bologna: [
+    { cup: "J33B22000180001", nome: "Riqualificazione Via Indipendenza", importo: 2400000, stato: "IN_CORSO", sal: 60, lat: 44.4965, lon: 11.3429, fonte: "PNRR|BILANCIO" },
+    { cup: "J39C23001540001", nome: "Nuova scuola Quartiere Savena", importo: 8200000, stato: "IN_CORSO", sal: 35, lat: 44.4710, lon: 11.3582, fonte: "PNRR" },
+    { cup: "J37H22000910001", nome: "Pista ciclabile asse Saragozza", importo: 1600000, stato: "CONCLUSA", sal: 100, lat: 44.4920, lon: 11.3290, fonte: "BILANCIO" },
+    { cup: "J33B23001120001", nome: "Riqualificazione Piazza Maggiore", importo: 4500000, stato: "PROGETTAZIONE", sal: 0, lat: 44.4938, lon: 11.3426, fonte: "BILANCIO|REGIONE" },
+    { cup: "J38B22001230001", nome: "Asilo nido Borgo Panigale", importo: 3100000, stato: "IN_CORSO", sal: 75, lat: 44.5051, lon: 11.2792, fonte: "PNRR" },
+    { cup: "J37H23000540001", nome: "Riqualificazione mercato Lazzaretto", importo: 2800000, stato: "IN_CORSO", sal: 45, lat: 44.4982, lon: 11.3208, fonte: "PNRR|BILANCIO" }
+  ],
+  milano: [], firenze: [], lecce: []
+};
+
+// Pratiche edilizie - aggregate per zona/tipo
+const MOCK_PRATICHE = {
+  bologna: {
+    totale_anno: 2840,
+    tempo_medio_scia: 24,
+    tempo_medio_pdc: 78,
+    pct_nei_termini: 86.4,
+    tasso_approvazione: 92.1,
+    per_zona: [
+      { zona: "Centro Storico", scia: 412, cila: 580, pdc: 38 },
+      { zona: "San Vitale", scia: 218, cila: 345, pdc: 22 },
+      { zona: "Savena", scia: 264, cila: 410, pdc: 31 },
+      { zona: "Borgo Panigale", scia: 198, cila: 312, pdc: 18 },
+      { zona: "Navile", scia: 189, cila: 285, pdc: 24 }
+    ]
+  },
+  milano: { totale_anno: 0, tempo_medio_scia: 0, tempo_medio_pdc: 0, pct_nei_termini: 0, tasso_approvazione: 0, per_zona: [] },
+  firenze: { totale_anno: 0, tempo_medio_scia: 0, tempo_medio_pdc: 0, pct_nei_termini: 0, tasso_approvazione: 0, per_zona: [] },
+  lecce: { totale_anno: 0, tempo_medio_scia: 0, tempo_medio_pdc: 0, pct_nei_termini: 0, tasso_approvazione: 0, per_zona: [] }
+};
+
+// Servizi sociali (Lecce ha questo dataset)
+const MOCK_SOCIALI = {
+  lecce: {
+    utenti_totali: 4850,
+    spesa_totale: 8200000,
+    pct_accolte: 84.2,
+    per_tipologia: [
+      { tipo: "ANZIANI_DOMICILIARE", utenti: 412, domande: 598, spesa: 1850000 },
+      { tipo: "MINORI_AFFIDO", utenti: 87, domande: 124, spesa: 980000 },
+      { tipo: "DISABILI_DOMICILIARE", utenti: 198, domande: 256, spesa: 1420000 },
+      { tipo: "CONTRIBUTI_ECONOMICI", utenti: 2840, domande: 3450, spesa: 2200000 },
+      { tipo: "EMERGENZA_ABITATIVA", utenti: 312, domande: 489, spesa: 850000 },
+      { tipo: "IMMIGRATI", utenti: 489, domande: 612, spesa: 580000 },
+      { tipo: "DIPENDENZE", utenti: 68, domande: 89, spesa: 240000 },
+      { tipo: "SALUTE_MENTALE", utenti: 444, domande: 612, spesa: 80000 }
+    ]
+  },
+  bologna: { utenti_totali: 0, spesa_totale: 0, pct_accolte: 0, per_tipologia: [] },
+  milano: { utenti_totali: 0, spesa_totale: 0, pct_accolte: 0, per_tipologia: [] },
+  firenze: { utenti_totali: 0, spesa_totale: 0, pct_accolte: 0, per_tipologia: [] }
+};
+
+// Asili nido (Lecce, Milano, Firenze hanno il dataset)
+const MOCK_ASILI = {
+  lecce: {
+    posti_totali: 480, iscritti: 442, lista_attesa: 138,
+    tasso_copertura: 17.1, // posti / pop 0-2 anni
+    plessi: [
+      { nome: "Asilo Nido Il Piccolo Principe", posti: 60, iscritti: 58, lat: 40.3528, lon: 18.1718 },
+      { nome: "Asilo Nido Il Cerbiatto", posti: 75, iscritti: 72, lat: 40.3479, lon: 18.1845 },
+      { nome: "Asilo Nido La Coccinella", posti: 50, iscritti: 48, lat: 40.3603, lon: 18.1690 },
+      { nome: "Asilo Nido Il Girasole", posti: 65, iscritti: 60, lat: 40.3565, lon: 18.1525 },
+      { nome: "Asilo Nido L'Aquilone", posti: 55, iscritti: 52, lat: 40.3490, lon: 18.1610 },
+      { nome: "Asilo Nido Arcobaleno", posti: 70, iscritti: 65, lat: 40.3445, lon: 18.1780 }
+    ]
+  },
+  milano: { posti_totali: 8200, iscritti: 7950, lista_attesa: 2100, tasso_copertura: 32.4, plessi: [] },
+  firenze: { posti_totali: 1850, iscritti: 1780, lista_attesa: 480, tasso_copertura: 28.6, plessi: [] },
+  bologna: { posti_totali: 0, iscritti: 0, lista_attesa: 0, tasso_copertura: 0, plessi: [] }
+};
+
+// Incidenti stradali (Bologna, Firenze, Lecce hanno dataset)
+const MOCK_INCIDENTI = {
+  bologna: {
+    totale_anno: 1840, deceduti: 12, feriti: 1980, feriti_gravi: 145,
+    indice_mortalita: 0.65, pct_pedoni_ciclisti: 32.4,
+    serie_mensile: [142, 138, 156, 162, 178, 168, 152, 138, 165, 172, 158, 135],
+    hot_spots: [
+      { nome: "Via Stalingrado / Via di Corticella", count: 28, lat: 44.5210, lon: 11.3445 },
+      { nome: "Via Saragozza / Porta Saragozza", count: 24, lat: 44.4892, lon: 11.3308 },
+      { nome: "Via Emilia Levante", count: 22, lat: 44.4810, lon: 11.3690 },
+      { nome: "Viale Aldini", count: 19, lat: 44.4865, lon: 11.3289 },
+      { nome: "Via San Donato", count: 17, lat: 44.5050, lon: 11.3520 }
+    ]
+  },
+  firenze: {
+    totale_anno: 2120, deceduti: 14, feriti: 2310, feriti_gravi: 168,
+    indice_mortalita: 0.66, pct_pedoni_ciclisti: 28.7,
+    serie_mensile: [165, 158, 178, 192, 210, 195, 172, 145, 192, 198, 180, 152],
+    hot_spots: [
+      { nome: "Viale Aleardi / Piazza Vittoria", count: 32, lat: 43.7820, lon: 11.2515 },
+      { nome: "Via di Novoli", count: 28, lat: 43.7990, lon: 11.2245 },
+      { nome: "Viale dei Mille", count: 26, lat: 43.7775, lon: 11.2820 },
+      { nome: "Piazza della Libertà", count: 21, lat: 43.7820, lon: 11.2620 },
+      { nome: "Via Pisana / Viale Talenti", count: 19, lat: 43.7665, lon: 11.2070 }
+    ]
+  },
+  lecce: {
+    totale_anno: 480, deceduti: 4, feriti: 540, feriti_gravi: 38,
+    indice_mortalita: 0.83, pct_pedoni_ciclisti: 22.9,
+    serie_mensile: [38, 35, 42, 45, 48, 52, 45, 38, 42, 44, 38, 33],
+    hot_spots: [
+      { nome: "Viale dell'Università", count: 12, lat: 40.3650, lon: 18.1720 },
+      { nome: "Via Lecce-Surbo", count: 10, lat: 40.3712, lon: 18.1605 },
+      { nome: "Tangenziale Est", count: 9, lat: 40.3520, lon: 18.1985 },
+      { nome: "Via Adriatica", count: 8, lat: 40.3498, lon: 18.1845 }
+    ]
+  },
+  milano: { totale_anno: 0, deceduti: 0, feriti: 0, feriti_gravi: 0, indice_mortalita: 0, pct_pedoni_ciclisti: 0, serie_mensile: [], hot_spots: [] }
+};
+
+// Rifiuti (Bologna)
+const MOCK_RIFIUTI = {
+  bologna: {
+    rd_pct: 60.4,
+    pro_capite_kg: 488,
+    serie_mensile_rd: [58.2, 59.1, 60.8, 61.2, 62.5, 63.1, 61.8, 58.4, 60.2, 61.5, 60.1, 59.8],
+    composizione: [
+      { frazione: "ORGANICO", kg: 32100000 },
+      { frazione: "CARTA_CARTONE", kg: 28400000 },
+      { frazione: "INDIFFERENZIATO", kg: 75600000 },
+      { frazione: "VETRO", kg: 14200000 },
+      { frazione: "PLASTICA", kg: 12800000 },
+      { frazione: "VERDE_LIGNEO", kg: 8500000 },
+      { frazione: "INGOMBRANTI", kg: 6200000 },
+      { frazione: "ALTRO", kg: 12800000 }
+    ]
+  },
+  milano: { rd_pct: 0, pro_capite_kg: 0, serie_mensile_rd: [], composizione: [] },
+  firenze: { rd_pct: 0, pro_capite_kg: 0, serie_mensile_rd: [], composizione: [] },
+  lecce: { rd_pct: 0, pro_capite_kg: 0, serie_mensile_rd: [], composizione: [] }
+};
+
+// Eventi culturali (Lecce)
+const MOCK_EVENTI = {
+  lecce: {
+    totale_anno: 248,
+    pct_gratuiti: 78.6,
+    spesa_patrocinati: 420000,
+    per_categoria: [
+      { cat: "MUSICA", n: 62 }, { cat: "TEATRO", n: 48 },
+      { cat: "MOSTRA", n: 32 }, { cat: "SPORT", n: 28 },
+      { cat: "LETTERATURA", n: 24 }, { cat: "CINEMA", n: 18 },
+      { cat: "FOOD", n: 16 }, { cat: "BAMBINI", n: 12 }, { cat: "ALTRO", n: 8 }
+    ],
+    eventi_geo: [
+      { nome: "Festival del Teatro di Strada", lat: 40.3528, lon: 18.1718, cat: "TEATRO" },
+      { nome: "Notte della Taranta", lat: 40.3550, lon: 18.1750, cat: "MUSICA" },
+      { nome: "Lecce Film Fest", lat: 40.3502, lon: 18.1685, cat: "CINEMA" },
+      { nome: "Fiera di Sant'Oronzo", lat: 40.3528, lon: 18.1718, cat: "MERCATO" },
+      { nome: "Conversazioni sul Futuro", lat: 40.3540, lon: 18.1700, cat: "LETTERATURA" }
+    ]
+  },
+  bologna: { totale_anno: 0, pct_gratuiti: 0, spesa_patrocinati: 0, per_categoria: [], eventi_geo: [] },
+  milano: { totale_anno: 0, pct_gratuiti: 0, spesa_patrocinati: 0, per_categoria: [], eventi_geo: [] },
+  firenze: { totale_anno: 0, pct_gratuiti: 0, spesa_patrocinati: 0, per_categoria: [], eventi_geo: [] }
+};
+
+// Delibere (Bologna, Milano, Firenze)
+const MOCK_DELIBERE = {
+  bologna: {
+    totale_anno: 580, tempo_medio_pubblicazione: 4.2, pct_nei_termini: 98.6,
+    per_tipo: [
+      { tipo: "DELIBERA_GIUNTA", n: 285 },
+      { tipo: "DELIBERA_CONSIGLIO", n: 142 },
+      { tipo: "ORDINANZA_SINDACALE", n: 78 },
+      { tipo: "DECRETO_SINDACALE", n: 75 }
+    ]
+  },
+  milano: {
+    totale_anno: 920, tempo_medio_pubblicazione: 5.1, pct_nei_termini: 96.8,
+    per_tipo: [
+      { tipo: "DELIBERA_GIUNTA", n: 412 },
+      { tipo: "DELIBERA_CONSIGLIO", n: 198 },
+      { tipo: "ORDINANZA_SINDACALE", n: 165 },
+      { tipo: "DECRETO_SINDACALE", n: 145 }
+    ]
+  },
+  firenze: {
+    totale_anno: 540, tempo_medio_pubblicazione: 3.8, pct_nei_termini: 99.1,
+    per_tipo: [
+      { tipo: "DELIBERA_GIUNTA", n: 268 },
+      { tipo: "DELIBERA_CONSIGLIO", n: 128 },
+      { tipo: "ORDINANZA_SINDACALE", n: 82 },
+      { tipo: "DECRETO_SINDACALE", n: 62 }
+    ]
+  },
+  lecce: { totale_anno: 0, tempo_medio_pubblicazione: 0, pct_nei_termini: 0, per_tipo: [] }
+};
+
+// Patrimonio (Bologna, Milano)
+const MOCK_PATRIMONIO = {
+  milano: {
+    totale_immobili: 4820, valore_totale: 8400000000,
+    pct_inutilizzati: 6.2, pct_vincolo_culturale: 18.4,
+    per_categoria: [
+      { cat: "EDIFICIO_AMMINISTRATIVO", n: 285 },
+      { cat: "SCOLASTICO", n: 642 },
+      { cat: "CULTURALE", n: 198 },
+      { cat: "SPORTIVO", n: 142 },
+      { cat: "ABITATIVO_ERP", n: 2840 },
+      { cat: "INFRASTRUTTURA", n: 412 },
+      { cat: "AREA_VERDE", n: 301 }
+    ],
+    immobili_geo: [
+      { nome: "Palazzo Marino - Sede Comunale", lat: 45.4669, lon: 9.1900, cat: "EDIFICIO_AMMINISTRATIVO", val: 120000000 },
+      { nome: "Castello Sforzesco", lat: 45.4707, lon: 9.1793, cat: "CULTURALE", val: 0 },
+      { nome: "Palazzo Reale", lat: 45.4630, lon: 9.1898, cat: "CULTURALE", val: 0 },
+      { nome: "Palazzo della Ragione", lat: 45.4651, lon: 9.1908, cat: "CULTURALE", val: 0 },
+      { nome: "Acquario Civico", lat: 45.4720, lon: 9.1745, cat: "CULTURALE", val: 0 },
+      { nome: "Stadio San Siro", lat: 45.4781, lon: 9.1240, cat: "SPORTIVO", val: 0 }
+    ]
+  },
+  bologna: {
+    totale_immobili: 1820, valore_totale: 1900000000,
+    pct_inutilizzati: 4.8, pct_vincolo_culturale: 24.2,
+    per_categoria: [
+      { cat: "EDIFICIO_AMMINISTRATIVO", n: 142 },
+      { cat: "SCOLASTICO", n: 285 },
+      { cat: "CULTURALE", n: 98 },
+      { cat: "SPORTIVO", n: 78 },
+      { cat: "ABITATIVO_ERP", n: 980 },
+      { cat: "AREA_VERDE", n: 142 }
+    ],
+    immobili_geo: [
+      { nome: "Palazzo d'Accursio - Sede Comunale", lat: 44.4938, lon: 11.3426, cat: "EDIFICIO_AMMINISTRATIVO", val: 85000000 },
+      { nome: "Cubo dei Frigieri", lat: 44.5102, lon: 11.3589, cat: "CULTURALE", val: 0 },
+      { nome: "MAMbo - Museo Arte Moderna", lat: 44.4994, lon: 11.3320, cat: "CULTURALE", val: 0 },
+      { nome: "Stadio Renato Dall'Ara", lat: 44.4924, lon: 11.3097, cat: "SPORTIVO", val: 0 }
+    ]
+  },
+  firenze: { totale_immobili: 0, valore_totale: 0, pct_inutilizzati: 0, pct_vincolo_culturale: 0, per_categoria: [], immobili_geo: [] },
+  lecce: { totale_immobili: 0, valore_totale: 0, pct_inutilizzati: 0, pct_vincolo_culturale: 0, per_categoria: [], immobili_geo: [] }
+};
+</script>
+
+<script>
+/* =========================================================================
+ * RENDERING LOGIC
+ * ========================================================================= */
+
+const fmt = {
+  num: n => new Intl.NumberFormat('it-IT').format(n),
+  eur: n => new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n),
+  pct: n => n.toFixed(1) + '%',
+  big: n => {
+    if (n >= 1e9) return (n/1e9).toFixed(2) + ' mld';
+    if (n >= 1e6) return (n/1e6).toFixed(1) + ' mln';
+    if (n >= 1e3) return (n/1e3).toFixed(0) + 'k';
+    return fmt.num(n);
+  }
+};
+
+const COLORS = {
+  brand: '#0066CC',
+  brandDark: '#003366',
+  green: '#2D8659',
+  red: '#C92A2A',
+  yellow: '#E6A700',
+  orange: '#E67E22',
+  gold: '#B8860B',
+  series: ['#0066CC', '#2D8659', '#E6A700', '#C92A2A', '#E67E22', '#7B5BA1', '#1A8A8C', '#8B4513']
+};
+
+let currentComune = 'bologna';
+let chartInstances = [];
+let mapInstances = [];
+
+function destroyAllCharts() {
+  chartInstances.forEach(c => { try { c.destroy(); } catch(e){} });
+  chartInstances = [];
+  mapInstances.forEach(m => { try { m.remove(); } catch(e){} });
+  mapInstances = [];
+}
+
+function setBadge(comune) {
+  const c = MOCK_DATA[comune];
+  const ds = c.datasets;
+  const count = Object.values(ds).filter(Boolean).length;
+
+  const circle = document.getElementById('badgeCircle');
+  const score = document.getElementById('badgeScore');
+  const tier = document.getElementById('badgeTier');
+  const text = document.getElementById('complianceText');
+
+  score.innerHTML = `${count}<sub>/11</sub>`;
+
+  let cls, label, desc;
+  if (count <= 3) { cls = 'red'; label = 'Minima'; desc = 'badge ROSSO'; }
+  else if (count <= 7) { cls = 'yellow'; label = 'Parziale'; desc = 'badge GIALLO'; }
+  else if (count <= 10) { cls = 'orange'; label = 'Avanzata'; desc = 'badge ARANCIONE'; }
+  else { cls = 'green'; label = 'Completa'; desc = 'badge VERDE'; }
+
+  circle.className = 'badge-circle ' + cls;
+  tier.textContent = label;
+  text.innerHTML = `Il Comune di <strong>${c.nome}</strong> pubblica <strong>${count} dei 11 dataset CORE</strong> del Paniere ComuneMetrics su dati.gov.it. Ottiene il <strong>${desc}</strong> "Trasparenza ${label.toLowerCase()}". ${count < 11 ? 'Per il badge VERDE pieno servono i ' + (11 - count) + ' dataset mancanti elencati a fianco.' : 'Eccellenza nella trasparenza amministrativa.'}`;
+
+  // Checklist
+  const checklist = document.getElementById('datasetChecklist');
+  checklist.innerHTML = Object.entries(DATASET_LABELS).map(([key, info]) => {
+    const has = ds[key];
+    return `<div class="dataset-check ${has ? 'ok' : 'miss'}" title="${info.tema}">
+      <span class="icon">${has ? '✓' : '○'}</span>
+      <span class="name">${info.label}</span>
+    </div>`;
+  }).join('');
+}
+
+function setComuneBar(comune) {
+  const c = MOCK_DATA[comune];
+  document.getElementById('metaIpa').textContent = c.ipa;
+  document.getElementById('metaIstat').textContent = c.istat;
+  document.getElementById('metaPop').textContent = fmt.num(c.popolazione);
+  document.getElementById('metaMandato').textContent = c.mandato;
+}
+
+/* =========================================================================
+ * Render KPI Sections — solo per i dataset effettivamente pubblicati
+ * ========================================================================= */
+function renderSections(comune) {
+  destroyAllCharts();
+  const ds = MOCK_DATA[comune].datasets;
+  const root = document.getElementById('kpiSections');
+  let html = '';
+
+  if (ds.popolazione) html += sectionPopolazione(comune);
+  if (ds.bilancio) html += sectionBilancio(comune);
+  if (ds.opere_pubbliche) html += sectionOpere(comune);
+  if (ds.pratiche_edilizie) html += sectionPratiche(comune);
+  if (ds.servizi_sociali) html += sectionSociali(comune);
+  if (ds.istruzione) html += sectionIstruzione(comune);
+  if (ds.incidenti_stradali) html += sectionIncidenti(comune);
+  if (ds.rifiuti) html += sectionRifiuti(comune);
+  if (ds.eventi_culturali) html += sectionEventi(comune);
+  if (ds.delibere) html += sectionDelibere(comune);
+  if (ds.patrimonio) html += sectionPatrimonio(comune);
+
+  // Sezione informativa per dataset mancanti
+  const missing = Object.entries(ds).filter(([k,v]) => !v);
+  if (missing.length > 0) {
+    html += `<section class="section" style="background: #fef9f3;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num">!</span>
+          <h2 class="section-title">Dataset mancanti</h2>
+          <span class="section-tag" style="background:#fee; color:#c92a2a;">${missing.length}</span>
+        </div>
+        <p style="font-family:var(--font-body); font-size:15px; color:var(--ink-soft); line-height:1.7;">
+          ${MOCK_DATA[comune].nome} non ha ancora pubblicato (o non ha pubblicato in formato conforme al Paniere) i seguenti dataset CORE:
+        </p>
+        <div class="dataset-checklist" style="margin-top:20px;">
+          ${missing.map(([k,_]) => `<div class="dataset-check miss"><span class="icon">○</span><span class="name">${DATASET_LABELS[k].label}</span></div>`).join('')}
+        </div>
+      </div>
+    </section>`;
+  }
+
+  root.innerHTML = html;
+
+  // Render dei chart/mappe DOPO l'inserimento HTML
+  setTimeout(() => {
+    if (ds.popolazione) renderChartsPopolazione(comune);
+    if (ds.bilancio) renderChartsBilancio(comune);
+    if (ds.opere_pubbliche) renderMapOpere(comune);
+    if (ds.pratiche_edilizie) renderChartsPratiche(comune);
+    if (ds.servizi_sociali) renderChartsSociali(comune);
+    if (ds.istruzione) renderMapAsili(comune);
+    if (ds.incidenti_stradali) renderIncidenti(comune);
+    if (ds.rifiuti) renderRifiuti(comune);
+    if (ds.eventi_culturali) renderEventi(comune);
+    if (ds.delibere) renderDelibere(comune);
+    if (ds.patrimonio) renderPatrimonio(comune);
+  }, 50);
+}
+
+/* ==================== HEADER per ogni sezione ==================== */
+function sectionHeader(num, title, tag, sourceId) {
+  const src = sourceId
+    ? `<p class="data-source">Fonte: dataset <code>${sourceId}</code> su <a href="https://www.dati.gov.it/view-dataset/dataset?id=${sourceId}" target="_blank" rel="noopener">dati.gov.it</a></p>`
+    : '';
+  return `<div class="section-header">
+    <span class="section-num">DS·${num}</span>
+    <h2 class="section-title">${title}</h2>
+    <span class="section-tag">${tag}</span>
+  </div>${src}`;
+}
+
+/* ==================== Sezione 1 — Popolazione ==================== */
+function sectionPopolazione(comune) {
+  const d = MOCK_POPOLAZIONE[comune];
+  const c = MOCK_DATA[comune];
+  const indVecchiaia = (d.pop_65plus / d.pop_0_14 * 100).toFixed(1);
+  const saldoNat = d.nati - d.morti;
+  const saldoMig = d.iscritti - d.cancellati;
+  const variazione = ((d.serie_residenti.at(-1) - d.serie_residenti[0]) / d.serie_residenti[0] * 100).toFixed(2);
+
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('01', 'Popolazione residente', 'SOCI', c.sources.popolazione)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Residenti totali</div>
+          <div class="kpi-value">${fmt.num(d.serie_residenti.at(-1))}</div>
+          <div class="kpi-trend ${variazione >= 0 ? 'up' : 'down'}">${variazione >= 0 ? '↑' : '↓'} ${Math.abs(variazione)}% vs ${d.serie_anni[0]}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Indice di vecchiaia</div>
+          <div class="kpi-value">${indVecchiaia}<span class="unit"> %</span></div>
+          <div class="kpi-trend neutral">over 65 / under 15</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Saldo naturale</div>
+          <div class="kpi-value">${saldoNat > 0 ? '+' : ''}${fmt.num(saldoNat)}</div>
+          <div class="kpi-trend ${saldoNat >= 0 ? 'up' : 'down'}">nati ${fmt.num(d.nati)} − morti ${fmt.num(d.morti)}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Saldo migratorio</div>
+          <div class="kpi-value">${saldoMig > 0 ? '+' : ''}${fmt.num(saldoMig)}</div>
+          <div class="kpi-trend ${saldoMig >= 0 ? 'up' : 'down'}">iscritti ${fmt.num(d.iscritti)} − cancellati ${fmt.num(d.cancellati)}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Stranieri</div>
+          <div class="kpi-value">${d.stranieri_pct}<span class="unit"> %</span></div>
+          <div class="kpi-trend neutral">sulla popolazione totale</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Donne</div>
+          <div class="kpi-value">${d.donne_pct}<span class="unit"> %</span></div>
+          <div class="kpi-trend neutral">sulla popolazione totale</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Trend popolazione 2019-2024</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartPopTrend"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Composizione per fascia età</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartPopFasce"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderChartsPopolazione(comune) {
+  const d = MOCK_POPOLAZIONE[comune];
+  const tot = d.serie_residenti.at(-1);
+  const altre = tot - d.pop_0_14 - d.pop_65plus;
+
+  chartInstances.push(new Chart(document.getElementById('chartPopTrend'), {
+    type: 'line',
+    data: {
+      labels: d.serie_anni,
+      datasets: [{
+        label: 'Residenti', data: d.serie_residenti,
+        borderColor: COLORS.brand, backgroundColor: COLORS.brand + '22',
+        tension: 0.3, fill: true, pointRadius: 5, pointHoverRadius: 7
+      }]
+    },
+    options: chartOptions({ y: { beginAtZero: false } })
+  }));
+  chartInstances.push(new Chart(document.getElementById('chartPopFasce'), {
+    type: 'doughnut',
+    data: {
+      labels: ['0-14 anni', '15-64 anni', '65+ anni'],
+      datasets: [{ data: [d.pop_0_14, altre, d.pop_65plus],
+        backgroundColor: [COLORS.green, COLORS.brand, COLORS.orange] }]
+    },
+    options: chartOptions({}, true)
+  }));
+}
+
+/* ==================== Sezione 2 — Bilancio ==================== */
+function sectionBilancio(comune) {
+  const d = MOCK_BILANCIO[comune];
+  const c = MOCK_DATA[comune];
+  const totImp = d.missioni.reduce((s,m) => s + m.impegnato, 0);
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('02', 'Bilancio per missione', 'ECON', c.sources.bilancio)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Spesa corrente totale</div>
+          <div class="kpi-value">${fmt.eur(d.totale_corrente)}</div>
+          <div class="kpi-trend neutral">rendiconto consuntivo</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Capacità di spesa</div>
+          <div class="kpi-value">${d.capacita_spesa}<span class="unit"> %</span></div>
+          <div class="kpi-trend ${d.capacita_spesa >= 85 ? 'up' : 'down'}">pagato / impegnato</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Spesa pro capite</div>
+          <div class="kpi-value">${fmt.eur(d.spesa_pro_capite)}</div>
+          <div class="kpi-trend neutral">€ per residente</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card full">
+          <h3>Spesa impegnata per missione (DM 18/04/2012)</h3>
+          <div class="chart-canvas-wrap" style="height:340px"><canvas id="chartBilMissioni"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderChartsBilancio(comune) {
+  const d = MOCK_BILANCIO[comune];
+  chartInstances.push(new Chart(document.getElementById('chartBilMissioni'), {
+    type: 'bar',
+    data: {
+      labels: d.missioni.map(m => `${m.codice} — ${m.nome}`),
+      datasets: [
+        { label: 'Impegnato', data: d.missioni.map(m => m.impegnato), backgroundColor: COLORS.brand },
+        { label: 'Pagato', data: d.missioni.map(m => m.pagato), backgroundColor: COLORS.green }
+      ]
+    },
+    options: chartOptions({
+      indexAxis: 'y',
+      scales: { x: { ticks: { callback: v => fmt.big(v) + ' €' }}}
+    })
+  }));
+}
+
+/* ==================== Sezione 3 — Opere pubbliche ==================== */
+function sectionOpere(comune) {
+  const opere = MOCK_OPERE[comune] || [];
+  const c = MOCK_DATA[comune];
+  const inCorso = opere.filter(o => o.stato === 'IN_CORSO').length;
+  const concluse = opere.filter(o => o.stato === 'CONCLUSA').length;
+  const investimento = opere.reduce((s,o) => s + o.importo, 0);
+  const salMedio = opere.filter(o => o.stato === 'IN_CORSO').reduce((s,o,_,a) => s + o.sal/a.length, 0);
+  const pnrr = opere.filter(o => o.fonte.includes('PNRR')).length;
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('03', 'Opere pubbliche', 'ECON', c.sources.opere_pubbliche)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Opere monitorate</div>
+          <div class="kpi-value">${opere.length}</div>
+          <div class="kpi-trend up">${inCorso} in corso · ${concluse} concluse</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Investimento totale</div>
+          <div class="kpi-value">${fmt.big(investimento)}<span class="unit"> €</span></div>
+          <div class="kpi-trend neutral">quadri economici</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">SAL medio in corso</div>
+          <div class="kpi-value">${salMedio.toFixed(0)}<span class="unit"> %</span></div>
+          <div class="kpi-trend neutral">stato avanzamento lavori</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Finanziate PNRR</div>
+          <div class="kpi-value">${pnrr}<span class="unit">/${opere.length}</span></div>
+          <div class="kpi-trend up">${(pnrr/opere.length*100).toFixed(0)}% del totale</div>
+        </div>
+      </div>
+      <div class="map-card">
+        <h3>Mappa opere pubbliche georeferenziate</h3>
+        <div id="mapOpere" class="map-canvas"></div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderMapOpere(comune) {
+  const opere = MOCK_OPERE[comune];
+  const c = MOCK_DATA[comune];
+  if (!opere.length) return;
+  const map = L.map('mapOpere').setView(c.mappaCenter, c.mappaZoom);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+  const colorByStato = { 'IN_CORSO': '#0066CC', 'CONCLUSA': '#2D8659', 'PROGETTAZIONE': '#E6A700', 'GARA': '#E67E22' };
+  opere.forEach(o => {
+    const color = colorByStato[o.stato] || '#888';
+    const marker = L.circleMarker([o.lat, o.lon], {
+      radius: 9, fillColor: color, color: '#fff', weight: 2, fillOpacity: 0.85
+    }).addTo(map);
+    marker.bindPopup(`
+      <strong>${o.nome}</strong><br>
+      CUP: <code>${o.cup}</code><br>
+      Importo: <strong>${fmt.eur(o.importo)}</strong><br>
+      Stato: ${o.stato} (SAL ${o.sal}%)<br>
+      Fonte: ${o.fonte}
+    `);
+  });
+  mapInstances.push(map);
+}
+
+/* ==================== Sezione 4 — Pratiche edilizie ==================== */
+function sectionPratiche(comune) {
+  const d = MOCK_PRATICHE[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('04', 'Pratiche edilizie', 'GOVE', c.sources.pratiche_edilizie)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Pratiche/anno</div>
+          <div class="kpi-value">${fmt.num(d.totale_anno)}</div>
+          <div class="kpi-trend neutral">depositate</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Tempo medio SCIA</div>
+          <div class="kpi-value">${d.tempo_medio_scia}<span class="unit"> gg</span></div>
+          <div class="kpi-trend ${d.tempo_medio_scia <= 30 ? 'up' : 'down'}">limite legge: 30 gg</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Tempo medio PdC</div>
+          <div class="kpi-value">${d.tempo_medio_pdc}<span class="unit"> gg</span></div>
+          <div class="kpi-trend ${d.tempo_medio_pdc <= 90 ? 'up' : 'down'}">limite legge: 90 gg</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Nei termini</div>
+          <div class="kpi-value">${d.pct_nei_termini}<span class="unit"> %</span></div>
+          <div class="kpi-trend ${d.pct_nei_termini >= 80 ? 'up' : 'down'}">conformità tempi</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card full">
+          <h3>Pratiche per zona urbanistica e tipologia</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartPraticheZona"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderChartsPratiche(comune) {
+  const d = MOCK_PRATICHE[comune];
+  chartInstances.push(new Chart(document.getElementById('chartPraticheZona'), {
+    type: 'bar',
+    data: {
+      labels: d.per_zona.map(z => z.zona),
+      datasets: [
+        { label: 'SCIA', data: d.per_zona.map(z => z.scia), backgroundColor: COLORS.brand },
+        { label: 'CILA', data: d.per_zona.map(z => z.cila), backgroundColor: COLORS.green },
+        { label: 'PdC', data: d.per_zona.map(z => z.pdc), backgroundColor: COLORS.orange }
+      ]
+    },
+    options: chartOptions({ scales: { x: { stacked: true }, y: { stacked: true }}})
+  }));
+}
+
+/* ==================== Sezione 5 — Servizi sociali ==================== */
+function sectionSociali(comune) {
+  const d = MOCK_SOCIALI[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('05', 'Servizi sociali', 'SOCI', c.sources.servizi_sociali)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Utenti totali serviti</div>
+          <div class="kpi-value">${fmt.num(d.utenti_totali)}</div>
+          <div class="kpi-trend neutral">tutti i servizi</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Spesa totale annua</div>
+          <div class="kpi-value">${fmt.big(d.spesa_totale)}<span class="unit"> €</span></div>
+          <div class="kpi-trend neutral">spesa effettiva</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Domande accolte</div>
+          <div class="kpi-value">${d.pct_accolte}<span class="unit"> %</span></div>
+          <div class="kpi-trend up">su totali pervenute</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Utenti per tipologia servizio</h3>
+          <div class="chart-canvas-wrap" style="height:340px"><canvas id="chartSocialiUtenti"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Spesa per tipologia (€)</h3>
+          <div class="chart-canvas-wrap" style="height:340px"><canvas id="chartSocialiSpesa"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderChartsSociali(comune) {
+  const d = MOCK_SOCIALI[comune];
+  chartInstances.push(new Chart(document.getElementById('chartSocialiUtenti'), {
+    type: 'bar',
+    data: {
+      labels: d.per_tipologia.map(t => t.tipo.replace(/_/g, ' ')),
+      datasets: [{ label: 'Utenti', data: d.per_tipologia.map(t => t.utenti), backgroundColor: COLORS.brand }]
+    },
+    options: chartOptions({ indexAxis: 'y' })
+  }));
+  chartInstances.push(new Chart(document.getElementById('chartSocialiSpesa'), {
+    type: 'doughnut',
+    data: {
+      labels: d.per_tipologia.map(t => t.tipo.replace(/_/g, ' ')),
+      datasets: [{ data: d.per_tipologia.map(t => t.spesa), backgroundColor: COLORS.series }]
+    },
+    options: chartOptions({}, true)
+  }));
+}
+
+/* ==================== Sezione 6 — Istruzione ==================== */
+function sectionIstruzione(comune) {
+  const d = MOCK_ASILI[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('06', 'Istruzione &amp; asili nido', 'EDUC', c.sources.istruzione)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Posti asili nido</div>
+          <div class="kpi-value">${fmt.num(d.posti_totali)}</div>
+          <div class="kpi-trend neutral">${d.plessi.length} plessi comunali</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Iscritti</div>
+          <div class="kpi-value">${fmt.num(d.iscritti)}</div>
+          <div class="kpi-trend up">${(d.iscritti/d.posti_totali*100).toFixed(0)}% saturazione</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Lista d'attesa</div>
+          <div class="kpi-value">${fmt.num(d.lista_attesa)}</div>
+          <div class="kpi-trend ${d.lista_attesa < d.posti_totali * 0.2 ? 'up' : 'down'}">domande inevase</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Tasso copertura 0-2</div>
+          <div class="kpi-value">${d.tasso_copertura}<span class="unit"> %</span></div>
+          <div class="kpi-trend ${d.tasso_copertura >= 33 ? 'up' : 'down'}">target EU: 33%</div>
+        </div>
+      </div>
+      ${d.plessi.length ? `<div class="map-card">
+        <h3>Mappa plessi comunali</h3>
+        <div id="mapAsili" class="map-canvas"></div>
+      </div>` : ''}
+    </div>
+  </section>`;
+}
+function renderMapAsili(comune) {
+  const d = MOCK_ASILI[comune];
+  const c = MOCK_DATA[comune];
+  if (!d.plessi.length || !document.getElementById('mapAsili')) return;
+  const map = L.map('mapAsili').setView(c.mappaCenter, c.mappaZoom);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+  d.plessi.forEach(p => {
+    const sat = p.iscritti / p.posti;
+    const color = sat >= 0.95 ? COLORS.red : sat >= 0.85 ? COLORS.orange : COLORS.green;
+    L.circleMarker([p.lat, p.lon], {
+      radius: 11, fillColor: color, color: '#fff', weight: 2, fillOpacity: 0.85
+    }).addTo(map).bindPopup(`<strong>${p.nome}</strong><br>Posti: ${p.posti} · Iscritti: ${p.iscritti}<br>Saturazione: ${(sat*100).toFixed(0)}%`);
+  });
+  mapInstances.push(map);
+}
+
+/* ==================== Sezione 7 — Incidenti ==================== */
+function sectionIncidenti(comune) {
+  const d = MOCK_INCIDENTI[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('07', 'Incidenti stradali', 'TRAN', c.sources.incidenti_stradali)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Incidenti totali</div>
+          <div class="kpi-value">${fmt.num(d.totale_anno)}</div>
+          <div class="kpi-trend neutral">rilevati Polizia Locale</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Decessi</div>
+          <div class="kpi-value">${d.deceduti}</div>
+          <div class="kpi-trend down">target EU 2030: -50%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Indice mortalità</div>
+          <div class="kpi-value">${d.indice_mortalita}<span class="unit"> %</span></div>
+          <div class="kpi-trend neutral">deceduti / incidenti</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Utenti vulnerabili</div>
+          <div class="kpi-value">${d.pct_pedoni_ciclisti}<span class="unit"> %</span></div>
+          <div class="kpi-trend down">% pedoni + ciclisti</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Distribuzione mensile</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartIncMensile"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Top 5 hot spot</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartIncHotspot"></canvas></div>
+        </div>
+      </div>
+      <div class="map-card" style="margin-top:24px">
+        <h3>Mappa hot spot incidenti</h3>
+        <div id="mapIncidenti" class="map-canvas"></div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderIncidenti(comune) {
+  const d = MOCK_INCIDENTI[comune];
+  const c = MOCK_DATA[comune];
+  const mesi = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+  chartInstances.push(new Chart(document.getElementById('chartIncMensile'), {
+    type: 'bar',
+    data: { labels: mesi, datasets: [{ label: 'Incidenti', data: d.serie_mensile, backgroundColor: COLORS.red }] },
+    options: chartOptions({})
+  }));
+  chartInstances.push(new Chart(document.getElementById('chartIncHotspot'), {
+    type: 'bar',
+    data: {
+      labels: d.hot_spots.map(h => h.nome),
+      datasets: [{ label: 'Incidenti', data: d.hot_spots.map(h => h.count), backgroundColor: COLORS.red }]
+    },
+    options: chartOptions({ indexAxis: 'y' })
+  }));
+  if (d.hot_spots.length && document.getElementById('mapIncidenti')) {
+    const map = L.map('mapIncidenti').setView(c.mappaCenter, c.mappaZoom);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    d.hot_spots.forEach(h => {
+      const radius = 8 + Math.sqrt(h.count) * 2;
+      L.circleMarker([h.lat, h.lon], {
+        radius, fillColor: COLORS.red, color: '#fff', weight: 2, fillOpacity: 0.6
+      }).addTo(map).bindPopup(`<strong>${h.nome}</strong><br>Incidenti: ${h.count}/anno`);
+    });
+    mapInstances.push(map);
+  }
+}
+
+/* ==================== Sezione 8 — Rifiuti ==================== */
+function sectionRifiuti(comune) {
+  const d = MOCK_RIFIUTI[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('08', 'Raccolta rifiuti', 'ENVI', c.sources.rifiuti)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Raccolta differenziata</div>
+          <div class="kpi-value">${d.rd_pct}<span class="unit"> %</span></div>
+          <div class="kpi-trend ${d.rd_pct >= 65 ? 'up' : 'down'}">target normativo: 65%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Pro capite</div>
+          <div class="kpi-value">${d.pro_capite_kg}<span class="unit"> kg</span></div>
+          <div class="kpi-trend neutral">per abitante / anno</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Trend mensile RD %</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartRifTrend"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Composizione frazioni</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartRifComp"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderRifiuti(comune) {
+  const d = MOCK_RIFIUTI[comune];
+  const mesi = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+  chartInstances.push(new Chart(document.getElementById('chartRifTrend'), {
+    type: 'line',
+    data: { labels: mesi, datasets: [
+      { label: 'RD %', data: d.serie_mensile_rd,
+        borderColor: COLORS.green, backgroundColor: COLORS.green + '33',
+        tension: 0.3, fill: true, pointRadius: 4 }
+    ] },
+    options: chartOptions({ y: { suggestedMin: 50, suggestedMax: 70 }})
+  }));
+  chartInstances.push(new Chart(document.getElementById('chartRifComp'), {
+    type: 'doughnut',
+    data: {
+      labels: d.composizione.map(f => f.frazione.replace(/_/g, ' ')),
+      datasets: [{ data: d.composizione.map(f => f.kg), backgroundColor: COLORS.series }]
+    },
+    options: chartOptions({}, true)
+  }));
+}
+
+/* ==================== Sezione 9 — Eventi culturali ==================== */
+function sectionEventi(comune) {
+  const d = MOCK_EVENTI[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('09', 'Eventi culturali e sportivi', 'EDUC', c.sources.eventi_culturali)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Eventi/anno</div>
+          <div class="kpi-value">${fmt.num(d.totale_anno)}</div>
+          <div class="kpi-trend neutral">organizzati o patrocinati</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Eventi gratuiti</div>
+          <div class="kpi-value">${d.pct_gratuiti}<span class="unit"> %</span></div>
+          <div class="kpi-trend up">accesso libero</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Spesa patrocini</div>
+          <div class="kpi-value">${fmt.eur(d.spesa_patrocinati)}</div>
+          <div class="kpi-trend neutral">contributi erogati</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Eventi per categoria</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartEventiCat"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Mappa eventi principali</h3>
+          <div id="mapEventi" class="chart-canvas-wrap" style="height:280px"></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderEventi(comune) {
+  const d = MOCK_EVENTI[comune];
+  const c = MOCK_DATA[comune];
+  chartInstances.push(new Chart(document.getElementById('chartEventiCat'), {
+    type: 'bar',
+    data: {
+      labels: d.per_categoria.map(c => c.cat),
+      datasets: [{ label: 'Eventi', data: d.per_categoria.map(c => c.n), backgroundColor: COLORS.brand }]
+    },
+    options: chartOptions({ indexAxis: 'y' })
+  }));
+  if (d.eventi_geo.length && document.getElementById('mapEventi')) {
+    const map = L.map('mapEventi').setView(c.mappaCenter, c.mappaZoom);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    d.eventi_geo.forEach(e => {
+      L.circleMarker([e.lat, e.lon], {
+        radius: 8, fillColor: COLORS.brand, color: '#fff', weight: 2, fillOpacity: 0.8
+      }).addTo(map).bindPopup(`<strong>${e.nome}</strong><br>${e.cat}`);
+    });
+    mapInstances.push(map);
+  }
+}
+
+/* ==================== Sezione 10 — Delibere ==================== */
+function sectionDelibere(comune) {
+  const d = MOCK_DELIBERE[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('10', 'Delibere e atti amministrativi', 'GOVE', c.sources.delibere)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Atti totali/anno</div>
+          <div class="kpi-value">${fmt.num(d.totale_anno)}</div>
+          <div class="kpi-trend neutral">tutti i tipi</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Tempo medio pubblicazione</div>
+          <div class="kpi-value">${d.tempo_medio_pubblicazione}<span class="unit"> gg</span></div>
+          <div class="kpi-trend ${d.tempo_medio_pubblicazione <= 15 ? 'up' : 'down'}">limite legge: 15 gg</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Pubblicati nei termini</div>
+          <div class="kpi-value">${d.pct_nei_termini}<span class="unit"> %</span></div>
+          <div class="kpi-trend up">D.Lgs. 33/2013</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card full">
+          <h3>Distribuzione per tipo atto</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartDelibTipo"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderDelibere(comune) {
+  const d = MOCK_DELIBERE[comune];
+  chartInstances.push(new Chart(document.getElementById('chartDelibTipo'), {
+    type: 'bar',
+    data: {
+      labels: d.per_tipo.map(t => t.tipo.replace(/_/g, ' ')),
+      datasets: [{ label: 'Atti', data: d.per_tipo.map(t => t.n), backgroundColor: COLORS.brandDark }]
+    },
+    options: chartOptions({})
+  }));
+}
+
+/* ==================== Sezione 11 — Patrimonio ==================== */
+function sectionPatrimonio(comune) {
+  const d = MOCK_PATRIMONIO[comune];
+  const c = MOCK_DATA[comune];
+  return `<section class="section">
+    <div class="container">
+      ${sectionHeader('11', 'Patrimonio immobiliare', 'GOVE', c.sources.patrimonio)}
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Immobili totali</div>
+          <div class="kpi-value">${fmt.num(d.totale_immobili)}</div>
+          <div class="kpi-trend neutral">conto del patrimonio</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Valore di bilancio</div>
+          <div class="kpi-value">${fmt.big(d.valore_totale)}<span class="unit"> €</span></div>
+          <div class="kpi-trend neutral">valore iscritto</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Inutilizzati</div>
+          <div class="kpi-value">${d.pct_inutilizzati}<span class="unit"> %</span></div>
+          <div class="kpi-trend ${d.pct_inutilizzati < 10 ? 'up' : 'down'}">opportunità valorizzazione</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Vincolo culturale</div>
+          <div class="kpi-value">${d.pct_vincolo_culturale}<span class="unit"> %</span></div>
+          <div class="kpi-trend neutral">D.Lgs. 42/2004</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Composizione per categoria</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartPatrCat"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Mappa immobili principali</h3>
+          <div id="mapPatrimonio" class="chart-canvas-wrap" style="height:280px"></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+function renderPatrimonio(comune) {
+  const d = MOCK_PATRIMONIO[comune];
+  const c = MOCK_DATA[comune];
+  chartInstances.push(new Chart(document.getElementById('chartPatrCat'), {
+    type: 'bar',
+    data: {
+      labels: d.per_categoria.map(c => c.cat.replace(/_/g, ' ')),
+      datasets: [{ label: 'Immobili', data: d.per_categoria.map(c => c.n), backgroundColor: COLORS.brandDark }]
+    },
+    options: chartOptions({ indexAxis: 'y' })
+  }));
+  if (d.immobili_geo.length && document.getElementById('mapPatrimonio')) {
+    const map = L.map('mapPatrimonio').setView(c.mappaCenter, c.mappaZoom);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    d.immobili_geo.forEach(im => {
+      L.circleMarker([im.lat, im.lon], {
+        radius: 8, fillColor: COLORS.brandDark, color: '#fff', weight: 2, fillOpacity: 0.85
+      }).addTo(map).bindPopup(`<strong>${im.nome}</strong><br>Categoria: ${im.cat.replace(/_/g, ' ')}${im.val ? '<br>Valore: ' + fmt.eur(im.val) : ''}`);
+    });
+    mapInstances.push(map);
+  }
+}
+
+/* ==================== Chart options helper ==================== */
+function chartOptions(extra = {}, isDoughnut = false) {
+  const base = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        position: 'bottom',
+        labels: { font: { family: "'Titillium Web', sans-serif", size: 11 }, boxWidth: 14 }
+      },
+      tooltip: {
+        backgroundColor: '#003366',
+        titleFont: { family: "'Titillium Web', sans-serif" },
+        bodyFont: { family: "'Titillium Web', sans-serif" }
+      }
+    }
+  };
+  if (!isDoughnut) {
+    base.scales = {
+      x: { grid: { display: false }, ticks: { font: { family: "'Titillium Web', sans-serif", size: 11 }}},
+      y: { grid: { color: '#ececea' }, ticks: { font: { family: "'Titillium Web', sans-serif", size: 11 }}}
+    };
+  }
+  return Object.assign({}, base, extra, {
+    scales: Object.assign({}, base.scales, extra.scales)
+  });
+}
+
+/* ==================== INIT ==================== */
+function loadComune(comune) {
+  currentComune = comune;
+  setComuneBar(comune);
+  setBadge(comune);
+  renderSections(comune);
+  // Smooth scroll to top after change
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('comuneSelect').addEventListener('change', e => {
+  loadComune(e.target.value);
+});
+
+// Init Bologna come default
+loadComune('bologna');
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/italia/data/comune-metrics/schemas/patrimonio/v2.1",
+  "title": "Paniere ComuneMetrics — patrimonio.csv",
+  "description": "Schema di validazione del dataset 'Patrimonio immobiliare' del paniere ComuneMetrics. Conforme al Conto del patrimonio (allegato al rendiconto) e D.Lgs. 42/2004 (vincoli culturali). Una riga per immobile.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id_immobile", "denominazione", "categoria",
+      "indirizzo", "valore_bilancio", "stato_uso"
+    ],
+    "properties": {
+      "id_immobile": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "denominazione": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 300
+      },
+      "categoria": {
+        "type": "string",
+        "enum": [
+          "EDIFICIO_AMMINISTRATIVO", "SCOLASTICO", "CULTURALE",
+          "SPORTIVO", "ABITATIVO_ERP", "COMMERCIALE", "PRODUTTIVO",
+          "CIMITERIALE", "INFRASTRUTTURA", "AREA_VERDE", "ALTRO"
+        ]
+      },
+      "indirizzo": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 300
+      },
+      "lat": {
+        "type": ["number", "null"],
+        "minimum": 35.0,
+        "maximum": 47.5
+      },
+      "lon": {
+        "type": ["number", "null"],
+        "minimum": 6.5,
+        "maximum": 18.6
+      },
+      "superficie_mq": {
+        "type": ["number", "null"],
+        "minimum": 0
+      },
+      "volume_mc": {
+        "type": ["number", "null"],
+        "minimum": 0
+      },
+      "valore_catastale": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Valore catastale (€)"
+      },
+      "valore_bilancio": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Valore iscritto a bilancio (€)"
+      },
+      "stato_uso": {
+        "type": "string",
+        "enum": ["IN_USO", "INUTILIZZATO", "LOCATO", "CONCESSO", "DISMISSIONE", "RISTRUTTURAZIONE"]
+      },
+      "destinazione_uso": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Uso effettivo se diverso da categoria"
+      },
+      "vincolo_culturale": {
+        "type": ["boolean", "null"],
+        "description": "true se sottoposto a vincolo D.Lgs. 42/2004"
+      },
+      "redditivita_annua": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Reddito annuo se locato/concesso (€)"
+      },
+      "anno_costruzione": {
+        "type": ["integer", "null"],
+        "minimum": 1000,
+        "maximum": 2050
+      },
+      "efficienza_energetica": {
+        "type": ["string", "null"],
+        "enum": ["A4", "A3", "A2", "A1", "B", "C", "D", "E", "F", "G", null],
+        "description": "Classe APE energetica"
+      }
+    }
+  }
+}

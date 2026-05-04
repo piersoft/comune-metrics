@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/italia/data/comune-metrics/schemas/istruzione/v2.1",
+  "title": "Paniere ComuneMetrics — istruzione.csv",
+  "description": "Schema di validazione del dataset 'Istruzione & asili' del paniere ComuneMetrics. Una riga per anno scolastico × tipo struttura × plesso.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "anno_scolastico", "tipo_struttura", "plesso_nome",
+      "plesso_indirizzo", "posti_disponibili", "iscritti"
+    ],
+    "properties": {
+      "anno_scolastico": {
+        "type": "string",
+        "pattern": "^[0-9]{4}/[0-9]{4}$",
+        "description": "Anno scolastico in formato YYYY/YYYY (es. 2024/2025)"
+      },
+      "tipo_struttura": {
+        "type": "string",
+        "enum": ["ASILO_NIDO", "SCUOLA_INFANZIA", "PRIMARIA", "SECONDARIA_I", "SECONDARIA_II"],
+        "description": "Tipologia struttura educativa"
+      },
+      "plesso_nome": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 200,
+        "description": "Denominazione plesso"
+      },
+      "plesso_indirizzo": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 300,
+        "description": "Indirizzo completo del plesso"
+      },
+      "posti_disponibili": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Posti totali nella struttura"
+      },
+      "iscritti": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Iscritti effettivi anno scolastico"
+      },
+      "domande_ricevute": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Domande pervenute (rilevante per asili nido)"
+      },
+      "lista_attesa": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Persone in lista d'attesa"
+      },
+      "mensa_attiva": {
+        "type": ["boolean", "null"],
+        "description": "true/false — servizio mensa attivo"
+      },
+      "pasti_erogati_anno": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Numero pasti mensa erogati nell'anno"
+      },
+      "trasporto_attivo": {
+        "type": ["boolean", "null"],
+        "description": "true/false — trasporto scolastico attivo"
+      },
+      "utenti_trasporto": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Numero utenti del trasporto"
+      },
+      "lat": {
+        "type": ["number", "null"],
+        "minimum": 35.0,
+        "maximum": 47.5
+      },
+      "lon": {
+        "type": ["number", "null"],
+        "minimum": 6.5,
+        "maximum": 18.6
+      }
+    }
+  }
+}
