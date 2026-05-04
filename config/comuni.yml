@@ -1,0 +1,106 @@
+# ComuneMetrics — Lista Comuni e dataset cablati
+#
+# Questo file è il punto di estensione per qualsiasi Comune voglia adottare
+# ComuneMetrics. Ogni Comune ha:
+#   - un blocco identificativo (key, nome, codice IPA, codice ISTAT, mandato, ...)
+#   - una mappa "datasets" che lega ogni Dataset CORE del paniere allo slug
+#     CKAN del dataset reale pubblicato dal Comune su dati.gov.it.
+#
+# Per disattivare un Dataset CORE (= il Comune NON pubblica), lascia il campo
+# vuoto (`null` o stringa vuota). Lo script di build segnerà la sezione come
+# "non pubblicato dal Comune" nel JSON di output.
+#
+# Per le verifiche dei link e degli slug:
+#   curl https://www.dati.gov.it/opendata/api/3/action/package_show?id=<slug>
+
+ckan_server: https://www.dati.gov.it/opendata
+
+comuni:
+
+  bologna:
+    nome: Bologna
+    ipa: c_a944
+    istat: "037006"
+    popolazione_attesa: 388367
+    mandato: "2021-2026"
+    sindaco: Matteo Lepore
+    mappa_center: [44.4949, 11.3426]
+    mappa_zoom: 13
+    datasets:
+      popolazione: popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog
+      bilancio: bilancio-di-previsione-previsione-uscite
+      opere_pubbliche: lavori-in-corso-in-citta
+      pratiche_edilizie: cila-comunicazioni-inizio-lavori
+      servizi_sociali: welfare-interventi
+      istruzione: numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica
+      incidenti_stradali: incidenti-stradali2
+      rifiuti: indicatori-raccolta-differenziata
+      eventi_culturali: eventi-bologna-agenda-cultura
+      delibere: null
+      patrimonio: null
+
+  milano:
+    nome: Milano
+    ipa: c_f205
+    istat: "015146"
+    popolazione_attesa: 1365698
+    mandato: "2021-2026"
+    sindaco: Giuseppe Sala
+    mappa_center: [45.4669, 9.1900]
+    mappa_zoom: 12
+    datasets:
+      popolazione: popolazione-legale-al-censimento-2011
+      bilancio: bilancio-trasparente-spesa-corrente-per-missioni-e-programmi
+      opere_pubbliche: null
+      pratiche_edilizie: null
+      servizi_sociali: organizzazioni-eroganti-servizi-sociali1
+      istruzione: istruzione-asili-nido-localizzazione-delle-strutture1
+      incidenti_stradali: mobilita-incidenti-stradali-e-persone-infortunate-per-mese-e-zona-di-decentramento-2001-20241
+      rifiuti: raccolta-differenziata-2010-20231
+      eventi_culturali: eventi-culturali-numero-di-ingressi-e-numero-di-spettacoli-per-tipo-di-manifestazione1
+      delibere: null
+      patrimonio: elenco-immobili-di-proprieta-del-comune-di-milano1
+
+  firenze:
+    nome: Firenze
+    ipa: c_d612
+    istat: "048017"
+    popolazione_attesa: 360930
+    mandato: "2024-2029"
+    sindaco: Sara Funaro
+    mappa_center: [43.7711, 11.2552]
+    mappa_zoom: 13
+    datasets:
+      popolazione: popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025
+      bilancio: dentro-il-bilancio-2024
+      opere_pubbliche: null
+      pratiche_edilizie: null
+      servizi_sociali: siast-servizi-integrati-assistenza-sociale-territoriale
+      istruzione: servizio-iscrizione-asili-nido-spazi-gioco-efficienza
+      incidenti_stradali: numero-incidenti-stradali-per-quartiere-anno-2014
+      rifiuti: quantita-di-rifiuti-urbani-anni-2000-2014
+      eventi_culturali: teatri-e-luoghi-per-eventi
+      delibere: delibere-anno-2023
+      patrimonio: null
+
+  lecce:
+    nome: Lecce
+    ipa: c_e506
+    istat: "075035"
+    popolazione_attesa: 94187
+    mandato: "2024-2029"
+    sindaco: Adriana Poli Bortone
+    mappa_center: [40.3528, 18.1718]
+    mappa_zoom: 13
+    datasets:
+      popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019
+      bilancio: consuntivo-2019-comune-di-lecce
+      opere_pubbliche: open-cantieri-lecce
+      pratiche_edilizie: elenco-pratiche-sue
+      servizi_sociali: numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016
+      istruzione: elenco-e-ubicazione-asili-nido-comunali-lecce
+      incidenti_stradali: localizzazione-sinistri-dal-2018-lecce
+      rifiuti: raccolta-rifiuti-2015
+      eventi_culturali: eventi-culturali-ricorrenti
+      delibere: albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce
+      patrimonio: fabbricati-2023_comune-di-lecce
