@@ -308,11 +308,22 @@ async function fetchPackage(ckanServer, slug) {
 // ── Resource picking ──────────────────────────────────────────────────────────
 function pickBestResource(resources) {
   if (!resources || !resources.length) return null;
-  const priority = { JSON: 1, CSV: 2, JSONL: 2, XLS: 3, XLSX: 3 };
+  const formatPriority = { JSON: 1, CSV: 2, JSONL: 2, XLS: 3, XLSX: 3 };
+  // Hosting priority: Google Drive/Sheets sono i più affidabili per i runner
+  // GitHub Actions. dati.comune.lecce.it è instabile (503 frequenti).
+  // I link goo.gl/... sono morti dal 2025-03 (HTTP 410).
+  function hostingPriority(url) {
+    if (!url) return 99;
+    if (url.includes("docs.google.com") || url.includes("drive.google.com")) return 1;
+    if (url.includes("goo.gl/")) return 99; // shortener Google dismesso, dà 410
+    if (url.startsWith("http://")) return 5; // HTTP non garantisce nulla, ma prova
+    return 3; // HTTPS standard
+  }
   const sorted = [...resources].sort((a, b) => {
-    const pa = priority[(a.format || "").toUpperCase()] || 99;
-    const pb = priority[(b.format || "").toUpperCase()] || 99;
-    return pa - pb;
+    const fa = formatPriority[(a.format || "").toUpperCase()] || 99;
+    const fb = formatPriority[(b.format || "").toUpperCase()] || 99;
+    if (fa !== fb) return fa - fb;
+    return hostingPriority(a.url) - hostingPriority(b.url);
   });
   return sorted[0];
 }
@@ -471,6 +482,15 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
 
   out.resource_url = res.url;
   out.resource_format = res.format;
+
+  // Skip preventivo: link goo.gl/... sono dismessi (HTTP 410 dal 2025-03-25,
+  // il servizio Google URL Shortener è stato chiuso definitivamente).
+  if (res.url && res.url.includes("goo.gl/")) {
+    out.status = "fetch_error";
+    out.error = "Link goo.gl dismesso (Google URL Shortener chiuso 2025-03-25)";
+    out.metrics = Object.fromEntries((metricCfg.kpi || []).map(k => [k, null]));
+    return out;
+  }
 
   // Skip preventivo: se nessuna risorsa ha un formato supportato, non
   // sprechiamo tempo a scaricare WMS/RDF/SHP/etc che poi non parseremmo.
