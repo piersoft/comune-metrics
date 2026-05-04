@@ -1,7 +1,7 @@
 # ComuneMetrics — Cruscotto Civico Comunale
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paniere v2.4](https://img.shields.io/badge/Paniere-v2.4-blue)](docs/PANIERE.md)
+[![Paniere v2.5](https://img.shields.io/badge/Paniere-v2.5-blue)](docs/PANIERE.md)
 [![DCAT-AP_IT](https://img.shields.io/badge/DCAT--AP__IT-2.1-green)](https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html)
 [![PA italiana](https://img.shields.io/badge/Vocabolari%20e%20ontologie%20PA-compliant-blue)](https://schema.gov.it)
 
@@ -29,10 +29,10 @@ La dashboard MVP carica dati estratti da dataset realmente pubblicati su `dati.g
 
 | Comune | IPA | Dataset CORE pubblicati | Badge attuale |
 |---|---|---|---|
-| **Bologna** | `c_a944` | 8/11 | 🟠 Avanzata |
-| **Lecce** | `c_e506` | 6/11 | 🟡 Parziale |
-| **Firenze** | `c_d612` | 5/11 | 🟡 Parziale |
-| **Milano** | `c_f205` | 4/11 | 🟡 Parziale |
+| **Bologna** | `c_a944` | 11/11 | 🟢 Completa |
+| **Lecce** | `c_e506` | 11/11 | 🟢 Completa |
+| **Milano** | `c_f205` | 8/11 | 🟠 Avanzata |
+| **Firenze** | `c_d612` | 6/11 | 🟡 Parziale |
 
 ## Quick start
 
@@ -152,7 +152,7 @@ Il meccanismo è **gamification dell'OpenData**:
 
 ## Roadmap
 
-- [x] **v0.1** — Paniere v2.4 + 11 JSON Schema + Dashboard MVP single-file
+- [x] **v0.1** — Paniere v2.5 + 11 JSON Schema + Dashboard MVP single-file
 - [ ] **v0.2** — Loader CKAN reale via proxy CORS (Cloudflare Worker)
 - [ ] **v0.3** — Federazione SPARQL: query cross-Comune via lod.dati.gov.it
 - [ ] **v0.4** — Modulo "rendicontazione di mandato" con confronto inizio/fine consiliatura

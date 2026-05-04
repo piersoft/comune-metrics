@@ -529,7 +529,7 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.5</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.6</div>
   </div>
 </header>
 
@@ -559,7 +559,7 @@ a:hover { text-decoration: underline; }
       <div class="badge-tier" id="badgeTier">Avanzata</div>
     </div>
     <div class="compliance-info">
-      <h2>Conformità Paniere ComuneMetrics v2.4</h2>
+      <h2>Conformità Paniere ComuneMetrics v2.5</h2>
       <p id="complianceText">
         Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
       </p>
@@ -575,7 +575,7 @@ a:hover { text-decoration: underline; }
     <div class="footer-grid">
       <div>
         <h4>ComuneMetrics</h4>
-        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.4</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.5</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
       </div>
       <div>
         <h4>Standard</h4>
@@ -699,7 +699,7 @@ const MOCK_DATA = {
     mappaZoom: 13,
     datasets: {
       popolazione: true, bilancio: true, opere_pubbliche: true,
-      pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
+      pratiche_edilizie: true, servizi_sociali: true, istruzione: true,
       incidenti_stradali: true, rifiuti: true, eventi_culturali: true,
       delibere: true, patrimonio: true
     },
@@ -707,6 +707,7 @@ const MOCK_DATA = {
       popolazione: null,
       bilancio: null,
       opere_pubbliche: "open-cantieri-lecce",
+      pratiche_edilizie: "elenco-pratiche-sue",
       servizi_sociali: "numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016",
       istruzione: "elenco-e-ubicazione-asili-nido-comunali-lecce",
       incidenti_stradali: null,
@@ -870,7 +871,20 @@ const MOCK_PRATICHE = {
   },
   milano: { totale_anno: 0, tempo_medio_scia: 0, tempo_medio_pdc: 0, pct_nei_termini: 0, tasso_approvazione: 0, per_zona: [] },
   firenze: { totale_anno: 0, tempo_medio_scia: 0, tempo_medio_pdc: 0, pct_nei_termini: 0, tasso_approvazione: 0, per_zona: [] },
-  lecce: { totale_anno: 0, tempo_medio_scia: 0, tempo_medio_pdc: 0, pct_nei_termini: 0, tasso_approvazione: 0, per_zona: [] }
+  lecce: {
+    totale_anno: 685,
+    tempo_medio_scia: 28,
+    tempo_medio_pdc: 84,
+    pct_nei_termini: 81.4,
+    tasso_approvazione: 88.6,
+    per_zona: [
+      { zona: "Centro Storico", scia: 92, cila: 138, pdc: 12 },
+      { zona: "Mazzini", scia: 58, cila: 89, pdc: 8 },
+      { zona: "Leuca", scia: 64, cila: 95, pdc: 9 },
+      { zona: "Stadio", scia: 48, cila: 72, pdc: 6 },
+      { zona: "San Pio", scia: 42, cila: 68, pdc: 5 }
+    ]
+  }
 };
 
 // Servizi sociali (Lecce ha questo dataset)

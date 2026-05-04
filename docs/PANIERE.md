@@ -1,4 +1,4 @@
-# Paniere OpenData ComuneMetrics — Specifica v2.4
+# Paniere OpenData ComuneMetrics — Specifica v2.5
 
 **Data:** Maggio 2026
 **Licenza dati raccomandata:** CC-BY 4.0 o IODL 2.0
@@ -1252,6 +1252,7 @@ Dataset utili ma non richiesti per il badge VERDE:
 
 ## Cronistoria versione
 
+- **v2.5** (Maggio 2026) — Corretta la disponibilità del Dataset 4 "Pratiche edilizie" per Lecce: il Comune lo pubblica come `elenco-pratiche-sue` ("Elenco Pratiche SUE"). Errore precedente: il titolo non conteneva la stringa "pratiche edilizie" e la mia ricerca testuale aveva mancato il dataset, anche se la descrizione (`notes`) lo dichiarava esplicitamente come "Elenco Pratiche edilizie Sue (Sportello Unico Edilizia)". **Lezione operativa**: per la ricognizione dei dataset CKAN bisogna cercare anche nelle `notes`/description e nei `tags` (qui c'erano `edilizia-privata`, `permessi`, `pratiche`), non solo nel titolo. **Esiste anche un dataset complementare** Lecce, `elenco-pratiche-centro-storico` (CIL/CILA/SCIA/PdC del solo centro storico), citato come ulteriore prova di pubblicazione. **Nuovo badge Lecce**: 10/11 → 11/11 = 🟢 VERDE Completa, accanto a Bologna.
 - **v2.4** (Maggio 2026) — Sostituiti tutti gli UUID dei dataset di esempio con i corrispondenti **slug machine-readable** (campo `name` dell'API CKAN), che sono **persistenti** nel tempo. Gli UUID possono cambiare se un dataset viene cancellato e ripubblicato; lo slug no. NB: lo slug NON è derivabile dal titolo (es. su dati.gov.it 5 dataset Milano hanno suffisso "1", uno Bologna è troncato a 95 char): l'unica fonte autorevole è l'API `package_show`.
 - **v2.3** (Maggio 2026) — Affinata la dicitura: il nome canonico della rete di ontologie è "vocabolari controllati e ontologie della PA italiana" (riferimento URL: schema.gov.it). Eliminato l'uso di schema.gov.it come nome (resta solo come URL tecnico per badge, link e endpoint SPARQL).
 - **v2.2** (Maggio 2026) — Aggiunta sezione operativa "Come costruire i CSV" con mappa fonti → uffici → gestionali tipici, esempi SQL su sw italiani comuni, workflow di adozione e tempi realistici. Rimosso uso di "OntoPiA" (vecchio nome).
