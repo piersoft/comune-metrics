@@ -22,10 +22,12 @@ const DATA_DIR = join(ROOT, "data");
 const COMUNI_DIR = join(DATA_DIR, "comuni");
 
 const USER_AGENT = "ComuneMetrics-Builder/0.1";
-const FETCH_TIMEOUT = process.env.GITHUB_ACTIONS ? 30_000 : 15_000;
-const MAX_BYTES = 50 * 1024 * 1024; // 50 MB
+const FETCH_TIMEOUT = process.env.GITHUB_ACTIONS ? 45_000 : 15_000;
+const MAX_BYTES = 30 * 1024 * 1024; // 30 MB (più conservativo, evita lock su file enormi)
+const MAX_ROWS_PROCESSED = 50_000; // cap di sicurezza per il parser
 const POOL_SIZE = 1; // sequenziale: fetch CSV da portali comunali può essere lento
 const REQUEST_DELAY_MS = 500; // throttle per CSV diretti (Worker MCP non rate-limited)
+const SUPPORTED_FORMATS = new Set(["JSON", "JSONL", "CSV"]);
 
 // CKAN MCP Worker su Cloudflare: bypassa il WAF di dati.gov.it che blocca i runner
 // GitHub Actions. Il Worker gira su rete Cloudflare ed è accettato dal WAF.
@@ -453,6 +455,16 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
   out.resource_url = res.url;
   out.resource_format = res.format;
 
+  // Skip preventivo: se nessuna risorsa ha un formato supportato, non
+  // sprechiamo tempo a scaricare WMS/RDF/SHP/etc che poi non parseremmo.
+  const fmt0 = (res.format || "").toUpperCase();
+  if (!SUPPORTED_FORMATS.has(fmt0)) {
+    out.status = "unsupported_format";
+    out.error = `Formato ${fmt0} non parsabile (richiesti: JSON, JSONL, CSV)`;
+    out.metrics = Object.fromEntries((metricCfg.kpi || []).map(k => [k, null]));
+    return out;
+  }
+
   const text = await httpGetText(res.url);
   if (!text) {
     out.status = "fetch_error";
@@ -495,7 +507,18 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
     return out;
   }
 
+  // Cap su MAX_ROWS_PROCESSED: per dataset enormi (es. welfare 75k) tagliamo
+  // a 50k per non far esplodere i tempi di calcolo. Le metriche restano
+  // statisticamente significative.
+  let truncated = false;
+  if (rows.length > MAX_ROWS_PROCESSED) {
+    out.n_rows_total = rows.length;
+    rows = rows.slice(0, MAX_ROWS_PROCESSED);
+    truncated = true;
+  }
+
   out.n_rows = rows.length;
+  if (truncated) out.truncated = true;
   const cols = Object.keys(rows[0]);
   const fieldMap = mapFields(cols, metricCfg.expected_fields || {});
   out.fields_present = Object.keys(fieldMap).filter(k => fieldMap[k]);
