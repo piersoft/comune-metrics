@@ -86,7 +86,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
-      "fetched_at": "2026-05-04T20:26:59.670Z",
+      "fetched_at": "2026-05-04T20:36:26.944Z",
       "status": "ok",
       "modified": "2026-04-14",
       "freshness": {
@@ -125,7 +125,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "dentro-il-bilancio-2024",
-      "fetched_at": "2026-05-04T20:27:02.673Z",
+      "fetched_at": "2026-05-04T20:36:28.835Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -163,7 +163,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "siast-servizi-integrati-assistenza-sociale-territoriale",
-      "fetched_at": "2026-05-04T20:27:04.931Z",
+      "fetched_at": "2026-05-04T20:36:30.615Z",
       "status": "unsupported_format",
       "modified": "2014-03-26",
       "freshness": {
@@ -197,7 +197,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
-      "fetched_at": "2026-05-04T20:27:05.562Z",
+      "fetched_at": "2026-05-04T20:36:31.017Z",
       "status": "ok",
       "modified": "2018-07-30",
       "freshness": {
@@ -238,7 +238,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "numero-incidenti-stradali-per-quartiere-anno-2014",
-      "fetched_at": "2026-05-04T20:27:06.827Z",
+      "fetched_at": "2026-05-04T20:36:32.346Z",
       "status": "ok",
       "modified": "2015-08-04",
       "freshness": {
@@ -297,7 +297,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "quantita-di-rifiuti-urbani-anni-2000-2014",
-      "fetched_at": "2026-05-04T20:27:08.211Z",
+      "fetched_at": "2026-05-04T20:36:33.689Z",
       "status": "ok",
       "modified": "2015-04-16",
       "freshness": {
@@ -350,7 +350,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "teatri-e-luoghi-per-eventi",
-      "fetched_at": "2026-05-04T20:27:09.940Z",
+      "fetched_at": "2026-05-04T20:36:35.007Z",
       "status": "unsupported_format",
       "modified": "2025-06-15",
       "freshness": {
@@ -389,7 +389,7 @@
     "delibere": {
       "dataset_key": "delibere",
       "slug": "delibere-anno-2023",
-      "fetched_at": "2026-05-04T20:27:10.540Z",
+      "fetched_at": "2026-05-04T20:36:35.370Z",
       "status": "ok",
       "modified": "2023-12-27",
       "freshness": {

@@ -1,0 +1,355 @@
+{
+  "key": "messina",
+  "nome": "Messina",
+  "ipa": "c_e463",
+  "istat": "083048",
+  "popolazione_attesa": 218472,
+  "mandato": "2023-2028",
+  "sindaco": "Federico Basile",
+  "mappa_center": [
+    38.1938,
+    15.554
+  ],
+  "mappa_zoom": 12,
+  "datasets": {
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "missione",
+        "programma",
+        "titolo",
+        "macroaggregato",
+        "importo",
+        "anno"
+      ],
+      "metrics": {
+        "totale_uscite": null,
+        "per_missione": null,
+        "top10_programmi": null
+      }
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "nome",
+        "stato",
+        "lat",
+        "lon",
+        "pin_point",
+        "indirizzo",
+        "data_inizio",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "cup",
+        "importo",
+        "sal",
+        "fonte"
+      ],
+      "metrics": {
+        "totale": null,
+        "per_stato": null,
+        "opere_geo": null,
+        "cup_count": null,
+        "importo_totale": null,
+        "per_fonte": null
+      }
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "tipo",
+        "data",
+        "esito",
+        "chiusura",
+        "via",
+        "civico",
+        "anno_prot"
+      ],
+      "metrics": {
+        "totale": null,
+        "per_tipo": null,
+        "per_esito": null,
+        "tasso_chiusura": null,
+        "serie_anni": null
+      }
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio"
+      ],
+      "metrics": {
+        "utenti_totali": null,
+        "per_target": null,
+        "per_categoria": null,
+        "spesa_totale": null,
+        "spesa_media": null
+      }
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "anno",
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "lat",
+        "lon",
+        "pin_point",
+        "via",
+        "gravita",
+        "zona",
+        "n_pedoni_m",
+        "n_pedoni_f",
+        "n_cicl_m",
+        "n_cicl_f"
+      ],
+      "metrics": {
+        "totale_anno": null,
+        "totale_morti": null,
+        "totale_feriti": null,
+        "per_zona": null,
+        "hot_spots": null,
+        "vittime_vulnerabili": null
+      }
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "titolo",
+        "categoria",
+        "categoria2",
+        "categoria3",
+        "data_inizio",
+        "data_fine",
+        "coordinate",
+        "lat",
+        "lon",
+        "indirizzo",
+        "quartiere",
+        "online"
+      ],
+      "metrics": {
+        "totale_anno": null,
+        "per_categoria": null,
+        "per_quartiere": null,
+        "eventi_geo": null,
+        "pct_online": null
+      }
+    },
+    "delibere": {
+      "dataset_key": "delibere",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "data",
+        "tipo",
+        "oggetto",
+        "numero"
+      ],
+      "metrics": {
+        "totale_anno": null,
+        "per_tipo": null,
+        "serie_anni": null
+      }
+    },
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "slug": "popolazione-residente-per-circoscrizione",
+      "fetched_at": "2026-05-04T20:36:36.538Z",
+      "status": "ok",
+      "modified": "2017-03-31",
+      "freshness": {
+        "level": "stale",
+        "months": 110,
+        "iso": "2017-03-31"
+      },
+      "n_rows": 30825,
+      "fields_expected": [
+        "anno",
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "fields_present": [
+        "eta",
+        "sesso"
+      ],
+      "fields_missing": [
+        "anno",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "metrics": {
+        "totale_residenti": null,
+        "serie_anni": null,
+        "serie_residenti": null,
+        "per_quartiere": null
+      },
+      "resource_url": "https://cloud.comune.messina.it/nextcloud/s/7w3TQYxgibGXKrB/download",
+      "resource_format": "CSV",
+      "error": null
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "slug": "numero-studenti-messina",
+      "fetched_at": "2026-05-04T20:36:43.818Z",
+      "status": "ok",
+      "modified": "2022-04-14",
+      "freshness": {
+        "level": "stale",
+        "months": 49,
+        "iso": "2022-04-14"
+      },
+      "n_rows": 1,
+      "fields_expected": [
+        "anno",
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
+      "fields_present": [],
+      "fields_missing": [
+        "anno",
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
+      "metrics": {
+        "totale_iscritti": null,
+        "per_struttura": null,
+        "per_quartiere": null,
+        "serie_anni": null
+      },
+      "resource_url": "https://cloud.comune.messina.it/nextcloud/s/dqcNogSdnNcsNTp/download",
+      "resource_format": "JSON",
+      "error": null
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "slug": "statistiche-raccolta-rifiuti-messina",
+      "fetched_at": "2026-05-04T20:36:45.082Z",
+      "status": "ok",
+      "modified": "2022-03-02",
+      "freshness": {
+        "level": "stale",
+        "months": 50,
+        "iso": "2022-03-02"
+      },
+      "n_rows": 276,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "rd_pct",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "fields_present": [
+        "anno",
+        "frazione"
+      ],
+      "fields_missing": [
+        "mese",
+        "rd_pct",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato",
+        "kg",
+        "zona"
+      ],
+      "metrics": {
+        "rd_pct_ultimo_anno": null,
+        "serie_anni": null,
+        "per_quartiere": null,
+        "trend_pct": null
+      },
+      "resource_url": "https://cloud.comune.messina.it/nextcloud/s/d2da5gtXPDXXoo9/download",
+      "resource_format": "CSV",
+      "error": null
+    },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "slug": "beni-immobili-comune-messina",
+      "fetched_at": "2026-05-04T20:36:46.473Z",
+      "status": "ok",
+      "modified": "2022-03-01",
+      "freshness": {
+        "level": "stale",
+        "months": 50,
+        "iso": "2022-03-01"
+      },
+      "n_rows": 3531,
+      "fields_expected": [
+        "tipo",
+        "indirizzo",
+        "destinazione",
+        "lat",
+        "lon",
+        "vincolo",
+        "valore"
+      ],
+      "fields_present": [
+        "indirizzo"
+      ],
+      "fields_missing": [
+        "tipo",
+        "destinazione",
+        "lat",
+        "lon",
+        "vincolo",
+        "valore"
+      ],
+      "metrics": {
+        "totale_immobili": 3531,
+        "per_tipo": null,
+        "immobili_geo": null,
+        "pct_vincolo": null
+      },
+      "resource_url": "https://cloud.comune.messina.it/nextcloud/s/3yjsBDwC9qmWCEH/download",
+      "resource_format": "CSV",
+      "error": null
+    }
+  }
+}
