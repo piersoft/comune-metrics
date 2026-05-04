@@ -41,21 +41,21 @@ datasets:
     titolo_paniere: "Opere pubbliche e cantieri"
     calculator: calc_opere
     expected_fields:
-      nome: ["description", "Description", "DESCRIZIONE", "Descrizione", "Nome", "Titolo", "Oggetto", "denominazione_lavori"]
-      stato: ["status", "Status", "Stato", "stato", "STATO", "Stato lavori"]
+      nome: ["description", "Description", "DESCRIZIONE", "Descrizione", "Nome", "Titolo", "Oggetto", "denominazione_lavori", "Oggetto dell'intervento"]
+      stato: ["status", "Status", "Stato", "stato", "STATO", "Stato lavori", "Livello di priorità"]
       lat: ["lat", "Lat", "Latitudine", "y_coord"]
       lon: ["lon", "Lon", "Longitudine", "lng", "x_coord"]
       pin_point: ["pinpoint", "pinPoint", "Coordinate geografiche", "geo_point", "geo_point_2d"]
       indirizzo: ["address", "Address", "Indirizzo", "indirizzo", "INDIRIZZO", "Via"]
-      data_inizio: ["effectivestartdate", "Data di inizio lavori", "Data Inizio", "data_inizio", "DATA INIZIO"]
+      data_inizio: ["effectivestartdate", "Data di inizio lavori", "Data Inizio", "data_inizio", "DATA INIZIO", "previsione di avvio procedura di affidamento"]
       data_fine: ["effectiveenddate", "Data di fine lavori", "Data Fine", "data_fine", "DATA FINE"]
-      tipo_lavoro: ["roadway1", "Tipo di lavoro - 1", "tipo_lavoro", "Categoria"]
+      tipo_lavoro: ["roadway1", "Tipo di lavoro - 1", "tipo_lavoro", "Categoria", "Tipologia", "settore intervento"]
       quartiere: ["neighborhood1", "Quartiere - 1", "Quartiere", "quartiere"]
       anno: ["year", "Anno", "anno"]
-      cup: ["CUP", "cup", "Cod_CUP"]
-      importo: ["Importo", "importo", "Quadro economico"]
+      cup: ["CUP", "cup", "Cod_CUP", "Codice CUP"]
+      importo: ["Importo", "importo", "Quadro economico", "Costo primo anno"]
       sal: ["SAL", "sal", "Stato avanzamento", "% avanzamento"]
-      fonte: ["Fonte di finanziamento", "fonte_finanziamento", "Fonte", "fonte"]
+      fonte: ["Fonte di finanziamento", "fonte_finanziamento", "Fonte", "fonte", "Finanziamento"]
     kpi:
       - totale
       - per_stato
@@ -105,12 +105,12 @@ datasets:
     calculator: calc_istruzione
     expected_fields:
       anno: ["anno", "anno_scolastico", "Anno", "Anno scolastico"]
-      tipo_struttura: ["tipo_struttura", "Tipo struttura", "Tipologia", "tipologia_servizio", "servizio"]
-      struttura: ["struttura", "Struttura", "Denominazione", "nome_struttura"]
-      quartiere: ["quartiere_struttura", "Quartiere struttura", "Quartiere", "quartiere", "Zona"]
-      iscritti: ["numero_iscritti", "Numero iscritti", "Iscritti", "n_iscritti"]
-      lat: ["lat", "Lat", "Latitudine"]
-      lon: ["lon", "Lon", "Longitudine"]
+      tipo_struttura: ["tipo_struttura", "Tipo struttura", "Tipologia", "tipologia_servizio", "servizio", "TIPOLOGIA", "TIPOLOGIA "]
+      struttura: ["struttura", "Struttura", "Denominazione", "nome_struttura", "NOME"]
+      quartiere: ["quartiere_struttura", "Quartiere struttura", "Quartiere", "quartiere", "Zona", "IST_COMPRENSIVO"]
+      iscritti: ["numero_iscritti", "Numero iscritti", "Iscritti", "n_iscritti", "ALUNNI"]
+      lat: ["lat", "Lat", "Latitudine", "LAT"]
+      lon: ["lon", "Lon", "Longitudine", "LON"]
     kpi:
       - totale_iscritti
       - per_struttura

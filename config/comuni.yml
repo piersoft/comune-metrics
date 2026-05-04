@@ -93,10 +93,10 @@ comuni:
     datasets:
       popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019  # Google Sheets, fetch live
       bilancio: __fixture__:bilancio                                                # consuntivo 2019
-      opere_pubbliche: open-cantieri-lecce                                          # Google Sheets, fetch live
+      opere_pubbliche: programma-triennale-oo-pp-2020-2022                          # Google Sheets CSV LIVE, 168 opere
       pratiche_edilizie: __fixture__:pratiche_edilizie                              # SUE 8.673 pratiche
       servizi_sociali: null  # Solo 2 risorse goo.gl morte, irrecuperabile
-      istruzione: elenco-e-ubicazione-asili-nido-comunali-lecce                     # GeoJSON, fetch live (server lecce, riprova)
+      istruzione: popolazione-scolastica-a-s-2021-2022                              # Google Sheets CSV LIVE, 93 scuole geo
       incidenti_stradali: localizzazione-sinistri-dal-2018-lecce                    # Google Sheets, fetch live
       rifiuti: null  # Tutte 4 risorse goo.gl morte, irrecuperabile
       eventi_culturali: __fixture__:eventi_culturali                                # 25 iniziative ricorrenti
