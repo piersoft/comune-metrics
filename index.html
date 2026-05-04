@@ -443,6 +443,72 @@ a:hover { text-decoration: underline; }
   text-decoration: underline;
 }
 
+/* ============ FRESHNESS CARD ============ */
+.freshness-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  margin: 10px 0 6px 0;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  border-left: 4px solid;
+}
+.freshness-label {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.freshness-date {
+  flex: 1;
+  color: var(--ink);
+}
+.freshness-age {
+  font-style: italic;
+  font-size: 12px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+/* Verde — aggiornato negli ultimi 12 mesi */
+.freshness-fresh {
+  background: #E8F5E9;
+  border-color: #2E7D32;
+}
+.freshness-fresh .freshness-label {
+  background: #2E7D32;
+  color: #fff;
+}
+/* Giallo — datato (12-36 mesi) */
+.freshness-aged {
+  background: #FFF8E1;
+  border-color: #F57F17;
+}
+.freshness-aged .freshness-label {
+  background: #F57F17;
+  color: #fff;
+}
+/* Rosso — obsoleto (>36 mesi) */
+.freshness-stale {
+  background: #FFEBEE;
+  border-color: #C62828;
+  animation: pulseStale 3s ease-in-out infinite;
+}
+.freshness-stale .freshness-label {
+  background: #C62828;
+  color: #fff;
+}
+.freshness-stale .freshness-date strong {
+  color: #C62828;
+}
+@keyframes pulseStale {
+  0%, 100% { background-color: #FFEBEE; }
+  50% { background-color: #FFCDD2; }
+}
+
 /* ============ FOOTER ============ */
 .site-footer {
   background: var(--brand-blue-dark);
@@ -529,7 +595,7 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.9</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.10</div>
   </div>
 </header>
 
@@ -559,7 +625,7 @@ a:hover { text-decoration: underline; }
       <div class="badge-tier" id="badgeTier">Avanzata</div>
     </div>
     <div class="compliance-info">
-      <h2>Conformità Paniere ComuneMetrics v2.8</h2>
+      <h2>Conformità Paniere ComuneMetrics v2.9</h2>
       <p id="complianceText">
         Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
       </p>
@@ -575,7 +641,7 @@ a:hover { text-decoration: underline; }
     <div class="footer-grid">
       <div>
         <h4>ComuneMetrics</h4>
-        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.8</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.9</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
       </div>
       <div>
         <h4>Standard</h4>
@@ -1429,6 +1495,89 @@ const PANIERE_ANCHORS = {
   patrimonio: 'dataset-11--patrimonio-immobiliare'
 };
 
+/* ==================== Freschezza dei dataset ====================
+ * MOCK_FRESHNESS: slug → data ISO del campo `modified` letta da
+ * package_show su dati.gov.it. Soglie:
+ *   ≤ 12 mesi  → FRESCO (verde)
+ *   ≤ 36 mesi  → DATATO (giallo)
+ *   > 36 mesi  → OBSOLETO (rosso evidenziato)
+ *
+ * Nota: questi valori sono hard-coded come snapshot al momento del
+ * commit. La v0.2 leggerà `modified` live dall'API CKAN.
+ */
+const MOCK_FRESHNESS = {
+  // Bologna
+  "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog": "2024-12-31",
+  "bilancio-di-previsione-previsione-uscite": "2025-12-31",
+  "lavori-in-corso-in-citta": "2026-03-21",
+  "cila-comunicazioni-inizio-lavori": "2025-12-31",
+  "welfare-interventi": "2025-05-08",
+  "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica": "2025-09-24",
+  "incidenti-stradali2": "2024-12-31",
+  "indicatori-raccolta-differenziata": "2025-04-07",
+  "eventi-bologna-agenda-cultura": "2026-03-21",
+  // Milano
+  "popolazione-legale-al-censimento-2011": "2017-01-01",
+  "bilancio-trasparente-spesa-corrente-per-missioni-e-programmi": "2017-12-20",
+  "organizzazioni-eroganti-servizi-sociali1": "2017-12-20",
+  "istruzione-asili-nido-localizzazione-delle-strutture1": "2021-12-04",
+  "mobilita-incidenti-stradali-e-persone-infortunate-per-mese-e-zona-di-decentramento-2001-20241": "2024-12-31",
+  "raccolta-differenziata-2010-20231": "2025-03-06",
+  "eventi-culturali-numero-di-ingressi-e-numero-di-spettacoli-per-tipo-di-manifestazione1": "2012-12-14",
+  "elenco-immobili-di-proprieta-del-comune-di-milano1": "2019-08-28",
+  // Firenze
+  "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025": "2026-03-15",
+  "dentro-il-bilancio-2024": "2025-12-31",
+  "siast-servizi-integrati-assistenza-sociale-territoriale": "2014-03-26",
+  "servizio-iscrizione-asili-nido-spazi-gioco-efficienza": "2018-07-30",
+  "numero-incidenti-stradali-per-quartiere-anno-2014": "2015-08-04",
+  "quantita-di-rifiuti-urbani-anni-2000-2014": "2014-12-31",
+  "teatri-e-luoghi-per-eventi": "2018-01-01",
+  "delibere-anno-2023": "2023-12-27",
+  // Lecce
+  "popolazione-residente-e-bilancio-demografico-mensile-anno-2019": "2019-02-12",
+  "consuntivo-2019-comune-di-lecce": "2020-12-31",
+  "open-cantieri-lecce": "2020-07-14",
+  "elenco-pratiche-sue": "2023-03-07",
+  "numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016": "2018-10-19",
+  "elenco-e-ubicazione-asili-nido-comunali-lecce": "2018-10-19",
+  "localizzazione-sinistri-dal-2018-lecce": "2019-12-31",
+  "raccolta-rifiuti-2015": "2016-12-31",
+  "eventi-culturali-ricorrenti": "2015-01-01",
+  "albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce": "2018-08-16",
+  "fabbricati-2023_comune-di-lecce": "2024-04-10"
+};
+
+const MESI_IT = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+
+function freshnessBadge(slug) {
+  if (!slug || !MOCK_FRESHNESS[slug]) return '';
+  const modIso = MOCK_FRESHNESS[slug];
+  const modDate = new Date(modIso);
+  const now = new Date();
+  const monthsDiff = (now.getFullYear() - modDate.getFullYear()) * 12 + (now.getMonth() - modDate.getMonth());
+  const yearsDiff = (monthsDiff / 12).toFixed(1);
+  const dateLabel = `${modDate.getDate()} ${MESI_IT[modDate.getMonth()]} ${modDate.getFullYear()}`;
+
+  let level, label, ageLabel;
+  if (monthsDiff <= 12) {
+    level = 'fresh'; label = 'FRESCO';
+    ageLabel = monthsDiff <= 1 ? 'aggiornato questo mese' : `aggiornato ${monthsDiff} mesi fa`;
+  } else if (monthsDiff <= 36) {
+    level = 'aged'; label = 'DATATO';
+    ageLabel = `aggiornato ${yearsDiff} anni fa`;
+  } else {
+    level = 'stale'; label = 'OBSOLETO';
+    ageLabel = `non aggiornato da ${yearsDiff} anni`;
+  }
+
+  return `<div class="freshness-card freshness-${level}">
+    <span class="freshness-label">${label}</span>
+    <span class="freshness-date">Dato aggiornato al <strong>${dateLabel}</strong></span>
+    <span class="freshness-age">${ageLabel}</span>
+  </div>`;
+}
+
 function sectionHeader(num, title, tag, sourceId, schemaKey) {
   const sourceLink = sourceId
     ? `Fonte reale del Comune: dataset <code>${sourceId}</code> su <a href="https://www.dati.gov.it/view-dataset/dataset?id=${sourceId}" target="_blank" rel="noopener">dati.gov.it</a>`
@@ -1444,6 +1593,7 @@ function sectionHeader(num, title, tag, sourceId, schemaKey) {
     <h2 class="section-title">${title}</h2>
     <span class="section-tag">${tag}</span>
   </div>
+  ${freshnessBadge(sourceId)}
   <p class="data-source">${sourceLink}</p>
   ${schemaLink ? `<p class="data-source schema-link">${schemaLink}</p>` : ''}`;
 }
