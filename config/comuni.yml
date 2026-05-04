@@ -71,24 +71,52 @@ comuni:
       delibere: delibere-anno-2023
       patrimonio: null
 
-  lecce:
-    nome: Lecce
-    ipa: c_e506
-    istat: "075035"
-    popolazione_attesa: 94187
+  # Lecce: RIMOSSA dai casi d'uso v0.2 (vedi PANIERE.md cronistoria v2.12).
+  # Causa: server dati.comune.lecce.it instabile (HTTP 503) + 4 link goo.gl
+  # dismessi nel 2025-03-25 (Google URL Shortener chiuso). Restano 4/11
+  # dataset accessibili, troppo poco. Il "Lecce paradox" (11/11 cablati ma
+  # inaccessibili) e' raccontato nel post di lancio.
+
+  messina:
+    nome: Messina
+    ipa: c_e463
+    istat: "083048"
+    popolazione_attesa: 218472
+    mandato: "2023-2028"
+    sindaco: Federico Basile
+    mappa_center: [38.1938, 15.5540]
+    mappa_zoom: 12
+    datasets:
+      popolazione: popolazione-residente-per-circoscrizione
+      bilancio: null  # Comune NON pubblica bilancio per missione/programma
+      opere_pubbliche: null  # Comune NON pubblica opere/cantieri
+      pratiche_edilizie: null  # ha solo pratiche-cimiteriali (non match CORE 4)
+      servizi_sociali: null  # Comune NON pubblica
+      istruzione: numero-studenti-messina
+      incidenti_stradali: null  # Comune NON pubblica
+      rifiuti: statistiche-raccolta-rifiuti-messina  # ⭐ kg per CER mensile
+      eventi_culturali: null  # Comune NON pubblica
+      delibere: null  # Comune NON pubblica
+      patrimonio: beni-immobili-comune-messina  # ⭐ unico Comune con elenco vero
+
+  bari:
+    nome: Bari
+    ipa: c_a662
+    istat: "072006"
+    popolazione_attesa: 316140
     mandato: "2024-2029"
-    sindaco: Adriana Poli Bortone
-    mappa_center: [40.3528, 18.1718]
+    sindaco: Vito Leccese
+    mappa_center: [41.1171, 16.8719]
     mappa_zoom: 13
     datasets:
-      popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019
-      bilancio: consuntivo-2019-comune-di-lecce
-      opere_pubbliche: open-cantieri-lecce
-      pratiche_edilizie: elenco-pratiche-sue
-      servizi_sociali: numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016
-      istruzione: elenco-e-ubicazione-asili-nido-comunali-lecce
-      incidenti_stradali: localizzazione-sinistri-dal-2018-lecce
-      rifiuti: raccolta-rifiuti-2015
-      eventi_culturali: eventi-culturali-ricorrenti
-      delibere: albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce
-      patrimonio: fabbricati-2023_comune-di-lecce
+      popolazione: popolazione-residente
+      bilancio: null  # Comune NON pubblica bilancio (solo NIC prezzi al consumo)
+      opere_pubbliche: null  # Comune NON pubblica opere
+      pratiche_edilizie: pratiche-edilizie
+      servizi_sociali: null  # Comune NON pubblica
+      istruzione: scuole-del-comune-di-bari
+      incidenti_stradali: incidenti-stradali-anno-2023
+      rifiuti: siti-raccolta-farmaci-pile-esauste-e-umido  # solo siti raccolta, debole
+      eventi_culturali: null  # Comune NON pubblica agenda eventi
+      delibere: null  # Comune NON pubblica
+      patrimonio: null  # Comune NON pubblica
