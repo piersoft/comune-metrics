@@ -529,7 +529,7 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.7</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.8</div>
   </div>
 </header>
 
@@ -559,7 +559,7 @@ a:hover { text-decoration: underline; }
       <div class="badge-tier" id="badgeTier">Avanzata</div>
     </div>
     <div class="compliance-info">
-      <h2>Conformità Paniere ComuneMetrics v2.6</h2>
+      <h2>Conformità Paniere ComuneMetrics v2.7</h2>
       <p id="complianceText">
         Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
       </p>
@@ -575,7 +575,7 @@ a:hover { text-decoration: underline; }
     <div class="footer-grid">
       <div>
         <h4>ComuneMetrics</h4>
-        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.6</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.7</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
       </div>
       <div>
         <h4>Standard</h4>
@@ -677,7 +677,7 @@ const MOCK_DATA = {
     datasets: {
       popolazione: true, bilancio: true, opere_pubbliche: false,
       pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
-      incidenti_stradali: true, rifiuti: false, eventi_culturali: false,
+      incidenti_stradali: true, rifiuti: true, eventi_culturali: true,
       delibere: true, patrimonio: false
     },
     sources: {
@@ -686,6 +686,8 @@ const MOCK_DATA = {
       servizi_sociali: "siast-servizi-integrati-assistenza-sociale-territoriale",
       istruzione: "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
       incidenti_stradali: "numero-incidenti-stradali-per-quartiere-anno-2014",
+      rifiuti: "quantita-di-rifiuti-urbani-anni-2000-2014",
+      eventi_culturali: "teatri-e-luoghi-per-eventi",
       delibere: "delibere-anno-2023"
     }
   },
@@ -1062,7 +1064,20 @@ const MOCK_RIFIUTI = {
       { frazione: "ALTRO", kg: 38000000 }
     ]
   },
-  firenze: { rd_pct: 0, pro_capite_kg: 0, serie_mensile_rd: [], composizione: [] },
+  firenze: {
+    rd_pct: 47.8, pro_capite_kg: 612,
+    serie_mensile_rd: [44.2, 45.1, 46.5, 47.2, 48.1, 49.0, 47.8, 44.5, 47.1, 48.4, 47.9, 46.5],
+    composizione: [
+      { frazione: "ORGANICO", kg: 32500000 },
+      { frazione: "CARTA_CARTONE", kg: 24800000 },
+      { frazione: "INDIFFERENZIATO", kg: 102000000 },
+      { frazione: "VETRO", kg: 12400000 },
+      { frazione: "PLASTICA", kg: 9800000 },
+      { frazione: "VERDE_LIGNEO", kg: 7200000 },
+      { frazione: "INGOMBRANTI", kg: 5400000 },
+      { frazione: "ALTRO", kg: 8500000 }
+    ]
+  },
   lecce: {
     rd_pct: 71.5, pro_capite_kg: 528,
     serie_mensile_rd: [69.8, 70.2, 71.5, 72.1, 73.0, 73.8, 72.4, 68.9, 71.2, 72.4, 71.5, 70.0],
@@ -1134,7 +1149,24 @@ const MOCK_EVENTI = {
       { nome: "Estate Sforzesca", lat: 45.4707, lon: 9.1793, cat: "TEATRO" }
     ]
   },
-  firenze: { totale_anno: 0, pct_gratuiti: 0, spesa_patrocinati: 0, per_categoria: [], eventi_geo: [] }
+  firenze: {
+    totale_anno: 1850, pct_gratuiti: 58.4, spesa_patrocinati: 4200000,
+    per_categoria: [
+      { cat: "MUSICA", n: 412 }, { cat: "TEATRO", n: 380 },
+      { cat: "MOSTRA", n: 285 }, { cat: "CINEMA", n: 198 },
+      { cat: "LETTERATURA", n: 168 }, { cat: "SPORT", n: 152 },
+      { cat: "FOOD", n: 92 }, { cat: "BAMBINI", n: 95 },
+      { cat: "MERCATO", n: 68 }
+    ],
+    eventi_geo: [
+      { nome: "Estate Fiorentina", lat: 43.7711, lon: 11.2552, cat: "MUSICA" },
+      { nome: "Maggio Musicale Fiorentino", lat: 43.7765, lon: 11.2410, cat: "MUSICA" },
+      { nome: "Teatro della Pergola", lat: 43.7720, lon: 11.2614, cat: "TEATRO" },
+      { nome: "La Notte Bianca", lat: 43.7711, lon: 11.2552, cat: "MUSICA" },
+      { nome: "Pitti Immagine", lat: 43.7651, lon: 11.2562, cat: "MOSTRA" },
+      { nome: "Florence Tattoo Convention", lat: 43.7950, lon: 11.2481, cat: "MOSTRA" }
+    ]
+  }
 };
 
 // Delibere (Bologna, Milano, Firenze)
