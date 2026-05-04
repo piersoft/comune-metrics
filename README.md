@@ -1,7 +1,7 @@
 # ComuneMetrics — Cruscotto Civico Comunale
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paniere v2.11](https://img.shields.io/badge/Paniere-v2.11-blue)](docs/PANIERE.md)
+[![Paniere v2.12](https://img.shields.io/badge/Paniere-v2.12-blue)](docs/PANIERE.md)
 [![DCAT-AP_IT](https://img.shields.io/badge/DCAT--AP__IT-2.1-green)](https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html)
 [![PA italiana](https://img.shields.io/badge/Vocabolari%20e%20ontologie%20PA-compliant-blue)](https://schema.gov.it)
 
@@ -29,9 +29,10 @@ La dashboard MVP carica dati estratti da dataset realmente pubblicati su `dati.g
 
 | Comune | IPA | Dataset CORE pubblicati | Badge attuale |
 |---|---|---|---|
-| **Lecce** | `c_e506` | 11/11 | 🟢 Completa |
 | **Bologna** | `c_a944` | 9/11 | 🟠 Avanzata |
 | **Firenze** | `c_d612` | 8/11 | 🟠 Avanzata |
+| **Bari** | `c_a662` | 5/11 | 🟡 Media |
+| **Messina** | `c_e463` | 4/11 | 🟡 Media |
 
 ## Quick start
 
@@ -176,7 +177,7 @@ Il banner giallo in cima al sito e il ribbon "DATI DI ESEMPIO" su ogni KPI ricor
 
 ## Roadmap
 
-- [x] **v0.1** — Paniere v2.11 + 11 JSON Schema + Dashboard MVP single-file
+- [x] **v0.1** — Paniere v2.12 + 11 JSON Schema + Dashboard MVP single-file
 - [ ] **v0.2** — Loader CKAN reale via proxy CORS (Cloudflare Worker)
 - [ ] **v0.3** — Federazione SPARQL: query cross-Comune via lod.dati.gov.it
 - [ ] **v0.4** — Modulo "rendicontazione di mandato" con confronto inizio/fine consiliatura
