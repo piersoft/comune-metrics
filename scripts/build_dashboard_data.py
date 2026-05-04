@@ -55,30 +55,81 @@ USER_AGENT = "ComuneMetrics-Builder/0.1 (+https://github.com/piersoft/comune-met
 HTTP_TIMEOUT = 30  # secondi
 MAX_BYTES = 50 * 1024 * 1024  # 50 MB max per CSV (sicurezza)
 
+# Proxy fallback per superare blocchi WAF su IP cloud (Azure/GitHub Actions).
+# Ordine di preferenza: tentativo diretto, poi proxy pubblico come fallback.
+# allorigins.win è verificato funzionante per dati.gov.it.
+# (corsproxy.io testato ma anch'esso bloccato dal WAF di dati.gov.it.)
+PROXY_CHAIN = [
+    None,  # Diretto, prima scelta
+    "https://api.allorigins.win/raw?url={url}",
+]
+
+# User-Agent rotation: alcuni WAF preferiscono UA diversi
+USER_AGENTS = [
+    "ComuneMetrics-Builder/0.1 (+https://github.com/piersoft/comune-metrics)",
+    "Mozilla/5.0 (compatible; ComuneMetricsBot/0.1; +https://github.com/piersoft/comune-metrics)",
+    "ckanapi/4.7",
+    "curl/7.88.1",
+]
+
 
 # =================== HTTP helpers ===================
 
 def http_get(url: str, accept: str = "*/*") -> Optional[bytes]:
-    """GET con timeout e size cap. Ritorna bytes o None."""
-    try:
-        log.info(f"  GET {url[:100]}...")
-        with requests.get(
-            url,
-            headers={"User-Agent": USER_AGENT, "Accept": accept},
-            timeout=HTTP_TIMEOUT,
-            stream=True,
-        ) as r:
-            r.raise_for_status()
-            content = b""
-            for chunk in r.iter_content(chunk_size=64 * 1024):
-                content += chunk
-                if len(content) > MAX_BYTES:
-                    log.warning(f"  ⚠ Truncated at {MAX_BYTES} bytes")
-                    break
-            return content
-    except requests.exceptions.RequestException as e:
-        log.warning(f"  ✗ HTTP error: {e}")
-        return None
+    """
+    GET con timeout, size cap, retry chain di proxy e UA rotation.
+
+    Strategia: prova prima il fetch diretto con UA principale, poi rotazione UA,
+    poi proxy pubblici come ultima risorsa. Stop al primo 200 OK.
+
+    NB: il WAF di dati.gov.it (awselb/2.0) si comporta in modo curioso:
+    rifiuta UA "Mozilla/...Chrome..." da IP cloud ma accetta UA identificativi
+    di crawler/script. Headers Accept-Encoding presenti sembrano aiutare.
+    """
+    from urllib.parse import quote
+
+    # Header base per tutti i tentativi
+    base_headers = {
+        "Accept": accept,
+        "Accept-Encoding": "gzip, deflate",
+        "Accept-Language": "it-IT,it;q=0.9,en;q=0.8",
+    }
+
+    last_error = None
+    for proxy_template in PROXY_CHAIN:
+        for ua in USER_AGENTS:
+            try:
+                headers = {**base_headers, "User-Agent": ua}
+                if proxy_template is None:
+                    fetch_url = url
+                    log_label = "direct"
+                else:
+                    fetch_url = proxy_template.format(url=quote(url, safe=""))
+                    log_label = proxy_template.split("/")[2]
+                log.info(f"  GET [{log_label}|{ua.split('/')[0][:20]}] {url[:80]}...")
+                with requests.get(
+                    fetch_url,
+                    headers=headers,
+                    timeout=HTTP_TIMEOUT,
+                    stream=True,
+                ) as r:
+                    if r.status_code in (403, 429):
+                        last_error = f"{r.status_code} ({log_label}|{ua[:30]})"
+                        continue  # prova prossimo UA / proxy
+                    r.raise_for_status()
+                    content = b""
+                    for chunk in r.iter_content(chunk_size=64 * 1024):
+                        content += chunk
+                        if len(content) > MAX_BYTES:
+                            log.warning(f"  ⚠ Truncated at {MAX_BYTES} bytes")
+                            break
+                    return content
+            except requests.exceptions.RequestException as e:
+                last_error = str(e)[:100]
+                continue
+
+    log.warning(f"  ✗ HTTP error (tutti i fallback falliti): {last_error}")
+    return None
 
 
 def fetch_package(ckan_server: str, slug: str) -> Optional[dict]:
