@@ -66,14 +66,25 @@ EOF
 
 ### Per pubblicare il paniere come Comune
 
-1. Genera gli 11 CSV secondo gli schemi in `/schemas/`
-2. Valida ogni CSV con il validatore JSON Schema
-3. Genera la distribuzione TTL via [piersoft/CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) (vocabolari/ontologie PA italiana + DCAT-AP_IT)
-4. Pubblica su CKAN aggiungendo extras:
-   - `paniere_comunemetrics: true`
-   - `paniere_dataset_id: <nome>` (es. `popolazione`)
-   - `paniere_versione_schema: 2.1`
-5. Inserisci il tuo Comune nel `comune-select` della dashboard
+ComuneMetrics è progettato per **non chiedere lavoro extra** ai Comuni: ti basta pubblicare i dati che probabilmente già pubblichi, in CSV o JSON, sul tuo portale CKAN o Opendatasoft. Il cruscotto fa il resto da solo.
+
+Tre passi pratici:
+
+**1. Verifica cosa pubblichi già.** Apri il tuo portale OpenData e controlla quali degli 11 [Dataset CORE](#i-11-dataset-core) hai già: popolazione residente, bilancio per missione, opere pubbliche, pratiche edilizie, servizi sociali, asili nido, incidenti stradali, raccolta rifiuti, eventi culturali, delibere, patrimonio immobiliare. Bologna ne ha 9, Firenze 8, Torino 4, Messina 4 — non serve avere tutti gli 11 per essere visibili.
+
+**2. Pubblica in CSV o JSON.** I formati che il cruscotto sa leggere sono `CSV`, `JSON`, `JSONL`. Formati come PDF, XLSX, ZIP, WMS, RDF non vengono letti automaticamente (anche se restano validi per altri usi). Se hai un dataset solo in PDF, basta esportare in CSV una volta.
+
+**3. Apri una issue per essere incluso.** Apri una issue su [github.com/piersoft/comune-metrics](https://github.com/piersoft/comune-metrics/issues/new) con: nome del Comune, sindaco, codice IPA, codice ISTAT, e gli slug dei dataset CORE che hai già pubblicato su `dati.gov.it` o sul tuo portale. Nessun lavoro tecnico richiesto da parte tua: il workflow GitHub Actions del cruscotto si aggancia ai tuoi metadata via CKAN MCP.
+
+**Cosa rende il tuo dataset "ben pubblicato"** (in ordine di importanza):
+- È in formato CSV o JSON aperto, non PDF/XLSX/ZIP
+- Le colonne hanno nomi parlanti (es. `anno`, `quartiere`, `residenti`, non `cod_a1`)
+- Il campo `modified` su CKAN riflette davvero l'ultima modifica del dato (non solo del metadato)
+- Il server publisher risponde anche a IP non italiani (i runner GitHub Actions sono in cloud Azure US/EU)
+
+Se vuoi anche l'aggregazione delle metriche (KPI calcolati sul tuo dataset), basta che le colonne abbiano nomi simili a quelli dei comuni già supportati. Il file [`config/metrics.yml`](config/metrics.yml) elenca tutti i sinonimi riconosciuti per ogni campo. Se hai colonne diverse, apri una pull request che aggiunge i tuoi sinonimi: è un cambio di 2-3 righe.
+
+> 💡 **Niente extras CKAN richiesti.** Le versioni precedenti del paniere prevedevano extras come `paniere_comunemetrics: true` e una conversione in RDF/Turtle dei CSV. Sono opzionali: il cruscotto v0.2 lavora direttamente sui metadata standard CKAN (`name`, `format`, `url`, `modified`) e non richiede alcuna modifica al DCAT-AP_IT del Comune.
 
 ## I 11 dataset CORE
 
