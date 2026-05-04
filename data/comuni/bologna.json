@@ -51,7 +51,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      "fetched_at": "2026-05-04T20:20:15.169Z",
+      "fetched_at": "2026-05-04T20:26:10.570Z",
       "status": "ok",
       "modified": "2024-12-31T09:12:53+00:00",
       "freshness": {
@@ -79,194 +79,194 @@
         "eta"
       ],
       "metrics": {
-        "totale_residenti": 3163825,
+        "totale_residenti": 3183687,
         "serie_anni": [
           {
             "anno": 1986,
-            "valore": 52018
+            "valore": 127854
           },
           {
             "anno": 1987,
-            "valore": 76108
+            "valore": 107377
           },
           {
             "anno": 1988,
-            "valore": 76034
+            "valore": 61744
           },
           {
             "anno": 1989,
-            "valore": 97762
+            "valore": 93919
           },
           {
             "anno": 1990,
-            "valore": 100451
+            "valore": 88921
           },
           {
             "anno": 1991,
-            "valore": 59517
+            "valore": 102420
           },
           {
             "anno": 1992,
-            "valore": 105065
+            "valore": 55464
           },
           {
             "anno": 1993,
-            "valore": 64736
+            "valore": 73632
           },
           {
             "anno": 1994,
-            "valore": 50649
+            "valore": 78028
           },
           {
             "anno": 1995,
-            "valore": 70909
+            "valore": 56405
           },
           {
             "anno": 1996,
-            "valore": 53649
+            "valore": 83671
           },
           {
             "anno": 1997,
-            "valore": 91576
+            "valore": 71230
           },
           {
             "anno": 1998,
-            "valore": 94354
+            "valore": 49945
           },
           {
             "anno": 1999,
-            "valore": 95889
+            "valore": 74449
           },
           {
             "anno": 2000,
-            "valore": 94816
+            "valore": 71482
           },
           {
             "anno": 2001,
-            "valore": 101989
+            "valore": 54052
           },
           {
             "anno": 2002,
-            "valore": 88492
+            "valore": 71696
           },
           {
             "anno": 2003,
-            "valore": 98187
+            "valore": 111111
           },
           {
             "anno": 2004,
-            "valore": 89381
+            "valore": 77011
           },
           {
             "anno": 2005,
-            "valore": 86050
+            "valore": 32224
           },
           {
             "anno": 2006,
-            "valore": 97564
+            "valore": 58892
           },
           {
             "anno": 2007,
-            "valore": 92221
+            "valore": 77481
           },
           {
             "anno": 2008,
-            "valore": 55990
+            "valore": 81517
           },
           {
             "anno": 2009,
-            "valore": 101235
+            "valore": 71817
           },
           {
             "anno": 2010,
-            "valore": 87415
+            "valore": 74327
           },
           {
             "anno": 2011,
-            "valore": 82095
+            "valore": 67056
           },
           {
             "anno": 2012,
-            "valore": 67783
+            "valore": 79699
           },
           {
             "anno": 2013,
-            "valore": 71781
+            "valore": 106431
           },
           {
             "anno": 2014,
-            "valore": 83808
+            "valore": 83997
           },
           {
             "anno": 2015,
-            "valore": 66247
+            "valore": 106938
           },
           {
             "anno": 2016,
-            "valore": 64205
+            "valore": 78455
           },
           {
             "anno": 2017,
-            "valore": 67978
+            "valore": 103460
           },
           {
             "anno": 2018,
-            "valore": 77903
+            "valore": 84994
           },
           {
             "anno": 2019,
-            "valore": 93263
+            "valore": 79757
           },
           {
             "anno": 2020,
-            "valore": 76328
+            "valore": 97894
           },
           {
             "anno": 2021,
-            "valore": 60698
+            "valore": 113361
           },
           {
             "anno": 2022,
-            "valore": 67361
+            "valore": 88354
           },
           {
             "anno": 2023,
-            "valore": 110487
+            "valore": 102291
           },
           {
             "anno": 2024,
-            "valore": 91831
+            "valore": 84331
           }
         ],
         "serie_residenti": null,
         "per_quartiere": [
           {
             "nome": "Porto - Saragozza",
-            "valore": 570363
+            "valore": 572215
           },
           {
             "nome": "Navile",
-            "valore": 542823
+            "valore": 545280
           },
           {
             "nome": "Santo Stefano",
-            "valore": 532210
+            "valore": 535497
           },
           {
             "nome": "San Donato - San Vitale",
-            "valore": 531403
+            "valore": 535123
           },
           {
             "nome": "Savena",
-            "valore": 505574
+            "valore": 506462
           },
           {
             "nome": "Borgo Panigale - Reno",
-            "valore": 479415
+            "valore": 486724
           },
           {
             "nome": "Senza fissa dimora",
-            "valore": 2037
+            "valore": 2386
           }
         ]
       },
@@ -278,7 +278,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "bilancio-di-previsione-previsione-uscite",
-      "fetched_at": "2026-05-04T20:20:25.927Z",
+      "fetched_at": "2026-05-04T20:26:28.225Z",
       "status": "ok",
       "modified": "2025-12-31T12:00:00+00:00",
       "freshness": {
@@ -439,7 +439,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "lavori-in-corso-in-citta",
-      "fetched_at": "2026-05-04T20:20:27.803Z",
+      "fetched_at": "2026-05-04T20:26:29.914Z",
       "status": "ok",
       "modified": "2026-03-21T06:00:03.144000+00:00",
       "freshness": {
@@ -741,7 +741,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "cila-comunicazioni-inizio-lavori",
-      "fetched_at": "2026-05-04T20:20:29.015Z",
+      "fetched_at": "2026-05-04T20:26:31.647Z",
       "status": "ok",
       "modified": "2025-12-31T09:03:43+00:00",
       "freshness": {
@@ -775,7 +775,7 @@
         "per_tipo": [
           {
             "nome": "CILA ORDINARIA",
-            "n": 11494
+            "n": 11524
           },
           {
             "nome": "COMUNICAZIONE INIZIO LAVORI LR 15/2013",
@@ -787,7 +787,7 @@
           },
           {
             "nome": "CILA A SANATORIA",
-            "n": 7787
+            "n": 7757
           },
           {
             "nome": "CILA CON INIZIO LAVORI DIFFERITO",
@@ -846,22 +846,22 @@
             "n": 33
           },
           {
-            "nome": "URB - CILA ORDINARIA",
+            "nome": "CILA-SUPERBONUS ORDINARIA ANCHE CON ALTRE COMUNICAZIONI O SCIA - NON RESIDENZIALE",
             "n": 8
           },
           {
-            "nome": "URB - CILA ORDINARIA - NON RESIDENZIALE",
+            "nome": "URB - CILA ORDINARIA",
             "n": 8
           }
         ],
         "per_esito": [
           {
             "nome": "ACQUISITA IN INGRESSO",
-            "n": 40555
+            "n": 40561
           },
           {
             "nome": "EFFICACE",
-            "n": 6047
+            "n": 6042
           },
           {
             "nome": "INEFFICACE",
@@ -877,7 +877,7 @@
           },
           {
             "nome": "CAMPIONATA CONCLUSO ESITO POSITIVO",
-            "n": 190
+            "n": 189
           },
           {
             "nome": "RILASCIATA",
@@ -984,7 +984,7 @@
           },
           {
             "anno": 2021,
-            "valore": 4306
+            "valore": 4336
           },
           {
             "anno": 2022,
@@ -992,7 +992,7 @@
           },
           {
             "anno": 2023,
-            "valore": 3867
+            "valore": 3837
           },
           {
             "anno": 2024,
@@ -1012,7 +1012,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "welfare-interventi",
-      "fetched_at": "2026-05-04T20:20:40.257Z",
+      "fetched_at": "2026-05-04T20:26:36.833Z",
       "status": "fetch_error",
       "modified": "2025-05-08T12:47:30.798000+00:00",
       "freshness": {
@@ -1047,7 +1047,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      "fetched_at": "2026-05-04T20:20:56.012Z",
+      "fetched_at": "2026-05-04T20:26:45.464Z",
       "status": "ok",
       "modified": "2025-09-24T14:54:00+00:00",
       "freshness": {
@@ -1293,7 +1293,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "incidenti-stradali2",
-      "fetched_at": "2026-05-04T20:20:59.380Z",
+      "fetched_at": "2026-05-04T20:26:49.291Z",
       "status": "ok",
       "modified": "2024-12-31T11:04:38+00:00",
       "freshness": {
@@ -1750,54 +1750,6 @@
             "lon": 11.324626222813414
           },
           {
-            "lat": 44.4934935403265,
-            "lon": 11.33574552635011
-          },
-          {
-            "lat": 44.50406779921159,
-            "lon": 11.320495538728498
-          },
-          {
-            "lat": 44.50406779921159,
-            "lon": 11.320495538728498
-          },
-          {
-            "lat": 44.50406779921159,
-            "lon": 11.320495538728498
-          },
-          {
-            "lat": 44.52109246300804,
-            "lon": 11.401361324675172
-          },
-          {
-            "lat": 44.52109246300804,
-            "lon": 11.401361324675172
-          },
-          {
-            "lat": 44.4730123343669,
-            "lon": 11.304474596388342
-          },
-          {
-            "lat": 44.46037113980039,
-            "lon": 11.361077687115223
-          },
-          {
-            "lat": 44.46037113980039,
-            "lon": 11.361077687115223
-          },
-          {
-            "lat": 44.46037113980039,
-            "lon": 11.361077687115223
-          },
-          {
-            "lat": 44.52043636169531,
-            "lon": 11.331813152289353
-          },
-          {
-            "lat": 44.513893696422876,
-            "lon": 11.34577042324268
-          },
-          {
             "lat": 44.47455983898973,
             "lon": 11.386387540570649
           },
@@ -1920,6 +1872,54 @@
           {
             "lat": 44.460619689216145,
             "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
           },
           {
             "lat": 44.51075641872278,
@@ -2136,7 +2136,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "indicatori-raccolta-differenziata",
-      "fetched_at": "2026-05-04T20:21:01.743Z",
+      "fetched_at": "2026-05-04T20:26:51.323Z",
       "status": "ok",
       "modified": "2025-04-07T08:28:00+00:00",
       "freshness": {
@@ -2308,7 +2308,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-bologna-agenda-cultura",
-      "fetched_at": "2026-05-04T20:21:02.970Z",
+      "fetched_at": "2026-05-04T20:26:52.503Z",
       "status": "ok",
       "modified": "2026-03-21T02:15:09.258000+00:00",
       "freshness": {
@@ -2443,1504 +2443,1504 @@
         ],
         "eventi_geo": [
           {
-            "lat": 44.5058684,
-            "lon": 11.3145137,
-            "nome": "Una biblioteca in ospedale 2024-2025"
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "Codeine"
           },
           {
             "lat": 44.488541,
             "lon": 11.348225,
-            "nome": "Il sogno di Gramsci"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Esperienze D.M. Awed, Dose e Dadda"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "Aurora Leone"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Night Fever"
-          },
-          {
-            "lat": 44.501949,
-            "lon": 11.32761,
-            "nome": "GdL Borges"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "Kadebostany"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "Ebò"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "Il giardino dei ciliegi"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "Zio Vanja"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "Fratto X"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "S&B - Sole e Baleno"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "Eraulisse"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "Abaco"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "LàQua"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "Sista"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "La montagna incantata"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "Manifesto cannibale"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Venere Nemica.  Drusilla Foer"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Via Crux"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Una vita sullo schermo. Ezio Greggio"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Gli Insospettabili.  Claudio (Greg) Gregorio e Fabio Troiano"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Tenente Colombo.  Analisi di un omicidio"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "STREGHE"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "Cinzia Leone"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "ANDREA PARIS"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "ANDREA DIANETTI"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "AVOLIO E MADERA"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "HERBERT BALLERINA"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "GLI AUTOGOL"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "L'IMPORTANZA DI CHIAMARSI ERNEST di O. Wilde"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "MISTERO BUFFO di Dario Fo e Franca Rame"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "B.L.U.E - IL MUSICAL COMPLETAMENTE IMPROVVISATO"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "CALCOLI. Ovvero l'arte dell'inganno"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Rivoluzioni.  Emiliano Luccisano"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Parole di Faber.  Il grande tributo a Fabrizio De André"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Le emozioni che abbiamo vissuto. Walter Veltroni"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Alla scoperta di Morricone. Ensemble Symphony Orchestra"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Toccando il vuoto.  Lodo Guenzi"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Boomers. Marco Paolini"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "Mortacci Tour. Francesco De Carlo"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312551,
-            "nome": "I musici di Francesco Guccini"
-          },
-          {
-            "lat": 44.4775021,
-            "lon": 11.2765145,
-            "nome": "Il cielo è pieno di stelle – omaggio a Pino Daniele"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "TARZAN RAGAZZO SELVAGGIO"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "IL PIAVE MORMORAVA"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "TIKETAK Piccololorso ha una sorellina"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "LA FAVOLA DI PETER"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "COSTRUTTORE DI STORIE"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "SOTTO UN’ALTRA LUCE"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "CIRCO BARACCA"
-          },
-          {
-            "lat": 44.5800385,
-            "lon": 11.2384803,
-            "nome": "A memoria di un tempo"
-          },
-          {
-            "lat": 44.5800385,
-            "lon": 11.2384803,
-            "nome": "Mi abbatto e sono felice"
-          },
-          {
-            "lat": 44.3992279,
-            "lon": 11.5905294,
-            "nome": "Secondo me - con Sasà Spasiano"
-          },
-          {
-            "lat": 44.5800385,
-            "lon": 11.2384803,
-            "nome": "Mia nonna era una sirena"
-          },
-          {
-            "lat": 44.4773985,
-            "lon": 11.6387467,
-            "nome": "Sisifo Felice"
-          },
-          {
-            "lat": 44.3968339,
-            "lon": 11.5891128,
-            "nome": "La médgeina par tòtt i mèl"
-          },
-          {
-            "lat": 44.4773985,
-            "lon": 11.6387467,
-            "nome": "Non vedo non sento e straparlo - con Dado"
-          },
-          {
-            "lat": 44.3968339,
-            "lon": 11.5891128,
-            "nome": "Work in progress"
-          },
-          {
-            "lat": 44.4773985,
-            "lon": 11.6387467,
-            "nome": "Work in progress"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "IL PIÙ FURBO"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "TANGRAM 七巧板"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "BIANCANEVE"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "LO SPECCHIO DELLA REGINA"
-          },
-          {
-            "lat": 44.554661,
-            "lon": 11.448195,
-            "nome": "FAITH 70’s DISCO SHOW"
-          },
-          {
-            "lat": 44.554661,
-            "lon": 11.448195,
-            "nome": "DRAMA QUEEN"
-          },
-          {
-            "lat": 44.554661,
-            "lon": 11.448195,
-            "nome": "SE DIO FOSSE DONNA"
-          },
-          {
-            "lat": 44.554661,
-            "lon": 11.448195,
-            "nome": "WORK IN PROGRESS"
-          },
-          {
-            "lat": 44.554661,
-            "lon": 11.448195,
-            "nome": "SOL DI SOLDI"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Il mago del grano"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Il Signor Aquilone e i dispetti della Nuvola Olga"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Odissea - La storia di Nessuno raccontata da tuttə"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Verde"
-          },
-          {
-            "lat": 44.45699,
-            "lon": 11.1981601,
-            "nome": "Doppio Brodo Show"
-          },
-          {
-            "lat": 44.45699,
-            "lon": 11.1981601,
-            "nome": "Le chiavi d’oro delle fiabe. L'Amore, la Morte, la Felicità e noi."
-          },
-          {
-            "lat": 44.4971998,
-            "lon": 11.3425217,
-            "nome": "AUGUSTIN HADELICH E FRANCESCO PIEMONTESI"
-          },
-          {
-            "lat": 44.4971998,
-            "lon": 11.3425217,
-            "nome": "O/MODERNT SOLOISTS, EVELYN GLENNIE, HUGO TICCIATI"
-          },
-          {
-            "lat": 44.4971998,
-            "lon": 11.3425217,
-            "nome": "ESTRIO"
-          },
-          {
-            "lat": 44.4971998,
-            "lon": 11.3425217,
-            "nome": "BROOKLYN RIDER, AVI AVITAL"
-          },
-          {
-            "lat": 44.4971998,
-            "lon": 11.3425217,
-            "nome": "TRIO CHAGALL"
-          },
-          {
-            "lat": 44.6198236,
-            "lon": 11.6682975,
-            "nome": "ÒCIO CHE LA VÉN MÒSA"
-          },
-          {
-            "lat": 44.6198236,
-            "lon": 11.6682975,
-            "nome": "ZAZZARAZZAZ - PEDALANDO E CANTANDO NELLA STORIA"
-          },
-          {
-            "lat": 44.6198236,
-            "lon": 11.6682975,
-            "nome": "IGOR IL VECIO E IL PRINCIPE VLADIMIRO DA VERUCCHIO"
-          },
-          {
-            "lat": 44.6198236,
-            "lon": 11.6682975,
-            "nome": "NOTHING BUT ROCK"
-          },
-          {
-            "lat": 44.6198236,
-            "lon": 11.6682975,
-            "nome": "OLIVIA & FIORENZA: CHE STRANA COPPIA!"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "La biblioteca va a teatro, il teatro va in biblioteca"
-          },
-          {
-            "lat": 44.484177,
-            "lon": 11.339301,
-            "nome": "NipPop BookClub VI"
-          },
-          {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "Queen of the Night"
-          },
-          {
-            "lat": 44.394543,
-            "lon": 11.245183,
-            "nome": "Ufézzi ed colocamant"
-          },
-          {
-            "lat": 44.394543,
-            "lon": 11.245183,
-            "nome": "Mo di ban so...!"
-          },
-          {
-            "lat": 44.394543,
-            "lon": 11.245183,
-            "nome": "CHI DU DE’"
-          },
-          {
-            "lat": 44.394543,
-            "lon": 11.245183,
-            "nome": "Al pover zio Cusmen"
-          },
-          {
-            "lat": 44.394543,
-            "lon": 11.245183,
-            "nome": "Ocio che la vèn mòsa"
-          },
-          {
-            "lat": 44.354893,
-            "lon": 11.710975,
-            "nome": "L'opera nel ridotto | Le Nozze di Figaro"
-          },
-          {
-            "lat": 44.354893,
-            "lon": 11.710975,
-            "nome": "Ventiquattro preludi"
-          },
-          {
-            "lat": 44.354893,
-            "lon": 11.710975,
-            "nome": "Omaggio a Ebe Stignani"
-          },
-          {
-            "lat": 44.537819,
-            "lon": 11.536903,
-            "nome": "L’ALTEZZA DELLE LASAGNE"
-          },
-          {
-            "lat": 44.537819,
-            "lon": 11.536903,
-            "nome": "L’EBREO"
-          },
-          {
-            "lat": 44.354893,
-            "lon": 11.710975,
-            "nome": "La madre"
-          },
-          {
-            "lat": 44.4738379,
-            "lon": 11.6348217,
-            "nome": "Il volo"
-          },
-          {
-            "lat": 44.4738379,
-            "lon": 11.6348217,
-            "nome": "Toma e Carolina"
-          },
-          {
-            "lat": 44.4738379,
-            "lon": 11.6348217,
-            "nome": "Piccoli principi e principesse"
-          },
-          {
-            "lat": 44.4738379,
-            "lon": 11.6348217,
-            "nome": "Una storia sottosopra"
-          },
-          {
-            "lat": 44.4738379,
-            "lon": 11.6348217,
-            "nome": "Caino e Abele"
-          },
-          {
-            "lat": 44.3514054,
-            "lon": 11.705517,
-            "nome": "7in1 colpo"
-          },
-          {
-            "lat": 44.3514054,
-            "lon": 11.705517,
-            "nome": "La bella e la bestia"
-          },
-          {
-            "lat": 44.5488355,
-            "lon": 11.1342906,
-            "nome": "La partita non è ancora finita"
-          },
-          {
-            "lat": 44.4934925,
-            "lon": 11.3475802,
-            "nome": "Duo Taio Adinolfi"
-          },
-          {
-            "lat": 44.3514054,
-            "lon": 11.705517,
-            "nome": "Rassegna Filodrammatiche C.A.R.S."
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "LUCA SOMMI"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "ANDREA SCANZI"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "Il libro della giungla"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "Le avventure di Tom Sawyer"
-          },
-          {
-            "lat": 44.524578,
-            "lon": 11.365088,
-            "nome": "Kamasi Washington"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Lo Schiaccianoci"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "BOLOGNA SUONA LUCIO DALLA"
-          },
-          {
-            "lat": 44.506889,
-            "lon": 11.378275,
-            "nome": "The Meffs"
-          },
-          {
-            "lat": 44.581703,
-            "lon": 11.355651,
-            "nome": "Turandot. Una fiaba"
-          },
-          {
-            "lat": 44.713505,
-            "lon": 11.306636,
-            "nome": "Him | Fanny & Alexander"
-          },
-          {
-            "lat": 44.682747,
-            "lon": 11.297167,
-            "nome": "La macchia | Fabio Pisano"
-          },
-          {
-            "lat": 44.642284,
-            "lon": 11.348843,
-            "nome": "L’estinzione della razza umana | Emanuele Aldrovandi"
-          },
-          {
-            "lat": 44.496319,
-            "lon": 11.386945,
-            "nome": "Bologna. L'antica città dell'acqua e della seta"
-          },
-          {
-            "lat": 44.7145089,
-            "lon": 11.150095,
-            "nome": "Chi è io?"
-          },
-          {
-            "lat": 44.7145089,
-            "lon": 11.150095,
-            "nome": "Il sogno di una cosa"
-          },
-          {
-            "lat": 44.7145089,
-            "lon": 11.150095,
-            "nome": "Mentre rubavo la vita! (omaggio ad Alda Merini)"
-          },
-          {
-            "lat": 44.7145089,
-            "lon": 11.150095,
-            "nome": "PPP – Un segreto italiano"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "DAVIDE CALGARO – MILLENIUM BUG"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "GIORGIO CANALI & ROSSOFUOCO"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "POST NEBBIA"
+            "nome": "Barbascura X"
           },
           {
             "lat": 44.49625,
             "lon": 11.365653,
-            "nome": "FUNAMBOLE"
+            "nome": "ANNULLATO | Don Camillo e Peppone"
           },
           {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "Visioni di futuro, visioni di teatro …"
+            "lat": 44.522106,
+            "lon": 11.331491,
+            "nome": "Scopri la Fabbrica del Futuro"
           },
           {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "Immanuel Casto - Non Erano Battute - Atto Finale"
+            "lat": 44.494171,
+            "lon": 11.343165,
+            "nome": "Il Viaggiatore Distante : Empire State"
           },
           {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Molto rumore per nulla"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Imbarazziamoci"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "The Final Frontier Tour 2025"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Sette a Tebe"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Secondo Lei"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Pensaci, Giacomino!"
-          },
-          {
-            "lat": 44.4692324,
-            "lon": 11.4045006,
-            "nome": "The beat of Freedom. La Resistenza a fumetti"
-          },
-          {
-            "lat": 44.506889,
-            "lon": 11.378275,
-            "nome": "BDRMM"
-          },
-          {
-            "lat": 44.4692324,
-            "lon": 11.4045006,
-            "nome": "Plan-Bi"
-          },
-          {
-            "lat": 44.4692324,
-            "lon": 11.4045006,
-            "nome": "Divine"
-          },
-          {
-            "lat": 44.4692324,
-            "lon": 11.4045006,
-            "nome": "Il Mercante di Venezia. Il teatro dopo la peste"
-          },
-          {
-            "lat": 44.4692324,
-            "lon": 11.4045006,
-            "nome": "Felicissima jurnata"
-          },
-          {
-            "lat": 44.522956444447,
-            "lon": 11.265466648808,
-            "nome": "La Coppa Florio"
-          },
-          {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "Indagini Live | Una nuova storia"
-          },
-          {
-            "lat": 44.485882,
-            "lon": 11.248301,
-            "nome": "Il volo"
-          },
-          {
-            "lat": 44.581703,
-            "lon": 11.355651,
-            "nome": "Storie prepotenti"
-          },
-          {
-            "lat": 44.6437398,
-            "lon": 11.3709829,
-            "nome": "Sacco matto"
-          },
-          {
-            "lat": 44.565041,
-            "lon": 11.271848,
-            "nome": "Un tuffo all'insù"
-          },
-          {
-            "lat": 44.565041,
-            "lon": 11.271848,
-            "nome": "La ragazza dei lupi"
-          },
-          {
-            "lat": 44.565041,
-            "lon": 11.271848,
-            "nome": "Tre Sagome"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "Lucia di Lammermoor"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "Un ballo in maschera"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "Così fan tutte"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "Candide"
-          },
-          {
-            "lat": 44.506889,
-            "lon": 11.378275,
-            "nome": "Snapped Ankles"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "La Bohème"
+            "lat": 44.500149,
+            "lon": 11.404168,
+            "nome": "Tradizione futura. La stampa romagnola tra arte e mestiere"
           },
           {
             "lat": 44.508106,
             "lon": 11.352334,
-            "nome": "CHALK"
+            "nome": "Alfa Mist"
           },
           {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "MEG"
+            "lat": 44.493065,
+            "lon": 11.348032,
+            "nome": "Camera Jazz & Music Club: gli appuntamenti di maggio"
           },
           {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "Massimo Ranieri | Tutti i sogni ancora in volo"
+            "lat": 44.496765,
+            "lon": 11.340928,
+            "nome": "Sharp Touch"
           },
           {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "Roberto Bolle and friends"
-          },
-          {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "Claudio Baglioni | Piano di volo - SoloTRIS"
-          },
-          {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "Rocky – The Musical"
-          },
-          {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "I Tre Moschettieri - Opera Pop"
-          },
-          {
-            "lat": 44.512081,
-            "lon": 11.362572,
-            "nome": "Tante belle cose"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Hartmut Haenchen | Brahms"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Riccardo Frizza | Schoenberg - Mahler"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "James Conlon | Mozart - Brahms"
-          },
-          {
-            "lat": 44.4977181,
-            "lon": 11.3535771,
-            "nome": "Attività in Pinacoteca"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Daniel Oren | Wagner - Britten - Čajkovskij"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Frédéric Chaslin | Brahms - Poulenc"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Martijn Dendievel | Respighi - Mozart"
-          },
-          {
-            "lat": 44.49213051459452,
-            "lon": 11.334153895705107,
-            "nome": "GHERMINELLA_studio di voci inarticolate"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Tra Natale e Oriente in Arioso Furioso Trio"
-          },
-          {
-            "lat": 44.478249,
-            "lon": 11.27738,
-            "nome": "Jack, il ragazzino che sorvolò l’oceano. Una storia tra cielo e mare"
-          },
-          {
-            "lat": 44.478249,
-            "lon": 11.27738,
-            "nome": "Balloon Adventures"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Yutaka Sado | Saint-Saëns - Bruckner"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Marco Angius | Solbiati - Haydn - Brahms"
-          },
-          {
-            "lat": 44.49721,
-            "lon": 11.342514,
-            "nome": "Orchestra Mozart - Daniele Gatti - 2025"
-          },
-          {
-            "lat": 44.492161,
-            "lon": 11.346374,
-            "nome": "Palazzo Pepoli e l’Arte - Il Rinascimento da Firenze a Bologna"
-          },
-          {
-            "lat": 44.492161,
-            "lon": 11.346374,
-            "nome": "Palazzo Pepoli e l’Arte - Personaggi, simboli e significati svelati"
-          },
-          {
-            "lat": 44.492161,
-            "lon": 11.346374,
-            "nome": "Palazzo Pepoli in Musica - Novensemble Orchestra"
-          },
-          {
-            "lat": 44.495815,
-            "lon": 11.350222,
-            "nome": "I solisti dell'Orchestra Mozart - maggio 2025"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "E TU, CHE MITO SEI?"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "Aterballetto | Pite /  Preljocaj / Tortelli"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "MP3 Dance Company | Philip Glass – Études"
-          },
-          {
-            "lat": 44.5121449,
-            "lon": 11.3623472,
-            "nome": "Ballet Preljocaj | Il lago dei cigni"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "Tributo a Mina e Lucio Battisti"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "Tè possino!"
-          },
-          {
-            "lat": 44.506889,
-            "lon": 11.378275,
-            "nome": "Friedberg"
-          },
-          {
-            "lat": 44.506889,
-            "lon": 11.378275,
-            "nome": "Heavy Lungs"
-          },
-          {
-            "lat": 44.493755,
-            "lon": 11.343095,
-            "nome": "Il Rogo del Vecchione nella notte di San Silvestro"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "Martijn Dendievel | Brahms - Musorgskij"
-          },
-          {
-            "lat": 44.497009,
-            "lon": 11.342827,
-            "nome": "James Conlon | Mozart - Brahms"
-          },
-          {
-            "lat": 44.394543,
-            "lon": 11.245183,
-            "nome": "La Scimmia"
-          },
-          {
-            "lat": 44.506889,
-            "lon": 11.378275,
-            "nome": "THE ORIGINAL NYE ROCK PARTY with TVFUZZ"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "80s Never Die vs Club Novanta *CAPODANNO*"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "80s Never Die vs Club Novanta *CAPODANNO*"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "FRANCESCO POSA"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "LA MUNICIPAL"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Solo un piano… l’amor che move il sole e l’altre stelle"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Da Altamura a Vienna tra i riflessi del Romanticismo"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Le gondolier"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Shades of jazz - Milone Bellanova Duo"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Concerto senza orchestra"
-          },
-          {
-            "lat": 44.49721,
-            "lon": 11.342514,
-            "nome": "Doppio appuntamento con Evgeny Kissin"
-          },
-          {
-            "lat": 44.494637,
-            "lon": 11.341932,
-            "nome": "Questo visibile raggio di buio"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312583,
-            "nome": "Fall. Giorgio Montanini"
-          },
-          {
-            "lat": 44.489395,
-            "lon": 11.312583,
-            "nome": "Tutti gli indizi portano qui. Ale Della Giusta"
-          },
-          {
-            "lat": 44.49968,
-            "lon": 11.343528,
-            "nome": "Maratona Čechov – La Trilogia"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Da Beethoven a Chopin"
-          },
-          {
-            "lat": 44.4928667,
-            "lon": 11.3436596,
-            "nome": "ARTICO. Viaggio interattivo al Polo Nord"
-          },
-          {
-            "lat": 44.491383,
-            "lon": 11.342881,
-            "nome": "Lettera a una Presidente"
-          },
-          {
-            "lat": 44.49213051459452,
-            "lon": 11.334153895705107,
-            "nome": "La Pelle dello Spazio"
-          },
-          {
-            "lat": 44.493923,
-            "lon": 11.35475,
-            "nome": "CRONOTOPO 0"
-          },
-          {
-            "lat": 44.493923,
-            "lon": 11.35475,
-            "nome": "Genera - Kossiga"
-          },
-          {
-            "lat": 44.49617,
-            "lon": 11.329074,
-            "nome": "IL CORPO DI LEI"
-          },
-          {
-            "lat": 44.4946348,
-            "lon": 11.3419323,
-            "nome": "BO64. La storia incredibile del settimo scudetto del Bologna"
-          },
-          {
-            "lat": 44.514614,
-            "lon": 11.287957,
-            "nome": "Le volpi"
-          },
-          {
-            "lat": 44.514614,
-            "lon": 11.287957,
-            "nome": "L’Oreste. Quando i morti uccidono i vivi"
-          },
-          {
-            "lat": 44.493923,
-            "lon": 11.35475,
-            "nome": "Giancarlo Schiaffini + Orchestra Creativa del Conservatorio “Frescobaldi” di Fer"
-          },
-          {
-            "lat": 44.4946348,
-            "lon": 11.3419323,
-            "nome": "Piacenza: terra di confine tra Emilia e Lombardia"
-          },
-          {
-            "lat": 44.499813,
-            "lon": 11.349581,
-            "nome": "Teorie critiche della disabilità"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "L’arte della spada: la scherma storica a Bologna"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "La dolce guitar"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Musical Fantasy"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Mike Alfieri Trio"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Omaggio a Molière"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Da Mozart a Verdi"
-          },
-          {
-            "lat": 44.4700187,
-            "lon": 11.3707619,
-            "nome": "Viaggio nella musica argentina"
-          },
-          {
-            "lat": 44.508106,
-            "lon": 11.352334,
-            "nome": "LOVESICK"
-          },
-          {
-            "lat": 44.508297,
-            "lon": 11.346278,
-            "nome": "Miamio"
-          },
-          {
-            "lat": 44.2980619,
-            "lon": 11.6157439,
-            "nome": "Dmènga a tèater"
-          },
-          {
-            "lat": 44.499813,
-            "lon": 11.349581,
-            "nome": "Lavoro senza fine"
-          },
-          {
-            "lat": 44.499813,
-            "lon": 11.349581,
-            "nome": "Harraga bruciare per l’Europa"
-          },
-          {
-            "lat": 44.5091026,
-            "lon": 11.3455713,
-            "nome": "Ultima fermata prima del vuoto"
-          },
-          {
-            "lat": 44.5091026,
-            "lon": 11.3455713,
-            "nome": "ANIMA INERTE"
-          },
-          {
-            "lat": 44.5048442,
-            "lon": 11.3279527,
-            "nome": "ATTI PURI"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Pirandello. Trilogia di un visionario"
-          },
-          {
-            "lat": 44.492031,
-            "lon": 11.343432,
-            "nome": "Una pinta di nuvole"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Van Gogh Café"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Uno, Nessuno e Centomila"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Come Chaplin ricreò la Duse"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "10.958_ CRONACA DI UN’ESTINZIONE ACCELERATA"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "OSSA CHE BALLANO"
-          },
-          {
-            "lat": 44.492859265075,
-            "lon": 11.33909988728,
-            "nome": "MNTF Music and New Technologies Forum | Day 1/2"
-          },
-          {
-            "lat": 44.492859265075,
-            "lon": 11.33909988728,
-            "nome": "MNTF Music and New Technologies Forum | Day 2/2"
-          },
-          {
-            "lat": 44.492031,
-            "lon": 11.343432,
-            "nome": "In viaggio con Tiziano Terzani"
-          },
-          {
-            "lat": 44.485882,
-            "lon": 11.248301,
-            "nome": "Pantera"
-          },
-          {
-            "lat": 44.491829,
-            "lon": 11.343406,
-            "nome": "Sopravvivere al lunedì mattina con Lolita"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Come un pesce sulla terra"
-          },
-          {
-            "lat": 44.485882,
-            "lon": 11.248301,
-            "nome": "Shiva"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Vistacielo"
-          },
-          {
-            "lat": 44.52187,
-            "lon": 11.371001,
-            "nome": "La Sad"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "L’arte dell’impossibile"
-          },
-          {
-            "lat": 44.53241,
-            "lon": 11.233259,
-            "nome": "Vuoti"
-          },
-          {
-            "lat": 44.4960341,
-            "lon": 11.3914126,
-            "nome": "Enoteatro"
-          },
-          {
-            "lat": 44.52187,
-            "lon": 11.371001,
-            "nome": "España Circo Este"
-          },
-          {
-            "lat": 44.514614,
-            "lon": 11.287957,
-            "nome": "La difficilissima storia della vita di Ciccio Speranza"
-          },
-          {
-            "lat": 44.491383,
-            "lon": 11.342881,
-            "nome": "L'archivio teatrale di Arrigo Lucchini alla Biblioteca dell'Archiginnasio"
-          },
-          {
-            "lat": 44.50272,
-            "lon": 11.336569,
-            "nome": "Valeria Magli. Morbid"
-          },
-          {
-            "lat": 44.502453,
-            "lon": 11.32788,
-            "nome": "Leggere strano"
-          },
-          {
-            "lat": 44.492279,
-            "lon": 11.346427,
-            "nome": "Burattini Experience"
-          },
-          {
-            "lat": 44.492859265075,
-            "lon": 11.33909988728,
-            "nome": "Parliamo di 'Lucia di Lammermoor' con Raiz"
-          },
-          {
-            "lat": 44.492859265075,
-            "lon": 11.33909988728,
-            "nome": "Parliamo di 'Così Fan Tutte' con Margherita Vicario"
-          },
-          {
-            "lat": 44.506889,
-            "lon": 11.378275,
-            "nome": "Pom Pom Squad"
-          },
-          {
-            "lat": 44.492859265075,
-            "lon": 11.33909988728,
-            "nome": "Parliamo de 'La Bohème' con Aimone Romizi"
-          },
-          {
-            "lat": 44.496044,
-            "lon": 11.352064,
-            "nome": "L'utopia tra le nebbie della memoria"
-          },
-          {
-            "lat": 44.492279,
-            "lon": 11.346427,
-            "nome": "Arte Fiera e Bologna: ieri, oggi, domani"
-          },
-          {
-            "lat": 44.49721,
-            "lon": 11.342514,
-            "nome": "Un western all'italiana"
-          },
-          {
-            "lat": 44.502258,
-            "lon": 11.334967,
-            "nome": "'Hitler fa gola a tutti'. Un incontro sui terribili rispecchiamenti fra arte e p"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "I Viaggi di Gulliver"
-          },
-          {
-            "lat": 44.491383,
-            "lon": 11.342881,
-            "nome": "Ridolfo Campeggi - Delle Poesie (1620)"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Piccoli miracoli"
-          },
-          {
-            "lat": 44.499813,
-            "lon": 11.349581,
-            "nome": "La Bibbia raccontata da Eva, Giuditta, Maddalena e le altre"
-          },
-          {
-            "lat": 44.49721,
-            "lon": 11.342514,
-            "nome": "Concerto della Memoria 2025"
-          },
-          {
-            "lat": 44.497917,
-            "lon": 11.36541,
-            "nome": "BOLOGNA SUONA PINO DANIELE"
-          },
-          {
-            "lat": 44.490379,
-            "lon": 11.337802,
-            "nome": "Bologna, le Fiandre e la Spagna in età moderna"
-          },
-          {
-            "lat": 44.492279,
-            "lon": 11.346427,
-            "nome": "Benvenuta Filuzzi!"
-          },
-          {
-            "lat": 44.4946348,
-            "lon": 11.3419323,
-            "nome": "Tratti d’arte. Gli showcase d’artista"
-          },
-          {
-            "lat": 44.488541,
-            "lon": 11.348225,
-            "nome": "Cantami d’amore"
-          },
-          {
-            "lat": 44.501949,
-            "lon": 11.32761,
-            "nome": "LABORATORIO DI MEDIAZIONE"
-          },
-          {
-            "lat": 44.492908,
-            "lon": 11.342067,
-            "nome": "La morsa"
-          },
-          {
-            "lat": 44.492031,
-            "lon": 11.343432,
-            "nome": "In salute tutto l'anno"
-          },
-          {
-            "lat": 44.492031,
-            "lon": 11.343432,
-            "nome": "Vademecum per orientarsi tra diritti e doveri"
-          },
-          {
-            "lat": 44.502258,
-            "lon": 11.334967,
-            "nome": "MIA – L’Ateneo per l’Ateneo – Collegium Musicum Almae Matris"
-          },
-          {
-            "lat": 44.502258,
-            "lon": 11.334967,
-            "nome": "MIA – Schumann si fa in tre: Fuoco"
-          },
-          {
-            "lat": 44.49721,
-            "lon": 11.342514,
-            "nome": "Tra Giudizio e Pregiudizio"
+            "lat": 44.496765,
+            "lon": 11.340928,
+            "nome": "Scherzo d'amore"
           },
           {
             "lat": 44.484177,
             "lon": 11.339301,
-            "nome": "Se non credete venite quaggiù"
+            "nome": "I lasciti del colonialismo Italiano"
           },
           {
-            "lat": 44.4992344,
-            "lon": 11.2951823,
-            "nome": "CERCASI ESSERI UMANI"
+            "lat": 44.4945195,
+            "lon": 11.3446861,
+            "nome": "StraBologna"
           },
           {
-            "lat": 44.4997223,
-            "lon": 11.3899949,
-            "nome": "Classiche da Mercato… in Villa Pini"
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Marlene Kuntz"
           },
           {
-            "lat": 44.492867,
-            "lon": 11.350317,
-            "nome": "Musica, cultura, politica. L’esperienza artistica di Luigi Nono"
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Max Casacci | Earthphonia"
           },
           {
-            "lat": 44.4863438,
-            "lon": 11.3595806,
-            "nome": "Gustosissimo. Favole, ricette, emozioni da impastare"
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Gemini"
           },
           {
-            "lat": 44.4946348,
-            "lon": 11.3419323,
-            "nome": "Il grande scollamento"
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Amleto | Galleria Toledo"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Anfibia  | Leggere Strutture Art Factory"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Llabyellov | Carlo Cerato"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Eco del mondo | Tecnologia Filosofica"
+          },
+          {
+            "lat": 44.487694,
+            "lon": 11.34994,
+            "nome": "Peonia in Bloom – Art and decoration negli antichi orti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Limes - Il bluff globale"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "Untori"
+          },
+          {
+            "lat": 44.49617,
+            "lon": 11.329074,
+            "nome": "BOLERO AVANA"
+          },
+          {
+            "lat": 44.4956867,
+            "lon": 11.3531472,
+            "nome": "Dilaga ovunque"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Cuori in piena"
+          },
+          {
+            "lat": 44.506889,
+            "lon": 11.378275,
+            "nome": "Panchiko"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Gemini"
+          },
+          {
+            "lat": 44.489658,
+            "lon": 11.343971,
+            "nome": "Giovani in movimento. Proposte educative per le nuove generazioni"
+          },
+          {
+            "lat": 44.4999082,
+            "lon": 11.3543368,
+            "nome": "Kim Gordon"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Carl Brave + Rosa Chemical + Rose Villain"
+          },
+          {
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "Pak Yan Lau & Darin Gray"
+          },
+          {
+            "lat": 44.4855962,
+            "lon": 11.3547899,
+            "nome": "Ricordi Live"
+          },
+          {
+            "lat": 44.4892962,
+            "lon": 11.3191295,
+            "nome": "Building Comics. Una introduzione al rapporto tra Architettura e Fumetto"
+          },
+          {
+            "lat": 44.4914595,
+            "lon": 11.3432418,
+            "nome": "Il pozzo delle bambole"
+          },
+          {
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "Music Is The Best / Kilowatt presenta: Sceno-grafie"
+          },
+          {
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "Uomini che parlano di uomini – 1° workshop 2023"
           },
           {
             "lat": 44.49721,
             "lon": 11.342514,
-            "nome": "L'anello del Nibelungo | Seconda giornata"
+            "nome": "Le nozze di Figaro. Una folle giornata, un’epoca sul precipizio"
           },
           {
-            "lat": 44.4863438,
-            "lon": 11.3595806,
-            "nome": "Visitare i cuori. Diario illustrato di un viaggio a Gerusalemme in tempo di guer"
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "«L’altro»: Lettura   laboratorio / I Racconti del Leone"
           },
           {
-            "lat": 44.5071653,
-            "lon": 11.3525388,
-            "nome": "GALA SHOW – Amar Cord"
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Bologna Yarn Crawl 2023"
           },
           {
-            "lat": 44.504936,
-            "lon": 11.296461,
-            "nome": "SON QUI: M’AMMAZZI"
+            "lat": 44.493755,
+            "lon": 11.354426,
+            "nome": "La scuola che sarà"
           },
           {
-            "lat": 44.499813,
-            "lon": 11.349581,
-            "nome": "100 pezzi facili di Morando Morandini"
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Educare al consenso dall’infanzia all’adolescenza | Serrenove"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Donne che parlano di uomini – Workshop 2023"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "Il cibo della memoria"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "Ciclo"
+          },
+          {
+            "lat": 44.501762,
+            "lon": 11.362873,
+            "nome": "Roots Balera | Ultima dance al Mercato Sonato"
+          },
+          {
+            "lat": 44.501762,
+            "lon": 11.362873,
+            "nome": "CLASSICAdaMercato | Air & Touch"
+          },
+          {
+            "lat": 44.494591,
+            "lon": 11.331166,
+            "nome": "Vinyl Club"
+          },
+          {
+            "lat": 44.494591,
+            "lon": 11.331166,
+            "nome": "Past1Trio"
+          },
+          {
+            "lat": 44.510406,
+            "lon": 11.344702,
+            "nome": "(D)alla Bolognina, l’anima artistica di una piccola Bologna"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "PREMIO BULGARELLI NUMBER 8"
+          },
+          {
+            "lat": 44.4763783,
+            "lon": 11.412993,
+            "nome": "Il Circo Sotto la Gru"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Performance teatrale «Alberi» + «Cricket Sonic Attack» Live"
+          },
+          {
+            "lat": 44.471573,
+            "lon": 11.278958,
+            "nome": "Live Abraço Branco | International Samba Street Band"
+          },
+          {
+            "lat": 44.471573,
+            "lon": 11.278958,
+            "nome": "Hop hop | Simone Romanò"
+          },
+          {
+            "lat": 44.471573,
+            "lon": 11.278958,
+            "nome": "Un po’ di Magia | Magico Turra"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Musica e opera"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Classica e pop"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "L’orco puzza"
+          },
+          {
+            "lat": 44.512733,
+            "lon": 11.396217,
+            "nome": "Concerto Sinfonico Orchestra Cemi di Bologna"
+          },
+          {
+            "lat": 44.5023548,
+            "lon": 11.334671,
+            "nome": "Il sogno di Kubic"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Cos’è quella cosa che"
+          },
+          {
+            "lat": 44.489567,
+            "lon": 11.349141,
+            "nome": "Gli anni di piombo al Sud"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "Domicili cosmici"
+          },
+          {
+            "lat": 44.5082004,
+            "lon": 11.3523313,
+            "nome": "Il mercato bio di Slow Food"
+          },
+          {
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Le logiche del confine e del sentiero"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Gemini"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "Il camerino che sogno"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "Il volto del male"
+          },
+          {
+            "lat": 44.4914595,
+            "lon": 11.3432418,
+            "nome": "A corpo vivo"
           },
           {
             "lat": 44.5091026,
             "lon": 11.3455713,
-            "nome": "TANTE CARE COSE"
+            "nome": "SWAPE"
+          },
+          {
+            "lat": 44.49968,
+            "lon": 11.343528,
+            "nome": "Esito del laboratorio: I principi fondamentali. La Costituzione ideale"
+          },
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "La Domenica con il Laboratorio Sociale Afrobeat"
+          },
+          {
+            "lat": 44.491543,
+            "lon": 11.342807,
+            "nome": "GIUSEPPE ZANASI, LIBRAIO ANTIQUARIO E CREATORE DI LIBRI"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Bandabardò | Se mi rilasso collasso. Un libro suonato"
+          },
+          {
+            "lat": 44.534985,
+            "lon": 11.348874,
+            "nome": "Apprendisti astronauti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "GEOPOLITICA  CAPIRE IL MONDO IN GUERRA"
+          },
+          {
+            "lat": 44.493492,
+            "lon": 11.334393,
+            "nome": "Body of Knowledge"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "«Stanno arrivando»: incontro con Beatrice Pucci | Tecnica Mista"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione di «Please, Baby, Please»  +  «Swing, Baby, Swing!» | SEMI"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Red Bull BC One Cypher Italy 2023"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "Ricordi Live @Baraccano"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "Private Eye @Baraccano"
+          },
+          {
+            "lat": 44.5071907,
+            "lon": 11.3053014,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.4650459,
+            "lon": 11.3790846,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.490507,
+            "lon": 11.3214534,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.4661897,
+            "lon": 11.3850721,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.4989272,
+            "lon": 11.3444121,
+            "nome": "Chiuse aperte  | Va dove va l’acqua"
+          },
+          {
+            "lat": 44.4534933,
+            "lon": 11.3662848,
+            "nome": "Il canale di Flora - l’ultima rasdora"
+          },
+          {
+            "lat": 44.4534933,
+            "lon": 11.3662848,
+            "nome": "Cent’anni sciolti in un bicchiere - il mito di Charles Bukowski"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Kruder & Dorfmeister Dj + Lizard"
+          },
+          {
+            "lat": 44.489231,
+            "lon": 11.325198,
+            "nome": "Mr Klein  + La Finestra sul Cortile"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Maria Perrotta"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Natalia Trull"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Eklectric Duo"
+          },
+          {
+            "lat": 44.489658,
+            "lon": 11.343971,
+            "nome": "Che fine farà la libertà?"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione  «Vers la Tendresse»  + SPORE: Percorsi di tenerezza Radicale | SEMI"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione «Ninjababy» | SEMI"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione «Le variabili dipendenti» e «Winter Boy» + Incontro con Lorenzo Tarde"
+          },
+          {
+            "lat": 44.4669301,
+            "lon": 11.3120184,
+            "nome": "L'assenza cercata"
+          },
+          {
+            "lat": 44.4669301,
+            "lon": 11.3120184,
+            "nome": "Intorno ad Antonia"
+          },
+          {
+            "lat": 44.4912629,
+            "lon": 11.4037955,
+            "nome": "Coro Stelutis - Noi siam di primavera"
+          },
+          {
+            "lat": 44.4669301,
+            "lon": 11.3120184,
+            "nome": "I silenzi del mare"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "UOMINI SENZA"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Aspettando Gender Bender #2: Incontro con Ali Smith"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "La bomba"
+          },
+          {
+            "lat": 44.4935161,
+            "lon": 11.3342101,
+            "nome": "Nella mia città #Bologna"
+          },
+          {
+            "lat": 44.4964783,
+            "lon": 11.3420783,
+            "nome": "Hip Hop ClassiXBattle"
+          },
+          {
+            "lat": 44.496685,
+            "lon": 11.342465,
+            "nome": "Controtempo - percorsi sperimentali tra movimento e musica"
+          },
+          {
+            "lat": 44.4859472,
+            "lon": 11.3542691,
+            "nome": "Summer Dance - Danza popolare dell’infinito"
+          },
+          {
+            "lat": 44.4859472,
+            "lon": 11.3542691,
+            "nome": "Il Corpo delle Ombre"
+          },
+          {
+            "lat": 44.4964783,
+            "lon": 11.3420783,
+            "nome": "La Banda del B.U.C.O, piccola orchestra ellenica"
+          },
+          {
+            "lat": 44.500896,
+            "lon": 11.340207,
+            "nome": "Presentazione fanzine BODY/Z"
+          },
+          {
+            "lat": 44.4964783,
+            "lon": 11.3420783,
+            "nome": "Maṇḍala | geometrie sacre in danza"
+          },
+          {
+            "lat": 44.4984384,
+            "lon": 11.3422206,
+            "nome": "Palazzo Bonasoni e il suo portico affacciato sull’antico decumano"
+          },
+          {
+            "lat": 44.496685,
+            "lon": 11.342465,
+            "nome": "All’inizio della città di Roma"
+          },
+          {
+            "lat": 44.49527,
+            "lon": 11.348263,
+            "nome": "Alla scoperta di Palazzo Malvezzi"
+          },
+          {
+            "lat": 44.4989144,
+            "lon": 11.3420663,
+            "nome": "Ginevra Sforza 'Ben Ti Voglio'"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Certosa segreta"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Le forme del passato - la scoperta del presente"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Certosa officinale - segreti della natura all’ombra dei cipressi"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Chiostri inesplorati: capolavori nascosti alla Certosa"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Sentimenti scolpiti"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "Sunrise Garden"
+          },
+          {
+            "lat": 44.499422,
+            "lon": 11.3426323,
+            "nome": "Concerto dell'Orchestra di percussioni brasiliane"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "The Toasters (USA)"
+          },
+          {
+            "lat": 44.491543,
+            "lon": 11.342807,
+            "nome": "Può esserci sviluppo se aumentano le diseguaglianze?"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Cantodiscanto (Italia)"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Alamedadosoulna (Spagna)"
+          },
+          {
+            "lat": 44.493057,
+            "lon": 11.344259,
+            "nome": "Incontri in Libreria"
+          },
+          {
+            "lat": 44.491383,
+            "lon": 11.342881,
+            "nome": "Floria è un buon falco"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Mark Cunningham (leader dei Mars)"
+          },
+          {
+            "lat": 44.502597131638,
+            "lon": 11.335972597921,
+            "nome": "Muna Mussie. Bologna St.173, Un viaggio a ritroso. Congressi e Festival Eritrei "
+          },
+          {
+            "lat": 44.489231,
+            "lon": 11.325198,
+            "nome": "La notte del 12"
+          },
+          {
+            "lat": 44.4897493,
+            "lon": 11.3467242,
+            "nome": "Pizzardi grande benefattore"
+          },
+          {
+            "lat": 44.506096,
+            "lon": 11.296157,
+            "nome": "Andreas Gursky. Visual Spaces of Today"
+          },
+          {
+            "lat": 44.50272,
+            "lon": 11.336569,
+            "nome": "Laboratorio Aperto al Museo Morandi"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "MILLEPIANI 43. Le crepe del presente"
+          },
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "“Ruby Tuesday” w/ Johnny Mox live"
+          },
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "“Ruby Tuesday” w/The Derricks live"
+          },
+          {
+            "lat": 44.4911758,
+            "lon": 11.3526772,
+            "nome": "Weekend cameristico di primavera"
+          },
+          {
+            "lat": 44.545815,
+            "lon": 11.358854,
+            "nome": "Aspettando il solstizio"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Festa in Cantiere | Dj set con ABO"
+          },
+          {
+            "lat": 44.5463924,
+            "lon": 11.3602251,
+            "nome": "Casa mobile a pedali"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Talk con Davide Celli  |  “Gli Ecosistemi'"
+          },
+          {
+            "lat": 44.545815,
+            "lon": 11.358854,
+            "nome": "Abaco"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Performance Live: KHOMPA"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Workshop Baby (3-8 anni): Come suona la musica della natura dentro di noi?"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Presentazione libro: Parla sostenibile di Silvia Moroni"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Presentazione graphic novel: Il mondo senza fine di Jean-Marc Jancovici e Christ"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Proiezione del film: Everything will change di Marten Persiel"
+          },
+          {
+            "lat": 44.491829,
+            "lon": 11.343406,
+            "nome": "Il ratto del fanciullo"
+          },
+          {
+            "lat": 44.510406,
+            "lon": 11.344702,
+            "nome": "(D)alla Bolognina, l’anima artistica di una piccola Bologna  | Giugno"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "LADRA"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "La bellezza. Istruzioni per l'uso"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Ritratti di ritratti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Bologna Genius Loci. Quattro giornate con Giosuè Carducci"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Giorgio Manganelli. Emigrazioni oniriche, scritti sulle arti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Le parole di Gesù"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Michele Mellara presenta Sociopatici in cerca d’affetto"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Storia senza fine"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "La classica giovane  + Alberto Capelli"
+          },
+          {
+            "lat": 44.494057,
+            "lon": 11.334484,
+            "nome": "Festa della Musica"
+          },
+          {
+            "lat": 44.484177,
+            "lon": 11.339301,
+            "nome": "Il primo pensiero del mattino"
+          },
+          {
+            "lat": 44.48962,
+            "lon": 11.343453,
+            "nome": "Echi medievali: dichiarazioni di guerra, d’amore e di pace"
+          },
+          {
+            "lat": 44.48962,
+            "lon": 11.343453,
+            "nome": "Concerto per un amico"
+          },
+          {
+            "lat": 44.492359,
+            "lon": 11.348164,
+            "nome": "S. Stefano : la Santa Gerusalemme Bolognese"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.343095,
+            "nome": "Orchestra del Conservatorio G.B. Martini – Direttrice Oksana Lyniv"
+          },
+          {
+            "lat": 44.491001,
+            "lon": 11.351026,
+            "nome": "Respighi, compositore senza tempo"
+          },
+          {
+            "lat": 44.491001,
+            "lon": 11.351026,
+            "nome": "Emy Bernecoli violino, Elia Andrea Corazza pianoforte"
+          },
+          {
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Alla scoperta dei luoghi di Respighi"
+          },
+          {
+            "lat": 44.485676,
+            "lon": 11.354102,
+            "nome": "Cena a Casa Respighi"
+          },
+          {
+            "lat": 44.58036,
+            "lon": 11.400828,
+            "nome": "Trent’anni di grano - Teatro delle Ariette"
+          },
+          {
+            "lat": 44.4790957,
+            "lon": 11.3242235,
+            "nome": "All’eremo di Ronzano: dai frati gaudenti agli splendori del Risorgimento"
+          },
+          {
+            "lat": 44.50341,
+            "lon": 11.34525,
+            "nome": "Fontane, scaloni e battaglie"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "A caccia di animali e mostri: armiamoci (...di torcia) e partiamo!"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "Fricandò alla bolognese: fatti, misfatti, gentaglia e nobiltà.  Quartiere di por"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "Fricandò alla bolognese: fatti, misfatti, gentaglia e nobiltà.  Quartiere di Por"
+          },
+          {
+            "lat": 44.6594437,
+            "lon": 11.2878597,
+            "nome": "Palazzo Minelli e ‘La Mazurca del Marchese, della santa e del Fico fiorone’"
+          },
+          {
+            "lat": 44.38741,
+            "lon": 11.5361726,
+            "nome": "Cirque Bidon | tour in Emilia-Romagna"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Michele Della Valentina trio"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Corale Orfeonica"
+          },
+          {
+            "lat": 44.4921195,
+            "lon": 11.3341502,
+            "nome": "Fiori di pietra, Bologna magica in verde… a caccia della natura dipinta, scolpit"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Voglia di Bello – Gli Impressionisti e Debussy"
+          },
+          {
+            "lat": 44.4945195,
+            "lon": 11.3446861,
+            "nome": "B.great – La ricerca si fa strada"
+          },
+          {
+            "lat": 44.4976658,
+            "lon": 11.351835,
+            "nome": "La guerra capitalista"
+          },
+          {
+            "lat": 44.4910308,
+            "lon": 11.3441489,
+            "nome": "Qui tiriamo giù tutto!"
+          },
+          {
+            "lat": 44.5004877,
+            "lon": 11.35479,
+            "nome": "Clap Your Hands Say Yeah"
+          },
+          {
+            "lat": 44.5004877,
+            "lon": 11.35479,
+            "nome": "Muro del Canto"
+          },
+          {
+            "lat": 44.5004877,
+            "lon": 11.35479,
+            "nome": "Statuto"
+          },
+          {
+            "lat": 44.5113348,
+            "lon": 11.3944639,
+            "nome": "Mnemosyne"
+          },
+          {
+            "lat": 44.514271,
+            "lon": 11.28391,
+            "nome": "Ipotesi d'amore"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "MarQuette n. 10"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Fabri Fibra"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "James Bay"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Tintoria Podcast Live"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Carmen Consoli"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "C'era una volta il sesso"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "STORIE AD ALTA TENSIONE | ITINERARI IN NOIR"
+          },
+          {
+            "lat": 44.490967,
+            "lon": 11.356309,
+            "nome": "International Jazz & Art Performing 5.0"
+          },
+          {
+            "lat": 44.502597131638,
+            "lon": 11.335972597921,
+            "nome": "Morena Poltronieri e Ernesto Fazioli. STREGA DONNA DEA"
+          },
+          {
+            "lat": 44.5062681,
+            "lon": 11.3327687,
+            "nome": "Il Navile e i Sostegni"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Mo sóppa, che spetâcuel! in Piazza Lucio Dalla"
+          },
+          {
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Dinobike - Il mondo di Dino Gavina"
+          },
+          {
+            "lat": 44.4890434,
+            "lon": 11.3549056,
+            "nome": "Donne con lo zaino."
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Elisa Genghini presenta Ballate per galline vecchie"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Dangeons & Dragons"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Lydia Lunch  + Retrovirus"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "La classica giovane  +  Ground 71"
+          },
+          {
+            "lat": 44.4939679,
+            "lon": 11.3388606,
+            "nome": "La Chiesa del SS. Salvatore riaperta: un grandioso scrigno d'arte"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "Il giallo delle torri: 101 modi per sbarazzarsi del consorte"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Gyal Show Off"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Kublai, Drag.One e I Bomburdiani"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Disegno al metro!"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Davide Toffolo"
+          },
+          {
+            "lat": 44.4977566,
+            "lon": 11.3534957,
+            "nome": "Premio di incisione Giorgio Morandi"
+          },
+          {
+            "lat": 44.493271,
+            "lon": 11.309897,
+            "nome": "Marco Mengoni | Marco negli Stadi 2023"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "B612 APS"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "Ritorno nella città senza nome"
+          },
+          {
+            "lat": 44.496685,
+            "lon": 11.342465,
+            "nome": "...quello è uno di loro."
+          },
+          {
+            "lat": 44.497826,
+            "lon": 11.30709,
+            "nome": "Viaggio nel Tempio dell’immortalità"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Svetalia - Il Bel Paese"
+          },
+          {
+            "lat": 44.545815,
+            "lon": 11.358854,
+            "nome": "Mentre Bologna dorme"
+          },
+          {
+            "lat": 44.493945,
+            "lon": 11.3432071,
+            "nome": "E buio fu"
+          },
+          {
+            "lat": 44.497826,
+            "lon": 11.30709,
+            "nome": "Maratona in Certosa | la storia dell'arte bolognese dal 1801 ad oggi"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "I portici, di e con Paolo Nori"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Frulli, passetti e denzi… ecco a voi la Filuzzi!"
+          },
+          {
+            "lat": 44.49229,
+            "lon": 11.351945,
+            "nome": "Frammenti di Bologna neoclassica"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Mare urbano"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Once on this island"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Solastalgia + CrePa"
+          },
+          {
+            "lat": 44.498775,
+            "lon": 11.349415,
+            "nome": "La pianura dei portici"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Cantanti e opere nella storia - Seconda parte"
+          },
+          {
+            "lat": 44.4955505,
+            "lon": 11.3317814,
+            "nome": "AGAIN"
+          },
+          {
+            "lat": 44.4956867,
+            "lon": 11.3531472,
+            "nome": "Corpi, relazioni assenze"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Teatro a Molla"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Marzia & Mauro Live"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Maisazi Live Coverband"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Corale Quadriclavio"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Dancing for the Gods"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Statale 24"
+          },
+          {
+            "lat": 44.492085,
+            "lon": 11.352019,
+            "nome": "Rossini per “il Rossini” | Concerto di beneficienza per la Romagna"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Sea Shepherd"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "L’Ottocento tra arte, balli e tableaux vivants"
+          },
+          {
+            "lat": 44.492085,
+            "lon": 11.352019,
+            "nome": "Da Cimabue a Guercino: i segreti della Basilica dei Servi"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Suoni di passaggio"
+          },
+          {
+            "lat": 44.498802,
+            "lon": 11.337701,
+            "nome": "Visita guidata alla mostra Dinamiche dell‘equilibrio"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Cedar's Blues"
+          },
+          {
+            "lat": 44.5075281,
+            "lon": 11.3577581,
+            "nome": "Shared Kitchen - Camerun"
+          },
+          {
+            "lat": 44.491291,
+            "lon": 11.319671,
+            "nome": "La strega Sibilla e il gatto Serafino"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Confini"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "Un autunno caldo"
+          },
+          {
+            "lat": 44.498802,
+            "lon": 11.337701,
+            "nome": "Barend Middelhoff - Matteo Raggi Quintet"
+          },
+          {
+            "lat": 44.502597131638,
+            "lon": 11.335972597921,
+            "nome": "Francesco Targhetta in dialogo con Lorenzo Modica"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "LA CRITICA RADICALE IN ITALIA"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "MOSAICO, NEL NOME DEL PADRE"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "La casa sul Nilo"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "Violenza e giustizia"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "LA FELICITÀ È UNA COSA SEMPLICE"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "Storia della pizza"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "UN BUON POSTO IN CUI FERMARSI"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "Non aprire quella morta"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Le cinquantaquattro ferite di Federico Aldrovandi"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Cogne, il primo delitto mediatico"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "Slavi Bravissime Persone"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "Queendom"
+          },
+          {
+            "lat": 44.481262,
+            "lon": 11.381327,
+            "nome": "Palestina oggi"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "La cicala e la formica"
+          },
+          {
+            "lat": 44.510216,
+            "lon": 11.344572,
+            "nome": "LE VOLPI NELL'AIA"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Intellettuale nelle istituzioni"
+          },
+          {
+            "lat": 44.4894481,
+            "lon": 11.3120507,
+            "nome": "Filottete dimenticato"
+          },
+          {
+            "lat": 44.502354,
+            "lon": 11.334671,
+            "nome": "Accendere la lettura 2023"
+          },
+          {
+            "lat": 44.490101,
+            "lon": 11.346835,
+            "nome": "Orchestra del Collegium Musicum"
+          },
+          {
+            "lat": 44.4885412,
+            "lon": 11.3482249,
+            "nome": "Elena la bella"
+          },
+          {
+            "lat": 44.4885412,
+            "lon": 11.3482249,
+            "nome": "Pandora e il vaso segreto"
+          },
+          {
+            "lat": 44.507893,
+            "lon": 11.297527,
+            "nome": "Buchi bianchi"
+          },
+          {
+            "lat": 44.477551,
+            "lon": 11.310175,
+            "nome": "Laboratorio di Field Recording"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Un corpo mai visto!"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Invisibilia"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Laboratorio di movimento e incorporazione Haraway “Seminare mondi”"
+          },
+          {
+            "lat": 44.4956867,
+            "lon": 11.3531472,
+            "nome": "Premio Calvino. Enrico Renzi presenta Pizzini"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Una notte a Venezia"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Festival D’Autore – Tributo a Fabrizio De André"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Dream a little dream. Sogno diversamente blues"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Enzo Tortora. Storia di un galantuomo"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Anna Magnani, l'irripetibile"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "As Madalenas Live Quintet"
+          },
+          {
+            "lat": 44.512211,
+            "lon": 11.357157,
+            "nome": "James Senese JNC"
+          },
+          {
+            "lat": 44.512211,
+            "lon": 11.357157,
+            "nome": "Olivia Belli | Intime corde"
+          },
+          {
+            "lat": 44.4953584,
+            "lon": 11.347164,
+            "nome": "Note di Solidarietà, concerto di beneficenza"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Gran serata Orfeonica"
+          },
+          {
+            "lat": 44.49968,
+            "lon": 11.343528,
+            "nome": "Voci di donne"
+          },
+          {
+            "lat": 44.49968,
+            "lon": 11.343528,
+            "nome": "Molto dolore per nulla"
+          },
+          {
+            "lat": 44.732849,
+            "lon": 11.17808,
+            "nome": "Il corpo dell’invisibile - una giornata intorno all’arte di Peter Brook"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Laura Agnusdei"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Ipotesi d'amore | day #2"
+          },
+          {
+            "lat": 44.515144,
+            "lon": 11.281613,
+            "nome": "Ipotesi d'amore | day #4"
+          },
+          {
+            "lat": 44.49461,
+            "lon": 11.342381,
+            "nome": "In movimento continuo"
+          },
+          {
+            "lat": 44.49461,
+            "lon": 11.342381,
+            "nome": "Inaugurazione esposizione | In movimento continuo"
+          },
+          {
+            "lat": 44.513321,
+            "lon": 11.350051,
+            "nome": "Odessa. Solo Piano | A Musical Walk Through a Legendary City"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Cose dell'altro mondo"
           }
         ],
         "pct_online": 0

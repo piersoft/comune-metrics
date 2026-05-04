@@ -86,7 +86,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
-      "fetched_at": "2026-05-04T20:21:06.824Z",
+      "fetched_at": "2026-05-04T20:26:59.670Z",
       "status": "ok",
       "modified": "2026-04-14",
       "freshness": {
@@ -125,7 +125,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "dentro-il-bilancio-2024",
-      "fetched_at": "2026-05-04T20:21:09.201Z",
+      "fetched_at": "2026-05-04T20:27:02.673Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -163,7 +163,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "siast-servizi-integrati-assistenza-sociale-territoriale",
-      "fetched_at": "2026-05-04T20:21:11.242Z",
+      "fetched_at": "2026-05-04T20:27:04.931Z",
       "status": "unsupported_format",
       "modified": "2014-03-26",
       "freshness": {
@@ -190,14 +190,14 @@
         "spesa_totale": null,
         "spesa_media": null
       },
-      "resource_url": "http://tms.comune.fi.it/tiles/service/wms?request=GetCapabilities&service=WMS&tiled=TRUE&version=1.3.0",
-      "resource_format": "WMS",
-      "error": "Formato WMS non parsabile (richiesti: JSON, JSONL, CSV)"
+      "resource_url": "https://data.comune.fi.it/datastore/download.php?id=6442&type=99&format=url&file_format=kml&file_id=20117",
+      "resource_format": "KML",
+      "error": "Formato KML non parsabile (richiesti: JSON, JSONL, CSV)"
     },
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
-      "fetched_at": "2026-05-04T20:21:11.670Z",
+      "fetched_at": "2026-05-04T20:27:05.562Z",
       "status": "ok",
       "modified": "2018-07-30",
       "freshness": {
@@ -238,7 +238,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "numero-incidenti-stradali-per-quartiere-anno-2014",
-      "fetched_at": "2026-05-04T20:21:12.870Z",
+      "fetched_at": "2026-05-04T20:27:06.827Z",
       "status": "ok",
       "modified": "2015-08-04",
       "freshness": {
@@ -297,7 +297,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "quantita-di-rifiuti-urbani-anni-2000-2014",
-      "fetched_at": "2026-05-04T20:21:14.075Z",
+      "fetched_at": "2026-05-04T20:27:08.211Z",
       "status": "ok",
       "modified": "2015-04-16",
       "freshness": {
@@ -350,7 +350,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "teatri-e-luoghi-per-eventi",
-      "fetched_at": "2026-05-04T20:21:15.332Z",
+      "fetched_at": "2026-05-04T20:27:09.940Z",
       "status": "unsupported_format",
       "modified": "2025-06-15",
       "freshness": {
@@ -389,7 +389,7 @@
     "delibere": {
       "dataset_key": "delibere",
       "slug": "delibere-anno-2023",
-      "fetched_at": "2026-05-04T20:21:15.848Z",
+      "fetched_at": "2026-05-04T20:27:10.540Z",
       "status": "ok",
       "modified": "2023-12-27",
       "freshness": {
