@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-04T20:35:34.530Z",
+  "built_at": "2026-05-04T20:48:26.740Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "bologna": {
@@ -27,13 +27,13 @@
       "n_datasets_totali": 11,
       "n_datasets_ok": 4
     },
-    "bari": {
-      "key": "bari",
-      "nome": "Bari",
-      "ipa": "c_a662",
-      "n_datasets_pubblicati": 5,
+    "torino": {
+      "key": "torino",
+      "nome": "Torino",
+      "ipa": "c_l219",
+      "n_datasets_pubblicati": 4,
       "n_datasets_totali": 11,
-      "n_datasets_ok": 0
+      "n_datasets_ok": 2
     }
   }
 }
