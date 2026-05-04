@@ -15,15 +15,15 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-04T18:27:06.086Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:46:33.961Z",
+      "status": "ok",
+      "modified": "2019-02-12",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 87,
+        "iso": "2019-02-12"
       },
-      "n_rows": null,
+      "n_rows": 12,
       "fields_expected": [
         "anno",
         "eta",
@@ -32,8 +32,16 @@
         "quartiere",
         "residenti"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "anno"
+      ],
+      "fields_missing": [
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
       "metrics": {
         "totale_residenti": null,
         "serie_anni": null,
@@ -46,20 +54,20 @@
         "iscritti": null,
         "cancellati": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcFy1ECsB4VjnnS4BH_uBUaOeLRtK86KpUyDNV-z6EMcnDZQau6BOrGi_4fVxHWzXvZLjXbswzLb8D/pub?gid=150030403&single=true&output=csv",
+      "resource_format": "CSV",
+      "error": null
     },
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "consuntivo-2019-comune-di-lecce",
-      "fetched_at": "2026-05-04T18:27:06.191Z",
+      "fetched_at": "2026-05-04T18:46:35.405Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2020-12-24",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 65,
+        "iso": "2020-12-24"
       },
       "n_rows": null,
       "fields_expected": [
@@ -76,22 +84,22 @@
         "top10_programmi": null,
         "serie_anni": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "http://dati.comune.lecce.it/dataset/0e5941a9-e50a-4e22-bf2b-7cbaaba97c00/resource/6733db81-d8e2-44af-b11d-9ce3202ebc2b/download/consuntivo-2019-entrate-per-piano-finanziario.csv",
+      "resource_format": "CSV",
+      "error": "Download fallito (CSV)"
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "open-cantieri-lecce",
-      "fetched_at": "2026-05-04T18:27:06.292Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:47:00.145Z",
+      "status": "ok",
+      "modified": "2020-07-14",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 70,
+        "iso": "2020-07-14"
       },
-      "n_rows": null,
+      "n_rows": 30,
       "fields_expected": [
         "nome",
         "stato",
@@ -109,31 +117,81 @@
         "sal",
         "fonte"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "nome",
+        "lat",
+        "lon",
+        "data_inizio",
+        "cup",
+        "fonte"
+      ],
+      "fields_missing": [
+        "stato",
+        "pin_point",
+        "indirizzo",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "importo",
+        "sal"
+      ],
       "metrics": {
-        "totale": null,
+        "totale": 30,
         "per_stato": null,
         "opere_geo": null,
-        "cup": null,
+        "cup": 30,
         "importo_totale": null,
         "sal_medio": null,
-        "per_fonte": null
+        "per_fonte": [
+          {
+            "nome": "Statale",
+            "n": 19
+          },
+          {
+            "nome": "Europeo-statale",
+            "n": 3
+          },
+          {
+            "nome": "Regionale",
+            "n": 2
+          },
+          {
+            "nome": "Comunale",
+            "n": 2
+          },
+          {
+            "nome": "Europeo",
+            "n": 1
+          },
+          {
+            "nome": "Europeo-statale-comunale",
+            "n": 1
+          },
+          {
+            "nome": "Europeo-comunale",
+            "n": 1
+          },
+          {
+            "nome": "Statale-comunale",
+            "n": 1
+          }
+        ]
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://goo.gl/Ku60ri",
+      "resource_format": "CSV",
+      "error": null
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "elenco-pratiche-sue",
-      "fetched_at": "2026-05-04T18:27:06.396Z",
+      "fetched_at": "2026-05-04T18:47:02.645Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2023-03-07",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 38,
+        "iso": "2023-03-07"
       },
       "n_rows": null,
       "fields_expected": [
@@ -155,22 +213,22 @@
         "tempo_medio_pdc": null,
         "pct_nei_termini": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "http://dati.comune.lecce.it/dataset/dcf2252f-30c7-4198-9053-6dcddc3c257e/resource/4b32f8c0-2f96-4053-b917-91341c71a209/download/opendata_sue-foglio1.csv",
+      "resource_format": "CSV",
+      "error": "Download fallito (CSV)"
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016",
-      "fetched_at": "2026-05-04T18:27:06.497Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:47:27.934Z",
+      "status": "ok",
+      "modified": "2018-10-19",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 91,
+        "iso": "2018-10-19"
       },
-      "n_rows": null,
+      "n_rows": 52,
       "fields_expected": [
         "target",
         "categoria",
@@ -180,30 +238,38 @@
         "identificativo",
         "data_inizio"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [],
+      "fields_missing": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio"
+      ],
       "metrics": {
-        "utenti_totali": null,
+        "utenti_totali": 52,
         "per_target": null,
         "per_categoria": null,
         "spesa_totale": null,
         "spesa_media": null,
         "pct_accolte": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://goo.gl/5JZgbM",
+      "resource_format": "CSV",
+      "error": null
     },
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "elenco-e-ubicazione-asili-nido-comunali-lecce",
-      "fetched_at": "2026-05-04T18:27:06.602Z",
+      "fetched_at": "2026-05-04T18:47:31.005Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2018-10-19",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 91,
+        "iso": "2018-10-19"
       },
       "n_rows": null,
       "fields_expected": [
@@ -226,22 +292,22 @@
         "lista_attesa": null,
         "tasso_copertura": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://goo.gl/a6bl6y",
+      "resource_format": "CSV",
+      "error": "Download fallito (CSV)"
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-sinistri-dal-2018-lecce",
-      "fetched_at": "2026-05-04T18:27:06.703Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:47:32.801Z",
+      "status": "ok",
+      "modified": "2021-02-03",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 63,
+        "iso": "2021-02-03"
       },
-      "n_rows": null,
+      "n_rows": 2500,
       "fields_expected": [
         "anno",
         "mese",
@@ -254,10 +320,22 @@
         "gravita",
         "zona"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "lat",
+        "lon"
+      ],
+      "fields_missing": [
+        "anno",
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "via",
+        "gravita",
+        "zona"
+      ],
       "metrics": {
-        "totale_anno": null,
+        "totale_anno": 2500,
         "n_morti": null,
         "n_feriti": null,
         "serie_mensile": null,
@@ -266,20 +344,20 @@
         "indice_mortalita": null,
         "pct_pedoni_ciclisti": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://docs.google.com/spreadsheets/d/1B7HQ3gr6oSw_AHOK8wCj-jk98oT63iNF2Bibh3WsZME/gviz/tq?tqx=out:csv&sheet=301291679",
+      "resource_format": "CSV",
+      "error": null
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "raccolta-rifiuti-2015",
-      "fetched_at": "2026-05-04T18:27:06.808Z",
+      "fetched_at": "2026-05-04T18:47:34.608Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2016-12-31",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 113,
+        "iso": "2016-12-31"
       },
       "n_rows": null,
       "fields_expected": [
@@ -300,20 +378,20 @@
         "pro_capite_kg": null,
         "serie_mensile": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://goo.gl/8O6bQ6",
+      "resource_format": "CSV",
+      "error": "Download fallito (CSV)"
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-culturali-ricorrenti",
-      "fetched_at": "2026-05-04T18:27:06.909Z",
+      "fetched_at": "2026-05-04T18:47:35.893Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2015-01-01",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 136,
+        "iso": "2015-01-01"
       },
       "n_rows": null,
       "fields_expected": [
@@ -336,20 +414,20 @@
         "pct_gratuiti": null,
         "spesa_patrocinati": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "http://dati.comune.lecce.it/dataset/f97388a5-20dc-4aaf-844a-55b0bf0ba0a8/resource/3292440f-26a5-498b-aba3-054c7b9068f7/download/eventiricorrenti.json",
+      "resource_format": "JSON",
+      "error": "Download fallito (JSON)"
     },
     "delibere": {
       "dataset_key": "delibere",
       "slug": "albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce",
-      "fetched_at": "2026-05-04T18:27:07.014Z",
+      "fetched_at": "2026-05-04T18:48:00.629Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2018-08-16",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "stale",
+        "months": 93,
+        "iso": "2018-08-16"
       },
       "n_rows": null,
       "fields_expected": [
@@ -366,20 +444,20 @@
         "tempo_medio_pubblicazione": null,
         "pct_nei_termini": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://goo.gl/Fsdyxq",
+      "resource_format": "XML",
+      "error": "Server ha restituito HTML invece di dati"
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "fabbricati-2023_comune-di-lecce",
-      "fetched_at": "2026-05-04T18:27:07.115Z",
+      "fetched_at": "2026-05-04T18:48:06.801Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2024-04-10",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "aged",
+        "months": 25,
+        "iso": "2024-04-10"
       },
       "n_rows": null,
       "fields_expected": [
@@ -401,9 +479,9 @@
         "valore_totale": null,
         "pct_inutilizzati": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "http://dati.comune.lecce.it/dataset/adf85741-ada2-4b73-97b0-2c2fec8f2221/resource/077c9a83-b09c-403f-bff2-ea3d38ef26a5/download/fabbricati-uso-commerciale-di-valore-culturale_2023.csv",
+      "resource_format": "CSV",
+      "error": "Download fallito (CSV)"
     }
   }
 }

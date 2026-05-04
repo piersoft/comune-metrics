@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-04T18:27:02.610Z",
+  "built_at": "2026-05-04T18:44:21.701Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "bologna": {
@@ -9,15 +9,7 @@
       "ipa": "c_a944",
       "n_datasets_pubblicati": 9,
       "n_datasets_totali": 11,
-      "n_datasets_ok": 0
-    },
-    "milano": {
-      "key": "milano",
-      "nome": "Milano",
-      "ipa": "c_f205",
-      "n_datasets_pubblicati": 8,
-      "n_datasets_totali": 11,
-      "n_datasets_ok": 0
+      "n_datasets_ok": 7
     },
     "firenze": {
       "key": "firenze",
@@ -25,7 +17,7 @@
       "ipa": "c_d612",
       "n_datasets_pubblicati": 8,
       "n_datasets_totali": 11,
-      "n_datasets_ok": 0
+      "n_datasets_ok": 6
     },
     "lecce": {
       "key": "lecce",
@@ -33,7 +25,7 @@
       "ipa": "c_e506",
       "n_datasets_pubblicati": 11,
       "n_datasets_totali": 11,
-      "n_datasets_ok": 0
+      "n_datasets_ok": 4
     }
   }
 }

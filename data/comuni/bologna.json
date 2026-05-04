@@ -54,13 +54,13 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      "fetched_at": "2026-05-04T18:27:02.610Z",
+      "fetched_at": "2026-05-04T18:44:21.701Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2024-12-31T09:12:53+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "aged",
+        "months": 17,
+        "iso": "2024-12-31T09:12:53+00:00"
       },
       "n_rows": null,
       "fields_expected": [
@@ -85,52 +85,180 @@
         "iscritti": null,
         "cancellati": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/annuale_popolazione_residente_eta_quart_zonadal1986/exports/json",
+      "resource_format": "JSON",
+      "error": "Download fallito (JSON)"
     },
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "bilancio-di-previsione-previsione-uscite",
-      "fetched_at": "2026-05-04T18:27:03.392Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:44:50.586Z",
+      "status": "ok",
+      "modified": "2025-12-31T12:00:00+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "fresh",
+        "months": 5,
+        "iso": "2025-12-31T12:00:00+00:00"
       },
-      "n_rows": null,
+      "n_rows": 2928,
       "fields_expected": [
         "missione",
         "programma",
         "importo",
         "anno"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "missione",
+        "programma"
+      ],
+      "fields_missing": [
+        "importo",
+        "anno"
+      ],
       "metrics": {
         "totale_uscite": null,
-        "per_missione": null,
-        "top10_programmi": null,
+        "per_missione": [
+          {
+            "nome": "1",
+            "n": 753
+          },
+          {
+            "nome": "12",
+            "n": 425
+          },
+          {
+            "nome": "4",
+            "n": 235
+          },
+          {
+            "nome": "9",
+            "n": 226
+          },
+          {
+            "nome": "10",
+            "n": 198
+          },
+          {
+            "nome": "8",
+            "n": 180
+          },
+          {
+            "nome": "5",
+            "n": 164
+          },
+          {
+            "nome": "6",
+            "n": 151
+          },
+          {
+            "nome": "14",
+            "n": 115
+          },
+          {
+            "nome": "3",
+            "n": 109
+          },
+          {
+            "nome": "7",
+            "n": 54
+          },
+          {
+            "nome": "20",
+            "n": 44
+          },
+          {
+            "nome": "11",
+            "n": 44
+          },
+          {
+            "nome": "2",
+            "n": 43
+          },
+          {
+            "nome": "19",
+            "n": 38
+          },
+          {
+            "nome": "13",
+            "n": 34
+          },
+          {
+            "nome": "17",
+            "n": 31
+          },
+          {
+            "nome": "15",
+            "n": 27
+          },
+          {
+            "nome": "99",
+            "n": 26
+          },
+          {
+            "nome": "50",
+            "n": 18
+          }
+        ],
+        "top10_programmi": [
+          {
+            "nome": "105",
+            "n": 106
+          },
+          {
+            "nome": "801",
+            "n": 106
+          },
+          {
+            "nome": "111",
+            "n": 102
+          },
+          {
+            "nome": "103",
+            "n": 102
+          },
+          {
+            "nome": "1005",
+            "n": 97
+          },
+          {
+            "nome": "502",
+            "n": 90
+          },
+          {
+            "nome": "902",
+            "n": 87
+          },
+          {
+            "nome": "301",
+            "n": 87
+          },
+          {
+            "nome": "601",
+            "n": 86
+          },
+          {
+            "nome": "1207",
+            "n": 84
+          }
+        ],
         "serie_anni": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/bilancio-di-previsione-previsione-uscite/exports/json",
+      "resource_format": "JSON",
+      "error": null
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "lavori-in-corso-in-citta",
-      "fetched_at": "2026-05-04T18:27:03.709Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:44:55.190Z",
+      "status": "ok",
+      "modified": "2026-03-21T06:00:03.144000+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "fresh",
+        "months": 2,
+        "iso": "2026-03-21T06:00:03.144000+00:00"
       },
-      "n_rows": null,
+      "n_rows": 48,
       "fields_expected": [
         "nome",
         "stato",
@@ -148,10 +276,27 @@
         "sal",
         "fonte"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "pin_point"
+      ],
+      "fields_missing": [
+        "nome",
+        "stato",
+        "lat",
+        "lon",
+        "indirizzo",
+        "data_inizio",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "cup",
+        "importo",
+        "sal",
+        "fonte"
+      ],
       "metrics": {
-        "totale": null,
+        "totale": 48,
         "per_stato": null,
         "opere_geo": null,
         "cup": null,
@@ -159,22 +304,22 @@
         "sal_medio": null,
         "per_fonte": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/lavori-pubblici/exports/json",
+      "resource_format": "JSON",
+      "error": null
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "cila-comunicazioni-inizio-lavori",
-      "fetched_at": "2026-05-04T18:27:03.811Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:44:57.182Z",
+      "status": "ok",
+      "modified": "2025-12-31T09:03:43+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "fresh",
+        "months": 5,
+        "iso": "2025-12-31T09:03:43+00:00"
       },
-      "n_rows": null,
+      "n_rows": 75148,
       "fields_expected": [
         "tipo",
         "data",
@@ -183,31 +328,120 @@
         "via",
         "civico"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "tipo",
+        "civico"
+      ],
+      "fields_missing": [
+        "data",
+        "esito",
+        "chiusura",
+        "via"
+      ],
       "metrics": {
-        "totale": null,
-        "per_tipo": null,
+        "totale": 75148,
+        "per_tipo": [
+          {
+            "nome": "CILA ORDINARIA",
+            "n": 17362
+          },
+          {
+            "nome": "COMUNICAZIONE INIZIO LAVORI LR 15/2013",
+            "n": 13959
+          },
+          {
+            "nome": "COMUNICAZIONE DI INIZIO LAVORI LEGGE 73/2010",
+            "n": 13199
+          },
+          {
+            "nome": "CILA A SANATORIA",
+            "n": 11602
+          },
+          {
+            "nome": "CILA CON INIZIO LAVORI DIFFERITO",
+            "n": 6401
+          },
+          {
+            "nome": "COMUNICAZIONE DI INIZIO LAVORI LR 15/2013",
+            "n": 2756
+          },
+          {
+            "nome": "CILA-SUPERBONUS ORDINARIA ANCHE CON ALTRE COMUNICAZIONI O SCIA",
+            "n": 2393
+          },
+          {
+            "nome": "CILA ORDINARIA - NON RESIDENZIALE",
+            "n": 2271
+          },
+          {
+            "nome": "COMUNICAZIONE INIZIO LAVORI A SANATORIA LR 15/2013",
+            "n": 1188
+          },
+          {
+            "nome": "CILA CON INIZIO LAVORI DIFFERITO - NON RESIDENZIALE",
+            "n": 1016
+          },
+          {
+            "nome": "CILA A SANATORIA CON OPERE",
+            "n": 791
+          },
+          {
+            "nome": "CILA CONDIZIONATA",
+            "n": 706
+          },
+          {
+            "nome": "CILA-SUPERBONUS DIFFERITA CON RICHIESTA CONTESTUALE DI ATTI PRESUPPOSTI",
+            "n": 520
+          },
+          {
+            "nome": "CILA A SANATORIA CON OPERE - NON RESIDENZIALE",
+            "n": 353
+          },
+          {
+            "nome": "CILA PRESENTATA DOPO L'INIZIO LAVORI",
+            "n": 235
+          },
+          {
+            "nome": "COMUNICAZIONE INIZIO LAVORI PRESENTATA IN CORSO D'OPERA LR 15/2013",
+            "n": 166
+          },
+          {
+            "nome": "CILA PRESENTATA DOPO L'INIZIO LAVORI - NON RESIDENZIALE",
+            "n": 109
+          },
+          {
+            "nome": "CILA A SANATORIA CON OPERE CONDIZIONATA",
+            "n": 52
+          },
+          {
+            "nome": "URB - CILA ORDINARIA",
+            "n": 14
+          },
+          {
+            "nome": "CILA-SUPERBONUS ORDINARIA ANCHE CON ALTRE COMUNICAZIONI O SCIA - NON RESIDENZIALE",
+            "n": 14
+          }
+        ],
         "per_esito": null,
         "tasso_chiusura": null,
         "tempo_medio_scia": null,
         "tempo_medio_pdc": null,
         "pct_nei_termini": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/cila-comunicazioni-inizio-lavori/exports/json",
+      "resource_format": "JSON",
+      "error": null
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "welfare-interventi",
-      "fetched_at": "2026-05-04T18:27:03.917Z",
+      "fetched_at": "2026-05-04T18:45:13.473Z",
       "status": "fetch_error",
-      "modified": null,
+      "modified": "2025-05-08T12:47:30.798000+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "fresh",
+        "months": 12,
+        "iso": "2025-05-08T12:47:30.798000+00:00"
       },
       "n_rows": null,
       "fields_expected": [
@@ -229,22 +463,22 @@
         "spesa_media": null,
         "pct_accolte": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/c_a9447d4f8a46-d276-11ea-87d0-0242ac130003/exports/json",
+      "resource_format": "JSON",
+      "error": "Download fallito (JSON)"
     },
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      "fetched_at": "2026-05-04T18:27:04.019Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:45:54.030Z",
+      "status": "ok",
+      "modified": "2025-09-24T14:54:00+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "fresh",
+        "months": 8,
+        "iso": "2025-09-24T14:54:00+00:00"
       },
-      "n_rows": null,
+      "n_rows": 1462,
       "fields_expected": [
         "anno",
         "tipo_struttura",
@@ -254,33 +488,243 @@
         "lat",
         "lon"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "anno",
+        "struttura"
+      ],
+      "fields_missing": [
+        "tipo_struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
       "metrics": {
         "totale_iscritti": null,
-        "per_struttura": null,
+        "per_struttura": [
+          {
+            "nome": "GIORGIO MORANDI",
+            "n": 14
+          },
+          {
+            "nome": "PRESI",
+            "n": 14
+          },
+          {
+            "nome": "CECCARELLI",
+            "n": 14
+          },
+          {
+            "nome": "FEDERZONI",
+            "n": 14
+          },
+          {
+            "nome": "GIROTONDO",
+            "n": 14
+          },
+          {
+            "nome": "ADA GOBETTI",
+            "n": 14
+          },
+          {
+            "nome": "CANTALAMESSA",
+            "n": 14
+          },
+          {
+            "nome": "CASAGLIA",
+            "n": 14
+          },
+          {
+            "nome": "CATERINA DE STEFANI",
+            "n": 14
+          },
+          {
+            "nome": "DALL'OLIO",
+            "n": 14
+          },
+          {
+            "nome": "DE AMICIS",
+            "n": 14
+          },
+          {
+            "nome": "XXI APRILE",
+            "n": 14
+          },
+          {
+            "nome": "GIOANNETTI",
+            "n": 14
+          },
+          {
+            "nome": "GUALANDI",
+            "n": 14
+          },
+          {
+            "nome": "JOLE BARONCINI",
+            "n": 14
+          },
+          {
+            "nome": "M. ROCCA",
+            "n": 14
+          },
+          {
+            "nome": "MARIGHETTO",
+            "n": 14
+          },
+          {
+            "nome": "BARACCANO",
+            "n": 14
+          },
+          {
+            "nome": "BELTRAME",
+            "n": 14
+          },
+          {
+            "nome": "GASTONE ROSSI",
+            "n": 14
+          },
+          {
+            "nome": "MARCONI",
+            "n": 14
+          },
+          {
+            "nome": "MOLINO TAMBURI",
+            "n": 14
+          },
+          {
+            "nome": "TESTI RASPONI",
+            "n": 14
+          },
+          {
+            "nome": "ZAMBONI",
+            "n": 14
+          },
+          {
+            "nome": "DOMENICO SAVIO",
+            "n": 14
+          },
+          {
+            "nome": "SANZIO RAFFAELLO",
+            "n": 14
+          },
+          {
+            "nome": "SCARLATTI",
+            "n": 14
+          },
+          {
+            "nome": "WALT DISNEY",
+            "n": 14
+          },
+          {
+            "nome": "GIDA ROSSI",
+            "n": 14
+          },
+          {
+            "nome": "MARSILI",
+            "n": 14
+          },
+          {
+            "nome": "ALBERTAZZI",
+            "n": 14
+          },
+          {
+            "nome": "BENINI",
+            "n": 14
+          },
+          {
+            "nome": "GIORDANI",
+            "n": 14
+          },
+          {
+            "nome": "DEGLI ESPOSTI",
+            "n": 14
+          },
+          {
+            "nome": "ANNA SERRA PLESSO 1",
+            "n": 14
+          },
+          {
+            "nome": "ARCO GUIDI PACE",
+            "n": 14
+          },
+          {
+            "nome": "MANZOLINI",
+            "n": 14
+          },
+          {
+            "nome": "PADRE O. MARELLA",
+            "n": 14
+          },
+          {
+            "nome": "GIUSI DEL MUGNAIO",
+            "n": 14
+          },
+          {
+            "nome": "MARIA MANZINI",
+            "n": 14
+          },
+          {
+            "nome": "DON BOSCO",
+            "n": 14
+          },
+          {
+            "nome": "PADIGLIONE",
+            "n": 14
+          },
+          {
+            "nome": "TAMBRONI",
+            "n": 14
+          },
+          {
+            "nome": "GRAZIA DELEDDA",
+            "n": 14
+          },
+          {
+            "nome": "PIERO BERTOLINI",
+            "n": 14
+          },
+          {
+            "nome": "RAOUL FOLLEREAU",
+            "n": 14
+          },
+          {
+            "nome": "ALDO MORO INFANZIA",
+            "n": 14
+          },
+          {
+            "nome": "GALLON",
+            "n": 14
+          },
+          {
+            "nome": "ATTILIA NERI",
+            "n": 14
+          },
+          {
+            "nome": "ANDERSEN",
+            "n": 14
+          }
+        ],
         "per_quartiere": null,
         "plessi_geo": null,
         "posti_totali": null,
         "lista_attesa": null,
         "tasso_copertura": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/numero-iscritti-ai-servizi-integrativi-scuola-infanzia-pubblica/exports/json",
+      "resource_format": "JSON",
+      "error": null
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "incidenti-stradali2",
-      "fetched_at": "2026-05-04T18:27:04.124Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:45:56.961Z",
+      "status": "ok",
+      "modified": "2024-12-31T11:04:38+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "aged",
+        "months": 17,
+        "iso": "2024-12-31T11:04:38+00:00"
       },
-      "n_rows": null,
+      "n_rows": 175,
       "fields_expected": [
         "anno",
         "mese",
@@ -293,10 +737,22 @@
         "gravita",
         "zona"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "anno"
+      ],
+      "fields_missing": [
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "lat",
+        "lon",
+        "via",
+        "gravita",
+        "zona"
+      ],
       "metrics": {
-        "totale_anno": null,
+        "totale_anno": 175,
         "n_morti": null,
         "n_feriti": null,
         "serie_mensile": null,
@@ -305,22 +761,22 @@
         "indice_mortalita": null,
         "pct_pedoni_ciclisti": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/incidenti_new/exports/json",
+      "resource_format": "JSON",
+      "error": null
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "indicatori-raccolta-differenziata",
-      "fetched_at": "2026-05-04T18:27:04.226Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:45:59.016Z",
+      "status": "ok",
+      "modified": "2025-04-07T08:28:00+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "aged",
+        "months": 13,
+        "iso": "2025-04-07T08:28:00+00:00"
       },
-      "n_rows": null,
+      "n_rows": 21,
       "fields_expected": [
         "anno",
         "mese",
@@ -329,8 +785,16 @@
         "kg",
         "zona"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "anno"
+      ],
+      "fields_missing": [
+        "mese",
+        "rd_pct",
+        "frazione",
+        "kg",
+        "zona"
+      ],
       "metrics": {
         "rd_pct": null,
         "serie_anni": null,
@@ -339,22 +803,22 @@
         "pro_capite_kg": null,
         "serie_mensile": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/indicatori-raccolta-differenziata/exports/json",
+      "resource_format": "JSON",
+      "error": null
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-bologna-agenda-cultura",
-      "fetched_at": "2026-05-04T18:27:04.332Z",
-      "status": "fetch_error",
-      "modified": null,
+      "fetched_at": "2026-05-04T18:46:01.828Z",
+      "status": "ok",
+      "modified": "2026-03-21T02:15:09.258000+00:00",
       "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
+        "level": "fresh",
+        "months": 2,
+        "iso": "2026-03-21T02:15:09.258000+00:00"
       },
-      "n_rows": null,
+      "n_rows": 28746,
       "fields_expected": [
         "titolo",
         "categoria",
@@ -366,18 +830,29 @@
         "indirizzo",
         "quartiere"
       ],
-      "fields_present": null,
-      "fields_missing": null,
+      "fields_present": [
+        "quartiere"
+      ],
+      "fields_missing": [
+        "titolo",
+        "categoria",
+        "data_inizio",
+        "data_fine",
+        "coordinate",
+        "lat",
+        "lon",
+        "indirizzo"
+      ],
       "metrics": {
-        "totale_anno": null,
+        "totale_anno": 28746,
         "per_categoria": null,
         "eventi_geo": null,
         "pct_gratuiti": null,
         "spesa_patrocinati": null
       },
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
+      "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/eventi-bologna-agenda-cultura/exports/json",
+      "resource_format": "JSON",
+      "error": null
     }
   }
 }
