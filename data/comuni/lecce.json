@@ -15,7 +15,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-04T20:15:22.697Z",
+      "fetched_at": "2026-05-04T20:21:17.220Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -60,7 +60,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "consuntivo-2019-comune-di-lecce",
-      "fetched_at": "2026-05-04T20:15:24.665Z",
+      "fetched_at": "2026-05-04T20:21:19.137Z",
       "status": "fetch_error",
       "modified": "2020-12-24",
       "freshness": {
@@ -91,7 +91,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "open-cantieri-lecce",
-      "fetched_at": "2026-05-04T20:15:49.340Z",
+      "fetched_at": "2026-05-04T20:21:57.325Z",
       "status": "ok",
       "modified": "2020-07-14",
       "freshness": {
@@ -320,7 +320,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "elenco-pratiche-sue",
-      "fetched_at": "2026-05-04T20:15:52.291Z",
+      "fetched_at": "2026-05-04T20:21:58.860Z",
       "status": "fetch_error",
       "modified": "2023-03-07",
       "freshness": {
@@ -354,7 +354,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016",
-      "fetched_at": "2026-05-04T20:16:17.687Z",
+      "fetched_at": "2026-05-04T20:22:37.042Z",
       "status": "ok",
       "modified": "2018-10-19",
       "freshness": {
@@ -396,7 +396,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "elenco-e-ubicazione-asili-nido-comunali-lecce",
-      "fetched_at": "2026-05-04T20:16:19.977Z",
+      "fetched_at": "2026-05-04T20:22:39.078Z",
       "status": "fetch_error",
       "modified": "2018-10-19",
       "freshness": {
@@ -429,7 +429,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-sinistri-dal-2018-lecce",
-      "fetched_at": "2026-05-04T20:16:21.182Z",
+      "fetched_at": "2026-05-04T20:22:40.068Z",
       "status": "ok",
       "modified": "2021-02-03",
       "freshness": {
@@ -2490,7 +2490,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "raccolta-rifiuti-2015",
-      "fetched_at": "2026-05-04T20:16:22.249Z",
+      "fetched_at": "2026-05-04T20:22:41.597Z",
       "status": "fetch_error",
       "modified": "2016-12-31",
       "freshness": {
@@ -2529,7 +2529,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-culturali-ricorrenti",
-      "fetched_at": "2026-05-04T20:16:23.375Z",
+      "fetched_at": "2026-05-04T20:22:42.651Z",
       "status": "fetch_error",
       "modified": "2015-01-01",
       "freshness": {
@@ -2568,7 +2568,7 @@
     "delibere": {
       "dataset_key": "delibere",
       "slug": "albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce",
-      "fetched_at": "2026-05-04T20:16:48.395Z",
+      "fetched_at": "2026-05-04T20:23:20.858Z",
       "status": "unsupported_format",
       "modified": "2018-08-16",
       "freshness": {
@@ -2597,7 +2597,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "fabbricati-2023_comune-di-lecce",
-      "fetched_at": "2026-05-04T20:16:48.608Z",
+      "fetched_at": "2026-05-04T20:23:21.068Z",
       "status": "fetch_error",
       "modified": "2024-04-10",
       "freshness": {
