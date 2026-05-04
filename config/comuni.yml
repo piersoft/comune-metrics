@@ -49,28 +49,6 @@ comuni:
   # Per riabilitarlo serve un proxy con IP italiano (self-hosted runner sul
   # VPS oppure Cloudflare Worker). Vedi cronistoria PANIERE v2.11.
 
-  firenze:
-    nome: Firenze
-    ipa: c_d612
-    istat: "048017"
-    popolazione_attesa: 360930
-    mandato: "2024-2029"
-    sindaco: Sara Funaro
-    mappa_center: [43.7711, 11.2552]
-    mappa_zoom: 13
-    datasets:
-      popolazione: popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025
-      bilancio: dentro-il-bilancio-2024
-      opere_pubbliche: null
-      pratiche_edilizie: null
-      servizi_sociali: siast-servizi-integrati-assistenza-sociale-territoriale
-      istruzione: servizio-iscrizione-asili-nido-spazi-gioco-efficienza
-      incidenti_stradali: numero-incidenti-stradali-per-quartiere-anno-2014
-      rifiuti: quantita-di-rifiuti-urbani-anni-2000-2014
-      eventi_culturali: teatri-e-luoghi-per-eventi
-      delibere: delibere-anno-2023
-      patrimonio: null
-
   lecce:
     nome: Lecce
     ipa: c_e506
@@ -102,53 +80,3 @@ comuni:
       eventi_culturali: __fixture__:eventi_culturali                                # 25 iniziative ricorrenti
       delibere: null  # Unica risorsa goo.gl/Fsdyxq morta, irrecuperabile
       patrimonio: __fixture__:patrimonio                                            # 170 fabbricati NAC 2023
-
-  messina:
-    nome: Messina
-    ipa: c_e463
-    istat: "083048"
-    popolazione_attesa: 218472
-    mandato: "2023-2028"
-    sindaco: Federico Basile
-    mappa_center: [38.1938, 15.5540]
-    mappa_zoom: 12
-    datasets:
-      popolazione: popolazione-residente-per-circoscrizione
-      bilancio: null  # Comune NON pubblica bilancio per missione/programma
-      opere_pubbliche: null  # Comune NON pubblica opere/cantieri
-      pratiche_edilizie: null  # ha solo pratiche-cimiteriali (non match CORE 4)
-      servizi_sociali: null  # Comune NON pubblica
-      istruzione: numero-studenti-messina
-      incidenti_stradali: null  # Comune NON pubblica
-      rifiuti: statistiche-raccolta-rifiuti-messina  # ⭐ kg per CER mensile
-      eventi_culturali: null  # Comune NON pubblica
-      delibere: null  # Comune NON pubblica
-      patrimonio: beni-immobili-comune-messina  # ⭐ unico Comune con elenco vero
-
-  # Bari: RIMOSSA dai casi d'uso v0.2 dopo audit (vedi PANIERE.md cronistoria v2.13).
-  # Causa: server publisher opendata.comune.bari.it strutturalmente instabile
-  # (timeout dal runner GitHub Actions, 0/5 dataset accessibili) + 3 dataset
-  # in formati non parsabili (XLSX, ZIP). Stesso pattern di Lecce.
-  # Per riabilitare serve self-hosted runner sul VPS (IP italiano).
-
-  torino:
-    nome: Torino
-    ipa: c_l219
-    istat: "001272"
-    popolazione_attesa: 841600
-    mandato: "2021-2026"
-    sindaco: Stefano Lo Russo
-    mappa_center: [45.0703, 7.6869]
-    mappa_zoom: 12
-    datasets:
-      popolazione: popolazione-residente-per-sesso-e-circoscrizione-2024
-      bilancio: null  # solo bilanci di mandato 2001-2010 + previsione 2012, troppo vecchi
-      opere_pubbliche: indicatori-delle-opere-pubbliche-2020  # fino 2020, "stale"
-      pratiche_edilizie: null  # Comune NON pubblica
-      servizi_sociali: null  # Comune NON pubblica come dataset CORE
-      istruzione: null  # Comune NON pubblica asili come dataset
-      incidenti_stradali: localizzazione-degli-incidenti-stradali-nella-provincia-di-torino-per-l-anno-2015  # solo 2015, vecchio
-      rifiuti: risultati-raccolta-differenziata-amiat-2020  # fino 2020, "stale"
-      eventi_culturali: null  # solo musei statici, niente agenda eventi
-      delibere: null  # Comune NON pubblica
-      patrimonio: null  # solo zootecnico (bestiame), non immobili

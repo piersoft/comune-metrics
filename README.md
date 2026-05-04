@@ -1,7 +1,7 @@
 # ComuneMetrics — Cruscotto Civico Comunale
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paniere v2.13](https://img.shields.io/badge/Paniere-v2.13-blue)](docs/PANIERE.md)
+[![Paniere v2.14](https://img.shields.io/badge/Paniere-v2.14-blue)](docs/PANIERE.md)
 [![DCAT-AP_IT](https://img.shields.io/badge/DCAT--AP__IT-2.1-green)](https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html)
 [![PA italiana](https://img.shields.io/badge/Vocabolari%20e%20ontologie%20PA-compliant-blue)](https://schema.gov.it)
 
@@ -23,16 +23,16 @@ Piattaforma open source per il **monitoraggio dell'attività amministrativa di u
 | **Dashboard** | Cruscotto single-file HTML con KPI, grafici Chart.js, mappe Leaflet | [`index.html`](index.html) |
 | **Badge system** | ROSSO (0-3) → GIALLO (4-7) → ARANCIONE (8-10) → VERDE (11) → ORO (11+TTL) | dentro `index.html` |
 
-## I 4 Comuni di riferimento (esempi reali)
+## I 2 Comuni di riferimento (v0.2)
 
-La dashboard MVP carica dati estratti da dataset realmente pubblicati su `dati.gov.it`:
+La dashboard MVP carica dati reali estratti dai portali OpenData via workflow GitHub Actions:
 
-| Comune | IPA | Dataset CORE pubblicati | Badge attuale |
-|---|---|---|---|
-| **Bologna** | `c_a944` | 9/11 | 🟠 Avanzata |
-| **Firenze** | `c_d612` | 8/11 | 🟠 Avanzata |
-| **Torino** | `c_l219` | 4/11 | 🟡 Media |
-| **Messina** | `c_e463` | 4/11 | 🟡 Media |
+| Comune | IPA | Cablati / OK | Mode | Note |
+|---|---|---|---|---|
+| **Bologna** | `c_a944` | 9/11 cablati, 8 OK | 🟢 live | Publisher esemplare: dataset ricchi, server stabile, formati aperti. Aggiornamento automatico ad ogni run del workflow. |
+| **Lecce** | `c_e506` | 8/11 cablati, 8 OK | 🟠 snapshot statico 4 mag 2026 | "Lecce paradox": 11/11 dataset cablabili, ma il portale `dati.comune.lecce.it` ha geo-fencing IP che blocca i runner GitHub Actions. 4 dataset live da Google Sheets (popolazione, opere triennali, popolazione scolastica, incidenti) + 4 fixture statiche scaricate manualmente (bilancio, pratiche, eventi, patrimonio). |
+
+**Comuni esclusi dopo audit**: Firenze (CSV in realtà ZIP travestiti), Messina, Torino, Bari, Milano, Matera, Genova, Palermo. La lista delle ragioni — server giù, link goo.gl morti dopo il 2025-03-25, formati non parsabili (PDF/XLSX), dataset troppo storici, WAF aggressivi — è la **tesi del progetto**: pubblicare ≠ rendere accessibile. Cronistoria completa in [`docs/PANIERE.md`](docs/PANIERE.md).
 
 ## Quick start
 
@@ -70,7 +70,7 @@ ComuneMetrics è progettato per **non chiedere lavoro extra** ai Comuni: ti bast
 
 Tre passi pratici:
 
-**1. Verifica cosa pubblichi già.** Apri il tuo portale OpenData e controlla quali degli 11 [Dataset CORE](#i-11-dataset-core) hai già: popolazione residente, bilancio per missione, opere pubbliche, pratiche edilizie, servizi sociali, asili nido, incidenti stradali, raccolta rifiuti, eventi culturali, delibere, patrimonio immobiliare. Bologna ne ha 9, Firenze 8, Torino 4, Messina 4 — non serve avere tutti gli 11 per essere visibili.
+**1. Verifica cosa pubblichi già.** Apri il tuo portale OpenData e controlla quali degli 11 [Dataset CORE](#i-11-dataset-core) hai già: popolazione residente, bilancio per missione, opere pubbliche, pratiche edilizie, servizi sociali, asili nido, incidenti stradali, raccolta rifiuti, eventi culturali, delibere, patrimonio immobiliare. Bologna ne ha 9 con tutto live, Lecce 11 cablabili ma in modalità snapshot statico per problemi di accessibilità del server publisher — non serve avere tutti gli 11 per essere visibili.
 
 **2. Pubblica in CSV o JSON.** I formati che il cruscotto sa leggere sono `CSV`, `JSON`, `JSONL`. Formati come PDF, XLSX, ZIP, WMS, RDF non vengono letti automaticamente (anche se restano validi per altri usi). Se hai un dataset solo in PDF, basta esportare in CSV una volta.
 
@@ -188,7 +188,7 @@ Il banner giallo in cima al sito e il ribbon "DATI DI ESEMPIO" su ogni KPI ricor
 
 ## Roadmap
 
-- [x] **v0.1** — Paniere v2.13 + 11 JSON Schema + Dashboard MVP single-file
+- [x] **v0.1** — Paniere v2.14 + 11 JSON Schema + Dashboard MVP single-file
 - [ ] **v0.2** — Loader CKAN reale via proxy CORS (Cloudflare Worker)
 - [ ] **v0.3** — Federazione SPARQL: query cross-Comune via lod.dati.gov.it
 - [ ] **v0.4** — Modulo "rendicontazione di mandato" con confronto inizio/fine consiliatura
