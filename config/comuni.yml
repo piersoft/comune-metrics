@@ -99,24 +99,30 @@ comuni:
       delibere: null  # Comune NON pubblica
       patrimonio: beni-immobili-comune-messina  # ⭐ unico Comune con elenco vero
 
-  bari:
-    nome: Bari
-    ipa: c_a662
-    istat: "072006"
-    popolazione_attesa: 316140
-    mandato: "2024-2029"
-    sindaco: Vito Leccese
-    mappa_center: [41.1171, 16.8719]
-    mappa_zoom: 13
+  # Bari: RIMOSSA dai casi d'uso v0.2 dopo audit (vedi PANIERE.md cronistoria v2.13).
+  # Causa: server publisher opendata.comune.bari.it strutturalmente instabile
+  # (timeout dal runner GitHub Actions, 0/5 dataset accessibili) + 3 dataset
+  # in formati non parsabili (XLSX, ZIP). Stesso pattern di Lecce.
+  # Per riabilitare serve self-hosted runner sul VPS (IP italiano).
+
+  torino:
+    nome: Torino
+    ipa: c_l219
+    istat: "001272"
+    popolazione_attesa: 841600
+    mandato: "2021-2026"
+    sindaco: Stefano Lo Russo
+    mappa_center: [45.0703, 7.6869]
+    mappa_zoom: 12
     datasets:
-      popolazione: popolazione-residente
-      bilancio: null  # Comune NON pubblica bilancio (solo NIC prezzi al consumo)
-      opere_pubbliche: null  # Comune NON pubblica opere
-      pratiche_edilizie: pratiche-edilizie
-      servizi_sociali: null  # Comune NON pubblica
-      istruzione: scuole-del-comune-di-bari
-      incidenti_stradali: incidenti-stradali-anno-2023
-      rifiuti: siti-raccolta-farmaci-pile-esauste-e-umido  # solo siti raccolta, debole
-      eventi_culturali: null  # Comune NON pubblica agenda eventi
+      popolazione: popolazione-residente-per-sesso-e-circoscrizione-2024
+      bilancio: null  # solo bilanci di mandato 2001-2010 + previsione 2012, troppo vecchi
+      opere_pubbliche: indicatori-delle-opere-pubbliche-2020  # fino 2020, "stale"
+      pratiche_edilizie: null  # Comune NON pubblica
+      servizi_sociali: null  # Comune NON pubblica come dataset CORE
+      istruzione: null  # Comune NON pubblica asili come dataset
+      incidenti_stradali: localizzazione-degli-incidenti-stradali-nella-provincia-di-torino-per-l-anno-2015  # solo 2015, vecchio
+      rifiuti: risultati-raccolta-differenziata-amiat-2020  # fino 2020, "stale"
+      eventi_culturali: null  # solo musei statici, niente agenda eventi
       delibere: null  # Comune NON pubblica
-      patrimonio: null  # Comune NON pubblica
+      patrimonio: null  # solo zootecnico (bestiame), non immobili
