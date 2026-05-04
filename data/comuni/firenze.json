@@ -12,58 +12,6 @@
   ],
   "mappa_zoom": 13,
   "datasets": {
-    "popolazione": {
-      "dataset_key": "popolazione",
-      "slug": "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
-      "fetched_at": "2026-05-04T18:08:52+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "anno",
-        "eta",
-        "sesso",
-        "cittadinanza",
-        "quartiere",
-        "residenti"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "bilancio": {
-      "dataset_key": "bilancio",
-      "slug": "dentro-il-bilancio-2024",
-      "fetched_at": "2026-05-04T18:08:53+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "missione",
-        "programma",
-        "importo",
-        "anno"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": null,
@@ -117,10 +65,100 @@
         "pct_nei_termini": null
       }
     },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "tipo",
+        "indirizzo",
+        "destinazione",
+        "lat",
+        "lon",
+        "vincolo",
+        "valore"
+      ],
+      "metrics": {
+        "totale_immobili": null,
+        "per_categoria": null,
+        "immobili_geo": null,
+        "pct_vincolo_culturale": null,
+        "valore_totale": null,
+        "pct_inutilizzati": null
+      }
+    },
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "slug": "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
+      "fetched_at": "2026-05-04T18:27:05.261Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale_residenti": null,
+        "serie_anni": null,
+        "serie_residenti": null,
+        "pop_0_14": null,
+        "pop_65plus": null,
+        "per_quartiere": null,
+        "nati": null,
+        "morti": null,
+        "iscritti": null,
+        "cancellati": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "slug": "dentro-il-bilancio-2024",
+      "fetched_at": "2026-05-04T18:27:05.365Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "missione",
+        "programma",
+        "importo",
+        "anno"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale_uscite": null,
+        "per_missione": null,
+        "top10_programmi": null,
+        "serie_anni": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "siast-servizi-integrati-assistenza-sociale-territoriale",
-      "fetched_at": "2026-05-04T18:08:53+00:00",
+      "fetched_at": "2026-05-04T18:27:05.467Z",
       "status": "fetch_error",
       "modified": null,
       "freshness": {
@@ -140,7 +178,14 @@
       ],
       "fields_present": null,
       "fields_missing": null,
-      "metrics": null,
+      "metrics": {
+        "utenti_totali": null,
+        "per_target": null,
+        "per_categoria": null,
+        "spesa_totale": null,
+        "spesa_media": null,
+        "pct_accolte": null
+      },
       "resource_url": null,
       "resource_format": null,
       "error": "package_show failed"
@@ -148,7 +193,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
-      "fetched_at": "2026-05-04T18:08:54+00:00",
+      "fetched_at": "2026-05-04T18:27:05.572Z",
       "status": "fetch_error",
       "modified": null,
       "freshness": {
@@ -168,7 +213,15 @@
       ],
       "fields_present": null,
       "fields_missing": null,
-      "metrics": null,
+      "metrics": {
+        "totale_iscritti": null,
+        "per_struttura": null,
+        "per_quartiere": null,
+        "plessi_geo": null,
+        "posti_totali": null,
+        "lista_attesa": null,
+        "tasso_copertura": null
+      },
       "resource_url": null,
       "resource_format": null,
       "error": "package_show failed"
@@ -176,7 +229,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "numero-incidenti-stradali-per-quartiere-anno-2014",
-      "fetched_at": "2026-05-04T18:08:54+00:00",
+      "fetched_at": "2026-05-04T18:27:05.673Z",
       "status": "fetch_error",
       "modified": null,
       "freshness": {
@@ -199,7 +252,16 @@
       ],
       "fields_present": null,
       "fields_missing": null,
-      "metrics": null,
+      "metrics": {
+        "totale_anno": null,
+        "n_morti": null,
+        "n_feriti": null,
+        "serie_mensile": null,
+        "per_zona": null,
+        "hot_spots": null,
+        "indice_mortalita": null,
+        "pct_pedoni_ciclisti": null
+      },
       "resource_url": null,
       "resource_format": null,
       "error": "package_show failed"
@@ -207,7 +269,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "quantita-di-rifiuti-urbani-anni-2000-2014",
-      "fetched_at": "2026-05-04T18:08:55+00:00",
+      "fetched_at": "2026-05-04T18:27:05.778Z",
       "status": "fetch_error",
       "modified": null,
       "freshness": {
@@ -226,7 +288,14 @@
       ],
       "fields_present": null,
       "fields_missing": null,
-      "metrics": null,
+      "metrics": {
+        "rd_pct": null,
+        "serie_anni": null,
+        "per_zona": null,
+        "composizione": null,
+        "pro_capite_kg": null,
+        "serie_mensile": null
+      },
       "resource_url": null,
       "resource_format": null,
       "error": "package_show failed"
@@ -234,7 +303,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "teatri-e-luoghi-per-eventi",
-      "fetched_at": "2026-05-04T18:08:55+00:00",
+      "fetched_at": "2026-05-04T18:27:05.879Z",
       "status": "fetch_error",
       "modified": null,
       "freshness": {
@@ -256,7 +325,13 @@
       ],
       "fields_present": null,
       "fields_missing": null,
-      "metrics": null,
+      "metrics": {
+        "totale_anno": null,
+        "per_categoria": null,
+        "eventi_geo": null,
+        "pct_gratuiti": null,
+        "spesa_patrocinati": null
+      },
       "resource_url": null,
       "resource_format": null,
       "error": "package_show failed"
@@ -264,7 +339,7 @@
     "delibere": {
       "dataset_key": "delibere",
       "slug": "delibere-anno-2023",
-      "fetched_at": "2026-05-04T18:08:56+00:00",
+      "fetched_at": "2026-05-04T18:27:05.984Z",
       "status": "fetch_error",
       "modified": null,
       "freshness": {
@@ -281,32 +356,15 @@
       ],
       "fields_present": null,
       "fields_missing": null,
-      "metrics": null,
+      "metrics": {
+        "totale_anno": null,
+        "per_tipo": null,
+        "tempo_medio_pubblicazione": null,
+        "pct_nei_termini": null
+      },
       "resource_url": null,
       "resource_format": null,
       "error": "package_show failed"
-    },
-    "patrimonio": {
-      "dataset_key": "patrimonio",
-      "slug": null,
-      "status": "not_published",
-      "fields_expected": [
-        "tipo",
-        "indirizzo",
-        "destinazione",
-        "lat",
-        "lon",
-        "vincolo",
-        "valore"
-      ],
-      "metrics": {
-        "totale_immobili": null,
-        "per_categoria": null,
-        "immobili_geo": null,
-        "pct_vincolo_culturale": null,
-        "valore_totale": null,
-        "pct_inutilizzati": null
-      }
     }
   }
 }

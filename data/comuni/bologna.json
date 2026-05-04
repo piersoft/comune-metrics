@@ -12,265 +12,6 @@
   ],
   "mappa_zoom": 13,
   "datasets": {
-    "popolazione": {
-      "dataset_key": "popolazione",
-      "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      "fetched_at": "2026-05-04T18:08:43+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "anno",
-        "eta",
-        "sesso",
-        "cittadinanza",
-        "quartiere",
-        "residenti"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "bilancio": {
-      "dataset_key": "bilancio",
-      "slug": "bilancio-di-previsione-previsione-uscite",
-      "fetched_at": "2026-05-04T18:08:44+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "missione",
-        "programma",
-        "importo",
-        "anno"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "opere_pubbliche": {
-      "dataset_key": "opere_pubbliche",
-      "slug": "lavori-in-corso-in-citta",
-      "fetched_at": "2026-05-04T18:08:44+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "nome",
-        "stato",
-        "lat",
-        "lon",
-        "pin_point",
-        "indirizzo",
-        "data_inizio",
-        "data_fine",
-        "tipo_lavoro",
-        "quartiere",
-        "anno",
-        "cup",
-        "importo",
-        "sal",
-        "fonte"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "pratiche_edilizie": {
-      "dataset_key": "pratiche_edilizie",
-      "slug": "cila-comunicazioni-inizio-lavori",
-      "fetched_at": "2026-05-04T18:08:45+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "tipo",
-        "data",
-        "esito",
-        "chiusura",
-        "via",
-        "civico"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "servizi_sociali": {
-      "dataset_key": "servizi_sociali",
-      "slug": "welfare-interventi",
-      "fetched_at": "2026-05-04T18:08:46+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "target",
-        "categoria",
-        "intervento",
-        "contributo",
-        "isee",
-        "identificativo",
-        "data_inizio"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "istruzione": {
-      "dataset_key": "istruzione",
-      "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      "fetched_at": "2026-05-04T18:08:46+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "anno",
-        "tipo_struttura",
-        "struttura",
-        "quartiere",
-        "iscritti",
-        "lat",
-        "lon"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "incidenti_stradali": {
-      "dataset_key": "incidenti_stradali",
-      "slug": "incidenti-stradali2",
-      "fetched_at": "2026-05-04T18:08:47+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "anno",
-        "mese",
-        "n_incidenti",
-        "n_feriti",
-        "n_morti",
-        "lat",
-        "lon",
-        "via",
-        "gravita",
-        "zona"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "rifiuti": {
-      "dataset_key": "rifiuti",
-      "slug": "indicatori-raccolta-differenziata",
-      "fetched_at": "2026-05-04T18:08:47+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "anno",
-        "mese",
-        "rd_pct",
-        "frazione",
-        "kg",
-        "zona"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
-    "eventi_culturali": {
-      "dataset_key": "eventi_culturali",
-      "slug": "eventi-bologna-agenda-cultura",
-      "fetched_at": "2026-05-04T18:08:48+00:00",
-      "status": "fetch_error",
-      "modified": null,
-      "freshness": {
-        "level": "unknown",
-        "months": null,
-        "iso": null
-      },
-      "n_rows": null,
-      "fields_expected": [
-        "titolo",
-        "categoria",
-        "data_inizio",
-        "data_fine",
-        "coordinate",
-        "lat",
-        "lon",
-        "indirizzo",
-        "quartiere"
-      ],
-      "fields_present": null,
-      "fields_missing": null,
-      "metrics": null,
-      "resource_url": null,
-      "resource_format": null,
-      "error": "package_show failed"
-    },
     "delibere": {
       "dataset_key": "delibere",
       "slug": null,
@@ -309,6 +50,334 @@
         "valore_totale": null,
         "pct_inutilizzati": null
       }
+    },
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
+      "fetched_at": "2026-05-04T18:27:02.610Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale_residenti": null,
+        "serie_anni": null,
+        "serie_residenti": null,
+        "pop_0_14": null,
+        "pop_65plus": null,
+        "per_quartiere": null,
+        "nati": null,
+        "morti": null,
+        "iscritti": null,
+        "cancellati": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "slug": "bilancio-di-previsione-previsione-uscite",
+      "fetched_at": "2026-05-04T18:27:03.392Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "missione",
+        "programma",
+        "importo",
+        "anno"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale_uscite": null,
+        "per_missione": null,
+        "top10_programmi": null,
+        "serie_anni": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "slug": "lavori-in-corso-in-citta",
+      "fetched_at": "2026-05-04T18:27:03.709Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "nome",
+        "stato",
+        "lat",
+        "lon",
+        "pin_point",
+        "indirizzo",
+        "data_inizio",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "cup",
+        "importo",
+        "sal",
+        "fonte"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale": null,
+        "per_stato": null,
+        "opere_geo": null,
+        "cup": null,
+        "importo_totale": null,
+        "sal_medio": null,
+        "per_fonte": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "slug": "cila-comunicazioni-inizio-lavori",
+      "fetched_at": "2026-05-04T18:27:03.811Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "tipo",
+        "data",
+        "esito",
+        "chiusura",
+        "via",
+        "civico"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale": null,
+        "per_tipo": null,
+        "per_esito": null,
+        "tasso_chiusura": null,
+        "tempo_medio_scia": null,
+        "tempo_medio_pdc": null,
+        "pct_nei_termini": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "slug": "welfare-interventi",
+      "fetched_at": "2026-05-04T18:27:03.917Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "utenti_totali": null,
+        "per_target": null,
+        "per_categoria": null,
+        "spesa_totale": null,
+        "spesa_media": null,
+        "pct_accolte": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
+      "fetched_at": "2026-05-04T18:27:04.019Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale_iscritti": null,
+        "per_struttura": null,
+        "per_quartiere": null,
+        "plessi_geo": null,
+        "posti_totali": null,
+        "lista_attesa": null,
+        "tasso_copertura": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "slug": "incidenti-stradali2",
+      "fetched_at": "2026-05-04T18:27:04.124Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "lat",
+        "lon",
+        "via",
+        "gravita",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale_anno": null,
+        "n_morti": null,
+        "n_feriti": null,
+        "serie_mensile": null,
+        "per_zona": null,
+        "hot_spots": null,
+        "indice_mortalita": null,
+        "pct_pedoni_ciclisti": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "slug": "indicatori-raccolta-differenziata",
+      "fetched_at": "2026-05-04T18:27:04.226Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "rd_pct",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "rd_pct": null,
+        "serie_anni": null,
+        "per_zona": null,
+        "composizione": null,
+        "pro_capite_kg": null,
+        "serie_mensile": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "slug": "eventi-bologna-agenda-cultura",
+      "fetched_at": "2026-05-04T18:27:04.332Z",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "titolo",
+        "categoria",
+        "data_inizio",
+        "data_fine",
+        "coordinate",
+        "lat",
+        "lon",
+        "indirizzo",
+        "quartiere"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": {
+        "totale_anno": null,
+        "per_categoria": null,
+        "eventi_geo": null,
+        "pct_gratuiti": null,
+        "spesa_patrocinati": null
+      },
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
     }
   }
 }
