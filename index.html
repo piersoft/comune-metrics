@@ -509,6 +509,58 @@ a:hover { text-decoration: underline; }
   50% { background-color: #FFCDD2; }
 }
 
+/* ============ DEMO BANNER (warning dati dimostrativi) ============ */
+.demo-banner {
+  background: #FFF3CD;
+  border-bottom: 3px solid #856404;
+  border-top: 1px solid #FFE69C;
+  padding: 12px 0;
+  font-family: var(--font-display);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #5C4400;
+}
+.demo-banner .container {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.demo-banner strong:first-child {
+  background: #856404;
+  color: #FFF3CD;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.demo-banner span {
+  flex: 1;
+}
+
+/* Ribbon "DATI DI ESEMPIO" su ogni sezione KPI */
+.mock-ribbon {
+  display: inline-block;
+  background: repeating-linear-gradient(
+    45deg,
+    #FFF3CD,
+    #FFF3CD 8px,
+    #FFE69C 8px,
+    #FFE69C 16px
+  );
+  color: #5C4400;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 3px 9px;
+  border-radius: 2px;
+  border: 1px solid #856404;
+  margin: 6px 0;
+  text-transform: uppercase;
+}
+
 /* ============ FOOTER ============ */
 .site-footer {
   background: var(--brand-blue-dark);
@@ -595,9 +647,16 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.10</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.11</div>
   </div>
 </header>
+
+<div class="demo-banner">
+  <div class="container">
+    <strong>⚠ MVP DIMOSTRATIVO</strong>
+    <span>I numeri visualizzati nei grafici e nelle card KPI sono <strong>dati di esempio plausibili</strong>, non i contenuti reali dei CSV pubblicati dai Comuni. Servono solo a mostrare <em>come la dashboard apparirebbe</em> se il Comune adottasse il Paniere ComuneMetrics. La <strong>v0.2</strong> introdurrà un loader CKAN che leggerà i CSV reali da dati.gov.it. La conformità di ciascun Comune al paniere (badge ROSSO/GIALLO/ARANCIONE/VERDE) e la freschezza dei dataset sono invece <strong>verificate sulle fonti reali</strong>.</span>
+  </div>
+</div>
 
 <div class="comune-bar">
   <div class="container">
@@ -625,7 +684,7 @@ a:hover { text-decoration: underline; }
       <div class="badge-tier" id="badgeTier">Avanzata</div>
     </div>
     <div class="compliance-info">
-      <h2>Conformità Paniere ComuneMetrics v2.9</h2>
+      <h2>Conformità Paniere ComuneMetrics v2.10</h2>
       <p id="complianceText">
         Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
       </p>
@@ -641,7 +700,7 @@ a:hover { text-decoration: underline; }
     <div class="footer-grid">
       <div>
         <h4>ComuneMetrics</h4>
-        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.9</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.10</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
       </div>
       <div>
         <h4>Standard</h4>
@@ -847,6 +906,15 @@ const MOCK_POPOLAZIONE = {
 };
 
 // Bilancio: spesa per missione (top 6 missioni DM 18/04/2012, importi €/anno 2024)
+/* ⚠ MOCK DATA — i valori in questa struttura sono stati inventati come dati
+ * dimostrativi PLAUSIBILI. La maggioranza dei campi NON ha riscontro 1:1 nei
+ * CSV reali pubblicati dal Comune (es. "spesa_patrocinati" su eventi non
+ * esiste; "cup/importo/sal" su lavori-in-corso Bologna non esistono;
+ * "lista_attesa" su asili Bologna non esiste; "composizione" rifiuti Bologna
+ * è solo % per quartiere, non kg per frazione). La v0.2 della dashboard
+ * introdurrà un loader CKAN che leggerà i CSV reali e ricostruirà solo le
+ * metriche effettivamente derivabili. Vedi PANIERE.md cronistoria v3.0
+ * "campi attesi vs campi reali". */
 const MOCK_BILANCIO = {
   bologna: {
     missioni: [
@@ -1595,7 +1663,8 @@ function sectionHeader(num, title, tag, sourceId, schemaKey) {
   </div>
   ${freshnessBadge(sourceId)}
   <p class="data-source">${sourceLink}</p>
-  ${schemaLink ? `<p class="data-source schema-link">${schemaLink}</p>` : ''}`;
+  ${schemaLink ? `<p class="data-source schema-link">${schemaLink}</p>` : ''}
+  <span class="mock-ribbon" title="I valori KPI/grafici qui sotto sono mock plausibili, non letti dal CSV reale. Loader CKAN previsto in v0.2.">⚠ KPI &amp; grafici: dati di esempio (non ancora letti dal CSV reale)</span>`;
 }
 
 /* ==================== Sezione 1 — Popolazione ==================== */

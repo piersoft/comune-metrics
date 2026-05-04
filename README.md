@@ -1,7 +1,7 @@
 # ComuneMetrics — Cruscotto Civico Comunale
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paniere v2.9](https://img.shields.io/badge/Paniere-v2.9-blue)](docs/PANIERE.md)
+[![Paniere v2.10](https://img.shields.io/badge/Paniere-v2.10-blue)](docs/PANIERE.md)
 [![DCAT-AP_IT](https://img.shields.io/badge/DCAT--AP__IT-2.1-green)](https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html)
 [![PA italiana](https://img.shields.io/badge/Vocabolari%20e%20ontologie%20PA-compliant-blue)](https://schema.gov.it)
 
@@ -150,9 +150,34 @@ Il meccanismo è **gamification dell'OpenData**:
 - **D.Lgs. 33/2013** — trasparenza
 - **D.Lgs. 42/2004** — vincoli culturali (patrimonio)
 
+## Onestà metodologica (v0.1 → v0.2)
+
+ComuneMetrics v0.1 è un **MVP dimostrativo**. È importante distinguere cosa è verificato da cosa è simulato:
+
+**Verificato sulle fonti reali:**
+- La **conformità** di ciascun Comune al paniere (badge ROSSO/GIALLO/ARANCIONE/VERDE) si basa sulla **presenza effettiva** dei 11 dataset CORE su `dati.gov.it`, verificata con chiamate API CKAN (`package_show`)
+- Gli **slug** dei dataset cablati nei link footer sono quelli machine-readable persistenti (`name` field)
+- La **freschezza** mostrata dalle card colorate (FRESCO/DATATO/OBSOLETO) è il valore reale di `dcat:modified` letto da `package_show`
+
+**Simulato (mock data):**
+- I **valori KPI** (totali, percentuali, importi) e i **dati dei grafici** (Chart.js, Leaflet) sono **dati di esempio plausibili**, NON letti dai CSV reali
+- Molti campi attesi nei mock NON esistono nei CSV reali. Esempi:
+  - eventi: nessun dataset comunale espone "spesa patrocini" o "% gratuiti"
+  - lavori in corso Bologna: NON contiene CUP, importo, SAL, fonte di finanziamento (solo descrizione, indirizzo, date)
+  - rifiuti Bologna: solo % differenziata per quartiere, non kg per frazione
+  - asili Bologna: solo numero iscritti, non posti totali né lista d'attesa
+
+**Cosa farà la v0.2:**
+- Loader CKAN reale via Cloudflare Worker proxy (CORS)
+- Lettura CSV reali e ricostruzione delle sole metriche effettivamente derivabili dai campi disponibili
+- I grafici si semplificheranno: meno KPI ma 100% verificabili
+- Una nuova sezione del paniere ("campi attesi vs campi reali") aiuterà i Comuni a estendere il proprio CSV per coprire le metriche civiche più rilevanti (es. CUP/importo per opere, accolto/respinto per pratiche)
+
+Il banner giallo in cima al sito e il ribbon "DATI DI ESEMPIO" su ogni KPI ricordano costantemente al visitatore questa distinzione.
+
 ## Roadmap
 
-- [x] **v0.1** — Paniere v2.9 + 11 JSON Schema + Dashboard MVP single-file
+- [x] **v0.1** — Paniere v2.10 + 11 JSON Schema + Dashboard MVP single-file
 - [ ] **v0.2** — Loader CKAN reale via proxy CORS (Cloudflare Worker)
 - [ ] **v0.3** — Federazione SPARQL: query cross-Comune via lod.dati.gov.it
 - [ ] **v0.4** — Modulo "rendicontazione di mandato" con confronto inizio/fine consiliatura
