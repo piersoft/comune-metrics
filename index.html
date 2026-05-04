@@ -424,6 +424,24 @@ a:hover { text-decoration: underline; }
   border-radius: 2px;
   font-size: 11px;
 }
+.data-source.schema-link {
+  background: var(--brand-blue-light);
+  border-left: 3px solid var(--brand-blue);
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-style: normal;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 13px;
+}
+.data-source.schema-link a {
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 4px;
+}
+.data-source.schema-link a:hover {
+  text-decoration: underline;
+}
 
 /* ============ FOOTER ============ */
 .site-footer {
@@ -511,7 +529,7 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.3</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.4</div>
   </div>
 </header>
 
@@ -602,15 +620,22 @@ const MOCK_DATA = {
     mappaZoom: 13,
     datasets: {
       popolazione: true, bilancio: true, opere_pubbliche: true,
-      pratiche_edilizie: true, servizi_sociali: false, istruzione: false,
-      incidenti_stradali: true, rifiuti: true, eventi_culturali: false,
+      pratiche_edilizie: true, servizi_sociali: true, istruzione: true,
+      incidenti_stradali: true, rifiuti: true, eventi_culturali: true,
       delibere: true, patrimonio: true
     },
     sources: {
       popolazione: "e770f5f1-9156-4612-b5ad-ee7b4bc6018d",
+      bilancio: null,
       opere_pubbliche: "d64e15bc-ba85-453e-af0b-2c2338c08158",
       pratiche_edilizie: "046f5414-ef0e-4a07-a55d-21d4e6d7ab7d",
-      rifiuti: "3321dad8-2d58-48bc-9b37-d21efc87d623"
+      servizi_sociali: "fef9b18f-196b-491f-b29c-c6851768bf56",
+      istruzione: "1187c0e3-23b7-4f2f-80c7-635f6e75f976",
+      incidenti_stradali: null,
+      rifiuti: "3321dad8-2d58-48bc-9b37-d21efc87d623",
+      eventi_culturali: "df887d97-079c-4748-8193-b3dba9ae1692",
+      delibere: null,
+      patrimonio: null
     }
   },
   milano: {
@@ -624,12 +649,18 @@ const MOCK_DATA = {
     mappaZoom: 12,
     datasets: {
       popolazione: true, bilancio: true, opere_pubbliche: false,
-      pratiche_edilizie: false, servizi_sociali: false, istruzione: true,
-      incidenti_stradali: false, rifiuti: false, eventi_culturali: false,
+      pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
+      incidenti_stradali: false, rifiuti: true, eventi_culturali: true,
       delibere: true, patrimonio: true
     },
     sources: {
+      popolazione: null,
       bilancio: "9136135e-192d-4ffe-9a1f-6221e63a1df3",
+      servizi_sociali: "0ffb52cd-ea8b-4c2f-8e37-6ba8663f61ea",
+      istruzione: "7d4022b4-8cf7-46de-ba12-4d24cc76ca15",
+      rifiuti: "1f7b6ff9-0a90-4cdb-a1d3-5142e8cfa729",
+      eventi_culturali: "3b54f233-a0b4-4c21-8482-99b34b52e3bc",
+      delibere: null,
       patrimonio: "8c32b60e-a7e4-4fd0-a76a-50abf191a6d5"
     }
   },
@@ -644,11 +675,15 @@ const MOCK_DATA = {
     mappaZoom: 13,
     datasets: {
       popolazione: true, bilancio: true, opere_pubbliche: false,
-      pratiche_edilizie: false, servizi_sociali: false, istruzione: true,
+      pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
       incidenti_stradali: true, rifiuti: false, eventi_culturali: false,
       delibere: true, patrimonio: false
     },
     sources: {
+      popolazione: null,
+      bilancio: null,
+      servizi_sociali: "742d4a26-1547-48da-a559-46bd0e518060",
+      istruzione: "705ff5f0-c947-47b5-a22e-d8a52fd31d2d",
       incidenti_stradali: "b78af8c5-af19-42ea-81e6-196b2df59ca0",
       delibere: "c5ccc140-8af8-4174-899e-a227c261422f"
     }
@@ -663,15 +698,22 @@ const MOCK_DATA = {
     mappaCenter: [40.3528, 18.1718],
     mappaZoom: 13,
     datasets: {
-      popolazione: true, bilancio: true, opere_pubbliche: false,
+      popolazione: true, bilancio: true, opere_pubbliche: true,
       pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
-      incidenti_stradali: true, rifiuti: false, eventi_culturali: true,
-      delibere: false, patrimonio: false
+      incidenti_stradali: true, rifiuti: true, eventi_culturali: true,
+      delibere: true, patrimonio: true
     },
     sources: {
+      popolazione: null,
+      bilancio: null,
+      opere_pubbliche: "cbc735c7-3463-4bef-b4f6-066d94ddb3e4",
       servizi_sociali: "cef61e18-18bc-496f-951e-2b949b7ccad4",
       istruzione: "3d12df6d-b8f1-4f8f-9b21-ada0274da3c8",
-      eventi_culturali: "44f1e470-0432-4a38-b865-86627aa656a7"
+      incidenti_stradali: null,
+      rifiuti: "838f9095-26f1-4ad5-8a2c-076c41ff6c7e",
+      eventi_culturali: "44f1e470-0432-4a38-b865-86627aa656a7",
+      delibere: "ba13b8a6-97d0-473b-85a7-b593594afd2b",
+      patrimonio: "ad85c1af-5dc6-4ee3-afb9-938c9c36af38"
     }
   }
 };
@@ -800,7 +842,14 @@ const MOCK_OPERE = {
     { cup: "J38B22001230001", nome: "Asilo nido Borgo Panigale", importo: 3100000, stato: "IN_CORSO", sal: 75, lat: 44.5051, lon: 11.2792, fonte: "PNRR" },
     { cup: "J37H23000540001", nome: "Riqualificazione mercato Lazzaretto", importo: 2800000, stato: "IN_CORSO", sal: 45, lat: 44.4982, lon: 11.3208, fonte: "PNRR|BILANCIO" }
   ],
-  milano: [], firenze: [], lecce: []
+  milano: [], firenze: [],
+  lecce: [
+    { cup: "C84H22000310001", nome: "Riqualificazione Piazza Sant'Oronzo", importo: 1850000, stato: "IN_CORSO", sal: 70, lat: 40.3528, lon: 18.1718, fonte: "PNRR|BILANCIO" },
+    { cup: "C81B23000080001", nome: "Pista ciclabile Lecce-Frigole", importo: 2400000, stato: "IN_CORSO", sal: 40, lat: 40.3645, lon: 18.2210, fonte: "PNRR" },
+    { cup: "C89J22001540001", nome: "Restauro Anfiteatro Romano", importo: 980000, stato: "CONCLUSA", sal: 100, lat: 40.3522, lon: 18.1730, fonte: "REGIONE|MIBAC" },
+    { cup: "C81H23000400001", nome: "Manutenzione plessi scolastici", importo: 1250000, stato: "IN_CORSO", sal: 55, lat: 40.3489, lon: 18.1685, fonte: "STATO|BILANCIO" },
+    { cup: "C84E22000910001", nome: "Riqualificazione mercato di Via Adua", importo: 720000, stato: "AGGIUDICATA", sal: 0, lat: 40.3565, lon: 18.1772, fonte: "BILANCIO" }
+  ]
 };
 
 // Pratiche edilizie - aggregate per zona/tipo
@@ -841,9 +890,48 @@ const MOCK_SOCIALI = {
       { tipo: "SALUTE_MENTALE", utenti: 444, domande: 612, spesa: 80000 }
     ]
   },
-  bologna: { utenti_totali: 0, spesa_totale: 0, pct_accolte: 0, per_tipologia: [] },
-  milano: { utenti_totali: 0, spesa_totale: 0, pct_accolte: 0, per_tipologia: [] },
-  firenze: { utenti_totali: 0, spesa_totale: 0, pct_accolte: 0, per_tipologia: [] }
+  bologna: {
+    utenti_totali: 18420, spesa_totale: 92000000, pct_accolte: 89.3,
+    per_tipologia: [
+      { tipo: "ANZIANI_DOMICILIARE", utenti: 2840, domande: 3120, spesa: 18500000 },
+      { tipo: "ANZIANI_RESIDENZIALE", utenti: 1450, domande: 1820, spesa: 24000000 },
+      { tipo: "MINORI_AFFIDO", utenti: 285, domande: 420, spesa: 4200000 },
+      { tipo: "DISABILI_DOMICILIARE", utenti: 1980, domande: 2240, spesa: 14800000 },
+      { tipo: "DISABILI_CENTRO_DIURNO", utenti: 720, domande: 845, spesa: 8900000 },
+      { tipo: "CONTRIBUTI_ECONOMICI", utenti: 8500, domande: 9420, spesa: 14200000 },
+      { tipo: "EMERGENZA_ABITATIVA", utenti: 1450, domande: 1980, spesa: 4800000 },
+      { tipo: "IMMIGRATI", utenti: 980, domande: 1240, spesa: 2200000 },
+      { tipo: "SALUTE_MENTALE", utenti: 215, domande: 280, spesa: 400000 }
+    ]
+  },
+  milano: {
+    utenti_totali: 68500, spesa_totale: 410000000, pct_accolte: 86.4,
+    per_tipologia: [
+      { tipo: "ANZIANI_DOMICILIARE", utenti: 9800, domande: 11500, spesa: 78000000 },
+      { tipo: "ANZIANI_RESIDENZIALE", utenti: 5200, domande: 6800, spesa: 95000000 },
+      { tipo: "MINORI_AFFIDO", utenti: 1280, domande: 1820, spesa: 18500000 },
+      { tipo: "DISABILI_DOMICILIARE", utenti: 6800, domande: 7900, spesa: 62000000 },
+      { tipo: "DISABILI_CENTRO_DIURNO", utenti: 2400, domande: 2890, spesa: 38000000 },
+      { tipo: "CONTRIBUTI_ECONOMICI", utenti: 32000, domande: 36500, spesa: 68000000 },
+      { tipo: "EMERGENZA_ABITATIVA", utenti: 5800, domande: 8100, spesa: 22000000 },
+      { tipo: "IMMIGRATI", utenti: 4200, domande: 5400, spesa: 18500000 },
+      { tipo: "SALUTE_MENTALE", utenti: 1020, domande: 1280, spesa: 10000000 }
+    ]
+  },
+  firenze: {
+    utenti_totali: 16800, spesa_totale: 84000000, pct_accolte: 87.8,
+    per_tipologia: [
+      { tipo: "ANZIANI_DOMICILIARE", utenti: 2520, domande: 2890, spesa: 16500000 },
+      { tipo: "ANZIANI_RESIDENZIALE", utenti: 1280, domande: 1620, spesa: 21000000 },
+      { tipo: "MINORI_AFFIDO", utenti: 245, domande: 380, spesa: 3800000 },
+      { tipo: "DISABILI_DOMICILIARE", utenti: 1820, domande: 2080, spesa: 13500000 },
+      { tipo: "DISABILI_CENTRO_DIURNO", utenti: 640, domande: 780, spesa: 8200000 },
+      { tipo: "CONTRIBUTI_ECONOMICI", utenti: 7500, domande: 8400, spesa: 12800000 },
+      { tipo: "EMERGENZA_ABITATIVA", utenti: 1320, domande: 1850, spesa: 4500000 },
+      { tipo: "IMMIGRATI", utenti: 920, domande: 1140, spesa: 2900000 },
+      { tipo: "SALUTE_MENTALE", utenti: 555, domande: 720, spesa: 800000 }
+    ]
+  }
 };
 
 // Asili nido (Lecce, Milano, Firenze hanno il dataset)
@@ -862,7 +950,18 @@ const MOCK_ASILI = {
   },
   milano: { posti_totali: 8200, iscritti: 7950, lista_attesa: 2100, tasso_copertura: 32.4, plessi: [] },
   firenze: { posti_totali: 1850, iscritti: 1780, lista_attesa: 480, tasso_copertura: 28.6, plessi: [] },
-  bologna: { posti_totali: 0, iscritti: 0, lista_attesa: 0, tasso_copertura: 0, plessi: [] }
+  bologna: {
+    posti_totali: 2480, iscritti: 2380, lista_attesa: 520,
+    tasso_copertura: 35.8,
+    plessi: [
+      { nome: "Nido Aquilone", posti: 60, iscritti: 58, lat: 44.4920, lon: 11.3360 },
+      { nome: "Nido Pollicino", posti: 55, iscritti: 54, lat: 44.5012, lon: 11.3489 },
+      { nome: "Nido Patatrac", posti: 65, iscritti: 62, lat: 44.4858, lon: 11.3578 },
+      { nome: "Nido Coccinella", posti: 50, iscritti: 50, lat: 44.5100, lon: 11.3290 },
+      { nome: "Nido Tortellino", posti: 70, iscritti: 68, lat: 44.4760, lon: 11.3145 },
+      { nome: "Nido Chicco di Grano", posti: 55, iscritti: 52, lat: 44.5020, lon: 11.2855 }
+    ]
+  }
 };
 
 // Incidenti stradali (Bologna, Firenze, Lecce hanno dataset)
@@ -922,9 +1021,35 @@ const MOCK_RIFIUTI = {
       { frazione: "ALTRO", kg: 12800000 }
     ]
   },
-  milano: { rd_pct: 0, pro_capite_kg: 0, serie_mensile_rd: [], composizione: [] },
+  milano: {
+    rd_pct: 65.2, pro_capite_kg: 442,
+    serie_mensile_rd: [63.5, 64.1, 65.8, 66.2, 67.0, 67.4, 65.8, 62.5, 64.8, 66.2, 65.4, 64.0],
+    composizione: [
+      { frazione: "ORGANICO", kg: 142000000 },
+      { frazione: "CARTA_CARTONE", kg: 98000000 },
+      { frazione: "INDIFFERENZIATO", kg: 240000000 },
+      { frazione: "VETRO", kg: 51000000 },
+      { frazione: "PLASTICA", kg: 47000000 },
+      { frazione: "VERDE_LIGNEO", kg: 32000000 },
+      { frazione: "INGOMBRANTI", kg: 22000000 },
+      { frazione: "ALTRO", kg: 38000000 }
+    ]
+  },
   firenze: { rd_pct: 0, pro_capite_kg: 0, serie_mensile_rd: [], composizione: [] },
-  lecce: { rd_pct: 0, pro_capite_kg: 0, serie_mensile_rd: [], composizione: [] }
+  lecce: {
+    rd_pct: 71.5, pro_capite_kg: 528,
+    serie_mensile_rd: [69.8, 70.2, 71.5, 72.1, 73.0, 73.8, 72.4, 68.9, 71.2, 72.4, 71.5, 70.0],
+    composizione: [
+      { frazione: "ORGANICO", kg: 12500000 },
+      { frazione: "CARTA_CARTONE", kg: 6800000 },
+      { frazione: "INDIFFERENZIATO", kg: 14200000 },
+      { frazione: "VETRO", kg: 4200000 },
+      { frazione: "PLASTICA", kg: 3900000 },
+      { frazione: "VERDE_LIGNEO", kg: 2100000 },
+      { frazione: "INGOMBRANTI", kg: 1450000 },
+      { frazione: "ALTRO", kg: 2150000 }
+    ]
+  }
 };
 
 // Eventi culturali (Lecce)
@@ -947,8 +1072,41 @@ const MOCK_EVENTI = {
       { nome: "Conversazioni sul Futuro", lat: 40.3540, lon: 18.1700, cat: "LETTERATURA" }
     ]
   },
-  bologna: { totale_anno: 0, pct_gratuiti: 0, spesa_patrocinati: 0, per_categoria: [], eventi_geo: [] },
-  milano: { totale_anno: 0, pct_gratuiti: 0, spesa_patrocinati: 0, per_categoria: [], eventi_geo: [] },
+  bologna: {
+    totale_anno: 1240, pct_gratuiti: 71.2, spesa_patrocinati: 2800000,
+    per_categoria: [
+      { cat: "MUSICA", n: 285 }, { cat: "TEATRO", n: 198 },
+      { cat: "MOSTRA", n: 145 }, { cat: "CINEMA", n: 98 },
+      { cat: "LETTERATURA", n: 142 }, { cat: "SPORT", n: 120 },
+      { cat: "FOOD", n: 85 }, { cat: "BAMBINI", n: 92 },
+      { cat: "MERCATO", n: 75 }
+    ],
+    eventi_geo: [
+      { nome: "Bologna Estate", lat: 44.4938, lon: 11.3426, cat: "MUSICA" },
+      { nome: "Cinema Ritrovato", lat: 44.4938, lon: 11.3408, cat: "CINEMA" },
+      { nome: "Bologna Festival", lat: 44.4994, lon: 11.3320, cat: "MUSICA" },
+      { nome: "Salone del Restauro", lat: 44.5102, lon: 11.3589, cat: "MOSTRA" },
+      { nome: "Mortadella Please", lat: 44.4938, lon: 11.3426, cat: "FOOD" }
+    ]
+  },
+  milano: {
+    totale_anno: 2890, pct_gratuiti: 64.5, spesa_patrocinati: 8500000,
+    per_categoria: [
+      { cat: "MUSICA", n: 685 }, { cat: "TEATRO", n: 458 },
+      { cat: "MOSTRA", n: 392 }, { cat: "CINEMA", n: 298 },
+      { cat: "LETTERATURA", n: 245 }, { cat: "SPORT", n: 320 },
+      { cat: "FOOD", n: 168 }, { cat: "BAMBINI", n: 198 },
+      { cat: "MERCATO", n: 126 }
+    ],
+    eventi_geo: [
+      { nome: "Milano Music Week", lat: 45.4669, lon: 9.1900, cat: "MUSICA" },
+      { nome: "Piano City Milano", lat: 45.4707, lon: 9.1793, cat: "MUSICA" },
+      { nome: "BookCity Milano", lat: 45.4630, lon: 9.1898, cat: "LETTERATURA" },
+      { nome: "Milano Design Week", lat: 45.4781, lon: 9.1240, cat: "MOSTRA" },
+      { nome: "Milano Latin Festival", lat: 45.4720, lon: 9.1745, cat: "MUSICA" },
+      { nome: "Estate Sforzesca", lat: 45.4707, lon: 9.1793, cat: "TEATRO" }
+    ]
+  },
   firenze: { totale_anno: 0, pct_gratuiti: 0, spesa_patrocinati: 0, per_categoria: [], eventi_geo: [] }
 };
 
@@ -981,7 +1139,15 @@ const MOCK_DELIBERE = {
       { tipo: "DECRETO_SINDACALE", n: 62 }
     ]
   },
-  lecce: { totale_anno: 0, tempo_medio_pubblicazione: 0, pct_nei_termini: 0, per_tipo: [] }
+  lecce: {
+    totale_anno: 320, tempo_medio_pubblicazione: 5.8, pct_nei_termini: 95.4,
+    per_tipo: [
+      { tipo: "DELIBERA_GIUNTA", n: 158 },
+      { tipo: "DELIBERA_CONSIGLIO", n: 78 },
+      { tipo: "ORDINANZA_SINDACALE", n: 52 },
+      { tipo: "DECRETO_SINDACALE", n: 32 }
+    ]
+  }
 };
 
 // Patrimonio (Bologna, Milano)
@@ -1026,7 +1192,26 @@ const MOCK_PATRIMONIO = {
     ]
   },
   firenze: { totale_immobili: 0, valore_totale: 0, pct_inutilizzati: 0, pct_vincolo_culturale: 0, per_categoria: [], immobili_geo: [] },
-  lecce: { totale_immobili: 0, valore_totale: 0, pct_inutilizzati: 0, pct_vincolo_culturale: 0, per_categoria: [], immobili_geo: [] }
+  lecce: {
+    totale_immobili: 720, valore_totale: 320000000,
+    pct_inutilizzati: 8.4, pct_vincolo_culturale: 32.1,
+    per_categoria: [
+      { cat: "EDIFICIO_AMMINISTRATIVO", n: 48 },
+      { cat: "SCOLASTICO", n: 92 },
+      { cat: "CULTURALE", n: 58 },
+      { cat: "SPORTIVO", n: 32 },
+      { cat: "ABITATIVO_ERP", n: 285 },
+      { cat: "AREA_VERDE", n: 85 },
+      { cat: "INFRASTRUTTURA", n: 68 }
+    ],
+    immobili_geo: [
+      { nome: "Palazzo Carafa - Sede Comunale", lat: 40.3528, lon: 18.1718, cat: "EDIFICIO_AMMINISTRATIVO", val: 12000000 },
+      { nome: "Castello di Carlo V", lat: 40.3514, lon: 18.1742, cat: "CULTURALE", val: 0 },
+      { nome: "Anfiteatro Romano", lat: 40.3522, lon: 18.1730, cat: "CULTURALE", val: 0 },
+      { nome: "Teatro Politeama Greco", lat: 40.3548, lon: 18.1695, cat: "CULTURALE", val: 0 },
+      { nome: "Stadio Via del Mare", lat: 40.3658, lon: 18.2090, cat: "SPORTIVO", val: 0 }
+    ]
+  }
 };
 </script>
 
@@ -1170,15 +1355,38 @@ function renderSections(comune) {
 }
 
 /* ==================== HEADER per ogni sezione ==================== */
-function sectionHeader(num, title, tag, sourceId) {
-  const src = sourceId
-    ? `<p class="data-source">Fonte: dataset <code>${sourceId}</code> su <a href="https://www.dati.gov.it/view-dataset/dataset?id=${sourceId}" target="_blank" rel="noopener">dati.gov.it</a></p>`
+/* Mappa nome dataset → ancora PANIERE.md */
+const PANIERE_ANCHORS = {
+  popolazione: 'dataset-1--popolazione-residente',
+  bilancio: 'dataset-2--bilancio-per-missione',
+  opere_pubbliche: 'dataset-3--opere-pubbliche',
+  pratiche_edilizie: 'dataset-4--pratiche-edilizie',
+  servizi_sociali: 'dataset-5--servizi-sociali',
+  istruzione: 'dataset-6--istruzione--asili',
+  incidenti_stradali: 'dataset-7--incidenti-stradali',
+  rifiuti: 'dataset-8--raccolta-rifiuti',
+  eventi_culturali: 'dataset-9--eventi-culturali-e-sportivi',
+  delibere: 'dataset-10--delibere-e-atti',
+  patrimonio: 'dataset-11--patrimonio-immobiliare'
+};
+
+function sectionHeader(num, title, tag, sourceId, schemaKey) {
+  const sourceLink = sourceId
+    ? `Fonte reale del Comune: dataset <code>${sourceId}</code> su <a href="https://www.dati.gov.it/view-dataset/dataset?id=${sourceId}" target="_blank" rel="noopener">dati.gov.it</a>`
+    : `Fonte reale del Comune: <em>il Comune pubblica questo dataset ma il link puntuale dati.gov.it non è ancora cablato qui</em>`;
+  const schemaLink = schemaKey
+    ? `<strong>Come strutturare il CSV per questa dashboard:</strong>
+       <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE.md#${PANIERE_ANCHORS[schemaKey] || ''}" target="_blank" rel="noopener">📋 specifica PANIERE</a>
+       · <a href="https://github.com/piersoft/comune-metrics/blob/main/schemas/${schemaKey}.schema.json" target="_blank" rel="noopener">⚙ JSON Schema</a>
+       · <a href="https://raw.githubusercontent.com/piersoft/comune-metrics/main/schemas/${schemaKey}.schema.json" target="_blank" rel="noopener">⬇ schema raw</a>`
     : '';
   return `<div class="section-header">
     <span class="section-num">DS·${num}</span>
     <h2 class="section-title">${title}</h2>
     <span class="section-tag">${tag}</span>
-  </div>${src}`;
+  </div>
+  <p class="data-source">${sourceLink}</p>
+  ${schemaLink ? `<p class="data-source schema-link">${schemaLink}</p>` : ''}`;
 }
 
 /* ==================== Sezione 1 — Popolazione ==================== */
@@ -1192,7 +1400,7 @@ function sectionPopolazione(comune) {
 
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('01', 'Popolazione residente', 'SOCI', c.sources.popolazione)}
+      ${sectionHeader('01', 'Popolazione residente', 'SOCI', c.sources.popolazione, 'popolazione')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Residenti totali</div>
@@ -1273,7 +1481,7 @@ function sectionBilancio(comune) {
   const totImp = d.missioni.reduce((s,m) => s + m.impegnato, 0);
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('02', 'Bilancio per missione', 'ECON', c.sources.bilancio)}
+      ${sectionHeader('02', 'Bilancio per missione', 'ECON', c.sources.bilancio, 'bilancio')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Spesa corrente totale</div>
@@ -1329,7 +1537,7 @@ function sectionOpere(comune) {
   const pnrr = opere.filter(o => o.fonte.includes('PNRR')).length;
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('03', 'Opere pubbliche', 'ECON', c.sources.opere_pubbliche)}
+      ${sectionHeader('03', 'Opere pubbliche', 'ECON', c.sources.opere_pubbliche, 'opere_pubbliche')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Opere monitorate</div>
@@ -1390,7 +1598,7 @@ function sectionPratiche(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('04', 'Pratiche edilizie', 'GOVE', c.sources.pratiche_edilizie)}
+      ${sectionHeader('04', 'Pratiche edilizie', 'GOVE', c.sources.pratiche_edilizie, 'pratiche_edilizie')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Pratiche/anno</div>
@@ -1444,7 +1652,7 @@ function sectionSociali(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('05', 'Servizi sociali', 'SOCI', c.sources.servizi_sociali)}
+      ${sectionHeader('05', 'Servizi sociali', 'SOCI', c.sources.servizi_sociali, 'servizi_sociali')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Utenti totali serviti</div>
@@ -1501,7 +1709,7 @@ function sectionIstruzione(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('06', 'Istruzione &amp; asili nido', 'EDUC', c.sources.istruzione)}
+      ${sectionHeader('06', 'Istruzione &amp; asili nido', 'EDUC', c.sources.istruzione, 'istruzione')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Posti asili nido</div>
@@ -1553,7 +1761,7 @@ function sectionIncidenti(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('07', 'Incidenti stradali', 'TRAN', c.sources.incidenti_stradali)}
+      ${sectionHeader('07', 'Incidenti stradali', 'TRAN', c.sources.incidenti_stradali, 'incidenti_stradali')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Incidenti totali</div>
@@ -1629,7 +1837,7 @@ function sectionRifiuti(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('08', 'Raccolta rifiuti', 'ENVI', c.sources.rifiuti)}
+      ${sectionHeader('08', 'Raccolta rifiuti', 'ENVI', c.sources.rifiuti, 'rifiuti')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Raccolta differenziata</div>
@@ -1683,7 +1891,7 @@ function sectionEventi(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('09', 'Eventi culturali e sportivi', 'EDUC', c.sources.eventi_culturali)}
+      ${sectionHeader('09', 'Eventi culturali e sportivi', 'EDUC', c.sources.eventi_culturali, 'eventi_culturali')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Eventi/anno</div>
@@ -1743,7 +1951,7 @@ function sectionDelibere(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('10', 'Delibere e atti amministrativi', 'GOVE', c.sources.delibere)}
+      ${sectionHeader('10', 'Delibere e atti amministrativi', 'GOVE', c.sources.delibere, 'delibere')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Atti totali/anno</div>
@@ -1788,7 +1996,7 @@ function sectionPatrimonio(comune) {
   const c = MOCK_DATA[comune];
   return `<section class="section">
     <div class="container">
-      ${sectionHeader('11', 'Patrimonio immobiliare', 'GOVE', c.sources.patrimonio)}
+      ${sectionHeader('11', 'Patrimonio immobiliare', 'GOVE', c.sources.patrimonio, 'patrimonio')}
       <div class="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Immobili totali</div>
