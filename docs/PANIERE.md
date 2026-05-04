@@ -1,4 +1,4 @@
-# Paniere OpenData ComuneMetrics — Specifica v2.2
+# Paniere OpenData ComuneMetrics — Specifica v2.3
 
 **Data:** Maggio 2026
 **Licenza dati raccomandata:** CC-BY 4.0 o IODL 2.0
@@ -6,7 +6,7 @@
 **Encoding date:** ISO 8601 (`YYYY-MM-DD` o `YYYY-MM-DDThh:mm:ssZ`)
 **Encoding numerici:** punto come separatore decimale (`123.45`), nessun separatore migliaia
 **Conformità metadati:** DCAT-AP_IT v2.1 — 8 temi EU
-**Conformità Linked Data:** [schema.gov.it](https://schema.gov.it) (15 ontologie)
+**Conformità Linked Data:** vocabolari controllati e ontologie della PA italiana ([schema.gov.it](https://schema.gov.it), 15 ontologie)
 **Validazione:** ogni dataset ha JSON Schema in `/schemas/` e regole di mapping RDF in `/scripts/csv-to-rdf-rules/`
 
 ---
@@ -16,7 +16,7 @@
 Il paniere è composto da **11 dataset CORE obbligatori** che, se pubblicati da un Comune con schema CSV conforme **e distribuzione TTL allegata**, "accendono" la dashboard ComuneMetrics. La conformità è verificabile in modo automatico tramite:
 
 1. **Validazione CSV** contro JSON Schema
-2. **Validazione TTL** contro vocabolari schema.gov.it (sparql ASK su `schema.gov.it/sparql`)
+2. **Validazione TTL** contro i vocabolari e ontologie della PA italiana (SPARQL ASK su `schema.gov.it/sparql`)
 3. **Verifica metadati DCAT-AP_IT** (theme, license, frequency, holder)
 
 Ogni Comune riceve un **badge di trasparenza**:
@@ -25,7 +25,7 @@ Ogni Comune riceve un **badge di trasparenza**:
 - **4–7 dataset CORE** → badge GIALLO "Trasparenza parziale"
 - **8–10 dataset CORE** → badge ARANCIONE "Trasparenza avanzata"
 - **11/11 dataset CORE** → badge VERDE "Comune Trasparente — ComuneMetrics Compliant"
-- **11/11 + tutti con distribuzione TTL schema.gov.it-compliant** → badge ORO "5★ Linked Open Data"
+- **11/11 + tutti con distribuzione TTL conforme a vocabolari/ontologie PA italiana** → badge ORO "5★ Linked Open Data"
 
 L'approccio "schema rigido + Linked Data" è una scelta deliberata: garantisce che i KPI siano comparabili tra Comuni, che la dashboard funzioni senza adattamenti, e che i dataset siano interrogabili in **federazione SPARQL** tra Comuni diversi.
 
@@ -53,7 +53,7 @@ Gli esempi Turtle che corredano ciascuno degli 11 dataset di questa specifica **
 
 ## Indice delle 11 aree CORE
 
-| # | Dataset | File | Tema DCAT-AP_IT | Frequenza min. | Ontologie schema.gov.it primarie |
+| # | Dataset | File | Tema DCAT-AP_IT | Frequenza min. | Ontologie PA italiana primarie |
 |---|---|---|---|---|---|
 | 1 | Popolazione residente | `popolazione.csv` | SOCI | Annuale | QB + SKOS + CLV |
 | 2 | Bilancio per missione | `bilancio.csv` | ECON | Annuale | QB + SKOS + COV |
@@ -69,7 +69,7 @@ Gli esempi Turtle che corredano ciascuno degli 11 dataset di questa specifica **
 
 ---
 
-## Convenzioni schema.gov.it
+## Convenzioni di modellazione (vocabolari e ontologie PA italiana)
 
 ### Ontologie usate (con prefissi standard)
 
@@ -85,7 +85,7 @@ Gli esempi Turtle che corredano ciascuno degli 11 dataset di questa specifica **
 @prefix geo:         <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix qb:          <http://purl.org/linked-data/cube#> .
 
-# Ontologie e vocabolari controllati schema.gov.it
+# Vocabolari controllati e ontologie della PA italiana
 @prefix l0:          <https://w3id.org/italia/onto/l0/> .
 @prefix clv:         <https://w3id.org/italia/onto/CLV/> .
 @prefix cov:         <https://w3id.org/italia/onto/COV/> .
@@ -101,7 +101,7 @@ Gli esempi Turtle che corredano ciascuno degli 11 dataset di questa specifica **
 
 ### Pattern URI canonico
 
-Tutti gli URI delle entità seguono lo schema URI canonico schema.gov.it:
+Tutti gli URI delle entità seguono lo schema URI canonico della PA italiana (schema.gov.it):
 
 ```
 https://w3id.org/italia/data/{codice-ipa}/{tipo-risorsa}/{id-riga}
@@ -202,7 +202,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **File:** `popolazione.csv`
 **Frequenza:** annuale (al 31/12)
 **Tema DCAT-AP_IT:** `SOCI` (Popolazione e società)
-**Ontologie schema.gov.it:** **QB** (osservazioni statistiche multidimensionali) + **SKOS** (vocabolari `fascia_eta`, `cittadinanza`) + **CLV** (`area_sub_comunale`)
+**Ontologie PA italiana:** **QB** (osservazioni statistiche multidimensionali) + **SKOS** (vocabolari `fascia_eta`, `cittadinanza`) + **CLV** (`area_sub_comunale`)
 **Granularità:** una riga per anno × area sub-comunale × fascia età × genere × cittadinanza
 **URI tipo risorsa:** `population-observation`
 
@@ -282,7 +282,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** annuale (post-rendiconto, entro 30/06 anno successivo)
 **Tema DCAT-AP_IT:** `ECON` (Economia e finanze)
 **Riferimento normativo:** DM 18/04/2012 (armonizzazione bilanci EELL)
-**Ontologie schema.gov.it:** **QB** (Cubo statistico anno × missione × programma) + **SKOS** (CV missioni DM 2012) + **COV** (Comune publisher)
+**Ontologie PA italiana:** **QB** (Cubo statistico anno × missione × programma) + **SKOS** (CV missioni DM 2012) + **COV** (Comune publisher)
 **Granularità:** una riga per anno × missione × programma × titolo × tipo_documento
 **URI tipo risorsa:** `budget-observation`
 
@@ -367,7 +367,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** trimestrale
 **Tema DCAT-AP_IT:** `ECON` (Economia e finanze)
 **Riferimento:** Codice contratti pubblici (D.Lgs. 36/2023), CUP/CIG ANAC
-**Ontologie schema.gov.it:** **CPSV-AP** (procedimento PA) + **CLV** (indirizzo) + **TI** (cronoprogramma) + **POI** (geolocalizzazione opera) + **COV** (RUP/stazione appaltante)
+**Ontologie PA italiana:** **CPSV-AP** (procedimento PA) + **CLV** (indirizzo) + **TI** (cronoprogramma) + **POI** (geolocalizzazione opera) + **COV** (RUP/stazione appaltante)
 **Granularità:** una riga per opera (chiave = `cup`)
 **URI tipo risorsa:** `public-work`
 
@@ -459,7 +459,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** trimestrale
 **Tema DCAT-AP_IT:** `GOVE` (Governo e settore pubblico)
 **Riferimento:** D.P.R. 380/2001 (Testo Unico Edilizia)
-**Ontologie schema.gov.it:** **CPSV-AP** (procedimento PA) + **TI** (tempi lavorazione) + **CLV** (zona) + **SKOS** (CV `tipo_pratica`, `esito`, `categoria_intervento`)
+**Ontologie PA italiana:** **CPSV-AP** (procedimento PA) + **TI** (tempi lavorazione) + **CLV** (zona) + **SKOS** (CV `tipo_pratica`, `esito`, `categoria_intervento`)
 **Granularità:** una riga per pratica
 **URI tipo risorsa:** `building-procedure`
 
@@ -526,7 +526,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** annuale
 **Tema DCAT-AP_IT:** `SOCI` (Popolazione e società)
 **Riferimento:** L. 328/2000 (Legge quadro servizi sociali)
-**Ontologie schema.gov.it:** **CPSV-AP** (servizio PA erogato) + **QB** (osservazioni utenti/spesa) + **SKOS** (CV `tipologia_servizio`)
+**Ontologie PA italiana:** **CPSV-AP** (servizio PA erogato) + **QB** (osservazioni utenti/spesa) + **SKOS** (CV `tipologia_servizio`)
 **Granularità:** una riga per anno × tipologia servizio
 **URI tipo risorsa:** `social-service-observation`
 
@@ -590,7 +590,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **File:** `istruzione.csv`
 **Frequenza:** annuale (per anno scolastico)
 **Tema DCAT-AP_IT:** `EDUC` (Istruzione, cultura e sport)
-**Ontologie schema.gov.it:** **Cultural-ON** (istituti formativi come istituzioni culturali) + **POI** + **CLV** (indirizzo plesso) + **TI** (anno scolastico)
+**Ontologie PA italiana:** **Cultural-ON** (istituti formativi come istituzioni culturali) + **POI** + **CLV** (indirizzo plesso) + **TI** (anno scolastico)
 **Granularità:** una riga per anno scolastico × tipo struttura × plesso
 **URI tipo risorsa:** `school-facility`
 
@@ -661,7 +661,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** mensile
 **Tema DCAT-AP_IT:** `TRAN` (Trasporti)
 **Riferimento:** ISTAT, modulo CTT/INC, Direttiva (UE) 2019/1936 (gestione sicurezza infrastrutture)
-**Ontologie schema.gov.it:** **QB** (Cubo statistico data × via × natura) + **CLV** (via/civico) + **TI** (timestamp) + **SKOS** (CV `natura`,`tipo_strada`,`condizioni_meteo`)
+**Ontologie PA italiana:** **QB** (Cubo statistico data × via × natura) + **CLV** (via/civico) + **TI** (timestamp) + **SKOS** (CV `natura`,`tipo_strada`,`condizioni_meteo`)
 **Standard W3C complementari:** WGS84 (`geo:lat`/`geo:long`)
 **Granularità:** una riga per incidente
 **URI tipo risorsa:** `road-accident`
@@ -739,7 +739,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** mensile
 **Tema DCAT-AP_IT:** `ENVI` (Ambiente)
 **Riferimento:** ISPRA-Catasto Rifiuti, MUD, D.Lgs. 152/2006
-**Ontologie schema.gov.it:** **QB** (Cubo statistico anno × mese × frazione × area) + **SKOS** (CV 15 frazioni come `skos:ConceptScheme`) + **CLV** (`area_sub_comunale`)
+**Ontologie PA italiana:** **QB** (Cubo statistico anno × mese × frazione × area) + **SKOS** (CV 15 frazioni come `skos:ConceptScheme`) + **CLV** (`area_sub_comunale`)
 **Granularità:** una riga per anno × mese × frazione × area
 **URI tipo risorsa:** `waste-observation`
 
@@ -806,7 +806,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **File:** `eventi_culturali.csv`
 **Frequenza:** trimestrale
 **Tema DCAT-AP_IT:** `EDUC` (Istruzione, cultura e sport)
-**Ontologie schema.gov.it:** **Cultural-ON** (eventi culturali, classe `culturalon:Event` o estensione) + **POI** (luogo) + **CLV** (indirizzo) + **TI** (intervallo data_inizio→data_fine) + **COV** (organizzatore se ente)
+**Ontologie PA italiana:** **Cultural-ON** (eventi culturali, classe `culturalon:Event` o estensione) + **POI** (luogo) + **CLV** (indirizzo) + **TI** (intervallo data_inizio→data_fine) + **COV** (organizzatore se ente)
 **Granularità:** una riga per evento
 **URI tipo risorsa:** `cultural-event`
 
@@ -878,7 +878,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** mensile
 **Tema DCAT-AP_IT:** `GOVE` (Governo e settore pubblico)
 **Riferimento:** D.Lgs. 33/2013 (Trasparenza), TUEL D.Lgs. 267/2000
-**Ontologie schema.gov.it:** **CPSV-AP** (atti come procedimenti) + **TI** (data adozione/pubblicazione/esecutività) + **COV** (settore proponente) + **RO** (ruoli politici) + **ADMS** (atti come asset semantici versionati)
+**Ontologie PA italiana:** **CPSV-AP** (atti come procedimenti) + **TI** (data adozione/pubblicazione/esecutività) + **COV** (settore proponente) + **RO** (ruoli politici) + **ADMS** (atti come asset semantici versionati)
 **Granularità:** una riga per atto
 **URI tipo risorsa:** `administrative-act`
 
@@ -953,7 +953,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 **Frequenza:** annuale (al 31/12)
 **Tema DCAT-AP_IT:** `GOVE` (Governo e settore pubblico)
 **Riferimento:** Conto del patrimonio (allegato al rendiconto), D.Lgs. 42/2004 (vincolo culturale)
-**Ontologie schema.gov.it:** **POI** (classe principale `poi:PointOfInterest`) + **CLV** (`clv:Address`) + **SKOS** (CV `categoria`,`stato_uso`,`efficienza_energetica`)
+**Ontologie PA italiana:** **POI** (classe principale `poi:PointOfInterest`) + **CLV** (`clv:Address`) + **SKOS** (CV `categoria`,`stato_uso`,`efficienza_energetica`)
 **Standard W3C complementari:** WGS84 (`geo:lat`/`geo:long`)
 **Granularità:** una riga per immobile
 **URI tipo risorsa:** `point-of-interest`
@@ -1039,12 +1039,12 @@ Il validatore CLI `comune-metrics-validate` (in `/scripts/`) controlla contro `/
 4. **Range temporali** — date plausibili (no anni futuri impossibili, no date inverse)
 5. **Coordinate** — `lat` in [-90,90], `lon` in [-180,180], dentro bounding box italiano
 
-### Livello 2 — Validazione TTL (schema.gov.it)
+### Livello 2 — Validazione TTL (vocabolari/ontologie PA italiana)
 
 Il validatore `comune-metrics-rdf-validate` controlla:
 
 1. **Sintassi Turtle valida** (parsing con `rdflib`)
-2. **Whitelist classi/proprietà schema.gov.it** (verifiche contro mappa locale `ONTO_CLASSES` + SPARQL ASK su `https://schema.gov.it/sparql`)
+2. **Whitelist classi/proprietà PA italiana** (verifiche contro mappa locale `ONTO_CLASSES` + SPARQL ASK su `https://schema.gov.it/sparql`)
 3. **Pattern URI canonico** (`https://w3id.org/italia/data/{ipa}/{tipo-risorsa}/{id}`)
 4. **Vocabolari controllati SKOS** — i concetti referenziati esistono nel `skos:ConceptScheme` dichiarato
 5. **Conformità DCAT-AP_IT 2.1** del Dataset wrapper
@@ -1214,7 +1214,7 @@ Il paniere è progettato per essere harvestato da **dati.gov.it** via DCAT-AP_IT
 Inoltre ogni dataset deve avere **due distribuzioni**:
 
 - una `dcat:Distribution` con `dct:format = text/csv`
-- una `dcat:Distribution` con `dct:format = text/turtle` (per il TTL schema.gov.it-compliant generato con `github.com/piersoft/CSV-to-RDF`)
+- una `dcat:Distribution` con `dct:format = text/turtle` (per il TTL conforme alle ontologie della PA italiana generato con `github.com/piersoft/CSV-to-RDF`)
 
 Questo permette al loader della dashboard di:
 
@@ -1240,7 +1240,7 @@ Dataset utili ma non richiesti per il badge VERDE:
 
 ## Riferimenti
 
-- **schema.gov.it**: <https://schema.gov.it> · <https://github.com/italia/dati-semantic-assets>
+- **Vocabolari controllati e ontologie della PA italiana**: <https://schema.gov.it> · <https://github.com/italia/dati-semantic-assets>
 - **DCAT-AP_IT 2.1**: <https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html>
 - **Strumento CSV → TTL**: <https://github.com/piersoft/CSV-to-RDF> · demo <https://piersoft.github.io/CSV-to-RDF>
 - **Vocabolari controllati ufficiali**: <https://github.com/italia/daf-ontologie-vocabolari-controllati>
@@ -1252,9 +1252,10 @@ Dataset utili ma non richiesti per il badge VERDE:
 
 ## Cronistoria versione
 
-- **v2.2** (Maggio 2026) — Rinominato il riferimento alla rete di ontologie (uso esclusivo di "schema.gov.it"). Aggiunta sezione operativa "Come costruire i CSV" con mappa fonti → uffici → gestionali tipici, esempi SQL su sw italiani comuni, workflow di adozione e tempi realistici.
+- **v2.3** (Maggio 2026) — Affinata la dicitura: il nome canonico della rete di ontologie è "vocabolari controllati e ontologie della PA italiana" (riferimento URL: schema.gov.it). Eliminato l'uso di schema.gov.it come nome (resta solo come URL tecnico per badge, link e endpoint SPARQL).
+- **v2.2** (Maggio 2026) — Aggiunta sezione operativa "Come costruire i CSV" con mappa fonti → uffici → gestionali tipici, esempi SQL su sw italiani comuni, workflow di adozione e tempi realistici. Rimosso uso di "OntoPiA" (vecchio nome).
 
 - **v2.1** (Maggio 2026) — Esempi Turtle ancorati a dataset reali multi-Comune (Bologna, Milano, Firenze, Lecce). Ogni esempio cita la `dct:source` del dataset di riferimento harvestato da dati.gov.it. Aggiunto riquadro di derivazione esempi nella sezione Filosofia.
-- **v2.0.1** (Maggio 2026) — Patch: rimossa GeoSPARQL (non parte di schema.gov.it, standard OGC esterno). Le geometrie usano solo W3C WGS84 (`geo:lat`/`geo:long`) coerentemente con il README di `github.com/piersoft/CSV-to-RDF`
-- **v2.0** (Maggio 2026) — Mapping schema.gov.it completo, esempi Turtle per ogni dataset, badge ORO 5★ LOD
+- **v2.0.1** (Maggio 2026) — Patch: rimossa GeoSPARQL (non parte dei vocabolari/ontologie della PA italiana, standard OGC esterno). Le geometrie usano solo W3C WGS84 (`geo:lat`/`geo:long`) coerentemente con il README di `github.com/piersoft/CSV-to-RDF`
+- **v2.0** (Maggio 2026) — Mapping ai vocabolari/ontologie della PA italiana completo, esempi Turtle per ogni dataset, badge ORO 5★ LOD
 - **v1.0** (Maggio 2026) — Prima release: 11 dataset CORE, schema rigido, mapping DCAT-AP_IT
