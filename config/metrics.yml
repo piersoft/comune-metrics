@@ -1,20 +1,8 @@
-# ComuneMetrics — Schema metriche per Dataset CORE
+# ComuneMetrics — Schema metriche per Dataset CORE (v2 con sinonimi reali)
 #
-# Per ogni Dataset CORE del paniere, definiamo:
-#   - expected_fields: lista (canonical_name, sinonimi_csv) — i nomi che lo
-#     script cerca nelle intestazioni del CSV reale, in ordine di priorità.
-#     Il primo che match viene usato.
-#   - calculator: nome della funzione Python in scripts/calculators.py che
-#     riceve un pandas.DataFrame con le colonne canonicalizzate e ritorna
-#     un dict di metriche.
-#   - kpi: lista delle metriche che la dashboard si aspetta. Quelle non
-#     calcolate dal CSV (campo manca) vengono restituite come null e la
-#     dashboard mostra "campo non presente nel CSV pubblicato".
-#
-# Sinonimi: per ogni canonical_name elencare TUTTI i nomi di colonna trovati
-# nei CSV reali dei vari Comuni (le PA italiane non hanno standard univoco).
-# Esempio "data_inizio" può essere "Data Inizio", "DATA_INIZIO", "data_pratica",
-# "RICHIESTA DATA"...
+# Sinonimi estratti dai JSON/CSV REALI dei portali comunali.
+# Ogni canonical name elenca tutte le varianti viste:
+# snake_case (JSON Opendatasoft), UPPERCASE (CSV labelled), Label-Case, ecc.
 
 datasets:
 
@@ -22,223 +10,212 @@ datasets:
     titolo_paniere: "Popolazione residente"
     calculator: calc_popolazione
     expected_fields:
-      anno:        ["Anno", "anno", "ANNO", "year"]
-      eta:         ["Età", "eta", "ETA", "Classe Età", "Classe di Età"]
-      sesso:       ["Sesso", "sesso", "SESSO", "Genere", "genere"]
-      cittadinanza: ["Cittadinanza", "cittadinanza", "CITTADINANZA"]
-      quartiere:   ["Quartiere", "quartiere", "QUARTIERE", "Zona", "Municipio"]
-      residenti:   ["Residenti", "residenti", "Numero residenti", "POP", "Totale"]
+      anno: ["anno", "Anno", "ANNO", "year", "anno_di_riferimento"]
+      eta: ["eta", "Età", "ETA", "Classe Età", "Classe di Età", "classe_eta", "fascia_eta"]
+      sesso: ["sesso", "Sesso", "SESSO", "Genere", "genere"]
+      cittadinanza: ["cittadinanza", "Cittadinanza", "CITTADINANZA"]
+      quartiere: ["quartiere", "Quartiere", "QUARTIERE", "Zona", "Municipio", "quartiere_struttura"]
+      residenti: ["residenti", "Residenti", "Numero residenti", "POP", "Totale", "n_residenti", "popolazione"]
     kpi:
       - totale_residenti
       - serie_anni
       - serie_residenti
-      - pop_0_14
-      - pop_65plus
       - per_quartiere
-      # Campi che richiedono operazioni anagrafiche (non sempre presenti):
-      - nati                # da bilancio demografico, non sempre nel dataset popolazione
-      - morti               # idem
-      - iscritti            # idem
-      - cancellati          # idem
 
   bilancio:
     titolo_paniere: "Bilancio per missione e programma"
     calculator: calc_bilancio
     expected_fields:
-      missione:    ["Missione", "missione", "MISSIONE", "Cod_Missione", "missione_descr"]
-      programma:   ["Programma", "programma", "PROGRAMMA"]
-      importo:     ["Importo", "importo", "IMPORTO", "Stanziato", "Spesa"]
-      anno:        ["Anno", "anno", "ANNO", "Esercizio"]
+      missione: ["missione0", "missione", "Missione", "MISSIONE", "Cod_Missione", "missione_descr"]
+      programma: ["programma0", "programma", "Programma", "PROGRAMMA"]
+      titolo: ["titolo0", "titolo", "Titolo"]
+      macroaggregato: ["macroaggregato0", "macroaggregato"]
+      importo: ["previsioni_di_competenza_primo_anno", "importo", "Importo", "IMPORTO", "Stanziato", "Spesa", "Importo finale", "valore"]
+      anno: ["anno_di_riferimento", "anno", "Anno", "ANNO", "Esercizio"]
     kpi:
       - totale_uscite
       - per_missione
       - top10_programmi
-      - serie_anni
 
   opere_pubbliche:
     titolo_paniere: "Opere pubbliche e cantieri"
     calculator: calc_opere
     expected_fields:
-      nome:        ["Descrizione", "Nome", "Titolo", "Oggetto", "denominazione_lavori"]
-      stato:       ["Stato", "stato", "STATO", "Stato lavori"]
-      lat:         ["lat", "Lat", "Latitudine"]
-      lon:         ["lon", "Lon", "Longitudine", "lng"]
-      pin_point:   ["pinPoint", "Coordinate geografiche", "geo_point"]
-      indirizzo:   ["Indirizzo", "indirizzo", "INDIRIZZO", "Via"]
-      data_inizio: ["Data di inizio lavori", "data_inizio", "DATA_INIZIO"]
-      data_fine:   ["Data di fine lavori", "data_fine", "DATA_FINE"]
-      tipo_lavoro: ["Tipo di lavoro - 1", "tipo_lavoro", "Categoria"]
-      quartiere:   ["Quartiere - 1", "Quartiere", "quartiere"]
-      anno:        ["Anno", "anno"]
-      # Campi rari (Comuni virtuosi li espongono):
-      cup:         ["CUP", "cup", "Cod_CUP"]
-      importo:     ["Importo", "importo", "Quadro economico"]
-      sal:         ["SAL", "sal", "Stato avanzamento", "% avanzamento"]
-      fonte:       ["Fonte di finanziamento", "fonte_finanziamento", "Fonte"]
+      nome: ["description", "Description", "DESCRIZIONE", "Descrizione", "Nome", "Titolo", "Oggetto", "denominazione_lavori"]
+      stato: ["status", "Status", "Stato", "stato", "STATO", "Stato lavori"]
+      lat: ["lat", "Lat", "Latitudine", "y_coord"]
+      lon: ["lon", "Lon", "Longitudine", "lng", "x_coord"]
+      pin_point: ["pinpoint", "pinPoint", "Coordinate geografiche", "geo_point", "geo_point_2d"]
+      indirizzo: ["address", "Address", "Indirizzo", "indirizzo", "INDIRIZZO", "Via"]
+      data_inizio: ["effectivestartdate", "Data di inizio lavori", "Data Inizio", "data_inizio", "DATA INIZIO"]
+      data_fine: ["effectiveenddate", "Data di fine lavori", "Data Fine", "data_fine", "DATA FINE"]
+      tipo_lavoro: ["roadway1", "Tipo di lavoro - 1", "tipo_lavoro", "Categoria"]
+      quartiere: ["neighborhood1", "Quartiere - 1", "Quartiere", "quartiere"]
+      anno: ["year", "Anno", "anno"]
+      cup: ["CUP", "cup", "Cod_CUP"]
+      importo: ["Importo", "importo", "Quadro economico"]
+      sal: ["SAL", "sal", "Stato avanzamento", "% avanzamento"]
+      fonte: ["Fonte di finanziamento", "fonte_finanziamento", "Fonte", "fonte"]
     kpi:
       - totale
       - per_stato
       - opere_geo
-      - cup            # null se non presente
-      - importo_totale # null se non presente
-      - sal_medio      # null se non presente
-      - per_fonte      # null se non presente
+      - cup_count
+      - importo_totale
+      - per_fonte
 
   pratiche_edilizie:
     titolo_paniere: "Pratiche edilizie"
     calculator: calc_pratiche
     expected_fields:
-      tipo:        ["PROCEDIMENTO", "Tipo", "tipo_pratica", "TIPO PRATICA"]
-      data:        ["RICHIESTA DATA", "Data", "data_presentazione", "data_richiesta"]
-      esito:       ["ESITO PRATICA", "Esito", "esito", "DISPOSTO"]
-      chiusura:    ["CHIUSURA PRATICA DATA", "Data chiusura", "data_chiusura"]
-      via:         ["CODICE VIA", "Via", "via", "indirizzo"]
-      civico:      ["CIVICO", "Civico", "civico"]
+      tipo: ["procedimento", "PROCEDIMENTO", "Tipo", "tipo_pratica", "TIPO PRATICA"]
+      data: ["richiesta_data", "RICHIESTA DATA", "Data", "data_presentazione", "data_richiesta"]
+      esito: ["esito_pratica", "ESITO PRATICA", "Esito", "esito", "DISPOSTO"]
+      chiusura: ["chiusura_pratica_data", "CHIUSURA PRATICA DATA", "Data chiusura", "data_chiusura"]
+      via: ["codice_via", "CODICE VIA", "Via", "via", "indirizzo"]
+      civico: ["civico", "CIVICO", "Civico"]
+      anno_prot: ["richiesta_anno_prot", "RICHIESTA ANNO PROT", "Anno"]
     kpi:
       - totale
       - per_tipo
       - per_esito
-      - tasso_chiusura     # se data + chiusura presenti
-      # Richiedono normativa specifica - solitamente null:
-      - tempo_medio_scia   # null se non c'è SCIA
-      - tempo_medio_pdc    # null se non c'è PdC
-      - pct_nei_termini    # null senza riferimento normativo
+      - tasso_chiusura
+      - serie_anni
 
   servizi_sociali:
     titolo_paniere: "Servizi sociali"
     calculator: calc_sociali
     expected_fields:
-      target:      ["Target utenza", "Target", "categoria_utente"]
-      categoria:   ["Categoria", "categoria", "intervento_tipo"]
-      intervento:  ["Intervento", "tipo_intervento", "servizio"]
-      contributo:  ["Contributo erogato", "Contributo", "Importo erogato"]
-      isee:        ["ISEE", "isee", "Valore ISEE"]
-      identificativo: ["Identificativo", "id_utente", "id"]
-      data_inizio: ["Data Inizio autorizzazione", "Data inizio", "data_avvio"]
+      target: ["target_utenza", "Target utenza", "Target", "categoria_utente"]
+      categoria: ["categoria", "Categoria", "intervento_tipo"]
+      intervento: ["intervento", "Intervento", "tipo_intervento", "servizio"]
+      contributo: ["contributo_erogato", "Contributo erogato", "Contributo", "Importo erogato"]
+      isee: ["isee", "ISEE", "Valore ISEE"]
+      identificativo: ["identificativo", "Identificativo", "id_utente", "id"]
+      data_inizio: ["data_inizio_autorizzazione", "Data Inizio autorizzazione", "Data inizio", "data_avvio"]
     kpi:
       - utenti_totali
       - per_target
       - per_categoria
-      - spesa_totale     # null se contributo non presente
-      - spesa_media      # null idem
-      - pct_accolte      # solitamente null (nessun campo accolto/respinto nei CSV reali)
+      - spesa_totale
+      - spesa_media
 
   istruzione:
     titolo_paniere: "Istruzione e asili nido"
     calculator: calc_istruzione
     expected_fields:
-      anno:        ["Anno", "anno", "Anno scolastico"]
-      tipo_struttura: ["Tipo struttura", "Tipologia", "tipologia_servizio"]
-      struttura:   ["Struttura", "Denominazione", "nome_struttura"]
-      quartiere:   ["Quartiere struttura", "Quartiere", "quartiere", "Zona"]
-      iscritti:    ["Numero iscritti", "Iscritti", "n_iscritti"]
-      lat:         ["lat", "Lat", "Latitudine"]
-      lon:         ["lon", "Lon", "Longitudine"]
+      anno: ["anno", "anno_scolastico", "Anno", "Anno scolastico"]
+      tipo_struttura: ["tipo_struttura", "Tipo struttura", "Tipologia", "tipologia_servizio", "servizio"]
+      struttura: ["struttura", "Struttura", "Denominazione", "nome_struttura"]
+      quartiere: ["quartiere_struttura", "Quartiere struttura", "Quartiere", "quartiere", "Zona"]
+      iscritti: ["numero_iscritti", "Numero iscritti", "Iscritti", "n_iscritti"]
+      lat: ["lat", "Lat", "Latitudine"]
+      lon: ["lon", "Lon", "Longitudine"]
     kpi:
       - totale_iscritti
       - per_struttura
       - per_quartiere
-      - plessi_geo       # se lat/lon presenti
-      # Campi rari:
-      - posti_totali     # null se non c'è "capienza"
-      - lista_attesa     # null se non presente
-      - tasso_copertura  # null senza dati popolazione 0-3
+      - serie_anni
 
   incidenti_stradali:
     titolo_paniere: "Incidenti stradali"
     calculator: calc_incidenti
     expected_fields:
-      anno:        ["Anno", "anno", "ANNO"]
-      mese:        ["Mese", "mese", "MESE"]
-      n_incidenti: ["Incidenti", "Numero incidenti", "n_incidenti", "totale_incidenti"]
-      n_feriti:    ["Feriti", "Numero feriti", "n_feriti"]
-      n_morti:     ["Morti", "Decessi", "Numero morti", "n_morti", "n_decessi"]
-      lat:         ["lat", "Lat", "Latitudine", "y"]
-      lon:         ["lon", "Lon", "Longitudine", "x"]
-      via:         ["Via", "indirizzo", "tipo_strada"]
-      gravita:     ["Gravità", "DISPOSTO", "Tipo sinistro", "tipo_incidente"]
-      zona:        ["Zona di decentramento", "Quartiere", "Municipio"]
+      anno: ["anno", "Anno", "ANNO"]
+      mese: ["mese", "Mese", "MESE"]
+      n_incidenti: ["n_incident", "Incidenti", "Numero incidenti", "n_incidenti", "totale_incidenti"]
+      n_feriti: ["totale_fer", "Feriti", "Numero feriti", "n_feriti"]
+      n_morti: ["totale_mor", "Morti", "Decessi", "Numero morti", "n_morti", "n_decessi"]
+      lat: ["lat", "Lat", "Latitudine", "y"]
+      lon: ["lon", "Lon", "Longitudine", "x"]
+      pin_point: ["geo_point_2d", "geo_point"]
+      via: ["Via", "indirizzo", "tipo_strada"]
+      gravita: ["Gravità", "DISPOSTO", "Tipo sinistro", "tipo_incidente"]
+      zona: ["nomezona", "nomequart", "Zona di decentramento", "Quartiere", "Municipio"]
+      n_pedoni_m: ["n_pedoni_m"]
+      n_pedoni_f: ["n_pedoni_f"]
+      n_cicl_m: ["n_cicl_m"]
+      n_cicl_f: ["n_cicl_f"]
     kpi:
       - totale_anno
-      - n_morti
-      - n_feriti
-      - serie_mensile
+      - totale_morti
+      - totale_feriti
       - per_zona
-      - hot_spots         # se lat/lon presenti
-      - indice_mortalita
-      - pct_pedoni_ciclisti  # null se non c'è categoria utente
+      - hot_spots
+      - vittime_vulnerabili
 
   rifiuti:
     titolo_paniere: "Raccolta rifiuti urbani"
     calculator: calc_rifiuti
     expected_fields:
-      anno:        ["Anno", "anno", "ANNO"]
-      mese:        ["Mese", "mese", "MESE"]
-      rd_pct:      ["Raccolta differenziata: incidenza sulla produzione totale RSU", "RD %", "raccolta_differenziata_pct", "% RD"]
-      frazione:    ["Frazione", "tipo_rifiuto", "Tipo rifiuto", "CER"]
-      kg:          ["Kg", "kg", "Tonnellate", "Quantità"]
-      zona:        ["Zona", "Quartiere", "quartiere"]
+      anno: ["anno", "Anno", "ANNO"]
+      mese: ["mese", "Mese", "MESE"]
+      rd_pct: ["raccolta_differenziata_incidenza_sulla_produzione_totale_rsu", "Raccolta differenziata: incidenza sulla produzione totale RSU", "RD %", "raccolta_differenziata_pct", "% RD"]
+      rd_centro: ["raccolta_differenziata_centro_storico"]
+      rd_savena: ["raccolta_differenziata_savena"]
+      rd_navile: ["raccolta_differenziata_navile"]
+      rd_borgo: ["raccolta_differenziata_borgo_panigale_reno"]
+      rd_porto: ["raccolta_differenziata_porto_saragozza"]
+      rd_santo: ["raccolta_differenziata_santo_stefano"]
+      rd_sandonato: ["raccolta_differenziata_san_donato_san_vitale"]
+      frazione: ["Frazione", "tipo_rifiuto", "Tipo rifiuto", "CER"]
+      kg: ["Kg", "kg", "Tonnellate", "Quantità"]
+      zona: ["Zona", "Quartiere", "quartiere"]
     kpi:
-      - rd_pct
+      - rd_pct_ultimo_anno
       - serie_anni
-      - per_zona
-      # Campi che richiedono dataset più dettagliato:
-      - composizione      # null se non c'è breakdown per frazione
-      - pro_capite_kg     # null se non c'è "kg" assoluto
-      - serie_mensile     # null se solo dati annuali
+      - per_quartiere
+      - trend_pct
 
   eventi_culturali:
     titolo_paniere: "Eventi culturali e sportivi"
     calculator: calc_eventi
     expected_fields:
-      titolo:      ["Titolo", "titolo", "Nome evento", "denominazione"]
-      categoria:   ["Categoria 1", "Categoria", "Tipo manifestazione", "tipo_evento"]
-      data_inizio: ["Data Inizio", "data_inizio", "Data", "DATA INIZIO"]
-      data_fine:   ["Data Fine", "data_fine", "DATA FINE"]
-      coordinate:  ["Coordinate geografiche", "geo_point", "lat_lon"]
-      lat:         ["lat", "Lat", "Latitudine"]
-      lon:         ["lon", "Lon", "Longitudine"]
-      indirizzo:   ["Indirizzo", "indirizzo", "luogo"]
-      quartiere:   ["Quartiere", "quartiere"]
+      titolo: ["title", "Titolo", "titolo", "Nome evento", "denominazione"]
+      categoria: ["categories_1", "Categoria 1", "Categoria", "Tipo manifestazione", "tipo_evento"]
+      categoria2: ["categories_2", "Categoria 2"]
+      categoria3: ["categories_3", "Categoria 3"]
+      data_inizio: ["start", "Data Inizio", "data_inizio", "Data", "DATA INIZIO"]
+      data_fine: ["end", "Data Fine", "data_fine", "DATA FINE"]
+      coordinate: ["coordinate", "Coordinate geografiche", "geo_point", "lat_lon"]
+      lat: ["lat", "Lat", "Latitudine"]
+      lon: ["lon", "Lon", "Longitudine"]
+      indirizzo: ["address", "Indirizzo", "indirizzo", "luogo"]
+      quartiere: ["quartiere", "Quartiere"]
+      online: ["online"]
     kpi:
       - totale_anno
       - per_categoria
+      - per_quartiere
       - eventi_geo
-      # Campi quasi sempre assenti:
-      - pct_gratuiti        # null (nessun CSV reale ha "tipo_ingresso")
-      - spesa_patrocinati   # null (richiede dataset dedicato patrocini)
+      - pct_online
 
   delibere:
     titolo_paniere: "Delibere e atti amministrativi"
     calculator: calc_delibere
     expected_fields:
-      data:        ["Data", "data", "DATA", "Data pubblicazione"]
-      tipo:        ["Tipo", "tipo_atto", "TIPO ATTO", "tipo"]
-      oggetto:     ["Oggetto", "oggetto", "Titolo"]
-      numero:      ["Numero", "n_atto", "numero"]
+      data: ["data", "Data", "DATA", "Data pubblicazione"]
+      tipo: ["tipo", "Tipo", "tipo_atto", "TIPO ATTO"]
+      oggetto: ["oggetto", "Oggetto", "Titolo"]
+      numero: ["numero", "Numero", "n_atto"]
     kpi:
       - totale_anno
       - per_tipo
-      # Richiedono normativa AGID:
-      - tempo_medio_pubblicazione  # null se non c'è "data_emanazione" + "data_pubblicazione"
-      - pct_nei_termini            # null senza riferimento normativo
+      - serie_anni
 
   patrimonio:
     titolo_paniere: "Patrimonio immobiliare"
     calculator: calc_patrimonio
     expected_fields:
-      tipo:        ["Tipo", "Categoria", "categoria_immobile", "tipologia"]
-      indirizzo:   ["Indirizzo", "indirizzo", "Via"]
-      destinazione: ["Destinazione", "uso", "destinazione_uso"]
-      lat:         ["lat", "Lat", "Latitudine"]
-      lon:         ["lon", "Lon", "Longitudine"]
-      vincolo:     ["Vincolo", "vincolo_culturale", "art_42_2004"]
-      valore:      ["Valore", "valore_catastale", "rendita"]
+      tipo: ["tipo", "Tipo", "Categoria", "categoria_immobile", "tipologia"]
+      indirizzo: ["indirizzo", "Indirizzo", "Via"]
+      destinazione: ["destinazione", "Destinazione", "uso", "destinazione_uso"]
+      lat: ["lat", "Lat", "Latitudine"]
+      lon: ["lon", "Lon", "Longitudine"]
+      vincolo: ["vincolo", "Vincolo", "vincolo_culturale", "art_42_2004"]
+      valore: ["valore", "Valore", "valore_catastale", "rendita"]
     kpi:
       - totale_immobili
-      - per_categoria
+      - per_tipo
       - immobili_geo
-      - pct_vincolo_culturale  # null se "vincolo" non presente
-      # Campi rari:
-      - valore_totale          # null se "valore" non presente
-      - pct_inutilizzati       # null se non c'è "stato_uso"
+      - pct_vincolo
