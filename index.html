@@ -529,7 +529,7 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.6</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.7</div>
   </div>
 </header>
 
@@ -559,7 +559,7 @@ a:hover { text-decoration: underline; }
       <div class="badge-tier" id="badgeTier">Avanzata</div>
     </div>
     <div class="compliance-info">
-      <h2>Conformità Paniere ComuneMetrics v2.5</h2>
+      <h2>Conformità Paniere ComuneMetrics v2.6</h2>
       <p id="complianceText">
         Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
       </p>
@@ -575,7 +575,7 @@ a:hover { text-decoration: underline; }
     <div class="footer-grid">
       <div>
         <h4>ComuneMetrics</h4>
-        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.5</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.6</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
       </div>
       <div>
         <h4>Standard</h4>
@@ -650,7 +650,7 @@ const MOCK_DATA = {
     datasets: {
       popolazione: true, bilancio: true, opere_pubbliche: false,
       pratiche_edilizie: false, servizi_sociali: true, istruzione: true,
-      incidenti_stradali: false, rifiuti: true, eventi_culturali: true,
+      incidenti_stradali: true, rifiuti: true, eventi_culturali: true,
       delibere: true, patrimonio: true
     },
     sources: {
@@ -658,6 +658,7 @@ const MOCK_DATA = {
       bilancio: "bilancio-trasparente-spesa-corrente-per-missioni-e-programmi",
       servizi_sociali: "organizzazioni-eroganti-servizi-sociali1",
       istruzione: "istruzione-asili-nido-localizzazione-delle-strutture1",
+      incidenti_stradali: "mobilita-incidenti-stradali-e-persone-infortunate-per-mese-e-zona-di-decentramento-2001-20241",
       rifiuti: "raccolta-differenziata-2010-20231",
       eventi_culturali: "eventi-culturali-numero-di-ingressi-e-numero-di-spettacoli-per-tipo-di-manifestazione1",
       delibere: null,
@@ -1015,7 +1016,19 @@ const MOCK_INCIDENTI = {
       { nome: "Via Adriatica", count: 8, lat: 40.3498, lon: 18.1845 }
     ]
   },
-  milano: { totale_anno: 0, deceduti: 0, feriti: 0, feriti_gravi: 0, indice_mortalita: 0, pct_pedoni_ciclisti: 0, serie_mensile: [], hot_spots: [] }
+  milano: {
+    totale_anno: 8420, deceduti: 28, feriti: 10850, feriti_gravi: 412,
+    indice_mortalita: 0.33, pct_pedoni_ciclisti: 31.5,
+    serie_mensile: [620, 580, 690, 720, 760, 810, 720, 580, 750, 790, 720, 680],
+    hot_spots: [
+      { via: "Viale Fulvio Testi", incidenti: 142, lat: 45.5101, lon: 9.2050 },
+      { via: "Viale Forlanini", incidenti: 128, lat: 45.4642, lon: 9.2521 },
+      { via: "Corso Sempione", incidenti: 115, lat: 45.4842, lon: 9.1620 },
+      { via: "Viale Monza", incidenti: 108, lat: 45.5089, lon: 9.2208 },
+      { via: "Viale Marche", incidenti: 95, lat: 45.5068, lon: 9.1898 },
+      { via: "Corso Buenos Aires", incidenti: 88, lat: 45.4790, lon: 9.2055 }
+    ]
+  }
 };
 
 // Rifiuti (Bologna)
