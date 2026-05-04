@@ -160,7 +160,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-sesso-e-circoscrizione-2024",
-      "fetched_at": "2026-05-04T21:31:54.044Z",
+      "fetched_at": "2026-05-04T21:39:13.450Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -199,7 +199,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "indicatori-delle-opere-pubbliche-2020",
-      "fetched_at": "2026-05-04T21:32:03.028Z",
+      "fetched_at": "2026-05-04T21:39:14.994Z",
       "status": "unsupported_format",
       "modified": "2020-12-28",
       "freshness": {
@@ -242,7 +242,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-degli-incidenti-stradali-nella-provincia-di-torino-per-l-anno-2015",
-      "fetched_at": "2026-05-04T21:32:05.243Z",
+      "fetched_at": "2026-05-04T21:39:15.207Z",
       "status": "ok",
       "modified": "2015-12-31",
       "freshness": {
@@ -301,7 +301,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "risultati-raccolta-differenziata-amiat-2020",
-      "fetched_at": "2026-05-04T21:32:10.605Z",
+      "fetched_at": "2026-05-04T21:39:17.577Z",
       "status": "unsupported_format",
       "modified": "2020-12-31",
       "freshness": {
