@@ -1,0 +1,14 @@
+{
+  "name": "comune-metrics",
+  "version": "0.2.0",
+  "description": "Cruscotto civico open source italiano basato sul Paniere ComuneMetrics",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build_dashboard_data.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Piersoft",
+  "license": "MIT"
+}

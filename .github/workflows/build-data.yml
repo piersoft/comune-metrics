@@ -1,15 +1,9 @@
 name: Build dashboard data
 
-# Trigger:
-#   - workflow_dispatch: lancio manuale dalla UI Actions (uso primario)
-#   - schedule: settimanale, domeniche notte (per Comuni virtuosi che vogliono
-#     un refresh automatico). Disabilitabile commentando le 2 righe schedule.
-#   - push su config/comuni.yml: ricostruisce subito quando l'adottante cambia
-#     la lista dataset.
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * 0'  # ogni domenica alle 03:00 UTC
+    - cron: '0 3 * * 0'
   push:
     branches: [main]
     paths:
@@ -18,7 +12,7 @@ on:
       - 'scripts/**'
 
 permissions:
-  contents: write  # per committare il JSON ricostruito
+  contents: write
 
 concurrency:
   group: build-data
@@ -32,22 +26,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
-          cache: pip
-          cache-dependency-path: requirements.txt
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          node-version: '24'
 
       - name: Build dashboard data
-        run: python scripts/build_dashboard_data.py
-        env:
-          PYTHONUNBUFFERED: "1"
+        run: node scripts/build_dashboard_data.js
 
       - name: Commit updated data
         run: |
