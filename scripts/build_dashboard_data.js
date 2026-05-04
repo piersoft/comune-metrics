@@ -25,7 +25,7 @@ const USER_AGENT = "ComuneMetrics-Builder/0.1";
 const FETCH_TIMEOUT = process.env.GITHUB_ACTIONS ? 30_000 : 15_000;
 const MAX_BYTES = 50 * 1024 * 1024; // 50 MB
 const POOL_SIZE = 1; // sequenziale: dati.gov.it ha rate limit aggressivo per IP cloud
-const REQUEST_DELAY_MS = 800; // pausa tra richieste consecutive
+const REQUEST_DELAY_MS = 1500; // pausa tra richieste consecutive (anti rate-limit)
 
 // ── Logger ────────────────────────────────────────────────────────────────────
 function ts() {
@@ -201,29 +201,56 @@ async function fetchWithTimeout(url, opts = {}, timeout = FETCH_TIMEOUT) {
 }
 
 async function httpGetText(url) {
-  try {
-    const r = await fetchWithTimeout(url);
-    if (!r.ok) {
-      warn(`  ✗ HTTP ${r.status} ${url.slice(0, 100)}`);
-      return null;
+  const MAX_RETRIES = 4;
+  const BASE_BACKOFF_MS = 3000;
+  let result = null;
+  let lastStatus = null;
+
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const r = await fetchWithTimeout(url);
+      lastStatus = r.status;
+      // 403/429/5xx → retry con backoff esponenziale
+      if (r.status === 403 || r.status === 429 || r.status >= 500) {
+        if (attempt < MAX_RETRIES) {
+          const backoff = BASE_BACKOFF_MS * Math.pow(2, attempt - 1) + Math.random() * 1000;
+          warn(`  ⚠ HTTP ${r.status} (try ${attempt}/${MAX_RETRIES}), retry in ${(backoff/1000).toFixed(1)}s`);
+          await new Promise(r => setTimeout(r, backoff));
+          continue;
+        }
+        warn(`  ✗ HTTP ${r.status} ${url.slice(0, 100)} (esauriti retry)`);
+        break;
+      }
+      if (!r.ok) {
+        warn(`  ✗ HTTP ${r.status} ${url.slice(0, 100)}`);
+        break;
+      }
+      const cl = parseInt(r.headers.get("content-length") || "0", 10);
+      if (cl > MAX_BYTES) {
+        warn(`  ✗ File troppo grande (${(cl / 1024 / 1024).toFixed(1)} MB)`);
+        break;
+      }
+      const text = await r.text();
+      if (text.length > MAX_BYTES) {
+        warn(`  ✗ Contenuto troppo grande`);
+        break;
+      }
+      result = text;
+      break;
+    } catch (e) {
+      warn(`  ✗ ${e.name}: ${e.message}`);
+      if (attempt < MAX_RETRIES) {
+        const backoff = BASE_BACKOFF_MS * Math.pow(2, attempt - 1);
+        await new Promise(r => setTimeout(r, backoff));
+        continue;
+      }
+      break;
     }
-    const cl = parseInt(r.headers.get("content-length") || "0", 10);
-    if (cl > MAX_BYTES) {
-      warn(`  ✗ File troppo grande (${(cl / 1024 / 1024).toFixed(1)} MB)`);
-      return null;
-    }
-    const text = await r.text();
-    if (text.length > MAX_BYTES) {
-      warn(`  ✗ Contenuto troppo grande`);
-      return null;
-    }
-    // Throttle: pausa per non saturare il rate limit del server
-    if (REQUEST_DELAY_MS > 0) await new Promise(r => setTimeout(r, REQUEST_DELAY_MS));
-    return text;
-  } catch (e) {
-    warn(`  ✗ ${e.name}: ${e.message}`);
-    return null;
   }
+
+  // Throttle SEMPRE dopo ogni richiesta (success o fail), per rispettare rate limit
+  if (REQUEST_DELAY_MS > 0) await new Promise(r => setTimeout(r, REQUEST_DELAY_MS));
+  return result;
 }
 
 async function fetchPackage(ckanServer, slug) {
