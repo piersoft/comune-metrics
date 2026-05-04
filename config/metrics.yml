@@ -26,11 +26,11 @@ datasets:
     titolo_paniere: "Bilancio per missione e programma"
     calculator: calc_bilancio
     expected_fields:
-      missione: ["missione0", "missione", "Missione", "MISSIONE", "Cod_Missione", "missione_descr"]
-      programma: ["programma0", "programma", "Programma", "PROGRAMMA"]
+      missione: ["missione0", "missione", "Missione", "MISSIONE", "Cod_Missione", "missione_descr", "Voce", "Sezione"]
+      programma: ["programma0", "programma", "Programma", "PROGRAMMA", "Livello"]
       titolo: ["titolo0", "titolo", "Titolo"]
       macroaggregato: ["macroaggregato0", "macroaggregato"]
-      importo: ["previsioni_di_competenza_primo_anno", "importo", "Importo", "IMPORTO", "Stanziato", "Spesa", "Importo finale", "valore"]
+      importo: ["previsioni_di_competenza_primo_anno", "importo", "Importo", "IMPORTO", "Stanziato", "Spesa", "Importo finale", "valore", "Pagamenti", "Impegni"]
       anno: ["anno_di_riferimento", "anno", "Anno", "ANNO", "Esercizio"]
     kpi:
       - totale_uscite
@@ -68,13 +68,13 @@ datasets:
     titolo_paniere: "Pratiche edilizie"
     calculator: calc_pratiche
     expected_fields:
-      tipo: ["procedimento", "PROCEDIMENTO", "Tipo", "tipo_pratica", "TIPO PRATICA"]
-      data: ["richiesta_data", "RICHIESTA DATA", "Data", "data_presentazione", "data_richiesta"]
+      tipo: ["procedimento", "PROCEDIMENTO", "Tipo", "tipo_pratica", "TIPO PRATICA", "OGGETTO RICHIESTA"]
+      data: ["richiesta_data", "RICHIESTA DATA", "Data", "data_presentazione", "data_richiesta", "DATA PROT"]
       esito: ["esito_pratica", "ESITO PRATICA", "Esito", "esito", "DISPOSTO"]
-      chiusura: ["chiusura_pratica_data", "CHIUSURA PRATICA DATA", "Data chiusura", "data_chiusura"]
+      chiusura: ["chiusura_pratica_data", "CHIUSURA PRATICA DATA", "Data chiusura", "data_chiusura", "DATA DISPOSTO"]
       via: ["codice_via", "CODICE VIA", "Via", "via", "indirizzo"]
       civico: ["civico", "CIVICO", "Civico"]
-      anno_prot: ["richiesta_anno_prot", "RICHIESTA ANNO PROT", "Anno"]
+      anno_prot: ["richiesta_anno_prot", "RICHIESTA ANNO PROT", "Anno", "PROTOCOLLO GENERALE"]
     kpi:
       - totale
       - per_tipo
@@ -171,11 +171,11 @@ datasets:
     titolo_paniere: "Eventi culturali e sportivi"
     calculator: calc_eventi
     expected_fields:
-      titolo: ["title", "Titolo", "titolo", "Nome evento", "denominazione"]
-      categoria: ["categories_1", "Categoria 1", "Categoria", "Tipo manifestazione", "tipo_evento"]
+      titolo: ["title", "Titolo", "titolo", "Nome evento", "denominazione", "nome iniziativa"]
+      categoria: ["categories_1", "Categoria 1", "Categoria", "Tipo manifestazione", "tipo_evento", "descrizione"]
       categoria2: ["categories_2", "Categoria 2"]
       categoria3: ["categories_3", "Categoria 3"]
-      data_inizio: ["start", "Data Inizio", "data_inizio", "Data", "DATA INIZIO"]
+      data_inizio: ["start", "Data Inizio", "data_inizio", "Data", "DATA INIZIO", "periodo"]
       data_fine: ["end", "Data Fine", "data_fine", "DATA FINE"]
       coordinate: ["coordinate", "Coordinate geografiche", "geo_point", "lat_lon"]
       lat: ["lat", "Lat", "Latitudine"]
@@ -207,13 +207,13 @@ datasets:
     titolo_paniere: "Patrimonio immobiliare"
     calculator: calc_patrimonio
     expected_fields:
-      tipo: ["tipo", "Tipo", "Categoria", "categoria_immobile", "tipologia"]
-      indirizzo: ["indirizzo", "Indirizzo", "Via"]
-      destinazione: ["destinazione", "Destinazione", "uso", "destinazione_uso"]
+      tipo: ["tipo", "Tipo", "Categoria", "categoria_immobile", "tipologia", "STATOPATRIMONIALE", "QUALITA", "DENOMINAZIONE"]
+      indirizzo: ["indirizzo", "Indirizzo", "Via", "INDIRIZZO"]
+      destinazione: ["destinazione", "Destinazione", "uso", "destinazione_uso", "CESPITE"]
       lat: ["lat", "Lat", "Latitudine"]
       lon: ["lon", "Lon", "Longitudine"]
-      vincolo: ["vincolo", "Vincolo", "vincolo_culturale", "art_42_2004"]
-      valore: ["valore", "Valore", "valore_catastale", "rendita"]
+      vincolo: ["vincolo", "Vincolo", "vincolo_culturale", "art_42_2004", "CONDGIUR"]
+      valore: ["valore", "Valore", "valore_catastale", "rendita", "RES11", "RES3112"]
     kpi:
       - totale_immobili
       - per_tipo

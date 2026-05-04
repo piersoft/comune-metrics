@@ -462,6 +462,53 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
     error: null,
   };
 
+  // STATIC FIXTURE: il Comune ha mode=static_snapshot e questo dataset
+  // è marcato __fixture__:<key>. Leggo il CSV da data/fixtures/<comune>/<key>.csv
+  // invece di fare fetch HTTP. Caso d'uso: Lecce, server publisher giù dai
+  // runner GitHub per geo-fencing IP.
+  if (slug && typeof slug === 'string' && slug.startsWith('__fixture__:')) {
+    const fixtureKey = slug.slice('__fixture__:'.length);
+    const fs = await import('node:fs/promises');
+    const path = await import('node:path');
+    const fixturePath = path.resolve('data', 'fixtures', comuneKey, fixtureKey + '.csv');
+    out.resource_url = `data/fixtures/${comuneKey}/${fixtureKey}.csv`;
+    out.resource_format = "CSV";
+    out.is_static_snapshot = true;
+    let text;
+    try {
+      text = await fs.readFile(fixturePath, 'utf8');
+    } catch (e) {
+      out.status = "fetch_error";
+      out.error = `Fixture non trovata: ${fixturePath}`;
+      out.metrics = Object.fromEntries((metricCfg.kpi || []).map(k => [k, null]));
+      return out;
+    }
+    let rows;
+    try {
+      rows = parseCSV(text);
+    } catch (e) {
+      out.status = "parse_error";
+      out.error = `Errore parsing fixture: ${e.message}`;
+      out.metrics = Object.fromEntries((metricCfg.kpi || []).map(k => [k, null]));
+      return out;
+    }
+    if (!rows.length) {
+      out.status = "parse_error";
+      out.error = "Fixture vuota";
+      out.metrics = Object.fromEntries((metricCfg.kpi || []).map(k => [k, null]));
+      return out;
+    }
+    if (rows.length > MAX_ROWS_PROCESSED) {
+      out.n_rows_total = rows.length;
+      rows = rows.slice(0, MAX_ROWS_PROCESSED);
+      out.truncated = true;
+    }
+    out.n_rows = rows.length;
+    // Per snapshot statico, "modified" è la snapshot_date del Comune.
+    // Verrà valorizzata dopo, quando il chiamante propaga il metadata.
+    return finalizeRows(out, rows, metricCfg);
+  }
+
   const pkg = await fetchPackage(ckanServer, slug);
   if (!pkg) {
     out.status = "fetch_error";
@@ -523,6 +570,16 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
     return out;
   }
 
+  // Detect ZIP magic bytes (PK\x03\x04). Firenze dichiara CSV ma serve ZIP
+  // contenente CSV+metadati. Senza unzip non possiamo parsificare.
+  if (text.length >= 4 && text.charCodeAt(0) === 0x50 && text.charCodeAt(1) === 0x4B
+      && (text.charCodeAt(2) === 0x03 || text.charCodeAt(2) === 0x05 || text.charCodeAt(2) === 0x07)) {
+    out.status = "unsupported_format";
+    out.error = `Risorsa dichiarata ${res.format} ma il file è un archivio ZIP (impossibile parsificare senza unzip)`;
+    out.metrics = Object.fromEntries((metricCfg.kpi || []).map(k => [k, null]));
+    return out;
+  }
+
   // Parse
   const fmt = (res.format || "").toUpperCase();
   let rows = [];
@@ -561,6 +618,12 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
 
   out.n_rows = rows.length;
   if (truncated) out.truncated = true;
+  return finalizeRows(out, rows, metricCfg);
+}
+
+// Calcola fields_present/missing + invoca calculator. Usato sia per fetch
+// HTTP normale sia per fixture statiche (Lecce mode=static_snapshot).
+function finalizeRows(out, rows, metricCfg) {
   const cols = Object.keys(rows[0]);
   const fieldMap = mapFields(cols, metricCfg.expected_fields || {});
   out.fields_present = Object.keys(fieldMap).filter(k => fieldMap[k]);
@@ -633,6 +696,9 @@ async function main() {
       sindaco: comune.sindaco,
       mappa_center: comune.mappa_center,
       mappa_zoom: comune.mappa_zoom,
+      mode: comune.mode || "live",
+      snapshot_date: comune.snapshot_date || null,
+      snapshot_reason: comune.snapshot_reason || null,
       datasets: {},
     };
 
@@ -660,6 +726,17 @@ async function main() {
       comuneOut.datasets[dsKeys[i]] = results[i];
     }
 
+    // Propago snapshot_date come "modified" ai dataset fixture (così la
+    // dashboard può calcolare la freshness del fixture)
+    if (comune.mode === "static_snapshot" && comune.snapshot_date) {
+      for (const ds of Object.values(comuneOut.datasets)) {
+        if (ds.is_static_snapshot && !ds.modified) {
+          ds.modified = comune.snapshot_date;
+          ds.freshness = freshness(comune.snapshot_date);
+        }
+      }
+    }
+
     const outPath = join(COMUNI_DIR, `${comuneKey}.json`);
     writeFileSync(outPath, JSON.stringify(comuneOut, null, 2), "utf-8");
     log(`→ data/comuni/${comuneKey}.json`);
@@ -668,6 +745,8 @@ async function main() {
       key: comuneKey,
       nome: comuneOut.nome,
       ipa: comuneOut.ipa,
+      mode: comuneOut.mode,
+      snapshot_date: comuneOut.snapshot_date,
       n_datasets_pubblicati: Object.values(comuneOut.datasets)
         .filter(d => d.status !== "not_published").length,
       n_datasets_totali: Object.keys(comuneOut.datasets).length,

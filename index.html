@@ -358,7 +358,7 @@
 <header class="site-header">
   <div class="container header-content">
     <h1><span class="ck">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 11 Dataset CORE del Paniere</sub></h1>
-    <span class="version-badge" id="versionBadge">v2026.05.04.15</span>
+    <span class="version-badge" id="versionBadge">v2026.05.04.16</span>
   </div>
 </header>
 
@@ -535,7 +535,24 @@ function renderComuneInfo(c) {
   const ok = Object.values(c.datasets).filter(ds => ds.status === 'ok').length;
   const fresh = Object.values(c.datasets).filter(ds => ds.freshness && ds.freshness.level === 'fresh').length;
 
+  // Banner snapshot statico (es. Lecce: server publisher non raggiungibile dai
+  // runner GitHub Actions per geo-fencing IP. CSV scaricati a mano dall'utente.)
+  let snapshotBanner = '';
+  if (c.mode === 'static_snapshot' && c.snapshot_date) {
+    const dataSnap = fmtDate(c.snapshot_date);
+    const reason = escapeHtml(c.snapshot_reason || 'Server publisher non raggiungibile dai runner GitHub Actions');
+    snapshotBanner = `
+      <div style="background:#fff3e0; border-left:4px solid #ef6c00; padding:14px 18px; margin-bottom:16px; border-radius:6px; font-size:14px; line-height:1.5;">
+        <strong style="color:#e65100">⚠ Snapshot statico del ${dataSnap}</strong> ·
+        ${reason}.<br>
+        <span style="color:#555">I CSV sono stati scaricati manualmente dal browser (IP italiano) e committati nel repo come fixture in <code>data/fixtures/${c.key}/</code>.
+        Se il portale fosse accessibile, queste metriche sarebbero in tempo reale come per Bologna.
+        I dataset segnati <em>[snapshot]</em> derivano da fixture; gli altri vengono fetchati live da Google Drive.</span>
+      </div>`;
+  }
+
   return `
+    ${snapshotBanner}
     <div class="comune-info">
       <h2>${c.nome}</h2>
       <div class="meta">
@@ -695,7 +712,7 @@ function renderDatasetCard(dsKey, ds) {
     body = `
       <div class="body">
         ${freshLabel ? `<div class="freshness ${freshCls}">${freshLabel}</div>` : ''}
-        ${modTxt ? `<div style="font-size:12px;color:#888;margin-bottom:8px">${modTxt} · ${fmtNum(ds.n_rows)} righe${ds.truncated?' (taglio a 50k)':''}</div>` : ''}
+        ${modTxt ? `<div style="font-size:12px;color:#888;margin-bottom:8px">${modTxt} · ${fmtNum(ds.n_rows)} righe${ds.truncated?' (taglio a 50k)':''}${ds.is_static_snapshot?' · <span style="color:#e65100;font-weight:600">snapshot statico</span>':''}</div>` : ''}
         <ul class="kpi-list">${kpiHtml}</ul>
         ${renderTopList(ds)}
       </div>`;

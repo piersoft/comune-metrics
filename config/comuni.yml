@@ -71,11 +71,37 @@ comuni:
       delibere: delibere-anno-2023
       patrimonio: null
 
-  # Lecce: RIMOSSA dai casi d'uso v0.2 (vedi PANIERE.md cronistoria v2.12).
-  # Causa: server dati.comune.lecce.it instabile (HTTP 503) + 4 link goo.gl
-  # dismessi nel 2025-03-25 (Google URL Shortener chiuso). Restano 4/11
-  # dataset accessibili, troppo poco. Il "Lecce paradox" (11/11 cablati ma
-  # inaccessibili) e' raccontato nel post di lancio.
+  lecce:
+    nome: Lecce
+    ipa: c_e506
+    istat: "075035"
+    popolazione_attesa: 94187
+    mandato: "2024-2029"
+    sindaco: Adriana Poli Bortone
+    mappa_center: [40.3528, 18.1718]
+    mappa_zoom: 13
+    # MODE STATIC_SNAPSHOT: i CSV in data/fixtures/lecce/ sono stati scaricati
+    # manualmente dal browser dell'utente (IP italiano) il 2026-05-04 perché
+    # il server publisher dati.comune.lecce.it ha geo-fencing attivo che
+    # blocca i runner GitHub Actions (cloud Azure US/EU). Il workflow non
+    # rifa il fetch HTTP per Lecce; legge i fixture e li processa.
+    # Per i 4 dataset Google Drive accessibili (popolazione, opere, incidenti)
+    # il builder fa comunque fetch normale.
+    mode: static_snapshot
+    snapshot_date: "2026-05-04"
+    snapshot_reason: "Geo-fencing su dati.comune.lecce.it: 503 dai runner GitHub Actions"
+    datasets:
+      popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019  # Google Sheets, fetch live
+      bilancio: __fixture__:bilancio                                                # consuntivo 2019
+      opere_pubbliche: open-cantieri-lecce                                          # Google Sheets, fetch live
+      pratiche_edilizie: __fixture__:pratiche_edilizie                              # SUE 8.673 pratiche
+      servizi_sociali: null  # Solo 2 risorse goo.gl morte, irrecuperabile
+      istruzione: elenco-e-ubicazione-asili-nido-comunali-lecce                     # GeoJSON, fetch live (server lecce, riprova)
+      incidenti_stradali: localizzazione-sinistri-dal-2018-lecce                    # Google Sheets, fetch live
+      rifiuti: null  # Tutte 4 risorse goo.gl morte, irrecuperabile
+      eventi_culturali: __fixture__:eventi_culturali                                # 25 iniziative ricorrenti
+      delibere: null  # Unica risorsa goo.gl/Fsdyxq morta, irrecuperabile
+      patrimonio: __fixture__:patrimonio                                            # 170 fabbricati NAC 2023
 
   messina:
     nome: Messina
