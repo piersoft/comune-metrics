@@ -1,0 +1,310 @@
+{
+  "key": "milano",
+  "nome": "Milano",
+  "ipa": "c_f205",
+  "istat": "015146",
+  "popolazione_attesa": 1365698,
+  "mandato": "2021-2026",
+  "sindaco": "Giuseppe Sala",
+  "mappa_center": [
+    45.4669,
+    9.19
+  ],
+  "mappa_zoom": 12,
+  "datasets": {
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "slug": "popolazione-legale-al-censimento-2011",
+      "fetched_at": "2026-05-04T18:08:48+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "slug": "bilancio-trasparente-spesa-corrente-per-missioni-e-programmi",
+      "fetched_at": "2026-05-04T18:08:49+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "missione",
+        "programma",
+        "importo",
+        "anno"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "nome",
+        "stato",
+        "lat",
+        "lon",
+        "pin_point",
+        "indirizzo",
+        "data_inizio",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "cup",
+        "importo",
+        "sal",
+        "fonte"
+      ],
+      "metrics": {
+        "totale": null,
+        "per_stato": null,
+        "opere_geo": null,
+        "cup": null,
+        "importo_totale": null,
+        "sal_medio": null,
+        "per_fonte": null
+      }
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "tipo",
+        "data",
+        "esito",
+        "chiusura",
+        "via",
+        "civico"
+      ],
+      "metrics": {
+        "totale": null,
+        "per_tipo": null,
+        "per_esito": null,
+        "tasso_chiusura": null,
+        "tempo_medio_scia": null,
+        "tempo_medio_pdc": null,
+        "pct_nei_termini": null
+      }
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "slug": "organizzazioni-eroganti-servizi-sociali1",
+      "fetched_at": "2026-05-04T18:08:49+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "slug": "istruzione-asili-nido-localizzazione-delle-strutture1",
+      "fetched_at": "2026-05-04T18:08:50+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "slug": "mobilita-incidenti-stradali-e-persone-infortunate-per-mese-e-zona-di-decentramento-2001-20241",
+      "fetched_at": "2026-05-04T18:08:50+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "lat",
+        "lon",
+        "via",
+        "gravita",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "slug": "raccolta-differenziata-2010-20231",
+      "fetched_at": "2026-05-04T18:08:51+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "rd_pct",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "slug": "eventi-culturali-numero-di-ingressi-e-numero-di-spettacoli-per-tipo-di-manifestazione1",
+      "fetched_at": "2026-05-04T18:08:51+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "titolo",
+        "categoria",
+        "data_inizio",
+        "data_fine",
+        "coordinate",
+        "lat",
+        "lon",
+        "indirizzo",
+        "quartiere"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "delibere": {
+      "dataset_key": "delibere",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "data",
+        "tipo",
+        "oggetto",
+        "numero"
+      ],
+      "metrics": {
+        "totale_anno": null,
+        "per_tipo": null,
+        "tempo_medio_pubblicazione": null,
+        "pct_nei_termini": null
+      }
+    },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "slug": "elenco-immobili-di-proprieta-del-comune-di-milano1",
+      "fetched_at": "2026-05-04T18:08:52+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "tipo",
+        "indirizzo",
+        "destinazione",
+        "lat",
+        "lon",
+        "vincolo",
+        "valore"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    }
+  }
+}

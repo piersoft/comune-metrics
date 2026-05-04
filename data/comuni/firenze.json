@@ -1,0 +1,312 @@
+{
+  "key": "firenze",
+  "nome": "Firenze",
+  "ipa": "c_d612",
+  "istat": "048017",
+  "popolazione_attesa": 360930,
+  "mandato": "2024-2029",
+  "sindaco": "Sara Funaro",
+  "mappa_center": [
+    43.7711,
+    11.2552
+  ],
+  "mappa_zoom": 13,
+  "datasets": {
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "slug": "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
+      "fetched_at": "2026-05-04T18:08:52+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "slug": "dentro-il-bilancio-2024",
+      "fetched_at": "2026-05-04T18:08:53+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "missione",
+        "programma",
+        "importo",
+        "anno"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "nome",
+        "stato",
+        "lat",
+        "lon",
+        "pin_point",
+        "indirizzo",
+        "data_inizio",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "cup",
+        "importo",
+        "sal",
+        "fonte"
+      ],
+      "metrics": {
+        "totale": null,
+        "per_stato": null,
+        "opere_geo": null,
+        "cup": null,
+        "importo_totale": null,
+        "sal_medio": null,
+        "per_fonte": null
+      }
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "tipo",
+        "data",
+        "esito",
+        "chiusura",
+        "via",
+        "civico"
+      ],
+      "metrics": {
+        "totale": null,
+        "per_tipo": null,
+        "per_esito": null,
+        "tasso_chiusura": null,
+        "tempo_medio_scia": null,
+        "tempo_medio_pdc": null,
+        "pct_nei_termini": null
+      }
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "slug": "siast-servizi-integrati-assistenza-sociale-territoriale",
+      "fetched_at": "2026-05-04T18:08:53+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "slug": "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
+      "fetched_at": "2026-05-04T18:08:54+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "slug": "numero-incidenti-stradali-per-quartiere-anno-2014",
+      "fetched_at": "2026-05-04T18:08:54+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "lat",
+        "lon",
+        "via",
+        "gravita",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "slug": "quantita-di-rifiuti-urbani-anni-2000-2014",
+      "fetched_at": "2026-05-04T18:08:55+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "rd_pct",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "slug": "teatri-e-luoghi-per-eventi",
+      "fetched_at": "2026-05-04T18:08:55+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "titolo",
+        "categoria",
+        "data_inizio",
+        "data_fine",
+        "coordinate",
+        "lat",
+        "lon",
+        "indirizzo",
+        "quartiere"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "delibere": {
+      "dataset_key": "delibere",
+      "slug": "delibere-anno-2023",
+      "fetched_at": "2026-05-04T18:08:56+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "data",
+        "tipo",
+        "oggetto",
+        "numero"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "tipo",
+        "indirizzo",
+        "destinazione",
+        "lat",
+        "lon",
+        "vincolo",
+        "valore"
+      ],
+      "metrics": {
+        "totale_immobili": null,
+        "per_categoria": null,
+        "immobili_geo": null,
+        "pct_vincolo_culturale": null,
+        "valore_totale": null,
+        "pct_inutilizzati": null
+      }
+    }
+  }
+}

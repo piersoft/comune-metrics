@@ -1,0 +1,328 @@
+{
+  "key": "lecce",
+  "nome": "Lecce",
+  "ipa": "c_e506",
+  "istat": "075035",
+  "popolazione_attesa": 94187,
+  "mandato": "2024-2029",
+  "sindaco": "Adriana Poli Bortone",
+  "mappa_center": [
+    40.3528,
+    18.1718
+  ],
+  "mappa_zoom": 13,
+  "datasets": {
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
+      "fetched_at": "2026-05-04T18:08:56+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "slug": "consuntivo-2019-comune-di-lecce",
+      "fetched_at": "2026-05-04T18:08:57+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "missione",
+        "programma",
+        "importo",
+        "anno"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "slug": "open-cantieri-lecce",
+      "fetched_at": "2026-05-04T18:08:57+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "nome",
+        "stato",
+        "lat",
+        "lon",
+        "pin_point",
+        "indirizzo",
+        "data_inizio",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "cup",
+        "importo",
+        "sal",
+        "fonte"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "slug": "elenco-pratiche-sue",
+      "fetched_at": "2026-05-04T18:08:58+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "tipo",
+        "data",
+        "esito",
+        "chiusura",
+        "via",
+        "civico"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "slug": "numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016",
+      "fetched_at": "2026-05-04T18:08:58+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "slug": "elenco-e-ubicazione-asili-nido-comunali-lecce",
+      "fetched_at": "2026-05-04T18:08:59+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "slug": "localizzazione-sinistri-dal-2018-lecce",
+      "fetched_at": "2026-05-04T18:08:59+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "lat",
+        "lon",
+        "via",
+        "gravita",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "slug": "raccolta-rifiuti-2015",
+      "fetched_at": "2026-05-04T18:08:59+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "rd_pct",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "slug": "eventi-culturali-ricorrenti",
+      "fetched_at": "2026-05-04T18:09:00+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "titolo",
+        "categoria",
+        "data_inizio",
+        "data_fine",
+        "coordinate",
+        "lat",
+        "lon",
+        "indirizzo",
+        "quartiere"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "delibere": {
+      "dataset_key": "delibere",
+      "slug": "albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce",
+      "fetched_at": "2026-05-04T18:09:00+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "data",
+        "tipo",
+        "oggetto",
+        "numero"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "slug": "fabbricati-2023_comune-di-lecce",
+      "fetched_at": "2026-05-04T18:09:01+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "tipo",
+        "indirizzo",
+        "destinazione",
+        "lat",
+        "lon",
+        "vincolo",
+        "valore"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    }
+  }
+}

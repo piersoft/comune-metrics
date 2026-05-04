@@ -1,0 +1,314 @@
+{
+  "key": "bologna",
+  "nome": "Bologna",
+  "ipa": "c_a944",
+  "istat": "037006",
+  "popolazione_attesa": 388367,
+  "mandato": "2021-2026",
+  "sindaco": "Matteo Lepore",
+  "mappa_center": [
+    44.4949,
+    11.3426
+  ],
+  "mappa_zoom": 13,
+  "datasets": {
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
+      "fetched_at": "2026-05-04T18:08:43+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere",
+        "residenti"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "slug": "bilancio-di-previsione-previsione-uscite",
+      "fetched_at": "2026-05-04T18:08:44+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "missione",
+        "programma",
+        "importo",
+        "anno"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "slug": "lavori-in-corso-in-citta",
+      "fetched_at": "2026-05-04T18:08:44+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "nome",
+        "stato",
+        "lat",
+        "lon",
+        "pin_point",
+        "indirizzo",
+        "data_inizio",
+        "data_fine",
+        "tipo_lavoro",
+        "quartiere",
+        "anno",
+        "cup",
+        "importo",
+        "sal",
+        "fonte"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "slug": "cila-comunicazioni-inizio-lavori",
+      "fetched_at": "2026-05-04T18:08:45+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "tipo",
+        "data",
+        "esito",
+        "chiusura",
+        "via",
+        "civico"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "slug": "welfare-interventi",
+      "fetched_at": "2026-05-04T18:08:46+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
+      "fetched_at": "2026-05-04T18:08:46+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti",
+        "lat",
+        "lon"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "slug": "incidenti-stradali2",
+      "fetched_at": "2026-05-04T18:08:47+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "n_incidenti",
+        "n_feriti",
+        "n_morti",
+        "lat",
+        "lon",
+        "via",
+        "gravita",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "slug": "indicatori-raccolta-differenziata",
+      "fetched_at": "2026-05-04T18:08:47+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "rd_pct",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "slug": "eventi-bologna-agenda-cultura",
+      "fetched_at": "2026-05-04T18:08:48+00:00",
+      "status": "fetch_error",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "fields_expected": [
+        "titolo",
+        "categoria",
+        "data_inizio",
+        "data_fine",
+        "coordinate",
+        "lat",
+        "lon",
+        "indirizzo",
+        "quartiere"
+      ],
+      "fields_present": null,
+      "fields_missing": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": null,
+      "error": "package_show failed"
+    },
+    "delibere": {
+      "dataset_key": "delibere",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "data",
+        "tipo",
+        "oggetto",
+        "numero"
+      ],
+      "metrics": {
+        "totale_anno": null,
+        "per_tipo": null,
+        "tempo_medio_pubblicazione": null,
+        "pct_nei_termini": null
+      }
+    },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "tipo",
+        "indirizzo",
+        "destinazione",
+        "lat",
+        "lon",
+        "vincolo",
+        "valore"
+      ],
+      "metrics": {
+        "totale_immobili": null,
+        "per_categoria": null,
+        "immobili_geo": null,
+        "pct_vincolo_culturale": null,
+        "valore_totale": null,
+        "pct_inutilizzati": null
+      }
+    }
+  }
+}
