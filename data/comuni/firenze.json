@@ -11,6 +11,9 @@
     11.2552
   ],
   "mappa_zoom": 13,
+  "mode": "live",
+  "snapshot_date": null,
+  "snapshot_reason": null,
   "datasets": {
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
@@ -86,15 +89,15 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
-      "fetched_at": "2026-05-04T20:49:13.797Z",
-      "status": "ok",
+      "fetched_at": "2026-05-04T21:31:26.450Z",
+      "status": "unsupported_format",
       "modified": "2026-04-14",
       "freshness": {
         "level": "fresh",
         "months": 1,
         "iso": "2026-04-14"
       },
-      "n_rows": 9,
+      "n_rows": null,
       "fields_expected": [
         "anno",
         "eta",
@@ -103,15 +106,8 @@
         "quartiere",
         "residenti"
       ],
-      "fields_present": [],
-      "fields_missing": [
-        "anno",
-        "eta",
-        "sesso",
-        "cittadinanza",
-        "quartiere",
-        "residenti"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
         "totale_residenti": null,
         "serie_anni": null,
@@ -120,20 +116,20 @@
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=7851&type=1&format=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Risorsa dichiarata CSV ma il file è un archivio ZIP (impossibile parsificare senza unzip)"
     },
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "dentro-il-bilancio-2024",
-      "fetched_at": "2026-05-04T20:49:15.836Z",
-      "status": "ok",
+      "fetched_at": "2026-05-04T21:31:28.645Z",
+      "status": "unsupported_format",
       "modified": "2024-12-31",
       "freshness": {
         "level": "aged",
         "months": 17,
         "iso": "2024-12-31"
       },
-      "n_rows": 332,
+      "n_rows": null,
       "fields_expected": [
         "missione",
         "programma",
@@ -142,15 +138,8 @@
         "importo",
         "anno"
       ],
-      "fields_present": [],
-      "fields_missing": [
-        "missione",
-        "programma",
-        "titolo",
-        "macroaggregato",
-        "importo",
-        "anno"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
         "totale_uscite": null,
         "per_missione": null,
@@ -158,12 +147,12 @@
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=7700&type=1&format=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Risorsa dichiarata CSV ma il file è un archivio ZIP (impossibile parsificare senza unzip)"
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "siast-servizi-integrati-assistenza-sociale-territoriale",
-      "fetched_at": "2026-05-04T20:49:17.694Z",
+      "fetched_at": "2026-05-04T21:31:30.543Z",
       "status": "unsupported_format",
       "modified": "2014-03-26",
       "freshness": {
@@ -197,15 +186,15 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
-      "fetched_at": "2026-05-04T20:49:18.052Z",
-      "status": "ok",
+      "fetched_at": "2026-05-04T21:31:31.318Z",
+      "status": "unsupported_format",
       "modified": "2018-07-30",
       "freshness": {
         "level": "stale",
         "months": 94,
         "iso": "2018-07-30"
       },
-      "n_rows": 9,
+      "n_rows": null,
       "fields_expected": [
         "anno",
         "tipo_struttura",
@@ -215,16 +204,8 @@
         "lat",
         "lon"
       ],
-      "fields_present": [],
-      "fields_missing": [
-        "anno",
-        "tipo_struttura",
-        "struttura",
-        "quartiere",
-        "iscritti",
-        "lat",
-        "lon"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
         "totale_iscritti": null,
         "per_struttura": null,
@@ -233,20 +214,20 @@
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=6685&type=1&format=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Risorsa dichiarata CSV ma il file è un archivio ZIP (impossibile parsificare senza unzip)"
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "numero-incidenti-stradali-per-quartiere-anno-2014",
-      "fetched_at": "2026-05-04T20:49:19.286Z",
-      "status": "ok",
+      "fetched_at": "2026-05-04T21:31:32.503Z",
+      "status": "unsupported_format",
       "modified": "2015-08-04",
       "freshness": {
         "level": "stale",
         "months": 129,
         "iso": "2015-08-04"
       },
-      "n_rows": 5,
+      "n_rows": null,
       "fields_expected": [
         "anno",
         "mese",
@@ -264,26 +245,10 @@
         "n_cicl_m",
         "n_cicl_f"
       ],
-      "fields_present": [],
-      "fields_missing": [
-        "anno",
-        "mese",
-        "n_incidenti",
-        "n_feriti",
-        "n_morti",
-        "lat",
-        "lon",
-        "pin_point",
-        "via",
-        "gravita",
-        "zona",
-        "n_pedoni_m",
-        "n_pedoni_f",
-        "n_cicl_m",
-        "n_cicl_f"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
-        "totale_anno": 5,
+        "totale_anno": null,
         "totale_morti": null,
         "totale_feriti": null,
         "per_zona": null,
@@ -292,20 +257,20 @@
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=5371&type=1&format=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Risorsa dichiarata CSV ma il file è un archivio ZIP (impossibile parsificare senza unzip)"
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "quantita-di-rifiuti-urbani-anni-2000-2014",
-      "fetched_at": "2026-05-04T20:49:20.626Z",
-      "status": "ok",
+      "fetched_at": "2026-05-04T21:31:33.716Z",
+      "status": "unsupported_format",
       "modified": "2015-04-16",
       "freshness": {
         "level": "stale",
         "months": 133,
         "iso": "2015-04-16"
       },
-      "n_rows": 10,
+      "n_rows": null,
       "fields_expected": [
         "anno",
         "mese",
@@ -321,22 +286,8 @@
         "kg",
         "zona"
       ],
-      "fields_present": [],
-      "fields_missing": [
-        "anno",
-        "mese",
-        "rd_pct",
-        "rd_centro",
-        "rd_savena",
-        "rd_navile",
-        "rd_borgo",
-        "rd_porto",
-        "rd_santo",
-        "rd_sandonato",
-        "frazione",
-        "kg",
-        "zona"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
         "rd_pct_ultimo_anno": null,
         "serie_anni": null,
@@ -345,12 +296,12 @@
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=5167&type=1&format=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Risorsa dichiarata CSV ma il file è un archivio ZIP (impossibile parsificare senza unzip)"
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "teatri-e-luoghi-per-eventi",
-      "fetched_at": "2026-05-04T20:49:21.816Z",
+      "fetched_at": "2026-05-04T21:31:34.931Z",
       "status": "unsupported_format",
       "modified": "2025-06-15",
       "freshness": {
@@ -389,36 +340,31 @@
     "delibere": {
       "dataset_key": "delibere",
       "slug": "delibere-anno-2023",
-      "fetched_at": "2026-05-04T20:49:22.171Z",
-      "status": "ok",
+      "fetched_at": "2026-05-04T21:31:35.347Z",
+      "status": "unsupported_format",
       "modified": "2023-12-27",
       "freshness": {
         "level": "aged",
         "months": 29,
         "iso": "2023-12-27"
       },
-      "n_rows": 13,
+      "n_rows": null,
       "fields_expected": [
         "data",
         "tipo",
         "oggetto",
         "numero"
       ],
-      "fields_present": [],
-      "fields_missing": [
-        "data",
-        "tipo",
-        "oggetto",
-        "numero"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
-        "totale_anno": 13,
+        "totale_anno": null,
         "per_tipo": null,
         "serie_anni": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=7511&type=1&format=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Risorsa dichiarata CSV ma il file è un archivio ZIP (impossibile parsificare senza unzip)"
     }
   }
 }

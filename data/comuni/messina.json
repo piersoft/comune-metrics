@@ -11,6 +11,9 @@
     15.554
   ],
   "mappa_zoom": 12,
+  "mode": "live",
+  "snapshot_date": null,
+  "snapshot_reason": null,
   "datasets": {
     "bilancio": {
       "dataset_key": "bilancio",
@@ -177,7 +180,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-circoscrizione",
-      "fetched_at": "2026-05-04T20:49:23.388Z",
+      "fetched_at": "2026-05-04T21:31:39.822Z",
       "status": "ok",
       "modified": "2017-03-31",
       "freshness": {
@@ -217,7 +220,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "numero-studenti-messina",
-      "fetched_at": "2026-05-04T20:49:30.401Z",
+      "fetched_at": "2026-05-04T21:31:47.157Z",
       "status": "ok",
       "modified": "2022-04-14",
       "freshness": {
@@ -258,7 +261,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "statistiche-raccolta-rifiuti-messina",
-      "fetched_at": "2026-05-04T20:49:32.244Z",
+      "fetched_at": "2026-05-04T21:31:48.513Z",
       "status": "ok",
       "modified": "2022-03-02",
       "freshness": {
@@ -312,7 +315,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "beni-immobili-comune-messina",
-      "fetched_at": "2026-05-04T20:49:33.996Z",
+      "fetched_at": "2026-05-04T21:31:49.877Z",
       "status": "ok",
       "modified": "2022-03-01",
       "freshness": {

@@ -1,12 +1,14 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-04T20:48:26.740Z",
+  "built_at": "2026-05-04T21:30:37.902Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "bologna": {
       "key": "bologna",
       "nome": "Bologna",
       "ipa": "c_a944",
+      "mode": "live",
+      "snapshot_date": null,
       "n_datasets_pubblicati": 9,
       "n_datasets_totali": 11,
       "n_datasets_ok": 8
@@ -15,6 +17,18 @@
       "key": "firenze",
       "nome": "Firenze",
       "ipa": "c_d612",
+      "mode": "live",
+      "snapshot_date": null,
+      "n_datasets_pubblicati": 8,
+      "n_datasets_totali": 11,
+      "n_datasets_ok": 0
+    },
+    "lecce": {
+      "key": "lecce",
+      "nome": "Lecce",
+      "ipa": "c_e506",
+      "mode": "static_snapshot",
+      "snapshot_date": "2026-05-04",
       "n_datasets_pubblicati": 8,
       "n_datasets_totali": 11,
       "n_datasets_ok": 6
@@ -23,6 +37,8 @@
       "key": "messina",
       "nome": "Messina",
       "ipa": "c_e463",
+      "mode": "live",
+      "snapshot_date": null,
       "n_datasets_pubblicati": 4,
       "n_datasets_totali": 11,
       "n_datasets_ok": 4
@@ -31,6 +47,8 @@
       "key": "torino",
       "nome": "Torino",
       "ipa": "c_l219",
+      "mode": "live",
+      "snapshot_date": null,
       "n_datasets_pubblicati": 4,
       "n_datasets_totali": 11,
       "n_datasets_ok": 2
