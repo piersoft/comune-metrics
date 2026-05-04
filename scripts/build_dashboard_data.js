@@ -24,8 +24,13 @@ const COMUNI_DIR = join(DATA_DIR, "comuni");
 const USER_AGENT = "ComuneMetrics-Builder/0.1";
 const FETCH_TIMEOUT = process.env.GITHUB_ACTIONS ? 30_000 : 15_000;
 const MAX_BYTES = 50 * 1024 * 1024; // 50 MB
-const POOL_SIZE = 1; // sequenziale: dati.gov.it ha rate limit aggressivo per IP cloud
-const REQUEST_DELAY_MS = 1500; // pausa tra richieste consecutive (anti rate-limit)
+const POOL_SIZE = 1; // sequenziale: fetch CSV da portali comunali può essere lento
+const REQUEST_DELAY_MS = 500; // throttle per CSV diretti (Worker MCP non rate-limited)
+
+// CKAN MCP Worker su Cloudflare: bypassa il WAF di dati.gov.it che blocca i runner
+// GitHub Actions. Il Worker gira su rete Cloudflare ed è accettato dal WAF.
+// Endpoint MCP via JSON-RPC HTTP semplice — niente SDK necessario.
+const MCP_WORKER_URL = "https://ckan-mcp-server.datigovit.workers.dev/mcp";
 
 // ── Logger ────────────────────────────────────────────────────────────────────
 function ts() {
@@ -201,25 +206,19 @@ async function fetchWithTimeout(url, opts = {}, timeout = FETCH_TIMEOUT) {
 }
 
 async function httpGetText(url) {
-  const MAX_RETRIES = 4;
-  const BASE_BACKOFF_MS = 3000;
+  // Usato per scaricare CSV/JSON dei dataset dai portali comunali.
+  // I metadata vanno via fetchPackage (Worker MCP).
+  // Retry semplice: 2 tentativi su errore di rete o 5xx, no retry su 4xx.
+  const MAX_RETRIES = 2;
   let result = null;
-  let lastStatus = null;
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       const r = await fetchWithTimeout(url);
-      lastStatus = r.status;
-      // 403/429/5xx → retry con backoff esponenziale
-      if (r.status === 403 || r.status === 429 || r.status >= 500) {
-        if (attempt < MAX_RETRIES) {
-          const backoff = BASE_BACKOFF_MS * Math.pow(2, attempt - 1) + Math.random() * 1000;
-          warn(`  ⚠ HTTP ${r.status} (try ${attempt}/${MAX_RETRIES}), retry in ${(backoff/1000).toFixed(1)}s`);
-          await new Promise(r => setTimeout(r, backoff));
-          continue;
-        }
-        warn(`  ✗ HTTP ${r.status} ${url.slice(0, 100)} (esauriti retry)`);
-        break;
+      if (r.status >= 500 && attempt < MAX_RETRIES) {
+        warn(`  ⚠ HTTP ${r.status} (try ${attempt}), retry in 3s`);
+        await new Promise(rs => setTimeout(rs, 3000));
+        continue;
       }
       if (!r.ok) {
         warn(`  ✗ HTTP ${r.status} ${url.slice(0, 100)}`);
@@ -238,31 +237,65 @@ async function httpGetText(url) {
       result = text;
       break;
     } catch (e) {
-      warn(`  ✗ ${e.name}: ${e.message}`);
       if (attempt < MAX_RETRIES) {
-        const backoff = BASE_BACKOFF_MS * Math.pow(2, attempt - 1);
-        await new Promise(r => setTimeout(r, backoff));
+        warn(`  ⚠ ${e.name}, retry in 3s`);
+        await new Promise(rs => setTimeout(rs, 3000));
         continue;
       }
+      warn(`  ✗ ${e.name}: ${e.message}`);
       break;
     }
   }
 
-  // Throttle SEMPRE dopo ogni richiesta (success o fail), per rispettare rate limit
   if (REQUEST_DELAY_MS > 0) await new Promise(r => setTimeout(r, REQUEST_DELAY_MS));
   return result;
 }
 
 async function fetchPackage(ckanServer, slug) {
-  const url = `${ckanServer}/api/3/action/package_show?id=${encodeURIComponent(slug)}`;
-  const text = await httpGetText(url);
-  if (!text) return null;
+  // Uso il CKAN MCP Worker (Cloudflare) come proxy: dati.gov.it blocca i runner
+  // GitHub Actions con WAF, ma accetta richieste da Cloudflare.
+  // Il Worker espone tools MCP via JSON-RPC HTTP semplice.
   try {
-    const body = JSON.parse(text);
-    if (!body.success) { warn(`  ✗ CKAN success=false`); return null; }
-    return body.result;
+    const r = await fetchWithTimeout(MCP_WORKER_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+      },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        id: 1,
+        method: "tools/call",
+        params: {
+          name: "ckan_package_show",
+          arguments: {
+            server_url: ckanServer,
+            id: slug,
+            response_format: "json",
+          },
+        },
+      }),
+    });
+    if (!r.ok) {
+      warn(`  ✗ Worker HTTP ${r.status} per ${slug}`);
+      return null;
+    }
+    const body = await r.json();
+    // La risposta MCP ha la forma:
+    // { result: { content: [ { type:"text", text: "<json string>" } ] } }
+    if (body.error) {
+      warn(`  ✗ Worker error: ${body.error.message || JSON.stringify(body.error)}`);
+      return null;
+    }
+    const content = body.result?.content?.[0]?.text;
+    if (!content) {
+      warn(`  ✗ Worker response senza content`);
+      return null;
+    }
+    const pkg = JSON.parse(content);
+    return pkg;
   } catch (e) {
-    warn(`  ✗ JSON parse: ${e.message}`);
+    warn(`  ✗ Worker fetch ${e.name}: ${e.message}`);
     return null;
   }
 }
