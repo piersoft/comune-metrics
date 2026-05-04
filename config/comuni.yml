@@ -39,27 +39,15 @@ comuni:
       delibere: null
       patrimonio: null
 
-  milano:
-    nome: Milano
-    ipa: c_f205
-    istat: "015146"
-    popolazione_attesa: 1365698
-    mandato: "2021-2026"
-    sindaco: Giuseppe Sala
-    mappa_center: [45.4669, 9.1900]
-    mappa_zoom: 12
-    datasets:
-      popolazione: popolazione-legale-al-censimento-2011
-      bilancio: bilancio-trasparente-spesa-corrente-per-missioni-e-programmi
-      opere_pubbliche: null
-      pratiche_edilizie: null
-      servizi_sociali: organizzazioni-eroganti-servizi-sociali1
-      istruzione: istruzione-asili-nido-localizzazione-delle-strutture1
-      incidenti_stradali: mobilita-incidenti-stradali-e-persone-infortunate-per-mese-e-zona-di-decentramento-2001-20241
-      rifiuti: raccolta-differenziata-2010-20231
-      eventi_culturali: eventi-culturali-numero-di-ingressi-e-numero-di-spettacoli-per-tipo-di-manifestazione1
-      delibere: null
-      patrimonio: elenco-immobili-di-proprieta-del-comune-di-milano1
+  # Milano: rimosso dai casi d'uso ComuneMetrics v0.2 perché il WAF
+  # Microsoft-Azure-Application-Gateway/v2 di dati.comune.milano.it
+  # blocca sistematicamente con HTTP 403 le richieste dai runner GitHub
+  # Actions (anche con retry esponenziale fino a 22s di backoff). I dataset
+  # restano nel paniere come "publisher virtuoso ma non aggregabile". La
+  # dashboard mostrerà Milano come "non disponibile in questa istanza —
+  # il Comune pubblica ma il portale blocca gli aggregatori automatici".
+  # Per riabilitarlo serve un proxy con IP italiano (self-hosted runner sul
+  # VPS oppure Cloudflare Worker). Vedi cronistoria PANIERE v2.11.
 
   firenze:
     nome: Firenze
