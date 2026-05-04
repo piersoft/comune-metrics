@@ -25,8 +25,7 @@
       "metrics": {
         "totale_anno": null,
         "per_tipo": null,
-        "tempo_medio_pubblicazione": null,
-        "pct_nei_termini": null
+        "serie_anni": null
       }
     },
     "patrimonio": {
@@ -44,17 +43,15 @@
       ],
       "metrics": {
         "totale_immobili": null,
-        "per_categoria": null,
+        "per_tipo": null,
         "immobili_geo": null,
-        "pct_vincolo_culturale": null,
-        "valore_totale": null,
-        "pct_inutilizzati": null
+        "pct_vincolo": null
       }
     },
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      "fetched_at": "2026-05-04T18:44:21.701Z",
+      "fetched_at": "2026-05-04T20:13:01.278Z",
       "status": "fetch_error",
       "modified": "2024-12-31T09:12:53+00:00",
       "freshness": {
@@ -77,13 +74,7 @@
         "totale_residenti": null,
         "serie_anni": null,
         "serie_residenti": null,
-        "pop_0_14": null,
-        "pop_65plus": null,
-        "per_quartiere": null,
-        "nati": null,
-        "morti": null,
-        "iscritti": null,
-        "cancellati": null
+        "per_quartiere": null
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/annuale_popolazione_residente_eta_quart_zonadal1986/exports/json",
       "resource_format": "JSON",
@@ -92,7 +83,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "bilancio-di-previsione-previsione-uscite",
-      "fetched_at": "2026-05-04T18:44:50.586Z",
+      "fetched_at": "2026-05-04T20:13:33.221Z",
       "status": "ok",
       "modified": "2025-12-31T12:00:00+00:00",
       "freshness": {
@@ -104,144 +95,146 @@
       "fields_expected": [
         "missione",
         "programma",
+        "titolo",
+        "macroaggregato",
         "importo",
         "anno"
       ],
       "fields_present": [
         "missione",
-        "programma"
-      ],
-      "fields_missing": [
+        "programma",
+        "titolo",
+        "macroaggregato",
         "importo",
         "anno"
       ],
+      "fields_missing": [],
       "metrics": {
-        "totale_uscite": null,
+        "totale_uscite": 15086048680.140001,
         "per_missione": [
           {
-            "nome": "1",
-            "n": 753
+            "nome": "Servizi per conto terzi",
+            "valore": 2439869445.53
           },
           {
-            "nome": "12",
-            "n": 425
+            "nome": "Trasporti e diritto alla mobilità",
+            "valore": 2281348540.77
           },
           {
-            "nome": "4",
-            "n": 235
+            "nome": "Servizi istituzionali, generali e di gestione",
+            "valore": 1729224786.4000006
           },
           {
-            "nome": "9",
-            "n": 226
+            "nome": "Istruzione e diritto allo studio",
+            "valore": 1284388839.4700007
           },
           {
-            "nome": "10",
-            "n": 198
+            "nome": "Servizi istituzionali generali e di gestione",
+            "valore": 1060576695.1199999
           },
           {
-            "nome": "8",
-            "n": 180
+            "nome": "Diritti sociali, politiche sociali e famiglia",
+            "valore": 1025422748.419999
           },
           {
-            "nome": "5",
-            "n": 164
+            "nome": "Sviluppo sostenibile e tutela del territorio e dell'ambiente",
+            "valore": 778666879.5699996
           },
           {
-            "nome": "6",
-            "n": 151
+            "nome": "Diritti sociali politiche sociali e famiglia",
+            "valore": 703833629.75
           },
           {
-            "nome": "14",
-            "n": 115
+            "nome": "Anticipazioni finanziarie",
+            "valore": 650000000
           },
           {
-            "nome": "3",
-            "n": 109
+            "nome": "Fondi e accantonamenti",
+            "valore": 643630008.36
           },
           {
-            "nome": "7",
-            "n": 54
+            "nome": "Ordine pubblico e sicurezza",
+            "valore": 505116309.32
           },
           {
-            "nome": "20",
-            "n": 44
+            "nome": "Assetto del territorio ed edilizia abitativa",
+            "valore": 480797683.18999994
           },
           {
-            "nome": "11",
-            "n": 44
+            "nome": "Sviluppo sostenibile e tutela del territorio e dell''ambiente",
+            "valore": 406856351.06999993
           },
           {
-            "nome": "2",
-            "n": 43
+            "nome": "Tutela e valorizzazione dei beni e delle attività culturali",
+            "valore": 314757633.27000004
           },
           {
-            "nome": "19",
-            "n": 38
+            "nome": "Debito pubblico",
+            "valore": 219063794.10000002
           },
           {
-            "nome": "13",
-            "n": 34
+            "nome": "Politiche giovanili, sport e tempo libero",
+            "valore": 143252534.44000003
           },
           {
-            "nome": "17",
-            "n": 31
+            "nome": "'Sviluppo sostenibile e tutela del territorio e dell''ambiente'",
+            "valore": 101798294.32
           },
           {
-            "nome": "15",
-            "n": 27
+            "nome": "Turismo",
+            "valore": 85971919.1
           },
           {
-            "nome": "99",
-            "n": 26
+            "nome": "Tutela e valorizzazione dei beni e attività culturali",
+            "valore": 56149470.85
           },
           {
-            "nome": "50",
-            "n": 18
+            "nome": "Sviluppo economico e competitività",
+            "valore": 51077402.48
           }
         ],
         "top10_programmi": [
           {
-            "nome": "105",
-            "n": 106
+            "nome": "Servizi per conto terzi e Partite di giro",
+            "valore": 2439869445.53
           },
           {
-            "nome": "801",
-            "n": 106
+            "nome": "Trasporto pubblico locale",
+            "valore": 1583293081.0500002
           },
           {
-            "nome": "111",
-            "n": 102
+            "nome": "Rifiuti",
+            "valore": 1050077425.14
           },
           {
-            "nome": "103",
-            "n": 102
+            "nome": "Viabilità e infrastrutture stradali",
+            "valore": 667405945.6400001
           },
           {
-            "nome": "1005",
-            "n": 97
+            "nome": "Restituzione anticipazione di tesoreria",
+            "valore": 650000000
           },
           {
-            "nome": "502",
-            "n": 90
+            "nome": "Altri servizi generali",
+            "valore": 520320000.41
           },
           {
-            "nome": "902",
-            "n": 87
+            "nome": "Fondo crediti di dubbia esigibilità",
+            "valore": 520296813.57000005
           },
           {
-            "nome": "301",
-            "n": 87
+            "nome": "Polizia locale e amministrativa",
+            "valore": 500774448.60999995
           },
           {
-            "nome": "601",
-            "n": 86
+            "nome": "Ufficio tecnico",
+            "valore": 474335946.1700001
           },
           {
-            "nome": "1207",
-            "n": 84
+            "nome": "Interventi per soggetti a rischio di esclusione sociale",
+            "valore": 465660955.31
           }
-        ],
-        "serie_anni": null
+        ]
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/bilancio-di-previsione-previsione-uscite/exports/json",
       "resource_format": "JSON",
@@ -250,7 +243,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "lavori-in-corso-in-citta",
-      "fetched_at": "2026-05-04T18:44:55.190Z",
+      "fetched_at": "2026-05-04T20:13:35.457Z",
       "status": "ok",
       "modified": "2026-03-21T06:00:03.144000+00:00",
       "freshness": {
@@ -277,19 +270,19 @@
         "fonte"
       ],
       "fields_present": [
-        "pin_point"
-      ],
-      "fields_missing": [
         "nome",
         "stato",
-        "lat",
-        "lon",
+        "pin_point",
         "indirizzo",
         "data_inizio",
         "data_fine",
         "tipo_lavoro",
         "quartiere",
-        "anno",
+        "anno"
+      ],
+      "fields_missing": [
+        "lat",
+        "lon",
         "cup",
         "importo",
         "sal",
@@ -297,11 +290,251 @@
       ],
       "metrics": {
         "totale": 48,
-        "per_stato": null,
-        "opere_geo": null,
-        "cup": null,
+        "per_stato": [
+          {
+            "nome": "In corso",
+            "n": 48
+          }
+        ],
+        "opere_geo": [
+          {
+            "lat": 44.51023794912831,
+            "lon": 11.292572023230607,
+            "nome": "Lavori di consolidamento  riqualificazione e adeguamento del ponte stradale"
+          },
+          {
+            "lat": 44.52221308916296,
+            "lon": 11.260471343994139,
+            "nome": "Lavori di realizzazione della linea rossa del Tram"
+          },
+          {
+            "lat": 44.508465439743446,
+            "lon": 11.360764503479002,
+            "nome": "Lavori di realizzazione prima linea tranviaria di Bologna (linea rossa)"
+          },
+          {
+            "lat": 44.507858295080695,
+            "lon": 11.368389493195767,
+            "nome": "Lavori di realizzazione della linea tranviaria denominata Linea Rossa"
+          },
+          {
+            "lat": 44.52090518212023,
+            "lon": 11.36224619342305,
+            "nome": "Lavori inerenti la realizzazione del nuovo Tecnoplo."
+          },
+          {
+            "lat": 44.51080311889464,
+            "lon": 11.355255357682813,
+            "nome": "Lavori per la realizzazione della linea Rossa e della Linea Verde del Tram"
+          },
+          {
+            "lat": 44.49563980606402,
+            "lon": 11.337638576903077,
+            "nome": "Lavori di realizzazione della linea rossa del Tram"
+          },
+          {
+            "lat": 44.496333088598675,
+            "lon": 11.335537653781296,
+            "nome": "Lavori di realizzazione della Linea Rossa del Tram"
+          },
+          {
+            "lat": 44.49749067506693,
+            "lon": 11.336458158879617,
+            "nome": "Lavori di realizzazione della linea rossa del Tram"
+          },
+          {
+            "lat": 44.508556511761554,
+            "lon": 11.346679167391557,
+            "nome": "Lavori di realizzazione della Linea Verde del tram"
+          },
+          {
+            "lat": 44.51128830411156,
+            "lon": 11.351466148944505,
+            "nome": "Lavori per la realizzazione della Linea rossa del tram"
+          },
+          {
+            "lat": 44.497056822774624,
+            "lon": 11.324366635483424,
+            "nome": "Lavori di ripristino del muro esterno della Caserma \"Mameli\""
+          },
+          {
+            "lat": 44.44849131,
+            "lon": 11.32494445,
+            "nome": "Lavori di sistemazione del versante a monte della strada"
+          },
+          {
+            "lat": 44.49676764,
+            "lon": 11.28564905,
+            "nome": "Lavori di sostituzione condotta del teleriscaldamento a seguito di guasto."
+          },
+          {
+            "lat": 44.49769490150183,
+            "lon": 11.410730061138718,
+            "nome": "Istituzione fermate temporanee del servizio bus sostitutivo della linea Bologna "
+          },
+          {
+            "lat": 44.51077606721017,
+            "lon": 11.371117830276491,
+            "nome": "Lavori di realizzazione della linea rossa del tram"
+          },
+          {
+            "lat": 44.50555024593629,
+            "lon": 11.36209487915039,
+            "nome": "Lavori per la realizzazione della linea rossa tram"
+          },
+          {
+            "lat": 44.5122417,
+            "lon": 11.337809,
+            "nome": "Lavori edili"
+          },
+          {
+            "lat": 44.5045957473297,
+            "lon": 11.37040234397419,
+            "nome": "Lavori relativi alla realizzazione della linea Rossa del Tram."
+          },
+          {
+            "lat": 44.52027679917572,
+            "lon": 11.2667582553189,
+            "nome": "Lavori di realizzazione della Linea Rossa del Tram"
+          },
+          {
+            "lat": 44.51401622019165,
+            "lon": 11.338092590947108,
+            "nome": "Lavori edili"
+          },
+          {
+            "lat": 44.508482642990856,
+            "lon": 11.363048310716103,
+            "nome": "Lavori di realizzazione della linea rossa del tram"
+          },
+          {
+            "lat": 44.52646431958979,
+            "lon": 11.349991288804068,
+            "nome": "Lavori di realizzazione della linea Verde del Tram"
+          },
+          {
+            "lat": 44.508301468223294,
+            "lon": 11.300266395399722,
+            "nome": "Lavori relativi alla realizzazione della Linea Rossa del Tram."
+          },
+          {
+            "lat": 44.50163328131918,
+            "lon": 11.342446283237276,
+            "nome": "Lavori di realizzazione della Linea Verde del Tram"
+          },
+          {
+            "lat": 44.546293365999304,
+            "lon": 11.356554227287743,
+            "nome": "Lavori di realizzazione della Linea Verde del Tram"
+          },
+          {
+            "lat": 44.49388835900467,
+            "lon": 11.372968838900094,
+            "nome": "Lavori Interramento Linea Ferroviaria"
+          },
+          {
+            "lat": 44.4961803066185,
+            "lon": 11.387562721247193,
+            "nome": "Interramento Linea Ferroviaria Bologna - Portomaggiore"
+          },
+          {
+            "lat": 44.4968625009021,
+            "lon": 11.3933015950062,
+            "nome": "Lavori di interramento Linea Ferroviaria Bologna - Portomaggiore"
+          },
+          {
+            "lat": 44.54944776,
+            "lon": 11.36177062,
+            "nome": "Lavori di realizzazione della Linea Verde del Tram"
+          },
+          {
+            "lat": 44.534025396178926,
+            "lon": 11.355716991702527,
+            "nome": "Lavori relativi alla realizzazione della Linea Verde del Tram"
+          },
+          {
+            "lat": 44.511104199890895,
+            "lon": 11.349190394949664,
+            "nome": "Lavori per la realizzazione della Linea Verde del Tram."
+          },
+          {
+            "lat": 44.51350735494398,
+            "lon": 11.285348889705098,
+            "nome": "Lavori per la realizzazione della Linea Rossa del Tram"
+          },
+          {
+            "lat": 44.49552095125705,
+            "lon": 11.351633319003493,
+            "nome": "Estensione rete teleriscaldamento."
+          },
+          {
+            "lat": 44.499937326217164,
+            "lon": 11.312857414812298,
+            "nome": "Rifacimento della pavimentazione dell'intera strada e della fondazione stradale "
+          },
+          {
+            "lat": 44.5222203,
+            "lon": 11.3612113,
+            "nome": "Lavori per la realizzazione del Tecnopolo"
+          },
+          {
+            "lat": 44.4942932,
+            "lon": 11.346724,
+            "nome": "Monitoraggio strutturale della Torre Garisenda."
+          },
+          {
+            "lat": 44.500302368420506,
+            "lon": 11.324393524378115,
+            "nome": "Lavori di realizzazione della Linea Rossa del Tram"
+          },
+          {
+            "lat": 44.498260671450225,
+            "lon": 11.331874532894078,
+            "nome": "Lavori di realizzazione della Linea Rossa del tram"
+          },
+          {
+            "lat": 44.4963928,
+            "lon": 11.38764576,
+            "nome": "Posizionamento recinzione di cantiere relativo al progetto di interramento della"
+          },
+          {
+            "lat": 44.515910492326725,
+            "lon": 11.276211655285227,
+            "nome": "Lavori di rifacimento della fognatura."
+          },
+          {
+            "lat": 44.51157839302945,
+            "lon": 11.349532552670837,
+            "nome": "Lavori di realizzazione della Linea verde del Tram"
+          },
+          {
+            "lat": 44.50711652551297,
+            "lon": 11.37579158005301,
+            "nome": "Lavori di realizzazione prima linea tranviaria di Bologna (linea rossa)"
+          },
+          {
+            "lat": 44.51154174766347,
+            "lon": 11.347141507399376,
+            "nome": "Lavori di realizzazione seconda Linea Verde"
+          },
+          {
+            "lat": 44.548100691598734,
+            "lon": 11.358853464389478,
+            "nome": "Lavori di realizzazione della linea  verde"
+          },
+          {
+            "lat": 44.49770512,
+            "lon": 11.32074947,
+            "nome": "Rifacimento dei marciapiedi e realizzazione di nuovi golfi"
+          },
+          {
+            "lat": 44.49654562,
+            "lon": 11.34625162,
+            "nome": "Ripristino basoli smossi e sigillature mancanti"
+          }
+        ],
+        "cup_count": null,
         "importo_totale": null,
-        "sal_medio": null,
         "per_fonte": null
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/lavori-pubblici/exports/json",
@@ -311,7 +544,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "cila-comunicazioni-inizio-lavori",
-      "fetched_at": "2026-05-04T18:44:57.182Z",
+      "fetched_at": "2026-05-04T20:13:36.416Z",
       "status": "ok",
       "modified": "2025-12-31T09:03:43+00:00",
       "freshness": {
@@ -319,123 +552,271 @@
         "months": 5,
         "iso": "2025-12-31T09:03:43+00:00"
       },
-      "n_rows": 75148,
+      "n_rows": 50000,
       "fields_expected": [
         "tipo",
         "data",
         "esito",
         "chiusura",
         "via",
-        "civico"
+        "civico",
+        "anno_prot"
       ],
       "fields_present": [
         "tipo",
-        "civico"
-      ],
-      "fields_missing": [
         "data",
         "esito",
         "chiusura",
+        "civico",
+        "anno_prot"
+      ],
+      "fields_missing": [
         "via"
       ],
       "metrics": {
-        "totale": 75148,
+        "totale": 50000,
         "per_tipo": [
           {
             "nome": "CILA ORDINARIA",
-            "n": 17362
+            "n": 11524
           },
           {
             "nome": "COMUNICAZIONE INIZIO LAVORI LR 15/2013",
-            "n": 13959
+            "n": 9293
           },
           {
             "nome": "COMUNICAZIONE DI INIZIO LAVORI LEGGE 73/2010",
-            "n": 13199
+            "n": 8771
           },
           {
             "nome": "CILA A SANATORIA",
-            "n": 11602
+            "n": 7757
           },
           {
             "nome": "CILA CON INIZIO LAVORI DIFFERITO",
-            "n": 6401
+            "n": 4242
           },
           {
             "nome": "COMUNICAZIONE DI INIZIO LAVORI LR 15/2013",
-            "n": 2756
+            "n": 1855
           },
           {
             "nome": "CILA-SUPERBONUS ORDINARIA ANCHE CON ALTRE COMUNICAZIONI O SCIA",
-            "n": 2393
+            "n": 1598
           },
           {
             "nome": "CILA ORDINARIA - NON RESIDENZIALE",
-            "n": 2271
+            "n": 1510
           },
           {
             "nome": "COMUNICAZIONE INIZIO LAVORI A SANATORIA LR 15/2013",
-            "n": 1188
+            "n": 803
           },
           {
             "nome": "CILA CON INIZIO LAVORI DIFFERITO - NON RESIDENZIALE",
-            "n": 1016
+            "n": 692
           },
           {
             "nome": "CILA A SANATORIA CON OPERE",
-            "n": 791
+            "n": 524
           },
           {
             "nome": "CILA CONDIZIONATA",
-            "n": 706
+            "n": 450
           },
           {
             "nome": "CILA-SUPERBONUS DIFFERITA CON RICHIESTA CONTESTUALE DI ATTI PRESUPPOSTI",
-            "n": 520
+            "n": 348
           },
           {
             "nome": "CILA A SANATORIA CON OPERE - NON RESIDENZIALE",
-            "n": 353
+            "n": 212
           },
           {
             "nome": "CILA PRESENTATA DOPO L'INIZIO LAVORI",
-            "n": 235
+            "n": 147
           },
           {
             "nome": "COMUNICAZIONE INIZIO LAVORI PRESENTATA IN CORSO D'OPERA LR 15/2013",
-            "n": 166
+            "n": 116
           },
           {
             "nome": "CILA PRESENTATA DOPO L'INIZIO LAVORI - NON RESIDENZIALE",
-            "n": 109
+            "n": 79
           },
           {
             "nome": "CILA A SANATORIA CON OPERE CONDIZIONATA",
-            "n": 52
-          },
-          {
-            "nome": "URB - CILA ORDINARIA",
-            "n": 14
+            "n": 33
           },
           {
             "nome": "CILA-SUPERBONUS ORDINARIA ANCHE CON ALTRE COMUNICAZIONI O SCIA - NON RESIDENZIALE",
-            "n": 14
+            "n": 8
+          },
+          {
+            "nome": "URB - CILA ORDINARIA",
+            "n": 8
           }
         ],
-        "per_esito": null,
-        "tasso_chiusura": null,
-        "tempo_medio_scia": null,
-        "tempo_medio_pdc": null,
-        "pct_nei_termini": null
+        "per_esito": [
+          {
+            "nome": "ACQUISITA IN INGRESSO",
+            "n": 40561
+          },
+          {
+            "nome": "EFFICACE",
+            "n": 6042
+          },
+          {
+            "nome": "INEFFICACE",
+            "n": 391
+          },
+          {
+            "nome": "RINUNCIATA SU ISTANZA DI PARTE",
+            "n": 263
+          },
+          {
+            "nome": "CONCLUSO   ESITO POSITIVO",
+            "n": 238
+          },
+          {
+            "nome": "CAMPIONATA CONCLUSO ESITO POSITIVO",
+            "n": 189
+          },
+          {
+            "nome": "RILASCIATA",
+            "n": 168
+          },
+          {
+            "nome": "RINUNCIATA",
+            "n": 115
+          },
+          {
+            "nome": "ARCHIVIATA",
+            "n": 68
+          },
+          {
+            "nome": "CONCLUSO",
+            "n": 42
+          },
+          {
+            "nome": "VERBALE CONCLUSO   SANZIONE PECUNIARIA",
+            "n": 36
+          },
+          {
+            "nome": "IN CORSO",
+            "n": 33
+          },
+          {
+            "nome": "CAMPIONATA CONCLUSO ESITO NEGATIVO",
+            "n": 29
+          },
+          {
+            "nome": "CONCLUSO   ESITO NEGATIVO",
+            "n": 28
+          },
+          {
+            "nome": "ARCHIVIO DIGITALE",
+            "n": 27
+          },
+          {
+            "nome": "ANNULLATA SU ISTANZA DI PARTE",
+            "n": 25
+          },
+          {
+            "nome": "CILA NON CONFORME",
+            "n": 21
+          },
+          {
+            "nome": "EFFICACIA DEL 06/03/2025",
+            "n": 11
+          },
+          {
+            "nome": "EFFICACIA DEL 13/03/2025",
+            "n": 10
+          },
+          {
+            "nome": "EFFICACIA DEL 20/03/2025",
+            "n": 9
+          }
+        ],
+        "tasso_chiusura": 97.28999999999999,
+        "serie_anni": [
+          {
+            "anno": 2010,
+            "valore": 1364
+          },
+          {
+            "anno": 2011,
+            "valore": 2604
+          },
+          {
+            "anno": 2012,
+            "valore": 2576
+          },
+          {
+            "anno": 2013,
+            "valore": 2895
+          },
+          {
+            "anno": 2014,
+            "valore": 2950
+          },
+          {
+            "anno": 2015,
+            "valore": 2864
+          },
+          {
+            "anno": 2016,
+            "valore": 3053
+          },
+          {
+            "anno": 2017,
+            "valore": 2932
+          },
+          {
+            "anno": 2018,
+            "valore": 2992
+          },
+          {
+            "anno": 2019,
+            "valore": 3723
+          },
+          {
+            "anno": 2020,
+            "valore": 3539
+          },
+          {
+            "anno": 2021,
+            "valore": 4336
+          },
+          {
+            "anno": 2022,
+            "valore": 5176
+          },
+          {
+            "anno": 2023,
+            "valore": 3837
+          },
+          {
+            "anno": 2024,
+            "valore": 3773
+          },
+          {
+            "anno": 2025,
+            "valore": 1386
+          }
+        ]
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/cila-comunicazioni-inizio-lavori/exports/json",
       "resource_format": "JSON",
-      "error": null
+      "error": null,
+      "n_rows_total": 75148,
+      "truncated": true
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "welfare-interventi",
-      "fetched_at": "2026-05-04T18:45:13.473Z",
+      "fetched_at": "2026-05-04T20:13:46.780Z",
       "status": "fetch_error",
       "modified": "2025-05-08T12:47:30.798000+00:00",
       "freshness": {
@@ -460,8 +841,7 @@
         "per_target": null,
         "per_categoria": null,
         "spesa_totale": null,
-        "spesa_media": null,
-        "pct_accolte": null
+        "spesa_media": null
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/c_a9447d4f8a46-d276-11ea-87d0-0242ac130003/exports/json",
       "resource_format": "JSON",
@@ -470,7 +850,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      "fetched_at": "2026-05-04T18:45:54.030Z",
+      "fetched_at": "2026-05-04T20:14:58.060Z",
       "status": "ok",
       "modified": "2025-09-24T14:54:00+00:00",
       "freshness": {
@@ -490,224 +870,223 @@
       ],
       "fields_present": [
         "anno",
-        "struttura"
+        "tipo_struttura",
+        "struttura",
+        "quartiere",
+        "iscritti"
       ],
       "fields_missing": [
-        "tipo_struttura",
-        "quartiere",
-        "iscritti",
         "lat",
         "lon"
       ],
       "metrics": {
-        "totale_iscritti": null,
+        "totale_iscritti": 97057,
         "per_struttura": [
           {
-            "nome": "GIORGIO MORANDI",
-            "n": 14
-          },
-          {
-            "nome": "PRESI",
-            "n": 14
-          },
-          {
-            "nome": "CECCARELLI",
-            "n": 14
-          },
-          {
-            "nome": "FEDERZONI",
-            "n": 14
-          },
-          {
-            "nome": "GIROTONDO",
-            "n": 14
-          },
-          {
-            "nome": "ADA GOBETTI",
-            "n": 14
-          },
-          {
-            "nome": "CANTALAMESSA",
-            "n": 14
-          },
-          {
-            "nome": "CASAGLIA",
-            "n": 14
-          },
-          {
-            "nome": "CATERINA DE STEFANI",
-            "n": 14
-          },
-          {
-            "nome": "DALL'OLIO",
-            "n": 14
-          },
-          {
-            "nome": "DE AMICIS",
-            "n": 14
-          },
-          {
-            "nome": "XXI APRILE",
-            "n": 14
-          },
-          {
-            "nome": "GIOANNETTI",
-            "n": 14
-          },
-          {
-            "nome": "GUALANDI",
-            "n": 14
-          },
-          {
-            "nome": "JOLE BARONCINI",
-            "n": 14
+            "nome": "IRMA PEDRIELLI",
+            "valore": 1960
           },
           {
             "nome": "M. ROCCA",
-            "n": 14
-          },
-          {
-            "nome": "MARIGHETTO",
-            "n": 14
-          },
-          {
-            "nome": "BARACCANO",
-            "n": 14
-          },
-          {
-            "nome": "BELTRAME",
-            "n": 14
+            "valore": 1695
           },
           {
             "nome": "GASTONE ROSSI",
-            "n": 14
-          },
-          {
-            "nome": "MARCONI",
-            "n": 14
-          },
-          {
-            "nome": "MOLINO TAMBURI",
-            "n": 14
-          },
-          {
-            "nome": "TESTI RASPONI",
-            "n": 14
-          },
-          {
-            "nome": "ZAMBONI",
-            "n": 14
-          },
-          {
-            "nome": "DOMENICO SAVIO",
-            "n": 14
-          },
-          {
-            "nome": "SANZIO RAFFAELLO",
-            "n": 14
-          },
-          {
-            "nome": "SCARLATTI",
-            "n": 14
+            "valore": 1567
           },
           {
             "nome": "WALT DISNEY",
-            "n": 14
+            "valore": 1448
+          },
+          {
+            "nome": "LANZARINI",
+            "valore": 1420
+          },
+          {
+            "nome": "JOLE BARONCINI",
+            "valore": 1406
+          },
+          {
+            "nome": "G.BETTI PLESSO 3",
+            "valore": 1374
           },
           {
             "nome": "GIDA ROSSI",
-            "n": 14
-          },
-          {
-            "nome": "MARSILI",
-            "n": 14
-          },
-          {
-            "nome": "ALBERTAZZI",
-            "n": 14
-          },
-          {
-            "nome": "BENINI",
-            "n": 14
-          },
-          {
-            "nome": "GIORDANI",
-            "n": 14
-          },
-          {
-            "nome": "DEGLI ESPOSTI",
-            "n": 14
-          },
-          {
-            "nome": "ANNA SERRA PLESSO 1",
-            "n": 14
+            "valore": 1333
           },
           {
             "nome": "ARCO GUIDI PACE",
-            "n": 14
-          },
-          {
-            "nome": "MANZOLINI",
-            "n": 14
-          },
-          {
-            "nome": "PADRE O. MARELLA",
-            "n": 14
-          },
-          {
-            "nome": "GIUSI DEL MUGNAIO",
-            "n": 14
+            "valore": 1321
           },
           {
             "nome": "MARIA MANZINI",
-            "n": 14
+            "valore": 1260
           },
           {
-            "nome": "DON BOSCO",
-            "n": 14
+            "nome": "SCANDELLARA",
+            "valore": 1213
           },
           {
-            "nome": "PADIGLIONE",
-            "n": 14
+            "nome": "GIORDANI",
+            "valore": 1151
           },
           {
-            "nome": "TAMBRONI",
-            "n": 14
+            "nome": "TESTI RASPONI",
+            "valore": 1147
           },
           {
-            "nome": "GRAZIA DELEDDA",
-            "n": 14
+            "nome": "SERAGNOLI",
+            "valore": 1147
           },
           {
-            "nome": "PIERO BERTOLINI",
-            "n": 14
+            "nome": "DOMENICO SAVIO",
+            "valore": 1085
           },
           {
-            "nome": "RAOUL FOLLEREAU",
-            "n": 14
+            "nome": "BRUNO CIARI",
+            "valore": 1083
           },
           {
-            "nome": "ALDO MORO INFANZIA",
-            "n": 14
+            "nome": "MARSILI",
+            "valore": 1075
           },
           {
-            "nome": "GALLON",
-            "n": 14
+            "nome": "GIUSEPPE DOZZA INFANZIA",
+            "valore": 1069
+          },
+          {
+            "nome": "VILLA MAY",
+            "valore": 1057
+          },
+          {
+            "nome": "PRESI",
+            "valore": 1054
+          },
+          {
+            "nome": "FEDERZONI",
+            "valore": 1046
           },
           {
             "nome": "ATTILIA NERI",
-            "n": 14
+            "valore": 1043
           },
           {
-            "nome": "ANDERSEN",
-            "n": 14
+            "nome": "CECCARELLI",
+            "valore": 1041
+          },
+          {
+            "nome": "GRAZIA DELEDDA",
+            "valore": 1041
+          },
+          {
+            "nome": "RAOUL FOLLEREAU",
+            "valore": 1041
+          },
+          {
+            "nome": "SCARLATTI",
+            "valore": 1040
+          },
+          {
+            "nome": "ALDO MORO INFANZIA",
+            "valore": 1031
+          },
+          {
+            "nome": "ZAMBONI",
+            "valore": 1029
+          },
+          {
+            "nome": "CANTALAMESSA",
+            "valore": 1027
+          },
+          {
+            "nome": "W.TOBAGI",
+            "valore": 1023
           }
         ],
-        "per_quartiere": null,
-        "plessi_geo": null,
-        "posti_totali": null,
-        "lista_attesa": null,
-        "tasso_copertura": null
+        "per_quartiere": [
+          {
+            "nome": "SAN DONATO - SAN VITALE",
+            "valore": 17923
+          },
+          {
+            "nome": "NAVILE",
+            "valore": 17294
+          },
+          {
+            "nome": "PORTO - SARAGOZZA",
+            "valore": 16990
+          },
+          {
+            "nome": "BORGO PANIGALE - RENO",
+            "valore": 16347
+          },
+          {
+            "nome": "SAVENA",
+            "valore": 14774
+          },
+          {
+            "nome": "SANTO STEFANO",
+            "valore": 13729
+          }
+        ],
+        "serie_anni": [
+          {
+            "anno": 2012,
+            "valore": 6636
+          },
+          {
+            "anno": 2013,
+            "valore": 6990
+          },
+          {
+            "anno": 2014,
+            "valore": 7193
+          },
+          {
+            "anno": 2015,
+            "valore": 7011
+          },
+          {
+            "anno": 2016,
+            "valore": 7092
+          },
+          {
+            "anno": 2017,
+            "valore": 7163
+          },
+          {
+            "anno": 2018,
+            "valore": 7191
+          },
+          {
+            "anno": 2019,
+            "valore": 7187
+          },
+          {
+            "anno": 2020,
+            "valore": 7173
+          },
+          {
+            "anno": 2021,
+            "valore": 6826
+          },
+          {
+            "anno": 2022,
+            "valore": 6922
+          },
+          {
+            "anno": 2023,
+            "valore": 6768
+          },
+          {
+            "anno": 2024,
+            "valore": 6618
+          },
+          {
+            "anno": 2025,
+            "valore": 6287
+          }
+        ]
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/numero-iscritti-ai-servizi-integrativi-scuola-infanzia-pubblica/exports/json",
       "resource_format": "JSON",
@@ -716,7 +1095,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "incidenti-stradali2",
-      "fetched_at": "2026-05-04T18:45:56.961Z",
+      "fetched_at": "2026-05-04T20:15:00.108Z",
       "status": "ok",
       "modified": "2024-12-31T11:04:38+00:00",
       "freshness": {
@@ -733,33 +1112,823 @@
         "n_morti",
         "lat",
         "lon",
+        "pin_point",
         "via",
         "gravita",
-        "zona"
+        "zona",
+        "n_pedoni_m",
+        "n_pedoni_f",
+        "n_cicl_m",
+        "n_cicl_f"
       ],
       "fields_present": [
-        "anno"
-      ],
-      "fields_missing": [
-        "mese",
+        "anno",
         "n_incidenti",
         "n_feriti",
         "n_morti",
+        "pin_point",
+        "zona",
+        "n_pedoni_m",
+        "n_pedoni_f",
+        "n_cicl_m",
+        "n_cicl_f"
+      ],
+      "fields_missing": [
+        "mese",
         "lat",
         "lon",
         "via",
-        "gravita",
-        "zona"
+        "gravita"
       ],
       "metrics": {
-        "totale_anno": 175,
-        "n_morti": null,
-        "n_feriti": null,
-        "serie_mensile": null,
-        "per_zona": null,
-        "hot_spots": null,
-        "indice_mortalita": null,
-        "pct_pedoni_ciclisti": null
+        "totale_anno": 13428,
+        "totale_morti": 123,
+        "totale_feriti": 17047,
+        "per_zona": [
+          {
+            "nome": "CIRENAICA - MASSARENTI - SCANDELLARA",
+            "valore": 1250
+          },
+          {
+            "nome": "BOLOGNINA",
+            "valore": 1017
+          },
+          {
+            "nome": "MURRI",
+            "valore": 899
+          },
+          {
+            "nome": "SAN DONATO VECCHIO",
+            "valore": 854
+          },
+          {
+            "nome": "CORTICELLA - DOZZA",
+            "valore": 776
+          },
+          {
+            "nome": "PONTEVECCHIO - MAZZINI",
+            "valore": 745
+          },
+          {
+            "nome": "IRNERIO",
+            "valore": 700
+          },
+          {
+            "nome": "SARAGOZZA - SAN LUCA",
+            "valore": 654
+          },
+          {
+            "nome": "BORGO PANIGALE",
+            "valore": 632
+          },
+          {
+            "nome": "SAFFI",
+            "valore": 615
+          },
+          {
+            "nome": "MARCONI",
+            "valore": 577
+          },
+          {
+            "nome": "BARCA",
+            "valore": 524
+          },
+          {
+            "nome": "CROCE DEL BIACCO - ROVERI",
+            "valore": 491
+          },
+          {
+            "nome": "MALPIGHI",
+            "valore": 436
+          },
+          {
+            "nome": "SAN DONATO NUOVO",
+            "valore": 391
+          },
+          {
+            "nome": "BIRRA - BARGELLINO - LAVINO",
+            "valore": 370
+          },
+          {
+            "nome": "GALVANI",
+            "valore": 361
+          },
+          {
+            "nome": "BEVERARA",
+            "valore": 348
+          },
+          {
+            "nome": "BERTALIA - NOCE",
+            "valore": 326
+          },
+          {
+            "nome": "SANTA VIOLA",
+            "valore": 288
+          }
+        ],
+        "hot_spots": [
+          {
+            "lat": 44.53245357270745,
+            "lon": 11.324079223087022
+          },
+          {
+            "lat": 44.53401811697625,
+            "lon": 11.266652037609445
+          },
+          {
+            "lat": 44.53401811697625,
+            "lon": 11.266652037609445
+          },
+          {
+            "lat": 44.53401811697625,
+            "lon": 11.266652037609445
+          },
+          {
+            "lat": 44.53401811697625,
+            "lon": 11.266652037609445
+          },
+          {
+            "lat": 44.51075641872278,
+            "lon": 11.260153383523406
+          },
+          {
+            "lat": 44.51075641872278,
+            "lon": 11.260153383523406
+          },
+          {
+            "lat": 44.50684823541583,
+            "lon": 11.28365893620668
+          },
+          {
+            "lat": 44.49594832731851,
+            "lon": 11.376939772972921
+          },
+          {
+            "lat": 44.49594832731851,
+            "lon": 11.376939772972921
+          },
+          {
+            "lat": 44.49594832731851,
+            "lon": 11.376939772972921
+          },
+          {
+            "lat": 44.49582036622066,
+            "lon": 11.409429204295279
+          },
+          {
+            "lat": 44.48904909910164,
+            "lon": 11.34872099170024
+          },
+          {
+            "lat": 44.498373254706884,
+            "lon": 11.350677633934229
+          },
+          {
+            "lat": 44.460619689216145,
+            "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50126632402442,
+            "lon": 11.337680350891802
+          },
+          {
+            "lat": 44.47455983898973,
+            "lon": 11.386387540570649
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.536459019239636,
+            "lon": 11.36580921815176
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
+          },
+          {
+            "lat": 44.53401811697625,
+            "lon": 11.266652037609445
+          },
+          {
+            "lat": 44.51075641872278,
+            "lon": 11.260153383523406
+          },
+          {
+            "lat": 44.51075641872278,
+            "lon": 11.260153383523406
+          },
+          {
+            "lat": 44.49594832731851,
+            "lon": 11.376939772972921
+          },
+          {
+            "lat": 44.48904909910164,
+            "lon": 11.34872099170024
+          },
+          {
+            "lat": 44.498373254706884,
+            "lon": 11.350677633934229
+          },
+          {
+            "lat": 44.460619689216145,
+            "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.460619689216145,
+            "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50126632402442,
+            "lon": 11.337680350891802
+          },
+          {
+            "lat": 44.48023507120472,
+            "lon": 11.364557066433264
+          },
+          {
+            "lat": 44.48023507120472,
+            "lon": 11.364557066433264
+          },
+          {
+            "lat": 44.48023507120472,
+            "lon": 11.364557066433264
+          },
+          {
+            "lat": 44.45275418082376,
+            "lon": 11.324626222813414
+          },
+          {
+            "lat": 44.47455983898973,
+            "lon": 11.386387540570649
+          },
+          {
+            "lat": 44.508981944705454,
+            "lon": 11.367903898378744
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
+          },
+          {
+            "lat": 44.49601386275252,
+            "lon": 11.292544764634837
+          },
+          {
+            "lat": 44.49601386275252,
+            "lon": 11.292544764634837
+          },
+          {
+            "lat": 44.49601386275252,
+            "lon": 11.292544764634837
+          },
+          {
+            "lat": 44.53245357270745,
+            "lon": 11.324079223087022
+          },
+          {
+            "lat": 44.51075641872278,
+            "lon": 11.260153383523406
+          },
+          {
+            "lat": 44.50684823541583,
+            "lon": 11.28365893620668
+          },
+          {
+            "lat": 44.49594832731851,
+            "lon": 11.376939772972921
+          },
+          {
+            "lat": 44.49582036622066,
+            "lon": 11.409429204295279
+          },
+          {
+            "lat": 44.482491562178886,
+            "lon": 11.393935090608817
+          },
+          {
+            "lat": 44.460619689216145,
+            "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50126632402442,
+            "lon": 11.337680350891802
+          },
+          {
+            "lat": 44.48023507120472,
+            "lon": 11.364557066433264
+          },
+          {
+            "lat": 44.45275418082376,
+            "lon": 11.324626222813414
+          },
+          {
+            "lat": 44.45275418082376,
+            "lon": 11.324626222813414
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.508981944705454,
+            "lon": 11.367903898378744
+          },
+          {
+            "lat": 44.50863987993532,
+            "lon": 11.301278144791631
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.536459019239636,
+            "lon": 11.36580921815176
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
+          },
+          {
+            "lat": 44.49601386275252,
+            "lon": 11.292544764634837
+          },
+          {
+            "lat": 44.53245357270745,
+            "lon": 11.324079223087022
+          },
+          {
+            "lat": 44.53245357270745,
+            "lon": 11.324079223087022
+          },
+          {
+            "lat": 44.50684823541583,
+            "lon": 11.28365893620668
+          },
+          {
+            "lat": 44.49594832731851,
+            "lon": 11.376939772972921
+          },
+          {
+            "lat": 44.49582036622066,
+            "lon": 11.409429204295279
+          },
+          {
+            "lat": 44.482491562178886,
+            "lon": 11.393935090608817
+          },
+          {
+            "lat": 44.482491562178886,
+            "lon": 11.393935090608817
+          },
+          {
+            "lat": 44.482491562178886,
+            "lon": 11.393935090608817
+          },
+          {
+            "lat": 44.498373254706884,
+            "lon": 11.350677633934229
+          },
+          {
+            "lat": 44.460619689216145,
+            "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50126632402442,
+            "lon": 11.337680350891802
+          },
+          {
+            "lat": 44.48023507120472,
+            "lon": 11.364557066433264
+          },
+          {
+            "lat": 44.45275418082376,
+            "lon": 11.324626222813414
+          },
+          {
+            "lat": 44.47455983898973,
+            "lon": 11.386387540570649
+          },
+          {
+            "lat": 44.47455983898973,
+            "lon": 11.386387540570649
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.508981944705454,
+            "lon": 11.367903898378744
+          },
+          {
+            "lat": 44.508981944705454,
+            "lon": 11.367903898378744
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
+          },
+          {
+            "lat": 44.53245357270745,
+            "lon": 11.324079223087022
+          },
+          {
+            "lat": 44.49582036622066,
+            "lon": 11.409429204295279
+          },
+          {
+            "lat": 44.48904909910164,
+            "lon": 11.34872099170024
+          },
+          {
+            "lat": 44.460619689216145,
+            "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.45275418082376,
+            "lon": 11.324626222813414
+          },
+          {
+            "lat": 44.47455983898973,
+            "lon": 11.386387540570649
+          },
+          {
+            "lat": 44.47455983898973,
+            "lon": 11.386387540570649
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.508981944705454,
+            "lon": 11.367903898378744
+          },
+          {
+            "lat": 44.50863987993532,
+            "lon": 11.301278144791631
+          },
+          {
+            "lat": 44.50863987993532,
+            "lon": 11.301278144791631
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.536459019239636,
+            "lon": 11.36580921815176
+          },
+          {
+            "lat": 44.49601386275252,
+            "lon": 11.292544764634837
+          },
+          {
+            "lat": 44.53245357270745,
+            "lon": 11.324079223087022
+          },
+          {
+            "lat": 44.53401811697625,
+            "lon": 11.266652037609445
+          },
+          {
+            "lat": 44.50684823541583,
+            "lon": 11.28365893620668
+          },
+          {
+            "lat": 44.49582036622066,
+            "lon": 11.409429204295279
+          },
+          {
+            "lat": 44.49582036622066,
+            "lon": 11.409429204295279
+          },
+          {
+            "lat": 44.49582036622066,
+            "lon": 11.409429204295279
+          },
+          {
+            "lat": 44.482491562178886,
+            "lon": 11.393935090608817
+          },
+          {
+            "lat": 44.498373254706884,
+            "lon": 11.350677633934229
+          },
+          {
+            "lat": 44.460619689216145,
+            "lon": 11.379215722790132
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
+          },
+          {
+            "lat": 44.51075641872278,
+            "lon": 11.260153383523406
+          },
+          {
+            "lat": 44.48904909910164,
+            "lon": 11.34872099170024
+          },
+          {
+            "lat": 44.48904909910164,
+            "lon": 11.34872099170024
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50126632402442,
+            "lon": 11.337680350891802
+          },
+          {
+            "lat": 44.48023507120472,
+            "lon": 11.364557066433264
+          },
+          {
+            "lat": 44.45275418082376,
+            "lon": 11.324626222813414
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.50863987993532,
+            "lon": 11.301278144791631
+          },
+          {
+            "lat": 44.46037113980039,
+            "lon": 11.361077687115223
+          },
+          {
+            "lat": 44.536459019239636,
+            "lon": 11.36580921815176
+          },
+          {
+            "lat": 44.536459019239636,
+            "lon": 11.36580921815176
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
+          },
+          {
+            "lat": 44.49601386275252,
+            "lon": 11.292544764634837
+          },
+          {
+            "lat": 44.53245357270745,
+            "lon": 11.324079223087022
+          },
+          {
+            "lat": 44.53401811697625,
+            "lon": 11.266652037609445
+          },
+          {
+            "lat": 44.49594832731851,
+            "lon": 11.376939772972921
+          },
+          {
+            "lat": 44.48904909910164,
+            "lon": 11.34872099170024
+          },
+          {
+            "lat": 44.48904909910164,
+            "lon": 11.34872099170024
+          },
+          {
+            "lat": 44.48023507120472,
+            "lon": 11.364557066433264
+          },
+          {
+            "lat": 44.45275418082376,
+            "lon": 11.324626222813414
+          },
+          {
+            "lat": 44.52109246300804,
+            "lon": 11.401361324675172
+          },
+          {
+            "lat": 44.508981944705454,
+            "lon": 11.367903898378744
+          },
+          {
+            "lat": 44.508981944705454,
+            "lon": 11.367903898378744
+          },
+          {
+            "lat": 44.50863987993532,
+            "lon": 11.301278144791631
+          },
+          {
+            "lat": 44.536459019239636,
+            "lon": 11.36580921815176
+          },
+          {
+            "lat": 44.49601386275252,
+            "lon": 11.292544764634837
+          },
+          {
+            "lat": 44.51075641872278,
+            "lon": 11.260153383523406
+          },
+          {
+            "lat": 44.50684823541583,
+            "lon": 11.28365893620668
+          },
+          {
+            "lat": 44.50684823541583,
+            "lon": 11.28365893620668
+          },
+          {
+            "lat": 44.50684823541583,
+            "lon": 11.28365893620668
+          },
+          {
+            "lat": 44.482491562178886,
+            "lon": 11.393935090608817
+          },
+          {
+            "lat": 44.482491562178886,
+            "lon": 11.393935090608817
+          },
+          {
+            "lat": 44.498373254706884,
+            "lon": 11.350677633934229
+          },
+          {
+            "lat": 44.498373254706884,
+            "lon": 11.350677633934229
+          },
+          {
+            "lat": 44.498373254706884,
+            "lon": 11.350677633934229
+          },
+          {
+            "lat": 44.4934935403265,
+            "lon": 11.33574552635011
+          },
+          {
+            "lat": 44.50126632402442,
+            "lon": 11.337680350891802
+          },
+          {
+            "lat": 44.50126632402442,
+            "lon": 11.337680350891802
+          },
+          {
+            "lat": 44.47455983898973,
+            "lon": 11.386387540570649
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.50406779921159,
+            "lon": 11.320495538728498
+          },
+          {
+            "lat": 44.50863987993532,
+            "lon": 11.301278144791631
+          },
+          {
+            "lat": 44.50863987993532,
+            "lon": 11.301278144791631
+          },
+          {
+            "lat": 44.4730123343669,
+            "lon": 11.304474596388342
+          },
+          {
+            "lat": 44.536459019239636,
+            "lon": 11.36580921815176
+          },
+          {
+            "lat": 44.52043636169531,
+            "lon": 11.331813152289353
+          },
+          {
+            "lat": 44.513893696422876,
+            "lon": 11.34577042324268
+          }
+        ],
+        "vittime_vulnerabili": 4251
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/incidenti_new/exports/json",
       "resource_format": "JSON",
@@ -768,7 +1937,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "indicatori-raccolta-differenziata",
-      "fetched_at": "2026-05-04T18:45:59.016Z",
+      "fetched_at": "2026-05-04T20:15:02.299Z",
       "status": "ok",
       "modified": "2025-04-07T08:28:00+00:00",
       "freshness": {
@@ -781,27 +1950,156 @@
         "anno",
         "mese",
         "rd_pct",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato",
         "frazione",
         "kg",
         "zona"
       ],
       "fields_present": [
-        "anno"
+        "anno",
+        "rd_pct",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato"
       ],
       "fields_missing": [
         "mese",
-        "rd_pct",
         "frazione",
         "kg",
         "zona"
       ],
       "metrics": {
-        "rd_pct": null,
-        "serie_anni": null,
-        "per_zona": null,
-        "composizione": null,
-        "pro_capite_kg": null,
-        "serie_mensile": null
+        "rd_pct_ultimo_anno": {
+          "anno": 2025,
+          "valore": 72.4
+        },
+        "serie_anni": [
+          {
+            "anno": 2005,
+            "valore": 29
+          },
+          {
+            "anno": 2006,
+            "valore": 31
+          },
+          {
+            "anno": 2007,
+            "valore": 32
+          },
+          {
+            "anno": 2008,
+            "valore": 33.8
+          },
+          {
+            "anno": 2009,
+            "valore": 33.8
+          },
+          {
+            "anno": 2010,
+            "valore": 34.8
+          },
+          {
+            "anno": 2011,
+            "valore": 35.3
+          },
+          {
+            "anno": 2012,
+            "valore": 35.4
+          },
+          {
+            "anno": 2013,
+            "valore": 39
+          },
+          {
+            "anno": 2014,
+            "valore": 41
+          },
+          {
+            "anno": 2015,
+            "valore": 44.9
+          },
+          {
+            "anno": 2016,
+            "valore": 45.9
+          },
+          {
+            "anno": 2017,
+            "valore": 48.2
+          },
+          {
+            "anno": 2018,
+            "valore": 52.9
+          },
+          {
+            "anno": 2019,
+            "valore": 54.2
+          },
+          {
+            "anno": 2020,
+            "valore": 55.4
+          },
+          {
+            "anno": 2021,
+            "valore": 57.2
+          },
+          {
+            "anno": 2022,
+            "valore": 63.2
+          },
+          {
+            "anno": 2023,
+            "valore": 72.1
+          },
+          {
+            "anno": 2024,
+            "valore": 72.4
+          },
+          {
+            "anno": 2025,
+            "valore": 72.4
+          }
+        ],
+        "per_quartiere": [
+          {
+            "nome": "Centro Storico",
+            "valore": 69.7
+          },
+          {
+            "nome": "Savena",
+            "valore": 76.8
+          },
+          {
+            "nome": "Navile",
+            "valore": 77.4
+          },
+          {
+            "nome": "Borgo Panigale-Reno",
+            "valore": 72.4
+          },
+          {
+            "nome": "Porto-Saragozza",
+            "valore": 66.6
+          },
+          {
+            "nome": "Santo Stefano",
+            "valore": 77.8
+          },
+          {
+            "nome": "San Donato-San Vitale",
+            "valore": 69.7
+          }
+        ],
+        "trend_pct": 149.6551724137931
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/indicatori-raccolta-differenziata/exports/json",
       "resource_format": "JSON",
@@ -810,7 +2108,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-bologna-agenda-cultura",
-      "fetched_at": "2026-05-04T18:46:01.828Z",
+      "fetched_at": "2026-05-04T20:15:03.650Z",
       "status": "ok",
       "modified": "2026-03-21T02:15:09.258000+00:00",
       "freshness": {
@@ -822,33 +2120,1630 @@
       "fields_expected": [
         "titolo",
         "categoria",
+        "categoria2",
+        "categoria3",
         "data_inizio",
         "data_fine",
         "coordinate",
         "lat",
         "lon",
         "indirizzo",
-        "quartiere"
+        "quartiere",
+        "online"
       ],
       "fields_present": [
-        "quartiere"
-      ],
-      "fields_missing": [
         "titolo",
         "categoria",
+        "categoria2",
+        "categoria3",
         "data_inizio",
         "data_fine",
         "coordinate",
+        "indirizzo",
+        "quartiere",
+        "online"
+      ],
+      "fields_missing": [
         "lat",
-        "lon",
-        "indirizzo"
+        "lon"
       ],
       "metrics": {
         "totale_anno": 28746,
-        "per_categoria": null,
-        "eventi_geo": null,
-        "pct_gratuiti": null,
-        "spesa_patrocinati": null
+        "per_categoria": [
+          {
+            "nome": "incontri",
+            "n": 8910
+          },
+          {
+            "nome": "musica",
+            "n": 8012
+          },
+          {
+            "nome": "spettacoli",
+            "n": 5751
+          },
+          {
+            "nome": "cinema",
+            "n": 1829
+          },
+          {
+            "nome": "mostre",
+            "n": 1135
+          },
+          {
+            "nome": "visite-guidate",
+            "n": 1010
+          },
+          {
+            "nome": "laboratori",
+            "n": 914
+          },
+          {
+            "nome": "altri-spazi",
+            "n": 460
+          },
+          {
+            "nome": "itinerari",
+            "n": 230
+          },
+          {
+            "nome": "istituzioni",
+            "n": 125
+          },
+          {
+            "nome": "gallerie",
+            "n": 64
+          },
+          {
+            "nome": "conferenze-e-convegni",
+            "n": 10
+          },
+          {
+            "nome": "libri",
+            "n": 9
+          },
+          {
+            "nome": "bibliotechebologna",
+            "n": 8
+          },
+          {
+            "nome": "campagne-mondo-rurale",
+            "n": 5
+          }
+        ],
+        "per_quartiere": [
+          {
+            "nome": "Santo Stefano",
+            "n": 10656
+          },
+          {
+            "nome": "Porto - Saragozza",
+            "n": 6245
+          },
+          {
+            "nome": "Navile",
+            "n": 3642
+          },
+          {
+            "nome": "San Donato - San Vitale",
+            "n": 2291
+          },
+          {
+            "nome": "Savena",
+            "n": 1447
+          },
+          {
+            "nome": "Borgo Panigale - Reno",
+            "n": 1191
+          },
+          {
+            "nome": "Fuori Bologna",
+            "n": 123
+          }
+        ],
+        "eventi_geo": [
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "Codeine"
+          },
+          {
+            "lat": 44.488541,
+            "lon": 11.348225,
+            "nome": "Barbascura X"
+          },
+          {
+            "lat": 44.49625,
+            "lon": 11.365653,
+            "nome": "ANNULLATO | Don Camillo e Peppone"
+          },
+          {
+            "lat": 44.522106,
+            "lon": 11.331491,
+            "nome": "Scopri la Fabbrica del Futuro"
+          },
+          {
+            "lat": 44.494171,
+            "lon": 11.343165,
+            "nome": "Il Viaggiatore Distante : Empire State"
+          },
+          {
+            "lat": 44.500149,
+            "lon": 11.404168,
+            "nome": "Tradizione futura. La stampa romagnola tra arte e mestiere"
+          },
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "Alfa Mist"
+          },
+          {
+            "lat": 44.493065,
+            "lon": 11.348032,
+            "nome": "Camera Jazz & Music Club: gli appuntamenti di maggio"
+          },
+          {
+            "lat": 44.496765,
+            "lon": 11.340928,
+            "nome": "Sharp Touch"
+          },
+          {
+            "lat": 44.496765,
+            "lon": 11.340928,
+            "nome": "Scherzo d'amore"
+          },
+          {
+            "lat": 44.484177,
+            "lon": 11.339301,
+            "nome": "I lasciti del colonialismo Italiano"
+          },
+          {
+            "lat": 44.4945195,
+            "lon": 11.3446861,
+            "nome": "StraBologna"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Marlene Kuntz"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Max Casacci | Earthphonia"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Gemini"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Amleto | Galleria Toledo"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Anfibia  | Leggere Strutture Art Factory"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Llabyellov | Carlo Cerato"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Eco del mondo | Tecnologia Filosofica"
+          },
+          {
+            "lat": 44.487694,
+            "lon": 11.34994,
+            "nome": "Peonia in Bloom – Art and decoration negli antichi orti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Limes - Il bluff globale"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "Untori"
+          },
+          {
+            "lat": 44.49617,
+            "lon": 11.329074,
+            "nome": "BOLERO AVANA"
+          },
+          {
+            "lat": 44.4956867,
+            "lon": 11.3531472,
+            "nome": "Dilaga ovunque"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Cuori in piena"
+          },
+          {
+            "lat": 44.506889,
+            "lon": 11.378275,
+            "nome": "Panchiko"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Gemini"
+          },
+          {
+            "lat": 44.489658,
+            "lon": 11.343971,
+            "nome": "Giovani in movimento. Proposte educative per le nuove generazioni"
+          },
+          {
+            "lat": 44.4999082,
+            "lon": 11.3543368,
+            "nome": "Kim Gordon"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Carl Brave + Rosa Chemical + Rose Villain"
+          },
+          {
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "Pak Yan Lau & Darin Gray"
+          },
+          {
+            "lat": 44.4855962,
+            "lon": 11.3547899,
+            "nome": "Ricordi Live"
+          },
+          {
+            "lat": 44.4892962,
+            "lon": 11.3191295,
+            "nome": "Building Comics. Una introduzione al rapporto tra Architettura e Fumetto"
+          },
+          {
+            "lat": 44.4914595,
+            "lon": 11.3432418,
+            "nome": "Il pozzo delle bambole"
+          },
+          {
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "Music Is The Best / Kilowatt presenta: Sceno-grafie"
+          },
+          {
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "Uomini che parlano di uomini – 1° workshop 2023"
+          },
+          {
+            "lat": 44.49721,
+            "lon": 11.342514,
+            "nome": "Le nozze di Figaro. Una folle giornata, un’epoca sul precipizio"
+          },
+          {
+            "lat": 44.502888,
+            "lon": 11.335162,
+            "nome": "«L’altro»: Lettura   laboratorio / I Racconti del Leone"
+          },
+          {
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Bologna Yarn Crawl 2023"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.354426,
+            "nome": "La scuola che sarà"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Educare al consenso dall’infanzia all’adolescenza | Serrenove"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Donne che parlano di uomini – Workshop 2023"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "Il cibo della memoria"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "Ciclo"
+          },
+          {
+            "lat": 44.501762,
+            "lon": 11.362873,
+            "nome": "Roots Balera | Ultima dance al Mercato Sonato"
+          },
+          {
+            "lat": 44.501762,
+            "lon": 11.362873,
+            "nome": "CLASSICAdaMercato | Air & Touch"
+          },
+          {
+            "lat": 44.494591,
+            "lon": 11.331166,
+            "nome": "Vinyl Club"
+          },
+          {
+            "lat": 44.494591,
+            "lon": 11.331166,
+            "nome": "Past1Trio"
+          },
+          {
+            "lat": 44.510406,
+            "lon": 11.344702,
+            "nome": "(D)alla Bolognina, l’anima artistica di una piccola Bologna"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "PREMIO BULGARELLI NUMBER 8"
+          },
+          {
+            "lat": 44.4763783,
+            "lon": 11.412993,
+            "nome": "Il Circo Sotto la Gru"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Performance teatrale «Alberi» + «Cricket Sonic Attack» Live"
+          },
+          {
+            "lat": 44.471573,
+            "lon": 11.278958,
+            "nome": "Live Abraço Branco | International Samba Street Band"
+          },
+          {
+            "lat": 44.471573,
+            "lon": 11.278958,
+            "nome": "Hop hop | Simone Romanò"
+          },
+          {
+            "lat": 44.471573,
+            "lon": 11.278958,
+            "nome": "Un po’ di Magia | Magico Turra"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Musica e opera"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Classica e pop"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "L’orco puzza"
+          },
+          {
+            "lat": 44.512733,
+            "lon": 11.396217,
+            "nome": "Concerto Sinfonico Orchestra Cemi di Bologna"
+          },
+          {
+            "lat": 44.5023548,
+            "lon": 11.334671,
+            "nome": "Il sogno di Kubic"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Cos’è quella cosa che"
+          },
+          {
+            "lat": 44.489567,
+            "lon": 11.349141,
+            "nome": "Gli anni di piombo al Sud"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "Domicili cosmici"
+          },
+          {
+            "lat": 44.5082004,
+            "lon": 11.3523313,
+            "nome": "Il mercato bio di Slow Food"
+          },
+          {
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Le logiche del confine e del sentiero"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Gemini"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "Il camerino che sogno"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "Il volto del male"
+          },
+          {
+            "lat": 44.4914595,
+            "lon": 11.3432418,
+            "nome": "A corpo vivo"
+          },
+          {
+            "lat": 44.5091026,
+            "lon": 11.3455713,
+            "nome": "SWAPE"
+          },
+          {
+            "lat": 44.49968,
+            "lon": 11.343528,
+            "nome": "Esito del laboratorio: I principi fondamentali. La Costituzione ideale"
+          },
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "La Domenica con il Laboratorio Sociale Afrobeat"
+          },
+          {
+            "lat": 44.491543,
+            "lon": 11.342807,
+            "nome": "GIUSEPPE ZANASI, LIBRAIO ANTIQUARIO E CREATORE DI LIBRI"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Bandabardò | Se mi rilasso collasso. Un libro suonato"
+          },
+          {
+            "lat": 44.534985,
+            "lon": 11.348874,
+            "nome": "Apprendisti astronauti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "GEOPOLITICA  CAPIRE IL MONDO IN GUERRA"
+          },
+          {
+            "lat": 44.493492,
+            "lon": 11.334393,
+            "nome": "Body of Knowledge"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "«Stanno arrivando»: incontro con Beatrice Pucci | Tecnica Mista"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione di «Please, Baby, Please»  +  «Swing, Baby, Swing!» | SEMI"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Red Bull BC One Cypher Italy 2023"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "Ricordi Live @Baraccano"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "Private Eye @Baraccano"
+          },
+          {
+            "lat": 44.5071907,
+            "lon": 11.3053014,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.4650459,
+            "lon": 11.3790846,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.490507,
+            "lon": 11.3214534,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.4661897,
+            "lon": 11.3850721,
+            "nome": "Burattinciclo"
+          },
+          {
+            "lat": 44.4989272,
+            "lon": 11.3444121,
+            "nome": "Chiuse aperte  | Va dove va l’acqua"
+          },
+          {
+            "lat": 44.4534933,
+            "lon": 11.3662848,
+            "nome": "Il canale di Flora - l’ultima rasdora"
+          },
+          {
+            "lat": 44.4534933,
+            "lon": 11.3662848,
+            "nome": "Cent’anni sciolti in un bicchiere - il mito di Charles Bukowski"
+          },
+          {
+            "lat": 44.504673,
+            "lon": 11.326874,
+            "nome": "Kruder & Dorfmeister Dj + Lizard"
+          },
+          {
+            "lat": 44.489231,
+            "lon": 11.325198,
+            "nome": "Mr Klein  + La Finestra sul Cortile"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Maria Perrotta"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Natalia Trull"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Eklectric Duo"
+          },
+          {
+            "lat": 44.489658,
+            "lon": 11.343971,
+            "nome": "Che fine farà la libertà?"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione  «Vers la Tendresse»  + SPORE: Percorsi di tenerezza Radicale | SEMI"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione «Ninjababy» | SEMI"
+          },
+          {
+            "lat": 44.4836313,
+            "lon": 11.3486316,
+            "nome": "Proiezione «Le variabili dipendenti» e «Winter Boy» + Incontro con Lorenzo Tarde"
+          },
+          {
+            "lat": 44.4669301,
+            "lon": 11.3120184,
+            "nome": "L'assenza cercata"
+          },
+          {
+            "lat": 44.4669301,
+            "lon": 11.3120184,
+            "nome": "Intorno ad Antonia"
+          },
+          {
+            "lat": 44.4912629,
+            "lon": 11.4037955,
+            "nome": "Coro Stelutis - Noi siam di primavera"
+          },
+          {
+            "lat": 44.4669301,
+            "lon": 11.3120184,
+            "nome": "I silenzi del mare"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "UOMINI SENZA"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Aspettando Gender Bender #2: Incontro con Ali Smith"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "La bomba"
+          },
+          {
+            "lat": 44.4935161,
+            "lon": 11.3342101,
+            "nome": "Nella mia città #Bologna"
+          },
+          {
+            "lat": 44.4964783,
+            "lon": 11.3420783,
+            "nome": "Hip Hop ClassiXBattle"
+          },
+          {
+            "lat": 44.496685,
+            "lon": 11.342465,
+            "nome": "Controtempo - percorsi sperimentali tra movimento e musica"
+          },
+          {
+            "lat": 44.4859472,
+            "lon": 11.3542691,
+            "nome": "Summer Dance - Danza popolare dell’infinito"
+          },
+          {
+            "lat": 44.4859472,
+            "lon": 11.3542691,
+            "nome": "Il Corpo delle Ombre"
+          },
+          {
+            "lat": 44.4964783,
+            "lon": 11.3420783,
+            "nome": "La Banda del B.U.C.O, piccola orchestra ellenica"
+          },
+          {
+            "lat": 44.500896,
+            "lon": 11.340207,
+            "nome": "Presentazione fanzine BODY/Z"
+          },
+          {
+            "lat": 44.4964783,
+            "lon": 11.3420783,
+            "nome": "Maṇḍala | geometrie sacre in danza"
+          },
+          {
+            "lat": 44.4984384,
+            "lon": 11.3422206,
+            "nome": "Palazzo Bonasoni e il suo portico affacciato sull’antico decumano"
+          },
+          {
+            "lat": 44.496685,
+            "lon": 11.342465,
+            "nome": "All’inizio della città di Roma"
+          },
+          {
+            "lat": 44.49527,
+            "lon": 11.348263,
+            "nome": "Alla scoperta di Palazzo Malvezzi"
+          },
+          {
+            "lat": 44.4989144,
+            "lon": 11.3420663,
+            "nome": "Ginevra Sforza 'Ben Ti Voglio'"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Certosa segreta"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Le forme del passato - la scoperta del presente"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Certosa officinale - segreti della natura all’ombra dei cipressi"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Chiostri inesplorati: capolavori nascosti alla Certosa"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Sentimenti scolpiti"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "Sunrise Garden"
+          },
+          {
+            "lat": 44.499422,
+            "lon": 11.3426323,
+            "nome": "Concerto dell'Orchestra di percussioni brasiliane"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "The Toasters (USA)"
+          },
+          {
+            "lat": 44.491543,
+            "lon": 11.342807,
+            "nome": "Può esserci sviluppo se aumentano le diseguaglianze?"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Cantodiscanto (Italia)"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Alamedadosoulna (Spagna)"
+          },
+          {
+            "lat": 44.493057,
+            "lon": 11.344259,
+            "nome": "Incontri in Libreria"
+          },
+          {
+            "lat": 44.491383,
+            "lon": 11.342881,
+            "nome": "Floria è un buon falco"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Mark Cunningham (leader dei Mars)"
+          },
+          {
+            "lat": 44.502597131638,
+            "lon": 11.335972597921,
+            "nome": "Muna Mussie. Bologna St.173, Un viaggio a ritroso. Congressi e Festival Eritrei "
+          },
+          {
+            "lat": 44.489231,
+            "lon": 11.325198,
+            "nome": "La notte del 12"
+          },
+          {
+            "lat": 44.4897493,
+            "lon": 11.3467242,
+            "nome": "Pizzardi grande benefattore"
+          },
+          {
+            "lat": 44.506096,
+            "lon": 11.296157,
+            "nome": "Andreas Gursky. Visual Spaces of Today"
+          },
+          {
+            "lat": 44.50272,
+            "lon": 11.336569,
+            "nome": "Laboratorio Aperto al Museo Morandi"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "MILLEPIANI 43. Le crepe del presente"
+          },
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "“Ruby Tuesday” w/ Johnny Mox live"
+          },
+          {
+            "lat": 44.508106,
+            "lon": 11.352334,
+            "nome": "“Ruby Tuesday” w/The Derricks live"
+          },
+          {
+            "lat": 44.4911758,
+            "lon": 11.3526772,
+            "nome": "Weekend cameristico di primavera"
+          },
+          {
+            "lat": 44.545815,
+            "lon": 11.358854,
+            "nome": "Aspettando il solstizio"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Festa in Cantiere | Dj set con ABO"
+          },
+          {
+            "lat": 44.5463924,
+            "lon": 11.3602251,
+            "nome": "Casa mobile a pedali"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Talk con Davide Celli  |  “Gli Ecosistemi'"
+          },
+          {
+            "lat": 44.545815,
+            "lon": 11.358854,
+            "nome": "Abaco"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Performance Live: KHOMPA"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Workshop Baby (3-8 anni): Come suona la musica della natura dentro di noi?"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Presentazione libro: Parla sostenibile di Silvia Moroni"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Presentazione graphic novel: Il mondo senza fine di Jean-Marc Jancovici e Christ"
+          },
+          {
+            "lat": 44.483631,
+            "lon": 11.348632,
+            "nome": "Proiezione del film: Everything will change di Marten Persiel"
+          },
+          {
+            "lat": 44.491829,
+            "lon": 11.343406,
+            "nome": "Il ratto del fanciullo"
+          },
+          {
+            "lat": 44.510406,
+            "lon": 11.344702,
+            "nome": "(D)alla Bolognina, l’anima artistica di una piccola Bologna  | Giugno"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "LADRA"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "La bellezza. Istruzioni per l'uso"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Ritratti di ritratti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Bologna Genius Loci. Quattro giornate con Giosuè Carducci"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Giorgio Manganelli. Emigrazioni oniriche, scritti sulle arti"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Le parole di Gesù"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Michele Mellara presenta Sociopatici in cerca d’affetto"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Storia senza fine"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "La classica giovane  + Alberto Capelli"
+          },
+          {
+            "lat": 44.494057,
+            "lon": 11.334484,
+            "nome": "Festa della Musica"
+          },
+          {
+            "lat": 44.484177,
+            "lon": 11.339301,
+            "nome": "Il primo pensiero del mattino"
+          },
+          {
+            "lat": 44.48962,
+            "lon": 11.343453,
+            "nome": "Echi medievali: dichiarazioni di guerra, d’amore e di pace"
+          },
+          {
+            "lat": 44.48962,
+            "lon": 11.343453,
+            "nome": "Concerto per un amico"
+          },
+          {
+            "lat": 44.492359,
+            "lon": 11.348164,
+            "nome": "S. Stefano : la Santa Gerusalemme Bolognese"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.343095,
+            "nome": "Orchestra del Conservatorio G.B. Martini – Direttrice Oksana Lyniv"
+          },
+          {
+            "lat": 44.491001,
+            "lon": 11.351026,
+            "nome": "Respighi, compositore senza tempo"
+          },
+          {
+            "lat": 44.491001,
+            "lon": 11.351026,
+            "nome": "Emy Bernecoli violino, Elia Andrea Corazza pianoforte"
+          },
+          {
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Alla scoperta dei luoghi di Respighi"
+          },
+          {
+            "lat": 44.485676,
+            "lon": 11.354102,
+            "nome": "Cena a Casa Respighi"
+          },
+          {
+            "lat": 44.58036,
+            "lon": 11.400828,
+            "nome": "Trent’anni di grano - Teatro delle Ariette"
+          },
+          {
+            "lat": 44.4790957,
+            "lon": 11.3242235,
+            "nome": "All’eremo di Ronzano: dai frati gaudenti agli splendori del Risorgimento"
+          },
+          {
+            "lat": 44.50341,
+            "lon": 11.34525,
+            "nome": "Fontane, scaloni e battaglie"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "A caccia di animali e mostri: armiamoci (...di torcia) e partiamo!"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "Fricandò alla bolognese: fatti, misfatti, gentaglia e nobiltà.  Quartiere di por"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "Fricandò alla bolognese: fatti, misfatti, gentaglia e nobiltà.  Quartiere di Por"
+          },
+          {
+            "lat": 44.6594437,
+            "lon": 11.2878597,
+            "nome": "Palazzo Minelli e ‘La Mazurca del Marchese, della santa e del Fico fiorone’"
+          },
+          {
+            "lat": 44.38741,
+            "lon": 11.5361726,
+            "nome": "Cirque Bidon | tour in Emilia-Romagna"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Michele Della Valentina trio"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Corale Orfeonica"
+          },
+          {
+            "lat": 44.4921195,
+            "lon": 11.3341502,
+            "nome": "Fiori di pietra, Bologna magica in verde… a caccia della natura dipinta, scolpit"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Voglia di Bello – Gli Impressionisti e Debussy"
+          },
+          {
+            "lat": 44.4945195,
+            "lon": 11.3446861,
+            "nome": "B.great – La ricerca si fa strada"
+          },
+          {
+            "lat": 44.4976658,
+            "lon": 11.351835,
+            "nome": "La guerra capitalista"
+          },
+          {
+            "lat": 44.4910308,
+            "lon": 11.3441489,
+            "nome": "Qui tiriamo giù tutto!"
+          },
+          {
+            "lat": 44.5004877,
+            "lon": 11.35479,
+            "nome": "Clap Your Hands Say Yeah"
+          },
+          {
+            "lat": 44.5004877,
+            "lon": 11.35479,
+            "nome": "Muro del Canto"
+          },
+          {
+            "lat": 44.5004877,
+            "lon": 11.35479,
+            "nome": "Statuto"
+          },
+          {
+            "lat": 44.5113348,
+            "lon": 11.3944639,
+            "nome": "Mnemosyne"
+          },
+          {
+            "lat": 44.514271,
+            "lon": 11.28391,
+            "nome": "Ipotesi d'amore"
+          },
+          {
+            "lat": 44.4852151,
+            "lon": 11.3539206,
+            "nome": "MarQuette n. 10"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Fabri Fibra"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "James Bay"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Tintoria Podcast Live"
+          },
+          {
+            "lat": 44.5253093,
+            "lon": 11.3510455,
+            "nome": "Carmen Consoli"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "C'era una volta il sesso"
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.346453,
+            "nome": "STORIE AD ALTA TENSIONE | ITINERARI IN NOIR"
+          },
+          {
+            "lat": 44.490967,
+            "lon": 11.356309,
+            "nome": "International Jazz & Art Performing 5.0"
+          },
+          {
+            "lat": 44.502597131638,
+            "lon": 11.335972597921,
+            "nome": "Morena Poltronieri e Ernesto Fazioli. STREGA DONNA DEA"
+          },
+          {
+            "lat": 44.5062681,
+            "lon": 11.3327687,
+            "nome": "Il Navile e i Sostegni"
+          },
+          {
+            "lat": 44.5107048,
+            "lon": 11.3401772,
+            "nome": "Mo sóppa, che spetâcuel! in Piazza Lucio Dalla"
+          },
+          {
+            "lat": 44.494887,
+            "lon": 11.3426163,
+            "nome": "Dinobike - Il mondo di Dino Gavina"
+          },
+          {
+            "lat": 44.4890434,
+            "lon": 11.3549056,
+            "nome": "Donne con lo zaino."
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Elisa Genghini presenta Ballate per galline vecchie"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Dangeons & Dragons"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Lydia Lunch  + Retrovirus"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "La classica giovane  +  Ground 71"
+          },
+          {
+            "lat": 44.4939679,
+            "lon": 11.3388606,
+            "nome": "La Chiesa del SS. Salvatore riaperta: un grandioso scrigno d'arte"
+          },
+          {
+            "lat": 44.4941405,
+            "lon": 11.3438098,
+            "nome": "Il giallo delle torri: 101 modi per sbarazzarsi del consorte"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Gyal Show Off"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Kublai, Drag.One e I Bomburdiani"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Disegno al metro!"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Davide Toffolo"
+          },
+          {
+            "lat": 44.4977566,
+            "lon": 11.3534957,
+            "nome": "Premio di incisione Giorgio Morandi"
+          },
+          {
+            "lat": 44.493271,
+            "lon": 11.309897,
+            "nome": "Marco Mengoni | Marco negli Stadi 2023"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "B612 APS"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "Ritorno nella città senza nome"
+          },
+          {
+            "lat": 44.496685,
+            "lon": 11.342465,
+            "nome": "...quello è uno di loro."
+          },
+          {
+            "lat": 44.497826,
+            "lon": 11.30709,
+            "nome": "Viaggio nel Tempio dell’immortalità"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Svetalia - Il Bel Paese"
+          },
+          {
+            "lat": 44.545815,
+            "lon": 11.358854,
+            "nome": "Mentre Bologna dorme"
+          },
+          {
+            "lat": 44.493945,
+            "lon": 11.3432071,
+            "nome": "E buio fu"
+          },
+          {
+            "lat": 44.497826,
+            "lon": 11.30709,
+            "nome": "Maratona in Certosa | la storia dell'arte bolognese dal 1801 ad oggi"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "I portici, di e con Paolo Nori"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Frulli, passetti e denzi… ecco a voi la Filuzzi!"
+          },
+          {
+            "lat": 44.49229,
+            "lon": 11.351945,
+            "nome": "Frammenti di Bologna neoclassica"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Mare urbano"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Once on this island"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Solastalgia + CrePa"
+          },
+          {
+            "lat": 44.498775,
+            "lon": 11.349415,
+            "nome": "La pianura dei portici"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Cantanti e opere nella storia - Seconda parte"
+          },
+          {
+            "lat": 44.4955505,
+            "lon": 11.3317814,
+            "nome": "AGAIN"
+          },
+          {
+            "lat": 44.4956867,
+            "lon": 11.3531472,
+            "nome": "Corpi, relazioni assenze"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Teatro a Molla"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Marzia & Mauro Live"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Maisazi Live Coverband"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Corale Quadriclavio"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Dancing for the Gods"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Statale 24"
+          },
+          {
+            "lat": 44.492085,
+            "lon": 11.352019,
+            "nome": "Rossini per “il Rossini” | Concerto di beneficienza per la Romagna"
+          },
+          {
+            "lat": 44.5398628,
+            "lon": 11.3516395,
+            "nome": "Sea Shepherd"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "L’Ottocento tra arte, balli e tableaux vivants"
+          },
+          {
+            "lat": 44.492085,
+            "lon": 11.352019,
+            "nome": "Da Cimabue a Guercino: i segreti della Basilica dei Servi"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Suoni di passaggio"
+          },
+          {
+            "lat": 44.498802,
+            "lon": 11.337701,
+            "nome": "Visita guidata alla mostra Dinamiche dell‘equilibrio"
+          },
+          {
+            "lat": 44.4927335,
+            "lon": 11.3113288,
+            "nome": "Cedar's Blues"
+          },
+          {
+            "lat": 44.5075281,
+            "lon": 11.3577581,
+            "nome": "Shared Kitchen - Camerun"
+          },
+          {
+            "lat": 44.491291,
+            "lon": 11.319671,
+            "nome": "La strega Sibilla e il gatto Serafino"
+          },
+          {
+            "lat": 44.4919994,
+            "lon": 11.3514821,
+            "nome": "Confini"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "Un autunno caldo"
+          },
+          {
+            "lat": 44.498802,
+            "lon": 11.337701,
+            "nome": "Barend Middelhoff - Matteo Raggi Quintet"
+          },
+          {
+            "lat": 44.502597131638,
+            "lon": 11.335972597921,
+            "nome": "Francesco Targhetta in dialogo con Lorenzo Modica"
+          },
+          {
+            "lat": 44.499748,
+            "lon": 11.350492,
+            "nome": "LA CRITICA RADICALE IN ITALIA"
+          },
+          {
+            "lat": 44.493755,
+            "lon": 11.344961,
+            "nome": "MOSAICO, NEL NOME DEL PADRE"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "La casa sul Nilo"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "Violenza e giustizia"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "LA FELICITÀ È UNA COSA SEMPLICE"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "Storia della pizza"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "UN BUON POSTO IN CUI FERMARSI"
+          },
+          {
+            "lat": 44.4927571,
+            "lon": 11.339519,
+            "nome": "Non aprire quella morta"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Le cinquantaquattro ferite di Federico Aldrovandi"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Cogne, il primo delitto mediatico"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "Slavi Bravissime Persone"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "Queendom"
+          },
+          {
+            "lat": 44.481262,
+            "lon": 11.381327,
+            "nome": "Palestina oggi"
+          },
+          {
+            "lat": 44.5046726,
+            "lon": 11.3268744,
+            "nome": "La cicala e la formica"
+          },
+          {
+            "lat": 44.510216,
+            "lon": 11.344572,
+            "nome": "LE VOLPI NELL'AIA"
+          },
+          {
+            "lat": 44.491459,
+            "lon": 11.343242,
+            "nome": "Intellettuale nelle istituzioni"
+          },
+          {
+            "lat": 44.4894481,
+            "lon": 11.3120507,
+            "nome": "Filottete dimenticato"
+          },
+          {
+            "lat": 44.502354,
+            "lon": 11.334671,
+            "nome": "Accendere la lettura 2023"
+          },
+          {
+            "lat": 44.490101,
+            "lon": 11.346835,
+            "nome": "Orchestra del Collegium Musicum"
+          },
+          {
+            "lat": 44.4885412,
+            "lon": 11.3482249,
+            "nome": "Elena la bella"
+          },
+          {
+            "lat": 44.4885412,
+            "lon": 11.3482249,
+            "nome": "Pandora e il vaso segreto"
+          },
+          {
+            "lat": 44.507893,
+            "lon": 11.297527,
+            "nome": "Buchi bianchi"
+          },
+          {
+            "lat": 44.477551,
+            "lon": 11.310175,
+            "nome": "Laboratorio di Field Recording"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Un corpo mai visto!"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Invisibilia"
+          },
+          {
+            "lat": 44.444218,
+            "lon": 11.355163,
+            "nome": "Laboratorio di movimento e incorporazione Haraway “Seminare mondi”"
+          },
+          {
+            "lat": 44.4956867,
+            "lon": 11.3531472,
+            "nome": "Premio Calvino. Enrico Renzi presenta Pizzini"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Una notte a Venezia"
+          },
+          {
+            "lat": 44.47002,
+            "lon": 11.370762,
+            "nome": "Festival D’Autore – Tributo a Fabrizio De André"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Dream a little dream. Sogno diversamente blues"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "Enzo Tortora. Storia di un galantuomo"
+          },
+          {
+            "lat": 44.494637,
+            "lon": 11.341932,
+            "nome": "Anna Magnani, l'irripetibile"
+          },
+          {
+            "lat": 44.494987,
+            "lon": 11.334493,
+            "nome": "As Madalenas Live Quintet"
+          },
+          {
+            "lat": 44.512211,
+            "lon": 11.357157,
+            "nome": "James Senese JNC"
+          },
+          {
+            "lat": 44.512211,
+            "lon": 11.357157,
+            "nome": "Olivia Belli | Intime corde"
+          },
+          {
+            "lat": 44.4953584,
+            "lon": 11.347164,
+            "nome": "Note di Solidarietà, concerto di beneficenza"
+          },
+          {
+            "lat": 44.4935076,
+            "lon": 11.3554743,
+            "nome": "Gran serata Orfeonica"
+          },
+          {
+            "lat": 44.49968,
+            "lon": 11.343528,
+            "nome": "Voci di donne"
+          },
+          {
+            "lat": 44.49968,
+            "lon": 11.343528,
+            "nome": "Molto dolore per nulla"
+          },
+          {
+            "lat": 44.732849,
+            "lon": 11.17808,
+            "nome": "Il corpo dell’invisibile - una giornata intorno all’arte di Peter Brook"
+          },
+          {
+            "lat": 44.500797,
+            "lon": 11.346006,
+            "nome": "Laura Agnusdei"
+          },
+          {
+            "lat": 44.5146136,
+            "lon": 11.2879567,
+            "nome": "Ipotesi d'amore | day #2"
+          },
+          {
+            "lat": 44.515144,
+            "lon": 11.281613,
+            "nome": "Ipotesi d'amore | day #4"
+          },
+          {
+            "lat": 44.49461,
+            "lon": 11.342381,
+            "nome": "In movimento continuo"
+          },
+          {
+            "lat": 44.49461,
+            "lon": 11.342381,
+            "nome": "Inaugurazione esposizione | In movimento continuo"
+          },
+          {
+            "lat": 44.513321,
+            "lon": 11.350051,
+            "nome": "Odessa. Solo Piano | A Musical Walk Through a Legendary City"
+          },
+          {
+            "lat": 44.49785857806155,
+            "lon": 11.307082272177954,
+            "nome": "Cose dell'altro mondo"
+          }
+        ],
+        "pct_online": 0
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/eventi-bologna-agenda-cultura/exports/json",
       "resource_format": "JSON",

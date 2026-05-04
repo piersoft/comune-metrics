@@ -37,9 +37,8 @@
         "totale": null,
         "per_stato": null,
         "opere_geo": null,
-        "cup": null,
+        "cup_count": null,
         "importo_totale": null,
-        "sal_medio": null,
         "per_fonte": null
       }
     },
@@ -53,16 +52,15 @@
         "esito",
         "chiusura",
         "via",
-        "civico"
+        "civico",
+        "anno_prot"
       ],
       "metrics": {
         "totale": null,
         "per_tipo": null,
         "per_esito": null,
         "tasso_chiusura": null,
-        "tempo_medio_scia": null,
-        "tempo_medio_pdc": null,
-        "pct_nei_termini": null
+        "serie_anni": null
       }
     },
     "patrimonio": {
@@ -80,17 +78,15 @@
       ],
       "metrics": {
         "totale_immobili": null,
-        "per_categoria": null,
+        "per_tipo": null,
         "immobili_geo": null,
-        "pct_vincolo_culturale": null,
-        "valore_totale": null,
-        "pct_inutilizzati": null
+        "pct_vincolo": null
       }
     },
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-quartiere-e-per-classe-di-eta-al-31-12-2025",
-      "fetched_at": "2026-05-04T18:46:12.621Z",
+      "fetched_at": "2026-05-04T20:15:09.021Z",
       "status": "ok",
       "modified": "2026-04-14",
       "freshness": {
@@ -120,13 +116,7 @@
         "totale_residenti": null,
         "serie_anni": null,
         "serie_residenti": null,
-        "pop_0_14": null,
-        "pop_65plus": null,
-        "per_quartiere": null,
-        "nati": null,
-        "morti": null,
-        "iscritti": null,
-        "cancellati": null
+        "per_quartiere": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=7851&type=1&format=csv",
       "resource_format": "CSV",
@@ -135,7 +125,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "dentro-il-bilancio-2024",
-      "fetched_at": "2026-05-04T18:46:14.918Z",
+      "fetched_at": "2026-05-04T20:15:13.642Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -147,6 +137,8 @@
       "fields_expected": [
         "missione",
         "programma",
+        "titolo",
+        "macroaggregato",
         "importo",
         "anno"
       ],
@@ -154,14 +146,15 @@
       "fields_missing": [
         "missione",
         "programma",
+        "titolo",
+        "macroaggregato",
         "importo",
         "anno"
       ],
       "metrics": {
         "totale_uscite": null,
         "per_missione": null,
-        "top10_programmi": null,
-        "serie_anni": null
+        "top10_programmi": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=7700&type=1&format=csv",
       "resource_format": "CSV",
@@ -170,8 +163,8 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "siast-servizi-integrati-assistenza-sociale-territoriale",
-      "fetched_at": "2026-05-04T18:46:17.073Z",
-      "status": "fetch_error",
+      "fetched_at": "2026-05-04T20:15:15.863Z",
+      "status": "unsupported_format",
       "modified": "2014-03-26",
       "freshness": {
         "level": "stale",
@@ -195,17 +188,16 @@
         "per_target": null,
         "per_categoria": null,
         "spesa_totale": null,
-        "spesa_media": null,
-        "pct_accolte": null
+        "spesa_media": null
       },
       "resource_url": "http://tms.comune.fi.it/tiles/service/wms?request=GetCapabilities&service=WMS&tiled=TRUE&version=1.3.0",
       "resource_format": "WMS",
-      "error": "Server ha restituito HTML invece di dati"
+      "error": "Formato WMS non parsabile (richiesti: JSON, JSONL, CSV)"
     },
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
-      "fetched_at": "2026-05-04T18:46:21.968Z",
+      "fetched_at": "2026-05-04T20:15:16.674Z",
       "status": "ok",
       "modified": "2018-07-30",
       "freshness": {
@@ -237,10 +229,7 @@
         "totale_iscritti": null,
         "per_struttura": null,
         "per_quartiere": null,
-        "plessi_geo": null,
-        "posti_totali": null,
-        "lista_attesa": null,
-        "tasso_copertura": null
+        "serie_anni": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=6685&type=1&format=csv",
       "resource_format": "CSV",
@@ -249,7 +238,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "numero-incidenti-stradali-per-quartiere-anno-2014",
-      "fetched_at": "2026-05-04T18:46:26.163Z",
+      "fetched_at": "2026-05-04T20:15:17.947Z",
       "status": "ok",
       "modified": "2015-08-04",
       "freshness": {
@@ -266,9 +255,14 @@
         "n_morti",
         "lat",
         "lon",
+        "pin_point",
         "via",
         "gravita",
-        "zona"
+        "zona",
+        "n_pedoni_m",
+        "n_pedoni_f",
+        "n_cicl_m",
+        "n_cicl_f"
       ],
       "fields_present": [],
       "fields_missing": [
@@ -279,19 +273,22 @@
         "n_morti",
         "lat",
         "lon",
+        "pin_point",
         "via",
         "gravita",
-        "zona"
+        "zona",
+        "n_pedoni_m",
+        "n_pedoni_f",
+        "n_cicl_m",
+        "n_cicl_f"
       ],
       "metrics": {
         "totale_anno": 5,
-        "n_morti": null,
-        "n_feriti": null,
-        "serie_mensile": null,
+        "totale_morti": null,
+        "totale_feriti": null,
         "per_zona": null,
         "hot_spots": null,
-        "indice_mortalita": null,
-        "pct_pedoni_ciclisti": null
+        "vittime_vulnerabili": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=5371&type=1&format=csv",
       "resource_format": "CSV",
@@ -300,7 +297,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "quantita-di-rifiuti-urbani-anni-2000-2014",
-      "fetched_at": "2026-05-04T18:46:27.552Z",
+      "fetched_at": "2026-05-04T20:15:19.447Z",
       "status": "ok",
       "modified": "2015-04-16",
       "freshness": {
@@ -313,6 +310,13 @@
         "anno",
         "mese",
         "rd_pct",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato",
         "frazione",
         "kg",
         "zona"
@@ -322,17 +326,22 @@
         "anno",
         "mese",
         "rd_pct",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato",
         "frazione",
         "kg",
         "zona"
       ],
       "metrics": {
-        "rd_pct": null,
+        "rd_pct_ultimo_anno": null,
         "serie_anni": null,
-        "per_zona": null,
-        "composizione": null,
-        "pro_capite_kg": null,
-        "serie_mensile": null
+        "per_quartiere": null,
+        "trend_pct": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=5167&type=1&format=csv",
       "resource_format": "CSV",
@@ -341,8 +350,8 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "teatri-e-luoghi-per-eventi",
-      "fetched_at": "2026-05-04T18:46:29.462Z",
-      "status": "fetch_error",
+      "fetched_at": "2026-05-04T20:15:20.640Z",
+      "status": "unsupported_format",
       "modified": "2025-06-15",
       "freshness": {
         "level": "fresh",
@@ -353,31 +362,34 @@
       "fields_expected": [
         "titolo",
         "categoria",
+        "categoria2",
+        "categoria3",
         "data_inizio",
         "data_fine",
         "coordinate",
         "lat",
         "lon",
         "indirizzo",
-        "quartiere"
+        "quartiere",
+        "online"
       ],
       "fields_present": null,
       "fields_missing": null,
       "metrics": {
         "totale_anno": null,
         "per_categoria": null,
+        "per_quartiere": null,
         "eventi_geo": null,
-        "pct_gratuiti": null,
-        "spesa_patrocinati": null
+        "pct_online": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=6856&type=99&format=url&file_format=rdf&file_id=22523",
       "resource_format": "RDF",
-      "error": "Server ha restituito HTML invece di dati"
+      "error": "Formato RDF non parsabile (richiesti: JSON, JSONL, CSV)"
     },
     "delibere": {
       "dataset_key": "delibere",
       "slug": "delibere-anno-2023",
-      "fetched_at": "2026-05-04T18:46:32.530Z",
+      "fetched_at": "2026-05-04T20:15:21.038Z",
       "status": "ok",
       "modified": "2023-12-27",
       "freshness": {
@@ -402,8 +414,7 @@
       "metrics": {
         "totale_anno": 13,
         "per_tipo": null,
-        "tempo_medio_pubblicazione": null,
-        "pct_nei_termini": null
+        "serie_anni": null
       },
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=7511&type=1&format=csv",
       "resource_format": "CSV",
