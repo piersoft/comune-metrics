@@ -1,4 +1,4 @@
-# Paniere OpenData ComuneMetrics — Specifica v2.3
+# Paniere OpenData ComuneMetrics — Specifica v2.4
 
 **Data:** Maggio 2026
 **Licenza dati raccomandata:** CC-BY 4.0 o IODL 2.0
@@ -231,7 +231,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
 
-> Esempio derivato dal dataset reale **"Popolazione residente per età, sesso, cittadinanza, quartiere e zona — serie storica dal 1986"** pubblicato dal Comune di Bologna su dati.gov.it (id `e770f5f1-9156-4612-b5ad-ee7b4bc6018d`).
+> Esempio derivato dal dataset reale **"Popolazione residente per età, sesso, cittadinanza, quartiere e zona — serie storica dal 1986"** pubblicato dal Comune di Bologna su dati.gov.it (id `popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog`).
 
 ```turtle
 # DataSet di tipo qb:DataSet
@@ -242,7 +242,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     qb:structure <https://w3id.org/italia/data/comune-metrics/dsd/population> ;
     dct:issued "2025-01-31"^^xsd:date ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=e770f5f1-9156-4612-b5ad-ee7b4bc6018d> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog> .
 
 # Una osservazione: residenti 30-44 anni, donne, italiane, Quartiere San Vitale, anno 2024
 <https://w3id.org/italia/data/c_a944/population-observation/2024-SAN_VITALE-30_44-F-ITA>
@@ -314,7 +314,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Milano, codice IPA `c_f205`)
 
-> Esempio derivato dal dataset reale **"Bilancio trasparente: Spesa corrente per missioni e programmi"** pubblicato dal Comune di Milano su dati.gov.it (id `9136135e-192d-4ffe-9a1f-6221e63a1df3`).
+> Esempio derivato dal dataset reale **"Bilancio trasparente: Spesa corrente per missioni e programmi"** pubblicato dal Comune di Milano su dati.gov.it (id `bilancio-trasparente-spesa-corrente-per-missioni-e-programmi`).
 
 ```turtle
 <https://w3id.org/italia/data/c_f205/budget-dataset/2024>
@@ -324,7 +324,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     qb:structure <https://w3id.org/italia/data/comune-metrics/dsd/budget> ;
     dct:conformsTo <https://www.gazzettaufficiale.it/eli/id/2012/04/26/12A04652/sg> ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=9136135e-192d-4ffe-9a1f-6221e63a1df3> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=bilancio-trasparente-spesa-corrente-per-missioni-e-programmi> .
 
 <https://w3id.org/italia/data/c_f205/budget-observation/2024-RENDICONTO-04-01-1>
     a qb:Observation ;
@@ -405,7 +405,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
 
-> Esempio derivato dal dataset reale **"Lavori in corso in città"** pubblicato dal Comune di Bologna su dati.gov.it (id `d64e15bc-ba85-453e-af0b-2c2338c08158`). Il CUP è di esempio plausibile.
+> Esempio derivato dal dataset reale **"Lavori in corso in città"** pubblicato dal Comune di Bologna su dati.gov.it (id `lavori-in-corso-in-citta`). Il CUP è di esempio plausibile.
 
 ```turtle
 <https://w3id.org/italia/data/c_a944/public-work/J33B22000180001>
@@ -430,7 +430,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     geo:long "11.3426"^^xsd:decimal ;
     <https://w3id.org/italia/data/comune-metrics/property/hasRUP>
         <https://w3id.org/italia/data/c_a944/person/rup-anonymized> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=d64e15bc-ba85-453e-af0b-2c2338c08158> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=lavori-in-corso-in-citta> .
 
 # Cronoprogramma previsto
 <https://w3id.org/italia/data/c_a944/time-interval/J33B22000180001-planned>
@@ -487,7 +487,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
 
-> Esempio derivato dal dataset reale **"CILA-comunicazioni inizio lavori"** pubblicato dal Comune di Bologna su dati.gov.it (id `046f5414-ef0e-4a07-a55d-21d4e6d7ab7d`).
+> Esempio derivato dal dataset reale **"CILA-comunicazioni inizio lavori"** pubblicato dal Comune di Bologna su dati.gov.it (id `cila-comunicazioni-inizio-lavori`).
 
 ```turtle
 <https://w3id.org/italia/data/c_a944/building-procedure/CILA-2024-005678>
@@ -504,7 +504,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     <https://w3id.org/italia/data/comune-metrics/property/processingTimeInterval>
         <https://w3id.org/italia/data/c_a944/time-interval/CILA-2024-005678-processing> ;
     cpsvap:isOwnedBy <https://w3id.org/italia/data/c_a944/public-organization/comune-bologna> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=046f5414-ef0e-4a07-a55d-21d4e6d7ab7d> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=cila-comunicazioni-inizio-lavori> .
 
 <https://w3id.org/italia/data/c_a944/time-interval/CILA-2024-005678-processing>
     a ti:TimeInterval ;
@@ -554,7 +554,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Lecce, codice IPA `c_e506`)
 
-> Esempio derivato dal dataset reale **"Numero pratiche evase dal Settore Servizi Sociali del Comune di Lecce"** pubblicato dal Comune di Lecce su dati.gov.it (id `cef61e18-18bc-496f-951e-2b949b7ccad4`).
+> Esempio derivato dal dataset reale **"Numero pratiche evase dal Settore Servizi Sociali del Comune di Lecce"** pubblicato dal Comune di Lecce su dati.gov.it (id `numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016`).
 
 ```turtle
 # Servizio PA erogato (CPSV-AP)
@@ -580,7 +580,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     <https://w3id.org/italia/data/comune-metrics/property/totalExpenditure> "285000.00"^^xsd:decimal ;
     <https://w3id.org/italia/data/comune-metrics/property/userCoPayment> "35000.00"^^xsd:decimal ;
     <https://w3id.org/italia/data/comune-metrics/property/targetPopulation> "8500"^^xsd:nonNegativeInteger ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=cef61e18-18bc-496f-951e-2b949b7ccad4> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016> .
 ```
 
 ---
@@ -623,7 +623,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Lecce, codice IPA `c_e506`)
 
-> Esempio derivato dal dataset reale **"Elenco e ubicazione asili nido comunali Lecce"** pubblicato dal Comune di Lecce su dati.gov.it (id `3d12df6d-b8f1-4f8f-9b21-ada0274da3c8`). L'asilo "Il Piccolo Principe" è un asilo nido comunale realmente esistente a Lecce.
+> Esempio derivato dal dataset reale **"Elenco e ubicazione asili nido comunali Lecce"** pubblicato dal Comune di Lecce su dati.gov.it (id `elenco-e-ubicazione-asili-nido-comunali-lecce`). L'asilo "Il Piccolo Principe" è un asilo nido comunale realmente esistente a Lecce.
 
 ```turtle
 <https://w3id.org/italia/data/c_e506/school-facility/il-piccolo-principe-2024-2025>
@@ -644,7 +644,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     geo:lat "40.3528"^^xsd:decimal ;
     geo:long "18.1718"^^xsd:decimal ;
     culturalon:isOwnedBy <https://w3id.org/italia/data/c_e506/public-organization/comune-lecce> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=3d12df6d-b8f1-4f8f-9b21-ada0274da3c8> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=elenco-e-ubicazione-asili-nido-comunali-lecce> .
 
 <https://w3id.org/italia/data/c_e506/address/il-piccolo-principe>
     a clv:Address ;
@@ -698,7 +698,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Firenze, codice IPA `c_d612`)
 
-> Esempio derivato dal dataset reale **"Numero incidenti stradali per Quartiere"** pubblicato dal Comune di Firenze su dati.gov.it (id `b78af8c5-af19-42ea-81e6-196b2df59ca0`). Il singolo evento è di esempio plausibile (Firenze ha quartieri Q1-Q5; Q1 è il Centro Storico).
+> Esempio derivato dal dataset reale **"Numero incidenti stradali per Quartiere"** pubblicato dal Comune di Firenze su dati.gov.it (id `numero-incidenti-stradali-per-quartiere-anno-2014`). Il singolo evento è di esempio plausibile (Firenze ha quartieri Q1-Q5; Q1 è il Centro Storico).
 
 ```turtle
 <https://w3id.org/italia/data/c_d612/road-accident/INC-2024-04-0123>
@@ -722,7 +722,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     clv:hasAddress <https://w3id.org/italia/data/c_d612/address/inc-2024-04-0123> ;
     geo:lat "43.7711"^^xsd:decimal ;
     geo:long "11.2552"^^xsd:decimal ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=b78af8c5-af19-42ea-81e6-196b2df59ca0> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=numero-incidenti-stradali-per-quartiere-anno-2014> .
 
 <https://w3id.org/italia/data/c_d612/address/inc-2024-04-0123>
     a clv:Address ;
@@ -765,7 +765,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
 
-> Esempio derivato dal dataset reale **"Indicatori Raccolta Differenziata"** pubblicato dal Comune di Bologna su dati.gov.it (id `3321dad8-2d58-48bc-9b37-d21efc87d623`). Il dataset Bologna riporta la % differenziata per quartiere (Centro, Borgo Panigale, ecc.); l'esempio mostra una osservazione di volume per la frazione organico.
+> Esempio derivato dal dataset reale **"Indicatori Raccolta Differenziata"** pubblicato dal Comune di Bologna su dati.gov.it (id `indicatori-raccolta-differenziata`). Il dataset Bologna riporta la % differenziata per quartiere (Centro, Borgo Panigale, ecc.); l'esempio mostra una osservazione di volume per la frazione organico.
 
 ```turtle
 <https://w3id.org/italia/data/c_a944/waste-dataset/2024>
@@ -774,7 +774,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     dct:publisher <https://w3id.org/italia/data/c_a944/public-organization/comune-bologna> ;
     qb:structure <https://w3id.org/italia/data/comune-metrics/dsd/waste> ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=3321dad8-2d58-48bc-9b37-d21efc87d623> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=indicatori-raccolta-differenziata> .
 
 <https://w3id.org/italia/data/c_a944/waste-observation/2024-04-TOTALE_COMUNE-ORGANICO>
     a qb:Observation ;
@@ -838,7 +838,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Lecce, codice IPA `c_e506`)
 
-> Esempio derivato dal dataset reale **"Eventi culturali ricorrenti"** pubblicato dal Comune di Lecce su dati.gov.it (id `44f1e470-0432-4a38-b865-86627aa656a7`).
+> Esempio derivato dal dataset reale **"Eventi culturali ricorrenti"** pubblicato dal Comune di Lecce su dati.gov.it (id `eventi-culturali-ricorrenti`).
 
 ```turtle
 <https://w3id.org/italia/data/c_e506/cultural-event/EV-2024-0234>
@@ -856,7 +856,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     <https://w3id.org/italia/data/comune-metrics/property/hasVenue>
         <https://w3id.org/italia/data/c_e506/point-of-interest/piazza-sant-oronzo> ;
     culturalon:isOwnedBy <https://w3id.org/italia/data/c_e506/public-organization/comune-lecce> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=44f1e470-0432-4a38-b865-86627aa656a7> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=eventi-culturali-ricorrenti> .
 
 <https://w3id.org/italia/data/c_e506/time-interval/EV-2024-0234>
     a ti:TimeInterval ;
@@ -911,7 +911,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Firenze, codice IPA `c_d612`)
 
-> Esempio derivato dal dataset reale **"Delibere - Anno 2023"** del Consiglio Comunale di Firenze pubblicato su dati.gov.it (id `c5ccc140-8af8-4174-899e-a227c261422f`). I valori del singolo atto sono di esempio plausibile.
+> Esempio derivato dal dataset reale **"Delibere - Anno 2023"** del Consiglio Comunale di Firenze pubblicato su dati.gov.it (id `delibere-anno-2023`). I valori del singolo atto sono di esempio plausibile.
 
 ```turtle
 <https://w3id.org/italia/data/c_d612/administrative-act/2023-145-DELIBERA_GIUNTA>
@@ -930,7 +930,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
         <https://w3id.org/italia/data/c_d612/role/assessore-mobilita> ;
     foaf:page <https://www.comune.fi.it/albo-pretorio/atto/DG-2023-145.pdf> ;
     cpsvap:isOwnedBy <https://w3id.org/italia/data/c_d612/public-organization/comune-firenze> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=c5ccc140-8af8-4174-899e-a227c261422f> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=delibere-anno-2023> .
 
 # Settore proponente (cov:OrganizationalUnit)
 <https://w3id.org/italia/data/c_d612/organizational-unit/lavori-pubblici>
@@ -991,7 +991,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
 
 ### Esempio Turtle (Comune di Milano, codice IPA `c_f205`)
 
-> Esempio derivato dal dataset reale **"Elenco immobili di proprietà del Comune di Milano"** pubblicato dal Comune di Milano su dati.gov.it (id `8c32b60e-a7e4-4fd0-a76a-50abf191a6d5`). Palazzo Marino in Piazza della Scala è la sede storica del Comune di Milano.
+> Esempio derivato dal dataset reale **"Elenco immobili di proprietà del Comune di Milano"** pubblicato dal Comune di Milano su dati.gov.it (id `elenco-immobili-di-proprieta-del-comune-di-milano1`). Palazzo Marino in Piazza della Scala è la sede storica del Comune di Milano.
 
 ```turtle
 <https://w3id.org/italia/data/c_f205/point-of-interest/IMM-MI-001>
@@ -1014,7 +1014,7 @@ Questo permette al loader della dashboard di trovare automaticamente i dataset c
     geo:lat "45.4669"^^xsd:decimal ;
     geo:long "9.1900"^^xsd:decimal ;
     poi:isOwnedBy <https://w3id.org/italia/data/c_f205/public-organization/comune-milano> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=8c32b60e-a7e4-4fd0-a76a-50abf191a6d5> .
+    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=elenco-immobili-di-proprieta-del-comune-di-milano1> .
 
 <https://w3id.org/italia/data/c_f205/address/imm-mi-001>
     a clv:Address ;
@@ -1185,7 +1185,7 @@ WHERE escluso_da_pubblicazione = false  -- esclude beni riservati
 
 ### Esempi pratici da Comuni esistenti
 
-I 11 esempi Turtle ancorati a dataset reali (sezione [Filosofia](#filosofia)) servono anche da **esempio operativo per le query**: quando il Comune di Bologna ha pubblicato `popolazione-residente-per-eta-sesso-cittadinanza-quartiere`, qualcuno in `Servizi Demografici di Bologna` ha eseguito **una query molto simile a quelle sopra** sul gestionale anagrafe. Quel CSV è ispezionabile su `dati.gov.it` con id `e770f5f1-9156-4612-b5ad-ee7b4bc6018d` ed è la prova che si può fare.
+I 11 esempi Turtle ancorati a dataset reali (sezione [Filosofia](#filosofia)) servono anche da **esempio operativo per le query**: quando il Comune di Bologna ha pubblicato `popolazione-residente-per-eta-sesso-cittadinanza-quartiere`, qualcuno in `Servizi Demografici di Bologna` ha eseguito **una query molto simile a quelle sopra** sul gestionale anagrafe. Quel CSV è ispezionabile su `dati.gov.it` con id `popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog` ed è la prova che si può fare.
 
 ### Cosa NON fare
 
@@ -1252,6 +1252,7 @@ Dataset utili ma non richiesti per il badge VERDE:
 
 ## Cronistoria versione
 
+- **v2.4** (Maggio 2026) — Sostituiti tutti gli UUID dei dataset di esempio con i corrispondenti **slug machine-readable** (campo `name` dell'API CKAN), che sono **persistenti** nel tempo. Gli UUID possono cambiare se un dataset viene cancellato e ripubblicato; lo slug no. NB: lo slug NON è derivabile dal titolo (es. su dati.gov.it 5 dataset Milano hanno suffisso "1", uno Bologna è troncato a 95 char): l'unica fonte autorevole è l'API `package_show`.
 - **v2.3** (Maggio 2026) — Affinata la dicitura: il nome canonico della rete di ontologie è "vocabolari controllati e ontologie della PA italiana" (riferimento URL: schema.gov.it). Eliminato l'uso di schema.gov.it come nome (resta solo come URL tecnico per badge, link e endpoint SPARQL).
 - **v2.2** (Maggio 2026) — Aggiunta sezione operativa "Come costruire i CSV" con mappa fonti → uffici → gestionali tipici, esempi SQL su sw italiani comuni, workflow di adozione e tempi realistici. Rimosso uso di "OntoPiA" (vecchio nome).
 

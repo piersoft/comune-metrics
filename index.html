@@ -529,7 +529,7 @@ a:hover { text-decoration: underline; }
         Monitoraggio dell'attività amministrativa comunale alimentato dal Paniere OpenData conforme a DCAT-AP_IT &amp; vocabolari/ontologie PA italiana. Open source, interoperabile, replicabile.
       </p>
     </div>
-    <div class="version-badge" id="versionBadge">v2026.05.04.4</div>
+    <div class="version-badge" id="versionBadge">v2026.05.04.5</div>
   </div>
 </header>
 
@@ -559,7 +559,7 @@ a:hover { text-decoration: underline; }
       <div class="badge-tier" id="badgeTier">Avanzata</div>
     </div>
     <div class="compliance-info">
-      <h2>Conformità Paniere ComuneMetrics v2.3</h2>
+      <h2>Conformità Paniere ComuneMetrics v2.4</h2>
       <p id="complianceText">
         Bologna pubblica 8 degli 11 dataset CORE del Paniere ComuneMetrics. Ottiene il badge ARANCIONE "Trasparenza avanzata". Per il badge VERDE pieno servono i 3 dataset mancanti.
       </p>
@@ -575,7 +575,7 @@ a:hover { text-decoration: underline; }
     <div class="footer-grid">
       <div>
         <h4>ComuneMetrics</h4>
-        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.3</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
+        <p>Cruscotto open source per il controllo di gestione e la rendicontazione politica di mandato. Alimentato da OpenData conformi al <strong>Paniere ComuneMetrics v2.4</strong>: 11 dataset standardizzati, schema rigido, mapping ai <strong>vocabolari controllati e ontologie della PA italiana</strong> per Linked Open Data 5★.</p>
       </div>
       <div>
         <h4>Standard</h4>
@@ -625,15 +625,15 @@ const MOCK_DATA = {
       delibere: true, patrimonio: true
     },
     sources: {
-      popolazione: "e770f5f1-9156-4612-b5ad-ee7b4bc6018d",
+      popolazione: "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
       bilancio: null,
-      opere_pubbliche: "d64e15bc-ba85-453e-af0b-2c2338c08158",
-      pratiche_edilizie: "046f5414-ef0e-4a07-a55d-21d4e6d7ab7d",
-      servizi_sociali: "fef9b18f-196b-491f-b29c-c6851768bf56",
-      istruzione: "1187c0e3-23b7-4f2f-80c7-635f6e75f976",
+      opere_pubbliche: "lavori-in-corso-in-citta",
+      pratiche_edilizie: "cila-comunicazioni-inizio-lavori",
+      servizi_sociali: "welfare-interventi",
+      istruzione: "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
       incidenti_stradali: null,
-      rifiuti: "3321dad8-2d58-48bc-9b37-d21efc87d623",
-      eventi_culturali: "df887d97-079c-4748-8193-b3dba9ae1692",
+      rifiuti: "indicatori-raccolta-differenziata",
+      eventi_culturali: "eventi-bologna-agenda-cultura",
       delibere: null,
       patrimonio: null
     }
@@ -655,13 +655,13 @@ const MOCK_DATA = {
     },
     sources: {
       popolazione: null,
-      bilancio: "9136135e-192d-4ffe-9a1f-6221e63a1df3",
-      servizi_sociali: "0ffb52cd-ea8b-4c2f-8e37-6ba8663f61ea",
-      istruzione: "7d4022b4-8cf7-46de-ba12-4d24cc76ca15",
-      rifiuti: "1f7b6ff9-0a90-4cdb-a1d3-5142e8cfa729",
-      eventi_culturali: "3b54f233-a0b4-4c21-8482-99b34b52e3bc",
+      bilancio: "bilancio-trasparente-spesa-corrente-per-missioni-e-programmi",
+      servizi_sociali: "organizzazioni-eroganti-servizi-sociali1",
+      istruzione: "istruzione-asili-nido-localizzazione-delle-strutture1",
+      rifiuti: "raccolta-differenziata-2010-20231",
+      eventi_culturali: "eventi-culturali-numero-di-ingressi-e-numero-di-spettacoli-per-tipo-di-manifestazione1",
       delibere: null,
-      patrimonio: "8c32b60e-a7e4-4fd0-a76a-50abf191a6d5"
+      patrimonio: "elenco-immobili-di-proprieta-del-comune-di-milano1"
     }
   },
   firenze: {
@@ -682,10 +682,10 @@ const MOCK_DATA = {
     sources: {
       popolazione: null,
       bilancio: null,
-      servizi_sociali: "742d4a26-1547-48da-a559-46bd0e518060",
-      istruzione: "705ff5f0-c947-47b5-a22e-d8a52fd31d2d",
-      incidenti_stradali: "b78af8c5-af19-42ea-81e6-196b2df59ca0",
-      delibere: "c5ccc140-8af8-4174-899e-a227c261422f"
+      servizi_sociali: "siast-servizi-integrati-assistenza-sociale-territoriale",
+      istruzione: "servizio-iscrizione-asili-nido-spazi-gioco-efficienza",
+      incidenti_stradali: "numero-incidenti-stradali-per-quartiere-anno-2014",
+      delibere: "delibere-anno-2023"
     }
   },
   lecce: {
@@ -706,14 +706,14 @@ const MOCK_DATA = {
     sources: {
       popolazione: null,
       bilancio: null,
-      opere_pubbliche: "cbc735c7-3463-4bef-b4f6-066d94ddb3e4",
-      servizi_sociali: "cef61e18-18bc-496f-951e-2b949b7ccad4",
-      istruzione: "3d12df6d-b8f1-4f8f-9b21-ada0274da3c8",
+      opere_pubbliche: "open-cantieri-lecce",
+      servizi_sociali: "numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016",
+      istruzione: "elenco-e-ubicazione-asili-nido-comunali-lecce",
       incidenti_stradali: null,
-      rifiuti: "838f9095-26f1-4ad5-8a2c-076c41ff6c7e",
-      eventi_culturali: "44f1e470-0432-4a38-b865-86627aa656a7",
-      delibere: "ba13b8a6-97d0-473b-85a7-b593594afd2b",
-      patrimonio: "ad85c1af-5dc6-4ee3-afb9-938c9c36af38"
+      rifiuti: "raccolta-rifiuti-2015",
+      eventi_culturali: "eventi-culturali-ricorrenti",
+      delibere: "albo-pretorio-ultime-pubblicazioni-in-corso-comune-di-lecce",
+      patrimonio: "fabbricati-2023_comune-di-lecce"
     }
   }
 };

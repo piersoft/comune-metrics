@@ -1,7 +1,7 @@
 # ComuneMetrics — Cruscotto Civico Comunale
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paniere v2.3](https://img.shields.io/badge/Paniere-v2.3-blue)](docs/PANIERE.md)
+[![Paniere v2.4](https://img.shields.io/badge/Paniere-v2.4-blue)](docs/PANIERE.md)
 [![DCAT-AP_IT](https://img.shields.io/badge/DCAT--AP__IT-2.1-green)](https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html)
 [![PA italiana](https://img.shields.io/badge/Vocabolari%20e%20ontologie%20PA-compliant-blue)](https://schema.gov.it)
 
@@ -152,7 +152,7 @@ Il meccanismo è **gamification dell'OpenData**:
 
 ## Roadmap
 
-- [x] **v0.1** — Paniere v2.3 + 11 JSON Schema + Dashboard MVP single-file
+- [x] **v0.1** — Paniere v2.4 + 11 JSON Schema + Dashboard MVP single-file
 - [ ] **v0.2** — Loader CKAN reale via proxy CORS (Cloudflare Worker)
 - [ ] **v0.3** — Federazione SPARQL: query cross-Comune via lod.dati.gov.it
 - [ ] **v0.4** — Modulo "rendicontazione di mandato" con confronto inizio/fine consiliatura
