@@ -248,7 +248,7 @@ ORDER BY tipologia, denominazione_immobile;
 | **Esportare ZIP con dentro CSV** | Il workflow non disimbusta archivi. Esporre direttamente il CSV |
 | **Usare nomi colonne in maiuscolo** (`ANNO` invece di `anno`) | Gli header sono case-sensitive. Il validatore rifiuta |
 | **Pubblicare su URL temporanei** (Google Drive privato, OneDrive) | Il workflow non può autenticarsi. Servono URL pubblici stabili |
-| **Aggiornare a mano una volta all'anno** | Il dato fresco è oro, quello vecchio rumore. Schedulare l'estrazione |
+| **Aggiornare a mano una volta all'anno** | Il dato recente è oro, quello vecchio rumore. Schedulare l'estrazione |
 
 ---
 

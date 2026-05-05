@@ -265,7 +265,7 @@
 <header class="site-header">
   <div class="container header-content">
     <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 11 Dataset CORE del Paniere</sub></h1>
-    <span class="version-badge" id="versionBadge">v2026.05.05.21</span>
+    <span class="version-badge" id="versionBadge">v2026.05.05.22</span>
   </div>
 </header>
 
@@ -291,7 +291,7 @@
     </div>
     <div>
       Dati: <a href="https://www.dati.gov.it">dati.gov.it</a> · portali Comuni<br>
-      Build: GitHub Actions · Loader: <a href="https://ckan-mcp-server.datigovit.workers.dev">CKAN MCP Worker</a>
+      Build: GitHub Actions
     </div>
   </div>
 </footer>
@@ -683,7 +683,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
   } else if (st === 'ok') {
     const fresh = ds.freshness || {};
     const freshCls = fresh.level ? 'freshness-' + fresh.level : '';
-    const freshLabel = { fresh: '🟢 fresco', aged: '🟡 datato (>1 anno)', stale: '🔴 obsoleto (>3 anni)' }[fresh.level] || '';
+    const freshLabel = { fresh: '🟢 recente', aged: '🟡 datato (>1 anno)', stale: '🔴 obsoleto (>3 anni)' }[fresh.level] || '';
     const modTxt = ds.modified ? `Aggiornato ${fmtDate(ds.modified)}` : '';
     const snapshotTag = ds.is_static_snapshot ? '<span class="snapshot-tag">· snapshot statico</span>' : '';
     const renderer = CHART_RENDERERS[dsKey];
@@ -740,7 +740,7 @@ function renderComuneInfo(c) {
       <div class="copertura-bar">
         <span class="stat-pill" title="Dataset del paniere CORE pubblicati dal Comune"><strong>${cablati}</strong> / ${totalCore} dataset del paniere pubblicati</span>
         <span class="stat-pill" title="Dataset elaborati correttamente dal builder"><strong>${ok}</strong> processati con successo</span>
-        <span class="stat-pill" title="Dataset aggiornati negli ultimi 12 mesi"><strong>${fresh}</strong> con dato fresco</span>
+        <span class="stat-pill" title="Dataset aggiornati negli ultimi 12 mesi"><strong>${fresh}</strong> con dato recente</span>
       </div>
     </div>`;
 }

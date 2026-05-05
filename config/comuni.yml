@@ -67,7 +67,7 @@ comuni:
     # il builder fa comunque fetch normale.
     mode: static_snapshot
     snapshot_date: "2026-05-04"
-    snapshot_reason: "Geo-fencing su dati.comune.lecce.it: 503 dai runner GitHub Actions"
+    snapshot_reason: "Pubblicava 11/11 dataset CORE fino al 2024 (caso virtuoso). Il 25 marzo 2025 Google ha chiuso goo.gl: i 3 dataset linkati con shortener sono diventati irrecuperabili (servizi sociali, rifiuti, delibere). Inoltre il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV restanti sono salvati come fixture statiche."
     datasets:
       popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019  # Google Sheets, fetch live
       bilancio: __fixture__:bilancio                                                # consuntivo 2019
