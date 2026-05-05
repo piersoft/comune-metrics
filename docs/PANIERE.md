@@ -1,1283 +1,281 @@
-# Paniere OpenData ComuneMetrics — Specifica v2.14
+# Paniere ComuneMetrics — Guida pratica per Comuni
 
-**Data:** Maggio 2026
-**Licenza dati raccomandata:** CC-BY 4.0 o IODL 2.0
-**Formato:** CSV UTF-8 (separatore `,`, header obbligatorio sulla prima riga)
-**Encoding date:** ISO 8601 (`YYYY-MM-DD` o `YYYY-MM-DDThh:mm:ssZ`)
-**Encoding numerici:** punto come separatore decimale (`123.45`), nessun separatore migliaia
-**Conformità metadati:** DCAT-AP_IT v2.1 — 8 temi EU
-**Conformità Linked Data:** vocabolari controllati e ontologie della PA italiana ([schema.gov.it](https://schema.gov.it), 15 ontologie)
-**Validazione:** ogni dataset ha JSON Schema in `/schemas/` e regole di mapping RDF in `/scripts/csv-to-rdf-rules/`
+> Come costruire gli 11 CSV del paniere partendo dai gestionali interni del Comune. Documento operativo per Responsabili Transizione Digitale, IT, e referenti OpenData.
+
+**Specifica tecnica del formato CSV**: vedi [`PANIERE_CSV_SCHEMA.md`](PANIERE_CSV_SCHEMA.md) e gli schemi formali in [`../schemas/csv/`](../schemas/csv/).
+
+**Procedura di adozione passo-passo**: vedi [README.md principale](../README.md).
 
 ---
 
-## Filosofia
+## Cosa è il paniere
 
-Il paniere è composto da **11 dataset CORE obbligatori** che, se pubblicati da un Comune con schema CSV conforme **e distribuzione TTL allegata**, "accendono" la dashboard ComuneMetrics. La conformità è verificabile in modo automatico tramite:
+Il paniere è un insieme di **11 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano:
 
-1. **Validazione CSV** contro JSON Schema
-2. **Validazione TTL** contro i vocabolari e ontologie della PA italiana (SPARQL ASK su `schema.gov.it/sparql`)
-3. **Verifica metadati DCAT-AP_IT** (theme, license, frequency, holder)
-
-Ogni Comune riceve un **badge di trasparenza**:
-
-- **0–3 dataset CORE** → badge ROSSO "Trasparenza minima"
-- **4–7 dataset CORE** → badge GIALLO "Trasparenza parziale"
-- **8–10 dataset CORE** → badge ARANCIONE "Trasparenza avanzata"
-- **11/11 dataset CORE** → badge VERDE "Comune Trasparente — ComuneMetrics Compliant"
-- **11/11 + tutti con distribuzione TTL conforme a vocabolari/ontologie PA italiana** → badge ORO "5★ Linked Open Data"
-
-L'approccio "schema rigido + Linked Data" è una scelta deliberata: garantisce che i KPI siano comparabili tra Comuni, che la dashboard funzioni senza adattamenti, e che i dataset siano interrogabili in **federazione SPARQL** tra Comuni diversi.
-
-### Esempi ancorati a dataset reali multi-Comune
-
-Gli esempi Turtle che corredano ciascuno degli 11 dataset di questa specifica **non sono fittizi**: ogni esempio è derivato da un dataset realmente pubblicato e harvestato da `dati.gov.it`. La distribuzione tra i Comuni di riferimento è la seguente (mostra che il paniere non è tarato su un solo ente, ma intercetta pratiche di pubblicazione già attive in città di dimensioni e geografie diverse):
-
-| # | Dataset | Comune di esempio | Codice IPA | Dataset reale di riferimento |
-|---|---|---|---|---|
-| 1 | popolazione | **Bologna** | `c_a944` | Popolazione residente per età, sesso, cittadinanza, quartiere |
-| 2 | bilancio | **Milano** | `c_f205` | Bilancio trasparente: Spesa corrente per missioni e programmi |
-| 3 | opere_pubbliche | **Bologna** | `c_a944` | Lavori in corso in città |
-| 4 | pratiche_edilizie | **Bologna** | `c_a944` | CILA — comunicazioni inizio lavori |
-| 5 | servizi_sociali | **Lecce** | `c_e506` | Numero pratiche evase Settore Servizi Sociali |
-| 6 | istruzione (asili) | **Lecce** | `c_e506` | Elenco e ubicazione asili nido comunali |
-| 7 | incidenti_stradali | **Firenze** | `c_d612` | Numero incidenti stradali per Quartiere |
-| 8 | rifiuti | **Bologna** | `c_a944` | Indicatori Raccolta Differenziata |
-| 9 | eventi_culturali | **Lecce** | `c_e506` | Eventi culturali ricorrenti |
-| 10 | delibere | **Firenze** | `c_d612` | Delibere Consiglio Comunale - Anno 2023 |
-| 11 | patrimonio | **Milano** | `c_f205` | Elenco immobili di proprietà del Comune di Milano |
-
-**Distribuzione geografica:** 4 Bologna · 3 Lecce · 2 Firenze · 2 Milano (Nord 6, Centro 2, Sud 3).
-
----
-
-## Indice delle 11 aree CORE
-
-| # | Dataset | File | Tema DCAT-AP_IT | Frequenza min. | Ontologie PA italiana primarie |
-|---|---|---|---|---|---|
-| 1 | Popolazione residente | `popolazione.csv` | SOCI | Annuale | QB + SKOS + CLV |
-| 2 | Bilancio per missione | `bilancio.csv` | ECON | Annuale | QB + SKOS + COV |
-| 3 | Opere pubbliche | `opere_pubbliche.csv` | ECON | Trimestrale | CPSV-AP + CLV + TI + POI |
-| 4 | Pratiche edilizie | `pratiche_edilizie.csv` | GOVE | Trimestrale | CPSV-AP + TI + CLV + SKOS |
-| 5 | Servizi sociali | `servizi_sociali.csv` | SOCI | Annuale | CPSV-AP + QB + SKOS |
-| 6 | Istruzione & asili | `istruzione.csv` | EDUC | Annuale | Cultural-ON + POI + CLV + TI |
-| 7 | Incidenti stradali | `incidenti_stradali.csv` | TRAN | Mensile | QB + CLV + TI + SKOS |
-| 8 | Raccolta rifiuti | `rifiuti.csv` | ENVI | Mensile | QB + SKOS + CLV |
-| 9 | Eventi culturali | `eventi_culturali.csv` | EDUC | Trimestrale | Cultural-ON + POI + CLV + TI |
-| 10 | Delibere e atti | `delibere.csv` | GOVE | Mensile | CPSV-AP + TI + COV + RO + ADMS |
-| 11 | Patrimonio immobiliare | `patrimonio.csv` | GOVE | Annuale | POI + CLV + SKOS |
-
----
-
-## Convenzioni di modellazione (vocabolari e ontologie PA italiana)
-
-### Ontologie usate (con prefissi standard)
-
-```turtle
-@prefix dcat:        <http://www.w3.org/ns/dcat#> .
-@prefix dcatapit:    <http://dati.gov.it/onto/dcatapit#> .
-@prefix dct:         <http://purl.org/dc/terms/> .
-@prefix foaf:        <http://xmlns.com/foaf/0.1/> .
-@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
-@prefix geo:         <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix qb:          <http://purl.org/linked-data/cube#> .
-
-# Vocabolari controllati e ontologie della PA italiana
-@prefix l0:          <https://w3id.org/italia/onto/l0/> .
-@prefix clv:         <https://w3id.org/italia/onto/CLV/> .
-@prefix cov:         <https://w3id.org/italia/onto/COV/> .
-@prefix cpv:         <https://w3id.org/italia/onto/CPV/> .
-@prefix poi:         <https://w3id.org/italia/onto/POI/> .
-@prefix sm:          <https://w3id.org/italia/onto/SM/> .
-@prefix ro:          <https://w3id.org/italia/onto/RO/> .
-@prefix ti:          <https://w3id.org/italia/onto/TI/> .
-@prefix adms:        <http://www.w3.org/ns/adms#> .
-@prefix culturalon:  <https://w3id.org/italia/onto/Cultural-ON/> .
-@prefix cpsvap:      <https://w3id.org/italia/onto/CPSV/> .
-```
-
-### Pattern URI canonico
-
-Tutti gli URI delle entità seguono lo schema URI canonico della PA italiana (schema.gov.it):
-
-```
-https://w3id.org/italia/data/{codice-ipa}/{tipo-risorsa}/{id-riga}
-```
-
-Dove `{codice-ipa}` è il codice IPA del Comune (es. `c_a662` per Bari, `c_e506` per Lecce, `c_d761` per Firenze, `c_f205` per Milano, `c_a944` per Bologna, `c_f052` per Matera).
-
-| Dataset | Tipo risorsa URI |
-|---|---|
-| popolazione | `population-observation` |
-| bilancio | `budget-observation` |
-| opere_pubbliche | `public-work` |
-| pratiche_edilizie | `building-procedure` |
-| servizi_sociali | `social-service-observation` |
-| istruzione | `school-facility` |
-| incidenti_stradali | `road-accident` |
-| rifiuti | `waste-observation` |
-| eventi_culturali | `cultural-event` |
-| delibere | `administrative-act` |
-| patrimonio | `point-of-interest` |
-
-### Mapping deterministico colonne → proprietà RDF
-
-Per le colonne ricorrenti, il mapping è **deterministico** (zero ambiguità). Coerente con `github.com/piersoft/CSV-to-RDF`:
-
-| Pattern colonna | Proprietà RDF | Tipo XSD |
+| # | Dataset | Cosa contiene |
 |---|---|---|
-| `lat`, `latitudine` | `geo:lat` | `xsd:decimal` |
-| `lon`, `lng`, `longitudine` | `geo:long` | `xsd:decimal` |
-| `email`, `mail`, `pec` | `sm:hasEmail` | `xsd:string` |
-| `tel`, `telefono`, `phone` | `sm:hasTelephone` | `xsd:string` |
-| `sito`, `website`, `url` | `sm:hasWebSite` | `xsd:anyURI` |
-| `id`, `codice`, `cf`, `piva` | `dct:identifier` | `xsd:string` |
-| `nome`, `denominazione`, `titolo` | `rdfs:label` | `@it` |
-| `descrizione`, `oggetto`, `note` | `dct:description` | `@it` |
-| `data`, `data_*` | `dct:date` | `xsd:date` |
-| `via`, `civico`, `cap`, `comune` | `clv:hasAddress` | (struttura `clv:Address`) |
-| `tipo`, `tipologia`, `categoria` | `dct:type` | `@it` o `skos:Concept` |
-| `stato`, `status` | `adms:status` | `skos:Concept` |
-| `cup` | `dct:identifier` (con `dct:conformsTo` CIPE) | `xsd:string` |
-| `cig` | `dct:identifier` (con `dct:conformsTo` ANAC) | `xsd:string` |
+| 1 | Popolazione | Residenti per anno e quartiere |
+| 2 | Bilancio | Spesa per missione e programma (DLgs 118/2011) |
+| 3 | Opere pubbliche | Cantieri con CUP, importo, geolocalizzazione |
+| 4 | Pratiche edilizie | CILA/SCIA/PdC con esito |
+| 5 | Servizi sociali | Utenti e spesa per categoria di intervento |
+| 6 | Istruzione | Scuole e asili nido con iscritti |
+| 7 | Incidenti stradali | Sinistri con vittime e geo |
+| 8 | Rifiuti | Raccolta differenziata e quantità |
+| 9 | Eventi culturali | Manifestazioni con luogo e data |
+| 10 | Delibere | Atti dell'albo pretorio |
+| 11 | Patrimonio | Immobili comunali con valore catastale |
 
-### Vocabolari controllati SKOS
-
-I campi categoriali del paniere (es. `frazione`, `tipo_pratica`, `stato_uso`) sono pubblicati come `skos:ConceptScheme` riusabili. Schema URI:
-
-```
-https://w3id.org/italia/controlled-vocabulary/comune-metrics/{nome-vocabolario}
-```
-
-Esempio per le frazioni rifiuti: `https://w3id.org/italia/controlled-vocabulary/comune-metrics/waste-fractions`
-
-### Metadati DCAT-AP_IT obbligatori
-
-Ogni distribuzione del paniere include come `dcat:Dataset`:
-
-- `dct:title`: titolo del dataset
-- `dct:description`: descrizione
-- `dct:identifier`: identificativo univoco persistente
-- `dct:issued`: data prima pubblicazione (ISO 8601)
-- `dct:modified`: data ultimo aggiornamento (ISO 8601)
-- `dct:publisher` (`foaf:Agent`): denominazione del Comune
-- `dct:rightsHolder` (`dcatapit:Agent` con `dct:identifier` = codice IPA): titolare
-- `dcat:theme`: codice tema EU (es. `http://publications.europa.eu/resource/authority/data-theme/SOCI`)
-- `dct:accrualPeriodicity`: frequenza (`ANNUAL`, `QUARTERLY`, `MONTHLY`)
-- `dct:license`: URL CC-BY 4.0 o IODL 2.0
-- `dct:spatial`: codice ISTAT del Comune (URI)
-- `dct:conformsTo`: URI di questo Paniere v2.0
-- `dcatapit:holderIdentifier`: codice IPA del Comune
-
-### Marker per riconoscimento automatico
-
-I dataset CKAN del Comune devono includere nel campo `extras`:
-
-- `paniere_comunemetrics`: `true`
-- `paniere_dataset_id`: nome del dataset paniere (es. `popolazione`, `bilancio`)
-- `paniere_versione_schema`: `2.0`
-
-Questo permette al loader della dashboard di trovare automaticamente i dataset conformi cercando `extras_paniere_comunemetrics:true` nel catalogo del Comune o in dati.gov.it.
-
-### Codifiche standard
-
-| Tipo dato | Standard |
-|---|---|
-| Codice Comune | ISTAT (6 cifre) |
-| Codice IPA | Indice PA (es. `c_a662`) |
-| Codice fiscale / P.IVA | Standard italiano |
-| Coordinate | WGS84 (EPSG:4326), gradi decimali |
-| CUP opere | Codice Unitario Progetto (15 char) — CIPE |
-| CIG gare | Codice Identificativo Gara — ANAC |
-| Importi | Euro, decimali con punto, nessun simbolo |
-| Missioni di bilancio | DM 18/04/2012 (codici 01–20) |
+Un Comune può adottarne **anche solo alcuni**: i mancanti vengono dichiarati `presente: false` nel manifest.
 
 ---
 
-## Dataset 1 — Popolazione residente
+## Principio: fonti interne, non dati di terzi
 
-**File:** `popolazione.csv`
-**Frequenza:** annuale (al 31/12)
-**Tema DCAT-AP_IT:** `SOCI` (Popolazione e società)
-**Ontologie PA italiana:** **QB** (osservazioni statistiche multidimensionali) + **SKOS** (vocabolari `fascia_eta`, `cittadinanza`) + **CLV** (`area_sub_comunale`)
-**Granularità:** una riga per anno × area sub-comunale × fascia età × genere × cittadinanza
-**URI tipo risorsa:** `population-observation`
+I CSV del paniere devono provenire **dai gestionali interni del Comune**, non da banche dati nazionali centralizzate (ISTAT, Anagrafe Tributaria, OpenCUP, BDAP). Ragioni:
 
-### Schema CSV con mapping RDF
+1. **Tempestività**: i dati interni sono aggiornati in tempo reale; quelli centralizzati arrivano con 12-24 mesi di ritardo
+2. **Granularità**: i gestionali hanno il dettaglio per zona, quartiere, indirizzo; le banche nazionali aggregano per Comune
+3. **Responsabilità**: il Comune è proprietario del dato e ne risponde direttamente
+4. **Indipendenza dalla connettività**: i gestionali sono in casa, le API esterne possono cadere
 
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `anno` | int | sì | `qb:dimension` → custom `:refYear` | `xsd:gYear` | `2024` |
-| `area_sub_comunale` | string | sì | `qb:dimension` → `clv:hasCity` o `clv:hasSubCity` (riferimento `clv:City`) | URI o literal `@it` | `Centro storico` |
-| `fascia_eta` | string | sì | `qb:dimension` → `skos:Concept` da CV `age-bands` | URI vocabolario | `30-44` |
-| `genere` | string | sì | `qb:dimension` → `skos:Concept` (CV ISTAT genere) | URI | `F` |
-| `cittadinanza` | string | sì | `qb:dimension` → `skos:Concept` (CV ISTAT) | URI | `ITA` |
-| `residenti` | int | sì | `qb:measure` → custom `:residentsCount` | `xsd:nonNegativeInteger` | `1245` |
-| `nati_anno` | int | no | `qb:measure` → custom `:birthsInYear` | `xsd:nonNegativeInteger` | `89` |
-| `morti_anno` | int | no | `qb:measure` → custom `:deathsInYear` | `xsd:nonNegativeInteger` | `124` |
-| `iscritti_anno` | int | no | `qb:measure` → custom `:registrationsInYear` | `xsd:nonNegativeInteger` | `212` |
-| `cancellati_anno` | int | no | `qb:measure` → custom `:cancellationsInYear` | `xsd:nonNegativeInteger` | `198` |
-
-### KPI derivabili
-
-- **Indice di vecchiaia** = `pop_65+ / pop_0-14 × 100`
-- **Saldo naturale** = `nati - morti`
-- **Saldo migratorio** = `iscritti - cancellati`
-- **% stranieri** = `pop_STR / pop_TOTALE × 100`
-- **Trend popolazione** su serie temporale
-
-### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
-
-> Esempio derivato dal dataset reale **"Popolazione residente per età, sesso, cittadinanza, quartiere e zona — serie storica dal 1986"** pubblicato dal Comune di Bologna su dati.gov.it (id `popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog`).
-
-```turtle
-# DataSet di tipo qb:DataSet
-<https://w3id.org/italia/data/c_a944/population-dataset/2024>
-    a qb:DataSet, dcatapit:Dataset ;
-    rdfs:label "Popolazione residente Comune di Bologna 2024"@it ;
-    dct:publisher <https://w3id.org/italia/data/c_a944/public-organization/comune-bologna> ;
-    qb:structure <https://w3id.org/italia/data/comune-metrics/dsd/population> ;
-    dct:issued "2025-01-31"^^xsd:date ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog> .
-
-# Una osservazione: residenti 30-44 anni, donne, italiane, Quartiere San Vitale, anno 2024
-<https://w3id.org/italia/data/c_a944/population-observation/2024-SAN_VITALE-30_44-F-ITA>
-    a qb:Observation ;
-    qb:dataSet <https://w3id.org/italia/data/c_a944/population-dataset/2024> ;
-    <https://w3id.org/italia/data/comune-metrics/property/refYear> "2024"^^xsd:gYear ;
-    <https://w3id.org/italia/data/comune-metrics/property/refArea>
-        <https://w3id.org/italia/data/c_a944/sub-city/san-vitale> ;
-    <https://w3id.org/italia/data/comune-metrics/property/ageBand>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/age-bands/30-44> ;
-    <https://w3id.org/italia/data/comune-metrics/property/gender>
-        <https://w3id.org/italia/controlled-vocabulary/istat/gender/F> ;
-    <https://w3id.org/italia/data/comune-metrics/property/citizenship>
-        <https://w3id.org/italia/controlled-vocabulary/istat/citizenship/ITA> ;
-    <https://w3id.org/italia/data/comune-metrics/property/residentsCount>
-        "5012"^^xsd:nonNegativeInteger .
-
-# Quartiere come clv:City (sub-comunale)
-<https://w3id.org/italia/data/c_a944/sub-city/san-vitale>
-    a clv:City ;
-    rdfs:label "Quartiere San Vitale"@it ;
-    clv:hasHigherRank <https://w3id.org/italia/data/c_a944/public-organization/comune-bologna> .
-
-# Vocabolario controllato fascia età
-<https://w3id.org/italia/controlled-vocabulary/comune-metrics/age-bands/30-44>
-    a skos:Concept ;
-    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/comune-metrics/age-bands> ;
-    skos:prefLabel "30-44 anni"@it ;
-    skos:notation "30-44" .
-```
+Il paniere è **dati del Comune sul Comune**.
 
 ---
 
-## Dataset 2 — Bilancio per missione
+## Mappa delle fonti tipiche per gestionale
 
-**File:** `bilancio.csv`
-**Frequenza:** annuale (post-rendiconto, entro 30/06 anno successivo)
-**Tema DCAT-AP_IT:** `ECON` (Economia e finanze)
-**Riferimento normativo:** DM 18/04/2012 (armonizzazione bilanci EELL)
-**Ontologie PA italiana:** **QB** (Cubo statistico anno × missione × programma) + **SKOS** (CV missioni DM 2012) + **COV** (Comune publisher)
-**Granularità:** una riga per anno × missione × programma × titolo × tipo_documento
-**URI tipo risorsa:** `budget-observation`
+| Dataset CORE | Gestionale tipico | Esempi vendor |
+|---|---|---|
+| Popolazione | Anagrafe della Popolazione Residente (APR) | Maggioli ANPR, Halley, Engineering, GPI |
+| Bilancio | Software finanziario / contabile | Halley, Maggioli, Sicraweb, Gruppo Buffetti |
+| Opere pubbliche | Software lavori pubblici / programma triennale | Maggioli OO.PP., STR Vision, OpenCUP CIPESS |
+| Pratiche edilizie | SUE — Sportello Unico Edilizia | Maggioli SUE, Halley SUE, Globo, regionali |
+| Servizi sociali | Cartella sociale / sw welfare | Cosmocard, Garsia, Maggioli, regionali (es. CARTELLAINFOSOC Lombardia) |
+| Istruzione | Anagrafe scolastica / iscrizioni nido | Software regionali, Maggioli Servizi Demografici |
+| Incidenti stradali | Sw Polizia Locale | Concilia, Maggioli PL, OpenSquare |
+| Rifiuti | Sw gestione rifiuti / dati gestore | Software del gestore (Hera, A2A, Iren, AMA, locali) |
+| Eventi culturali | CMS comunale / agenda eventi | Sito web istituzionale, sw assessorato cultura |
+| Delibere | Sw atti amministrativi / albo pretorio | Maggioli AdWeb, Halley, Sicraweb, Iter |
+| Patrimonio | Inventario beni immobili | Maggioli Patrimonio, Halley, sw catastali |
 
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `anno` | int | sì | `qb:dimension` → `:refYear` | `xsd:gYear` | `2024` |
-| `tipo_documento` | string | sì | `qb:dimension` → `skos:Concept` (CV `budget-doc-type`) | URI | `RENDICONTO` |
-| `missione_codice` | string | sì | `qb:dimension` → `skos:Concept` (CV `budget-missions-DM2012`) | URI | `04` |
-| `missione_nome` | string | sì | `skos:prefLabel` (sul concetto missione) | `@it` | `Istruzione e diritto allo studio` |
-| `programma_codice` | string | sì | `qb:dimension` → `skos:Concept` (CV `budget-programs-DM2012`) | URI | `01` |
-| `programma_nome` | string | sì | `skos:prefLabel` (sul concetto programma) | `@it` | `Istruzione prescolastica` |
-| `titolo` | string | sì | `qb:dimension` → `skos:Concept` (CV `budget-titles`) | URI | `1` |
-| `stanziamento_iniziale` | decimal | sì | `qb:measure` → `:initialAllocation` | `xsd:decimal` (€) | `1250000.00` |
-| `stanziamento_assestato` | decimal | sì | `qb:measure` → `:adjustedAllocation` | `xsd:decimal` (€) | `1380500.00` |
-| `impegnato` | decimal | sì | `qb:measure` → `:committedAmount` | `xsd:decimal` (€) | `1295000.00` |
-| `pagato` | decimal | sì | `qb:measure` → `:paidAmount` | `xsd:decimal` (€) | `1180000.00` |
-| `popolazione_riferimento` | int | sì | `qb:attribute` → `:refPopulation` | `xsd:nonNegativeInteger` | `45230` |
-
-### KPI derivabili
-
-- **Spesa pro capite per missione** = `impegnato / popolazione_riferimento`
-- **Capacità di spesa** = `pagato / impegnato × 100`
-- **Capacità di impegno** = `impegnato / stanziamento_assestato × 100`
-- **% scostamento previsione/rendiconto** = `(impegnato - stanziamento_iniziale) / stanziamento_iniziale × 100`
-- **Composizione spesa per missione** (% sul totale)
-- **Trend pluriennale per missione**
-
-### Esempio Turtle (Comune di Milano, codice IPA `c_f205`)
-
-> Esempio derivato dal dataset reale **"Bilancio trasparente: Spesa corrente per missioni e programmi"** pubblicato dal Comune di Milano su dati.gov.it (id `bilancio-trasparente-spesa-corrente-per-missioni-e-programmi`).
-
-```turtle
-<https://w3id.org/italia/data/c_f205/budget-dataset/2024>
-    a qb:DataSet, dcatapit:Dataset ;
-    rdfs:label "Bilancio 2024 Comune di Milano — Rendiconto per missione/programma"@it ;
-    dct:publisher <https://w3id.org/italia/data/c_f205/public-organization/comune-milano> ;
-    qb:structure <https://w3id.org/italia/data/comune-metrics/dsd/budget> ;
-    dct:conformsTo <https://www.gazzettaufficiale.it/eli/id/2012/04/26/12A04652/sg> ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=bilancio-trasparente-spesa-corrente-per-missioni-e-programmi> .
-
-<https://w3id.org/italia/data/c_f205/budget-observation/2024-RENDICONTO-04-01-1>
-    a qb:Observation ;
-    qb:dataSet <https://w3id.org/italia/data/c_f205/budget-dataset/2024> ;
-    <https://w3id.org/italia/data/comune-metrics/property/refYear> "2024"^^xsd:gYear ;
-    <https://w3id.org/italia/data/comune-metrics/property/budgetDocType>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/budget-doc-type/RENDICONTO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/budgetMission>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/budget-missions-DM2012/04> ;
-    <https://w3id.org/italia/data/comune-metrics/property/budgetProgram>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/budget-programs-DM2012/04-01> ;
-    <https://w3id.org/italia/data/comune-metrics/property/budgetTitle>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/budget-titles/1> ;
-    <https://w3id.org/italia/data/comune-metrics/property/initialAllocation> "85000000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/adjustedAllocation> "92500000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/committedAmount> "89200000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/paidAmount> "81100000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/refPopulation> "1365698"^^xsd:nonNegativeInteger .
-
-# Concetto missione 04 (DM 18/04/2012)
-<https://w3id.org/italia/controlled-vocabulary/comune-metrics/budget-missions-DM2012/04>
-    a skos:Concept ;
-    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/comune-metrics/budget-missions-DM2012> ;
-    skos:notation "04" ;
-    skos:prefLabel "Istruzione e diritto allo studio"@it .
-
-# Comune come cov:PublicOrganization
-<https://w3id.org/italia/data/c_f205/public-organization/comune-milano>
-    a cov:PublicOrganization, dcatapit:Agent ;
-    dct:identifier "c_f205" ;
-    rdfs:label "Comune di Milano"@it ;
-    cov:legalName "Comune di Milano"@it .
-```
+Il Comune **già ha** questi dati. Il paniere chiede solo di esportarli in CSV nel formato canonico.
 
 ---
 
-## Dataset 3 — Opere pubbliche
+## Workflow di adozione per il Comune
 
-**File:** `opere_pubbliche.csv`
-**Frequenza:** trimestrale
-**Tema DCAT-AP_IT:** `ECON` (Economia e finanze)
-**Riferimento:** Codice contratti pubblici (D.Lgs. 36/2023), CUP/CIG ANAC
-**Ontologie PA italiana:** **CPSV-AP** (procedimento PA) + **CLV** (indirizzo) + **TI** (cronoprogramma) + **POI** (geolocalizzazione opera) + **COV** (RUP/stazione appaltante)
-**Granularità:** una riga per opera (chiave = `cup`)
-**URI tipo risorsa:** `public-work`
+### Fase 1 — Censimento (1 giornata)
 
-### Schema CSV con mapping RDF
+Il Responsabile della Transizione Digitale convoca un tavolo con:
+- Anagrafe (popolazione)
+- Ragioneria (bilancio)
+- LL.PP. (opere)
+- SUE (pratiche edilizie)
+- Servizi Sociali
+- Pubblica Istruzione
+- Polizia Locale (incidenti)
+- Ambiente (rifiuti)
+- Cultura (eventi)
+- Segreteria Generale (delibere)
+- Patrimonio
 
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `cup` | string | sì | `dct:identifier` (con `dct:conformsTo` CIPE) | `xsd:string` | `J17H21001230001` |
-| `cig` | string | no | `dct:identifier` aggiuntivo (con `dct:conformsTo` ANAC) | `xsd:string` | `9876543210` |
-| `denominazione` | string | sì | `rdfs:label` | `@it` | `Riqualificazione Piazza Garibaldi` |
-| `categoria` | string | sì | `dct:type` → `skos:Concept` (CV `public-work-categories`) | URI | `VERDE` |
-| `programma_triennale` | string | sì | `dct:isPartOf` (riferimento al PT-OOPP) | `xsd:string` | `2024-2026` |
-| `importo_qe` | decimal | sì | `:plannedAmount` | `xsd:decimal` (€) | `850000.00` |
-| `importo_aggiudicazione` | decimal | no | `:awardedAmount` | `xsd:decimal` (€) | `782300.00` |
-| `data_inizio_prevista` | date | sì | `ti:hasIntervalStartDate` (su `ti:TimeInterval` previsto) | `xsd:date` | `2024-03-15` |
-| `data_inizio_effettiva` | date | no | `ti:hasIntervalStartDate` (su intervallo effettivo) | `xsd:date` | `2024-04-22` |
-| `data_fine_prevista` | date | sì | `ti:hasIntervalEndDate` (su intervallo previsto) | `xsd:date` | `2024-12-31` |
-| `data_fine_effettiva` | date | no | `ti:hasIntervalEndDate` (su intervallo effettivo) | `xsd:date` | `2025-02-18` |
-| `stato` | string | sì | `adms:status` → `skos:Concept` (CV `public-work-status`) | URI | `IN_CORSO` |
-| `sal_percentuale` | int | no | `:workProgressPercentage` | `xsd:integer` (0-100) | `45` |
-| `fonte_finanziamento` | string | sì | `:fundingSource` (multipla, `skos:Concept`) | URI multipli | `PNRR\|BILANCIO` |
-| `lat` | decimal | no | `geo:lat` | `xsd:decimal` | `40.3528` |
-| `lon` | decimal | no | `geo:long` | `xsd:decimal` | `18.1718` |
-| `responsabile_unico` | string | no | `:hasRUP` → `cpv:Person` | URI | `Mario Rossi` |
+Per ogni dataset si verifica:
+1. **Esiste un gestionale che contiene questi dati?** (di solito sì)
+2. **È possibile estrarre un CSV?** (export nativo, query SQL, custom report)
+3. **Chi è il referente che esegue l'estrazione?**
+4. **Con quale cadenza il dato è aggiornato?** (real-time, mensile, annuale)
 
-### KPI derivabili
+Output del tavolo: tabella `dataset → gestionale → referente → cadenza → fattibilità`.
 
-- **Numero opere per stato** (programmate/in corso/concluse)
-- **Scostamento tempi medio** = `(data_fine_effettiva - data_fine_prevista)` in giorni
-- **Scostamento costi medio** = `(importo_aggiudicazione - importo_qe) / importo_qe × 100`
-- **% opere concluse nei tempi** = opere con `data_fine_effettiva ≤ data_fine_prevista`
-- **% PNRR sul totale finanziato**
-- **SAL medio opere in corso**
-- **Mappa opere geolocalizzate**
+### Fase 2 — Estrazione (1-3 giornate per dataset)
 
-### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
+Per ogni dataset, il referente IT scrive **una query SQL** o **un export filtro** che produca il CSV nel formato canonico (vedi schemi in `schemas/csv/`).
 
-> Esempio derivato dal dataset reale **"Lavori in corso in città"** pubblicato dal Comune di Bologna su dati.gov.it (id `lavori-in-corso-in-citta`). Il CUP è di esempio plausibile.
+Le query vanno **standardizzate e schedulate**: meglio un cron notturno che produce il CSV automaticamente, piuttosto che un export manuale che si dimentica di fare.
 
-```turtle
-<https://w3id.org/italia/data/c_a944/public-work/J33B22000180001>
-    a cpsvap:PublicService, poi:PointOfInterest ;
-    dct:identifier "J33B22000180001" ;
-    dct:conformsTo <https://www.cipess.gov.it/cup> ;
-    rdfs:label "Riqualificazione asse Via Indipendenza"@it ;
-    dct:type <https://w3id.org/italia/controlled-vocabulary/comune-metrics/public-work-categories/STRADE> ;
-    dct:isPartOf "Programma Triennale OO.PP. 2024-2026"@it ;
-    <https://w3id.org/italia/data/comune-metrics/property/plannedAmount> "2400000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/awardedAmount> "2210500.00"^^xsd:decimal ;
-    adms:status <https://w3id.org/italia/controlled-vocabulary/comune-metrics/public-work-status/IN_CORSO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/workProgressPercentage> "60"^^xsd:integer ;
-    <https://w3id.org/italia/data/comune-metrics/property/fundingSource>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/funding-sources/PNRR> ,
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/funding-sources/BILANCIO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/plannedTimeInterval>
-        <https://w3id.org/italia/data/c_a944/time-interval/J33B22000180001-planned> ;
-    <https://w3id.org/italia/data/comune-metrics/property/actualTimeInterval>
-        <https://w3id.org/italia/data/c_a944/time-interval/J33B22000180001-actual> ;
-    geo:lat "44.4949"^^xsd:decimal ;
-    geo:long "11.3426"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/hasRUP>
-        <https://w3id.org/italia/data/c_a944/person/rup-anonymized> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=lavori-in-corso-in-citta> .
+Vedi più sotto [esempi di query SQL](#esempi-di-query-sql-su-gestionali-tipici) per i gestionali più diffusi.
 
-# Cronoprogramma previsto
-<https://w3id.org/italia/data/c_a944/time-interval/J33B22000180001-planned>
-    a ti:TimeInterval ;
-    ti:hasIntervalStartDate "2024-03-15"^^xsd:date ;
-    ti:hasIntervalEndDate "2024-12-31"^^xsd:date ;
-    rdfs:label "Cronoprogramma previsto opera J33B22000180001"@it .
+### Fase 3 — Pubblicazione (mezza giornata)
 
-# Cronoprogramma effettivo
-<https://w3id.org/italia/data/c_a944/time-interval/J33B22000180001-actual>
-    a ti:TimeInterval ;
-    ti:hasIntervalStartDate "2024-04-22"^^xsd:date ;
-    rdfs:label "Cronoprogramma effettivo opera J33B22000180001"@it .
+I CSV vanno esposti pubblicamente in uno di questi modi (in ordine di preferenza):
 
-# RUP
-<https://w3id.org/italia/data/c_a944/person/rup-anonymized>
-    a cpv:Person ;
-    rdfs:label "RUP — nominativo non pubblicato per riservatezza"@it .
-```
+1. **Portale OpenData del Comune** (CKAN, Opendatasoft, Drupal): URL HTTPS pubblico, auto-refresh
+2. **Repository GitHub del Comune** con GitHub Action che aggiorna i CSV ogni notte
+3. **PR diretta sul repo `piersoft/comune-metrics`** con i CSV come fixture
+
+Per le opzioni 1 e 2 il manifest del Comune userà `source_type: external_csv` con l'URL pubblico. Per l'opzione 3 si usa `source_type: fixture`.
+
+### Fase 4 — Manifest e PR (mezza giornata)
+
+Il Responsabile crea il manifest seguendo il [README](../README.md) e apre la pull request. Quando la PR viene mergiata, il Comune compare nella dashboard.
+
+### Tempi realistici totali
+
+- **Comune piccolo** (≤10.000 ab., 4-5 dataset): **1 settimana** di lavoro distribuito
+- **Comune medio** (10.000-50.000 ab., 7-9 dataset): **2-3 settimane**
+- **Comune grande** (>50.000 ab., 11/11): **1-2 mesi** se si fa il lavoro per bene con automation
 
 ---
 
-## Dataset 4 — Pratiche edilizie
+## Esempi di query SQL su gestionali tipici
 
-**File:** `pratiche_edilizie.csv`
-**Frequenza:** trimestrale
-**Tema DCAT-AP_IT:** `GOVE` (Governo e settore pubblico)
-**Riferimento:** D.P.R. 380/2001 (Testo Unico Edilizia)
-**Ontologie PA italiana:** **CPSV-AP** (procedimento PA) + **TI** (tempi lavorazione) + **CLV** (zona) + **SKOS** (CV `tipo_pratica`, `esito`, `categoria_intervento`)
-**Granularità:** una riga per pratica
-**URI tipo risorsa:** `building-procedure`
+Le query seguenti sono **template di partenza** da adattare al proprio gestionale. I nomi delle tabelle/colonne variano per vendor.
 
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `id_pratica` | string | sì | `dct:identifier` | `xsd:string` (anonimizzato) | `PE-2024-001245` |
-| `tipo_pratica` | string | sì | `dct:type` → `skos:Concept` (CV `building-procedure-types`) | URI | `SCIA` |
-| `data_protocollo` | date | sì | `ti:hasIntervalStartDate` su `ti:TimeInterval` lavorazione | `xsd:date` | `2024-02-12` |
-| `data_chiusura` | date | no | `ti:hasIntervalEndDate` | `xsd:date` | `2024-03-08` |
-| `giorni_lavorazione` | int | no | `:processingDays` | `xsd:nonNegativeInteger` | `25` |
-| `esito` | string | sì | `adms:status` → `skos:Concept` (CV `building-procedure-outcomes`) | URI | `APPROVATA` |
-| `zona` | string | sì | `clv:hasCity` riferimento `clv:City` (sub-comunale) | URI | `Centro storico` |
-| `categoria_intervento` | string | sì | `:interventionCategory` → `skos:Concept` (CV `intervention-categories`) | URI | `RISTRUTTURAZIONE` |
-| `superficie_mq` | decimal | no | `:areaSquareMeters` | `xsd:decimal` (m²) | `120.50` |
-
-### KPI derivabili
-
-- **Tempo medio rilascio per tipo** (giorni)
-- **% pratiche entro i termini di legge** (PDC ≤90gg, SCIA ≤30gg)
-- **Distribuzione per zona** (concentrazione interventi)
-- **Tasso di approvazione** = `APPROVATE / (APPROVATE + RIGETTATE) × 100`
-- **Volumi mensili/trimestrali** (trend)
-
-### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
-
-> Esempio derivato dal dataset reale **"CILA-comunicazioni inizio lavori"** pubblicato dal Comune di Bologna su dati.gov.it (id `cila-comunicazioni-inizio-lavori`).
-
-```turtle
-<https://w3id.org/italia/data/c_a944/building-procedure/CILA-2024-005678>
-    a cpsvap:PublicService ;
-    dct:identifier "CILA-2024-005678" ;
-    dct:type <https://w3id.org/italia/controlled-vocabulary/comune-metrics/building-procedure-types/CILA> ;
-    rdfs:label "CILA — Comunicazione Inizio Lavori 2024-005678"@it ;
-    adms:status <https://w3id.org/italia/controlled-vocabulary/comune-metrics/building-procedure-outcomes/APPROVATA> ;
-    <https://w3id.org/italia/data/comune-metrics/property/interventionCategory>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/intervention-categories/MANUTENZIONE_STRAORDINARIA> ;
-    <https://w3id.org/italia/data/comune-metrics/property/areaSquareMeters> "85.30"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/processingDays> "12"^^xsd:nonNegativeInteger ;
-    clv:hasCity <https://w3id.org/italia/data/c_a944/sub-city/quartiere-savena> ;
-    <https://w3id.org/italia/data/comune-metrics/property/processingTimeInterval>
-        <https://w3id.org/italia/data/c_a944/time-interval/CILA-2024-005678-processing> ;
-    cpsvap:isOwnedBy <https://w3id.org/italia/data/c_a944/public-organization/comune-bologna> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=cila-comunicazioni-inizio-lavori> .
-
-<https://w3id.org/italia/data/c_a944/time-interval/CILA-2024-005678-processing>
-    a ti:TimeInterval ;
-    ti:hasIntervalStartDate "2024-02-12"^^xsd:date ;
-    ti:hasIntervalEndDate "2024-02-24"^^xsd:date .
-
-<https://w3id.org/italia/controlled-vocabulary/comune-metrics/building-procedure-types/CILA>
-    a skos:Concept ;
-    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/comune-metrics/building-procedure-types> ;
-    skos:notation "CILA" ;
-    skos:prefLabel "Comunicazione di Inizio Lavori Asseverata"@it .
-```
-
----
-
-## Dataset 5 — Servizi sociali
-
-**File:** `servizi_sociali.csv`
-**Frequenza:** annuale
-**Tema DCAT-AP_IT:** `SOCI` (Popolazione e società)
-**Riferimento:** L. 328/2000 (Legge quadro servizi sociali)
-**Ontologie PA italiana:** **CPSV-AP** (servizio PA erogato) + **QB** (osservazioni utenti/spesa) + **SKOS** (CV `tipologia_servizio`)
-**Granularità:** una riga per anno × tipologia servizio
-**URI tipo risorsa:** `social-service-observation`
-
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `anno` | int | sì | `qb:dimension` → `:refYear` | `xsd:gYear` | `2024` |
-| `tipologia_servizio` | string | sì | `qb:dimension` → `skos:Concept` (CV `social-service-types`) — coincide con un `cpsvap:PublicService` riferito | URI | `ANZIANI_DOMICILIARE` |
-| `utenti_serviti` | int | sì | `qb:measure` → `:usersServed` | `xsd:nonNegativeInteger` | `87` |
-| `domande_pervenute` | int | sì | `qb:measure` → `:applicationsReceived` | `xsd:nonNegativeInteger` | `132` |
-| `domande_accolte` | int | sì | `qb:measure` → `:applicationsAccepted` | `xsd:nonNegativeInteger` | `87` |
-| `lista_attesa` | int | no | `qb:measure` → `:waitingList` | `xsd:nonNegativeInteger` | `12` |
-| `spesa_totale` | decimal | sì | `qb:measure` → `:totalExpenditure` | `xsd:decimal` (€) | `285000.00` |
-| `compartecipazione_utenti` | decimal | no | `qb:measure` → `:userCoPayment` | `xsd:decimal` (€) | `35000.00` |
-| `popolazione_target` | int | no | `qb:attribute` → `:targetPopulation` | `xsd:nonNegativeInteger` | `8500` |
-
-### KPI derivabili
-
-- **Tasso di copertura** = `utenti_serviti / popolazione_target × 100`
-- **% domande accolte** = `domande_accolte / domande_pervenute × 100`
-- **Spesa media per utente** = `spesa_totale / utenti_serviti`
-- **Tasso compartecipazione** = `compartecipazione_utenti / spesa_totale × 100`
-- **Trend pluriennale per tipologia**
-
-### Esempio Turtle (Comune di Lecce, codice IPA `c_e506`)
-
-> Esempio derivato dal dataset reale **"Numero pratiche evase dal Settore Servizi Sociali del Comune di Lecce"** pubblicato dal Comune di Lecce su dati.gov.it (id `numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016`).
-
-```turtle
-# Servizio PA erogato (CPSV-AP)
-<https://w3id.org/italia/data/c_e506/public-service/anziani-domiciliare>
-    a cpsvap:PublicService ;
-    dct:identifier "ANZIANI_DOMICILIARE" ;
-    rdfs:label "Servizio Assistenza Domiciliare Anziani"@it ;
-    cpsvap:isOwnedBy <https://w3id.org/italia/data/c_e506/public-organization/comune-lecce> ;
-    cpsvap:isClassifiedBy
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/social-service-types/ANZIANI_DOMICILIARE> .
-
-# Osservazione QB sull'erogazione 2024
-<https://w3id.org/italia/data/c_e506/social-service-observation/2024-ANZIANI_DOMICILIARE>
-    a qb:Observation ;
-    qb:dataSet <https://w3id.org/italia/data/c_e506/social-service-dataset/2024> ;
-    <https://w3id.org/italia/data/comune-metrics/property/refYear> "2024"^^xsd:gYear ;
-    <https://w3id.org/italia/data/comune-metrics/property/refService>
-        <https://w3id.org/italia/data/c_e506/public-service/anziani-domiciliare> ;
-    <https://w3id.org/italia/data/comune-metrics/property/usersServed> "87"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/applicationsReceived> "132"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/applicationsAccepted> "87"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/waitingList> "12"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/totalExpenditure> "285000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/userCoPayment> "35000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/targetPopulation> "8500"^^xsd:nonNegativeInteger ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=numero-pratiche-evase-dal-settore-servizi-sociali-del-comune-di-lecce_anno-2016> .
-```
-
----
-
-## Dataset 6 — Istruzione & asili
-
-**File:** `istruzione.csv`
-**Frequenza:** annuale (per anno scolastico)
-**Tema DCAT-AP_IT:** `EDUC` (Istruzione, cultura e sport)
-**Ontologie PA italiana:** **Cultural-ON** (istituti formativi come istituzioni culturali) + **POI** + **CLV** (indirizzo plesso) + **TI** (anno scolastico)
-**Granularità:** una riga per anno scolastico × tipo struttura × plesso
-**URI tipo risorsa:** `school-facility`
-
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `anno_scolastico` | string | sì | `:refSchoolYear` (anche `ti:TimeInterval`) | `xsd:string` (`YYYY/YYYY`) | `2024/2025` |
-| `tipo_struttura` | string | sì | `dct:type` → `skos:Concept` (CV `school-types`) | URI | `ASILO_NIDO` |
-| `plesso_nome` | string | sì | `rdfs:label` / `culturalon:institutionalCISName` | `@it` | `Asilo Il Girasole` |
-| `plesso_indirizzo` | string | sì | `clv:hasAddress` → `clv:Address` | URI struttura | `Via Roma 12` |
-| `posti_disponibili` | int | sì | `:availableSeats` | `xsd:nonNegativeInteger` | `60` |
-| `iscritti` | int | sì | `:enrolled` | `xsd:nonNegativeInteger` | `58` |
-| `domande_ricevute` | int | no | `:applicationsReceived` | `xsd:nonNegativeInteger` | `89` |
-| `lista_attesa` | int | no | `:waitingList` | `xsd:nonNegativeInteger` | `28` |
-| `mensa_attiva` | bool | no | `:hasCanteenService` | `xsd:boolean` | `true` |
-| `pasti_erogati_anno` | int | no | `:mealsProvidedInYear` | `xsd:nonNegativeInteger` | `9800` |
-| `trasporto_attivo` | bool | no | `:hasTransportService` | `xsd:boolean` | `true` |
-| `utenti_trasporto` | int | no | `:transportUsers` | `xsd:nonNegativeInteger` | `45` |
-| `lat` | decimal | no | `geo:lat` | `xsd:decimal` | `40.3528` |
-| `lon` | decimal | no | `geo:long` | `xsd:decimal` | `18.1718` |
-
-### KPI derivabili
-
-- **Tasso copertura asili nido** = `posti_disponibili / popolazione_0-2 × 100` (target EU: 33%)
-- **Tasso saturazione asili** = `iscritti / posti_disponibili × 100`
-- **Domanda inevasa** = `lista_attesa / domande_ricevute × 100`
-- **Mappa plessi scolastici** geolocalizzati
-- **Pasti medi per utente mensa**
-
-### Esempio Turtle (Comune di Lecce, codice IPA `c_e506`)
-
-> Esempio derivato dal dataset reale **"Elenco e ubicazione asili nido comunali Lecce"** pubblicato dal Comune di Lecce su dati.gov.it (id `elenco-e-ubicazione-asili-nido-comunali-lecce`). L'asilo "Il Piccolo Principe" è un asilo nido comunale realmente esistente a Lecce.
-
-```turtle
-<https://w3id.org/italia/data/c_e506/school-facility/il-piccolo-principe-2024-2025>
-    a culturalon:CulturalInstituteOrSite, poi:PointOfInterest ;
-    dct:identifier "il-piccolo-principe" ;
-    rdfs:label "Asilo Nido Il Piccolo Principe — A.S. 2024/2025"@it ;
-    dct:type <https://w3id.org/italia/controlled-vocabulary/comune-metrics/school-types/ASILO_NIDO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/refSchoolYear> "2024/2025" ;
-    <https://w3id.org/italia/data/comune-metrics/property/availableSeats> "60"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/enrolled> "58"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/applicationsReceived> "89"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/waitingList> "28"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/hasCanteenService> "true"^^xsd:boolean ;
-    <https://w3id.org/italia/data/comune-metrics/property/mealsProvidedInYear> "9800"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/hasTransportService> "true"^^xsd:boolean ;
-    <https://w3id.org/italia/data/comune-metrics/property/transportUsers> "45"^^xsd:nonNegativeInteger ;
-    clv:hasAddress <https://w3id.org/italia/data/c_e506/address/il-piccolo-principe> ;
-    geo:lat "40.3528"^^xsd:decimal ;
-    geo:long "18.1718"^^xsd:decimal ;
-    culturalon:isOwnedBy <https://w3id.org/italia/data/c_e506/public-organization/comune-lecce> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=elenco-e-ubicazione-asili-nido-comunali-lecce> .
-
-<https://w3id.org/italia/data/c_e506/address/il-piccolo-principe>
-    a clv:Address ;
-    clv:fullAddress "Lecce LE — vedi dataset reale per indirizzo esatto"@it ;
-    clv:postCode "73100" ;
-    clv:hasCity <https://w3id.org/italia/data/c_e506/city/lecce> .
-```
-
----
-
-## Dataset 7 — Incidenti stradali
-
-**File:** `incidenti_stradali.csv`
-**Frequenza:** mensile
-**Tema DCAT-AP_IT:** `TRAN` (Trasporti)
-**Riferimento:** ISTAT, modulo CTT/INC, Direttiva (UE) 2019/1936 (gestione sicurezza infrastrutture)
-**Ontologie PA italiana:** **QB** (Cubo statistico data × via × natura) + **CLV** (via/civico) + **TI** (timestamp) + **SKOS** (CV `natura`,`tipo_strada`,`condizioni_meteo`)
-**Standard W3C complementari:** WGS84 (`geo:lat`/`geo:long`)
-**Granularità:** una riga per incidente
-**URI tipo risorsa:** `road-accident`
-
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `id_incidente` | string | sì | `dct:identifier` | `xsd:string` (anonimizzato) | `INC-2024-04-0123` |
-| `data` | date | sì | `:accidentDate` | `xsd:date` | `2024-04-15` |
-| `ora` | string | sì | `:accidentTime` | `xsd:time` | `18:35` |
-| `lat` | decimal | sì | `geo:lat` | `xsd:decimal` | `40.3528` |
-| `lon` | decimal | sì | `geo:long` | `xsd:decimal` | `18.1718` |
-| `via` | string | sì | `clv:hasAddress` → `clv:Address.clv:hasStreetToponym` | URI struttura | `Via Roma` |
-| `civico` | string | no | `clv:hasNumber` (su `clv:Address`) | `xsd:string` | `42` |
-| `tipo_strada` | string | sì | `:roadType` → `skos:Concept` (CV `road-types`) | URI | `URBANA_PRINCIPALE` |
-| `natura` | string | sì | `:accidentNature` → `skos:Concept` (CV `accident-natures`) | URI | `INVESTIMENTO_PEDONE` |
-| `veicoli_coinvolti` | int | sì | `:vehiclesInvolved` | `xsd:nonNegativeInteger` | `2` |
-| `feriti` | int | sì | `:injured` | `xsd:nonNegativeInteger` | `1` |
-| `feriti_gravi` | int | no | `:seriouslyInjured` | `xsd:nonNegativeInteger` | `0` |
-| `deceduti` | int | sì | `:deceased` | `xsd:nonNegativeInteger` | `0` |
-| `coinvolti_pedoni` | int | no | `:pedestriansInvolved` | `xsd:nonNegativeInteger` | `1` |
-| `coinvolti_ciclisti` | int | no | `:cyclistsInvolved` | `xsd:nonNegativeInteger` | `0` |
-| `condizioni_meteo` | string | no | `:weatherConditions` → `skos:Concept` (CV `weather-conditions`) | URI | `SERENO` |
-
-### KPI derivabili
-
-- **Indice di mortalità** = `deceduti / incidenti × 100`
-- **Indice di lesività** = `feriti / incidenti × 100`
-- **Hot spot mappa di calore** (cluster geografici via coordinate `geo:lat`/`geo:long`)
-- **Trend stagionale/orario**
-- **% incidenti coinvolgenti utenti vulnerabili** (pedoni + ciclisti)
-- **Variazione anno su anno** (target EU: -50% vittime al 2030)
-
-### Esempio Turtle (Comune di Firenze, codice IPA `c_d612`)
-
-> Esempio derivato dal dataset reale **"Numero incidenti stradali per Quartiere"** pubblicato dal Comune di Firenze su dati.gov.it (id `numero-incidenti-stradali-per-quartiere-anno-2014`). Il singolo evento è di esempio plausibile (Firenze ha quartieri Q1-Q5; Q1 è il Centro Storico).
-
-```turtle
-<https://w3id.org/italia/data/c_d612/road-accident/INC-2024-04-0123>
-    a <https://w3id.org/italia/data/comune-metrics/class/RoadAccident> ;
-    dct:identifier "INC-2024-04-0123" ;
-    rdfs:label "Incidente stradale Via dei Calzaiuoli — 15/04/2024 18:35"@it ;
-    <https://w3id.org/italia/data/comune-metrics/property/accidentDate> "2024-04-15"^^xsd:date ;
-    <https://w3id.org/italia/data/comune-metrics/property/accidentTime> "18:35:00"^^xsd:time ;
-    <https://w3id.org/italia/data/comune-metrics/property/roadType>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/road-types/URBANA_PRINCIPALE> ;
-    <https://w3id.org/italia/data/comune-metrics/property/accidentNature>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/accident-natures/INVESTIMENTO_PEDONE> ;
-    <https://w3id.org/italia/data/comune-metrics/property/weatherConditions>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/weather-conditions/SERENO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/vehiclesInvolved> "2"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/injured> "1"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/seriouslyInjured> "0"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/deceased> "0"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/pedestriansInvolved> "1"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/cyclistsInvolved> "0"^^xsd:nonNegativeInteger ;
-    clv:hasAddress <https://w3id.org/italia/data/c_d612/address/inc-2024-04-0123> ;
-    geo:lat "43.7711"^^xsd:decimal ;
-    geo:long "11.2552"^^xsd:decimal ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=numero-incidenti-stradali-per-quartiere-anno-2014> .
-
-<https://w3id.org/italia/data/c_d612/address/inc-2024-04-0123>
-    a clv:Address ;
-    clv:hasStreetToponym <https://w3id.org/italia/data/c_d612/street-toponym/via-dei-calzaiuoli> ;
-    clv:hasNumber "42" ;
-    clv:hasCity <https://w3id.org/italia/data/c_d612/city/firenze> .
-```
-
----
-
-## Dataset 8 — Raccolta rifiuti
-
-**File:** `rifiuti.csv`
-**Frequenza:** mensile
-**Tema DCAT-AP_IT:** `ENVI` (Ambiente)
-**Riferimento:** ISPRA-Catasto Rifiuti, MUD, D.Lgs. 152/2006
-**Ontologie PA italiana:** **QB** (Cubo statistico anno × mese × frazione × area) + **SKOS** (CV 15 frazioni come `skos:ConceptScheme`) + **CLV** (`area_sub_comunale`)
-**Granularità:** una riga per anno × mese × frazione × area
-**URI tipo risorsa:** `waste-observation`
-
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `anno` | int | sì | `qb:dimension` → `:refYear` | `xsd:gYear` | `2024` |
-| `mese` | int | sì | `qb:dimension` → `:refMonth` | `xsd:gMonth` | `4` |
-| `area_sub_comunale` | string | sì | `qb:dimension` → `clv:hasCity` (riferimento `clv:City` o `TOTALE_COMUNE`) | URI | `TOTALE_COMUNE` |
-| `frazione` | string | sì | `qb:dimension` → `skos:Concept` (CV `waste-fractions`) | URI | `ORGANICO` |
-| `quantita_kg` | decimal | sì | `qb:measure` → `:wasteQuantityKg` | `xsd:decimal` (kg) | `45230.50` |
-| `costo_totale` | decimal | no | `qb:measure` → `:totalCost` | `xsd:decimal` (€) | `12500.00` |
-| `popolazione_servita` | int | sì | `qb:attribute` → `:servedPopulation` | `xsd:nonNegativeInteger` | `45230` |
-
-### KPI derivabili
-
-- **% raccolta differenziata** = `(totale - INDIFFERENZIATO) / totale × 100` (target normativo: 65%)
-- **Produzione pro capite** (kg/ab/anno) = `Σ quantita_kg / popolazione_servita`
-- **Trend stagionale per frazione**
-- **Confronto per area sub-comunale** (mappa coropletica)
-- **Costo medio per kg trattato** = `costo_totale / quantita_kg`
-
-### Esempio Turtle (Comune di Bologna, codice IPA `c_a944`)
-
-> Esempio derivato dal dataset reale **"Indicatori Raccolta Differenziata"** pubblicato dal Comune di Bologna su dati.gov.it (id `indicatori-raccolta-differenziata`). Il dataset Bologna riporta la % differenziata per quartiere (Centro, Borgo Panigale, ecc.); l'esempio mostra una osservazione di volume per la frazione organico.
-
-```turtle
-<https://w3id.org/italia/data/c_a944/waste-dataset/2024>
-    a qb:DataSet, dcatapit:Dataset ;
-    rdfs:label "Raccolta rifiuti Comune di Bologna 2024"@it ;
-    dct:publisher <https://w3id.org/italia/data/c_a944/public-organization/comune-bologna> ;
-    qb:structure <https://w3id.org/italia/data/comune-metrics/dsd/waste> ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=indicatori-raccolta-differenziata> .
-
-<https://w3id.org/italia/data/c_a944/waste-observation/2024-04-TOTALE_COMUNE-ORGANICO>
-    a qb:Observation ;
-    qb:dataSet <https://w3id.org/italia/data/c_a944/waste-dataset/2024> ;
-    <https://w3id.org/italia/data/comune-metrics/property/refYear> "2024"^^xsd:gYear ;
-    <https://w3id.org/italia/data/comune-metrics/property/refMonth> "--04"^^xsd:gMonth ;
-    <https://w3id.org/italia/data/comune-metrics/property/refArea>
-        <https://w3id.org/italia/data/c_a944/sub-city/totale-comune> ;
-    <https://w3id.org/italia/data/comune-metrics/property/wasteFraction>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/waste-fractions/ORGANICO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/wasteQuantityKg> "2150000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/totalCost> "320000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/servedPopulation> "390636"^^xsd:nonNegativeInteger .
-
-# Frazione come SKOS Concept (in vocabolario controllato)
-<https://w3id.org/italia/controlled-vocabulary/comune-metrics/waste-fractions/ORGANICO>
-    a skos:Concept ;
-    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/comune-metrics/waste-fractions> ;
-    skos:notation "ORGANICO" ;
-    skos:prefLabel "Frazione organica (umido)"@it ;
-    skos:altLabel "FORSU"@it ;
-    skos:exactMatch <http://eurovoc.europa.eu/c_b9b8e8a9> .  # esempio link EuroVoc
-```
-
----
-
-## Dataset 9 — Eventi culturali e sportivi
-
-**File:** `eventi_culturali.csv`
-**Frequenza:** trimestrale
-**Tema DCAT-AP_IT:** `EDUC` (Istruzione, cultura e sport)
-**Ontologie PA italiana:** **Cultural-ON** (eventi culturali, classe `culturalon:Event` o estensione) + **POI** (luogo) + **CLV** (indirizzo) + **TI** (intervallo data_inizio→data_fine) + **COV** (organizzatore se ente)
-**Granularità:** una riga per evento
-**URI tipo risorsa:** `cultural-event`
-
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `id_evento` | string | sì | `dct:identifier` | `xsd:string` | `EV-2024-0234` |
-| `denominazione` | string | sì | `rdfs:label` | `@it` | `Festival del Teatro di Strada` |
-| `categoria` | string | sì | `dct:type` → `skos:Concept` (CV `event-categories`) | URI | `TEATRO` |
-| `data_inizio` | date | sì | `ti:hasIntervalStartDate` (su `ti:TimeInterval` evento) | `xsd:date` | `2024-07-15` |
-| `data_fine` | date | sì | `ti:hasIntervalEndDate` (su `ti:TimeInterval` evento) | `xsd:date` | `2024-07-18` |
-| `luogo_nome` | string | sì | `:hasVenue` → `poi:PointOfInterest` (`rdfs:label`) | URI | `Piazza Sant Oronzo` |
-| `lat` | decimal | no | `geo:lat` (sul venue) | `xsd:decimal` | `40.3528` |
-| `lon` | decimal | no | `geo:long` (sul venue) | `xsd:decimal` | `18.1718` |
-| `tipo_organizzazione` | string | sì | `:organizationRole` → `skos:Concept` (CV `event-organization-roles`) | URI | `PATROCINATO` |
-| `contributo_comunale` | decimal | no | `:municipalContribution` | `xsd:decimal` (€) | `5000.00` |
-| `partecipanti_stimati` | int | no | `:estimatedAttendees` | `xsd:nonNegativeInteger` | `2500` |
-| `gratuito` | bool | sì | `:isFreeAdmission` | `xsd:boolean` | `true` |
-
-### KPI derivabili
-
-- **Numero eventi per categoria/anno**
-- **Distribuzione mensile** (stagionalità offerta)
-- **Spesa media per evento patrocinato** = `Σ contributo_comunale / N eventi PATROCINATO`
-- **Mappa luoghi degli eventi** (concentrazione spaziale)
-- **% eventi gratuiti**
-- **Confronto eventi organizzati vs patrocinati**
-
-### Esempio Turtle (Comune di Lecce, codice IPA `c_e506`)
-
-> Esempio derivato dal dataset reale **"Eventi culturali ricorrenti"** pubblicato dal Comune di Lecce su dati.gov.it (id `eventi-culturali-ricorrenti`).
-
-```turtle
-<https://w3id.org/italia/data/c_e506/cultural-event/EV-2024-0234>
-    a culturalon:Event ;
-    dct:identifier "EV-2024-0234" ;
-    rdfs:label "Festival del Teatro di Strada"@it ;
-    dct:type <https://w3id.org/italia/controlled-vocabulary/comune-metrics/event-categories/TEATRO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/organizationRole>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/event-organization-roles/PATROCINATO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/municipalContribution> "5000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/estimatedAttendees> "2500"^^xsd:nonNegativeInteger ;
-    <https://w3id.org/italia/data/comune-metrics/property/isFreeAdmission> "true"^^xsd:boolean ;
-    <https://w3id.org/italia/data/comune-metrics/property/eventTimeInterval>
-        <https://w3id.org/italia/data/c_e506/time-interval/EV-2024-0234> ;
-    <https://w3id.org/italia/data/comune-metrics/property/hasVenue>
-        <https://w3id.org/italia/data/c_e506/point-of-interest/piazza-sant-oronzo> ;
-    culturalon:isOwnedBy <https://w3id.org/italia/data/c_e506/public-organization/comune-lecce> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=eventi-culturali-ricorrenti> .
-
-<https://w3id.org/italia/data/c_e506/time-interval/EV-2024-0234>
-    a ti:TimeInterval ;
-    ti:hasIntervalStartDate "2024-07-15"^^xsd:date ;
-    ti:hasIntervalEndDate "2024-07-18"^^xsd:date .
-
-<https://w3id.org/italia/data/c_e506/point-of-interest/piazza-sant-oronzo>
-    a poi:PointOfInterest ;
-    rdfs:label "Piazza Sant'Oronzo"@it ;
-    geo:lat "40.3528"^^xsd:decimal ;
-    geo:long "18.1718"^^xsd:decimal .
-```
-
----
-
-## Dataset 10 — Delibere e atti
-
-**File:** `delibere.csv`
-**Frequenza:** mensile
-**Tema DCAT-AP_IT:** `GOVE` (Governo e settore pubblico)
-**Riferimento:** D.Lgs. 33/2013 (Trasparenza), TUEL D.Lgs. 267/2000
-**Ontologie PA italiana:** **CPSV-AP** (atti come procedimenti) + **TI** (data adozione/pubblicazione/esecutività) + **COV** (settore proponente) + **RO** (ruoli politici) + **ADMS** (atti come asset semantici versionati)
-**Granularità:** una riga per atto
-**URI tipo risorsa:** `administrative-act`
-
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `numero` | string | sì | `dct:identifier` (combinato con anno+tipo) | `xsd:string` | `145` |
-| `tipo` | string | sì | `dct:type` → `skos:Concept` (CV `act-types`) | URI | `DELIBERA_GIUNTA` |
-| `data_adozione` | date | sì | `:adoptionDate` | `xsd:date` | `2024-04-15` |
-| `data_pubblicazione` | date | sì | `dct:issued` | `xsd:date` | `2024-04-17` |
-| `data_esecutivita` | date | no | `:effectiveDate` | `xsd:date` | `2024-04-27` |
-| `oggetto` | string | sì | `dct:description` / `dct:title` | `@it` | `Approvazione progetto preliminare ...` |
-| `settore` | string | sì | `:proposingDepartment` → `cov:OrganizationalUnit` | URI | `LL.PP.` |
-| `proponente` | string | no | `:proposer` → `cpv:Person` o `ro:Role` | URI | `Ass. Mobilita` |
-| `esito` | string | sì | `adms:status` → `skos:Concept` (CV `act-outcomes`) | URI | `APPROVATA` |
-| `voti_favorevoli` | int | no | `:favorableVotes` | `xsd:nonNegativeInteger` | `15` |
-| `voti_contrari` | int | no | `:contraryVotes` | `xsd:nonNegativeInteger` | `4` |
-| `astenuti` | int | no | `:abstainedVotes` | `xsd:nonNegativeInteger` | `2` |
-| `url_atto` | string | sì | `foaf:page` / `dcat:landingPage` | `xsd:anyURI` | `https://...` |
-
-### KPI derivabili
-
-- **Tempo medio pubblicazione** = `data_pubblicazione - data_adozione` (target normativo: ≤15 gg)
-- **% atti pubblicati nei termini**
-- **Volume atti per tipo** (mensile/trimestrale)
-- **Atti per settore** (intensità lavoro per assessorato)
-- **Tasso di approvazione consigliare** (su delibere CC)
-- **Compattezza politica** = % delibere CC con voto unanime vs spaccato
-
-### Esempio Turtle (Comune di Firenze, codice IPA `c_d612`)
-
-> Esempio derivato dal dataset reale **"Delibere - Anno 2023"** del Consiglio Comunale di Firenze pubblicato su dati.gov.it (id `delibere-anno-2023`). I valori del singolo atto sono di esempio plausibile.
-
-```turtle
-<https://w3id.org/italia/data/c_d612/administrative-act/2023-145-DELIBERA_GIUNTA>
-    a cpsvap:PublicService, adms:Asset ;
-    dct:identifier "DG-2023-145" ;
-    dct:type <https://w3id.org/italia/controlled-vocabulary/comune-metrics/act-types/DELIBERA_GIUNTA> ;
-    dct:title "Approvazione progetto preliminare riqualificazione area mercatale Sant'Ambrogio"@it ;
-    dct:description "Approvazione progetto preliminare riqualificazione area mercatale Sant'Ambrogio"@it ;
-    <https://w3id.org/italia/data/comune-metrics/property/adoptionDate> "2023-04-15"^^xsd:date ;
-    dct:issued "2023-04-17"^^xsd:date ;
-    <https://w3id.org/italia/data/comune-metrics/property/effectiveDate> "2023-04-27"^^xsd:date ;
-    adms:status <https://w3id.org/italia/controlled-vocabulary/comune-metrics/act-outcomes/APPROVATA> ;
-    <https://w3id.org/italia/data/comune-metrics/property/proposingDepartment>
-        <https://w3id.org/italia/data/c_d612/organizational-unit/lavori-pubblici> ;
-    <https://w3id.org/italia/data/comune-metrics/property/proposer>
-        <https://w3id.org/italia/data/c_d612/role/assessore-mobilita> ;
-    foaf:page <https://www.comune.fi.it/albo-pretorio/atto/DG-2023-145.pdf> ;
-    cpsvap:isOwnedBy <https://w3id.org/italia/data/c_d612/public-organization/comune-firenze> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=delibere-anno-2023> .
-
-# Settore proponente (cov:OrganizationalUnit)
-<https://w3id.org/italia/data/c_d612/organizational-unit/lavori-pubblici>
-    a cov:OrganizationalUnit ;
-    rdfs:label "Direzione Servizi Tecnici"@it ;
-    cov:classification "LL.PP." ;
-    cov:isOrganizationalUnitOf <https://w3id.org/italia/data/c_d612/public-organization/comune-firenze> .
-
-# Ruolo politico proponente (RO)
-<https://w3id.org/italia/data/c_d612/role/assessore-mobilita>
-    a ro:Role ;
-    rdfs:label "Assessore alla Mobilità e Lavori Pubblici"@it .
-```
-
----
-
-## Dataset 11 — Patrimonio immobiliare
-
-**File:** `patrimonio.csv`
-**Frequenza:** annuale (al 31/12)
-**Tema DCAT-AP_IT:** `GOVE` (Governo e settore pubblico)
-**Riferimento:** Conto del patrimonio (allegato al rendiconto), D.Lgs. 42/2004 (vincolo culturale)
-**Ontologie PA italiana:** **POI** (classe principale `poi:PointOfInterest`) + **CLV** (`clv:Address`) + **SKOS** (CV `categoria`,`stato_uso`,`efficienza_energetica`)
-**Standard W3C complementari:** WGS84 (`geo:lat`/`geo:long`)
-**Granularità:** una riga per immobile
-**URI tipo risorsa:** `point-of-interest`
-
-### Schema CSV con mapping RDF
-
-| Colonna | Tipo | Obbl. | Proprietà RDF | Tipo XSD/Note | Esempio |
-|---|---|---|---|---|---|
-| `id_immobile` | string | sì | `dct:identifier` | `xsd:string` | `IMM-LE-001245` |
-| `denominazione` | string | sì | `rdfs:label` | `@it` | `Palazzo Carafa - Sede Comunale` |
-| `categoria` | string | sì | `poi:category` → `skos:Concept` (CV `property-categories`) | URI | `EDIFICIO_AMMINISTRATIVO` |
-| `indirizzo` | string | sì | `clv:hasAddress` → `clv:Address` | URI struttura | `Via Vittorio Emanuele II, 1` |
-| `lat` | decimal | no | `geo:lat` | `xsd:decimal` | `40.3528` |
-| `lon` | decimal | no | `geo:long` | `xsd:decimal` | `18.1718` |
-| `superficie_mq` | decimal | no | `:areaSquareMeters` | `xsd:decimal` (m²) | `2450.00` |
-| `volume_mc` | decimal | no | `:volumeCubicMeters` | `xsd:decimal` (m³) | `8800.00` |
-| `valore_catastale` | decimal | no | `:cadastralValue` | `xsd:decimal` (€) | `4500000.00` |
-| `valore_bilancio` | decimal | sì | `:bookValue` | `xsd:decimal` (€) | `5200000.00` |
-| `stato_uso` | string | sì | `adms:status` → `skos:Concept` (CV `property-use-status`) | URI | `IN_USO` |
-| `destinazione_uso` | string | no | `:effectiveUse` | `@it` | `Sede Sindaco e Assessori` |
-| `vincolo_culturale` | bool | no | `:hasCulturalConstraint` | `xsd:boolean` | `true` |
-| `redditivita_annua` | decimal | no | `:annualIncome` | `xsd:decimal` (€) | `0.00` |
-| `anno_costruzione` | int | no | `:constructionYear` | `xsd:gYear` | `1572` |
-| `efficienza_energetica` | string | no | `:energyClass` → `skos:Concept` (CV `energy-classes`) | URI | `D` |
-
-### KPI derivabili
-
-- **Valore totale patrimonio** (€) = `Σ valore_bilancio`
-- **% immobili inutilizzati** (proxy di valorizzazione)
-- **Composizione per categoria**
-- **Mappa patrimonio** geolocalizzato
-- **Redditività complessiva** = `Σ redditivita_annua / Σ valore_bilancio × 100`
-- **% immobili sottoposti a vincolo culturale**
-- **Distribuzione classi energetiche**
-
-### Esempio Turtle (Comune di Milano, codice IPA `c_f205`)
-
-> Esempio derivato dal dataset reale **"Elenco immobili di proprietà del Comune di Milano"** pubblicato dal Comune di Milano su dati.gov.it (id `elenco-immobili-di-proprieta-del-comune-di-milano1`). Palazzo Marino in Piazza della Scala è la sede storica del Comune di Milano.
-
-```turtle
-<https://w3id.org/italia/data/c_f205/point-of-interest/IMM-MI-001>
-    a poi:PointOfInterest ;
-    dct:identifier "IMM-MI-001" ;
-    rdfs:label "Palazzo Marino - Sede del Comune di Milano"@it ;
-    poi:category <https://w3id.org/italia/controlled-vocabulary/comune-metrics/property-categories/EDIFICIO_AMMINISTRATIVO> ;
-    adms:status <https://w3id.org/italia/controlled-vocabulary/comune-metrics/property-use-status/IN_USO> ;
-    <https://w3id.org/italia/data/comune-metrics/property/effectiveUse> "Sede Sindaco, Giunta e Consiglio Comunale"@it ;
-    <https://w3id.org/italia/data/comune-metrics/property/hasCulturalConstraint> "true"^^xsd:boolean ;
-    <https://w3id.org/italia/data/comune-metrics/property/areaSquareMeters> "12500.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/volumeCubicMeters> "62000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/cadastralValue> "85000000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/bookValue> "120000000.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/annualIncome> "0.00"^^xsd:decimal ;
-    <https://w3id.org/italia/data/comune-metrics/property/constructionYear> "1558"^^xsd:gYear ;
-    <https://w3id.org/italia/data/comune-metrics/property/energyClass>
-        <https://w3id.org/italia/controlled-vocabulary/comune-metrics/energy-classes/E> ;
-    clv:hasAddress <https://w3id.org/italia/data/c_f205/address/imm-mi-001> ;
-    geo:lat "45.4669"^^xsd:decimal ;
-    geo:long "9.1900"^^xsd:decimal ;
-    poi:isOwnedBy <https://w3id.org/italia/data/c_f205/public-organization/comune-milano> ;
-    dct:source <https://www.dati.gov.it/view-dataset/dataset?id=elenco-immobili-di-proprieta-del-comune-di-milano1> .
-
-<https://w3id.org/italia/data/c_f205/address/imm-mi-001>
-    a clv:Address ;
-    clv:fullAddress "Piazza della Scala 2, 20121 Milano MI"@it ;
-    clv:hasNumber "2" ;
-    clv:postCode "20121" .
-```
-
----
-
-## Validazione automatica
-
-Ogni dataset è validato a **due livelli**:
-
-### Livello 1 — Validazione CSV (JSON Schema)
-
-Il validatore CLI `comune-metrics-validate` (in `/scripts/`) controlla contro `/schemas/<nome_dataset>.schema.json`:
-
-1. **Conformità schema** — colonne obbligatorie presenti, tipi corretti
-2. **Valori controllati** — enum dei campi categoriali (es. `frazione`, `tipo_pratica`)
-3. **Coerenza referenziale** — chiavi composte uniche dove richiesto
-4. **Range temporali** — date plausibili (no anni futuri impossibili, no date inverse)
-5. **Coordinate** — `lat` in [-90,90], `lon` in [-180,180], dentro bounding box italiano
-
-### Livello 2 — Validazione TTL (vocabolari/ontologie PA italiana)
-
-Il validatore `comune-metrics-rdf-validate` controlla:
-
-1. **Sintassi Turtle valida** (parsing con `rdflib`)
-2. **Whitelist classi/proprietà PA italiana** (verifiche contro mappa locale `ONTO_CLASSES` + SPARQL ASK su `https://schema.gov.it/sparql`)
-3. **Pattern URI canonico** (`https://w3id.org/italia/data/{ipa}/{tipo-risorsa}/{id}`)
-4. **Vocabolari controllati SKOS** — i concetti referenziati esistono nel `skos:ConceptScheme` dichiarato
-5. **Conformità DCAT-AP_IT 2.1** del Dataset wrapper
-
-## Come costruire i CSV — fonti dati per il Comune
-
-> **La domanda operativa.** Un Comune che vuole adottare il paniere ha già al suo interno **tutti i dati necessari**, ma sparsi in sistemi diversi (anagrafe, contabilità, SUE/SUAP, polizia locale, gestionale rifiuti, protocollo, software cimiteriale, ecc.). Questa sezione mappa **dove cercarli, chi li detiene, e come trasformarli** nel formato CSV richiesto dagli schemi.
-
-### Principio: fonti interne primarie, mai dati di terzi
-
-Il paniere richiede che ogni Comune costruisca i CSV **a partire dai propri sistemi gestionali**. Non si scaricano da ISTAT o da altre fonti esterne (che sarebbero dati aggregati con un livello di dettaglio inferiore e non aggiornati). Le fonti elencate sotto sono indicative — ogni Comune userà i propri specifici applicativi, ma le **funzioni amministrative** sono identiche in tutta Italia.
-
-### Mappa fonti → dataset
-
-| # | Dataset | Ufficio responsabile | Sistema gestionale tipico | Periodicità estrazione |
-|---|---|---|---|---|
-| 1 | popolazione | Servizi Demografici / Anagrafe | ANPR (Anagrafe Nazionale Popolazione Residente) o gestionali storici (Insiel, Maggioli APK, J-Demos, etc.) | Annuale, al 31/12 |
-| 2 | bilancio | Ragioneria / Servizi Finanziari | Sw contabilità: CIVILIA Open, J-Serfin, AscotWeb, IFEL, Sicraweb | Annuale dopo approvazione rendiconto |
-| 3 | opere_pubbliche | LL.PP. + RUP + Gare e Contratti | RUP-anagrafe ANAC, BDAP, Maggioli J-City Lavori Pubblici, Sw cronoprogramma | Trimestrale |
-| 4 | pratiche_edilizie | SUE (Sportello Unico Edilizia) | Portale SUE comunale (PortaleSUE, GEDOC, Insiel SUAP/SUE), protocollo digitale | Trimestrale |
-| 5 | servizi_sociali | Servizi Sociali / Politiche per la persona | Cartella Sociale Informatizzata (CSI), GeCare, J-Sociale | Annuale |
-| 6 | istruzione | Servizi Educativi | Sw iscrizioni asili (es. Schoolnet, J-Iscrizioni, Maggioli Servizi Scolastici) | Annuale, A.S. settembre |
-| 7 | incidenti_stradali | Polizia Locale | Sw incidentistica: Concilia, Sicrap, AreaPM, Megaservizi, applicativo regionale | Mensile |
-| 8 | rifiuti | Ambiente / Tributi (TARI) | Gestore rifiuti (Hera, AMA, A2A, Aliasiti, ESA, ecc.) — il Comune riceve report mensile dal gestore | Mensile |
-| 9 | eventi_culturali | Cultura / Manifestazioni / Suolo Pubblico | Calendario eventi (TouchPoint, Multilibro, Civilia Cultura), pratiche occupazione suolo pubblico | Trimestrale |
-| 10 | delibere | Segreteria Generale | Sw atti amministrativi: Civilia Open Atti, J-Iride, Sicraweb Atti, GEDOC | Mensile (post-pubblicazione albo) |
-| 11 | patrimonio | Patrimonio / Demanio | Sw inventario: Civilia Patrimonio, AreaPatrimonio, J-Patrimonio, Sicraweb Inventario | Annuale (allegato al rendiconto) |
-
-### Workflow tipo per un Comune
-
-1. **Designazione referente per dataset** — ogni Ufficio nomina un referente OpenData (può essere lo stesso per più dataset)
-2. **Estrazione dal gestionale** — il referente esegue una query (SQL, esportazione Excel, report nativo) sul proprio applicativo
-3. **Trasformazione in CSV conforme** — la query ridenomina/converte i campi nel formato richiesto da `schemas/{dataset}.schema.json`
-4. **Validazione locale** — pre-commit con `python validate.py {dataset}.csv`
-5. **Pubblicazione su CKAN comunale** — dataset DCAT-AP_IT con extras `paniere_comunemetrics:true`
-6. **Generazione TTL** — pipeline automatica con [piersoft/CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) per ottenere il badge ORO
-
-### Template CSV vuoti
-
-Un set di file CSV vuoti (solo header conformi allo schema) sarà fornito in `/templates/{dataset}.template.csv`. Ogni Comune può scaricarli, popolarli con i propri dati, validarli e pubblicarli.
-
-### Esempi di query SQL su gestionali tipici
-
-#### Dataset 2 — Bilancio (esempio Civilia Open / Sicraweb)
+### Dataset 1 — Popolazione (da Anagrafe APR)
 
 ```sql
--- Estrazione spesa per missione/programma da contabilità armonizzata
+-- PostgreSQL/Oracle, schema tipico ANPR/APR
 SELECT
-    EXTRACT(YEAR FROM data_documento) AS anno,
-    'RENDICONTO' AS tipo_documento,
-    LPAD(missione_codice::text, 2, '0') AS missione_codice,
-    missione_descrizione AS missione_nome,
-    LPAD(programma_codice::text, 2, '0') AS programma_codice,
-    programma_descrizione AS programma_nome,
-    titolo::text AS titolo,
-    SUM(stanziamento_iniziale) AS stanziamento_iniziale,
-    SUM(stanziamento_assestato) AS stanziamento_assestato,
-    SUM(impegnato) AS impegnato,
-    SUM(pagato) AS pagato,
-    (SELECT residenti FROM anagrafe_storico WHERE anno = EXTRACT(YEAR FROM data_documento)) AS popolazione_riferimento
-FROM bilancio_capitoli
-WHERE EXTRACT(YEAR FROM data_documento) = 2024
-GROUP BY anno, missione_codice, missione_descrizione, programma_codice, programma_descrizione, titolo
-ORDER BY missione_codice, programma_codice;
+    EXTRACT(YEAR FROM data_riferimento)::int AS anno,
+    quartiere,
+    COUNT(*) AS residenti
+FROM anagrafe_residenti
+WHERE stato_civile_attuale != 'CESSATO'
+  AND data_cancellazione IS NULL
+  AND data_riferimento BETWEEN '2010-01-01' AND CURRENT_DATE
+GROUP BY EXTRACT(YEAR FROM data_riferimento), quartiere
+ORDER BY anno, quartiere;
 ```
 
-#### Dataset 7 — Incidenti stradali (esempio Concilia / sw Polizia Locale)
+### Dataset 2 — Bilancio (da gestionale finanziario)
 
 ```sql
--- Estrazione incidenti dal sw di gestione sinistri
+-- Spesa consuntiva per missione/programma DLgs 118/2011
 SELECT
-    'INC-' || EXTRACT(YEAR FROM data_evento) || '-' ||
-        LPAD(EXTRACT(MONTH FROM data_evento)::text, 2, '0') || '-' ||
-        LPAD(numero_progressivo::text, 4, '0') AS id_incidente,
-    data_evento AS data,
-    TO_CHAR(data_evento, 'HH24:MI') AS ora,
+    anno_esercizio AS anno,
+    missione_descrizione AS missione,
+    programma_descrizione AS programma,
+    SUM(importo_pagato) AS importo_euro
+FROM movimenti_finanziari
+WHERE tipo_movimento = 'PAGAMENTO'
+  AND anno_esercizio BETWEEN 2018 AND EXTRACT(YEAR FROM CURRENT_DATE)
+GROUP BY anno_esercizio, missione_descrizione, programma_descrizione
+ORDER BY anno_esercizio, missione_descrizione;
+```
+
+### Dataset 3 — Opere pubbliche (da gestionale LL.PP.)
+
+```sql
+SELECT
+    descrizione_opera AS nome,
+    anno_inserimento AS anno,
+    stato_avanzamento AS stato,
+    importo_quadro_economico AS importo_euro,
+    codice_cup AS cup,
+    fonte_finanziamento,
     latitudine AS lat,
     longitudine AS lon,
-    via_toponomastica AS via,
-    civico,
-    CASE
-        WHEN tipo_strada IN ('S.S.', 'S.P.', 'S.R.') THEN 'EXTRAURBANA'
-        WHEN ranking_via = 1 THEN 'URBANA_PRINCIPALE'
-        ELSE 'URBANA_SECONDARIA'
-    END AS tipo_strada,
-    natura_evento AS natura,
-    n_veicoli AS veicoli_coinvolti,
-    n_feriti AS feriti,
-    n_feriti_gravi AS feriti_gravi,
-    n_morti_30gg AS deceduti,
-    n_pedoni AS coinvolti_pedoni,
-    n_ciclisti AS coinvolti_ciclisti,
-    condizione_meteo AS condizioni_meteo
-FROM sinistri
-WHERE EXTRACT(YEAR FROM data_evento) = 2024
-  AND stato_pratica = 'CHIUSA'
-ORDER BY data_evento, ora;
+    rup_nominativo AS rup
+FROM opere_pubbliche
+WHERE data_cancellazione IS NULL
+ORDER BY anno DESC;
 ```
 
-#### Dataset 11 — Patrimonio (esempio Civilia Patrimonio / Sicraweb Inventario)
+### Dataset 4 — Pratiche edilizie (da SUE)
 
 ```sql
--- Estrazione conto del patrimonio immobiliare dall'inventario
 SELECT
-    codice_inventario AS id_immobile,
-    denominazione,
-    CASE categoria_uso
-        WHEN 'A' THEN 'EDIFICIO_AMMINISTRATIVO'
-        WHEN 'B' THEN 'SCOLASTICO'
-        WHEN 'C' THEN 'CULTURALE'
-        WHEN 'D' THEN 'SPORTIVO'
-        WHEN 'E' THEN 'ABITATIVO_ERP'
-        ELSE 'ALTRO'
-    END AS categoria,
-    indirizzo_completo AS indirizzo,
-    coord_lat AS lat,
-    coord_lon AS lon,
-    superficie_mq,
-    volume_mc,
-    valore_catastale,
-    valore_iscrizione_bilancio AS valore_bilancio,
-    CASE stato
-        WHEN 'IU' THEN 'IN_USO'
-        WHEN 'NU' THEN 'INUTILIZZATO'
-        WHEN 'LO' THEN 'LOCATO'
-        WHEN 'CO' THEN 'CONCESSO'
-        ELSE 'IN_USO'
-    END AS stato_uso,
-    destinazione_uso,
-    flag_vincolo_dlgs42_2004 AS vincolo_culturale,
-    canone_annuo AS redditivita_annua,
-    anno_costruzione,
-    classe_ape AS efficienza_energetica
-FROM inventario_immobili
-WHERE escluso_da_pubblicazione = false  -- esclude beni riservati
-  AND tipologia = 'FABBRICATO';
+    data_protocollo AS data,
+    tipo_pratica AS tipo,
+    esito_pratica AS esito,
+    data_chiusura AS chiusura_data,
+    via_intervento AS via,
+    civico_intervento AS civico
+FROM pratiche_sue
+WHERE data_protocollo >= '2018-01-01'
+ORDER BY data_protocollo DESC;
 ```
 
-### Esempi pratici da Comuni esistenti
+### Dataset 5 — Servizi sociali (da cartella sociale)
 
-I 11 esempi Turtle ancorati a dataset reali (sezione [Filosofia](#filosofia)) servono anche da **esempio operativo per le query**: quando il Comune di Bologna ha pubblicato `popolazione-residente-per-eta-sesso-cittadinanza-quartiere`, qualcuno in `Servizi Demografici di Bologna` ha eseguito **una query molto simile a quelle sopra** sul gestionale anagrafe. Quel CSV è ispezionabile su `dati.gov.it` con id `popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog` ed è la prova che si può fare.
+```sql
+SELECT
+    EXTRACT(YEAR FROM data_apertura)::int AS anno,
+    tipo_intervento AS categoria,
+    COUNT(DISTINCT codice_fiscale_utente) AS utenti,
+    SUM(importo_erogato) AS spesa_euro,
+    COUNT(*) AS interventi
+FROM interventi_sociali
+WHERE data_apertura BETWEEN '2020-01-01' AND CURRENT_DATE
+GROUP BY EXTRACT(YEAR FROM data_apertura), tipo_intervento
+ORDER BY anno, categoria;
+```
 
-### Cosa NON fare
+### Dataset 7 — Incidenti stradali (da sw Polizia Locale)
 
-- ❌ **Non scaricare da ISTAT/dati esterni**: ISTAT pubblica aggregati nazionali; il paniere richiede il **vostro** dato di dettaglio (per quartiere, per pratica, per immobile)
-- ❌ **Non normalizzare i nomi propri**: gli schemi richiedono ID anonimi per pratiche edilizie e incidenti, NON nomi cognomi di cittadini
-- ❌ **Non sostituire celle vuote con zeri**: usare `null` (cella CSV vuota) per dato mancante; lo zero è significativo
-- ❌ **Non aggregare prematuramente**: pubblicare il dato granulare; chi vuole l'aggregato lo calcola dal dato di dettaglio. Eccezione: dati personali sensibili (es. servizi sociali per minori), dove la riga aggregata per anno × tipologia è obbligatoria
+```sql
+SELECT
+    data_evento AS data,
+    latitudine AS lat,
+    longitudine AS lon,
+    n_morti_30gg AS morti,
+    n_feriti AS feriti,
+    via_toponomastica AS zona,
+    natura_evento AS tipo,
+    TO_CHAR(data_evento, 'HH24:MI') AS ora
+FROM incidenti_stradali
+WHERE data_evento >= '2020-01-01'
+ORDER BY data_evento DESC;
+```
 
-### Tempi realistici di adozione
+### Dataset 11 — Patrimonio (da inventario)
 
-- **Dataset facili** (popolazione, bilancio, delibere): 1-2 giorni-uomo per la prima estrazione, poi pipeline automatica
-- **Dataset medi** (rifiuti, opere pubbliche, patrimonio): 3-5 giorni-uomo (richiede coordinamento con gestori esterni o DPO)
-- **Dataset complessi** (incidenti, pratiche edilizie, servizi sociali): 1-2 settimane (anonimizzazione, geocoding indirizzi, validazione DPO)
-- **Totale realistico per il VERDE 11/11**: ~20-30 giorni-uomo distribuiti su più Uffici, una volta sola, poi solo manutenzione
-
-## Integrazione con dati.gov.it
-
-Il paniere è progettato per essere harvestato da **dati.gov.it** via DCAT-AP_IT. I dataset CKAN del Comune devono includere nel campo `extras`:
-
-| Extra | Valore | Funzione |
-|---|---|---|
-| `paniere_comunemetrics` | `true` | Marker di adozione |
-| `paniere_dataset_id` | `popolazione` \| `bilancio` \| ... | Identifica quale dei 11 |
-| `paniere_versione_schema` | `2.0` | Versione paniere |
-
-Inoltre ogni dataset deve avere **due distribuzioni**:
-
-- una `dcat:Distribution` con `dct:format = text/csv`
-- una `dcat:Distribution` con `dct:format = text/turtle` (per il TTL conforme alle ontologie della PA italiana generato con `github.com/piersoft/CSV-to-RDF`)
-
-Questo permette al loader della dashboard di:
-
-1. trovare automaticamente i dataset conformi (`extras_paniere_comunemetrics:true`)
-2. scaricare il CSV per i KPI numerici (rendering veloce)
-3. interrogare il TTL via SPARQL per query semantiche cross-Comune (federazione)
-
-## Estensioni future (paniere ESTESO, non obbligatorio)
-
-Dataset utili ma non richiesti per il badge VERDE:
-
-- Tempi di pagamento fornitori (ITP) — già obbligo MEF
-- Accesso civico generalizzato (FOIA) — D.Lgs. 33/2013
-- Personale comunale (organico, assenteismo)
-- Polizia Locale — sanzioni per tipologia (CPSV-AP + SKOS)
-- Trasporto pubblico locale — corse, fermate, copertura (**GTFS**)
-- Aria — rilevazioni centraline (PM10, NO2, O3) (**QB** + SOSA/SSN)
-- Strutture ricettive turistiche (**ACCO**)
-- Parcheggi (**PARK**)
-- Sportelli/servizi al cittadino con orari (**POI** + **TI** + **SM**)
+```sql
+SELECT
+    denominazione_immobile AS denominazione,
+    tipologia AS tipo,
+    indirizzo,
+    latitudine AS lat,
+    longitudine AS lon,
+    valore_iscritto_bilancio AS valore_euro,
+    CASE WHEN flag_vincolo_culturale = 'S' THEN true ELSE false END AS vincolo_culturale,
+    destinazione_uso AS uso
+FROM patrimonio_immobiliare
+WHERE flag_attivo = 'S'
+ORDER BY tipologia, denominazione_immobile;
+```
 
 ---
 
-## Riferimenti
+## Cosa NON fare
 
-- **Vocabolari controllati e ontologie della PA italiana**: <https://schema.gov.it> · <https://github.com/italia/dati-semantic-assets>
-- **DCAT-AP_IT 2.1**: <https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html>
-- **Strumento CSV → TTL**: <https://github.com/piersoft/CSV-to-RDF> · demo <https://piersoft.github.io/CSV-to-RDF>
-- **Vocabolari controllati ufficiali**: <https://github.com/italia/daf-ontologie-vocabolari-controllati>
-- **dati.gov.it**: <https://www.dati.gov.it>
-- **MQA data.europa.eu**: <https://data.europa.eu/mqa>
-- **Codici IPA**: <https://indicepa.gov.it>
+| Anti-pattern | Perché è sbagliato |
+|---|---|
+| **Esportare PDF invece di CSV** | I PDF non sono parsabili automaticamente. Il workflow li rifiuta |
+| **Mettere virgola come separatore decimale** (`123,45`) | Lo standard del paniere è il punto. La virgola è ambigua nei CSV |
+| **Lasciare colonne vuote senza criterio** | Se una colonna obbligatoria è sempre vuota, il dato è inutile |
+| **Esportare ZIP con dentro CSV** | Il workflow non disimbusta archivi. Esporre direttamente il CSV |
+| **Usare nomi colonne in maiuscolo** (`ANNO` invece di `anno`) | Gli header sono case-sensitive. Il validatore rifiuta |
+| **Pubblicare su URL temporanei** (Google Drive privato, OneDrive) | Il workflow non può autenticarsi. Servono URL pubblici stabili |
+| **Aggiornare a mano una volta all'anno** | Il dato fresco è oro, quello vecchio rumore. Schedulare l'estrazione |
 
 ---
 
-## Cronistoria versione
+## Integrazione con `dati.gov.it`
 
-- **v2.14** (Maggio 2026) — **Solo Bologna + Lecce** nei casi d'uso v0.2. Decisione strategica: invece di accumulare Comuni con copertura parziale (Firenze 0/8 per ZIP travestiti, Torino 2/4 per dati storici, Messina 4/4 ma con dataset poveri), tenere **2 Comuni rappresentativi che raccontano una storia completa**:
-  - **Bologna** = il publisher esemplare (9 dataset live, 8 OK, dataset ricchi: 50k pratiche edilizie, 28k eventi geo, 13.4k incidenti con 123 morti, RD 72.4% nel 2025, bilancio 15 mld €). Server stabile, formati aperti, metadata DCAT-AP_IT pieni.
-  - **Lecce** = il "Lecce paradox" reso concreto. 11/11 dataset CORE cablabili (è il Comune con la copertura teorica più alta), ma il portale `dati.comune.lecce.it` ha geo-fencing IP che risponde 200 al browser dell'utente con IP italiano residenziale e 503 ai runner GitHub Actions (cloud Azure US/EU). Tre dataset persi (servizi sociali, rifiuti, delibere) per link goo.gl dismessi nel 2025-03-25. Soluzione: **mode static_snapshot**. 4 fixture CSV scaricate manualmente da Piersoft (bilancio 635M€, pratiche edilizie 8.674, eventi ricorrenti 25, patrimonio NAC 171) + 4 dataset live da Google Sheets (popolazione 2019, **Programma Triennale OO.PP. 2020-2022 con 168 opere e 95 CUP**, **Popolazione Scolastica 2021-2022 con 93 scuole geo e 24.166 alunni**, incidenti 2.500 sinistri).
-  
-  **Storia per il post di lancio** (ora dimostrata visivamente, non solo descritta):
-  1. Bologna come benchmark di "publisher fatto bene" — il cruscotto si auto-aggiorna quotidianamente
-  2. Lecce come prova provata che pubblicare ≠ rendere accessibile — il banner arancio sulla dashboard spiega al visitatore esattamente cosa è successo
-  3. La lista dei Comuni esclusi dopo audit (Firenze, Torino, Messina, Bari, Milano, Matera, Genova, Palermo) ognuno per un motivo tecnico diverso — cartoline di patologie diverse di pubblicazione OD italiane
-  4. I Comuni furbi spostano i dati su Google Sheets per scampare alle limitazioni del proprio CKAN (vedi opere_pubbliche e popolazione_scolastica Lecce, ospitate su `docs.google.com`)
+Se il Comune già pubblica su un portale CKAN harvestato da `dati.gov.it`, può sfruttarlo:
 
-  **Bilancio v0.2 finale**: 2 Comuni, 17 dataset cablati (9 Bologna + 8 Lecce), 16 OK accessibili, copertura del 94%.
+1. Crea i CSV del paniere come **risorse aggiuntive** dei dataset esistenti (non sostituirli)
+2. Nel manifest ComuneMetrics usa `source_type: external_csv` con l'URL della risorsa CSV
+3. Il workflow `build-data.yml` farà fetch ad ogni run
 
-- **v2.13** (Maggio 2026) — **Bari rimossa dopo audit, +Torino** per ribilanciare al Nord-Ovest. Bari aveva 5/11 dataset cablati (popolazione 2024 fresca, pratiche edilizie, scuole, incidenti 2023, rifiuti debole) ma il server publisher `opendata.comune.bari.it` è strutturalmente instabile (timeout sistematico dai runner GitHub Actions e dal container locale): **0/5 dataset accessibili** nel run del workflow. Stesso pattern infrastrutturale di Lecce. **Per riprovare Lecce** è necessario un runner self-hosted sul VPS Piersoft con IP italiano: il portale Lecce risponde 200 al browser dell'utente ma 503 ai runner Azure US/EU (probabile geo-fencing). Resta strategia futura per v0.3. **Torino** (Stefano Lo Russo, 2021-2026) cablato 4/11: popolazione 2024 (recentissima, server `risorse.comune.torino.it` HTTPS up), opere pubbliche 2020, incidenti 2015 (solo provincia, vecchi), rifiuti AMIAT 2020. Niente bilancio comunale aggiornato (solo bilanci di mandato 2001-2010), niente pratiche edilizie, niente delibere, niente patrimonio (solo zootecnico). **Torino è il "Comune-archivio"**: 2.060 dataset pubblicati (numero altissimo) ma quasi tutti storici, freschi solo popolazione/circoscrizioni. Storia importante per il post di lancio: la quantità di dataset non basta, serve la freschezza. **Geografia v0.2 finale**: Bologna + Firenze (Centro-Nord), Torino (Nord-Ovest), Messina (Sud-Sud). Bilancio dataset cablati: Bologna 9, Firenze 8, Torino 4, Messina 4 = **25 totali**.
-- **v2.12** (Maggio 2026) — **Lecce rimossa, +Bari +Messina** nei casi d'uso v0.2. Lecce paradossalmente aveva 11/11 dataset cablati ma il server publisher `dati.comune.lecce.it` è strutturalmente instabile (HTTP 503 upstream connect error sia HTTP che HTTPS dal runner GitHub e dal container locale) e 4 dataset puntano a link `goo.gl/...` ormai dismessi (Google URL Shortener chiuso il 2025-03-25 → HTTP 410). Restavano solo 4/11 dataset accessibili. La storia del "Lecce paradox" (publisher virtuoso de iure ma de facto inaccessibile) è troppo importante per non raccontarla nel post di lancio. **Bari** (Vito Leccese, 2024-2029) cablato 5/11: popolazione fresca gennaio 2024, pratiche edilizie reali, incidenti 2023, scuole geo, rifiuti debole (siti raccolta farmaci). Server `opendata.comune.bari.it` instabile come Lecce (timeout) — al momento 0/5 OK, ma dataset riprenderanno appena il server torna up. **Messina** (Federico Basile, 2023-2028) cablato 4/11 ma con qualità altissima: popolazione fresca aprile 2026 (la più recente di tutti!), patrimonio immobili comunali (UNICO Comune con elenco vero), rifiuti con kg per CER mensile (UNICO con dato dettagliato vs solo % differenziata), studenti per scuola georeferenziati. Server `dati.comune.messina.it` verificato up. **Risultati misurati**: Bologna 8/9 OK, Firenze 6/8 OK, Messina 4/4 OK ⭐, Bari 0/5 (server down). 18/26 dataset processati in tempo reale = 69% di copertura accessibile. **Lezione importante**: la diversità delle fonti (Sud, Centro, Nord) richiede tolleranza alla varietà infrastrutturale dei publisher. Il paniere deve premiare chi pubblica E mantiene il servizio up.
-- **v2.11** (Maggio 2026) — **Milano rimosso dai casi d'uso** ComuneMetrics v0.2. Causa: il portale `dati.comune.milano.it` è protetto da Microsoft-Azure-Application-Gateway/v2 che blocca sistematicamente con HTTP 403 le richieste dai runner GitHub Actions, anche dopo retry esponenziale fino a 22 secondi di backoff. Tutti i suoi 11 dataset (popolazione, bilancio, servizi sociali, asili, incidenti, rifiuti, eventi, patrimonio, ecc.) restano formalmente nel paniere ma il loader CKAN non riesce ad aggregarli. La dashboard mostrerà Milano come "non disponibile in questa istanza — il Comune pubblica ma il portale blocca gli aggregatori automatici". Per riabilitare Milano serve uno dei seguenti: (a) **self-hosted runner sul VPS** Piersoft 31.14.139.9 (IP italiano accettato dal WAF), (b) **proxy Cloudflare Worker** con endpoint REST `/proxy?url=`, (c) collaborazione diretta con il Comune per ottenere whitelist per il runner GitHub. **Milano resta il Comune con più dataset pubblicati su dati.gov.it (2.593) ma de facto inaccessibile agli aggregatori civici**: paradosso che vale la pena documentare nel post di lancio. Note tecniche: il problema NON è limitato a Python `requests` — anche Node.js fetch nativo viene bloccato. Il pattern del validatore `opendata-pa-quality-audit` funziona su `www.dati.gov.it` (passa CKAN harvest) ma non sui CSV individuali del portale milanese. **Casi d'uso v0.2: 3 Comuni** (Bologna, Firenze, Lecce). Quarto Comune candidato per riequilibrare la geografia del Sud: Matera (249 dataset, città nativa Piersoft, simbolicamente perfetta) o Bari (158).
-- **v2.10** (Maggio 2026) — **Riconosciuta la dissonanza tra mock data e CSV reali**: l'audit dei dataset reali (Bologna in primis, l'unico portale che risponde dal container) ha rivelato che molti dei campi che la dashboard mostra nei KPI/grafici NON esistono nei CSV pubblicati. Esempi concreti: il dataset eventi Bologna ha (id, titolo, categoria, quartiere, geo, date) ma NON ha "spesa_patrocinati" né "% gratuiti"; il dataset lavori-in-corso Bologna ha (descrizione, indirizzo, date) ma NON ha CUP, importo, SAL; rifiuti Bologna ha solo % differenziata per quartiere, NON kg per frazione né serie mensile. **Mossa difensiva immediata**: aggiunto un **banner globale giallo** sotto l'header (`⚠ MVP DIMOSTRATIVO`) e un **ribbon su ogni sezione KPI** ("dati di esempio, non ancora letti dal CSV reale"). Disclaimer JSDoc aggiunto sopra `MOCK_BILANCIO`. Aggiunta sezione "Onestà metodologica" nel README. **Cosa è ancora valido**: badge compliance (presenza dataset), slug dei link, freshness card sono **letti dalle API reali**. **Cosa è simulato**: tutti i valori KPI e i dati dei grafici. **Risoluzione definitiva → v0.2**: loader CKAN che legge i CSV reali via Cloudflare Worker proxy; i grafici si semplificheranno mostrando solo metriche derivabili. Una **v3 del paniere** dovrà includere una mappa formale "campi attesi vs campi reali" per ogni Dataset CORE, segnalando quali campi servono al Comune per coprire le metriche civiche più rilevanti.
-- **v2.9** (Maggio 2026) — Aggiunta nella dashboard una **card di freschezza** per ogni dataset, basata sul campo `dcat:modified` letto via API CKAN `package_show`. Tre livelli con codice colore: 🟢 **FRESCO** (≤12 mesi), 🟡 **DATATO** (12-36 mesi), 🔴 **OBSOLETO** (>36 mesi, animazione pulse rossa). Mostra anche la data leggibile in italiano e l'età relativa ("aggiornato 5 mesi fa", "non aggiornato da 11 anni"). Questa è la **prima versione del decay temporale** che la cronistoria v2.7 anticipava: per ora il punteggio compliance non viene ancora pesato dalla freschezza, ma la card rende immediatamente visibile al cittadino quali dataset sono obsoleti. Il punteggio pesato (decay sulla compliance) è candidato per **paniere v3.0**. Snapshot delle date `modified` cablate in `MOCK_FRESHNESS` nel codice; v0.2 della dashboard leggerà live dall'API.
-- **v2.8** (Maggio 2026) — **Cablati 7 source `null`** in MOCK_DATA che mostravano "il Comune pubblica questo dataset ma il link puntuale non è ancora cablato qui": (Bologna: bilancio + incidenti; Milano: popolazione; Firenze: popolazione + bilancio; Lecce: popolazione + bilancio + incidenti). **Correzioni di flag erronei**: scoperto che Bologna **NON pubblica** delibere e patrimonio comunale, e Milano **NON pubblica** delibere su dati.gov.it (solo Lecce e Firenze li hanno). Aggiornati i flag a `false` di conseguenza. **Caveat onestà**: il `bilancio` Firenze (`dentro-il-bilancio-2024`) è la serie "fatture fornitori liquidate", non il bilancio per missione/programma del paniere CORE 2 — è una fonte complementare ma più recente di quello canone, va segnalato che nella valutazione finale il match al paniere è parziale. Idem Milano popolazione (`popolazione-legale-al-censimento-2011`) è un dato Istat decennale, non la serie storica annuale residenti come Bologna. **Punteggi finali corretti**: Lecce 11/11 VERDE, Bologna 9/11 ARANCIONE (era 11/11 errato), Milano 8/11 ARANCIONE (era 9/11 errato), Firenze 8/11 ARANCIONE.
-- **v2.7** (Maggio 2026) — Corretta la disponibilità di **2 Dataset** per Firenze a seguito di una ricognizione ampia: il Comune pubblica **rifiuti** (`quantita-di-rifiuti-urbani-anni-2000-2014`, anche se serie ferma al 2014 con vecchio gestore Quadrifoglio, prima del passaggio ad Alia SpA) e **eventi culturali** (`teatri-e-luoghi-per-eventi` con georeferenziazione, più 7 dataset SIAE per categoria 2006-2014). **Caveat di onestà**: i dataset Firenze rifiuti/eventi sono **datati** ma **pubblicati**. Il paniere v2 conta solo la **presenza** di un dataset CORE; una eventuale v3 dovrà introdurre un **decay temporale** sul punteggio in base a `dcat:modified` (dataset > 5 anni vecchi pesano meno). **Nuovo badge Firenze**: 6/11 → 8/11 🟠 ARANCIONE Avanzata. **Restano non pubblicati**: opere pubbliche, pratiche edilizie, patrimonio comunale (esistono solo dataset cartografici di vincoli urbanistici, non un elenco proprietà).
-- **v2.6** (Maggio 2026) — Corretta la disponibilità del Dataset 7 "Incidenti stradali" per Milano: il Comune pubblica **5 dataset** col prefisso titolo "Mobilità: incidenti stradali e persone infortunate per mese...". Errore precedente: la mia ricerca con keyword "incidenti stradali" non aveva matchato perché il titolo inizia con "Mobilità:" (mancanza del prefisso causava 0 risultati). Cablato come fonte primaria `mobilita-incidenti-stradali-e-persone-infortunate-per-mese-e-zona-di-decentramento-2001-20241` (versione per municipio, più granulare per dashboard). **Nuovo badge Milano**: 8/11 → 9/11 ARANCIONE Avanzata. Conferma della lezione v2.5: cercare anche per **prefissi tematici** dei titoli che le PA italiane usano spesso ("Mobilità:", "Cultura:", "Bilancio:"...).
-- **v2.5** (Maggio 2026) — Corretta la disponibilità del Dataset 4 "Pratiche edilizie" per Lecce: il Comune lo pubblica come `elenco-pratiche-sue` ("Elenco Pratiche SUE"). Errore precedente: il titolo non conteneva la stringa "pratiche edilizie" e la mia ricerca testuale aveva mancato il dataset, anche se la descrizione (`notes`) lo dichiarava esplicitamente come "Elenco Pratiche edilizie Sue (Sportello Unico Edilizia)". **Lezione operativa**: per la ricognizione dei dataset CKAN bisogna cercare anche nelle `notes`/description e nei `tags` (qui c'erano `edilizia-privata`, `permessi`, `pratiche`), non solo nel titolo. **Esiste anche un dataset complementare** Lecce, `elenco-pratiche-centro-storico` (CIL/CILA/SCIA/PdC del solo centro storico), citato come ulteriore prova di pubblicazione. **Nuovo badge Lecce**: 10/11 → 11/11 = 🟢 VERDE Completa, accanto a Bologna.
-- **v2.4** (Maggio 2026) — Sostituiti tutti gli UUID dei dataset di esempio con i corrispondenti **slug machine-readable** (campo `name` dell'API CKAN), che sono **persistenti** nel tempo. Gli UUID possono cambiare se un dataset viene cancellato e ripubblicato; lo slug no. NB: lo slug NON è derivabile dal titolo (es. su dati.gov.it 5 dataset Milano hanno suffisso "1", uno Bologna è troncato a 95 char): l'unica fonte autorevole è l'API `package_show`.
-- **v2.3** (Maggio 2026) — Affinata la dicitura: il nome canonico della rete di ontologie è "vocabolari controllati e ontologie della PA italiana" (riferimento URL: schema.gov.it). Eliminato l'uso di schema.gov.it come nome (resta solo come URL tecnico per badge, link e endpoint SPARQL).
-- **v2.2** (Maggio 2026) — Aggiunta sezione operativa "Come costruire i CSV" con mappa fonti → uffici → gestionali tipici, esempi SQL su sw italiani comuni, workflow di adozione e tempi realistici. Rimosso uso di "OntoPiA" (vecchio nome).
+I metadati DCAT-AP_IT del dataset originale rimangono invariati. Il Comune mantiene la sovranità sul proprio portale.
 
-- **v2.1** (Maggio 2026) — Esempi Turtle ancorati a dataset reali multi-Comune (Bologna, Milano, Firenze, Lecce). Ogni esempio cita la `dct:source` del dataset di riferimento harvestato da dati.gov.it. Aggiunto riquadro di derivazione esempi nella sezione Filosofia.
-- **v2.0.1** (Maggio 2026) — Patch: rimossa GeoSPARQL (non parte dei vocabolari/ontologie della PA italiana, standard OGC esterno). Le geometrie usano solo W3C WGS84 (`geo:lat`/`geo:long`) coerentemente con il README di `github.com/piersoft/CSV-to-RDF`
-- **v2.0** (Maggio 2026) — Mapping ai vocabolari/ontologie della PA italiana completo, esempi Turtle per ogni dataset, badge ORO 5★ LOD
-- **v1.0** (Maggio 2026) — Prima release: 11 dataset CORE, schema rigido, mapping DCAT-AP_IT
+---
+
+## Riferimenti normativi
+
+- **DLgs 33/2013** — Riordino della disciplina riguardante il diritto di accesso civico (FOIA)
+- **DLgs 36/2006** modificato dal **DLgs 102/2015** — Riutilizzo delle informazioni del settore pubblico (PSI Directive)
+- **DLgs 82/2005** (CAD) — art. 50, 52 sull'apertura dei dati
+- **DLgs 118/2011** — Armonizzazione bilanci PA, classificazione missioni/programmi
+- **AgID — Linee guida open data** ([docs.italia.it](https://docs.italia.it))
+- **DCAT-AP_IT v2.1** — profilo italiano di DCAT-AP
+
+---
+
+## Licenza
+
+Documento rilasciato sotto **CC-BY 4.0**.
+Le query SQL di esempio sono di pubblico dominio (CC0).

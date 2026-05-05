@@ -38,6 +38,8 @@ Il Comune **non deve** pubblicarli tutti per essere visibile: i dataset mancanti
 
 Schemi formali completi in [`schemas/csv/`](schemas/csv/) — specifica leggibile in [`docs/PANIERE_CSV_SCHEMA.md`](docs/PANIERE_CSV_SCHEMA.md).
 
+**Per i Comuni**: la [guida pratica `docs/PANIERE.md`](docs/PANIERE.md) spiega come ricavare i CSV partendo dai gestionali interni (anagrafe, finanziaria, SUE, polizia locale, ecc.) con esempi di query SQL.
+
 ---
 
 ## Come aggiungere il tuo Comune (procedura passo-passo)
