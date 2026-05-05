@@ -1,6 +1,6 @@
 {
   "key": "bologna",
-  "nome": "Bologna",
+  "nome": "Comune di Bologna",
   "ipa": "c_a944",
   "istat": "037006",
   "popolazione_attesa": 388367,
@@ -305,7 +305,7 @@
             "valore": 2439869445.53
           },
           {
-            "nome": "Trasporti e diritto alla mobilità",
+            "nome": "Trasporti e diritto alla mobilit\u00e0",
             "valore": 2281348540.77
           },
           {
@@ -353,7 +353,7 @@
             "valore": 406856351.06999993
           },
           {
-            "nome": "Tutela e valorizzazione dei beni e delle attività culturali",
+            "nome": "Tutela e valorizzazione dei beni e delle attivit\u00e0 culturali",
             "valore": 314757633.27000004
           },
           {
@@ -373,11 +373,11 @@
             "valore": 85971919.1
           },
           {
-            "nome": "Tutela e valorizzazione dei beni e attività culturali",
+            "nome": "Tutela e valorizzazione dei beni e attivit\u00e0 culturali",
             "valore": 56149470.85
           },
           {
-            "nome": "Sviluppo economico e competitività",
+            "nome": "Sviluppo economico e competitivit\u00e0",
             "valore": 51077402.48
           }
         ],
@@ -395,7 +395,7 @@
             "valore": 1050077425.14
           },
           {
-            "nome": "Viabilità e infrastrutture stradali",
+            "nome": "Viabilit\u00e0 e infrastrutture stradali",
             "valore": 667405945.6400001
           },
           {
@@ -407,7 +407,7 @@
             "valore": 520320000.41
           },
           {
-            "nome": "Fondo crediti di dubbia esigibilità",
+            "nome": "Fondo crediti di dubbia esigibilit\u00e0",
             "valore": 520296813.57000005
           },
           {
@@ -1051,7 +1051,7 @@
             "valore": 10436
           },
           {
-            "nome": "Interventi domiciliari e per la domiciliarità",
+            "nome": "Interventi domiciliari e per la domiciliarit\u00e0",
             "valore": 4386
           },
           {
@@ -2599,7 +2599,7 @@
           {
             "lat": 44.487694,
             "lon": 11.34994,
-            "nome": "Peonia in Bloom – Art and decoration negli antichi orti"
+            "nome": "Peonia in Bloom \u2013 Art and decoration negli antichi orti"
           },
           {
             "lat": 44.494637,
@@ -2679,17 +2679,17 @@
           {
             "lat": 44.502888,
             "lon": 11.335162,
-            "nome": "Uomini che parlano di uomini – 1° workshop 2023"
+            "nome": "Uomini che parlano di uomini \u2013 1\u00b0 workshop 2023"
           },
           {
             "lat": 44.49721,
             "lon": 11.342514,
-            "nome": "Le nozze di Figaro. Una folle giornata, un’epoca sul precipizio"
+            "nome": "Le nozze di Figaro. Una folle giornata, un\u2019epoca sul precipizio"
           },
           {
             "lat": 44.502888,
             "lon": 11.335162,
-            "nome": "«L’altro»: Lettura   laboratorio / I Racconti del Leone"
+            "nome": "\u00abL\u2019altro\u00bb: Lettura   laboratorio / I Racconti del Leone"
           },
           {
             "lat": 44.494887,
@@ -2699,17 +2699,17 @@
           {
             "lat": 44.493755,
             "lon": 11.354426,
-            "nome": "La scuola che sarà"
+            "nome": "La scuola che sar\u00e0"
           },
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "Educare al consenso dall’infanzia all’adolescenza | Serrenove"
+            "nome": "Educare al consenso dall\u2019infanzia all\u2019adolescenza | Serrenove"
           },
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "Donne che parlano di uomini – Workshop 2023"
+            "nome": "Donne che parlano di uomini \u2013 Workshop 2023"
           },
           {
             "lat": 44.493755,
@@ -2744,7 +2744,7 @@
           {
             "lat": 44.510406,
             "lon": 11.344702,
-            "nome": "(D)alla Bolognina, l’anima artistica di una piccola Bologna"
+            "nome": "(D)alla Bolognina, l\u2019anima artistica di una piccola Bologna"
           },
           {
             "lat": 44.494637,
@@ -2759,22 +2759,22 @@
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "Performance teatrale «Alberi» + «Cricket Sonic Attack» Live"
+            "nome": "Performance teatrale \u00abAlberi\u00bb + \u00abCricket Sonic Attack\u00bb Live"
           },
           {
             "lat": 44.471573,
             "lon": 11.278958,
-            "nome": "Live Abraço Branco | International Samba Street Band"
+            "nome": "Live Abra\u00e7o Branco | International Samba Street Band"
           },
           {
             "lat": 44.471573,
             "lon": 11.278958,
-            "nome": "Hop hop | Simone Romanò"
+            "nome": "Hop hop | Simone Roman\u00f2"
           },
           {
             "lat": 44.471573,
             "lon": 11.278958,
-            "nome": "Un po’ di Magia | Magico Turra"
+            "nome": "Un po\u2019 di Magia | Magico Turra"
           },
           {
             "lat": 44.47002,
@@ -2789,7 +2789,7 @@
           {
             "lat": 44.47002,
             "lon": 11.370762,
-            "nome": "L’orco puzza"
+            "nome": "L\u2019orco puzza"
           },
           {
             "lat": 44.512733,
@@ -2804,7 +2804,7 @@
           {
             "lat": 44.494637,
             "lon": 11.341932,
-            "nome": "Cos’è quella cosa che"
+            "nome": "Cos\u2019\u00e8 quella cosa che"
           },
           {
             "lat": 44.489567,
@@ -2869,7 +2869,7 @@
           {
             "lat": 44.5107048,
             "lon": 11.3401772,
-            "nome": "Bandabardò | Se mi rilasso collasso. Un libro suonato"
+            "nome": "Bandabard\u00f2 | Se mi rilasso collasso. Un libro suonato"
           },
           {
             "lat": 44.534985,
@@ -2889,12 +2889,12 @@
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "«Stanno arrivando»: incontro con Beatrice Pucci | Tecnica Mista"
+            "nome": "\u00abStanno arrivando\u00bb: incontro con Beatrice Pucci | Tecnica Mista"
           },
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "Proiezione di «Please, Baby, Please»  +  «Swing, Baby, Swing!» | SEMI"
+            "nome": "Proiezione di \u00abPlease, Baby, Please\u00bb  +  \u00abSwing, Baby, Swing!\u00bb | SEMI"
           },
           {
             "lat": 44.504673,
@@ -2934,17 +2934,17 @@
           {
             "lat": 44.4989272,
             "lon": 11.3444121,
-            "nome": "Chiuse aperte  | Va dove va l’acqua"
+            "nome": "Chiuse aperte  | Va dove va l\u2019acqua"
           },
           {
             "lat": 44.4534933,
             "lon": 11.3662848,
-            "nome": "Il canale di Flora - l’ultima rasdora"
+            "nome": "Il canale di Flora - l\u2019ultima rasdora"
           },
           {
             "lat": 44.4534933,
             "lon": 11.3662848,
-            "nome": "Cent’anni sciolti in un bicchiere - il mito di Charles Bukowski"
+            "nome": "Cent\u2019anni sciolti in un bicchiere - il mito di Charles Bukowski"
           },
           {
             "lat": 44.504673,
@@ -2974,22 +2974,22 @@
           {
             "lat": 44.489658,
             "lon": 11.343971,
-            "nome": "Che fine farà la libertà?"
+            "nome": "Che fine far\u00e0 la libert\u00e0?"
           },
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "Proiezione  «Vers la Tendresse»  + SPORE: Percorsi di tenerezza Radicale | SEMI"
+            "nome": "Proiezione  \u00abVers la Tendresse\u00bb  + SPORE: Percorsi di tenerezza Radicale | SEMI"
           },
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "Proiezione «Ninjababy» | SEMI"
+            "nome": "Proiezione \u00abNinjababy\u00bb | SEMI"
           },
           {
             "lat": 44.4836313,
             "lon": 11.3486316,
-            "nome": "Proiezione «Le variabili dipendenti» e «Winter Boy» + Incontro con Lorenzo Tarde"
+            "nome": "Proiezione \u00abLe variabili dipendenti\u00bb e \u00abWinter Boy\u00bb + Incontro con Lorenzo Tarde"
           },
           {
             "lat": 44.4669301,
@@ -3029,7 +3029,7 @@
           {
             "lat": 44.4935161,
             "lon": 11.3342101,
-            "nome": "Nella mia città #Bologna"
+            "nome": "Nella mia citt\u00e0 #Bologna"
           },
           {
             "lat": 44.4964783,
@@ -3044,7 +3044,7 @@
           {
             "lat": 44.4859472,
             "lon": 11.3542691,
-            "nome": "Summer Dance - Danza popolare dell’infinito"
+            "nome": "Summer Dance - Danza popolare dell\u2019infinito"
           },
           {
             "lat": 44.4859472,
@@ -3064,17 +3064,17 @@
           {
             "lat": 44.4964783,
             "lon": 11.3420783,
-            "nome": "Maṇḍala | geometrie sacre in danza"
+            "nome": "Ma\u1e47\u1e0dala | geometrie sacre in danza"
           },
           {
             "lat": 44.4984384,
             "lon": 11.3422206,
-            "nome": "Palazzo Bonasoni e il suo portico affacciato sull’antico decumano"
+            "nome": "Palazzo Bonasoni e il suo portico affacciato sull\u2019antico decumano"
           },
           {
             "lat": 44.496685,
             "lon": 11.342465,
-            "nome": "All’inizio della città di Roma"
+            "nome": "All\u2019inizio della citt\u00e0 di Roma"
           },
           {
             "lat": 44.49527,
@@ -3099,7 +3099,7 @@
           {
             "lat": 44.49785857806155,
             "lon": 11.307082272177954,
-            "nome": "Certosa officinale - segreti della natura all’ombra dei cipressi"
+            "nome": "Certosa officinale - segreti della natura all\u2019ombra dei cipressi"
           },
           {
             "lat": 44.49785857806155,
@@ -3129,7 +3129,7 @@
           {
             "lat": 44.491543,
             "lon": 11.342807,
-            "nome": "Può esserci sviluppo se aumentano le diseguaglianze?"
+            "nome": "Pu\u00f2 esserci sviluppo se aumentano le diseguaglianze?"
           },
           {
             "lat": 44.5107048,
@@ -3149,7 +3149,7 @@
           {
             "lat": 44.491383,
             "lon": 11.342881,
-            "nome": "Floria è un buon falco"
+            "nome": "Floria \u00e8 un buon falco"
           },
           {
             "lat": 44.500797,
@@ -3189,12 +3189,12 @@
           {
             "lat": 44.508106,
             "lon": 11.352334,
-            "nome": "“Ruby Tuesday” w/ Johnny Mox live"
+            "nome": "\u201cRuby Tuesday\u201d w/ Johnny Mox live"
           },
           {
             "lat": 44.508106,
             "lon": 11.352334,
-            "nome": "“Ruby Tuesday” w/The Derricks live"
+            "nome": "\u201cRuby Tuesday\u201d w/The Derricks live"
           },
           {
             "lat": 44.4911758,
@@ -3219,7 +3219,7 @@
           {
             "lat": 44.444218,
             "lon": 11.355163,
-            "nome": "Talk con Davide Celli  |  “Gli Ecosistemi'"
+            "nome": "Talk con Davide Celli  |  \u201cGli Ecosistemi'"
           },
           {
             "lat": 44.545815,
@@ -3259,7 +3259,7 @@
           {
             "lat": 44.510406,
             "lon": 11.344702,
-            "nome": "(D)alla Bolognina, l’anima artistica di una piccola Bologna  | Giugno"
+            "nome": "(D)alla Bolognina, l\u2019anima artistica di una piccola Bologna  | Giugno"
           },
           {
             "lat": 44.49453,
@@ -3279,7 +3279,7 @@
           {
             "lat": 44.494637,
             "lon": 11.341932,
-            "nome": "Bologna Genius Loci. Quattro giornate con Giosuè Carducci"
+            "nome": "Bologna Genius Loci. Quattro giornate con Giosu\u00e8 Carducci"
           },
           {
             "lat": 44.494637,
@@ -3289,12 +3289,12 @@
           {
             "lat": 44.494637,
             "lon": 11.341932,
-            "nome": "Le parole di Gesù"
+            "nome": "Le parole di Ges\u00f9"
           },
           {
             "lat": 44.500797,
             "lon": 11.346006,
-            "nome": "Michele Mellara presenta Sociopatici in cerca d’affetto"
+            "nome": "Michele Mellara presenta Sociopatici in cerca d\u2019affetto"
           },
           {
             "lat": 44.500797,
@@ -3319,7 +3319,7 @@
           {
             "lat": 44.48962,
             "lon": 11.343453,
-            "nome": "Echi medievali: dichiarazioni di guerra, d’amore e di pace"
+            "nome": "Echi medievali: dichiarazioni di guerra, d\u2019amore e di pace"
           },
           {
             "lat": 44.48962,
@@ -3334,7 +3334,7 @@
           {
             "lat": 44.493755,
             "lon": 11.343095,
-            "nome": "Orchestra del Conservatorio G.B. Martini – Direttrice Oksana Lyniv"
+            "nome": "Orchestra del Conservatorio G.B. Martini \u2013 Direttrice Oksana Lyniv"
           },
           {
             "lat": 44.491001,
@@ -3359,12 +3359,12 @@
           {
             "lat": 44.58036,
             "lon": 11.400828,
-            "nome": "Trent’anni di grano - Teatro delle Ariette"
+            "nome": "Trent\u2019anni di grano - Teatro delle Ariette"
           },
           {
             "lat": 44.4790957,
             "lon": 11.3242235,
-            "nome": "All’eremo di Ronzano: dai frati gaudenti agli splendori del Risorgimento"
+            "nome": "All\u2019eremo di Ronzano: dai frati gaudenti agli splendori del Risorgimento"
           },
           {
             "lat": 44.50341,
@@ -3379,17 +3379,17 @@
           {
             "lat": 44.4941405,
             "lon": 11.3438098,
-            "nome": "Fricandò alla bolognese: fatti, misfatti, gentaglia e nobiltà.  Quartiere di por"
+            "nome": "Fricand\u00f2 alla bolognese: fatti, misfatti, gentaglia e nobilt\u00e0.  Quartiere di por"
           },
           {
             "lat": 44.4941405,
             "lon": 11.3438098,
-            "nome": "Fricandò alla bolognese: fatti, misfatti, gentaglia e nobiltà.  Quartiere di Por"
+            "nome": "Fricand\u00f2 alla bolognese: fatti, misfatti, gentaglia e nobilt\u00e0.  Quartiere di Por"
           },
           {
             "lat": 44.6594437,
             "lon": 11.2878597,
-            "nome": "Palazzo Minelli e ‘La Mazurca del Marchese, della santa e del Fico fiorone’"
+            "nome": "Palazzo Minelli e \u2018La Mazurca del Marchese, della santa e del Fico fiorone\u2019"
           },
           {
             "lat": 44.38741,
@@ -3409,17 +3409,17 @@
           {
             "lat": 44.4921195,
             "lon": 11.3341502,
-            "nome": "Fiori di pietra, Bologna magica in verde… a caccia della natura dipinta, scolpit"
+            "nome": "Fiori di pietra, Bologna magica in verde\u2026 a caccia della natura dipinta, scolpit"
           },
           {
             "lat": 44.4935076,
             "lon": 11.3554743,
-            "nome": "Voglia di Bello – Gli Impressionisti e Debussy"
+            "nome": "Voglia di Bello \u2013 Gli Impressionisti e Debussy"
           },
           {
             "lat": 44.4945195,
             "lon": 11.3446861,
-            "nome": "B.great – La ricerca si fa strada"
+            "nome": "B.great \u2013 La ricerca si fa strada"
           },
           {
             "lat": 44.4976658,
@@ -3429,7 +3429,7 @@
           {
             "lat": 44.4910308,
             "lon": 11.3441489,
-            "nome": "Qui tiriamo giù tutto!"
+            "nome": "Qui tiriamo gi\u00f9 tutto!"
           },
           {
             "lat": 44.5004877,
@@ -3509,7 +3509,7 @@
           {
             "lat": 44.5107048,
             "lon": 11.3401772,
-            "nome": "Mo sóppa, che spetâcuel! in Piazza Lucio Dalla"
+            "nome": "Mo s\u00f3ppa, che spet\u00e2cuel! in Piazza Lucio Dalla"
           },
           {
             "lat": 44.494887,
@@ -3589,17 +3589,17 @@
           {
             "lat": 44.493755,
             "lon": 11.344961,
-            "nome": "Ritorno nella città senza nome"
+            "nome": "Ritorno nella citt\u00e0 senza nome"
           },
           {
             "lat": 44.496685,
             "lon": 11.342465,
-            "nome": "...quello è uno di loro."
+            "nome": "...quello \u00e8 uno di loro."
           },
           {
             "lat": 44.497826,
             "lon": 11.30709,
-            "nome": "Viaggio nel Tempio dell’immortalità"
+            "nome": "Viaggio nel Tempio dell\u2019immortalit\u00e0"
           },
           {
             "lat": 44.47002,
@@ -3629,7 +3629,7 @@
           {
             "lat": 44.4927335,
             "lon": 11.3113288,
-            "nome": "Frulli, passetti e denzi… ecco a voi la Filuzzi!"
+            "nome": "Frulli, passetti e denzi\u2026 ecco a voi la Filuzzi!"
           },
           {
             "lat": 44.49229,
@@ -3704,7 +3704,7 @@
           {
             "lat": 44.492085,
             "lon": 11.352019,
-            "nome": "Rossini per “il Rossini” | Concerto di beneficienza per la Romagna"
+            "nome": "Rossini per \u201cil Rossini\u201d | Concerto di beneficienza per la Romagna"
           },
           {
             "lat": 44.5398628,
@@ -3714,7 +3714,7 @@
           {
             "lat": 44.4919994,
             "lon": 11.3514821,
-            "nome": "L’Ottocento tra arte, balli e tableaux vivants"
+            "nome": "L\u2019Ottocento tra arte, balli e tableaux vivants"
           },
           {
             "lat": 44.492085,
@@ -3729,7 +3729,7 @@
           {
             "lat": 44.498802,
             "lon": 11.337701,
-            "nome": "Visita guidata alla mostra Dinamiche dell‘equilibrio"
+            "nome": "Visita guidata alla mostra Dinamiche dell\u2018equilibrio"
           },
           {
             "lat": 44.4927335,
@@ -3789,7 +3789,7 @@
           {
             "lat": 44.4927571,
             "lon": 11.339519,
-            "nome": "LA FELICITÀ È UNA COSA SEMPLICE"
+            "nome": "LA FELICIT\u00c0 \u00c8 UNA COSA SEMPLICE"
           },
           {
             "lat": 44.4927571,
@@ -3894,7 +3894,7 @@
           {
             "lat": 44.444218,
             "lon": 11.355163,
-            "nome": "Laboratorio di movimento e incorporazione Haraway “Seminare mondi”"
+            "nome": "Laboratorio di movimento e incorporazione Haraway \u201cSeminare mondi\u201d"
           },
           {
             "lat": 44.4956867,
@@ -3909,7 +3909,7 @@
           {
             "lat": 44.47002,
             "lon": 11.370762,
-            "nome": "Festival D’Autore – Tributo a Fabrizio De André"
+            "nome": "Festival D\u2019Autore \u2013 Tributo a Fabrizio De Andr\u00e9"
           },
           {
             "lat": 44.494987,
@@ -3944,7 +3944,7 @@
           {
             "lat": 44.4953584,
             "lon": 11.347164,
-            "nome": "Note di Solidarietà, concerto di beneficenza"
+            "nome": "Note di Solidariet\u00e0, concerto di beneficenza"
           },
           {
             "lat": 44.4935076,
@@ -3964,7 +3964,7 @@
           {
             "lat": 44.732849,
             "lon": 11.17808,
-            "nome": "Il corpo dell’invisibile - una giornata intorno all’arte di Peter Brook"
+            "nome": "Il corpo dell\u2019invisibile - una giornata intorno all\u2019arte di Peter Brook"
           },
           {
             "lat": 44.500797,
@@ -5095,7 +5095,7 @@
           {
             "lat": 44.53986279999999,
             "lon": 11.3516395,
-            "nome": "Ass.ne Cà Bura"
+            "nome": "Ass.ne C\u00e0 Bura"
           },
           {
             "lat": 44.5348128,

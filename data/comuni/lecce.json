@@ -1,6 +1,6 @@
 {
   "key": "lecce",
-  "nome": "Lecce",
+  "nome": "Comune di Lecce",
   "ipa": "c_e506",
   "istat": "075035",
   "popolazione_attesa": 94187,
@@ -360,7 +360,7 @@
             "n": 2
           },
           {
-            "nome": "Statale Programma Operativo Naionale Legalità",
+            "nome": "Statale Programma Operativo Naionale Legalit\u00e0",
             "n": 1
           },
           {
@@ -453,19 +453,19 @@
             "n": 4
           },
           {
-            "nome": "recinzione lotto di terreno in località Canuta",
+            "nome": "recinzione lotto di terreno in localit\u00e0 Canuta",
             "n": 4
           },
           {
-            "nome": "recinzione terreno in località Casalabate",
+            "nome": "recinzione terreno in localit\u00e0 Casalabate",
             "n": 4
           },
           {
-            "nome": "costruzione fabbricato in località Villa Convento",
+            "nome": "costruzione fabbricato in localit\u00e0 Villa Convento",
             "n": 4
           },
           {
-            "nome": "recinzione lotto di terreno in località Casalabate",
+            "nome": "recinzione lotto di terreno in localit\u00e0 Casalabate",
             "n": 4
           },
           {
@@ -505,7 +505,7 @@
             "n": 3
           },
           {
-            "nome": "sopraelevazione fabbricato al viale della Libertà",
+            "nome": "sopraelevazione fabbricato al viale della Libert\u00e0",
             "n": 3
           }
         ],
@@ -709,11 +709,11 @@
             "valore": 240
           },
           {
-            "nome": "Sostegno alla genitorialità e tutela dei diritti dei minori",
+            "nome": "Sostegno alla genitorialit\u00e0 e tutela dei diritti dei minori",
             "valore": 65
           },
           {
-            "nome": "Ufficio Politiche sociali ed Ufficio di Piano – Area amministrativa",
+            "nome": "Ufficio Politiche sociali ed Ufficio di Piano \u2013 Area amministrativa",
             "valore": 35
           }
         ],
@@ -21096,7 +21096,7 @@
             "n": 1
           },
           {
-            "nome": "la \"pasquetta\" dei leccesi con animazione  musica  attivit� ludiche  gastronomia",
+            "nome": "la \"pasquetta\" dei leccesi con animazione  musica  attivit\ufffd ludiche  gastronomia",
             "n": 1
           },
           {
@@ -21108,7 +21108,7 @@
             "n": 1
           },
           {
-            "nome": "apertura dei cortili dei palazzi storici della citt� con mostre  spettacoli  visite guidate",
+            "nome": "apertura dei cortili dei palazzi storici della citt\ufffd con mostre  spettacoli  visite guidate",
             "n": 1
           },
           {
@@ -21452,7 +21452,7 @@
           {
             "lat": 40.34752,
             "lon": 18.15433,
-            "nome": "CASERMA S. ZAPPALA’ COMANDO SCUOLA DI CAVALLERIA"
+            "nome": "CASERMA S. ZAPPALA\u2019 COMANDO SCUOLA DI CAVALLERIA"
           },
           {
             "lat": 40.34515,

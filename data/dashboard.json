@@ -27,7 +27,7 @@
     },
     "bologna": {
       "key": "bologna",
-      "nome": "Bologna",
+      "nome": "Comune di Bologna",
       "ipa": "c_a944",
       "mode": "live",
       "snapshot_date": null,
@@ -37,7 +37,7 @@
     },
     "lecce": {
       "key": "lecce",
-      "nome": "Lecce",
+      "nome": "Comune di Lecce",
       "ipa": "c_e506",
       "mode": "static_snapshot",
       "snapshot_date": "2026-05-05",

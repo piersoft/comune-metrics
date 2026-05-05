@@ -18,7 +18,7 @@ ckan_server: https://www.dati.gov.it/opendata
 comuni:
 
   bologna:
-    nome: Bologna
+    nome: Comune di Bologna
     ipa: c_a944
     istat: "037006"
     popolazione_attesa: 388367
@@ -53,7 +53,7 @@ comuni:
   # VPS oppure Cloudflare Worker). Vedi cronistoria PANIERE v2.11.
 
   lecce:
-    nome: Lecce
+    nome: Comune di Lecce
     ipa: c_e506
     istat: "075035"
     popolazione_attesa: 94187

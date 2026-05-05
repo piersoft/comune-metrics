@@ -327,7 +327,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.46</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.47</span>
     </div>
   </div>
 </header>
@@ -895,7 +895,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
 
 function renderComuneInfo(c) {
   const datasets = c.datasets || {};
-  const totalCore = 12;
+  const totalCore = 14;
   const cablati = Object.values(datasets).filter(ds => ds.status !== 'not_published').length;
   const ok = Object.values(datasets).filter(ds => ds.status === 'ok').length;
   const fresh = Object.values(datasets).filter(ds => ds.freshness && ds.freshness.level === 'fresh').length;
@@ -916,7 +916,7 @@ function renderComuneInfo(c) {
             <li>i firewall bloccano gli IP non italiani, inclusi quelli dei runner <em>GitHub Actions</em> usati per costruire questa dashboard;</li>
             <li>diversi dataset sono pubblicati come fogli Google con condivisione limitata.</li>
           </ul>
-          Per questo motivo i CSV sono stati scaricati a mano (da browser italiano) e committati nel repo come <em>fixture</em>: lo "snapshot" che vedete è quello che si vedrebbe di Lecce se il portale fosse pienamente accessibile e aggiornato.
+          Per questo motivo i CSV sono stati scaricati a mano (da browser italiano) e committati nel repo come <em>fixture</em>: lo "snapshot" che vedete è quello che si vedrebbe del Comune di Lecce se il portale fosse pienamente accessibile e aggiornato.
         </span>
       </div>`;
   }
