@@ -1,6 +1,6 @@
 # ComuneMetrics
 
-Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 12 dataset OpenData**. Ogni Comune che adotta il paniere ottiene una dashboard pubblica con grafici, mappa e KPI di mandato.
+Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 14 dataset OpenData**. Ogni Comune che adotta il paniere ottiene una dashboard pubblica con grafici, mappa e KPI di mandato.
 
 **Dashboard live**: https://piersoft.github.io/comune-metrics/
 
@@ -10,16 +10,16 @@ Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 12
 
 | Comune | Dataset OK | Modalità | Note |
 |---|---|---|---|
-| **Comune IDEALE** | 12/12 | manifest CSV | Riferimento canonico: struttura CSV perfettamente allineata agli schemi del paniere |
-| **Bologna** | 9/12 | live API | Portale Opendatasoft con API aggregations |
-| **Lecce** | 11/12 | snapshot statico | Comune in passato virtuoso, ora portale con limiti tecnici (HTTP, geo-fencing) |
-| **Potenza** | 8/12 | ricostruzione da fonti nazionali | Il Comune non pubblica OpenData propri: i dati visibili sono ricostruiti da banche dati ministeriali (ISTAT, MEF/BDAP, MIM, ISPRA, MiC) |
+| **Comune IDEALE** | 14/14 | manifest CSV | Riferimento canonico: struttura CSV perfettamente allineata agli schemi del paniere |
+| **Bologna** | 11/14 | live API | Portale Opendatasoft con API aggregations |
+| **Lecce** | 12/14 | snapshot statico | Comune in passato virtuoso, ora portale con limiti tecnici (HTTP, geo-fencing) |
+| **Potenza** | 8/14 | ricostruzione da fonti nazionali | Il Comune non pubblica OpenData propri: i dati visibili sono ricostruiti da banche dati ministeriali (ISTAT, MEF/BDAP, MIM, ISPRA, MiC) |
 
-**Il Comune IDEALE è il modello di riferimento** che ogni Comune deve seguire alla lettera per allineare struttura CSV e nomi colonna agli schemi canonici. Replicando la sua impostazione, un Comune nuovo arriva senza fatica al 12/12.
+**Il Comune IDEALE è il modello di riferimento** che ogni Comune deve seguire alla lettera per allineare struttura CSV e nomi colonna agli schemi canonici. Replicando la sua impostazione, un Comune nuovo arriva senza fatica al 14/14.
 
 ---
 
-## I 12 dataset CORE del paniere
+## I 14 dataset CORE del paniere
 
 | # | Dataset | Cosa contiene | File CSV |
 |---|---|---|---|
@@ -46,15 +46,9 @@ Schemi formali completi in [`schemas/csv/`](schemas/csv/) — specifica leggibil
 
 ## Linked Open Data — pubblica i tuoi dati come RDF
 
-Ogni CSV del paniere è progettato per essere convertito automaticamente in RDF/Turtle conforme alle ontologie [DCAT-AP_IT / ex-OntoPiA](https://schema.gov.it/) (Catalogo Nazionale Dati Semantici). La conversione avviene tramite il Worker pubblico [CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF), senza istallare nulla:
+I 14 dataset del Comune Ideale producono TTL semanticamente corretti su classi come `qb:Observation` (popolazione, rifiuti), `pc:Contract` (opere pubbliche), `cpsv:PublicService` (pratiche edilizie, bilancio), `cpev:PublicEvent` (eventi culturali), `tr:TransparencyObligation` (delibere), `smapit:School` (istruzione), `ch:CulturalHeritage` (patrimonio), `indicator:Indicator` (tributi), `poi:PointOfInterest` (defibrillatori), `park:CarPark` (parcheggi).
 
-```
-https://csv2rdf.datigovit.workers.dev/?url=<URL_CSV>&ipa=<CODICE_IPA>&pa=<NOME_ENTE>&onto=<ONTOLOGIE>
-```
-
-I 12 dataset del Comune Ideale producono TTL semanticamente corretti su classi come `qb:Observation` (popolazione, rifiuti), `pc:Contract` (opere pubbliche), `cpsv:PublicService` (pratiche edilizie, bilancio), `cpev:PublicEvent` (eventi culturali), `tr:TransparencyObligation` (delibere), `smapit:School` (istruzione), `ch:CulturalHeritage` (patrimonio), `indicator:Indicator` (tributi).
-
-Tabella completa con link diretti per generare ogni TTL: [docs/PANIERE_CSV_SCHEMA.md](docs/PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit). I 12 TTL pre-generati come ground-truth: [tests/expected-ttl/](tests/expected-ttl/).
+Tabella completa con link diretti per generare ogni TTL: [docs/PANIERE_CSV_SCHEMA.md](docs/PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit). I 14 TTL pre-generati come ground-truth: [tests/expected-ttl/](tests/expected-ttl/).
 
 ---
 

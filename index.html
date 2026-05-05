@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ComuneMetrics — Cruscotto Civico Italiano</title>
-<meta name="description" content="Cruscotto civico open source basato su un paniere standardizzato di 12 dataset OpenData. Confronta come i Comuni italiani pubblicano i dati che contano per i cittadini.">
+<meta name="description" content="Cruscotto civico open source basato su un paniere standardizzato di 14 dataset OpenData. Confronta come i Comuni italiani pubblicano i dati che contano per i cittadini.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root {
@@ -327,7 +327,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.43</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.44</span>
     </div>
   </div>
 </header>
@@ -381,6 +381,8 @@ const DATASET_LABELS = {
   delibere:           { titolo: "Delibere e atti",               icona: "📜" },
   patrimonio:         { titolo: "Patrimonio immobiliare",        icona: "🏛️" },
   tributi:            { titolo: "Tributi locali",                icona: "💶" },
+  defibrillatori:     { titolo: "Defibrillatori (DAE)",          icona: "❤️" },
+  parcheggi:          { titolo: "Parcheggi pubblici",            icona: "🅿️" },
 };
 
 // Layer mappa: colori NETTAMENTE distinti (no due blu insieme).
@@ -391,6 +393,8 @@ const MAP_LAYERS = {
   istruzione:         { label: 'Scuole',              color: '#1976D2', source: 'strutture_geo',icon: '🎓' },  // blu
   eventi_culturali:   { label: 'Eventi culturali',    color: '#7B1FA2', source: 'eventi_geo',   icon: '🎭' },  // viola
   patrimonio:         { label: 'Patrimonio',          color: '#388E3C', source: 'immobili_geo', icon: '🏛️' }, // verde
+  defibrillatori:     { label: 'Defibrillatori',      color: '#C2185B', source: 'dae_geo',       icon: '❤️' },  // rosa scuro/sangue
+  parcheggi:          { label: 'Parcheggi',           color: '#0288D1', source: 'parcheggi_geo', icon: '🅿️' },  // azzurro
 };
 
 function fmtNum(n) { if (n==null) return "—"; return new Intl.NumberFormat('it-IT').format(n); }
@@ -800,11 +804,55 @@ function renderTributi(canvasId, m) {
   return html;
 }
 
+function renderDefibrillatori(canvasId, m) {
+  const totale = m.totale || 0;
+  const h24 = m.h24_count || 0;
+  const h24pct = m.h24_pct;
+  const html = `
+    <div class="kpi-row">
+      <div class="kpi-big"><div class="value">${fmtNum(totale)}</div><div class="label">DAE</div></div>
+      <div class="kpi-big"><div class="value">${fmtNum(h24)}</div><div class="label">Accessibili h24</div></div>
+      ${h24pct != null ? `<div class="kpi-big"><div class="value">${fmtPct(h24pct)}</div><div class="label">% h24</div></div>` : ''}
+    </div>
+    ${totale > 0 ? `<div style="background:var(--brand-blue-light);padding:14px 18px;border-radius:6px;font-size:13px;color:var(--ink);line-height:1.55;">I DAE accessibili h24 sono raggiungibili anche fuori dagli orari di apertura della struttura ospitante (es. esterni a farmacie, supermercati, box stradali). Una percentuale h24 alta indica una rete capillare di defibrillatori realmente disponibili in caso di emergenza.</div>` : ''}`;
+  return html;
+}
+
+function renderParcheggi(canvasId, m) {
+  const totale = m.totale || 0;
+  const stalli = m.totale_stalli || 0;
+  const disabili = m.totale_disabili || 0;
+  const tariffaMedia = m.tariffa_media;
+  const pctGratuiti = m.pct_gratuiti;
+  const pctDisabili = stalli > 0 ? Math.round((disabili / stalli) * 1000) / 10 : null;
+  const hasMultiTipi = m.per_tipo && m.per_tipo.length > 1;
+  const html = `
+    <div class="kpi-row">
+      <div class="kpi-big"><div class="value">${fmtNum(totale)}</div><div class="label">Strutture</div></div>
+      <div class="kpi-big"><div class="value">${fmtNum(stalli)}</div><div class="label">Stalli totali</div></div>
+      ${disabili > 0 ? `<div class="kpi-big"><div class="value">${fmtNum(disabili)}</div><div class="label">Posti disabili</div></div>` : ''}
+      ${tariffaMedia != null ? `<div class="kpi-big"><div class="value">${fmtEuro(tariffaMedia)}/h</div><div class="label">Tariffa media</div></div>` : ''}
+      ${pctGratuiti != null ? `<div class="kpi-big"><div class="value">${fmtPct(pctGratuiti)}</div><div class="label">% gratuiti</div></div>` : ''}
+    </div>
+    ${hasMultiTipi ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Per tipologia</div><div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` : ''}`;
+  setTimeout(() => {
+    if (hasMultiTipi) {
+      makeChart(canvasId, {
+        type: 'bar',
+        data: { labels: m.per_tipo.map(d => d.nome), datasets: [{ data: m.per_tipo.map(d=>d.n), backgroundColor: PALETTE[0] }] },
+        options: chartBar({ horizontal: true, xCallback: v => fmtNum(v) }),
+      });
+    }
+  }, 0);
+  return html;
+}
+
 const CHART_RENDERERS = {
   popolazione: renderPopolazione, bilancio: renderBilancio, opere_pubbliche: renderOpere,
   pratiche_edilizie: renderPratiche, servizi_sociali: renderSociali, istruzione: renderIstruzione,
   incidenti_stradali: renderIncidenti, rifiuti: renderRifiuti, eventi_culturali: renderEventi,
   delibere: renderDelibere, patrimonio: renderPatrimonio, tributi: renderTributi,
+  defibrillatori: renderDefibrillatori, parcheggi: renderParcheggi,
 };
 
 function renderDatasetCard(comuneKey, dsKey, ds) {
@@ -859,7 +907,7 @@ function renderComuneInfo(c) {
       <div class="snapshot-banner">
         <strong>📌 Dati di ${c.nome} fotografati il ${dataSnap}</strong><br>
         <span style="font-size:13px;color:var(--ink);line-height:1.6;display:block;margin-top:6px;">
-          ${c.nome} è stato in passato un Comune <strong>virtuoso sull'OpenData</strong>: pubblicava i 12 dataset CORE del paniere ed era publisher attivo su <em>dati.gov.it</em>.
+          ${c.nome} è stato in passato un Comune <strong>virtuoso sull'OpenData</strong>: pubblicava i 14 dataset CORE del paniere ed era publisher attivo su <em>dati.gov.it</em>.
           Negli ultimi anni la pubblicazione si è progressivamente fermata: la maggior parte dei dataset risulta aggiornata fino al 2015-2019, con la sola eccezione degli <strong>incidenti stradali aggiornati al 2023</strong>.
           <br><br>
           A questo si aggiungono alcune <strong>configurazioni tecniche del portale comunale che impediscono l'accesso automatico</strong> da parte di servizi esterni come questa dashboard:
@@ -881,7 +929,7 @@ function renderComuneInfo(c) {
         <strong>⭐ Questo è il Comune IDEALE — modello canonico di riferimento</strong>
         <span style="display:block;font-size:13px;line-height:1.55;margin-top:6px;color:var(--ink);">
           Non è un Comune reale. È costruito con CSV e JSON perfettamente allineati agli schemi canonici del paniere ComuneMetrics.
-          Gli altri Comuni dovrebbero seguire <strong>alla lettera la stessa struttura del dato</strong> (nomi colonne, formati, tipi) per avvicinarsi al 12/12 e al pieno funzionamento della dashboard.
+          Gli altri Comuni dovrebbero seguire <strong>alla lettera la stessa struttura del dato</strong> (nomi colonne, formati, tipi) per avvicinarsi al 14/14 e al pieno funzionamento della dashboard.
           I dati sono sintetici plausibili (Comune ~36k abitanti, capoluogo lombardo) e servono solo come riferimento di formattazione.
         </span>
       </div>`;
@@ -903,7 +951,7 @@ function renderComuneInfo(c) {
           <br><br>
           Per non lasciare un buco nella dashboard, ComuneMetrics ha <strong>ricostruito quanto possibile da fonti nazionali pubbliche</strong>: ISTAT, MIM, ISPRA, ArCo (MiC) e MEF Federalismo Fiscale. Ogni dataset visualizzato qui sotto riporta in alto il <strong>badge della fonte originale con link diretto</strong> per la verifica.
           <br><br>
-          La copertura raggiunta è ${nRicostruiti}/12 dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i ${12 - nRicostruiti} dataset mancanti (pratiche edilizie, servizi sociali, incidenti, delibere) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico. <em>Bilancio e opere pubbliche sono stati ricostruiti da <a href="https://bdap-opendata.rgs.mef.gov.it/" target="_blank" rel="noopener noreferrer">BDAP-RGS (MEF)</a>: SIOPE Spese 2025 e MOP Soggetti Titolari Basilicata.</em>
+          La copertura raggiunta è ${nRicostruiti}/14 dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i ${14 - nRicostruiti} dataset mancanti (pratiche edilizie, servizi sociali, incidenti, delibere) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico. <em>Bilancio e opere pubbliche sono stati ricostruiti da <a href="https://bdap-opendata.rgs.mef.gov.it/" target="_blank" rel="noopener noreferrer">BDAP-RGS (MEF)</a>: SIOPE Spese 2025 e MOP Soggetti Titolari Basilicata.</em>
           ${dataSnap ? `<br><br><em>Fotografia statica scattata il ${dataSnap}.</em>` : ''}
         </span>
       </div>`;
@@ -1063,9 +1111,9 @@ function renderComuneSelector(d) {
   let html = '<span class="label">Comune:</span>';
   for (const [key, c] of Object.entries(d.comuni)) {
     const cls = key === STATE.current ? 'active' : '';
-    const okText = `${c.n_datasets_pubblicati || 0}/12`;
+    const okText = `${c.n_datasets_pubblicati || 0}/14`;
     const modeTag = c.mode === 'static_snapshot' ? ' · snapshot' : (c.mode === 'reconstructed_from_national' ? ' · ricostruito' : '');
-    html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su 12 del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
+    html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su 14 del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
   }
   sel.innerHTML = html;
   sel.querySelectorAll('.comune-btn').forEach(btn => btn.addEventListener('click', () => switchComune(btn.dataset.comune)));

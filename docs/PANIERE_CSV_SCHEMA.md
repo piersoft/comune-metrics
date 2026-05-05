@@ -35,7 +35,7 @@ Questo permette al tool di funzionare per **N Comuni senza modifiche al codice**
 | Coordinate | lat 35-48, lon 6-19 (territorio italiano + isole) |
 | Anno | 1900-2050 |
 
-## I 12 dataset CORE
+## I 14 dataset CORE
 
 Schemi formali in [`schemas/csv/`](../schemas/csv/). Riepilogo allineato agli schemi JSON reali:
 
@@ -189,6 +189,47 @@ anno,tipo_atto,totale_entrate,numero,valore,unita_misura,descrizione,categoria
 2024,ADDIZIONALE_IRPEF,8900000.00,,0.80,%,"Aliquota 0.80%",
 ```
 
+### 13. Defibrillatori (DAE)
+
+**Cosa**: postazioni dei defibrillatori semiautomatici esterni (DAE) pubblicamente accessibili nel territorio comunale.
+
+**Fonte interna tipica**: Polizia Locale, Protezione Civile, ufficio 118 regionale (registro consolidato), Settore Sport (impianti sportivi).
+
+**Schema canonico** (allineato al demo Worker `poi`):
+
+```csv
+id,nome_poi,tipo_poi,lat,lon,indirizzo,comune,accessibile_h24,email
+1,Municipio Centrale,DAE,45.4654,9.1859,Piazza del Comune 1,Comune Ideale,si,dae@comuneideale.it
+2,Stazione Centrale,DAE,45.4862,9.2055,Piazza Duca d'Aosta 1,Comune Ideale,si,
+3,Ospedale San Raffaele,DAE,45.5052,9.2641,Via Olgettina 60,Comune Ideale,si,dae@hsr.it
+```
+
+**Note**:
+- `tipo_poi`: per i DAE valore fisso `"DAE"`. La colonna esiste perché il modello POI è generico (può ospitare anche altri punti di interesse pubblico)
+- `accessibile_h24`: `si` o `no`. Indica se il DAE è raggiungibile fuori orario di apertura della struttura ospitante (es. defibrillatori esterni alle farmacie, ai supermercati, nei box stradali)
+- I dataset reali possono usare nomi colonna diversi (es. Bologna usa `nome,citta,indirizzo,geo_point`); il sistema accetta i sinonimi più comuni
+
+### 14. Parcheggi pubblici
+
+**Cosa**: strutture e aree di parcheggio pubblico nel territorio comunale (multipiano, raso, scoperto, di interscambio).
+
+**Fonte interna tipica**: Settore Mobilità, Polizia Locale (per la sosta tariffata), azienda partecipata di gestione parcheggi (se esiste).
+
+**Schema canonico** (allineato al demo Worker `park`):
+
+```csv
+id,nome,indirizzo,comune,provincia,lat,lon,stalli,posti_disabili,tariffa_oraria,tipo_parcheggio,accessibile_h24
+1,P. Centrale Stazione,Via Stazione 1,Comune Ideale,BA,45.4862,9.2055,250,12,1.50,Coperto,si
+2,P. Piazza Duomo,Piazza Duomo,Comune Ideale,BA,45.4641,9.1900,80,4,2.00,Scoperto,no
+3,P. Aeroporto Linate Lunga,Viale Forlanini,Comune Ideale,BA,45.4451,9.2767,2000,40,0.80,Multipiano,si
+```
+
+**Note**:
+- `stalli`: numero totale di posti, inclusi i `posti_disabili`
+- `tariffa_oraria`: in euro. `0` per parcheggi gratuiti
+- `tipo_parcheggio`: valori liberi ma standardizzati: `Multipiano`, `Coperto`, `Scoperto`, `Raso`, `Struttura`, `Interscambio`
+- I dataset reali possono usare tariffa testuale invece che numerica (es. Bologna usa `abbonamento`/`pagamento`/`libero`); il calcolatore detecta automaticamente entrambi i formati
+
 ## Validazione
 
 ### CLI
@@ -233,8 +274,8 @@ R: No, vengono rifiutate (`additionalProperties: false` negli schemi JSON Schema
 **D: La virgola decimale italiana (`12,5`) viene accettata?**
 R: No, solo il punto. Sostituisci `12,5` → `12.5` prima dell'export.
 
-**D: Devo avere tutti i 12 dataset?**
-R: No. Dichiara `presente: false` (oppure ometti il dataset dal manifest) per quelli che non pubblichi. La dashboard mostra "Non pubblicato dal Comune" per i mancanti. Il rapporto X/12 nel selettore Comuni indica quanti sono coperti.
+**D: Devo avere tutti i 14 dataset?**
+R: No. Dichiara `presente: false` (oppure ometti il dataset dal manifest) per quelli che non pubblichi. La dashboard mostra "Non pubblicato dal Comune" per i mancanti. Il rapporto X/14 nel selettore Comuni indica quanti sono coperti.
 
 **D: Posso usare un URL HTTPS pubblico invece di committare il CSV?**
 R: Sì, usa `source_type: external_csv` con `url:` nel manifest. Il builder fa fetch ad ogni run del workflow.
@@ -274,6 +315,8 @@ Ogni CSV del paniere è progettato per essere convertito in RDF/Turtle conforme 
 | Delibere | Transparency + COV | `tr:TransparencyObligation` | [delibere.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fdelibere.csv&ipa=c_ideal&pa=Comune+Ideale&onto=Transparency%2CCOV) |
 | Patrimonio | CulturalHeritage + CLV | `ch:CulturalHeritage` | [patrimonio.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fpatrimonio.csv&ipa=c_ideal&pa=Comune+Ideale&onto=CulturalHeritage%2CCLV) |
 | Tributi | Indicator + QB + COV | `indicator:Indicator` | [tributi.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Ftributi.csv&ipa=c_ideal&pa=Comune+Ideale&onto=Indicator%2CQB%2CCOV) |
+| Defibrillatori (DAE) | POI + CLV + SM | `poi:PointOfInterest` | [defibrillatori.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fdefibrillatori.csv&ipa=c_ideal&pa=Comune+Ideale&onto=POI%2CCLV%2CSM) |
+| Parcheggi pubblici | PARK + POI + CLV | `park:CarPark` | [parcheggi.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fparcheggi.csv&ipa=c_ideal&pa=Comune+Ideale&onto=PARK%2CPOI%2CCLV) |
 
 I 12 TTL pre-generati sono disponibili in [`tests/expected-ttl/`](../tests/expected-ttl/) come ground-truth per validazione e regressione.
 

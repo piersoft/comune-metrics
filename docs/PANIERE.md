@@ -1,6 +1,6 @@
 # Paniere ComuneMetrics — Guida pratica per Comuni
 
-> Come costruire i 12 CSV del paniere partendo dai gestionali interni del Comune. Documento operativo per Responsabili Transizione Digitale, IT, e referenti OpenData.
+> Come costruire i 14 CSV del paniere partendo dai gestionali interni del Comune. Documento operativo per Responsabili Transizione Digitale, IT, e referenti OpenData.
 
 **Specifica tecnica del formato CSV**: vedi [`PANIERE_CSV_SCHEMA.md`](PANIERE_CSV_SCHEMA.md) e gli schemi formali in [`../schemas/csv/`](../schemas/csv/).
 
@@ -10,11 +10,11 @@
 
 ## Cosa è il paniere
 
-Il paniere è un insieme di **12 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano.
+Il paniere è un insieme di **14 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano.
 
 > **Riferimento canonico**: il **Comune IDEALE** (visibile nella dashboard live) è costruito con CSV/JSON perfettamente allineati agli schemi del paniere. Per allinearsi velocemente, un Comune nuovo replica alla lettera la sua struttura (nomi colonne, formati, tipi). I CSV del Comune Ideale sono in [`data/comuni/demo/`](../data/comuni/demo/).
 
-I 12 dataset CORE sono:
+I 14 dataset CORE sono:
 
 | # | Dataset | Cosa contiene |
 |---|---|---|
@@ -29,11 +29,13 @@ I 12 dataset CORE sono:
 | 9 | Eventi culturali | Manifestazioni con luogo e data |
 | 10 | Delibere | Atti dell'albo pretorio |
 | 11 | Patrimonio | Immobili comunali con valore catastale |
-| 12 | **Tributi** | **Gettito IMU/TARI/tassa soggiorno per anno** |
+| 12 | Tributi | Gettito IMU/TARI/tassa soggiorno per anno |
+| 13 | **Defibrillatori (DAE)** | **Postazioni dei defibrillatori semiautomatici esterni con accessibilità h24** |
+| 14 | **Parcheggi pubblici** | **Strutture di parcheggio con stalli, posti disabili, tariffa oraria** |
 
 Un Comune può adottarne **anche solo alcuni**: i mancanti vengono dichiarati `presente: false` nel manifest.
 
-> **Lecce è un caso scuola interessante**: pubblica 10/12 dataset (quasi tutti fermi al 2015-2019, MA il dataset incidenti è aggiornato al 31 dicembre 2023, 11 anni di serie storica). Dimostra che l'OpenData non è "tutto o niente": un Comune può tenere viva una serie temporale anche se ha lasciato andare le altre.
+> **Lecce è un caso scuola interessante**: pubblica 12/14 dataset (quasi tutti fermi al 2015-2019, MA il dataset incidenti è aggiornato al 31 dicembre 2023, 11 anni di serie storica). Dimostra che l'OpenData non è "tutto o niente": un Comune può tenere viva una serie temporale anche se ha lasciato andare le altre.
 
 ---
 
@@ -178,7 +180,7 @@ Una richiesta efficace contiene quattro elementi:
 
 Se un Comune non pubblica i propri OpenData, ComuneMetrics non lo nasconde dalla dashboard. Mostra un **banner rosso** con la scritta «`<Comune>` non pubblica OpenData» e ricostruisce — dove possibile — i dataset del paniere a partire da **banche dati nazionali pubbliche**. Sulla dashboard questi Comuni sono marcati come `mode: reconstructed_from_national`.
 
-È il caso del Comune di Potenza, dove 8 dei 12 dataset CORE sono stati ricostruiti.
+È il caso del Comune di Potenza, dove 8 dei 14 dataset CORE sono stati ricostruiti.
 
 **Importante**: la ricostruzione da fonti nazionali NON sostituisce la pubblicazione vera. È un fallback divulgativo che evidenzia la mancata pubblicazione e mostra il dato che il cittadino *avrebbe avuto* se il Comune avesse fatto il suo lavoro.
 
@@ -254,7 +256,7 @@ Esempio per la popolazione del Comune Ideale:
 https://csv2rdf.datigovit.workers.dev/?url=<url_csv>&ipa=<ipa>&pa=<nome_ente>&onto=QB,CLV,L0
 ```
 
-I 12 dataset del paniere mappano su classi semantiche corrette:
+I 14 dataset del paniere mappano su classi semantiche corrette:
 
 | Dataset | Classe principale RDF | A cosa serve in Linked Data |
 |---|---|---|
@@ -270,6 +272,8 @@ I 12 dataset del paniere mappano su classi semantiche corrette:
 | Delibere | `tr:TransparencyObligation` | Atti dell'albo pretorio come obblighi DLgs 33/2013 |
 | Patrimonio | `ch:CulturalHeritage` | Beni culturali con vincolo, tutela, datazione |
 | Tributi | `indicator:Indicator` | Indicatori finanziari con baseline, target, fonte |
+| Defibrillatori (DAE) | `poi:PointOfInterest` | Punti georeferenziati DAE con accessibilità h24 |
+| Parcheggi pubblici | `park:CarPark` | Strutture di parcheggio con stalli, tariffa, accessibilità |
 
 Tabella completa con link diretti per generare ciascun TTL: [PANIERE_CSV_SCHEMA.md — sezione Linked Open Data](PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit).
 

@@ -1,0 +1,364 @@
+# CSV→RDF — 2026-05-05T18:15:01.401Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/defibrillatori.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: POI, CLV, SM
+# Righe: 25
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix poi: <https://w3id.org/italia/onto/POI/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/1>
+    a poi:PointOfInterest ;
+    rdfs:label "Municipio Centrale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:dae@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/1> .
+
+<https://w3id.org/italia/data/c_ideal/address/1> a clv:Address ;
+    clv:fullAddress "Piazza del Comune 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4654"^^xsd:decimal ;
+    geo:long "9.1859"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/2>
+    a poi:PointOfInterest ;
+    rdfs:label "Stazione Centrale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2> .
+
+<https://w3id.org/italia/data/c_ideal/address/2> a clv:Address ;
+    clv:fullAddress "Piazza Duca d'Aosta 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4862"^^xsd:decimal ;
+    geo:long "9.2055"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/3>
+    a poi:PointOfInterest ;
+    rdfs:label "Ospedale San Raffaele"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:dae@hsr.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/3> .
+
+<https://w3id.org/italia/data/c_ideal/address/3> a clv:Address ;
+    clv:fullAddress "Via Olgettina 60"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.5052"^^xsd:decimal ;
+    geo:long "9.2641"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/4>
+    a poi:PointOfInterest ;
+    rdfs:label "Stadio Comunale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:custodi@stadio.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/4> .
+
+<https://w3id.org/italia/data/c_ideal/address/4> a clv:Address ;
+    clv:fullAddress "Via Piccolomini 5"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4781"^^xsd:decimal ;
+    geo:long "9.124"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/5>
+    a poi:PointOfInterest ;
+    rdfs:label "Biblioteca Centrale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:biblioteca@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/5> .
+
+<https://w3id.org/italia/data/c_ideal/address/5> a clv:Address ;
+    clv:fullAddress "Via San Vittore 21"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4641"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/6>
+    a poi:PointOfInterest ;
+    rdfs:label "Piscina Comunale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:sport@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/6> .
+
+<https://w3id.org/italia/data/c_ideal/address/6> a clv:Address ;
+    clv:fullAddress "Via Cavalcanti 12"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4708"^^xsd:decimal ;
+    geo:long "9.2104"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/7>
+    a poi:PointOfInterest ;
+    rdfs:label "Mercato Coperto"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/7> .
+
+<https://w3id.org/italia/data/c_ideal/address/7> a clv:Address ;
+    clv:fullAddress "Via Vettabbia 9"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4723"^^xsd:decimal ;
+    geo:long "9.1812"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/8>
+    a poi:PointOfInterest ;
+    rdfs:label "Parco Sempione"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/8> .
+
+<https://w3id.org/italia/data/c_ideal/address/8> a clv:Address ;
+    clv:fullAddress "Piazza Sempione"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4724"^^xsd:decimal ;
+    geo:long "9.1781"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/9>
+    a poi:PointOfInterest ;
+    rdfs:label "Centro Anziani"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:centroanziani@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/9> .
+
+<https://w3id.org/italia/data/c_ideal/address/9> a clv:Address ;
+    clv:fullAddress "Via Padova 88"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4612"^^xsd:decimal ;
+    geo:long "9.2003"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/10>
+    a poi:PointOfInterest ;
+    rdfs:label "Scuola Manzoni"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:scuolamanzoni@istruzione.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/10> .
+
+<https://w3id.org/italia/data/c_ideal/address/10> a clv:Address ;
+    clv:fullAddress "Via Manzoni 14"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4678"^^xsd:decimal ;
+    geo:long "9.1722"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/11>
+    a poi:PointOfInterest ;
+    rdfs:label "Palazzetto Sport"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:sport@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/11> .
+
+<https://w3id.org/italia/data/c_ideal/address/11> a clv:Address ;
+    clv:fullAddress "Via Anassagora 7"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4501"^^xsd:decimal ;
+    geo:long "9.1998"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/12>
+    a poi:PointOfInterest ;
+    rdfs:label "Caserma Polizia Municipale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:dae@polizia.comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/12> .
+
+<https://w3id.org/italia/data/c_ideal/address/12> a clv:Address ;
+    clv:fullAddress "Via Beccaria 19"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4633"^^xsd:decimal ;
+    geo:long "9.1873"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/13>
+    a poi:PointOfInterest ;
+    rdfs:label "Centro Commerciale Nord"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:sicurezza@cc-nord.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/13> .
+
+<https://w3id.org/italia/data/c_ideal/address/13> a clv:Address ;
+    clv:fullAddress "Viale Sarca 336"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.5101"^^xsd:decimal ;
+    geo:long "9.1654"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/14>
+    a poi:PointOfInterest ;
+    rdfs:label "Casa di Riposo San Giuseppe"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:direzione@rsa-sg.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/14> .
+
+<https://w3id.org/italia/data/c_ideal/address/14> a clv:Address ;
+    clv:fullAddress "Via Padova 234"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4598"^^xsd:decimal ;
+    geo:long "9.2133"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/15>
+    a poi:PointOfInterest ;
+    rdfs:label "Tribunale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:dae@tribunale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/15> .
+
+<https://w3id.org/italia/data/c_ideal/address/15> a clv:Address ;
+    clv:fullAddress "Via Freguglia 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4631"^^xsd:decimal ;
+    geo:long "9.1754"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/16>
+    a poi:PointOfInterest ;
+    rdfs:label "Università Ingegneria"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:sicurezza@polimi.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/16> .
+
+<https://w3id.org/italia/data/c_ideal/address/16> a clv:Address ;
+    clv:fullAddress "Piazza Leonardo da Vinci 32"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4789"^^xsd:decimal ;
+    geo:long "9.2333"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/17>
+    a poi:PointOfInterest ;
+    rdfs:label "Aeroporto Linate"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:dae@linate.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/17> .
+
+<https://w3id.org/italia/data/c_ideal/address/17> a clv:Address ;
+    clv:fullAddress "Viale Forlanini"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4451"^^xsd:decimal ;
+    geo:long "9.2767"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/18>
+    a poi:PointOfInterest ;
+    rdfs:label "Parrocchia San Pietro"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/18> .
+
+<https://w3id.org/italia/data/c_ideal/address/18> a clv:Address ;
+    clv:fullAddress "Via San Pietro 5"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.455"^^xsd:decimal ;
+    geo:long "9.17"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/19>
+    a poi:PointOfInterest ;
+    rdfs:label "Centro Civico Quartiere 4"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:quartiere4@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/19> .
+
+<https://w3id.org/italia/data/c_ideal/address/19> a clv:Address ;
+    clv:fullAddress "Via Tibaldi 41"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.445"^^xsd:decimal ;
+    geo:long "9.22"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/20>
+    a poi:PointOfInterest ;
+    rdfs:label "Cimitero Monumentale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/20> .
+
+<https://w3id.org/italia/data/c_ideal/address/20> a clv:Address ;
+    clv:fullAddress "Piazzale Cimitero Monumentale"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4847"^^xsd:decimal ;
+    geo:long "9.1748"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/21>
+    a poi:PointOfInterest ;
+    rdfs:label "Stazione Carabinieri"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:dae@carabinieri.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/21> .
+
+<https://w3id.org/italia/data/c_ideal/address/21> a clv:Address ;
+    clv:fullAddress "Via Moscova 19"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4699"^^xsd:decimal ;
+    geo:long "9.1801"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/22>
+    a poi:PointOfInterest ;
+    rdfs:label "Centro Sportivo Sud"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:sport@cs-sud.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/22> .
+
+<https://w3id.org/italia/data/c_ideal/address/22> a clv:Address ;
+    clv:fullAddress "Via Lorenteggio 222"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4321"^^xsd:decimal ;
+    geo:long "9.1876"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/23>
+    a poi:PointOfInterest ;
+    rdfs:label "Asilo Comunale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:asilo@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/23> .
+
+<https://w3id.org/italia/data/c_ideal/address/23> a clv:Address ;
+    clv:fullAddress "Via Bonvesin de la Riva 14"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.469"^^xsd:decimal ;
+    geo:long "9.2023"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/24>
+    a poi:PointOfInterest ;
+    rdfs:label "Teatro Comunale"@it ;
+    dct:type "DAE"@it ;
+    dct:description "si"^^xsd:string ;
+    sm:hasEmail <mailto:teatro@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/24> .
+
+<https://w3id.org/italia/data/c_ideal/address/24> a clv:Address ;
+    clv:fullAddress "Piazza della Scala 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4659"^^xsd:decimal ;
+    geo:long "9.1859"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/25>
+    a poi:PointOfInterest ;
+    rdfs:label "Centro Diurno Disabili"@it ;
+    dct:type "DAE"@it ;
+    dct:description "no"^^xsd:string ;
+    sm:hasEmail <mailto:cdd@comuneideale.it> ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/25> .
+
+<https://w3id.org/italia/data/c_ideal/address/25> a clv:Address ;
+    clv:fullAddress "Via Calabria 10"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4577"^^xsd:decimal ;
+    geo:long "9.2289"^^xsd:decimal .

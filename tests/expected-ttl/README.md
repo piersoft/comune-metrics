@@ -1,6 +1,6 @@
 # TTL ground-truth — Linked Open Data del Comune Ideale
 
-Questa cartella contiene i 12 file Turtle (TTL) generati dai CSV del Comune Ideale tramite il Worker [`csv2rdf.datigovit.workers.dev`](https://github.com/piersoft/CSV-to-RDF).
+Questa cartella contiene i 14 file Turtle (TTL) generati dai CSV del Comune Ideale tramite il Worker [`csv2rdf.datigovit.workers.dev`](https://github.com/piersoft/CSV-to-RDF).
 
 Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottenere quando converte i propri CSV in RDF: predicati DCAT-AP_IT corretti, classi semantiche ex-OntoPiA, conformità al [Catalogo Nazionale Dati Semantici](https://schema.gov.it/).
 
@@ -30,6 +30,8 @@ Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottener
 | 10 | Delibere | `transparency` | Transparency + COV | `tr:TransparencyObligation` |
 | 11 | Patrimonio | `culturalheritage` | CulturalHeritage + CLV | `ch:CulturalHeritage` |
 | 12 | Tributi | `indicator` | Indicator + QB + COV | `indicator:Indicator` |
+| 13 | Defibrillatori (DAE) | `poi` | POI + CLV + SM | `poi:PointOfInterest` |
+| 14 | Parcheggi pubblici | `park` | PARK + POI + CLV | `park:CarPark` |
 
 ---
 

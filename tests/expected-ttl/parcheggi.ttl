@@ -1,0 +1,501 @@
+# CSV→RDF — 2026-05-05T18:15:01.811Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/parcheggi.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: PARK, POI, CLV
+# Righe: 20
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix park: <https://w3id.org/italia/onto/PARK/> .
+@prefix poi: <https://w3id.org/italia/onto/POI/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix iot: <https://w3id.org/italia/onto/IoT/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/1>
+    a park:CarPark ;
+    rdfs:label "P. Centrale Stazione"@it ;
+    park:totalNumCarParkSpaces "250"^^xsd:integer ;
+    park:numSpacesForDisabled "12"^^xsd:integer ;
+    park:numPayingParkingSpaces "1.5"^^xsd:decimal ;
+    park:hasCarParkTypology "Coperto"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/1> .
+
+<https://w3id.org/italia/data/c_ideal/address/1> a clv:Address ;
+    clv:fullAddress "Via Stazione 1"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4862"^^xsd:decimal ;
+    geo:long "9.2055"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/1> a poi:PointOfInterest ;
+    rdfs:label "P. Centrale Stazione"@it ;
+    geo:lat "45.4862"^^xsd:decimal ;
+    geo:long "9.2055"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/1> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/1> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/2>
+    a park:CarPark ;
+    rdfs:label "P. Piazza Duomo"@it ;
+    park:totalNumCarParkSpaces "80"^^xsd:integer ;
+    park:numSpacesForDisabled "4"^^xsd:integer ;
+    park:numPayingParkingSpaces "2"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2> .
+
+<https://w3id.org/italia/data/c_ideal/address/2> a clv:Address ;
+    clv:fullAddress "Piazza Duomo"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4641"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/2> a poi:PointOfInterest ;
+    rdfs:label "P. Piazza Duomo"@it ;
+    geo:lat "45.4641"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/2> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/2> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/3>
+    a park:CarPark ;
+    rdfs:label "P. Ospedale San Raffaele"@it ;
+    park:totalNumCarParkSpaces "400"^^xsd:integer ;
+    park:numSpacesForDisabled "20"^^xsd:integer ;
+    park:numPayingParkingSpaces "1.2"^^xsd:decimal ;
+    park:hasCarParkTypology "Multipiano"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/3> .
+
+<https://w3id.org/italia/data/c_ideal/address/3> a clv:Address ;
+    clv:fullAddress "Via Olgettina 60"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.5052"^^xsd:decimal ;
+    geo:long "9.2641"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/3> a poi:PointOfInterest ;
+    rdfs:label "P. Ospedale San Raffaele"@it ;
+    geo:lat "45.5052"^^xsd:decimal ;
+    geo:long "9.2641"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/3> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/3> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/4>
+    a park:CarPark ;
+    rdfs:label "P. Stadio"@it ;
+    park:totalNumCarParkSpaces "500"^^xsd:integer ;
+    park:numSpacesForDisabled "15"^^xsd:integer ;
+    park:numPayingParkingSpaces "0"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/4> .
+
+<https://w3id.org/italia/data/c_ideal/address/4> a clv:Address ;
+    clv:fullAddress "Via Piccolomini 5"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4781"^^xsd:decimal ;
+    geo:long "9.124"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/4> a poi:PointOfInterest ;
+    rdfs:label "P. Stadio"@it ;
+    geo:lat "45.4781"^^xsd:decimal ;
+    geo:long "9.124"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/4> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/4> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/5>
+    a park:CarPark ;
+    rdfs:label "P. Mercato"@it ;
+    park:totalNumCarParkSpaces "150"^^xsd:integer ;
+    park:numSpacesForDisabled "8"^^xsd:integer ;
+    park:numPayingParkingSpaces "1"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/5> .
+
+<https://w3id.org/italia/data/c_ideal/address/5> a clv:Address ;
+    clv:fullAddress "Via Vettabbia 9"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4723"^^xsd:decimal ;
+    geo:long "9.1812"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/5> a poi:PointOfInterest ;
+    rdfs:label "P. Mercato"@it ;
+    geo:lat "45.4723"^^xsd:decimal ;
+    geo:long "9.1812"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/5> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/5> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/6>
+    a park:CarPark ;
+    rdfs:label "P. Parco Sempione"@it ;
+    park:totalNumCarParkSpaces "90"^^xsd:integer ;
+    park:numSpacesForDisabled "5"^^xsd:integer ;
+    park:numPayingParkingSpaces "0.5"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/6> .
+
+<https://w3id.org/italia/data/c_ideal/address/6> a clv:Address ;
+    clv:fullAddress "Piazza Sempione"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4724"^^xsd:decimal ;
+    geo:long "9.1781"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/6> a poi:PointOfInterest ;
+    rdfs:label "P. Parco Sempione"@it ;
+    geo:lat "45.4724"^^xsd:decimal ;
+    geo:long "9.1781"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/6> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/6> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/7>
+    a park:CarPark ;
+    rdfs:label "P. Università"@it ;
+    park:totalNumCarParkSpaces "180"^^xsd:integer ;
+    park:numSpacesForDisabled "9"^^xsd:integer ;
+    park:numPayingParkingSpaces "1"^^xsd:decimal ;
+    park:hasCarParkTypology "Multipiano"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/7> .
+
+<https://w3id.org/italia/data/c_ideal/address/7> a clv:Address ;
+    clv:fullAddress "Piazza Leonardo da Vinci 32"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4789"^^xsd:decimal ;
+    geo:long "9.2333"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/7> a poi:PointOfInterest ;
+    rdfs:label "P. Università"@it ;
+    geo:lat "45.4789"^^xsd:decimal ;
+    geo:long "9.2333"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/7> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/7> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/8>
+    a park:CarPark ;
+    rdfs:label "P. Aeroporto Linate Lunga"@it ;
+    park:totalNumCarParkSpaces "2000"^^xsd:integer ;
+    park:numSpacesForDisabled "40"^^xsd:integer ;
+    park:numPayingParkingSpaces "0.8"^^xsd:decimal ;
+    park:hasCarParkTypology "Multipiano"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/8> .
+
+<https://w3id.org/italia/data/c_ideal/address/8> a clv:Address ;
+    clv:fullAddress "Viale Forlanini"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4451"^^xsd:decimal ;
+    geo:long "9.2767"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/8> a poi:PointOfInterest ;
+    rdfs:label "P. Aeroporto Linate Lunga"@it ;
+    geo:lat "45.4451"^^xsd:decimal ;
+    geo:long "9.2767"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/8> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/8> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/9>
+    a park:CarPark ;
+    rdfs:label "P. Aeroporto Linate Breve"@it ;
+    park:totalNumCarParkSpaces "300"^^xsd:integer ;
+    park:numSpacesForDisabled "15"^^xsd:integer ;
+    park:numPayingParkingSpaces "3"^^xsd:decimal ;
+    park:hasCarParkTypology "Multipiano"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/9> .
+
+<https://w3id.org/italia/data/c_ideal/address/9> a clv:Address ;
+    clv:fullAddress "Viale Forlanini"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4445"^^xsd:decimal ;
+    geo:long "9.275"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/9> a poi:PointOfInterest ;
+    rdfs:label "P. Aeroporto Linate Breve"@it ;
+    geo:lat "45.4445"^^xsd:decimal ;
+    geo:long "9.275"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/9> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/9> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/10>
+    a park:CarPark ;
+    rdfs:label "P. Tribunale"@it ;
+    park:totalNumCarParkSpaces "60"^^xsd:integer ;
+    park:numSpacesForDisabled "3"^^xsd:integer ;
+    park:numPayingParkingSpaces "2.5"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/10> .
+
+<https://w3id.org/italia/data/c_ideal/address/10> a clv:Address ;
+    clv:fullAddress "Via Freguglia 1"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4631"^^xsd:decimal ;
+    geo:long "9.1754"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/10> a poi:PointOfInterest ;
+    rdfs:label "P. Tribunale"@it ;
+    geo:lat "45.4631"^^xsd:decimal ;
+    geo:long "9.1754"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/10> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/10> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/11>
+    a park:CarPark ;
+    rdfs:label "P. Cimitero"@it ;
+    park:totalNumCarParkSpaces "200"^^xsd:integer ;
+    park:numSpacesForDisabled "10"^^xsd:integer ;
+    park:numPayingParkingSpaces "0"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/11> .
+
+<https://w3id.org/italia/data/c_ideal/address/11> a clv:Address ;
+    clv:fullAddress "Piazzale Cimitero Monumentale"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4847"^^xsd:decimal ;
+    geo:long "9.1748"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/11> a poi:PointOfInterest ;
+    rdfs:label "P. Cimitero"@it ;
+    geo:lat "45.4847"^^xsd:decimal ;
+    geo:long "9.1748"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/11> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/11> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/12>
+    a park:CarPark ;
+    rdfs:label "P. Quartiere 4"@it ;
+    park:totalNumCarParkSpaces "120"^^xsd:integer ;
+    park:numSpacesForDisabled "6"^^xsd:integer ;
+    park:numPayingParkingSpaces "0.5"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/12> .
+
+<https://w3id.org/italia/data/c_ideal/address/12> a clv:Address ;
+    clv:fullAddress "Via Tibaldi 41"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.445"^^xsd:decimal ;
+    geo:long "9.22"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/12> a poi:PointOfInterest ;
+    rdfs:label "P. Quartiere 4"@it ;
+    geo:lat "45.445"^^xsd:decimal ;
+    geo:long "9.22"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/12> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/12> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/13>
+    a park:CarPark ;
+    rdfs:label "P. Centro Commerciale Nord"@it ;
+    park:totalNumCarParkSpaces "800"^^xsd:integer ;
+    park:numSpacesForDisabled "30"^^xsd:integer ;
+    park:numPayingParkingSpaces "0"^^xsd:decimal ;
+    park:hasCarParkTypology "Multipiano"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/13> .
+
+<https://w3id.org/italia/data/c_ideal/address/13> a clv:Address ;
+    clv:fullAddress "Viale Sarca 336"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.5101"^^xsd:decimal ;
+    geo:long "9.1654"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/13> a poi:PointOfInterest ;
+    rdfs:label "P. Centro Commerciale Nord"@it ;
+    geo:lat "45.5101"^^xsd:decimal ;
+    geo:long "9.1654"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/13> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/13> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/14>
+    a park:CarPark ;
+    rdfs:label "P. Piscina Comunale"@it ;
+    park:totalNumCarParkSpaces "70"^^xsd:integer ;
+    park:numSpacesForDisabled "4"^^xsd:integer ;
+    park:numPayingParkingSpaces "1"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/14> .
+
+<https://w3id.org/italia/data/c_ideal/address/14> a clv:Address ;
+    clv:fullAddress "Via Cavalcanti 12"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4708"^^xsd:decimal ;
+    geo:long "9.2104"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/14> a poi:PointOfInterest ;
+    rdfs:label "P. Piscina Comunale"@it ;
+    geo:lat "45.4708"^^xsd:decimal ;
+    geo:long "9.2104"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/14> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/14> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/15>
+    a park:CarPark ;
+    rdfs:label "P. Teatro"@it ;
+    park:totalNumCarParkSpaces "100"^^xsd:integer ;
+    park:numSpacesForDisabled "5"^^xsd:integer ;
+    park:numPayingParkingSpaces "3"^^xsd:decimal ;
+    park:hasCarParkTypology "Multipiano"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/15> .
+
+<https://w3id.org/italia/data/c_ideal/address/15> a clv:Address ;
+    clv:fullAddress "Piazza della Scala 1"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4659"^^xsd:decimal ;
+    geo:long "9.1859"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/15> a poi:PointOfInterest ;
+    rdfs:label "P. Teatro"@it ;
+    geo:lat "45.4659"^^xsd:decimal ;
+    geo:long "9.1859"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/15> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/15> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/16>
+    a park:CarPark ;
+    rdfs:label "P. Casa di Riposo"@it ;
+    park:totalNumCarParkSpaces "50"^^xsd:integer ;
+    park:numSpacesForDisabled "8"^^xsd:integer ;
+    park:numPayingParkingSpaces "0"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/16> .
+
+<https://w3id.org/italia/data/c_ideal/address/16> a clv:Address ;
+    clv:fullAddress "Via Padova 234"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4598"^^xsd:decimal ;
+    geo:long "9.2133"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/16> a poi:PointOfInterest ;
+    rdfs:label "P. Casa di Riposo"@it ;
+    geo:lat "45.4598"^^xsd:decimal ;
+    geo:long "9.2133"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/16> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/16> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/17>
+    a park:CarPark ;
+    rdfs:label "P. Palazzetto Sport"@it ;
+    park:totalNumCarParkSpaces "250"^^xsd:integer ;
+    park:numSpacesForDisabled "12"^^xsd:integer ;
+    park:numPayingParkingSpaces "0.5"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/17> .
+
+<https://w3id.org/italia/data/c_ideal/address/17> a clv:Address ;
+    clv:fullAddress "Via Anassagora 7"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4501"^^xsd:decimal ;
+    geo:long "9.1998"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/17> a poi:PointOfInterest ;
+    rdfs:label "P. Palazzetto Sport"@it ;
+    geo:lat "45.4501"^^xsd:decimal ;
+    geo:long "9.1998"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/17> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/17> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/18>
+    a park:CarPark ;
+    rdfs:label "P. Bus Turistici"@it ;
+    park:totalNumCarParkSpaces "40"^^xsd:integer ;
+    park:numSpacesForDisabled "2"^^xsd:integer ;
+    park:numPayingParkingSpaces "5"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/18> .
+
+<https://w3id.org/italia/data/c_ideal/address/18> a clv:Address ;
+    clv:fullAddress "Via Cermenate 5"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4501"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/18> a poi:PointOfInterest ;
+    rdfs:label "P. Bus Turistici"@it ;
+    geo:lat "45.4501"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/18> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/18> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/19>
+    a park:CarPark ;
+    rdfs:label "P. Disabili Centro"@it ;
+    park:totalNumCarParkSpaces "15"^^xsd:integer ;
+    park:numSpacesForDisabled "15"^^xsd:integer ;
+    park:numPayingParkingSpaces "0"^^xsd:decimal ;
+    park:hasCarParkTypology "Scoperto"@it ;
+    dct:description "si"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/19> .
+
+<https://w3id.org/italia/data/c_ideal/address/19> a clv:Address ;
+    clv:fullAddress "Via Manzoni 14"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4678"^^xsd:decimal ;
+    geo:long "9.1722"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/19> a poi:PointOfInterest ;
+    rdfs:label "P. Disabili Centro"@it ;
+    geo:lat "45.4678"^^xsd:decimal ;
+    geo:long "9.1722"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/19> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/19> .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/20>
+    a park:CarPark ;
+    rdfs:label "P. Tribunale Lavoro"@it ;
+    park:totalNumCarParkSpaces "90"^^xsd:integer ;
+    park:numSpacesForDisabled "5"^^xsd:integer ;
+    park:numPayingParkingSpaces "2"^^xsd:decimal ;
+    park:hasCarParkTypology "Multipiano"@it ;
+    dct:description "no"^^xsd:string ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/20> .
+
+<https://w3id.org/italia/data/c_ideal/address/20> a clv:Address ;
+    clv:fullAddress "Via San Barnaba 50"@it ;
+    clv:hasProvince "BA"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4609"^^xsd:decimal ;
+    geo:long "9.2014"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/20> a poi:PointOfInterest ;
+    rdfs:label "P. Tribunale Lavoro"@it ;
+    geo:lat "45.4609"^^xsd:decimal ;
+    geo:long "9.2014"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/parking-facility/20> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/20> .
