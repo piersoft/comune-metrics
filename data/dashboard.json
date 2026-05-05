@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-05T08:30:45.394Z",
+  "built_at": "2026-05-05T08:46:39.550Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "demo": {
@@ -29,7 +29,7 @@
       "nome": "Lecce",
       "ipa": "c_e506",
       "mode": "static_snapshot",
-      "snapshot_date": "2026-05-04",
+      "snapshot_date": "2026-05-05",
       "n_datasets_pubblicati": 10,
       "n_datasets_totali": 11,
       "n_datasets_ok": 10
