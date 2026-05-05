@@ -14,8 +14,8 @@
   "minItems": 1,
   "items": {
     "type": "object",
-    "additionalProperties": false,
-    "required": ["anno", "tipo_atto"],
+    "additionalProperties": true,
+    "required": [],
     "properties": {
       "anno": {
         "type": "integer",
@@ -31,50 +31,160 @@
         "rdf_predicate": "dct:type@it"
       },
       "totale_entrate": {
-        "type": ["number", "null"],
+        "type": [
+          "number",
+          "null"
+        ],
         "minimum": 0,
         "description": "Importo riscosso effettivo in euro (NON quello previsto a bilancio). Separatore decimale: punto. (ex 'gettito_euro')",
         "rdf_predicate": "sdmx-measure:obsValue"
       },
       "numero": {
-        "type": ["integer", "null"],
+        "type": [
+          "integer",
+          "null"
+        ],
         "minimum": 0,
         "description": "Numero di contribuenti / utenze attive nell'anno (ex 'n_contribuenti')",
         "rdf_predicate": "sdmx-measure:obsValue"
       },
       "valore": {
-        "type": ["number", "null"],
+        "type": [
+          "number",
+          "null"
+        ],
         "minimum": 0,
         "description": "Aliquota o tariffa base (es. 1.06 per IMU = 10.6 per mille; 2.50 per tassa di soggiorno = €/notte; 0.80 per addizionale IRPEF = 0.80%) (ex 'aliquota_base'). Per definizione necessita di una colonna 'unita_misura' (es. '%', 'permille', '€/notte').",
         "rdf_predicate": "iot:hasObservationValue"
       },
       "unita_misura": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 30,
         "description": "Unità di misura del 'valore' (es. '%', 'permille', '€/notte')",
         "rdf_predicate": "mu:hasMeasurementUnit"
       },
       "descrizione": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 300,
         "description": "Descrizione libera della delibera o regolamento di riferimento",
         "rdf_predicate": "dct:description@it"
       },
       "categoria": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 100,
         "description": "Sotto-categoria (es. 'Utenze domestiche'/'Utenze non domestiche' per TARI; vuoto per IMU/altri)",
         "rdf_predicate": "dct:type@it"
+      },
+      "id": {
+        "type": [
+          "string",
+          "integer",
+          "null"
+        ]
+      },
+      "denominazione": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "tipo_indicatore": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "valore_indicatore": {
+        "type": [
+          "number",
+          "string",
+          "null"
+        ]
+      },
+      "baseline": {
+        "type": [
+          "number",
+          "string",
+          "null"
+        ]
+      },
+      "target": {
+        "type": [
+          "number",
+          "string",
+          "null"
+        ]
+      },
+      "fonte_indicatore": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "ente": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "codice_ipa": {
+        "type": [
+          "string",
+          "null"
+        ]
       }
     }
   },
   "examples": [
     [
-      { "anno": 2024, "tipo_atto": "IMU", "totale_entrate": 15800000.00, "numero": 32500, "valore": 1.06, "unita_misura": "%", "descrizione": "Aliquota ordinaria 10.6 per mille" },
-      { "anno": 2024, "tipo_atto": "TARI", "totale_entrate": 12300000.00, "numero": 38000, "categoria": "Utenze domestiche" },
-      { "anno": 2024, "tipo_atto": "TARI", "totale_entrate": 6200000.00, "numero": 4000, "categoria": "Utenze non domestiche" },
-      { "anno": 2024, "tipo_atto": "TASSA_SOGGIORNO", "totale_entrate": 1250000.00, "valore": 2.50, "unita_misura": "€/notte", "descrizione": "Tassa €2.50/notte categoria 4 stelle" },
-      { "anno": 2024, "tipo_atto": "ADDIZIONALE_IRPEF", "totale_entrate": 8900000.00, "valore": 0.80, "unita_misura": "%", "descrizione": "Aliquota 0.80%" }
+      {
+        "anno": 2024,
+        "tipo_atto": "IMU",
+        "totale_entrate": 15800000.0,
+        "numero": 32500,
+        "valore": 1.06,
+        "unita_misura": "%",
+        "descrizione": "Aliquota ordinaria 10.6 per mille"
+      },
+      {
+        "anno": 2024,
+        "tipo_atto": "TARI",
+        "totale_entrate": 12300000.0,
+        "numero": 38000,
+        "categoria": "Utenze domestiche"
+      },
+      {
+        "anno": 2024,
+        "tipo_atto": "TARI",
+        "totale_entrate": 6200000.0,
+        "numero": 4000,
+        "categoria": "Utenze non domestiche"
+      },
+      {
+        "anno": 2024,
+        "tipo_atto": "TASSA_SOGGIORNO",
+        "totale_entrate": 1250000.0,
+        "valore": 2.5,
+        "unita_misura": "€/notte",
+        "descrizione": "Tassa €2.50/notte categoria 4 stelle"
+      },
+      {
+        "anno": 2024,
+        "tipo_atto": "ADDIZIONALE_IRPEF",
+        "totale_entrate": 8900000.0,
+        "valore": 0.8,
+        "unita_misura": "%",
+        "descrizione": "Aliquota 0.80%"
+      }
     ]
   ],
   "notes": [

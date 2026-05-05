@@ -1,400 +1,400 @@
-data,tipo,codice_stato_cup,data_scadenza,via,civico,oggetto_contratto,stazione_appaltante
-2018-02-01,SCIA,Acquisita,2018-03-14,Via Cavour,140,Pratica edilizia,Comune
-2018-02-19,CIL,Efficace,2018-05-05,Via Verdi,130,Pratica edilizia,Comune
-2018-10-01,CILA,Rigettata,2019-03-15,Via XX Settembre,57,Pratica edilizia,Comune
-2018-08-19,SCIA,In istruttoria,,Viale Europa,2,Pratica edilizia,Comune
-2018-03-23,CIL,Efficace,2018-06-09,Via dei Mille,87,Pratica edilizia,Comune
-2018-02-03,CIL,Efficace,2018-05-22,Via Vittorio Emanuele,68,Pratica edilizia,Comune
-2018-01-24,SCIA-Alternativa,Acquisita,2018-05-23,Via Garibaldi,142,Pratica edilizia,Comune
-2018-05-27,CILA,Acquisita,2018-07-03,Via Roma,59,Pratica edilizia,Comune
-2018-05-03,CILA,In istruttoria,,Via Garibaldi,98,Pratica edilizia,Comune
-2018-05-15,CILA,Acquisita,2018-07-27,Via Cavour,69,Pratica edilizia,Comune
-2018-12-22,SCIA,Acquisita,2019-06-05,Piazza San Marco,63,Pratica edilizia,Comune
-2018-03-15,CIL,Efficace,,Via Cavour,143,Pratica edilizia,Comune
-2018-04-22,CILA,In istruttoria,,Via dei Mille,15,Pratica edilizia,Comune
-2018-04-27,CILA,In istruttoria,,Via Dante,103,Pratica edilizia,Comune
-2018-05-03,CILA,Acquisita,,Via Dante,55,Pratica edilizia,Comune
-2018-11-16,CIL,Rigettata,2019-02-14,Via Mazzini,64,Pratica edilizia,Comune
-2018-12-18,SCIA,Rigettata,2019-06-14,Via XX Settembre,93,Pratica edilizia,Comune
-2018-04-05,SCIA-Alternativa,Efficace,2018-05-20,Via Mazzini,41,Pratica edilizia,Comune
-2018-11-14,SCIA,Efficace,2019-04-08,Via della Repubblica,65,Pratica edilizia,Comune
-2018-09-28,CILA,Rigettata,2019-03-12,Via dei Mille,69,Pratica edilizia,Comune
-2018-11-11,SCIA,Efficace,2019-04-02,Via Roma,68,Pratica edilizia,Comune
-2018-09-25,PdC,Acquisita,,Viale Europa,77,Pratica edilizia,Comune
-2018-11-17,CILA,Acquisita,2019-01-17,Via della Repubblica,136,Pratica edilizia,Comune
-2018-01-20,CILA,Efficace,2018-05-15,Via San Francesco,79,Pratica edilizia,Comune
-2018-04-02,CILA,Acquisita,,Via Garibaldi,125,Pratica edilizia,Comune
-2018-02-25,PdC,Acquisita,2018-08-12,Via Mazzini,68,Pratica edilizia,Comune
-2018-09-28,CIL,Acquisita,,Via dei Mille,52,Pratica edilizia,Comune
-2018-12-10,CIL,Rigettata,2019-04-25,Via San Francesco,133,Pratica edilizia,Comune
-2018-08-04,CILA,Acquisita,2018-08-24,Via Vittorio Emanuele,142,Pratica edilizia,Comune
-2018-04-19,CILA,Efficace,2018-10-27,Via Roma,59,Pratica edilizia,Comune
-2018-02-02,CILA,Efficace,2018-05-04,Via Cavour,125,Pratica edilizia,Comune
-2018-04-18,PdC,Rigettata,,Via Vittorio Emanuele,148,Pratica edilizia,Comune
-2018-08-08,SCIA-Alternativa,In istruttoria,,Via XX Settembre,49,Pratica edilizia,Comune
-2018-02-04,CIL,Efficace,2018-06-26,Viale Europa,14,Pratica edilizia,Comune
-2018-11-21,SCIA,Efficace,2019-03-10,Via dei Mille,28,Pratica edilizia,Comune
-2018-04-07,CILA,Acquisita,2018-08-18,Via Mazzini,72,Pratica edilizia,Comune
-2018-08-08,SCIA,Efficace,2019-01-23,Via Garibaldi,13,Pratica edilizia,Comune
-2018-11-18,CILA,Efficace,,Viale Europa,61,Pratica edilizia,Comune
-2018-03-14,SCIA-Alternativa,Efficace,2018-07-19,Via San Francesco,16,Pratica edilizia,Comune
-2018-03-13,CILA,Efficace,2018-08-04,Via Manzoni,109,Pratica edilizia,Comune
-2018-12-24,SCIA-Alternativa,Acquisita,2019-03-10,Via Roma,149,Pratica edilizia,Comune
-2018-12-18,CILA,Rigettata,2019-01-17,Via Vittorio Emanuele,123,Pratica edilizia,Comune
-2018-09-28,PdC,Efficace,,Via Garibaldi,48,Pratica edilizia,Comune
-2018-02-20,SCIA,Rigettata,,Via XX Settembre,31,Pratica edilizia,Comune
-2018-10-08,CILA,Acquisita,2019-04-04,Via Vittorio Emanuele,134,Pratica edilizia,Comune
-2018-06-09,CILA,Rigettata,2018-09-01,Via Manzoni,102,Pratica edilizia,Comune
-2018-03-22,SCIA,Efficace,2018-04-27,Via Roma,118,Pratica edilizia,Comune
-2018-10-19,SCIA,Efficace,2019-03-23,Via Manzoni,34,Pratica edilizia,Comune
-2018-06-03,CILA,Efficace,2018-10-18,Viale Europa,140,Pratica edilizia,Comune
-2018-12-10,CILA,Rigettata,2019-03-17,Via San Francesco,27,Pratica edilizia,Comune
-2018-03-09,SCIA,Efficace,2018-05-07,Via Manzoni,73,Pratica edilizia,Comune
-2018-10-07,CILA,Acquisita,2019-01-05,Via della Repubblica,126,Pratica edilizia,Comune
-2018-05-28,CILA,Efficace,2018-09-01,Via Roma,1,Pratica edilizia,Comune
-2018-06-25,PdC,Rigettata,,Via Mazzini,114,Pratica edilizia,Comune
-2018-09-23,CIL,Acquisita,2018-11-01,Via San Francesco,39,Pratica edilizia,Comune
-2019-01-27,CILA,Acquisita,2019-06-12,Via Mazzini,11,Pratica edilizia,Comune
-2019-05-12,CILA,Efficace,2019-08-06,Via Cavour,27,Pratica edilizia,Comune
-2019-06-25,CIL,Acquisita,2019-09-16,Viale Europa,42,Pratica edilizia,Comune
-2019-03-14,CILA,Acquisita,2019-07-02,Via dei Mille,106,Pratica edilizia,Comune
-2019-11-28,CILA,Efficace,2020-01-14,Via XX Settembre,10,Pratica edilizia,Comune
-2019-08-08,CILA,In istruttoria,,Via San Francesco,118,Pratica edilizia,Comune
-2019-06-10,CILA,Acquisita,2019-08-18,Via XX Settembre,85,Pratica edilizia,Comune
-2019-05-28,SCIA,In istruttoria,,Via Manzoni,90,Pratica edilizia,Comune
-2019-11-17,CIL,Rigettata,,Via della Repubblica,85,Pratica edilizia,Comune
-2019-01-04,SCIA,Acquisita,2019-04-02,Via Roma,28,Pratica edilizia,Comune
-2019-10-14,CILA,Rigettata,2020-02-28,Via Vittorio Emanuele,131,Pratica edilizia,Comune
-2019-02-13,CILA,Efficace,2019-06-27,Via Roma,134,Pratica edilizia,Comune
-2019-09-22,CILA,Efficace,2020-01-09,Via Vittorio Emanuele,81,Pratica edilizia,Comune
-2019-11-28,SCIA,Rigettata,,Via della Repubblica,80,Pratica edilizia,Comune
-2019-11-14,CILA,Efficace,2020-05-02,Via Mazzini,50,Pratica edilizia,Comune
-2019-07-22,CIL,Rigettata,2019-09-25,Via Vittorio Emanuele,146,Pratica edilizia,Comune
-2019-05-13,CILA,Efficace,2019-09-26,Via dei Mille,149,Pratica edilizia,Comune
-2019-10-21,CILA,Efficace,2020-01-06,Via della Repubblica,122,Pratica edilizia,Comune
-2019-12-06,SCIA,Efficace,2020-06-15,Via Vittorio Emanuele,86,Pratica edilizia,Comune
-2019-02-27,CILA,Rigettata,2019-05-08,Via Mazzini,7,Pratica edilizia,Comune
-2019-01-08,SCIA-Alternativa,Acquisita,2019-02-13,Corso Italia,107,Pratica edilizia,Comune
-2019-11-19,CILA,Rigettata,2020-04-20,Via XX Settembre,63,Pratica edilizia,Comune
-2019-03-21,CILA,In istruttoria,,Viale Europa,28,Pratica edilizia,Comune
-2019-07-08,PdC,In istruttoria,,Piazza San Marco,133,Pratica edilizia,Comune
-2019-08-02,CILA,In istruttoria,,Via Garibaldi,117,Pratica edilizia,Comune
-2019-03-26,SCIA-Alternativa,Rigettata,2019-09-16,Via Vittorio Emanuele,82,Pratica edilizia,Comune
-2019-08-20,CIL,In istruttoria,,Via San Francesco,141,Pratica edilizia,Comune
-2019-08-06,SCIA-Alternativa,Efficace,2019-10-28,Viale Europa,71,Pratica edilizia,Comune
-2019-09-16,CILA,Efficace,2019-12-20,Via Verdi,70,Pratica edilizia,Comune
-2019-06-11,SCIA,Acquisita,2019-10-12,Piazza San Marco,40,Pratica edilizia,Comune
-2019-12-07,SCIA,Efficace,2020-05-20,Corso Italia,107,Pratica edilizia,Comune
-2019-01-07,CIL,Efficace,,Via Vittorio Emanuele,6,Pratica edilizia,Comune
-2019-10-13,SCIA-Alternativa,Efficace,,Via Manzoni,100,Pratica edilizia,Comune
-2019-07-18,CILA,Efficace,2019-12-04,Corso Italia,8,Pratica edilizia,Comune
-2019-07-11,CIL,Rigettata,2019-12-05,Via San Francesco,33,Pratica edilizia,Comune
-2019-10-18,CILA,Efficace,2019-11-11,Via Garibaldi,110,Pratica edilizia,Comune
-2019-03-28,SCIA-Alternativa,Acquisita,2019-07-28,Via Dante,55,Pratica edilizia,Comune
-2019-08-11,CILA,In istruttoria,,Via San Francesco,98,Pratica edilizia,Comune
-2019-05-25,CIL,Efficace,2019-10-20,Via Roma,139,Pratica edilizia,Comune
-2019-01-12,CILA,Rigettata,2019-02-09,Via dei Mille,8,Pratica edilizia,Comune
-2019-04-07,CILA,Acquisita,2019-05-26,Corso Italia,30,Pratica edilizia,Comune
-2019-10-07,SCIA-Alternativa,Rigettata,2020-02-04,Via Mazzini,30,Pratica edilizia,Comune
-2019-03-10,SCIA,Acquisita,2019-06-20,Via Vittorio Emanuele,97,Pratica edilizia,Comune
-2019-07-23,CILA,Efficace,2020-02-02,Via Verdi,27,Pratica edilizia,Comune
-2019-12-25,SCIA,In istruttoria,,Via Cavour,31,Pratica edilizia,Comune
-2019-10-26,CILA,Efficace,2020-02-23,Via Garibaldi,130,Pratica edilizia,Comune
-2019-11-11,CILA,In istruttoria,,Via XX Settembre,126,Pratica edilizia,Comune
-2019-02-14,CILA,Rigettata,,Corso Italia,40,Pratica edilizia,Comune
-2019-07-06,SCIA,Acquisita,2019-12-18,Via dei Mille,124,Pratica edilizia,Comune
-2019-08-14,SCIA,Efficace,,Viale Europa,23,Pratica edilizia,Comune
-2019-05-15,CILA,In istruttoria,,Corso Italia,146,Pratica edilizia,Comune
-2019-10-22,CIL,Efficace,2020-02-08,Via Mazzini,125,Pratica edilizia,Comune
-2020-06-26,SCIA,Efficace,2020-12-25,Piazza San Marco,71,Pratica edilizia,Comune
-2020-09-01,CILA,Efficace,2021-01-08,Corso Italia,143,Pratica edilizia,Comune
-2020-04-23,SCIA-Alternativa,Rigettata,2020-09-12,Via dei Mille,5,Pratica edilizia,Comune
-2020-02-10,CILA,Efficace,2020-05-19,Via Cavour,149,Pratica edilizia,Comune
-2020-06-16,CILA,Efficace,,Via della Repubblica,85,Pratica edilizia,Comune
-2020-06-23,SCIA-Alternativa,Efficace,2020-09-13,Via Garibaldi,50,Pratica edilizia,Comune
-2020-06-04,PdC,Acquisita,2020-11-02,Via Manzoni,135,Pratica edilizia,Comune
-2020-10-10,SCIA,In istruttoria,,Via Verdi,76,Pratica edilizia,Comune
-2020-04-12,PdC,Efficace,2020-09-23,Via Mazzini,71,Pratica edilizia,Comune
-2020-01-02,SCIA,Rigettata,,Via Cavour,126,Pratica edilizia,Comune
-2020-02-28,CILA,Acquisita,2020-07-25,Corso Italia,88,Pratica edilizia,Comune
-2020-03-02,SCIA,In istruttoria,,Corso Italia,30,Pratica edilizia,Comune
-2020-02-13,SCIA-Alternativa,Efficace,2020-03-13,Via Mazzini,39,Pratica edilizia,Comune
-2020-10-10,SCIA,Acquisita,2021-02-19,Via Vittorio Emanuele,58,Pratica edilizia,Comune
-2020-09-13,SCIA-Alternativa,Efficace,2021-03-10,Via XX Settembre,79,Pratica edilizia,Comune
-2020-10-20,CILA,Acquisita,,Via Garibaldi,54,Pratica edilizia,Comune
-2020-11-07,SCIA,Rigettata,2021-01-27,Via Mazzini,142,Pratica edilizia,Comune
-2020-02-06,CILA,Efficace,2020-08-05,Corso Italia,75,Pratica edilizia,Comune
-2020-01-08,SCIA,Rigettata,2020-05-27,Via Garibaldi,60,Pratica edilizia,Comune
-2020-05-26,CILA,Efficace,2020-08-14,Via Cavour,39,Pratica edilizia,Comune
-2020-05-27,PdC,Efficace,2020-09-08,Via Vittorio Emanuele,146,Pratica edilizia,Comune
-2020-05-15,SCIA,Efficace,2020-09-21,Via Manzoni,129,Pratica edilizia,Comune
-2020-09-16,SCIA-Alternativa,Efficace,2021-02-01,Piazza San Marco,83,Pratica edilizia,Comune
-2020-10-09,CILA,Efficace,2021-04-03,Via Vittorio Emanuele,6,Pratica edilizia,Comune
-2020-11-27,SCIA,Acquisita,2021-02-02,Corso Italia,133,Pratica edilizia,Comune
-2020-11-15,SCIA,Acquisita,,Via XX Settembre,126,Pratica edilizia,Comune
-2020-02-16,CILA,Efficace,2020-04-01,Viale Europa,42,Pratica edilizia,Comune
-2020-06-14,SCIA-Alternativa,Efficace,2020-10-19,Viale Europa,141,Pratica edilizia,Comune
-2020-01-15,SCIA,Efficace,2020-03-03,Via dei Mille,104,Pratica edilizia,Comune
-2020-09-27,CILA,Rigettata,,Corso Italia,106,Pratica edilizia,Comune
-2020-01-07,CILA,Acquisita,2020-07-14,Corso Italia,14,Pratica edilizia,Comune
-2020-04-09,PdC,Efficace,2020-09-08,Via Garibaldi,8,Pratica edilizia,Comune
-2020-11-20,CILA,Rigettata,2021-05-08,Via Roma,142,Pratica edilizia,Comune
-2020-07-03,CILA,In istruttoria,,Via San Francesco,30,Pratica edilizia,Comune
-2020-08-04,PdC,Efficace,,Via Manzoni,131,Pratica edilizia,Comune
-2020-12-09,CIL,In istruttoria,,Corso Italia,121,Pratica edilizia,Comune
-2020-04-15,PdC,Efficace,2020-10-15,Via della Repubblica,35,Pratica edilizia,Comune
-2020-02-09,CIL,Efficace,,Via della Repubblica,69,Pratica edilizia,Comune
-2020-01-10,SCIA,In istruttoria,,Via Vittorio Emanuele,149,Pratica edilizia,Comune
-2020-11-16,PdC,Efficace,2021-03-07,Via Dante,142,Pratica edilizia,Comune
-2020-09-13,SCIA-Alternativa,Efficace,,Piazza San Marco,62,Pratica edilizia,Comune
-2021-07-08,CIL,Efficace,2021-12-04,Piazza San Marco,98,Pratica edilizia,Comune
-2021-07-22,PdC,Efficace,,Via Mazzini,129,Pratica edilizia,Comune
-2021-10-11,SCIA,In istruttoria,,Viale Europa,113,Pratica edilizia,Comune
-2021-02-17,SCIA-Alternativa,Efficace,2021-06-24,Viale Europa,40,Pratica edilizia,Comune
-2021-02-16,SCIA,Efficace,2021-06-20,Via Cavour,21,Pratica edilizia,Comune
-2021-06-28,CIL,Efficace,2021-11-27,Viale Europa,139,Pratica edilizia,Comune
-2021-01-20,SCIA,Acquisita,2021-04-24,Via Verdi,24,Pratica edilizia,Comune
-2021-07-04,SCIA,Efficace,2021-10-11,Via San Francesco,8,Pratica edilizia,Comune
-2021-01-11,CILA,Efficace,2021-05-24,Via Mazzini,63,Pratica edilizia,Comune
-2021-09-14,PdC,Acquisita,2022-03-17,Viale Europa,98,Pratica edilizia,Comune
-2021-10-22,CILA,Efficace,,Via Mazzini,60,Pratica edilizia,Comune
-2021-08-21,SCIA,Efficace,2021-09-10,Via San Francesco,120,Pratica edilizia,Comune
-2021-05-22,PdC,Efficace,2021-09-13,Via Vittorio Emanuele,77,Pratica edilizia,Comune
-2021-11-14,SCIA,Efficace,2022-01-23,Via XX Settembre,124,Pratica edilizia,Comune
-2021-02-08,CIL,Acquisita,2021-05-14,Piazza San Marco,76,Pratica edilizia,Comune
-2021-01-27,CIL,Efficace,2021-02-26,Via San Francesco,128,Pratica edilizia,Comune
-2021-05-25,CILA,Acquisita,2021-08-12,Via Cavour,49,Pratica edilizia,Comune
-2021-10-09,PdC,Rigettata,2022-04-16,Via Cavour,11,Pratica edilizia,Comune
-2021-05-26,SCIA-Alternativa,Efficace,2021-07-18,Via Garibaldi,76,Pratica edilizia,Comune
-2021-06-24,CIL,Acquisita,2021-12-09,Via San Francesco,94,Pratica edilizia,Comune
-2021-09-17,SCIA,In istruttoria,,Via Mazzini,66,Pratica edilizia,Comune
-2021-08-26,SCIA,Rigettata,,Via dei Mille,30,Pratica edilizia,Comune
-2021-08-03,PdC,In istruttoria,,Via Verdi,102,Pratica edilizia,Comune
-2021-09-12,SCIA,In istruttoria,,Via XX Settembre,4,Pratica edilizia,Comune
-2021-05-18,SCIA,Efficace,2021-08-16,Via Vittorio Emanuele,98,Pratica edilizia,Comune
-2021-11-12,SCIA,Rigettata,2021-12-05,Via Vittorio Emanuele,144,Pratica edilizia,Comune
-2021-06-20,CILA,Rigettata,2021-11-13,Via San Francesco,78,Pratica edilizia,Comune
-2021-11-14,SCIA,Acquisita,2021-12-10,Via Manzoni,127,Pratica edilizia,Comune
-2021-02-04,CILA,Acquisita,2021-06-23,Via Dante,139,Pratica edilizia,Comune
-2021-07-19,PdC,Efficace,2021-12-19,Via Vittorio Emanuele,105,Pratica edilizia,Comune
-2021-05-02,CILA,Acquisita,2021-07-21,Viale Europa,93,Pratica edilizia,Comune
-2021-02-22,CILA,Acquisita,,Via Cavour,92,Pratica edilizia,Comune
-2021-01-13,SCIA,Acquisita,,Viale Europa,117,Pratica edilizia,Comune
-2021-02-22,CILA,Rigettata,2021-03-14,Via Roma,86,Pratica edilizia,Comune
-2021-04-05,CILA,Efficace,2021-09-21,Via Verdi,56,Pratica edilizia,Comune
-2021-04-11,PdC,In istruttoria,,Via San Francesco,1,Pratica edilizia,Comune
-2021-05-28,PdC,Acquisita,2021-08-03,Via Garibaldi,7,Pratica edilizia,Comune
-2021-03-01,CILA,In istruttoria,,Via dei Mille,61,Pratica edilizia,Comune
-2021-10-11,CILA,Acquisita,2021-12-02,Piazza San Marco,108,Pratica edilizia,Comune
-2021-09-04,SCIA,Efficace,2021-12-27,Via della Repubblica,28,Pratica edilizia,Comune
-2021-08-17,CILA,Acquisita,2022-01-25,Via Manzoni,118,Pratica edilizia,Comune
-2021-11-01,CILA,Efficace,2022-03-13,Via Cavour,28,Pratica edilizia,Comune
-2021-08-23,SCIA-Alternativa,Efficace,,Via Dante,38,Pratica edilizia,Comune
-2021-02-05,SCIA,Acquisita,2021-07-20,Piazza San Marco,84,Pratica edilizia,Comune
-2021-07-20,SCIA,Efficace,2021-12-05,Via Garibaldi,30,Pratica edilizia,Comune
-2021-11-21,CILA,Efficace,2022-02-10,Via XX Settembre,87,Pratica edilizia,Comune
-2021-08-13,CIL,Rigettata,2021-12-25,Via Dante,66,Pratica edilizia,Comune
-2021-06-05,SCIA-Alternativa,Efficace,2021-07-13,Via Garibaldi,111,Pratica edilizia,Comune
-2021-02-24,CILA,In istruttoria,,Via Mazzini,143,Pratica edilizia,Comune
-2021-01-19,CILA,Rigettata,2021-05-12,Viale Europa,109,Pratica edilizia,Comune
-2021-12-02,SCIA,Acquisita,2022-01-15,Via Vittorio Emanuele,130,Pratica edilizia,Comune
-2021-04-05,SCIA-Alternativa,Acquisita,2021-07-25,Viale Europa,143,Pratica edilizia,Comune
-2021-06-04,SCIA,Acquisita,2021-10-16,Viale Europa,144,Pratica edilizia,Comune
-2022-10-22,CILA,Acquisita,,Viale Europa,69,Pratica edilizia,Comune
-2022-01-06,SCIA,Rigettata,2022-04-23,Via Dante,2,Pratica edilizia,Comune
-2022-03-28,PdC,Acquisita,2022-05-04,Via Mazzini,8,Pratica edilizia,Comune
-2022-02-24,CILA,Efficace,2022-06-14,Via Mazzini,95,Pratica edilizia,Comune
-2022-05-24,CILA,In istruttoria,,Via Vittorio Emanuele,22,Pratica edilizia,Comune
-2022-01-05,PdC,In istruttoria,,Via Vittorio Emanuele,13,Pratica edilizia,Comune
-2022-11-03,SCIA,Efficace,2023-04-02,Via Vittorio Emanuele,114,Pratica edilizia,Comune
-2022-07-09,CILA,In istruttoria,,Via della Repubblica,30,Pratica edilizia,Comune
-2022-06-14,SCIA,Efficace,2022-12-12,Corso Italia,135,Pratica edilizia,Comune
-2022-11-10,CILA,Acquisita,2023-05-10,Via Roma,2,Pratica edilizia,Comune
-2022-04-10,CILA,In istruttoria,,Via Mazzini,66,Pratica edilizia,Comune
-2022-05-11,SCIA,Efficace,2022-09-24,Via Mazzini,34,Pratica edilizia,Comune
-2022-07-18,CILA,Acquisita,2022-11-11,Via Garibaldi,102,Pratica edilizia,Comune
-2022-12-02,CIL,Efficace,2023-01-08,Viale Europa,81,Pratica edilizia,Comune
-2022-10-14,CIL,Rigettata,2023-01-19,Via Garibaldi,104,Pratica edilizia,Comune
-2022-01-11,PdC,In istruttoria,,Via Vittorio Emanuele,118,Pratica edilizia,Comune
-2022-12-12,SCIA,Efficace,2023-03-05,Via XX Settembre,103,Pratica edilizia,Comune
-2022-09-03,CIL,In istruttoria,,Via Manzoni,87,Pratica edilizia,Comune
-2022-04-11,PdC,Efficace,2022-05-27,Via della Repubblica,131,Pratica edilizia,Comune
-2022-04-25,CILA,Efficace,2022-11-09,Viale Europa,38,Pratica edilizia,Comune
-2022-04-04,PdC,Efficace,2022-10-05,Via Mazzini,20,Pratica edilizia,Comune
-2022-03-25,SCIA-Alternativa,Efficace,2022-09-20,Corso Italia,145,Pratica edilizia,Comune
-2022-11-21,CILA,In istruttoria,,Via Cavour,81,Pratica edilizia,Comune
-2022-03-15,SCIA,Efficace,2022-06-23,Via dei Mille,71,Pratica edilizia,Comune
-2022-10-02,CILA,Acquisita,2023-02-23,Corso Italia,10,Pratica edilizia,Comune
-2022-01-12,SCIA,Efficace,2022-02-22,Via Vittorio Emanuele,130,Pratica edilizia,Comune
-2022-07-15,CILA,Efficace,,Via Vittorio Emanuele,49,Pratica edilizia,Comune
-2022-06-20,SCIA-Alternativa,Acquisita,2022-07-22,Corso Italia,27,Pratica edilizia,Comune
-2022-06-23,SCIA,Acquisita,2022-07-20,Via Verdi,113,Pratica edilizia,Comune
-2022-08-17,PdC,Efficace,2022-11-20,Via XX Settembre,105,Pratica edilizia,Comune
-2022-06-22,CILA,In istruttoria,,Via Cavour,86,Pratica edilizia,Comune
-2022-02-11,SCIA,Acquisita,2022-05-14,Via Manzoni,39,Pratica edilizia,Comune
-2022-06-03,PdC,Efficace,2022-10-06,Via Mazzini,22,Pratica edilizia,Comune
-2022-05-18,CIL,Rigettata,2022-07-09,Via Cavour,135,Pratica edilizia,Comune
-2022-02-21,CIL,Acquisita,2022-06-16,Via Manzoni,47,Pratica edilizia,Comune
-2022-04-11,SCIA-Alternativa,Acquisita,2022-06-05,Via Mazzini,20,Pratica edilizia,Comune
-2022-05-28,SCIA,Acquisita,2022-11-09,Via Roma,87,Pratica edilizia,Comune
-2022-10-05,CIL,Acquisita,2023-04-11,Via dei Mille,43,Pratica edilizia,Comune
-2022-12-15,CILA,Efficace,2023-03-06,Corso Italia,73,Pratica edilizia,Comune
-2022-12-26,SCIA-Alternativa,Acquisita,2023-04-08,Via dei Mille,121,Pratica edilizia,Comune
-2022-04-12,SCIA-Alternativa,Efficace,2022-08-12,Via della Repubblica,136,Pratica edilizia,Comune
-2022-07-06,CILA,In istruttoria,,Via Vittorio Emanuele,36,Pratica edilizia,Comune
-2022-05-02,SCIA-Alternativa,In istruttoria,,Via Dante,142,Pratica edilizia,Comune
-2022-02-23,SCIA,Efficace,2022-04-23,Via Manzoni,116,Pratica edilizia,Comune
-2022-09-05,CIL,Efficace,,Via Verdi,116,Pratica edilizia,Comune
-2022-06-01,CIL,Efficace,2022-09-27,Via Verdi,99,Pratica edilizia,Comune
-2022-02-12,CILA,Efficace,2022-03-24,Viale Europa,86,Pratica edilizia,Comune
-2022-03-05,CILA,Efficace,,Corso Italia,36,Pratica edilizia,Comune
-2022-12-16,SCIA-Alternativa,Acquisita,2023-01-23,Via Roma,66,Pratica edilizia,Comune
-2022-04-27,PdC,Acquisita,,Via Vittorio Emanuele,136,Pratica edilizia,Comune
-2022-07-04,SCIA,Acquisita,2022-08-03,Via Verdi,108,Pratica edilizia,Comune
-2022-11-26,SCIA-Alternativa,Efficace,2023-04-28,Via Vittorio Emanuele,138,Pratica edilizia,Comune
-2022-01-21,CILA,Rigettata,2022-06-05,Via Roma,91,Pratica edilizia,Comune
-2022-04-19,CIL,Acquisita,2022-05-27,Via della Repubblica,93,Pratica edilizia,Comune
-2023-09-18,CILA,Efficace,,Via Roma,100,Pratica edilizia,Comune
-2023-06-09,CILA,Efficace,2023-09-28,Via Verdi,27,Pratica edilizia,Comune
-2023-10-24,CILA,Acquisita,2024-04-10,Via Dante,45,Pratica edilizia,Comune
-2023-11-15,SCIA-Alternativa,Rigettata,2024-01-08,Via Garibaldi,118,Pratica edilizia,Comune
-2023-01-10,CILA,Efficace,2023-02-07,Via Dante,80,Pratica edilizia,Comune
-2023-09-13,SCIA-Alternativa,Efficace,2024-03-25,Via Verdi,74,Pratica edilizia,Comune
-2023-06-28,CILA,In istruttoria,,Via Cavour,85,Pratica edilizia,Comune
-2023-05-04,CILA,Efficace,,Piazza San Marco,113,Pratica edilizia,Comune
-2023-07-11,PdC,Efficace,2023-11-08,Via San Francesco,133,Pratica edilizia,Comune
-2023-05-26,SCIA,Rigettata,2023-10-11,Via Vittorio Emanuele,47,Pratica edilizia,Comune
-2023-09-10,CILA,Efficace,2023-12-16,Via Manzoni,115,Pratica edilizia,Comune
-2023-10-23,CIL,Acquisita,2024-02-15,Corso Italia,11,Pratica edilizia,Comune
-2023-12-28,CILA,Acquisita,,Via Manzoni,15,Pratica edilizia,Comune
-2023-02-22,CIL,Efficace,2023-04-21,Via Roma,37,Pratica edilizia,Comune
-2023-10-22,SCIA-Alternativa,Efficace,2024-01-13,Via dei Mille,94,Pratica edilizia,Comune
-2023-06-13,CILA,Acquisita,2023-11-03,Via Dante,96,Pratica edilizia,Comune
-2023-08-25,SCIA,Acquisita,2023-12-21,Via XX Settembre,81,Pratica edilizia,Comune
-2023-11-09,CILA,Efficace,2024-01-15,Corso Italia,133,Pratica edilizia,Comune
-2023-07-18,SCIA,Efficace,2023-12-07,Via Verdi,74,Pratica edilizia,Comune
-2023-12-16,CILA,Efficace,2024-01-21,Corso Italia,45,Pratica edilizia,Comune
-2023-12-15,SCIA,In istruttoria,,Via Cavour,82,Pratica edilizia,Comune
-2023-11-12,SCIA,Acquisita,2024-02-19,Viale Europa,41,Pratica edilizia,Comune
-2023-12-23,PdC,In istruttoria,,Via Dante,131,Pratica edilizia,Comune
-2023-04-04,CILA,In istruttoria,,Via Mazzini,61,Pratica edilizia,Comune
-2023-08-01,CILA,Acquisita,2023-12-23,Via dei Mille,142,Pratica edilizia,Comune
-2023-03-20,SCIA,Efficace,2023-08-17,Via della Repubblica,106,Pratica edilizia,Comune
-2023-07-27,SCIA,Acquisita,,Via Cavour,19,Pratica edilizia,Comune
-2023-08-15,CILA,Acquisita,,Via dei Mille,142,Pratica edilizia,Comune
-2023-11-19,PdC,In istruttoria,,Via Mazzini,111,Pratica edilizia,Comune
-2023-09-28,CILA,In istruttoria,,Via Garibaldi,133,Pratica edilizia,Comune
-2023-03-10,PdC,Acquisita,2023-05-26,Via Dante,133,Pratica edilizia,Comune
-2023-05-28,SCIA,Efficace,2023-11-16,Via Manzoni,33,Pratica edilizia,Comune
-2023-11-10,SCIA,Acquisita,2024-05-08,Via Vittorio Emanuele,40,Pratica edilizia,Comune
-2023-03-22,CILA,In istruttoria,,Via San Francesco,145,Pratica edilizia,Comune
-2023-01-27,CILA,Efficace,2023-08-10,Via dei Mille,148,Pratica edilizia,Comune
-2023-05-21,CILA,In istruttoria,,Via Vittorio Emanuele,107,Pratica edilizia,Comune
-2023-10-21,CILA,Efficace,,Via della Repubblica,75,Pratica edilizia,Comune
-2024-05-16,CILA,In istruttoria,,Via dei Mille,104,Pratica edilizia,Comune
-2024-05-15,SCIA,Rigettata,2024-10-02,Via XX Settembre,124,Pratica edilizia,Comune
-2024-08-07,CILA,Acquisita,2024-11-19,Piazza San Marco,89,Pratica edilizia,Comune
-2024-07-05,CILA,Acquisita,2024-10-17,Via Verdi,120,Pratica edilizia,Comune
-2024-02-09,SCIA-Alternativa,Acquisita,2024-03-08,Via Manzoni,99,Pratica edilizia,Comune
-2024-10-14,CILA,In istruttoria,,Via San Francesco,41,Pratica edilizia,Comune
-2024-06-19,CILA,Acquisita,2024-11-21,Via della Repubblica,120,Pratica edilizia,Comune
-2024-08-10,SCIA-Alternativa,Efficace,2024-12-13,Via della Repubblica,118,Pratica edilizia,Comune
-2024-04-07,CILA,Efficace,2024-09-08,Via Vittorio Emanuele,121,Pratica edilizia,Comune
-2024-05-18,CILA,In istruttoria,,Via Garibaldi,111,Pratica edilizia,Comune
-2024-03-09,CILA,In istruttoria,,Via XX Settembre,94,Pratica edilizia,Comune
-2024-01-13,CILA,Acquisita,2024-05-08,Via della Repubblica,74,Pratica edilizia,Comune
-2024-02-13,SCIA-Alternativa,In istruttoria,,Via della Repubblica,72,Pratica edilizia,Comune
-2024-10-22,SCIA,Acquisita,,Via XX Settembre,96,Pratica edilizia,Comune
-2024-06-18,CILA,In istruttoria,,Via Mazzini,51,Pratica edilizia,Comune
-2024-10-17,CIL,Acquisita,2024-11-13,Via Mazzini,86,Pratica edilizia,Comune
-2024-08-17,SCIA-Alternativa,Acquisita,2025-01-23,Via Mazzini,84,Pratica edilizia,Comune
-2024-10-11,PdC,Efficace,,Piazza San Marco,77,Pratica edilizia,Comune
-2024-10-11,SCIA-Alternativa,Rigettata,2025-03-07,Viale Europa,5,Pratica edilizia,Comune
-2024-06-11,SCIA,Efficace,2024-12-19,Via Roma,122,Pratica edilizia,Comune
-2024-05-21,CILA,Rigettata,2024-10-18,Via Mazzini,135,Pratica edilizia,Comune
-2024-11-24,CIL,Acquisita,2025-02-17,Via Roma,147,Pratica edilizia,Comune
-2024-12-04,CILA,Efficace,2025-04-14,Via Mazzini,106,Pratica edilizia,Comune
-2024-12-07,CIL,Acquisita,2025-05-02,Viale Europa,16,Pratica edilizia,Comune
-2024-12-05,CILA,Acquisita,2025-05-02,Via della Repubblica,97,Pratica edilizia,Comune
-2024-06-06,SCIA-Alternativa,Acquisita,2024-09-27,Via Cavour,68,Pratica edilizia,Comune
-2024-10-16,CILA,Acquisita,2025-01-23,Via Verdi,77,Pratica edilizia,Comune
-2024-05-23,CILA,Rigettata,2024-09-07,Corso Italia,90,Pratica edilizia,Comune
-2024-09-26,SCIA,Efficace,2025-03-12,Via XX Settembre,102,Pratica edilizia,Comune
-2024-06-25,PdC,Efficace,2024-08-04,Via Dante,114,Pratica edilizia,Comune
-2024-11-09,SCIA-Alternativa,Acquisita,2025-04-21,Via Manzoni,144,Pratica edilizia,Comune
-2024-12-09,PdC,Efficace,2025-06-06,Via Verdi,63,Pratica edilizia,Comune
-2024-01-22,CILA,Rigettata,2024-03-06,Via XX Settembre,85,Pratica edilizia,Comune
-2024-12-16,SCIA,Rigettata,2025-01-04,Via della Repubblica,41,Pratica edilizia,Comune
-2024-07-21,SCIA-Alternativa,Efficace,2024-10-25,Via Dante,74,Pratica edilizia,Comune
-2024-11-02,SCIA,Rigettata,2025-04-13,Piazza San Marco,10,Pratica edilizia,Comune
-2024-03-14,PdC,Efficace,,Via XX Settembre,127,Pratica edilizia,Comune
-2024-03-24,SCIA,Efficace,2024-09-16,Via Vittorio Emanuele,28,Pratica edilizia,Comune
-2024-06-10,SCIA-Alternativa,Rigettata,2024-11-11,Via San Francesco,35,Pratica edilizia,Comune
-2024-09-15,SCIA,Acquisita,2025-01-02,Via Mazzini,118,Pratica edilizia,Comune
-2024-11-09,PdC,Efficace,2025-02-15,Via Vittorio Emanuele,50,Pratica edilizia,Comune
-2024-03-20,CIL,In istruttoria,,Via XX Settembre,132,Pratica edilizia,Comune
-2024-06-03,CIL,Rigettata,2024-07-25,Corso Italia,83,Pratica edilizia,Comune
-2024-04-01,SCIA,Efficace,2024-06-28,Via Dante,78,Pratica edilizia,Comune
-2024-10-24,CILA,Efficace,2025-01-15,Via Roma,31,Pratica edilizia,Comune
-2024-08-10,PdC,Efficace,2024-11-20,Piazza San Marco,31,Pratica edilizia,Comune
-2024-11-10,CILA,Acquisita,2025-01-03,Corso Italia,40,Pratica edilizia,Comune
-2024-08-24,CILA,Efficace,2025-01-19,Via dei Mille,138,Pratica edilizia,Comune
-2024-11-27,CILA,In istruttoria,,Via Verdi,21,Pratica edilizia,Comune
-2024-09-15,CILA,Efficace,,Via Garibaldi,16,Pratica edilizia,Comune
-2024-09-17,CILA,Acquisita,2024-11-18,Via Dante,134,Pratica edilizia,Comune
-2024-08-04,CILA,Rigettata,2024-09-14,Via San Francesco,131,Pratica edilizia,Comune
-2024-08-26,CILA,Efficace,2025-01-07,Corso Italia,145,Pratica edilizia,Comune
-2024-01-18,SCIA-Alternativa,Rigettata,2024-02-10,Via XX Settembre,66,Pratica edilizia,Comune
-2024-01-24,CILA,Acquisita,2024-06-07,Via Dante,17,Pratica edilizia,Comune
-2025-01-03,SCIA-Alternativa,Efficace,2025-03-08,Via dei Mille,35,Pratica edilizia,Comune
-2025-11-24,CIL,Efficace,,Via XX Settembre,115,Pratica edilizia,Comune
-2025-07-13,SCIA,Rigettata,,Viale Europa,139,Pratica edilizia,Comune
-2025-03-21,CILA,Efficace,2025-09-05,Via XX Settembre,136,Pratica edilizia,Comune
-2025-03-24,CILA,In istruttoria,,Via Roma,6,Pratica edilizia,Comune
-2025-05-15,CIL,Acquisita,2025-08-04,Via Verdi,118,Pratica edilizia,Comune
-2025-06-05,SCIA,Acquisita,,Piazza San Marco,29,Pratica edilizia,Comune
-2025-01-26,CIL,Acquisita,2025-02-17,Via Verdi,53,Pratica edilizia,Comune
-2025-02-04,CILA,Efficace,2025-03-03,Via Verdi,12,Pratica edilizia,Comune
-2025-07-15,CILA,Acquisita,2025-08-16,Via Mazzini,129,Pratica edilizia,Comune
-2025-05-08,CILA,Acquisita,2025-08-21,Via Verdi,78,Pratica edilizia,Comune
-2025-03-22,CILA,Efficace,2025-04-24,Via della Repubblica,45,Pratica edilizia,Comune
-2025-11-22,CIL,Acquisita,2026-03-13,Via Cavour,98,Pratica edilizia,Comune
-2025-09-11,CIL,Efficace,2026-01-10,Via Mazzini,138,Pratica edilizia,Comune
-2025-08-08,CILA,Efficace,,Via Mazzini,119,Pratica edilizia,Comune
-2025-01-18,CIL,Efficace,2025-03-11,Via XX Settembre,63,Pratica edilizia,Comune
-2025-05-07,CILA,Rigettata,2025-09-25,Viale Europa,95,Pratica edilizia,Comune
-2025-02-18,CILA,Efficace,2025-08-19,Via Vittorio Emanuele,11,Pratica edilizia,Comune
-2025-02-07,CILA,Efficace,2025-05-23,Via Manzoni,4,Pratica edilizia,Comune
-2025-04-07,SCIA,Rigettata,,Corso Italia,63,Pratica edilizia,Comune
-2025-12-20,CILA,Efficace,,Via della Repubblica,83,Pratica edilizia,Comune
-2025-05-13,SCIA-Alternativa,Acquisita,2025-08-22,Via Manzoni,93,Pratica edilizia,Comune
-2025-09-16,SCIA-Alternativa,Efficace,2026-02-11,Via dei Mille,82,Pratica edilizia,Comune
-2025-04-12,CILA,Efficace,2025-06-27,Piazza San Marco,38,Pratica edilizia,Comune
-2025-01-09,CIL,Efficace,2025-04-24,Via Verdi,98,Pratica edilizia,Comune
-2025-10-27,CILA,Efficace,2026-02-16,Via Manzoni,126,Pratica edilizia,Comune
-2025-12-21,SCIA-Alternativa,Efficace,2026-04-14,Via Mazzini,36,Pratica edilizia,Comune
-2025-12-18,SCIA-Alternativa,Acquisita,,Via della Repubblica,16,Pratica edilizia,Comune
-2025-09-02,SCIA,In istruttoria,,Via Cavour,13,Pratica edilizia,Comune
-2025-01-14,PdC,In istruttoria,,Via Cavour,60,Pratica edilizia,Comune
-2025-02-23,PdC,Efficace,2025-07-14,Via Dante,16,Pratica edilizia,Comune
-2025-10-21,SCIA-Alternativa,Rigettata,2025-11-09,Via della Repubblica,142,Pratica edilizia,Comune
-2025-07-01,CILA,Acquisita,2025-12-13,Via Manzoni,5,Pratica edilizia,Comune
-2025-09-27,CIL,In istruttoria,,Via San Francesco,46,Pratica edilizia,Comune
-2025-02-04,PdC,Acquisita,2025-07-13,Via Manzoni,91,Pratica edilizia,Comune
-2025-05-26,CIL,Efficace,2025-10-04,Corso Italia,145,Pratica edilizia,Comune
-2025-04-23,CILA,Efficace,2025-06-02,Via Cavour,9,Pratica edilizia,Comune
-2025-02-13,CIL,Efficace,2025-03-14,Via Cavour,3,Pratica edilizia,Comune
-2025-12-06,SCIA,Efficace,2026-06-18,Via dei Mille,85,Pratica edilizia,Comune
-2025-10-28,SCIA,Acquisita,,Via Verdi,55,Pratica edilizia,Comune
-2025-12-19,SCIA-Alternativa,Efficace,2026-01-25,Via Cavour,72,Pratica edilizia,Comune
-2025-09-19,CILA,Acquisita,,Via Dante,5,Pratica edilizia,Comune
-2025-04-19,PdC,In istruttoria,,Viale Europa,102,Pratica edilizia,Comune
-2025-02-10,PdC,Acquisita,2025-06-12,Via Cavour,139,Pratica edilizia,Comune
-2025-06-13,PdC,In istruttoria,,Piazza San Marco,21,Pratica edilizia,Comune
-2025-09-24,CILA,Efficace,2025-12-14,Viale Europa,20,Pratica edilizia,Comune
-2025-06-20,CIL,In istruttoria,,Via Dante,8,Pratica edilizia,Comune
-2025-11-09,SCIA-Alternativa,Efficace,2026-04-25,Via XX Settembre,111,Pratica edilizia,Comune
-2025-03-22,CIL,Efficace,2025-06-28,Via dei Mille,64,Pratica edilizia,Comune
-2025-12-03,SCIA,Efficace,2026-06-12,Via Mazzini,100,Pratica edilizia,Comune
-2025-06-12,SCIA,Efficace,2025-09-21,Corso Italia,93,Pratica edilizia,Comune
-2025-05-04,PdC,Efficace,2025-09-21,Via della Repubblica,143,Pratica edilizia,Comune
+id,nome_servizio,descrizione_servizio,ente_erogatore,codice_ipa,canale_erogazione,requisiti_accesso,url_servizio
+1,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Cavour 140,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+2,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Verdi 130,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+3,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 57,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+4,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Viale Europa 2,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+5,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via dei Mille 87,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+6,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Vittorio Emanuele 68,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+7,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Garibaldi 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+8,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 59,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+9,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 98,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+10,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 69,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+11,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Piazza San Marco 63,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+12,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Cavour 143,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+13,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 15,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+14,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 103,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+15,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 55,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+16,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Mazzini 64,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+17,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 93,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+18,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Mazzini 41,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+19,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via della Repubblica 65,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+20,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 69,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+21,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Roma 68,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+22,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Viale Europa 77,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+23,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 136,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+24,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 79,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+25,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 125,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+26,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 68,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+27,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via dei Mille 52,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+28,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via San Francesco 133,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+29,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+30,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 59,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+31,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 125,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+32,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 148,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+33,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via XX Settembre 49,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+34,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Viale Europa 14,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+35,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via dei Mille 28,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+36,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 72,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+37,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Garibaldi 13,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+38,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 61,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+39,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via San Francesco 16,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+40,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 109,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+41,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Roma 149,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+42,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 123,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+43,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Garibaldi 48,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+44,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 31,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+45,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 134,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+46,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 102,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+47,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Roma 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+48,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 34,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+49,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 140,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+50,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 27,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+51,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 73,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+52,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 126,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+53,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 1,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+54,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 114,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+55,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via San Francesco 39,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+56,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 11,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+57,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 27,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+58,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Viale Europa 42,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+59,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 106,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+60,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 10,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+61,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+62,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 85,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+63,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 90,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+64,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via della Repubblica 85,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+65,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Roma 28,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+66,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 131,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+67,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 134,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+68,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 81,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+69,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via della Repubblica 80,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+70,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 50,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+71,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Vittorio Emanuele 146,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+72,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 149,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+73,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 122,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+74,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 86,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+75,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 7,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+76,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Corso Italia 107,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+77,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 63,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+78,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 28,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+79,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Piazza San Marco 133,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+80,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 117,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+81,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Vittorio Emanuele 82,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+82,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via San Francesco 141,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+83,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Viale Europa 71,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+84,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 70,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+85,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Piazza San Marco 40,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+86,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Corso Italia 107,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+87,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Vittorio Emanuele 6,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+88,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Manzoni 100,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+89,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 8,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+90,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via San Francesco 33,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+91,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 110,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+92,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Dante 55,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+93,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 98,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+94,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Roma 139,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+95,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 8,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+96,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 30,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+97,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Mazzini 30,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+98,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 97,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+99,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 27,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+100,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Cavour 31,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+101,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 130,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+102,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 126,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+103,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 40,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+104,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via dei Mille 124,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+105,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Viale Europa 23,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+106,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 146,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+107,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Mazzini 125,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+108,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Piazza San Marco 71,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+109,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 143,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+110,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via dei Mille 5,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+111,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 149,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+112,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 85,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+113,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Garibaldi 50,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+114,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Manzoni 135,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+115,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Verdi 76,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+116,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 71,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+117,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Cavour 126,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+118,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 88,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+119,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Corso Italia 30,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+120,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Mazzini 39,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+121,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 58,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+122,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via XX Settembre 79,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+123,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 54,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+124,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Mazzini 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+125,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 75,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+126,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Garibaldi 60,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+127,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 39,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+128,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 146,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+129,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 129,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+130,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Piazza San Marco 83,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+131,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 6,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+132,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Corso Italia 133,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+133,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 126,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+134,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 42,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+135,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Viale Europa 141,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+136,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via dei Mille 104,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+137,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 106,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+138,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 14,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+139,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Garibaldi 8,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+140,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+141,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 30,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+142,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Manzoni 131,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+143,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Corso Italia 121,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+144,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via della Repubblica 35,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+145,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via della Repubblica 69,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+146,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 149,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+147,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Dante 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+148,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Piazza San Marco 62,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+149,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Piazza San Marco 98,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+150,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 129,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+151,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Viale Europa 113,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+152,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Viale Europa 40,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+153,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Cavour 21,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+154,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Viale Europa 139,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+155,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Verdi 24,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+156,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via San Francesco 8,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+157,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 63,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+158,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Viale Europa 98,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+159,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 60,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+160,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via San Francesco 120,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+161,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 77,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+162,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 124,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+163,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Piazza San Marco 76,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+164,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via San Francesco 128,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+165,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 49,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+166,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Cavour 11,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+167,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Garibaldi 76,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+168,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via San Francesco 94,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+169,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Mazzini 66,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+170,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via dei Mille 30,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+171,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Verdi 102,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+172,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 4,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+173,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 98,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+174,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 144,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+175,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 78,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+176,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 127,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+177,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 139,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+178,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 105,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+179,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 93,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+180,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 92,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+181,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Viale Europa 117,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+182,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 86,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+183,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 56,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+184,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via San Francesco 1,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+185,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Garibaldi 7,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+186,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 61,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+187,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Piazza San Marco 108,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+188,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via della Repubblica 28,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+189,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+190,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 28,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+191,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Dante 38,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+192,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Piazza San Marco 84,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+193,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Garibaldi 30,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+194,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 87,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+195,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Dante 66,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+196,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Garibaldi 111,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+197,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 143,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+198,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 109,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+199,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 130,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+200,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Viale Europa 143,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+201,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Viale Europa 144,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+202,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 69,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+203,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Dante 2,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+204,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 8,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+205,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 95,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+206,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 22,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+207,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 13,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+208,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 114,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+209,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 30,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+210,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Corso Italia 135,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+211,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 2,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+212,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 66,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+213,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Mazzini 34,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+214,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 102,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+215,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Viale Europa 81,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+216,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Garibaldi 104,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+217,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+218,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 103,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+219,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Manzoni 87,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+220,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via della Repubblica 131,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+221,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 38,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+222,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 20,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+223,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Corso Italia 145,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+224,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 81,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+225,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via dei Mille 71,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+226,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 10,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+227,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 130,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+228,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 49,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+229,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Corso Italia 27,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+230,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Verdi 113,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+231,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via XX Settembre 105,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+232,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 86,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+233,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 39,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+234,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 22,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+235,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Cavour 135,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+236,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Manzoni 47,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+237,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Mazzini 20,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+238,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Roma 87,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+239,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via dei Mille 43,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+240,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 73,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+241,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via dei Mille 121,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+242,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via della Repubblica 136,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+243,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 36,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+244,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Dante 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+245,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 116,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+246,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Verdi 116,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+247,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Verdi 99,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+248,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 86,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+249,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 36,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+250,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Roma 66,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+251,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 136,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+252,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Verdi 108,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+253,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Vittorio Emanuele 138,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+254,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 91,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+255,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via della Repubblica 93,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+256,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 100,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+257,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 27,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+258,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 45,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+259,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Garibaldi 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+260,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 80,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+261,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Verdi 74,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+262,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 85,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+263,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Piazza San Marco 113,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+264,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via San Francesco 133,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+265,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 47,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+266,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 115,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+267,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Corso Italia 11,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+268,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 15,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+269,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Roma 37,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+270,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via dei Mille 94,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+271,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 96,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+272,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 81,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+273,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 133,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+274,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Verdi 74,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+275,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 45,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+276,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Cavour 82,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+277,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Viale Europa 41,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+278,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Dante 131,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+279,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 61,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+280,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+281,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via della Repubblica 106,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+282,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Cavour 19,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+283,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+284,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Mazzini 111,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+285,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 133,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+286,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Dante 133,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+287,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Manzoni 33,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+288,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 40,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+289,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 145,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+290,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 148,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+291,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 107,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+292,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 75,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+293,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 104,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+294,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 124,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+295,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Piazza San Marco 89,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+296,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 120,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+297,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Manzoni 99,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+298,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 41,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+299,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 120,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+300,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via della Repubblica 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+301,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 121,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+302,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 111,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+303,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 94,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+304,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 74,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+305,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via della Repubblica 72,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+306,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 96,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+307,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 51,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+308,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Mazzini 86,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+309,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Mazzini 84,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+310,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Piazza San Marco 77,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+311,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Viale Europa 5,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+312,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Roma 122,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+313,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 135,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+314,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Roma 147,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+315,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 106,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+316,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Viale Europa 16,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+317,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 97,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+318,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Cavour 68,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+319,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 77,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+320,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 90,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+321,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via XX Settembre 102,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+322,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Dante 114,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+323,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Manzoni 144,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+324,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Verdi 63,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+325,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 85,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+326,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via della Repubblica 41,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+327,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Dante 74,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+328,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Piazza San Marco 10,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+329,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via XX Settembre 127,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+330,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Vittorio Emanuele 28,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+331,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via San Francesco 35,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+332,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Mazzini 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+333,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Vittorio Emanuele 50,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+334,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via XX Settembre 132,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+335,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Corso Italia 83,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+336,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Dante 78,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+337,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 31,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+338,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Piazza San Marco 31,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+339,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 40,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+340,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via dei Mille 138,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+341,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 21,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+342,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Garibaldi 16,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+343,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 134,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+344,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via San Francesco 131,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+345,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Corso Italia 145,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+346,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via XX Settembre 66,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+347,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 17,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+348,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via dei Mille 35,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+349,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via XX Settembre 115,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+350,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Viale Europa 139,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+351,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via XX Settembre 136,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+352,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Roma 6,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+353,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Verdi 118,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+354,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Piazza San Marco 29,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+355,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Verdi 53,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+356,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 12,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+357,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 129,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+358,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Verdi 78,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+359,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 45,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+360,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Cavour 98,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+361,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Mazzini 138,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+362,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Mazzini 119,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+363,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via XX Settembre 63,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+364,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 95,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+365,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Vittorio Emanuele 11,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+366,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 4,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+367,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Corso Italia 63,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+368,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via della Repubblica 83,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+369,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Manzoni 93,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+370,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via dei Mille 82,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+371,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Piazza San Marco 38,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+372,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Verdi 98,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+373,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 126,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+374,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Mazzini 36,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+375,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via della Repubblica 16,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+376,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Cavour 13,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+377,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Cavour 60,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+378,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Dante 16,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+379,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via della Repubblica 142,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+380,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Manzoni 5,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+381,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via San Francesco 46,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+382,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Manzoni 91,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+383,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Corso Italia 145,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+384,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Cavour 9,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+385,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Cavour 3,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+386,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via dei Mille 85,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+387,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Verdi 55,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+388,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via Cavour 72,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+389,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Via Dante 5,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+390,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Viale Europa 102,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+391,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via Cavour 139,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+392,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Piazza San Marco 21,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+393,CILA - Pratica Edilizia,Pratica edilizia tipo CILA presso Viale Europa 20,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+394,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via Dante 8,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+395,SCIA-Alternativa - Pratica Edilizia,Pratica edilizia tipo SCIA-Alternativa presso Via XX Settembre 111,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+396,CIL - Pratica Edilizia,Pratica edilizia tipo CIL presso Via dei Mille 64,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+397,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Via Mazzini 100,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+398,SCIA - Pratica Edilizia,Pratica edilizia tipo SCIA presso Corso Italia 93,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it
+399,PdC - Pratica Edilizia,Pratica edilizia tipo PdC presso Via della Repubblica 143,SUE Comune Ideale,c_ideal,sportello+online,Proprietario o avente titolo,https://sue.comuneideale.it

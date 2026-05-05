@@ -14,25 +14,7 @@
     "utenti": "numero",
     "spesa_euro": "totale_costo"
   },
-  "required_columns": [
-    {
-      "name": "anno",
-      "datatype": "integer",
-      "constraints": {
-        "min": 1900,
-        "max": 2050
-      },
-      "description": "Anno di riferimento",
-      "rdf_predicate": "sdmx-dimension:refPeriod"
-    },
-    {
-      "name": "categoria",
-      "datatype": "string",
-      "max_length": 300,
-      "description": "Categoria di intervento (es. 'Anziani', 'Minori', 'Disabilità', 'Famiglia', 'Povertà', 'Stranieri')",
-      "rdf_predicate": "dct:type@it"
-    }
-  ],
+  "required_columns": [],
   "optional_columns": [
     {
       "name": "numero",
@@ -63,6 +45,78 @@
       "datatype": "string",
       "max_length": 50,
       "description": "Unità di misura"
+    },
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "constraints": {
+        "min": 1900,
+        "max": 2050
+      },
+      "description": "Anno di riferimento",
+      "rdf_predicate": "sdmx-dimension:refPeriod"
+    },
+    {
+      "name": "categoria",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Categoria di intervento (es. 'Anziani', 'Minori', 'Disabilità', 'Famiglia', 'Povertà', 'Stranieri')",
+      "rdf_predicate": "dct:type@it"
+    },
+    {
+      "name": "codice_struttura",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "nome_struttura",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "tipo_struttura",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "comune",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "indirizzo",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "lat",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "lon",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "telefono",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "email",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "posti_letto",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
+    },
+    {
+      "name": "accreditata",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker servizi_sociali"
     }
   ],
   "example": "anno,categoria,numero,totale_costo,tipo_intervento\n2024,Anziani,1245,2400000.00,\"Assistenza domiciliare\"\n2024,Anziani,389,1800000.00,\"Centro diurno\"\n2024,Minori,567,950000.00,\"Affido familiare\"\n2024,\"Disabilità\",234,3200000.00,\"Servizi residenziali\"\n",
@@ -70,5 +124,6 @@
     "Almeno numero O totale_costo deve essere compilato (idealmente entrambi).",
     "Le categorie tipiche italiane sono: Anziani, Minori, Disabilità, Famiglia, Povertà, Stranieri/Immigrati, Salute mentale.",
     "v2.0: rinomina 'utenti'→'numero' e 'spesa_euro'→'totale_costo' per allineamento al tool CSV-to-RDF (DET_COL_RULES). 'tipo_intervento' resta: etichetta testuale, semantica unica → LLM."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

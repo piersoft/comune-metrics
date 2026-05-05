@@ -15,15 +15,7 @@
     "iscritti": "totale_alunni",
     "tipo_struttura": "tipologia"
   },
-  "required_columns": [
-    {
-      "name": "denominazione",
-      "datatype": "string",
-      "max_length": 300,
-      "description": "Nome della scuola o struttura educativa (ex 'struttura')",
-      "rdf_predicate": "rdfs:label@it"
-    }
-  ],
+  "required_columns": [],
   "optional_columns": [
     {
       "name": "anno_scolastico",
@@ -133,6 +125,53 @@
       "datatype": "string",
       "max_length": 300,
       "description": "Denominazione scuola (alias di denominazione)"
+    },
+    {
+      "name": "denominazione",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Nome della scuola o struttura educativa (ex 'struttura')",
+      "rdf_predicate": "rdfs:label@it"
+    },
+    {
+      "name": "codice_meccanografico",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
+    },
+    {
+      "name": "nome_istituto",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
+    },
+    {
+      "name": "tipo_istituto",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
+    },
+    {
+      "name": "comune",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
+    },
+    {
+      "name": "telefono",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
+    },
+    {
+      "name": "email",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
+    },
+    {
+      "name": "numero_alunni",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
+    },
+    {
+      "name": "numero_classi",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker istruzione"
     }
   ],
   "example": "denominazione,anno_scolastico,tipologia,totale_alunni,lat,lon,indirizzo,gestione,mensa\n\"Liceo Scientifico Banzi\",2024-2025,\"Liceo\",1771,40.3528,18.1718,\"Via Giuseppe Cesare Abba 5\",\"Statale\",\"No\"\n\"Scuola Infanzia Cesare Battisti\",2024-2025,\"Infanzia\",160,40.3538,18.1750,\"Via Salvatore Trinchese\",\"Statale\",\"Sì\"\n",
@@ -140,5 +179,6 @@
     "Il dataset può coprire dagli asili nido alle scuole superiori — usa il campo tipologia per disambiguare.",
     "Se hai solo asili nido (caso più comune), tipologia sarà sempre 'Asilo nido'.",
     "v2.0: rinomina 'struttura'→'denominazione', 'iscritti'→'totale_alunni', 'tipo_struttura'→'tipologia' per allineamento al tool CSV-to-RDF (DET_COL_RULES, ontologia SMAPIT)."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

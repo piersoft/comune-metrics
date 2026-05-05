@@ -1,19 +1,19 @@
-denominazione_scuola,anno,totale_alunni,tipo_scuola,lat,lon,via,codice_scuola,ciclo
-Asilo Nido Arcobaleno,2024,65,Asilo nido,45.4612,9.185,Via Roma 12,MI187244,Primario
-Asilo Nido Girotondo,2024,58,Asilo nido,45.468,9.1942,Via Garibaldi 45,MI670084,Primario
-Asilo Nido Stelle,2024,42,Asilo nido,45.4598,9.1975,Via Manzoni 22,MI704729,Primario
-Scuola Materna San Giuseppe,2024,145,Materna,45.4625,9.1888,Via Mazzini 8,MI900593,Primario
-Scuola Materna G. Rodari,2024,132,Materna,45.466,9.192,Via Verdi 18,MI240244,Primario
-Scuola Materna Don Bosco,2024,98,Materna,45.4602,9.193,Via Don Bosco 5,MI222420,Primario
-Scuola Primaria E. De Amicis,2024,320,Elementare,45.4634,9.1875,Piazza Marconi 3,MI856198,Primario
-Scuola Primaria G. Carducci,2024,285,Elementare,45.4668,9.1905,Via Carducci 14,MI137794,Primario
-Scuola Primaria A. Manzoni,2024,244,Elementare,45.4605,9.1958,Viale Europa 10,MI863588,Primario
-Scuola Media G. Pascoli,2024,412,Media,45.464,9.1915,Via Pascoli 7,MI550274,Primario
-Scuola Media L. Da Vinci,2024,388,Media,45.467,9.1888,Via Leonardo 22,MI157634,Primario
-Liceo Scientifico G. Galilei,2024,685,Superiore,45.4655,9.186,Via Galilei 1,MI575340,Primario
-Liceo Classico G. Carducci,2024,425,Superiore,45.4628,9.19,Via Carducci 50,MI079531,Primario
-Liceo Linguistico A. Manzoni,2024,510,Superiore,45.4612,9.1948,Via Manzoni 80,MI597582,Primario
-ITIS A. Volta,2024,745,Superiore,45.4685,9.182,Via Volta 15,MI595425,Primario
-IPSIA Don Milani,2024,380,Superiore,45.4595,9.1985,Via Don Milani 3,MI907887,Primario
-Istituto Tecnico Commerciale E. Mattei,2024,540,Superiore,45.465,9.193,Via Mattei 12,MI855408,Primario
-IPSAR L. Da Vinci,2024,295,Superiore,45.4625,9.186,Via Da Vinci 88,MI515433,Primario
+codice_meccanografico,nome_istituto,tipo_istituto,comune,indirizzo,lat,lon,telefono,email,numero_alunni,numero_classi
+MI187244,Asilo Nido Arcobaleno,Asilo nido,Comune Ideale,Via Roma 12,45.4612,9.185,025878104,mi187244@istruzione.it,65,3
+MI670084,Asilo Nido Girotondo,Asilo nido,Comune Ideale,Via Garibaldi 45,45.468,9.1942,024115934,mi670084@istruzione.it,58,2
+MI704729,Asilo Nido Stelle,Asilo nido,Comune Ideale,Via Manzoni 22,45.4598,9.1975,024868131,mi704729@istruzione.it,42,2
+MI900593,Scuola Materna San Giuseppe,Materna,Comune Ideale,Via Mazzini 8,45.4625,9.1888,023468933,mi900593@istruzione.it,145,7
+MI240244,Scuola Materna G. Rodari,Materna,Comune Ideale,Via Verdi 18,45.466,9.192,024143616,mi240244@istruzione.it,132,6
+MI222420,Scuola Materna Don Bosco,Materna,Comune Ideale,Via Don Bosco 5,45.4602,9.193,022188277,mi222420@istruzione.it,98,4
+MI856198,Scuola Primaria E. De Amicis,Elementare,Comune Ideale,Piazza Marconi 3,45.4634,9.1875,024588772,mi856198@istruzione.it,320,16
+MI137794,Scuola Primaria G. Carducci,Elementare,Comune Ideale,Via Carducci 14,45.4668,9.1905,025943520,mi137794@istruzione.it,285,14
+MI863588,Scuola Primaria A. Manzoni,Elementare,Comune Ideale,Viale Europa 10,45.4605,9.1958,028240716,mi863588@istruzione.it,244,12
+MI550274,Scuola Media G. Pascoli,Media,Comune Ideale,Via Pascoli 7,45.464,9.1915,021242135,mi550274@istruzione.it,412,20
+MI157634,Scuola Media L. Da Vinci,Media,Comune Ideale,Via Leonardo 22,45.467,9.1888,023461390,mi157634@istruzione.it,388,19
+MI575340,Liceo Scientifico G. Galilei,Superiore,Comune Ideale,Via Galilei 1,45.4655,9.186,025403186,mi575340@istruzione.it,685,34
+MI079531,Liceo Classico G. Carducci,Superiore,Comune Ideale,Via Carducci 50,45.4628,9.19,028567629,mi079531@istruzione.it,425,21
+MI597582,Liceo Linguistico A. Manzoni,Superiore,Comune Ideale,Via Manzoni 80,45.4612,9.1948,028327703,mi597582@istruzione.it,510,25
+MI595425,ITIS A. Volta,Superiore,Comune Ideale,Via Volta 15,45.4685,9.182,025306845,mi595425@istruzione.it,745,37
+MI907887,IPSIA Don Milani,Superiore,Comune Ideale,Via Don Milani 3,45.4595,9.1985,024926335,mi907887@istruzione.it,380,19
+MI855408,Istituto Tecnico Commerciale E. Mattei,Superiore,Comune Ideale,Via Mattei 12,45.465,9.193,028207116,mi855408@istruzione.it,540,27
+MI515433,IPSAR L. Da Vinci,Superiore,Comune Ideale,Via Da Vinci 88,45.4625,9.186,027110306,mi515433@istruzione.it,295,14

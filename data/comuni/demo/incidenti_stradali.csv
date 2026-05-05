@@ -1,475 +1,475 @@
-data,lat,lon,decessi,feriti,localita,ora,numero_incidenti,mese
-2020-05-23,45.4705,9.20654,0,0,Tangenziale Nord,14:45,1,05
-2020-10-01,45.46454,9.19276,0,0,Via dei Mille,13:45,1,10
-2020-03-02,45.47262,9.20153,0,1,Strada Provinciale 5,04:45,1,03
-2020-10-17,45.45873,9.17855,0,1,Via Roma,05:30,1,10
-2020-05-03,45.46473,9.17571,0,3,Via XX Settembre,01:00,1,05
-2020-10-15,45.47109,9.20436,0,2,Via Garibaldi,04:00,1,10
-2020-06-02,45.47323,9.18165,0,0,Tangenziale Nord,17:00,1,06
-2020-05-16,45.47378,9.19823,0,1,Via Manzoni,19:00,1,05
-2020-06-05,45.46768,9.20345,0,1,Piazza San Marco,17:45,1,06
-2020-08-19,45.45311,9.17209,0,0,Tangenziale Nord,04:00,1,08
-2020-06-04,45.46941,9.18993,0,0,Incrocio Via Mazzini/Via Verdi,12:00,1,06
-2020-12-02,45.45443,9.17942,0,2,Viale dei Tigli,12:30,1,12
-2020-10-19,45.46201,9.20082,0,1,Via dei Mille,06:00,1,10
-2020-11-08,45.47521,9.17999,0,1,Via Manzoni,07:00,1,11
-2020-08-17,45.45367,9.17298,0,0,Centro storico,16:00,1,08
-2020-10-12,45.45852,9.17668,0,1,Piazza San Marco,07:00,1,10
-2020-10-20,45.46217,9.18556,0,1,Incrocio Via Mazzini/Via Verdi,08:15,1,10
-2020-09-19,45.45583,9.18073,0,1,Viale Europa,20:00,1,09
-2020-08-23,45.46035,9.18352,0,4,Via Garibaldi,09:45,1,08
-2020-05-24,45.46374,9.18799,0,0,Centro storico,15:45,1,05
-2020-12-14,45.46463,9.1927,0,0,Via XX Settembre,23:15,1,12
-2020-10-24,45.4528,9.17589,0,0,Via dei Mille,20:15,1,10
-2020-04-07,45.46686,9.19828,0,1,Strada Provinciale 5,13:30,1,04
-2020-02-11,45.4632,9.19698,0,1,Incrocio Via Mazzini/Via Verdi,11:00,1,02
-2020-07-23,45.47597,9.18375,0,2,Via Garibaldi,11:30,1,07
-2020-07-08,45.47208,9.18257,0,0,Viale Europa,04:15,1,07
-2020-04-05,45.45649,9.20578,0,0,Rotatoria Stazione,08:45,1,04
-2020-07-17,45.45667,9.18117,0,0,Centro storico,11:15,1,07
-2020-02-27,45.46266,9.19004,1,1,Centro storico,12:00,1,02
-2020-07-19,45.46274,9.18853,0,0,Tangenziale Nord,00:45,1,07
-2020-08-27,45.45403,9.17588,0,1,Via XX Settembre,17:45,1,08
-2020-08-05,45.47501,9.18491,0,1,Centro storico,10:15,1,08
-2020-01-21,45.46075,9.18371,0,1,Piazza San Marco,02:15,1,01
-2020-02-07,45.46694,9.18081,0,1,Viale Europa,00:00,1,02
-2020-10-28,45.46424,9.20268,0,0,Viale Europa,08:45,1,10
-2020-10-06,45.47119,9.19451,0,0,Via Manzoni,20:45,1,10
-2020-11-11,45.46323,9.19326,0,2,Strada Provinciale 5,00:15,1,11
-2020-08-02,45.47388,9.17843,0,1,Tangenziale Nord,03:00,1,08
-2020-11-27,45.45823,9.19689,0,1,Via dei Mille,00:15,1,11
-2020-06-12,45.45466,9.1751,0,1,Tangenziale Nord,13:00,1,06
-2020-11-03,45.45706,9.19565,0,0,Via dei Mille,16:00,1,11
-2020-06-23,45.47345,9.18355,0,1,Piazza San Marco,23:00,1,06
-2020-01-20,45.45245,9.17272,0,0,Centro storico,09:00,1,01
-2020-06-15,45.45957,9.1765,0,1,Incrocio Via Mazzini/Via Verdi,02:30,1,06
-2020-01-26,45.46996,9.19152,0,1,Tangenziale Nord,15:30,1,01
-2020-09-06,45.4737,9.18801,0,2,Piazza San Marco,08:30,1,09
-2020-08-21,45.46197,9.20689,0,4,Centro storico,16:45,1,08
-2020-09-16,45.46978,9.19997,0,0,Via dei Mille,12:00,1,09
-2020-01-21,45.47058,9.17808,0,2,Incrocio Via Mazzini/Via Verdi,04:45,1,01
-2020-07-19,45.45238,9.20462,0,2,Piazza San Marco,00:15,1,07
-2020-01-10,45.46927,9.17669,2,2,Viale Europa,04:15,1,01
-2020-01-22,45.47138,9.18158,0,1,Via Roma,05:00,1,01
-2020-07-10,45.46526,9.19719,0,0,Incrocio Via Mazzini/Via Verdi,02:30,1,07
-2020-10-15,45.46838,9.20154,0,1,Tangenziale Nord,04:15,1,10
-2020-08-14,45.45904,9.18178,0,0,Strada Provinciale 5,19:30,1,08
-2020-06-27,45.47465,9.19289,0,1,Via XX Settembre,10:00,1,06
-2020-12-18,45.47206,9.18801,0,3,Centro storico,05:15,1,12
-2020-04-14,45.46542,9.19071,0,1,Rotatoria Stazione,15:00,1,04
-2020-05-11,45.47465,9.20357,0,1,Viale Europa,10:15,1,05
-2020-05-01,45.46157,9.20268,0,3,Via Roma,15:45,1,05
-2020-02-08,45.46841,9.20616,0,0,Viale dei Tigli,13:30,1,02
-2020-02-17,45.45817,9.2008,0,2,Incrocio Via Mazzini/Via Verdi,22:45,1,02
-2020-10-14,45.47235,9.19628,0,1,Tangenziale Nord,13:30,1,10
-2020-04-26,45.47401,9.19405,0,0,Via dei Mille,20:00,1,04
-2020-04-04,45.46141,9.17909,0,0,Via Garibaldi,23:00,1,04
-2020-06-24,45.45614,9.18836,0,1,Via Garibaldi,15:45,1,06
-2020-03-15,45.46531,9.17623,0,0,Via Manzoni,00:30,1,03
-2020-09-25,45.46748,9.18801,0,0,Rotatoria Stazione,08:45,1,09
-2020-12-18,45.47303,9.19277,0,2,Tangenziale Nord,10:30,1,12
-2020-06-21,45.45533,9.19127,0,2,Via Roma,18:15,1,06
-2020-11-01,45.46544,9.17206,0,0,Via XX Settembre,05:00,1,11
-2020-07-07,45.46173,9.19001,0,0,Strada Provinciale 5,16:15,1,07
-2020-02-06,45.45804,9.18132,0,2,Viale Europa,08:45,1,02
-2020-05-17,45.4525,9.18533,0,0,Via Roma,09:00,1,05
-2020-12-19,45.45763,9.19297,0,1,Via dei Mille,06:00,1,12
-2020-02-07,45.46035,9.19385,1,1,Incrocio Via Mazzini/Via Verdi,01:30,1,02
-2020-02-16,45.46906,9.18095,0,0,Viale Europa,12:45,1,02
-2020-12-23,45.4668,9.1732,0,1,Via XX Settembre,19:00,1,12
-2020-01-15,45.46214,9.17904,0,2,Viale dei Tigli,04:30,1,01
-2020-07-07,45.4564,9.18037,0,2,Via Roma,18:00,1,07
-2020-08-24,45.47029,9.20642,0,0,Via Garibaldi,23:15,1,08
-2020-05-04,45.46126,9.1736,0,2,Piazza San Marco,20:15,1,05
-2020-11-09,45.4678,9.18044,0,1,Via Roma,10:15,1,11
-2020-10-22,45.47547,9.20289,0,1,Via Roma,16:30,1,10
-2020-12-17,45.45482,9.18568,0,0,Tangenziale Nord,23:30,1,12
-2020-03-08,45.47353,9.18505,0,1,Strada Provinciale 5,00:15,1,03
-2021-08-09,45.46421,9.19885,0,2,Viale Europa,01:45,1,08
-2021-11-24,45.46953,9.19298,0,0,Viale dei Tigli,01:00,1,11
-2021-01-06,45.45943,9.20721,0,1,Centro storico,11:30,1,01
-2021-02-22,45.46647,9.17462,0,1,Via Garibaldi,16:15,1,02
-2021-12-22,45.47207,9.20218,0,2,Viale dei Tigli,16:00,1,12
-2021-02-27,45.4589,9.1794,0,0,Via Garibaldi,20:00,1,02
-2021-01-28,45.46616,9.18736,0,0,Via Roma,10:30,1,01
-2021-09-03,45.46651,9.18566,0,2,Strada Provinciale 5,05:00,1,09
-2021-10-03,45.46488,9.18851,0,2,Tangenziale Nord,00:00,1,10
-2021-09-16,45.45606,9.18237,0,1,Tangenziale Nord,13:15,1,09
-2021-09-09,45.47347,9.19128,0,0,Centro storico,07:45,1,09
-2021-07-04,45.47611,9.1844,0,1,Via XX Settembre,12:45,1,07
-2021-05-10,45.45453,9.17661,0,1,Incrocio Via Mazzini/Via Verdi,01:45,1,05
-2021-10-27,45.45296,9.19151,0,3,Rotatoria Stazione,13:15,1,10
-2021-09-10,45.46582,9.19558,0,1,Viale Europa,18:00,1,09
-2021-04-19,45.45532,9.19269,0,2,Via Roma,12:00,1,04
-2021-04-01,45.47233,9.19386,0,0,Via Garibaldi,14:00,1,04
-2021-08-14,45.4734,9.1789,0,0,Viale Europa,10:00,1,08
-2021-11-07,45.45309,9.18194,0,0,Viale Europa,02:45,1,11
-2021-05-11,45.46051,9.19957,0,1,Strada Provinciale 5,02:30,1,05
-2021-03-11,45.46982,9.18171,1,1,Centro storico,21:15,1,03
-2021-03-13,45.47239,9.20535,0,2,Via Roma,03:00,1,03
-2021-05-22,45.47497,9.18968,0,2,Via Manzoni,00:30,1,05
-2021-12-12,45.46805,9.18533,0,2,Rotatoria Stazione,21:15,1,12
-2021-08-26,45.46658,9.1922,0,1,Viale Europa,15:30,1,08
-2021-02-09,45.46427,9.19128,0,4,Incrocio Via Mazzini/Via Verdi,03:15,1,02
-2021-02-18,45.46281,9.20359,0,2,Via XX Settembre,07:15,1,02
-2021-08-12,45.47497,9.18333,0,1,Strada Provinciale 5,21:45,1,08
-2021-05-12,45.47509,9.18232,0,0,Tangenziale Nord,04:00,1,05
-2021-08-22,45.47328,9.18606,0,0,Strada Provinciale 5,02:30,1,08
-2021-03-25,45.45869,9.18297,0,0,Viale Europa,10:45,1,03
-2021-11-25,45.46944,9.19106,0,3,Via XX Settembre,05:30,1,11
-2021-12-14,45.46011,9.17383,0,3,Incrocio Via Mazzini/Via Verdi,06:00,1,12
-2021-02-23,45.45791,9.18723,0,0,Viale dei Tigli,11:15,1,02
-2021-08-18,45.46326,9.19435,0,1,Piazza San Marco,16:00,1,08
-2021-01-27,45.46312,9.18976,0,1,Via Manzoni,13:30,1,01
-2021-06-12,45.46254,9.20525,0,0,Strada Provinciale 5,14:00,1,06
-2021-12-24,45.46128,9.17411,0,0,Via Manzoni,23:30,1,12
-2021-12-25,45.46804,9.17856,0,0,Viale Europa,14:45,1,12
-2021-12-21,45.47012,9.19908,0,2,Via Roma,07:00,1,12
-2021-03-24,45.46488,9.17937,0,0,Via dei Mille,02:00,1,03
-2021-06-11,45.46436,9.18633,0,0,Via Garibaldi,15:30,1,06
-2021-07-11,45.47029,9.19383,0,3,Via XX Settembre,10:30,1,07
-2021-02-26,45.45559,9.17428,0,2,Centro storico,11:30,1,02
-2021-02-13,45.47591,9.19625,0,0,Via Roma,06:30,1,02
-2021-11-12,45.46605,9.17472,0,0,Via Garibaldi,09:45,1,11
-2021-11-25,45.45906,9.19913,0,1,Viale Europa,01:45,1,11
-2021-10-07,45.45676,9.19927,0,1,Strada Provinciale 5,05:15,1,10
-2021-03-27,45.46875,9.17417,0,1,Viale Europa,12:00,1,03
-2021-07-28,45.47164,9.19317,0,1,Via dei Mille,04:15,1,07
-2021-03-02,45.46716,9.20777,0,1,Incrocio Via Mazzini/Via Verdi,16:30,1,03
-2021-11-04,45.47358,9.19116,0,1,Via Roma,01:45,1,11
-2021-03-06,45.47596,9.19779,0,1,Tangenziale Nord,07:15,1,03
-2021-03-03,45.45758,9.19848,0,2,Incrocio Via Mazzini/Via Verdi,03:15,1,03
-2021-07-28,45.45943,9.17256,0,2,Rotatoria Stazione,20:45,1,07
-2021-10-17,45.45614,9.18401,0,2,Piazza San Marco,18:00,1,10
-2021-11-06,45.46737,9.18694,0,2,Piazza San Marco,19:45,1,11
-2021-06-27,45.45784,9.19697,0,0,Incrocio Via Mazzini/Via Verdi,02:45,1,06
-2021-08-18,45.47189,9.1758,0,1,Viale dei Tigli,17:45,1,08
-2021-05-25,45.47125,9.18158,1,1,Strada Provinciale 5,10:15,1,05
-2021-05-10,45.45379,9.20242,0,0,Rotatoria Stazione,00:45,1,05
-2021-03-13,45.46621,9.18513,0,3,Rotatoria Stazione,13:30,1,03
-2021-12-28,45.45454,9.1732,0,0,Viale Europa,18:45,1,12
-2021-07-05,45.47611,9.18558,0,0,Via Manzoni,08:45,1,07
-2021-05-07,45.45704,9.18262,0,1,Via dei Mille,19:45,1,05
-2021-06-04,45.46853,9.18621,0,1,Incrocio Via Mazzini/Via Verdi,13:45,1,06
-2021-09-15,45.46175,9.19481,0,0,Tangenziale Nord,08:45,1,09
-2021-03-16,45.45571,9.18354,0,0,Incrocio Via Mazzini/Via Verdi,12:30,1,03
-2021-02-11,45.45911,9.17903,0,1,Rotatoria Stazione,03:00,1,02
-2021-02-12,45.47169,9.18201,0,1,Tangenziale Nord,20:45,1,02
-2021-08-15,45.45754,9.17601,0,0,Via dei Mille,12:15,1,08
-2021-05-10,45.45365,9.17848,0,1,Via Manzoni,12:30,1,05
-2021-06-15,45.46608,9.20608,1,2,Via Roma,00:30,1,06
-2021-09-20,45.46012,9.20036,0,0,Viale dei Tigli,13:15,1,09
-2021-05-19,45.47451,9.20508,0,0,Viale dei Tigli,17:30,1,05
-2021-12-10,45.47187,9.18798,0,0,Strada Provinciale 5,17:45,1,12
-2021-01-05,45.46046,9.19102,0,1,Via Roma,22:45,1,01
-2021-04-28,45.4725,9.20527,0,1,Piazza San Marco,02:45,1,04
-2021-05-25,45.46011,9.20351,0,0,Strada Provinciale 5,14:45,1,05
-2021-12-08,45.46102,9.19979,0,0,Via XX Settembre,17:15,1,12
-2021-10-28,45.46674,9.1864,0,0,Via Roma,18:15,1,10
-2021-04-13,45.46571,9.17484,0,2,Centro storico,21:15,1,04
-2021-11-27,45.45564,9.1841,0,3,Incrocio Via Mazzini/Via Verdi,19:15,1,11
-2021-11-06,45.46014,9.18109,0,1,Via XX Settembre,00:00,1,11
-2021-12-04,45.46882,9.19544,0,2,Rotatoria Stazione,07:15,1,12
-2021-06-02,45.468,9.2044,2,2,Via Garibaldi,05:15,1,06
-2021-07-08,45.46229,9.17366,0,1,Centro storico,07:30,1,07
-2021-07-28,45.46633,9.18631,0,4,Centro storico,07:00,1,07
-2021-07-18,45.47321,9.18666,0,0,Viale dei Tigli,05:30,1,07
-2021-09-13,45.45287,9.18454,0,0,Rotatoria Stazione,04:15,1,09
-2021-04-19,45.46385,9.17269,0,2,Strada Provinciale 5,22:45,1,04
-2021-04-15,45.4703,9.1999,0,1,Via Roma,18:45,1,04
-2021-09-06,45.45871,9.17891,0,1,Viale Europa,13:30,1,09
-2021-07-06,45.45711,9.18495,0,0,Centro storico,13:00,1,07
-2021-01-27,45.47542,9.20076,0,1,Incrocio Via Mazzini/Via Verdi,16:15,1,01
-2021-03-25,45.45649,9.20755,0,0,Via Garibaldi,02:45,1,03
-2021-10-06,45.45779,9.19353,0,0,Tangenziale Nord,10:30,1,10
-2021-09-07,45.46117,9.17838,0,0,Piazza San Marco,18:15,1,09
-2021-02-13,45.4709,9.19259,0,0,Via XX Settembre,16:15,1,02
-2021-05-24,45.4677,9.19264,0,1,Rotatoria Stazione,11:00,1,05
-2022-04-22,45.46843,9.18178,0,1,Incrocio Via Mazzini/Via Verdi,06:30,1,04
-2022-09-28,45.45396,9.18069,0,2,Centro storico,18:45,1,09
-2022-09-03,45.47418,9.20605,0,0,Centro storico,00:00,1,09
-2022-10-16,45.4651,9.17959,0,0,Viale dei Tigli,07:45,1,10
-2022-03-04,45.45964,9.18463,0,0,Viale dei Tigli,12:00,1,03
-2022-05-17,45.47607,9.20137,0,2,Piazza San Marco,17:45,1,05
-2022-01-07,45.47435,9.18794,0,0,Strada Provinciale 5,07:15,1,01
-2022-12-04,45.45551,9.20755,0,0,Via Garibaldi,09:30,1,12
-2022-11-19,45.47387,9.17205,0,1,Strada Provinciale 5,19:45,1,11
-2022-02-05,45.4656,9.19696,0,1,Rotatoria Stazione,02:15,1,02
-2022-10-06,45.46377,9.18437,0,3,Via dei Mille,22:00,1,10
-2022-10-22,45.4655,9.20246,0,2,Incrocio Via Mazzini/Via Verdi,11:30,1,10
-2022-05-23,45.47508,9.20419,0,0,Via XX Settembre,14:45,1,05
-2022-02-01,45.45335,9.17247,0,2,Tangenziale Nord,19:00,1,02
-2022-10-17,45.47253,9.17758,0,0,Via XX Settembre,10:00,1,10
-2022-03-07,45.46375,9.18206,0,4,Piazza San Marco,18:30,1,03
-2022-01-11,45.46312,9.18491,0,0,Via Garibaldi,05:30,1,01
-2022-09-02,45.4586,9.19972,0,0,Centro storico,22:15,1,09
-2022-02-02,45.45863,9.1788,0,2,Via Manzoni,03:00,1,02
-2022-07-14,45.47059,9.20468,0,1,Viale Europa,10:45,1,07
-2022-10-13,45.46769,9.17739,0,0,Viale Europa,14:00,1,10
-2022-11-09,45.47156,9.18712,0,2,Tangenziale Nord,09:45,1,11
-2022-10-10,45.46246,9.18558,0,0,Piazza San Marco,05:15,1,10
-2022-05-23,45.47026,9.20623,0,1,Via dei Mille,09:45,1,05
-2022-06-13,45.47244,9.17483,0,0,Via Roma,19:30,1,06
-2022-06-14,45.45351,9.18825,0,1,Via XX Settembre,20:30,1,06
-2022-12-03,45.45778,9.17571,0,1,Via Garibaldi,16:45,1,12
-2022-12-11,45.47436,9.20499,0,0,Rotatoria Stazione,02:15,1,12
-2022-06-13,45.45535,9.17538,0,0,Viale dei Tigli,21:15,1,06
-2022-02-06,45.45639,9.20499,0,0,Centro storico,07:00,1,02
-2022-11-05,45.45838,9.19555,0,2,Strada Provinciale 5,16:45,1,11
-2022-02-11,45.47434,9.18155,0,3,Via XX Settembre,02:15,1,02
-2022-05-09,45.46795,9.20752,0,2,Tangenziale Nord,21:00,1,05
-2022-05-07,45.46902,9.1891,1,1,Via dei Mille,12:45,1,05
-2022-02-02,45.46946,9.18989,0,0,Via XX Settembre,03:00,1,02
-2022-03-26,45.45911,9.20018,0,1,Tangenziale Nord,16:30,1,03
-2022-05-13,45.46658,9.20562,0,3,Via Manzoni,14:30,1,05
-2022-06-28,45.45946,9.19452,0,1,Via Manzoni,09:00,1,06
-2022-03-11,45.46291,9.17917,0,3,Via XX Settembre,03:15,1,03
-2022-03-09,45.47003,9.20355,0,0,Centro storico,04:30,1,03
-2022-08-20,45.46531,9.19548,0,1,Via Manzoni,11:00,1,08
-2022-03-06,45.46767,9.19705,0,1,Viale dei Tigli,10:45,1,03
-2022-01-08,45.46434,9.18433,0,3,Via Manzoni,14:45,1,01
-2022-01-15,45.45589,9.17839,0,1,Rotatoria Stazione,21:30,1,01
-2022-03-16,45.45635,9.20014,0,1,Viale dei Tigli,05:45,1,03
-2022-05-17,45.46766,9.20792,0,1,Incrocio Via Mazzini/Via Verdi,11:30,1,05
-2022-04-27,45.47343,9.17405,1,1,Viale dei Tigli,11:00,1,04
-2022-04-03,45.47265,9.20663,0,0,Incrocio Via Mazzini/Via Verdi,08:30,1,04
-2022-12-26,45.45256,9.19221,0,0,Via Roma,11:45,1,12
-2022-10-10,45.4698,9.17696,0,1,Incrocio Via Mazzini/Via Verdi,13:45,1,10
-2022-02-21,45.46568,9.18446,0,1,Via XX Settembre,08:15,1,02
-2022-04-08,45.47437,9.1941,0,0,Rotatoria Stazione,20:00,1,04
-2022-10-11,45.47422,9.18011,0,1,Incrocio Via Mazzini/Via Verdi,14:15,1,10
-2022-07-11,45.4693,9.19458,0,1,Via XX Settembre,09:15,1,07
-2022-09-05,45.45665,9.20241,0,0,Via XX Settembre,01:15,1,09
-2022-01-20,45.47193,9.20789,0,1,Via Roma,02:45,1,01
-2022-08-20,45.47058,9.18669,0,2,Centro storico,11:30,1,08
-2022-01-02,45.4535,9.18958,0,0,Via Garibaldi,12:45,1,01
-2022-08-18,45.46726,9.18652,0,0,Centro storico,18:30,1,08
-2022-06-20,45.46073,9.2072,0,2,Strada Provinciale 5,10:30,1,06
-2022-08-23,45.45256,9.20731,0,0,Rotatoria Stazione,11:30,1,08
-2022-06-11,45.47284,9.20048,0,1,Via dei Mille,12:30,1,06
-2022-12-05,45.4658,9.18606,0,3,Via Garibaldi,07:45,1,12
-2022-04-17,45.4594,9.20454,1,3,Viale dei Tigli,17:30,1,04
-2022-10-04,45.4675,9.18043,0,0,Rotatoria Stazione,06:30,1,10
-2022-03-27,45.46087,9.18748,0,2,Viale dei Tigli,14:45,1,03
-2022-06-28,45.46099,9.17273,1,0,Centro storico,01:30,1,06
-2022-04-23,45.46947,9.20082,0,3,Tangenziale Nord,04:45,1,04
-2022-06-26,45.46205,9.18207,0,4,Incrocio Via Mazzini/Via Verdi,17:15,1,06
-2022-04-16,45.45695,9.19857,0,1,Viale Europa,04:30,1,04
-2022-01-17,45.47057,9.20739,0,1,Via Manzoni,02:15,1,01
-2022-08-13,45.45388,9.2004,0,1,Tangenziale Nord,08:30,1,08
-2022-09-10,45.45341,9.19676,0,0,Incrocio Via Mazzini/Via Verdi,13:45,1,09
-2022-05-01,45.45531,9.1943,0,0,Rotatoria Stazione,19:00,1,05
-2022-03-08,45.47619,9.18398,0,3,Strada Provinciale 5,15:30,1,03
-2022-04-07,45.47073,9.18469,2,0,Via Manzoni,14:30,1,04
-2022-03-07,45.47349,9.17546,0,1,Viale dei Tigli,11:45,1,03
-2022-04-18,45.45363,9.18242,0,0,Tangenziale Nord,09:45,1,04
-2022-01-06,45.47142,9.19511,0,2,Centro storico,09:00,1,01
-2022-11-01,45.46587,9.17372,0,1,Tangenziale Nord,04:30,1,11
-2022-01-28,45.47214,9.1777,0,1,Via dei Mille,20:15,1,01
-2022-05-25,45.46584,9.19082,0,1,Tangenziale Nord,19:00,1,05
-2022-08-03,45.47111,9.19843,0,4,Tangenziale Nord,08:15,1,08
-2022-10-03,45.46115,9.19531,0,1,Strada Provinciale 5,00:30,1,10
-2022-12-12,45.45391,9.17834,0,1,Tangenziale Nord,06:45,1,12
-2022-04-23,45.45995,9.20618,0,0,Via Garibaldi,14:15,1,04
-2022-01-20,45.4625,9.20418,0,0,Via XX Settembre,06:30,1,01
-2022-02-22,45.46588,9.17788,0,2,Via dei Mille,18:30,1,02
-2022-06-16,45.4585,9.20581,0,1,Rotatoria Stazione,13:30,1,06
-2022-04-25,45.45525,9.19721,0,2,Incrocio Via Mazzini/Via Verdi,21:00,1,04
-2022-03-24,45.45538,9.19402,0,0,Via Manzoni,02:00,1,03
-2022-04-11,45.46631,9.19969,0,1,Via Garibaldi,00:00,1,04
-2022-10-16,45.4536,9.19553,0,3,Viale dei Tigli,09:15,1,10
-2022-01-10,45.45923,9.19272,0,2,Strada Provinciale 5,00:15,1,01
-2022-08-04,45.45347,9.17597,1,1,Via Garibaldi,21:30,1,08
-2022-06-04,45.46037,9.1993,0,2,Viale Europa,19:30,1,06
-2022-07-12,45.47163,9.17393,0,0,Centro storico,02:15,1,07
-2022-12-16,45.46104,9.20288,0,1,Via XX Settembre,19:15,1,12
-2022-12-09,45.47497,9.19723,0,1,Centro storico,16:30,1,12
-2022-04-22,45.45249,9.17232,0,0,Via Manzoni,22:45,1,04
-2022-12-22,45.45488,9.18972,0,0,Via dei Mille,18:15,1,12
-2022-12-04,45.45736,9.20499,0,0,Via Manzoni,16:30,1,12
-2022-07-02,45.47321,9.20404,0,0,Viale Europa,17:00,1,07
-2022-11-26,45.4582,9.20345,0,0,Centro storico,08:15,1,11
-2022-03-23,45.45326,9.2073,0,0,Piazza San Marco,22:00,1,03
-2022-05-18,45.47442,9.20427,0,1,Tangenziale Nord,16:45,1,05
-2022-12-27,45.45393,9.18874,0,3,Tangenziale Nord,11:45,1,12
-2022-03-10,45.46354,9.19758,0,1,Centro storico,15:00,1,03
-2023-12-07,45.47109,9.19898,2,0,Via dei Mille,18:30,1,12
-2023-11-02,45.45857,9.18139,0,4,Via Roma,08:45,1,11
-2023-04-19,45.45323,9.20559,0,2,Via Manzoni,21:30,1,04
-2023-12-09,45.45939,9.18637,0,1,Strada Provinciale 5,16:45,1,12
-2023-12-19,45.45819,9.17788,1,1,Incrocio Via Mazzini/Via Verdi,01:15,1,12
-2023-05-04,45.46521,9.20421,0,0,Incrocio Via Mazzini/Via Verdi,22:00,1,05
-2023-01-20,45.4706,9.18488,0,1,Rotatoria Stazione,00:45,1,01
-2023-09-20,45.46594,9.17674,0,1,Via Roma,12:45,1,09
-2023-10-20,45.45238,9.17999,0,0,Via XX Settembre,20:00,1,10
-2023-09-02,45.45803,9.19187,0,0,Centro storico,17:45,1,09
-2023-10-13,45.47457,9.18016,0,2,Centro storico,05:45,1,10
-2023-11-17,45.47533,9.19673,0,1,Via Garibaldi,23:00,1,11
-2023-12-10,45.45241,9.20479,0,1,Viale dei Tigli,01:30,1,12
-2023-04-25,45.46878,9.17282,0,0,Incrocio Via Mazzini/Via Verdi,10:00,1,04
-2023-07-18,45.47223,9.19599,1,2,Incrocio Via Mazzini/Via Verdi,01:00,1,07
-2023-07-12,45.45962,9.17835,0,4,Piazza San Marco,14:30,1,07
-2023-02-12,45.46987,9.18063,0,1,Via Garibaldi,02:45,1,02
-2023-07-17,45.46345,9.17277,0,1,Incrocio Via Mazzini/Via Verdi,17:30,1,07
-2023-06-09,45.46921,9.18734,0,2,Viale Europa,19:15,1,06
-2023-12-16,45.46035,9.19222,0,1,Via Manzoni,08:15,1,12
-2023-12-05,45.47364,9.18692,0,1,Via Garibaldi,05:15,1,12
-2023-03-09,45.47037,9.19624,0,0,Via dei Mille,14:30,1,03
-2023-04-28,45.4525,9.19282,0,0,Viale dei Tigli,19:30,1,04
-2023-09-07,45.4684,9.20742,0,3,Via Garibaldi,10:30,1,09
-2023-08-23,45.46147,9.20456,0,0,Via dei Mille,08:30,1,08
-2023-12-26,45.45831,9.1919,0,0,Via dei Mille,13:45,1,12
-2023-01-15,45.46632,9.19984,0,0,Viale Europa,21:45,1,01
-2023-07-08,45.45318,9.20441,0,1,Via Garibaldi,09:15,1,07
-2023-04-15,45.45309,9.19494,0,2,Via Manzoni,07:45,1,04
-2023-05-25,45.46075,9.17634,0,2,Via Roma,18:45,1,05
-2023-12-05,45.46503,9.17571,0,3,Tangenziale Nord,11:30,1,12
-2023-09-14,45.47113,9.19506,0,1,Via XX Settembre,02:30,1,09
-2023-07-04,45.45889,9.17472,0,0,Centro storico,17:15,1,07
-2023-01-22,45.4583,9.19692,0,0,Via Garibaldi,09:00,1,01
-2023-02-05,45.47402,9.17656,0,0,Via XX Settembre,02:15,1,02
-2023-02-21,45.46992,9.17249,0,1,Via Manzoni,00:45,1,02
-2023-07-21,45.46276,9.19622,0,1,Centro storico,20:30,1,07
-2023-03-27,45.47581,9.19684,0,0,Via Roma,19:30,1,03
-2023-03-08,45.4702,9.20323,0,1,Strada Provinciale 5,04:30,1,03
-2023-04-04,45.47609,9.1881,0,0,Strada Provinciale 5,07:30,1,04
-2023-04-26,45.47412,9.19941,0,3,Centro storico,06:30,1,04
-2023-01-19,45.46898,9.18212,0,0,Via XX Settembre,08:15,1,01
-2023-08-18,45.45324,9.17939,0,1,Centro storico,18:30,1,08
-2023-03-01,45.47206,9.19426,0,2,Viale Europa,02:15,1,03
-2023-01-11,45.46347,9.18783,0,0,Rotatoria Stazione,09:15,1,01
-2023-12-13,45.46747,9.19338,0,0,Incrocio Via Mazzini/Via Verdi,05:30,1,12
-2023-05-04,45.46876,9.19641,0,0,Via Garibaldi,12:15,1,05
-2023-06-26,45.47362,9.18243,0,1,Viale Europa,10:45,1,06
-2023-04-19,45.46085,9.18125,0,0,Via XX Settembre,01:00,1,04
-2023-08-23,45.46651,9.18255,0,0,Centro storico,10:30,1,08
-2023-08-17,45.45586,9.19687,0,0,Via dei Mille,17:00,1,08
-2023-07-01,45.46851,9.19571,0,2,Via Roma,21:00,1,07
-2023-07-07,45.47399,9.2008,0,1,Piazza San Marco,00:30,1,07
-2023-01-24,45.46803,9.18734,0,0,Piazza San Marco,16:15,1,01
-2023-03-20,45.46016,9.17287,0,0,Incrocio Via Mazzini/Via Verdi,00:30,1,03
-2023-10-24,45.45923,9.18324,0,1,Via XX Settembre,11:15,1,10
-2023-02-22,45.46001,9.1927,0,0,Piazza San Marco,20:15,1,02
-2023-02-11,45.4657,9.18425,0,1,Tangenziale Nord,20:15,1,02
-2023-09-22,45.46375,9.18953,0,0,Via XX Settembre,03:15,1,09
-2023-04-21,45.45861,9.19306,0,2,Incrocio Via Mazzini/Via Verdi,04:15,1,04
-2023-11-26,45.47309,9.1898,0,3,Via dei Mille,22:30,1,11
-2023-11-17,45.46991,9.17758,0,1,Incrocio Via Mazzini/Via Verdi,16:45,1,11
-2023-10-03,45.45383,9.17887,0,0,Incrocio Via Mazzini/Via Verdi,09:15,1,10
-2023-11-28,45.45712,9.18401,0,1,Via Manzoni,10:45,1,11
-2023-05-02,45.4564,9.17229,0,3,Via Roma,19:00,1,05
-2023-09-24,45.47157,9.17311,0,0,Incrocio Via Mazzini/Via Verdi,13:45,1,09
-2023-02-05,45.4577,9.18402,0,1,Viale Europa,16:15,1,02
-2023-07-14,45.47169,9.20439,0,0,Viale dei Tigli,12:15,1,07
-2023-02-17,45.47223,9.18136,0,1,Rotatoria Stazione,19:30,1,02
-2023-04-03,45.45863,9.17578,0,4,Via dei Mille,03:45,1,04
-2023-03-06,45.45802,9.18297,0,0,Piazza San Marco,14:00,1,03
-2023-12-13,45.45542,9.18167,0,2,Piazza San Marco,15:30,1,12
-2023-07-04,45.45473,9.18485,0,0,Rotatoria Stazione,20:30,1,07
-2023-08-24,45.45649,9.20059,0,1,Via Manzoni,13:45,1,08
-2023-07-03,45.47136,9.17666,0,0,Rotatoria Stazione,16:45,1,07
-2023-02-16,45.47163,9.19903,0,0,Tangenziale Nord,14:45,1,02
-2023-01-23,45.46176,9.20433,0,0,Via Roma,10:30,1,01
-2023-12-09,45.46756,9.17705,0,3,Centro storico,12:30,1,12
-2023-03-28,45.45677,9.18803,0,3,Via dei Mille,15:45,1,03
-2023-09-24,45.4715,9.20558,0,0,Via dei Mille,16:15,1,09
-2023-01-18,45.47478,9.19416,0,1,Centro storico,20:15,1,01
-2023-12-02,45.47565,9.19522,0,2,Via Roma,10:30,1,12
-2023-06-04,45.4629,9.18695,0,1,Viale Europa,20:45,1,06
-2023-12-12,45.46587,9.19215,0,3,Via Manzoni,03:00,1,12
-2023-07-28,45.46494,9.1945,0,0,Via XX Settembre,12:00,1,07
-2023-01-03,45.47455,9.17519,0,1,Rotatoria Stazione,10:45,1,01
-2023-06-28,45.46383,9.19163,0,1,Incrocio Via Mazzini/Via Verdi,04:30,1,06
-2023-02-01,45.46128,9.18785,0,0,Strada Provinciale 5,17:00,1,02
-2023-05-22,45.47424,9.1775,0,0,Via Garibaldi,11:45,1,05
-2023-10-23,45.45575,9.1848,0,0,Via Roma,20:45,1,10
-2023-11-23,45.46455,9.17284,0,0,Viale dei Tigli,10:45,1,11
-2024-02-14,45.45492,9.18954,0,2,Centro storico,02:00,1,02
-2024-11-25,45.46522,9.19007,0,0,Via dei Mille,00:45,1,11
-2024-09-24,45.45832,9.1916,0,0,Piazza San Marco,19:15,1,09
-2024-02-03,45.4679,9.20186,0,1,Strada Provinciale 5,00:45,1,02
-2024-03-09,45.46113,9.18515,0,2,Tangenziale Nord,23:30,1,03
-2024-02-26,45.46439,9.18463,0,4,Piazza San Marco,16:45,1,02
-2024-04-24,45.45897,9.19855,0,0,Via Roma,15:30,1,04
-2024-12-17,45.46578,9.18289,0,0,Via dei Mille,18:15,1,12
-2024-05-13,45.46462,9.18018,0,2,Viale Europa,17:30,1,05
-2024-03-20,45.46823,9.17281,0,0,Strada Provinciale 5,18:00,1,03
-2024-01-25,45.46075,9.18957,0,1,Via Garibaldi,14:30,1,01
-2024-02-10,45.45628,9.17772,0,1,Via Garibaldi,08:00,1,02
-2024-02-18,45.47139,9.19973,1,0,Via XX Settembre,22:45,1,02
-2024-06-23,45.45858,9.19273,0,2,Viale Europa,12:30,1,06
-2024-08-23,45.458,9.20606,0,0,Via Manzoni,13:45,1,08
-2024-02-22,45.45225,9.19509,0,3,Via dei Mille,04:45,1,02
-2024-07-27,45.46164,9.18876,0,0,Via XX Settembre,10:15,1,07
-2024-10-02,45.46587,9.1739,0,0,Incrocio Via Mazzini/Via Verdi,15:30,1,10
-2024-12-13,45.47316,9.17989,0,1,Via Manzoni,16:15,1,12
-2024-07-03,45.46992,9.17682,0,0,Via dei Mille,09:15,1,07
-2024-10-24,45.46138,9.19597,0,2,Incrocio Via Mazzini/Via Verdi,08:15,1,10
-2024-12-18,45.46613,9.20106,0,1,Piazza San Marco,13:15,1,12
-2024-05-28,45.47397,9.19345,0,0,Via XX Settembre,23:30,1,05
-2024-05-17,45.45822,9.17789,0,2,Incrocio Via Mazzini/Via Verdi,14:15,1,05
-2024-09-23,45.4723,9.18743,0,1,Centro storico,05:15,1,09
-2024-03-14,45.46849,9.20255,0,0,Tangenziale Nord,17:00,1,03
-2024-10-24,45.47469,9.19644,0,0,Via XX Settembre,07:45,1,10
-2024-09-27,45.46668,9.18312,0,2,Rotatoria Stazione,23:30,1,09
-2024-11-13,45.46571,9.1949,0,0,Viale dei Tigli,12:30,1,11
-2024-10-16,45.4552,9.18158,0,1,Tangenziale Nord,16:15,1,10
-2024-11-01,45.46947,9.20683,0,1,Via Garibaldi,22:00,1,11
-2024-03-06,45.46158,9.19546,0,1,Viale dei Tigli,12:45,1,03
-2024-08-16,45.46987,9.20677,0,0,Via XX Settembre,21:15,1,08
-2024-04-13,45.46166,9.20495,0,1,Tangenziale Nord,17:30,1,04
-2024-12-23,45.46066,9.18491,0,1,Viale Europa,03:30,1,12
-2024-11-09,45.46289,9.18409,0,0,Piazza San Marco,09:30,1,11
-2024-12-15,45.46407,9.2028,2,2,Via Roma,02:30,1,12
-2024-03-06,45.47188,9.1941,0,2,Via Roma,09:45,1,03
-2024-03-08,45.45786,9.18189,0,1,Via XX Settembre,23:45,1,03
-2024-09-26,45.45411,9.19788,0,0,Strada Provinciale 5,03:30,1,09
-2024-04-19,45.47544,9.18185,0,2,Via Roma,14:30,1,04
-2024-08-12,45.46889,9.20432,0,0,Via XX Settembre,21:45,1,08
-2024-10-06,45.46478,9.20388,0,2,Piazza San Marco,05:45,1,10
-2024-11-15,45.46799,9.18343,0,3,Centro storico,23:00,1,11
-2024-01-05,45.46009,9.20452,1,1,Rotatoria Stazione,04:15,1,01
-2024-02-11,45.46132,9.20692,0,0,Tangenziale Nord,09:15,1,02
-2024-01-15,45.47287,9.1968,1,1,Via Roma,17:30,1,01
-2024-03-18,45.45479,9.18913,0,1,Via XX Settembre,06:15,1,03
-2024-08-28,45.4655,9.17319,0,2,Strada Provinciale 5,07:45,1,08
-2024-10-03,45.45816,9.17546,2,1,Via Manzoni,19:45,1,10
-2024-09-08,45.47125,9.17302,0,1,Viale dei Tigli,05:45,1,09
-2024-04-10,45.46043,9.20233,0,0,Via Garibaldi,01:45,1,04
-2024-12-23,45.47322,9.1893,1,1,Centro storico,00:30,1,12
-2024-01-17,45.46061,9.19925,0,2,Tangenziale Nord,22:00,1,01
-2024-11-28,45.46006,9.18642,0,1,Rotatoria Stazione,23:00,1,11
-2024-09-09,45.46933,9.19535,0,0,Viale dei Tigli,18:45,1,09
-2024-08-02,45.45468,9.19239,0,0,Incrocio Via Mazzini/Via Verdi,23:15,1,08
-2024-04-01,45.46824,9.2005,0,1,Viale Europa,06:45,1,04
-2024-04-05,45.46127,9.17853,0,1,Viale Europa,23:00,1,04
-2024-12-06,45.46076,9.18082,0,1,Via Garibaldi,05:00,1,12
-2024-09-12,45.45626,9.17317,0,0,Centro storico,04:00,1,09
-2024-04-14,45.47463,9.20469,0,2,Strada Provinciale 5,11:00,1,04
-2024-02-17,45.46653,9.20707,0,0,Incrocio Via Mazzini/Via Verdi,00:45,1,02
-2024-01-07,45.4691,9.20234,0,0,Via Garibaldi,19:30,1,01
-2024-11-25,45.45343,9.18733,0,2,Rotatoria Stazione,02:30,1,11
-2024-06-16,45.46748,9.18837,0,0,Via Garibaldi,12:30,1,06
-2024-06-06,45.45635,9.17274,0,1,Tangenziale Nord,11:15,1,06
-2024-10-01,45.45309,9.19072,0,0,Via dei Mille,06:45,1,10
-2024-01-18,45.46172,9.19444,1,1,Piazza San Marco,09:15,1,01
-2024-05-27,45.4726,9.17935,0,2,Centro storico,21:00,1,05
-2024-06-20,45.45639,9.19504,0,1,Via dei Mille,23:30,1,06
-2024-01-14,45.45402,9.18887,0,0,Strada Provinciale 5,12:15,1,01
-2024-10-01,45.46801,9.19454,0,0,Via Garibaldi,14:45,1,10
-2024-07-17,45.47029,9.19239,0,1,Rotatoria Stazione,02:30,1,07
-2024-06-13,45.46211,9.18081,0,0,Via XX Settembre,14:30,1,06
-2024-09-26,45.4607,9.18738,0,0,Strada Provinciale 5,15:45,1,09
-2024-01-27,45.46067,9.18353,0,0,Rotatoria Stazione,06:15,1,01
-2024-06-20,45.47168,9.20582,0,1,Via dei Mille,00:15,1,06
-2024-11-14,45.47379,9.17533,0,4,Centro storico,18:15,1,11
-2024-09-09,45.46495,9.18575,0,0,Tangenziale Nord,01:30,1,09
-2024-10-23,45.45966,9.19444,2,0,Viale Europa,20:30,1,10
-2024-12-05,45.46314,9.17259,1,2,Strada Provinciale 5,07:45,1,12
-2024-05-21,45.46205,9.18446,0,0,Via Garibaldi,10:30,1,05
-2024-04-13,45.46258,9.20332,0,1,Rotatoria Stazione,07:30,1,04
-2024-10-09,45.46963,9.18765,0,0,Via XX Settembre,01:30,1,10
-2024-04-04,45.4533,9.19171,0,2,Via dei Mille,20:45,1,04
-2024-04-02,45.46991,9.20669,0,0,Strada Provinciale 5,12:30,1,04
-2024-07-24,45.46539,9.19772,1,0,Via Manzoni,12:00,1,07
-2024-06-02,45.45973,9.18394,0,1,Incrocio Via Mazzini/Via Verdi,13:30,1,06
+data,ora,comune,via,lat,lon,tipo_incidente,veicoli_coinvolti,feriti,morti,condizioni_meteo
+2020-05-23,14:45,Comune Ideale,Tangenziale Nord,45.4705,9.20654,ribaltamento,2,0,0,nebbia
+2020-10-01,13:45,Comune Ideale,Via dei Mille,45.46454,9.19276,investimento pedone,2,0,0,pioggia
+2020-03-02,04:45,Comune Ideale,Strada Provinciale 5,45.47262,9.20153,ribaltamento,3,1,0,nebbia
+2020-10-17,05:30,Comune Ideale,Via Roma,45.45873,9.17855,tamponamento,1,1,0,pioggia
+2020-05-03,01:00,Comune Ideale,Via XX Settembre,45.46473,9.17571,uscita di strada,3,3,0,sereno
+2020-10-15,04:00,Comune Ideale,Via Garibaldi,45.47109,9.20436,investimento pedone,3,2,0,nebbia
+2020-06-02,17:00,Comune Ideale,Tangenziale Nord,45.47323,9.18165,uscita di strada,1,0,0,sereno
+2020-05-16,19:00,Comune Ideale,Via Manzoni,45.47378,9.19823,tamponamento,1,1,0,pioggia
+2020-06-05,17:45,Comune Ideale,Piazza San Marco,45.46768,9.20345,urto laterale,3,1,0,sereno
+2020-08-19,04:00,Comune Ideale,Tangenziale Nord,45.45311,9.17209,ribaltamento,3,0,0,pioggia
+2020-06-04,12:00,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46941,9.18993,investimento pedone,3,0,0,sereno
+2020-12-02,12:30,Comune Ideale,Viale dei Tigli,45.45443,9.17942,tamponamento,2,2,0,sereno
+2020-10-19,06:00,Comune Ideale,Via dei Mille,45.46201,9.20082,tamponamento,3,1,0,sereno
+2020-11-08,07:00,Comune Ideale,Via Manzoni,45.47521,9.17999,ribaltamento,1,1,0,sereno
+2020-08-17,16:00,Comune Ideale,Centro storico,45.45367,9.17298,ribaltamento,2,0,0,sereno
+2020-10-12,07:00,Comune Ideale,Piazza San Marco,45.45852,9.17668,uscita di strada,2,1,0,sereno
+2020-10-20,08:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46217,9.18556,tamponamento,3,1,0,nebbia
+2020-09-19,20:00,Comune Ideale,Viale Europa,45.45583,9.18073,tamponamento,2,1,0,nebbia
+2020-08-23,09:45,Comune Ideale,Via Garibaldi,45.46035,9.18352,ribaltamento,1,4,0,sereno
+2020-05-24,15:45,Comune Ideale,Centro storico,45.46374,9.18799,urto laterale,1,0,0,sereno
+2020-12-14,23:15,Comune Ideale,Via XX Settembre,45.46463,9.1927,urto laterale,1,0,0,sereno
+2020-10-24,20:15,Comune Ideale,Via dei Mille,45.4528,9.17589,investimento pedone,1,0,0,nebbia
+2020-04-07,13:30,Comune Ideale,Strada Provinciale 5,45.46686,9.19828,tamponamento,2,1,0,pioggia
+2020-02-11,11:00,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.4632,9.19698,ribaltamento,3,1,0,sereno
+2020-07-23,11:30,Comune Ideale,Via Garibaldi,45.47597,9.18375,ribaltamento,1,2,0,nebbia
+2020-07-08,04:15,Comune Ideale,Viale Europa,45.47208,9.18257,investimento pedone,2,0,0,nebbia
+2020-04-05,08:45,Comune Ideale,Rotatoria Stazione,45.45649,9.20578,urto laterale,2,0,0,sereno
+2020-07-17,11:15,Comune Ideale,Centro storico,45.45667,9.18117,ribaltamento,3,0,0,nebbia
+2020-02-27,12:00,Comune Ideale,Centro storico,45.46266,9.19004,investimento pedone,1,1,1,sereno
+2020-07-19,00:45,Comune Ideale,Tangenziale Nord,45.46274,9.18853,investimento pedone,1,0,0,sereno
+2020-08-27,17:45,Comune Ideale,Via XX Settembre,45.45403,9.17588,investimento pedone,2,1,0,sereno
+2020-08-05,10:15,Comune Ideale,Centro storico,45.47501,9.18491,urto laterale,2,1,0,nebbia
+2020-01-21,02:15,Comune Ideale,Piazza San Marco,45.46075,9.18371,tamponamento,3,1,0,sereno
+2020-02-07,00:00,Comune Ideale,Viale Europa,45.46694,9.18081,tamponamento,3,1,0,sereno
+2020-10-28,08:45,Comune Ideale,Viale Europa,45.46424,9.20268,ribaltamento,3,0,0,pioggia
+2020-10-06,20:45,Comune Ideale,Via Manzoni,45.47119,9.19451,uscita di strada,2,0,0,sereno
+2020-11-11,00:15,Comune Ideale,Strada Provinciale 5,45.46323,9.19326,uscita di strada,1,2,0,pioggia
+2020-08-02,03:00,Comune Ideale,Tangenziale Nord,45.47388,9.17843,investimento pedone,1,1,0,sereno
+2020-11-27,00:15,Comune Ideale,Via dei Mille,45.45823,9.19689,urto laterale,1,1,0,sereno
+2020-06-12,13:00,Comune Ideale,Tangenziale Nord,45.45466,9.1751,investimento pedone,2,1,0,nebbia
+2020-11-03,16:00,Comune Ideale,Via dei Mille,45.45706,9.19565,tamponamento,1,0,0,sereno
+2020-06-23,23:00,Comune Ideale,Piazza San Marco,45.47345,9.18355,tamponamento,3,1,0,nebbia
+2020-01-20,09:00,Comune Ideale,Centro storico,45.45245,9.17272,investimento pedone,3,0,0,sereno
+2020-06-15,02:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45957,9.1765,uscita di strada,1,1,0,sereno
+2020-01-26,15:30,Comune Ideale,Tangenziale Nord,45.46996,9.19152,tamponamento,3,1,0,pioggia
+2020-09-06,08:30,Comune Ideale,Piazza San Marco,45.4737,9.18801,urto laterale,3,2,0,nebbia
+2020-08-21,16:45,Comune Ideale,Centro storico,45.46197,9.20689,ribaltamento,1,4,0,nebbia
+2020-09-16,12:00,Comune Ideale,Via dei Mille,45.46978,9.19997,tamponamento,3,0,0,sereno
+2020-01-21,04:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.47058,9.17808,ribaltamento,2,2,0,sereno
+2020-07-19,00:15,Comune Ideale,Piazza San Marco,45.45238,9.20462,urto laterale,3,2,0,sereno
+2020-01-10,04:15,Comune Ideale,Viale Europa,45.46927,9.17669,ribaltamento,3,2,2,sereno
+2020-01-22,05:00,Comune Ideale,Via Roma,45.47138,9.18158,tamponamento,2,1,0,pioggia
+2020-07-10,02:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46526,9.19719,urto laterale,2,0,0,nebbia
+2020-10-15,04:15,Comune Ideale,Tangenziale Nord,45.46838,9.20154,urto laterale,2,1,0,sereno
+2020-08-14,19:30,Comune Ideale,Strada Provinciale 5,45.45904,9.18178,tamponamento,3,0,0,sereno
+2020-06-27,10:00,Comune Ideale,Via XX Settembre,45.47465,9.19289,ribaltamento,3,1,0,sereno
+2020-12-18,05:15,Comune Ideale,Centro storico,45.47206,9.18801,tamponamento,2,3,0,sereno
+2020-04-14,15:00,Comune Ideale,Rotatoria Stazione,45.46542,9.19071,urto laterale,3,1,0,pioggia
+2020-05-11,10:15,Comune Ideale,Viale Europa,45.47465,9.20357,ribaltamento,2,1,0,nebbia
+2020-05-01,15:45,Comune Ideale,Via Roma,45.46157,9.20268,urto laterale,1,3,0,nebbia
+2020-02-08,13:30,Comune Ideale,Viale dei Tigli,45.46841,9.20616,uscita di strada,2,0,0,sereno
+2020-02-17,22:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45817,9.2008,ribaltamento,1,2,0,sereno
+2020-10-14,13:30,Comune Ideale,Tangenziale Nord,45.47235,9.19628,tamponamento,3,1,0,sereno
+2020-04-26,20:00,Comune Ideale,Via dei Mille,45.47401,9.19405,urto laterale,3,0,0,sereno
+2020-04-04,23:00,Comune Ideale,Via Garibaldi,45.46141,9.17909,urto laterale,2,0,0,sereno
+2020-06-24,15:45,Comune Ideale,Via Garibaldi,45.45614,9.18836,uscita di strada,3,1,0,pioggia
+2020-03-15,00:30,Comune Ideale,Via Manzoni,45.46531,9.17623,ribaltamento,3,0,0,sereno
+2020-09-25,08:45,Comune Ideale,Rotatoria Stazione,45.46748,9.18801,uscita di strada,1,0,0,nebbia
+2020-12-18,10:30,Comune Ideale,Tangenziale Nord,45.47303,9.19277,investimento pedone,1,2,0,sereno
+2020-06-21,18:15,Comune Ideale,Via Roma,45.45533,9.19127,uscita di strada,2,2,0,nebbia
+2020-11-01,05:00,Comune Ideale,Via XX Settembre,45.46544,9.17206,urto laterale,1,0,0,nebbia
+2020-07-07,16:15,Comune Ideale,Strada Provinciale 5,45.46173,9.19001,tamponamento,3,0,0,sereno
+2020-02-06,08:45,Comune Ideale,Viale Europa,45.45804,9.18132,tamponamento,1,2,0,sereno
+2020-05-17,09:00,Comune Ideale,Via Roma,45.4525,9.18533,investimento pedone,3,0,0,pioggia
+2020-12-19,06:00,Comune Ideale,Via dei Mille,45.45763,9.19297,tamponamento,1,1,0,sereno
+2020-02-07,01:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46035,9.19385,ribaltamento,1,1,1,sereno
+2020-02-16,12:45,Comune Ideale,Viale Europa,45.46906,9.18095,uscita di strada,1,0,0,sereno
+2020-12-23,19:00,Comune Ideale,Via XX Settembre,45.4668,9.1732,tamponamento,3,1,0,sereno
+2020-01-15,04:30,Comune Ideale,Viale dei Tigli,45.46214,9.17904,tamponamento,1,2,0,sereno
+2020-07-07,18:00,Comune Ideale,Via Roma,45.4564,9.18037,investimento pedone,2,2,0,nebbia
+2020-08-24,23:15,Comune Ideale,Via Garibaldi,45.47029,9.20642,investimento pedone,3,0,0,sereno
+2020-05-04,20:15,Comune Ideale,Piazza San Marco,45.46126,9.1736,uscita di strada,2,2,0,sereno
+2020-11-09,10:15,Comune Ideale,Via Roma,45.4678,9.18044,ribaltamento,2,1,0,sereno
+2020-10-22,16:30,Comune Ideale,Via Roma,45.47547,9.20289,tamponamento,3,1,0,nebbia
+2020-12-17,23:30,Comune Ideale,Tangenziale Nord,45.45482,9.18568,investimento pedone,2,0,0,sereno
+2020-03-08,00:15,Comune Ideale,Strada Provinciale 5,45.47353,9.18505,investimento pedone,1,1,0,sereno
+2021-08-09,01:45,Comune Ideale,Viale Europa,45.46421,9.19885,urto laterale,2,2,0,nebbia
+2021-11-24,01:00,Comune Ideale,Viale dei Tigli,45.46953,9.19298,uscita di strada,1,0,0,nebbia
+2021-01-06,11:30,Comune Ideale,Centro storico,45.45943,9.20721,urto laterale,1,1,0,sereno
+2021-02-22,16:15,Comune Ideale,Via Garibaldi,45.46647,9.17462,investimento pedone,3,1,0,pioggia
+2021-12-22,16:00,Comune Ideale,Viale dei Tigli,45.47207,9.20218,uscita di strada,2,2,0,pioggia
+2021-02-27,20:00,Comune Ideale,Via Garibaldi,45.4589,9.1794,urto laterale,3,0,0,sereno
+2021-01-28,10:30,Comune Ideale,Via Roma,45.46616,9.18736,urto laterale,2,0,0,sereno
+2021-09-03,05:00,Comune Ideale,Strada Provinciale 5,45.46651,9.18566,uscita di strada,2,2,0,sereno
+2021-10-03,00:00,Comune Ideale,Tangenziale Nord,45.46488,9.18851,uscita di strada,3,2,0,sereno
+2021-09-16,13:15,Comune Ideale,Tangenziale Nord,45.45606,9.18237,urto laterale,3,1,0,sereno
+2021-09-09,07:45,Comune Ideale,Centro storico,45.47347,9.19128,urto laterale,1,0,0,sereno
+2021-07-04,12:45,Comune Ideale,Via XX Settembre,45.47611,9.1844,ribaltamento,2,1,0,sereno
+2021-05-10,01:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45453,9.17661,investimento pedone,2,1,0,sereno
+2021-10-27,13:15,Comune Ideale,Rotatoria Stazione,45.45296,9.19151,ribaltamento,1,3,0,pioggia
+2021-09-10,18:00,Comune Ideale,Viale Europa,45.46582,9.19558,urto laterale,1,1,0,sereno
+2021-04-19,12:00,Comune Ideale,Via Roma,45.45532,9.19269,ribaltamento,2,2,0,sereno
+2021-04-01,14:00,Comune Ideale,Via Garibaldi,45.47233,9.19386,uscita di strada,3,0,0,pioggia
+2021-08-14,10:00,Comune Ideale,Viale Europa,45.4734,9.1789,investimento pedone,1,0,0,sereno
+2021-11-07,02:45,Comune Ideale,Viale Europa,45.45309,9.18194,investimento pedone,3,0,0,pioggia
+2021-05-11,02:30,Comune Ideale,Strada Provinciale 5,45.46051,9.19957,investimento pedone,1,1,0,sereno
+2021-03-11,21:15,Comune Ideale,Centro storico,45.46982,9.18171,investimento pedone,2,1,1,sereno
+2021-03-13,03:00,Comune Ideale,Via Roma,45.47239,9.20535,uscita di strada,1,2,0,sereno
+2021-05-22,00:30,Comune Ideale,Via Manzoni,45.47497,9.18968,uscita di strada,1,2,0,pioggia
+2021-12-12,21:15,Comune Ideale,Rotatoria Stazione,45.46805,9.18533,tamponamento,2,2,0,sereno
+2021-08-26,15:30,Comune Ideale,Viale Europa,45.46658,9.1922,investimento pedone,2,1,0,sereno
+2021-02-09,03:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46427,9.19128,investimento pedone,1,4,0,pioggia
+2021-02-18,07:15,Comune Ideale,Via XX Settembre,45.46281,9.20359,investimento pedone,2,2,0,sereno
+2021-08-12,21:45,Comune Ideale,Strada Provinciale 5,45.47497,9.18333,investimento pedone,3,1,0,sereno
+2021-05-12,04:00,Comune Ideale,Tangenziale Nord,45.47509,9.18232,urto laterale,2,0,0,sereno
+2021-08-22,02:30,Comune Ideale,Strada Provinciale 5,45.47328,9.18606,investimento pedone,1,0,0,pioggia
+2021-03-25,10:45,Comune Ideale,Viale Europa,45.45869,9.18297,urto laterale,3,0,0,nebbia
+2021-11-25,05:30,Comune Ideale,Via XX Settembre,45.46944,9.19106,uscita di strada,2,3,0,nebbia
+2021-12-14,06:00,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46011,9.17383,tamponamento,2,3,0,sereno
+2021-02-23,11:15,Comune Ideale,Viale dei Tigli,45.45791,9.18723,urto laterale,2,0,0,sereno
+2021-08-18,16:00,Comune Ideale,Piazza San Marco,45.46326,9.19435,tamponamento,3,1,0,sereno
+2021-01-27,13:30,Comune Ideale,Via Manzoni,45.46312,9.18976,tamponamento,2,1,0,sereno
+2021-06-12,14:00,Comune Ideale,Strada Provinciale 5,45.46254,9.20525,uscita di strada,2,0,0,sereno
+2021-12-24,23:30,Comune Ideale,Via Manzoni,45.46128,9.17411,investimento pedone,3,0,0,nebbia
+2021-12-25,14:45,Comune Ideale,Viale Europa,45.46804,9.17856,uscita di strada,1,0,0,sereno
+2021-12-21,07:00,Comune Ideale,Via Roma,45.47012,9.19908,urto laterale,1,2,0,pioggia
+2021-03-24,02:00,Comune Ideale,Via dei Mille,45.46488,9.17937,investimento pedone,3,0,0,pioggia
+2021-06-11,15:30,Comune Ideale,Via Garibaldi,45.46436,9.18633,urto laterale,3,0,0,sereno
+2021-07-11,10:30,Comune Ideale,Via XX Settembre,45.47029,9.19383,tamponamento,2,3,0,pioggia
+2021-02-26,11:30,Comune Ideale,Centro storico,45.45559,9.17428,investimento pedone,3,2,0,sereno
+2021-02-13,06:30,Comune Ideale,Via Roma,45.47591,9.19625,urto laterale,3,0,0,sereno
+2021-11-12,09:45,Comune Ideale,Via Garibaldi,45.46605,9.17472,uscita di strada,3,0,0,sereno
+2021-11-25,01:45,Comune Ideale,Viale Europa,45.45906,9.19913,urto laterale,1,1,0,sereno
+2021-10-07,05:15,Comune Ideale,Strada Provinciale 5,45.45676,9.19927,uscita di strada,1,1,0,sereno
+2021-03-27,12:00,Comune Ideale,Viale Europa,45.46875,9.17417,uscita di strada,2,1,0,nebbia
+2021-07-28,04:15,Comune Ideale,Via dei Mille,45.47164,9.19317,urto laterale,2,1,0,sereno
+2021-03-02,16:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46716,9.20777,urto laterale,1,1,0,sereno
+2021-11-04,01:45,Comune Ideale,Via Roma,45.47358,9.19116,tamponamento,2,1,0,sereno
+2021-03-06,07:15,Comune Ideale,Tangenziale Nord,45.47596,9.19779,uscita di strada,3,1,0,sereno
+2021-03-03,03:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45758,9.19848,tamponamento,1,2,0,sereno
+2021-07-28,20:45,Comune Ideale,Rotatoria Stazione,45.45943,9.17256,tamponamento,2,2,0,sereno
+2021-10-17,18:00,Comune Ideale,Piazza San Marco,45.45614,9.18401,urto laterale,1,2,0,pioggia
+2021-11-06,19:45,Comune Ideale,Piazza San Marco,45.46737,9.18694,investimento pedone,1,2,0,sereno
+2021-06-27,02:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45784,9.19697,tamponamento,2,0,0,sereno
+2021-08-18,17:45,Comune Ideale,Viale dei Tigli,45.47189,9.1758,tamponamento,1,1,0,nebbia
+2021-05-25,10:15,Comune Ideale,Strada Provinciale 5,45.47125,9.18158,ribaltamento,3,1,1,nebbia
+2021-05-10,00:45,Comune Ideale,Rotatoria Stazione,45.45379,9.20242,ribaltamento,2,0,0,sereno
+2021-03-13,13:30,Comune Ideale,Rotatoria Stazione,45.46621,9.18513,ribaltamento,2,3,0,sereno
+2021-12-28,18:45,Comune Ideale,Viale Europa,45.45454,9.1732,tamponamento,3,0,0,sereno
+2021-07-05,08:45,Comune Ideale,Via Manzoni,45.47611,9.18558,ribaltamento,2,0,0,sereno
+2021-05-07,19:45,Comune Ideale,Via dei Mille,45.45704,9.18262,ribaltamento,1,1,0,sereno
+2021-06-04,13:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46853,9.18621,investimento pedone,2,1,0,sereno
+2021-09-15,08:45,Comune Ideale,Tangenziale Nord,45.46175,9.19481,investimento pedone,2,0,0,pioggia
+2021-03-16,12:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45571,9.18354,ribaltamento,1,0,0,sereno
+2021-02-11,03:00,Comune Ideale,Rotatoria Stazione,45.45911,9.17903,investimento pedone,2,1,0,sereno
+2021-02-12,20:45,Comune Ideale,Tangenziale Nord,45.47169,9.18201,uscita di strada,2,1,0,sereno
+2021-08-15,12:15,Comune Ideale,Via dei Mille,45.45754,9.17601,investimento pedone,1,0,0,sereno
+2021-05-10,12:30,Comune Ideale,Via Manzoni,45.45365,9.17848,ribaltamento,1,1,0,nebbia
+2021-06-15,00:30,Comune Ideale,Via Roma,45.46608,9.20608,ribaltamento,1,2,1,sereno
+2021-09-20,13:15,Comune Ideale,Viale dei Tigli,45.46012,9.20036,tamponamento,3,0,0,sereno
+2021-05-19,17:30,Comune Ideale,Viale dei Tigli,45.47451,9.20508,tamponamento,1,0,0,sereno
+2021-12-10,17:45,Comune Ideale,Strada Provinciale 5,45.47187,9.18798,tamponamento,3,0,0,sereno
+2021-01-05,22:45,Comune Ideale,Via Roma,45.46046,9.19102,urto laterale,3,1,0,pioggia
+2021-04-28,02:45,Comune Ideale,Piazza San Marco,45.4725,9.20527,ribaltamento,2,1,0,sereno
+2021-05-25,14:45,Comune Ideale,Strada Provinciale 5,45.46011,9.20351,investimento pedone,1,0,0,sereno
+2021-12-08,17:15,Comune Ideale,Via XX Settembre,45.46102,9.19979,tamponamento,1,0,0,pioggia
+2021-10-28,18:15,Comune Ideale,Via Roma,45.46674,9.1864,uscita di strada,1,0,0,nebbia
+2021-04-13,21:15,Comune Ideale,Centro storico,45.46571,9.17484,investimento pedone,2,2,0,sereno
+2021-11-27,19:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45564,9.1841,investimento pedone,3,3,0,sereno
+2021-11-06,00:00,Comune Ideale,Via XX Settembre,45.46014,9.18109,uscita di strada,1,1,0,sereno
+2021-12-04,07:15,Comune Ideale,Rotatoria Stazione,45.46882,9.19544,tamponamento,3,2,0,sereno
+2021-06-02,05:15,Comune Ideale,Via Garibaldi,45.468,9.2044,tamponamento,2,2,2,sereno
+2021-07-08,07:30,Comune Ideale,Centro storico,45.46229,9.17366,investimento pedone,3,1,0,sereno
+2021-07-28,07:00,Comune Ideale,Centro storico,45.46633,9.18631,tamponamento,2,4,0,sereno
+2021-07-18,05:30,Comune Ideale,Viale dei Tigli,45.47321,9.18666,ribaltamento,3,0,0,sereno
+2021-09-13,04:15,Comune Ideale,Rotatoria Stazione,45.45287,9.18454,investimento pedone,3,0,0,sereno
+2021-04-19,22:45,Comune Ideale,Strada Provinciale 5,45.46385,9.17269,ribaltamento,3,2,0,pioggia
+2021-04-15,18:45,Comune Ideale,Via Roma,45.4703,9.1999,tamponamento,3,1,0,nebbia
+2021-09-06,13:30,Comune Ideale,Viale Europa,45.45871,9.17891,tamponamento,1,1,0,sereno
+2021-07-06,13:00,Comune Ideale,Centro storico,45.45711,9.18495,urto laterale,2,0,0,sereno
+2021-01-27,16:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.47542,9.20076,tamponamento,1,1,0,sereno
+2021-03-25,02:45,Comune Ideale,Via Garibaldi,45.45649,9.20755,tamponamento,2,0,0,sereno
+2021-10-06,10:30,Comune Ideale,Tangenziale Nord,45.45779,9.19353,uscita di strada,2,0,0,nebbia
+2021-09-07,18:15,Comune Ideale,Piazza San Marco,45.46117,9.17838,ribaltamento,1,0,0,sereno
+2021-02-13,16:15,Comune Ideale,Via XX Settembre,45.4709,9.19259,ribaltamento,3,0,0,sereno
+2021-05-24,11:00,Comune Ideale,Rotatoria Stazione,45.4677,9.19264,ribaltamento,1,1,0,pioggia
+2022-04-22,06:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46843,9.18178,investimento pedone,1,1,0,nebbia
+2022-09-28,18:45,Comune Ideale,Centro storico,45.45396,9.18069,uscita di strada,2,2,0,pioggia
+2022-09-03,00:00,Comune Ideale,Centro storico,45.47418,9.20605,ribaltamento,1,0,0,pioggia
+2022-10-16,07:45,Comune Ideale,Viale dei Tigli,45.4651,9.17959,ribaltamento,2,0,0,pioggia
+2022-03-04,12:00,Comune Ideale,Viale dei Tigli,45.45964,9.18463,uscita di strada,2,0,0,nebbia
+2022-05-17,17:45,Comune Ideale,Piazza San Marco,45.47607,9.20137,uscita di strada,3,2,0,sereno
+2022-01-07,07:15,Comune Ideale,Strada Provinciale 5,45.47435,9.18794,urto laterale,1,0,0,pioggia
+2022-12-04,09:30,Comune Ideale,Via Garibaldi,45.45551,9.20755,tamponamento,2,0,0,sereno
+2022-11-19,19:45,Comune Ideale,Strada Provinciale 5,45.47387,9.17205,investimento pedone,3,1,0,nebbia
+2022-02-05,02:15,Comune Ideale,Rotatoria Stazione,45.4656,9.19696,uscita di strada,2,1,0,sereno
+2022-10-06,22:00,Comune Ideale,Via dei Mille,45.46377,9.18437,ribaltamento,3,3,0,sereno
+2022-10-22,11:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.4655,9.20246,tamponamento,1,2,0,sereno
+2022-05-23,14:45,Comune Ideale,Via XX Settembre,45.47508,9.20419,investimento pedone,3,0,0,sereno
+2022-02-01,19:00,Comune Ideale,Tangenziale Nord,45.45335,9.17247,investimento pedone,3,2,0,pioggia
+2022-10-17,10:00,Comune Ideale,Via XX Settembre,45.47253,9.17758,investimento pedone,3,0,0,sereno
+2022-03-07,18:30,Comune Ideale,Piazza San Marco,45.46375,9.18206,investimento pedone,3,4,0,pioggia
+2022-01-11,05:30,Comune Ideale,Via Garibaldi,45.46312,9.18491,investimento pedone,3,0,0,sereno
+2022-09-02,22:15,Comune Ideale,Centro storico,45.4586,9.19972,uscita di strada,1,0,0,pioggia
+2022-02-02,03:00,Comune Ideale,Via Manzoni,45.45863,9.1788,tamponamento,1,2,0,sereno
+2022-07-14,10:45,Comune Ideale,Viale Europa,45.47059,9.20468,ribaltamento,1,1,0,sereno
+2022-10-13,14:00,Comune Ideale,Viale Europa,45.46769,9.17739,ribaltamento,1,0,0,sereno
+2022-11-09,09:45,Comune Ideale,Tangenziale Nord,45.47156,9.18712,urto laterale,2,2,0,sereno
+2022-10-10,05:15,Comune Ideale,Piazza San Marco,45.46246,9.18558,uscita di strada,1,0,0,nebbia
+2022-05-23,09:45,Comune Ideale,Via dei Mille,45.47026,9.20623,urto laterale,1,1,0,pioggia
+2022-06-13,19:30,Comune Ideale,Via Roma,45.47244,9.17483,tamponamento,3,0,0,sereno
+2022-06-14,20:30,Comune Ideale,Via XX Settembre,45.45351,9.18825,investimento pedone,1,1,0,sereno
+2022-12-03,16:45,Comune Ideale,Via Garibaldi,45.45778,9.17571,urto laterale,2,1,0,nebbia
+2022-12-11,02:15,Comune Ideale,Rotatoria Stazione,45.47436,9.20499,investimento pedone,3,0,0,sereno
+2022-06-13,21:15,Comune Ideale,Viale dei Tigli,45.45535,9.17538,uscita di strada,1,0,0,pioggia
+2022-02-06,07:00,Comune Ideale,Centro storico,45.45639,9.20499,tamponamento,1,0,0,sereno
+2022-11-05,16:45,Comune Ideale,Strada Provinciale 5,45.45838,9.19555,urto laterale,2,2,0,sereno
+2022-02-11,02:15,Comune Ideale,Via XX Settembre,45.47434,9.18155,investimento pedone,3,3,0,sereno
+2022-05-09,21:00,Comune Ideale,Tangenziale Nord,45.46795,9.20752,investimento pedone,2,2,0,sereno
+2022-05-07,12:45,Comune Ideale,Via dei Mille,45.46902,9.1891,investimento pedone,3,1,1,sereno
+2022-02-02,03:00,Comune Ideale,Via XX Settembre,45.46946,9.18989,tamponamento,2,0,0,nebbia
+2022-03-26,16:30,Comune Ideale,Tangenziale Nord,45.45911,9.20018,urto laterale,3,1,0,pioggia
+2022-05-13,14:30,Comune Ideale,Via Manzoni,45.46658,9.20562,urto laterale,1,3,0,sereno
+2022-06-28,09:00,Comune Ideale,Via Manzoni,45.45946,9.19452,investimento pedone,1,1,0,sereno
+2022-03-11,03:15,Comune Ideale,Via XX Settembre,45.46291,9.17917,urto laterale,2,3,0,nebbia
+2022-03-09,04:30,Comune Ideale,Centro storico,45.47003,9.20355,urto laterale,1,0,0,sereno
+2022-08-20,11:00,Comune Ideale,Via Manzoni,45.46531,9.19548,urto laterale,1,1,0,sereno
+2022-03-06,10:45,Comune Ideale,Viale dei Tigli,45.46767,9.19705,ribaltamento,3,1,0,sereno
+2022-01-08,14:45,Comune Ideale,Via Manzoni,45.46434,9.18433,uscita di strada,1,3,0,sereno
+2022-01-15,21:30,Comune Ideale,Rotatoria Stazione,45.45589,9.17839,uscita di strada,2,1,0,nebbia
+2022-03-16,05:45,Comune Ideale,Viale dei Tigli,45.45635,9.20014,ribaltamento,3,1,0,sereno
+2022-05-17,11:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46766,9.20792,ribaltamento,1,1,0,sereno
+2022-04-27,11:00,Comune Ideale,Viale dei Tigli,45.47343,9.17405,tamponamento,1,1,1,sereno
+2022-04-03,08:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.47265,9.20663,urto laterale,2,0,0,sereno
+2022-12-26,11:45,Comune Ideale,Via Roma,45.45256,9.19221,uscita di strada,3,0,0,sereno
+2022-10-10,13:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.4698,9.17696,urto laterale,2,1,0,pioggia
+2022-02-21,08:15,Comune Ideale,Via XX Settembre,45.46568,9.18446,investimento pedone,3,1,0,pioggia
+2022-04-08,20:00,Comune Ideale,Rotatoria Stazione,45.47437,9.1941,investimento pedone,2,0,0,sereno
+2022-10-11,14:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.47422,9.18011,urto laterale,3,1,0,sereno
+2022-07-11,09:15,Comune Ideale,Via XX Settembre,45.4693,9.19458,investimento pedone,3,1,0,sereno
+2022-09-05,01:15,Comune Ideale,Via XX Settembre,45.45665,9.20241,urto laterale,1,0,0,sereno
+2022-01-20,02:45,Comune Ideale,Via Roma,45.47193,9.20789,ribaltamento,2,1,0,nebbia
+2022-08-20,11:30,Comune Ideale,Centro storico,45.47058,9.18669,uscita di strada,3,2,0,nebbia
+2022-01-02,12:45,Comune Ideale,Via Garibaldi,45.4535,9.18958,tamponamento,3,0,0,sereno
+2022-08-18,18:30,Comune Ideale,Centro storico,45.46726,9.18652,investimento pedone,1,0,0,nebbia
+2022-06-20,10:30,Comune Ideale,Strada Provinciale 5,45.46073,9.2072,tamponamento,1,2,0,nebbia
+2022-08-23,11:30,Comune Ideale,Rotatoria Stazione,45.45256,9.20731,tamponamento,1,0,0,nebbia
+2022-06-11,12:30,Comune Ideale,Via dei Mille,45.47284,9.20048,ribaltamento,1,1,0,sereno
+2022-12-05,07:45,Comune Ideale,Via Garibaldi,45.4658,9.18606,urto laterale,1,3,0,nebbia
+2022-04-17,17:30,Comune Ideale,Viale dei Tigli,45.4594,9.20454,urto laterale,2,3,1,sereno
+2022-10-04,06:30,Comune Ideale,Rotatoria Stazione,45.4675,9.18043,uscita di strada,2,0,0,pioggia
+2022-03-27,14:45,Comune Ideale,Viale dei Tigli,45.46087,9.18748,uscita di strada,2,2,0,pioggia
+2022-06-28,01:30,Comune Ideale,Centro storico,45.46099,9.17273,ribaltamento,1,0,1,sereno
+2022-04-23,04:45,Comune Ideale,Tangenziale Nord,45.46947,9.20082,tamponamento,1,3,0,sereno
+2022-06-26,17:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46205,9.18207,urto laterale,3,4,0,sereno
+2022-04-16,04:30,Comune Ideale,Viale Europa,45.45695,9.19857,uscita di strada,3,1,0,pioggia
+2022-01-17,02:15,Comune Ideale,Via Manzoni,45.47057,9.20739,uscita di strada,2,1,0,sereno
+2022-08-13,08:30,Comune Ideale,Tangenziale Nord,45.45388,9.2004,investimento pedone,3,1,0,pioggia
+2022-09-10,13:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45341,9.19676,investimento pedone,2,0,0,pioggia
+2022-05-01,19:00,Comune Ideale,Rotatoria Stazione,45.45531,9.1943,investimento pedone,2,0,0,nebbia
+2022-03-08,15:30,Comune Ideale,Strada Provinciale 5,45.47619,9.18398,tamponamento,3,3,0,sereno
+2022-04-07,14:30,Comune Ideale,Via Manzoni,45.47073,9.18469,investimento pedone,2,0,2,sereno
+2022-03-07,11:45,Comune Ideale,Viale dei Tigli,45.47349,9.17546,tamponamento,3,1,0,pioggia
+2022-04-18,09:45,Comune Ideale,Tangenziale Nord,45.45363,9.18242,uscita di strada,3,0,0,nebbia
+2022-01-06,09:00,Comune Ideale,Centro storico,45.47142,9.19511,tamponamento,1,2,0,sereno
+2022-11-01,04:30,Comune Ideale,Tangenziale Nord,45.46587,9.17372,uscita di strada,2,1,0,sereno
+2022-01-28,20:15,Comune Ideale,Via dei Mille,45.47214,9.1777,ribaltamento,3,1,0,nebbia
+2022-05-25,19:00,Comune Ideale,Tangenziale Nord,45.46584,9.19082,investimento pedone,3,1,0,nebbia
+2022-08-03,08:15,Comune Ideale,Tangenziale Nord,45.47111,9.19843,investimento pedone,3,4,0,pioggia
+2022-10-03,00:30,Comune Ideale,Strada Provinciale 5,45.46115,9.19531,tamponamento,1,1,0,sereno
+2022-12-12,06:45,Comune Ideale,Tangenziale Nord,45.45391,9.17834,uscita di strada,1,1,0,sereno
+2022-04-23,14:15,Comune Ideale,Via Garibaldi,45.45995,9.20618,tamponamento,2,0,0,nebbia
+2022-01-20,06:30,Comune Ideale,Via XX Settembre,45.4625,9.20418,ribaltamento,1,0,0,sereno
+2022-02-22,18:30,Comune Ideale,Via dei Mille,45.46588,9.17788,investimento pedone,2,2,0,sereno
+2022-06-16,13:30,Comune Ideale,Rotatoria Stazione,45.4585,9.20581,investimento pedone,3,1,0,sereno
+2022-04-25,21:00,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45525,9.19721,tamponamento,1,2,0,nebbia
+2022-03-24,02:00,Comune Ideale,Via Manzoni,45.45538,9.19402,investimento pedone,1,0,0,sereno
+2022-04-11,00:00,Comune Ideale,Via Garibaldi,45.46631,9.19969,urto laterale,3,1,0,pioggia
+2022-10-16,09:15,Comune Ideale,Viale dei Tigli,45.4536,9.19553,uscita di strada,1,3,0,nebbia
+2022-01-10,00:15,Comune Ideale,Strada Provinciale 5,45.45923,9.19272,tamponamento,3,2,0,sereno
+2022-08-04,21:30,Comune Ideale,Via Garibaldi,45.45347,9.17597,investimento pedone,1,1,1,pioggia
+2022-06-04,19:30,Comune Ideale,Viale Europa,45.46037,9.1993,investimento pedone,3,2,0,nebbia
+2022-07-12,02:15,Comune Ideale,Centro storico,45.47163,9.17393,ribaltamento,3,0,0,pioggia
+2022-12-16,19:15,Comune Ideale,Via XX Settembre,45.46104,9.20288,ribaltamento,1,1,0,nebbia
+2022-12-09,16:30,Comune Ideale,Centro storico,45.47497,9.19723,uscita di strada,1,1,0,nebbia
+2022-04-22,22:45,Comune Ideale,Via Manzoni,45.45249,9.17232,ribaltamento,2,0,0,sereno
+2022-12-22,18:15,Comune Ideale,Via dei Mille,45.45488,9.18972,ribaltamento,3,0,0,sereno
+2022-12-04,16:30,Comune Ideale,Via Manzoni,45.45736,9.20499,ribaltamento,3,0,0,pioggia
+2022-07-02,17:00,Comune Ideale,Viale Europa,45.47321,9.20404,ribaltamento,1,0,0,nebbia
+2022-11-26,08:15,Comune Ideale,Centro storico,45.4582,9.20345,tamponamento,3,0,0,pioggia
+2022-03-23,22:00,Comune Ideale,Piazza San Marco,45.45326,9.2073,uscita di strada,3,0,0,nebbia
+2022-05-18,16:45,Comune Ideale,Tangenziale Nord,45.47442,9.20427,tamponamento,1,1,0,sereno
+2022-12-27,11:45,Comune Ideale,Tangenziale Nord,45.45393,9.18874,tamponamento,1,3,0,pioggia
+2022-03-10,15:00,Comune Ideale,Centro storico,45.46354,9.19758,urto laterale,2,1,0,sereno
+2023-12-07,18:30,Comune Ideale,Via dei Mille,45.47109,9.19898,investimento pedone,2,0,2,sereno
+2023-11-02,08:45,Comune Ideale,Via Roma,45.45857,9.18139,tamponamento,2,4,0,sereno
+2023-04-19,21:30,Comune Ideale,Via Manzoni,45.45323,9.20559,uscita di strada,3,2,0,pioggia
+2023-12-09,16:45,Comune Ideale,Strada Provinciale 5,45.45939,9.18637,tamponamento,3,1,0,nebbia
+2023-12-19,01:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45819,9.17788,uscita di strada,2,1,1,sereno
+2023-05-04,22:00,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46521,9.20421,tamponamento,3,0,0,sereno
+2023-01-20,00:45,Comune Ideale,Rotatoria Stazione,45.4706,9.18488,uscita di strada,1,1,0,sereno
+2023-09-20,12:45,Comune Ideale,Via Roma,45.46594,9.17674,tamponamento,1,1,0,sereno
+2023-10-20,20:00,Comune Ideale,Via XX Settembre,45.45238,9.17999,investimento pedone,2,0,0,sereno
+2023-09-02,17:45,Comune Ideale,Centro storico,45.45803,9.19187,urto laterale,1,0,0,sereno
+2023-10-13,05:45,Comune Ideale,Centro storico,45.47457,9.18016,ribaltamento,1,2,0,sereno
+2023-11-17,23:00,Comune Ideale,Via Garibaldi,45.47533,9.19673,tamponamento,2,1,0,pioggia
+2023-12-10,01:30,Comune Ideale,Viale dei Tigli,45.45241,9.20479,urto laterale,2,1,0,pioggia
+2023-04-25,10:00,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46878,9.17282,investimento pedone,3,0,0,pioggia
+2023-07-18,01:00,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.47223,9.19599,ribaltamento,2,2,1,sereno
+2023-07-12,14:30,Comune Ideale,Piazza San Marco,45.45962,9.17835,tamponamento,3,4,0,sereno
+2023-02-12,02:45,Comune Ideale,Via Garibaldi,45.46987,9.18063,investimento pedone,3,1,0,sereno
+2023-07-17,17:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46345,9.17277,uscita di strada,2,1,0,nebbia
+2023-06-09,19:15,Comune Ideale,Viale Europa,45.46921,9.18734,ribaltamento,1,2,0,sereno
+2023-12-16,08:15,Comune Ideale,Via Manzoni,45.46035,9.19222,urto laterale,1,1,0,nebbia
+2023-12-05,05:15,Comune Ideale,Via Garibaldi,45.47364,9.18692,investimento pedone,2,1,0,nebbia
+2023-03-09,14:30,Comune Ideale,Via dei Mille,45.47037,9.19624,urto laterale,1,0,0,sereno
+2023-04-28,19:30,Comune Ideale,Viale dei Tigli,45.4525,9.19282,uscita di strada,3,0,0,sereno
+2023-09-07,10:30,Comune Ideale,Via Garibaldi,45.4684,9.20742,investimento pedone,1,3,0,nebbia
+2023-08-23,08:30,Comune Ideale,Via dei Mille,45.46147,9.20456,tamponamento,1,0,0,nebbia
+2023-12-26,13:45,Comune Ideale,Via dei Mille,45.45831,9.1919,ribaltamento,2,0,0,nebbia
+2023-01-15,21:45,Comune Ideale,Viale Europa,45.46632,9.19984,uscita di strada,2,0,0,sereno
+2023-07-08,09:15,Comune Ideale,Via Garibaldi,45.45318,9.20441,ribaltamento,2,1,0,nebbia
+2023-04-15,07:45,Comune Ideale,Via Manzoni,45.45309,9.19494,urto laterale,1,2,0,sereno
+2023-05-25,18:45,Comune Ideale,Via Roma,45.46075,9.17634,ribaltamento,2,2,0,sereno
+2023-12-05,11:30,Comune Ideale,Tangenziale Nord,45.46503,9.17571,ribaltamento,2,3,0,nebbia
+2023-09-14,02:30,Comune Ideale,Via XX Settembre,45.47113,9.19506,urto laterale,1,1,0,nebbia
+2023-07-04,17:15,Comune Ideale,Centro storico,45.45889,9.17472,ribaltamento,2,0,0,sereno
+2023-01-22,09:00,Comune Ideale,Via Garibaldi,45.4583,9.19692,urto laterale,1,0,0,pioggia
+2023-02-05,02:15,Comune Ideale,Via XX Settembre,45.47402,9.17656,urto laterale,1,0,0,sereno
+2023-02-21,00:45,Comune Ideale,Via Manzoni,45.46992,9.17249,ribaltamento,2,1,0,nebbia
+2023-07-21,20:30,Comune Ideale,Centro storico,45.46276,9.19622,tamponamento,1,1,0,pioggia
+2023-03-27,19:30,Comune Ideale,Via Roma,45.47581,9.19684,ribaltamento,1,0,0,nebbia
+2023-03-08,04:30,Comune Ideale,Strada Provinciale 5,45.4702,9.20323,investimento pedone,1,1,0,pioggia
+2023-04-04,07:30,Comune Ideale,Strada Provinciale 5,45.47609,9.1881,investimento pedone,2,0,0,sereno
+2023-04-26,06:30,Comune Ideale,Centro storico,45.47412,9.19941,tamponamento,3,3,0,nebbia
+2023-01-19,08:15,Comune Ideale,Via XX Settembre,45.46898,9.18212,investimento pedone,1,0,0,sereno
+2023-08-18,18:30,Comune Ideale,Centro storico,45.45324,9.17939,investimento pedone,2,1,0,pioggia
+2023-03-01,02:15,Comune Ideale,Viale Europa,45.47206,9.19426,urto laterale,2,2,0,pioggia
+2023-01-11,09:15,Comune Ideale,Rotatoria Stazione,45.46347,9.18783,uscita di strada,2,0,0,sereno
+2023-12-13,05:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46747,9.19338,tamponamento,1,0,0,sereno
+2023-05-04,12:15,Comune Ideale,Via Garibaldi,45.46876,9.19641,tamponamento,1,0,0,sereno
+2023-06-26,10:45,Comune Ideale,Viale Europa,45.47362,9.18243,tamponamento,2,1,0,sereno
+2023-04-19,01:00,Comune Ideale,Via XX Settembre,45.46085,9.18125,uscita di strada,3,0,0,pioggia
+2023-08-23,10:30,Comune Ideale,Centro storico,45.46651,9.18255,ribaltamento,3,0,0,nebbia
+2023-08-17,17:00,Comune Ideale,Via dei Mille,45.45586,9.19687,investimento pedone,2,0,0,sereno
+2023-07-01,21:00,Comune Ideale,Via Roma,45.46851,9.19571,tamponamento,2,2,0,sereno
+2023-07-07,00:30,Comune Ideale,Piazza San Marco,45.47399,9.2008,ribaltamento,3,1,0,pioggia
+2023-01-24,16:15,Comune Ideale,Piazza San Marco,45.46803,9.18734,tamponamento,3,0,0,nebbia
+2023-03-20,00:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46016,9.17287,urto laterale,1,0,0,sereno
+2023-10-24,11:15,Comune Ideale,Via XX Settembre,45.45923,9.18324,tamponamento,1,1,0,sereno
+2023-02-22,20:15,Comune Ideale,Piazza San Marco,45.46001,9.1927,tamponamento,2,0,0,sereno
+2023-02-11,20:15,Comune Ideale,Tangenziale Nord,45.4657,9.18425,ribaltamento,1,1,0,sereno
+2023-09-22,03:15,Comune Ideale,Via XX Settembre,45.46375,9.18953,investimento pedone,1,0,0,pioggia
+2023-04-21,04:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45861,9.19306,tamponamento,1,2,0,sereno
+2023-11-26,22:30,Comune Ideale,Via dei Mille,45.47309,9.1898,ribaltamento,1,3,0,sereno
+2023-11-17,16:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46991,9.17758,tamponamento,2,1,0,pioggia
+2023-10-03,09:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45383,9.17887,investimento pedone,3,0,0,sereno
+2023-11-28,10:45,Comune Ideale,Via Manzoni,45.45712,9.18401,tamponamento,2,1,0,sereno
+2023-05-02,19:00,Comune Ideale,Via Roma,45.4564,9.17229,urto laterale,1,3,0,pioggia
+2023-09-24,13:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.47157,9.17311,uscita di strada,1,0,0,sereno
+2023-02-05,16:15,Comune Ideale,Viale Europa,45.4577,9.18402,tamponamento,3,1,0,nebbia
+2023-07-14,12:15,Comune Ideale,Viale dei Tigli,45.47169,9.20439,urto laterale,2,0,0,pioggia
+2023-02-17,19:30,Comune Ideale,Rotatoria Stazione,45.47223,9.18136,investimento pedone,3,1,0,sereno
+2023-04-03,03:45,Comune Ideale,Via dei Mille,45.45863,9.17578,ribaltamento,3,4,0,pioggia
+2023-03-06,14:00,Comune Ideale,Piazza San Marco,45.45802,9.18297,ribaltamento,3,0,0,pioggia
+2023-12-13,15:30,Comune Ideale,Piazza San Marco,45.45542,9.18167,urto laterale,2,2,0,pioggia
+2023-07-04,20:30,Comune Ideale,Rotatoria Stazione,45.45473,9.18485,urto laterale,2,0,0,sereno
+2023-08-24,13:45,Comune Ideale,Via Manzoni,45.45649,9.20059,uscita di strada,2,1,0,sereno
+2023-07-03,16:45,Comune Ideale,Rotatoria Stazione,45.47136,9.17666,tamponamento,3,0,0,sereno
+2023-02-16,14:45,Comune Ideale,Tangenziale Nord,45.47163,9.19903,urto laterale,3,0,0,sereno
+2023-01-23,10:30,Comune Ideale,Via Roma,45.46176,9.20433,investimento pedone,2,0,0,sereno
+2023-12-09,12:30,Comune Ideale,Centro storico,45.46756,9.17705,tamponamento,1,3,0,pioggia
+2023-03-28,15:45,Comune Ideale,Via dei Mille,45.45677,9.18803,ribaltamento,1,3,0,sereno
+2023-09-24,16:15,Comune Ideale,Via dei Mille,45.4715,9.20558,urto laterale,1,0,0,pioggia
+2023-01-18,20:15,Comune Ideale,Centro storico,45.47478,9.19416,urto laterale,2,1,0,nebbia
+2023-12-02,10:30,Comune Ideale,Via Roma,45.47565,9.19522,tamponamento,2,2,0,sereno
+2023-06-04,20:45,Comune Ideale,Viale Europa,45.4629,9.18695,investimento pedone,1,1,0,nebbia
+2023-12-12,03:00,Comune Ideale,Via Manzoni,45.46587,9.19215,ribaltamento,2,3,0,nebbia
+2023-07-28,12:00,Comune Ideale,Via XX Settembre,45.46494,9.1945,ribaltamento,1,0,0,sereno
+2023-01-03,10:45,Comune Ideale,Rotatoria Stazione,45.47455,9.17519,urto laterale,3,1,0,sereno
+2023-06-28,04:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46383,9.19163,tamponamento,3,1,0,sereno
+2023-02-01,17:00,Comune Ideale,Strada Provinciale 5,45.46128,9.18785,ribaltamento,2,0,0,nebbia
+2023-05-22,11:45,Comune Ideale,Via Garibaldi,45.47424,9.1775,uscita di strada,2,0,0,sereno
+2023-10-23,20:45,Comune Ideale,Via Roma,45.45575,9.1848,urto laterale,1,0,0,pioggia
+2023-11-23,10:45,Comune Ideale,Viale dei Tigli,45.46455,9.17284,uscita di strada,1,0,0,sereno
+2024-02-14,02:00,Comune Ideale,Centro storico,45.45492,9.18954,investimento pedone,1,2,0,sereno
+2024-11-25,00:45,Comune Ideale,Via dei Mille,45.46522,9.19007,investimento pedone,3,0,0,sereno
+2024-09-24,19:15,Comune Ideale,Piazza San Marco,45.45832,9.1916,uscita di strada,1,0,0,nebbia
+2024-02-03,00:45,Comune Ideale,Strada Provinciale 5,45.4679,9.20186,tamponamento,1,1,0,sereno
+2024-03-09,23:30,Comune Ideale,Tangenziale Nord,45.46113,9.18515,uscita di strada,1,2,0,sereno
+2024-02-26,16:45,Comune Ideale,Piazza San Marco,45.46439,9.18463,ribaltamento,3,4,0,sereno
+2024-04-24,15:30,Comune Ideale,Via Roma,45.45897,9.19855,investimento pedone,2,0,0,sereno
+2024-12-17,18:15,Comune Ideale,Via dei Mille,45.46578,9.18289,investimento pedone,2,0,0,sereno
+2024-05-13,17:30,Comune Ideale,Viale Europa,45.46462,9.18018,ribaltamento,3,2,0,sereno
+2024-03-20,18:00,Comune Ideale,Strada Provinciale 5,45.46823,9.17281,investimento pedone,2,0,0,sereno
+2024-01-25,14:30,Comune Ideale,Via Garibaldi,45.46075,9.18957,ribaltamento,2,1,0,sereno
+2024-02-10,08:00,Comune Ideale,Via Garibaldi,45.45628,9.17772,urto laterale,2,1,0,sereno
+2024-02-18,22:45,Comune Ideale,Via XX Settembre,45.47139,9.19973,urto laterale,1,0,1,sereno
+2024-06-23,12:30,Comune Ideale,Viale Europa,45.45858,9.19273,ribaltamento,2,2,0,pioggia
+2024-08-23,13:45,Comune Ideale,Via Manzoni,45.458,9.20606,urto laterale,2,0,0,sereno
+2024-02-22,04:45,Comune Ideale,Via dei Mille,45.45225,9.19509,tamponamento,2,3,0,pioggia
+2024-07-27,10:15,Comune Ideale,Via XX Settembre,45.46164,9.18876,urto laterale,2,0,0,sereno
+2024-10-02,15:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46587,9.1739,investimento pedone,2,0,0,sereno
+2024-12-13,16:15,Comune Ideale,Via Manzoni,45.47316,9.17989,urto laterale,3,1,0,pioggia
+2024-07-03,09:15,Comune Ideale,Via dei Mille,45.46992,9.17682,uscita di strada,3,0,0,sereno
+2024-10-24,08:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46138,9.19597,uscita di strada,1,2,0,sereno
+2024-12-18,13:15,Comune Ideale,Piazza San Marco,45.46613,9.20106,uscita di strada,3,1,0,nebbia
+2024-05-28,23:30,Comune Ideale,Via XX Settembre,45.47397,9.19345,uscita di strada,2,0,0,pioggia
+2024-05-17,14:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45822,9.17789,uscita di strada,2,2,0,sereno
+2024-09-23,05:15,Comune Ideale,Centro storico,45.4723,9.18743,investimento pedone,1,1,0,nebbia
+2024-03-14,17:00,Comune Ideale,Tangenziale Nord,45.46849,9.20255,urto laterale,1,0,0,sereno
+2024-10-24,07:45,Comune Ideale,Via XX Settembre,45.47469,9.19644,ribaltamento,1,0,0,sereno
+2024-09-27,23:30,Comune Ideale,Rotatoria Stazione,45.46668,9.18312,uscita di strada,2,2,0,sereno
+2024-11-13,12:30,Comune Ideale,Viale dei Tigli,45.46571,9.1949,investimento pedone,3,0,0,pioggia
+2024-10-16,16:15,Comune Ideale,Tangenziale Nord,45.4552,9.18158,investimento pedone,2,1,0,pioggia
+2024-11-01,22:00,Comune Ideale,Via Garibaldi,45.46947,9.20683,uscita di strada,1,1,0,sereno
+2024-03-06,12:45,Comune Ideale,Viale dei Tigli,45.46158,9.19546,urto laterale,3,1,0,sereno
+2024-08-16,21:15,Comune Ideale,Via XX Settembre,45.46987,9.20677,ribaltamento,2,0,0,pioggia
+2024-04-13,17:30,Comune Ideale,Tangenziale Nord,45.46166,9.20495,investimento pedone,1,1,0,pioggia
+2024-12-23,03:30,Comune Ideale,Viale Europa,45.46066,9.18491,uscita di strada,1,1,0,sereno
+2024-11-09,09:30,Comune Ideale,Piazza San Marco,45.46289,9.18409,uscita di strada,3,0,0,nebbia
+2024-12-15,02:30,Comune Ideale,Via Roma,45.46407,9.2028,urto laterale,2,2,2,nebbia
+2024-03-06,09:45,Comune Ideale,Via Roma,45.47188,9.1941,ribaltamento,2,2,0,pioggia
+2024-03-08,23:45,Comune Ideale,Via XX Settembre,45.45786,9.18189,uscita di strada,3,1,0,sereno
+2024-09-26,03:30,Comune Ideale,Strada Provinciale 5,45.45411,9.19788,urto laterale,3,0,0,sereno
+2024-04-19,14:30,Comune Ideale,Via Roma,45.47544,9.18185,uscita di strada,2,2,0,pioggia
+2024-08-12,21:45,Comune Ideale,Via XX Settembre,45.46889,9.20432,urto laterale,3,0,0,nebbia
+2024-10-06,05:45,Comune Ideale,Piazza San Marco,45.46478,9.20388,uscita di strada,2,2,0,pioggia
+2024-11-15,23:00,Comune Ideale,Centro storico,45.46799,9.18343,tamponamento,2,3,0,sereno
+2024-01-05,04:15,Comune Ideale,Rotatoria Stazione,45.46009,9.20452,investimento pedone,1,1,1,sereno
+2024-02-11,09:15,Comune Ideale,Tangenziale Nord,45.46132,9.20692,urto laterale,2,0,0,pioggia
+2024-01-15,17:30,Comune Ideale,Via Roma,45.47287,9.1968,investimento pedone,1,1,1,sereno
+2024-03-18,06:15,Comune Ideale,Via XX Settembre,45.45479,9.18913,ribaltamento,2,1,0,sereno
+2024-08-28,07:45,Comune Ideale,Strada Provinciale 5,45.4655,9.17319,uscita di strada,2,2,0,pioggia
+2024-10-03,19:45,Comune Ideale,Via Manzoni,45.45816,9.17546,ribaltamento,2,1,2,sereno
+2024-09-08,05:45,Comune Ideale,Viale dei Tigli,45.47125,9.17302,tamponamento,3,1,0,nebbia
+2024-04-10,01:45,Comune Ideale,Via Garibaldi,45.46043,9.20233,tamponamento,2,0,0,sereno
+2024-12-23,00:30,Comune Ideale,Centro storico,45.47322,9.1893,tamponamento,3,1,1,pioggia
+2024-01-17,22:00,Comune Ideale,Tangenziale Nord,45.46061,9.19925,uscita di strada,1,2,0,pioggia
+2024-11-28,23:00,Comune Ideale,Rotatoria Stazione,45.46006,9.18642,uscita di strada,2,1,0,nebbia
+2024-09-09,18:45,Comune Ideale,Viale dei Tigli,45.46933,9.19535,ribaltamento,2,0,0,sereno
+2024-08-02,23:15,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45468,9.19239,uscita di strada,1,0,0,sereno
+2024-04-01,06:45,Comune Ideale,Viale Europa,45.46824,9.2005,urto laterale,1,1,0,sereno
+2024-04-05,23:00,Comune Ideale,Viale Europa,45.46127,9.17853,tamponamento,2,1,0,sereno
+2024-12-06,05:00,Comune Ideale,Via Garibaldi,45.46076,9.18082,uscita di strada,1,1,0,sereno
+2024-09-12,04:00,Comune Ideale,Centro storico,45.45626,9.17317,uscita di strada,2,0,0,sereno
+2024-04-14,11:00,Comune Ideale,Strada Provinciale 5,45.47463,9.20469,investimento pedone,3,2,0,sereno
+2024-02-17,00:45,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.46653,9.20707,ribaltamento,2,0,0,nebbia
+2024-01-07,19:30,Comune Ideale,Via Garibaldi,45.4691,9.20234,uscita di strada,1,0,0,nebbia
+2024-11-25,02:30,Comune Ideale,Rotatoria Stazione,45.45343,9.18733,investimento pedone,2,2,0,sereno
+2024-06-16,12:30,Comune Ideale,Via Garibaldi,45.46748,9.18837,investimento pedone,2,0,0,sereno
+2024-06-06,11:15,Comune Ideale,Tangenziale Nord,45.45635,9.17274,tamponamento,3,1,0,nebbia
+2024-10-01,06:45,Comune Ideale,Via dei Mille,45.45309,9.19072,ribaltamento,3,0,0,sereno
+2024-01-18,09:15,Comune Ideale,Piazza San Marco,45.46172,9.19444,urto laterale,2,1,1,sereno
+2024-05-27,21:00,Comune Ideale,Centro storico,45.4726,9.17935,ribaltamento,1,2,0,sereno
+2024-06-20,23:30,Comune Ideale,Via dei Mille,45.45639,9.19504,uscita di strada,1,1,0,pioggia
+2024-01-14,12:15,Comune Ideale,Strada Provinciale 5,45.45402,9.18887,ribaltamento,1,0,0,pioggia
+2024-10-01,14:45,Comune Ideale,Via Garibaldi,45.46801,9.19454,investimento pedone,3,0,0,nebbia
+2024-07-17,02:30,Comune Ideale,Rotatoria Stazione,45.47029,9.19239,ribaltamento,2,1,0,sereno
+2024-06-13,14:30,Comune Ideale,Via XX Settembre,45.46211,9.18081,ribaltamento,1,0,0,sereno
+2024-09-26,15:45,Comune Ideale,Strada Provinciale 5,45.4607,9.18738,uscita di strada,2,0,0,nebbia
+2024-01-27,06:15,Comune Ideale,Rotatoria Stazione,45.46067,9.18353,uscita di strada,1,0,0,nebbia
+2024-06-20,00:15,Comune Ideale,Via dei Mille,45.47168,9.20582,tamponamento,3,1,0,sereno
+2024-11-14,18:15,Comune Ideale,Centro storico,45.47379,9.17533,tamponamento,2,4,0,sereno
+2024-09-09,01:30,Comune Ideale,Tangenziale Nord,45.46495,9.18575,ribaltamento,3,0,0,nebbia
+2024-10-23,20:30,Comune Ideale,Viale Europa,45.45966,9.19444,investimento pedone,2,0,2,pioggia
+2024-12-05,07:45,Comune Ideale,Strada Provinciale 5,45.46314,9.17259,uscita di strada,2,2,1,nebbia
+2024-05-21,10:30,Comune Ideale,Via Garibaldi,45.46205,9.18446,tamponamento,2,0,0,sereno
+2024-04-13,07:30,Comune Ideale,Rotatoria Stazione,45.46258,9.20332,urto laterale,2,1,0,sereno
+2024-10-09,01:30,Comune Ideale,Via XX Settembre,45.46963,9.18765,urto laterale,1,0,0,nebbia
+2024-04-04,20:45,Comune Ideale,Via dei Mille,45.4533,9.19171,ribaltamento,3,2,0,sereno
+2024-04-02,12:30,Comune Ideale,Strada Provinciale 5,45.46991,9.20669,ribaltamento,3,0,0,nebbia
+2024-07-24,12:00,Comune Ideale,Via Manzoni,45.46539,9.19772,tamponamento,3,0,1,sereno
+2024-06-02,13:30,Comune Ideale,Incrocio Via Mazzini/Via Verdi,45.45973,9.18394,urto laterale,3,1,0,sereno

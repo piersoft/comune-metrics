@@ -17,34 +17,7 @@
     "rd_pct": "FRAZIONE_LONG: una riga con frazione='Differenziata_pct', unita_misura='%'",
     "quartiere": "localita"
   },
-  "required_columns": [
-    {
-      "name": "anno",
-      "datatype": "integer",
-      "constraints": {
-        "min": 1900,
-        "max": 2050
-      },
-      "description": "Anno di riferimento",
-      "rdf_predicate": "sdmx-dimension:refPeriod"
-    },
-    {
-      "name": "frazione",
-      "datatype": "string",
-      "max_length": 100,
-      "description": "Frazione merceologica o tipo di osservazione. Valori canonici: 'Totale', 'Differenziata', 'Indifferenziata', 'Differenziata_pct', 'Carta', 'Plastica', 'Vetro', 'Organico', 'Metallo', 'Tessile', 'RAEE'.",
-      "rdf_predicate": "dct:type@it"
-    },
-    {
-      "name": "valore",
-      "datatype": "number",
-      "constraints": {
-        "min": 0
-      },
-      "description": "Valore osservato",
-      "rdf_predicate": "sdmx-measure:obsValue"
-    }
-  ],
+  "required_columns": [],
   "optional_columns": [
     {
       "name": "unita_misura",
@@ -79,6 +52,52 @@
       "datatype": "string",
       "max_length": 50,
       "description": "Unità di misura QB"
+    },
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "constraints": {
+        "min": 1900,
+        "max": 2050
+      },
+      "description": "Anno di riferimento",
+      "rdf_predicate": "sdmx-dimension:refPeriod"
+    },
+    {
+      "name": "frazione",
+      "datatype": "string",
+      "max_length": 100,
+      "description": "Frazione merceologica o tipo di osservazione. Valori canonici: 'Totale', 'Differenziata', 'Indifferenziata', 'Differenziata_pct', 'Carta', 'Plastica', 'Vetro', 'Organico', 'Metallo', 'Tessile', 'RAEE'.",
+      "rdf_predicate": "dct:type@it"
+    },
+    {
+      "name": "valore",
+      "datatype": "number",
+      "constraints": {
+        "min": 0
+      },
+      "description": "Valore osservato",
+      "rdf_predicate": "sdmx-measure:obsValue"
+    },
+    {
+      "name": "regione",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker rifiuti"
+    },
+    {
+      "name": "provincia",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker rifiuti"
+    },
+    {
+      "name": "tipo_frazione",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker rifiuti"
+    },
+    {
+      "name": "quantita",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker rifiuti"
     }
   ],
   "example": "anno,frazione,valore_assoluto,unita_misura\n2024,Totale,16910000,kg\n2024,Differenziata_pct,73.2,%\n2023,Totale,16980000,kg\n2023,Differenziata_pct,71.5,%\n2024,Carta,3450000,kg\n2024,Plastica,1820000,kg\n2024,Vetro,2100000,kg\n2024,Organico,4520000,kg\n",
@@ -88,5 +107,6 @@
     "DOPO (v2.0, long): 'anno,frazione,valore_assoluto,unita_misura,localita' — 5 colonne, 5/5 deterministiche.",
     "Convenzioni valori 'frazione': 'Totale' (rifiuti complessivi), 'Differenziata' (kg differenziati), 'Indifferenziata' (kg residui), 'Differenziata_pct' (percentuale RD), e poi nomi merceologici (Carta, Plastica, Vetro, Organico, Metallo, Tessile, RAEE).",
     "Per backwards-compat, i calcolatori v2 supportano ENTRAMBI i formati: se il CSV ha le colonne wide vecchie le legge, altrimenti aggrega dal formato long."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

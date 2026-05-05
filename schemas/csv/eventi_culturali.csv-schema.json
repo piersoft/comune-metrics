@@ -5,21 +5,16 @@
   "description": "Una riga per evento o manifestazione, con luogo, data, categoria.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "data_inizio": "datainizio",
     "data_fine": "datafine"
   },
-  "required_columns": [
-    {
-      "name": "nome",
-      "datatype": "string",
-      "max_length": 500,
-      "description": "Nome o titolo dell'evento",
-      "rdf_predicate": "rdfs:label@it"
-    }
-  ],
+  "required_columns": [],
   "optional_columns": [
     {
       "name": "datainizio",
@@ -58,13 +53,19 @@
     {
       "name": "lat",
       "datatype": "number",
-      "constraints": { "min": -90, "max": 90 },
+      "constraints": {
+        "min": -90,
+        "max": 90
+      },
       "rdf_predicate": "geo:lat"
     },
     {
       "name": "lon",
       "datatype": "number",
-      "constraints": { "min": -180, "max": 180 },
+      "constraints": {
+        "min": -180,
+        "max": 180
+      },
       "rdf_predicate": "geo:long"
     },
     {
@@ -75,7 +76,11 @@
     {
       "name": "ingresso",
       "datatype": "string",
-      "enum": ["Gratuito", "A pagamento", "Su prenotazione"],
+      "enum": [
+        "Gratuito",
+        "A pagamento",
+        "Su prenotazione"
+      ],
       "description": "Tipologia di ingresso",
       "rdf_predicate": "schema:isAccessibleForFree@it"
     },
@@ -85,6 +90,53 @@
       "max_length": 300,
       "description": "Soggetto organizzatore",
       "rdf_predicate": "dct:publisher@it"
+    },
+    {
+      "name": "nome",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Nome o titolo dell'evento",
+      "rdf_predicate": "rdfs:label@it"
+    },
+    {
+      "name": "id",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
+    },
+    {
+      "name": "titolo_evento",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
+    },
+    {
+      "name": "tipo_evento",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
+    },
+    {
+      "name": "data_inizio",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
+    },
+    {
+      "name": "data_fine",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
+    },
+    {
+      "name": "comune",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
+    },
+    {
+      "name": "pubblico_target",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
+    },
+    {
+      "name": "format_evento",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker eventi_culturali"
     }
   ],
   "example": "nome,datainizio,datafine,categoria,luogo,lat,lon,ingresso\n\"Festival della Letteratura\",2024-09-05,2024-09-08,\"Festival\",\"Palazzo Carafa\",40.3528,18.1718,\"Gratuito\"\n\"Concerto Sinfonico\",2024-10-12,2024-10-12,\"Concerto\",\"Politeama Greco\",40.3540,18.1690,\"A pagamento\"\n",
@@ -92,5 +144,6 @@
     "Le categorie più tipiche sono: Concerto, Spettacolo, Mostra, Conferenza, Festival, Sport, Evento religioso, Manifestazione.",
     "Se hai lat/lon, gli eventi appaiono sulla mappa.",
     "v2.0: rinomina colonne 'data_inizio'→'datainizio' e 'data_fine'→'datafine' (senza underscore) per allineamento al tool CSV-to-RDF (DET_COL_RULES → ontologia CPEV)."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

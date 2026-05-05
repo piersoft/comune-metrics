@@ -15,72 +15,14 @@
     "programma": "sottosettore_interv_inv",
     "importo_euro": "totale_uscite"
   },
-  "required_columns": [
-    {
-      "name": "anno",
-      "datatype": "integer",
-      "constraints": {
-        "min": 1900,
-        "max": 2050
-      },
-      "description": "Anno di esercizio del bilancio",
-      "rdf_predicate": "sdmx-dimension:refPeriod"
-    },
-    {
-      "name": "settore_interv_inv",
-      "datatype": "string",
-      "max_length": 500,
-      "description": "Missione di spesa secondo classificazione DLgs 118/2011 (ex 'missione')",
-      "rdf_predicate": "dct:subject@it"
-    },
-    {
-      "name": "importo",
-      "datatype": "number",
-      "constraints": {
-        "min": 0
-      },
-      "description": "Importo di spesa in euro (ex 'totale_uscite')",
-      "rdf_predicate": "sdmx-measure:obsValue"
-    }
-  ],
-  "optional_columns": [
-    {
-      "name": "sottosettore_interv_inv",
-      "datatype": "string",
-      "max_length": 500,
-      "description": "Programma di spesa all'interno della missione (ex 'programma')",
-      "rdf_predicate": "dct:subject@it"
-    },
-    {
-      "name": "tipo",
-      "datatype": "string",
-      "enum": [
-        "previsione",
-        "impegno",
-        "pagamento",
-        "consuntivo"
-      ],
-      "description": "Tipo di importo",
-      "rdf_predicate": "dct:type@it"
-    },
-    {
-      "name": "macroaggregato",
-      "datatype": "string",
-      "max_length": 200,
-      "description": "Macroaggregato di spesa"
-    },
-    {
-      "name": "misura",
-      "datatype": "string",
-      "max_length": 50,
-      "description": "Unità di misura (es. 'euro')"
-    }
-  ],
+  "required_columns": [],
+  "optional_columns": [],
   "example": "anno,settore_interv_inv,sottosettore_interv_inv,totale_uscite\n2024,\"Servizi istituzionali, generali e di gestione\",\"Organi istituzionali\",1250000.50\n2024,\"Ordine pubblico e sicurezza\",\"Polizia locale e amministrativa\",4500000.00\n2024,\"Istruzione e diritto allo studio\",\"Istruzione prescolastica\",8900000.00\n",
   "notes": [
     "L'importo deve essere in euro con punto (.) come separatore decimale, MAI virgola.",
     "Le missioni dovrebbero seguire la classificazione DLgs 118/2011 (es. 'Servizi istituzionali...').",
     "Se hai sia previsione che consuntivo, usa la colonna 'tipo' per distinguerli.",
     "v2.0: rinomina colonne per allineamento al tool CSV-to-RDF (DET_COL_RULES). Vecchi nomi: 'missione'→'settore_interv_inv', 'programma'→'sottosettore_interv_inv', 'importo_euro'→'totale_uscite'."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

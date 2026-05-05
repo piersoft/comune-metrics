@@ -17,15 +17,7 @@
     "ufficio": "uo_proponente",
     "settore": "uo_proponente"
   },
-  "required_columns": [
-    {
-      "name": "data_atto",
-      "datatype": "date",
-      "format": "YYYY-MM-DD",
-      "description": "Data dell'atto (ex 'data')",
-      "rdf_predicate": "dct:date"
-    }
-  ],
+  "required_columns": [],
   "optional_columns": [
     {
       "name": "tipo_atto",
@@ -71,6 +63,63 @@
       "datatype": "string",
       "description": "Descrizione/abstract",
       "max_length": 500
+    },
+    {
+      "name": "data_atto",
+      "datatype": "date",
+      "format": "YYYY-MM-DD",
+      "description": "Data dell'atto (ex 'data')",
+      "rdf_predicate": "dct:date"
+    },
+    {
+      "name": "id",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "denominazione",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "obbligo_trasparenza",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "categoria_trasparenza",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "dato_obbligatorio",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "norma_riferimento",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "ente",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "codice_ipa",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "anno_pubblicazione",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
+    },
+    {
+      "name": "url_pubblicazione",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker delibere"
     }
   ],
   "example": "data_atto,tipo_atto,numero_atto,oggetto,uo_proponente\n2024-03-15,\"Delibera Giunta\",87,\"Approvazione bilancio di previsione 2024\",\"Ragioneria\"\n2024-03-16,\"Determina dirigenziale\",234,\"Affidamento servizio mensa scolastica\",\"Pubblica Istruzione\"\n",
@@ -78,5 +127,6 @@
     "Per i Comuni che pubblicano l'Albo Pretorio in formato aperto, una riga per atto.",
     "Le tipologie standard sono: Delibera Giunta, Delibera Consiglio, Determina dirigenziale, Ordinanza, Decreto sindacale.",
     "v2.0: rinomina colonne per allineamento al tool CSV-to-RDF (DET_COL_RULES). Vecchi nomi: 'data'→'data_atto', 'tipo'→'tipo_atto', 'numero'→'numero_atto', 'ufficio'/'settore'→'uo_proponente'."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

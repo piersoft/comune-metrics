@@ -1,31 +1,7 @@
-anno,categoria,numero,importo,interventi,misura
-2020,Anziani,980,1850000,220,euro
-2021,Anziani,1020,1920000,235,euro
-2022,Anziani,1075,2010000,251,euro
-2023,Anziani,1130,2100000,268,euro
-2024,Anziani,1180,2210000,285,euro
-2020,Minori,420,980000,145,euro
-2021,Minori,445,1050000,152,euro
-2022,Minori,463,1120000,158,euro
-2023,Minori,488,1180000,165,euro
-2024,Minori,510,1240000,172,euro
-2020,Disabilità,215,1450000,95,euro
-2021,Disabilità,228,1540000,102,euro
-2022,Disabilità,245,1620000,108,euro
-2023,Disabilità,256,1710000,115,euro
-2024,Disabilità,270,1810000,124,euro
-2020,Povertà,390,720000,180,euro
-2021,Povertà,525,950000,245,euro
-2022,Povertà,480,870000,220,euro
-2023,Povertà,410,760000,195,euro
-2024,Povertà,365,690000,178,euro
-2020,Immigrazione,145,280000,65,euro
-2021,Immigrazione,168,320000,75,euro
-2022,Immigrazione,195,380000,88,euro
-2023,Immigrazione,220,425000,102,euro
-2024,Immigrazione,245,470000,115,euro
-2020,Salute mentale,88,195000,42,euro
-2021,Salute mentale,95,215000,48,euro
-2022,Salute mentale,108,245000,55,euro
-2023,Salute mentale,120,275000,62,euro
-2024,Salute mentale,135,305000,70,euro
+codice_struttura,nome_struttura,tipo_struttura,comune,indirizzo,lat,lon,telefono,email,posti_letto,accreditata
+IS001,Struttura Anziani,Anziani,Comune Ideale,Via Anziani 1,45.4650,9.1910,0201001,anziani@comuneideale.it,1077,si
+IS002,Struttura Disabilità,Disabilità,Comune Ideale,Via Disabilità 2,45.4660,9.1920,0201002,disabilità@comuneideale.it,242,si
+IS003,Struttura Immigrazione,Immigrazione,Comune Ideale,Via Immigrazione 3,45.4670,9.1930,0201003,immigrazione@comuneideale.it,194,si
+IS004,Struttura Minori,Minori,Comune Ideale,Via Minori 4,45.4680,9.1940,0201004,minori@comuneideale.it,465,si
+IS005,Struttura Povertà,Povertà,Comune Ideale,Via Povertà 5,45.4690,9.1950,0201005,povertà@comuneideale.it,434,si
+IS006,Struttura Salute mentale,Salute mentale,Comune Ideale,Via Salute mentale 6,45.4700,9.1960,0201006,salutementale@comuneideale.it,109,si

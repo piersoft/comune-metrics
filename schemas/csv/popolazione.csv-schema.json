@@ -14,26 +14,7 @@
     "residenti": "totale_residenti",
     "quartiere": "localita"
   },
-  "required_columns": [
-    {
-      "name": "anno",
-      "datatype": "integer",
-      "constraints": {
-        "min": 1900,
-        "max": 2050
-      },
-      "description": "Anno di riferimento",
-      "rdf_predicate": "sdmx-dimension:refPeriod"
-    },
-    {
-      "name": "numero_residenti",
-      "datatype": "integer",
-      "constraints": {
-        "min": 0
-      },
-      "description": "Numero di residenti totali"
-    }
-  ],
+  "required_columns": [],
   "optional_columns": [
     {
       "name": "localita",
@@ -59,6 +40,64 @@
       "max_length": 20,
       "description": "Fascia d'età (es. '0-14', '15-64', '65+')",
       "rdf_predicate": "sdmx-attribute:obsStatus"
+    },
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "constraints": {
+        "min": 1900,
+        "max": 2050
+      },
+      "description": "Anno di riferimento",
+      "rdf_predicate": "sdmx-dimension:refPeriod"
+    },
+    {
+      "name": "numero_residenti",
+      "datatype": "integer",
+      "constraints": {
+        "min": 0
+      },
+      "description": "Numero di residenti totali"
+    },
+    {
+      "name": "ANNO",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
+    },
+    {
+      "name": "NATI",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
+    },
+    {
+      "name": "DECESSI",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
+    },
+    {
+      "name": "IMMIGRATI",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
+    },
+    {
+      "name": "EMIGRATI",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
+    },
+    {
+      "name": "SALDO_NATURALE",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
+    },
+    {
+      "name": "SALDO_MIGRATORIO",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
+    },
+    {
+      "name": "TOTALE",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker popolazione"
     }
   ],
   "example": "anno,totale_residenti,localita\n2024,55421,Navile\n2024,42183,Borgo Panigale\n2024,38951,Porto-Saragozza\n2023,55892,Navile\n",
@@ -68,5 +107,6 @@
     "Il decimale separator deve essere il punto (.).",
     "Encoding UTF-8 obbligatorio.",
     "v2.0: rinomina 'residenti'→'totale_residenti' e 'quartiere'→'localita'. 'totale_residenti' non è in DET_COL_RULES: il tool lo manderà al fallback LLM (semantica unica)."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

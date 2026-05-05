@@ -1,31 +1,31 @@
-anno,tipo_atto,totale_entrate,numero,valore,descrizione,categoria
-2020,IMU,5225042.07,11800,1.06,Aliquota ordinaria 10.6 per mille - delibera CC,
-2020,TARI,3324905.86,14500,,,Utenze domestiche
-2020,TARI,1684905.23,1850,,,Utenze non domestiche
-2020,TASSA_SOGGIORNO,27000.0,,2.5,Tassa €2.50/notte categoria 4 stelle,
-2020,ADDIZIONALE_IRPEF,2075083.51,,0.8,Aliquota addizionale 0.80% - delibera CC,
-2020,CANONE_UNICO,297182.35,480,,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,
-2021,IMU,5117755.29,11850,1.06,Aliquota ordinaria 10.6 per mille - delibera CC,
-2021,TARI,3514388.09,14580,,,Utenze domestiche
-2021,TARI,1623827.78,1862,,,Utenze non domestiche
-2021,TASSA_SOGGIORNO,81000.0,,2.5,Tassa €2.50/notte categoria 4 stelle,
-2021,ADDIZIONALE_IRPEF,2204985.42,,0.8,Aliquota addizionale 0.80% - delibera CC,
-2021,CANONE_UNICO,303063.89,485,,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,
-2022,IMU,5149630.49,11900,1.06,Aliquota ordinaria 10.6 per mille - delibera CC,
-2022,TARI,3551535.64,14660,,,Utenze domestiche
-2022,TARI,1661786.44,1874,,,Utenze non domestiche
-2022,TASSA_SOGGIORNO,153000.0,,2.5,Tassa €2.50/notte categoria 4 stelle,
-2022,ADDIZIONALE_IRPEF,2191524.29,,0.8,Aliquota addizionale 0.80% - delibera CC,
-2022,CANONE_UNICO,310516.86,490,,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,
-2023,IMU,5252274.08,11950,1.06,Aliquota ordinaria 10.6 per mille - delibera CC,
-2023,TARI,3519234.05,14740,,,Utenze domestiche
-2023,TARI,1665757.41,1886,,,Utenze non domestiche
-2023,TASSA_SOGGIORNO,189000.0,,2.5,Tassa €2.50/notte categoria 4 stelle,
-2023,ADDIZIONALE_IRPEF,2176466.04,,0.8,Aliquota addizionale 0.80% - delibera CC,
-2023,CANONE_UNICO,303952.59,495,,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,
-2024,IMU,5333995.18,12000,1.06,Aliquota ordinaria 10.6 per mille - delibera CC,
-2024,TARI,3558938.22,14820,,,Utenze domestiche
-2024,TARI,1805071.68,1898,,,Utenze non domestiche
-2024,TASSA_SOGGIORNO,212400.0,,2.5,Tassa €2.50/notte categoria 4 stelle,
-2024,ADDIZIONALE_IRPEF,2251511.75,,0.8,Aliquota addizionale 0.80% - delibera CC,
-2024,CANONE_UNICO,304971.35,500,,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,
+id,denominazione,tipo_indicatore,anno,valore_indicatore,baseline,target,unita_misura,fonte_indicatore,ente,codice_ipa
+1,IMU,Finanziario,2020,5225042.07,,,euro,Aliquota ordinaria 10.6 per mille - delibera CC,Comune Ideale,c_ideal
+2,TARI,Finanziario,2020,3324905.86,,,euro,,Comune Ideale,c_ideal
+3,TARI,Finanziario,2020,1684905.23,,,euro,,Comune Ideale,c_ideal
+4,TASSA_SOGGIORNO,Finanziario,2020,27000.0,,,euro,Tassa €2.50/notte categoria 4 stelle,Comune Ideale,c_ideal
+5,ADDIZIONALE_IRPEF,Finanziario,2020,2075083.51,,,euro,Aliquota addizionale 0.80% - delibera CC,Comune Ideale,c_ideal
+6,CANONE_UNICO,Finanziario,2020,297182.35,,,euro,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,Comune Ideale,c_ideal
+7,IMU,Finanziario,2021,5117755.29,,,euro,Aliquota ordinaria 10.6 per mille - delibera CC,Comune Ideale,c_ideal
+8,TARI,Finanziario,2021,3514388.09,,,euro,,Comune Ideale,c_ideal
+9,TARI,Finanziario,2021,1623827.78,,,euro,,Comune Ideale,c_ideal
+10,TASSA_SOGGIORNO,Finanziario,2021,81000.0,,,euro,Tassa €2.50/notte categoria 4 stelle,Comune Ideale,c_ideal
+11,ADDIZIONALE_IRPEF,Finanziario,2021,2204985.42,,,euro,Aliquota addizionale 0.80% - delibera CC,Comune Ideale,c_ideal
+12,CANONE_UNICO,Finanziario,2021,303063.89,,,euro,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,Comune Ideale,c_ideal
+13,IMU,Finanziario,2022,5149630.49,,,euro,Aliquota ordinaria 10.6 per mille - delibera CC,Comune Ideale,c_ideal
+14,TARI,Finanziario,2022,3551535.64,,,euro,,Comune Ideale,c_ideal
+15,TARI,Finanziario,2022,1661786.44,,,euro,,Comune Ideale,c_ideal
+16,TASSA_SOGGIORNO,Finanziario,2022,153000.0,,,euro,Tassa €2.50/notte categoria 4 stelle,Comune Ideale,c_ideal
+17,ADDIZIONALE_IRPEF,Finanziario,2022,2191524.29,,,euro,Aliquota addizionale 0.80% - delibera CC,Comune Ideale,c_ideal
+18,CANONE_UNICO,Finanziario,2022,310516.86,,,euro,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,Comune Ideale,c_ideal
+19,IMU,Finanziario,2023,5252274.08,,,euro,Aliquota ordinaria 10.6 per mille - delibera CC,Comune Ideale,c_ideal
+20,TARI,Finanziario,2023,3519234.05,,,euro,,Comune Ideale,c_ideal
+21,TARI,Finanziario,2023,1665757.41,,,euro,,Comune Ideale,c_ideal
+22,TASSA_SOGGIORNO,Finanziario,2023,189000.0,,,euro,Tassa €2.50/notte categoria 4 stelle,Comune Ideale,c_ideal
+23,ADDIZIONALE_IRPEF,Finanziario,2023,2176466.04,,,euro,Aliquota addizionale 0.80% - delibera CC,Comune Ideale,c_ideal
+24,CANONE_UNICO,Finanziario,2023,303952.59,,,euro,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,Comune Ideale,c_ideal
+25,IMU,Finanziario,2024,5333995.18,,,euro,Aliquota ordinaria 10.6 per mille - delibera CC,Comune Ideale,c_ideal
+26,TARI,Finanziario,2024,3558938.22,,,euro,,Comune Ideale,c_ideal
+27,TARI,Finanziario,2024,1805071.68,,,euro,,Comune Ideale,c_ideal
+28,TASSA_SOGGIORNO,Finanziario,2024,212400.0,,,euro,Tassa €2.50/notte categoria 4 stelle,Comune Ideale,c_ideal
+29,ADDIZIONALE_IRPEF,Finanziario,2024,2251511.75,,,euro,Aliquota addizionale 0.80% - delibera CC,Comune Ideale,c_ideal
+30,CANONE_UNICO,Finanziario,2024,304971.35,,,euro,Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019,Comune Ideale,c_ideal

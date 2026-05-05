@@ -134,7 +134,11 @@ function geoPoints(rows, max = 300) {
 // ----- 1. Popolazione --------------------------------------------------------
 // v2.0: 'totale_residenti' (ex 'residenti'), 'localita' (ex 'quartiere')
 export function calc_popolazione(rows) {
+  // Comune Ideale: header demo Worker andamento_demografico → ANNO,NATI,DECESSI,IMMIGRATI,EMIGRATI,SALDO_NATURALE,SALDO_MIGRATORIO,TOTALE
+  // Bologna/Lecce/Potenza: vecchio formato anno,numero_residenti,localita
   const aliased = rows.map(r => withAliases(r, {
+    ANNO: 'anno',
+    TOTALE: 'numero_residenti',
     residenti: 'numero_residenti',
     totale_residenti: 'numero_residenti',
     quartiere: 'localita',
@@ -159,39 +163,47 @@ export function calc_popolazione(rows) {
 }
 
 // ----- 2. Bilancio -----------------------------------------------------------
-// v2.0: nuove colonne canoniche 'totale_uscite', 'settore_interv_inv', 'sottosettore_interv_inv'
-// Retrocompat con vecchie colonne 'importo_euro', 'missione', 'programma'
+// Comune Ideale: header demo Worker peg_bilancio_comunale (29 colonne PDC, sep=;)
+// Bologna/Lecce/Potenza: vecchio formato anno,settore_interv_inv,importo,sottosettore_interv_inv,misura
 export function calc_bilancio(rows) {
   const aliased = rows.map(r => withAliases(r, {
     importo_euro: 'importo',
     totale_uscite: 'importo',
+    'Stanziamento 2025': 'importo',
+    'PDC-Descrizione Missione': 'settore_interv_inv',
     missione: 'settore_interv_inv',
+    'PDC-Descrizione Programma': 'sottosettore_interv_inv',
     programma: 'sottosettore_interv_inv',
   }));
-  const totale = sumBy(aliased, 'importo');
+  // Per il PEG demo Worker filtro solo le righe USCITE; per gli altri formati lascia tutto
+  const filtered = aliased.some(r => r.Tipo === 'USCITE' || r.Tipo === 'ENTRATE')
+    ? aliased.filter(r => r.Tipo === 'USCITE')
+    : aliased;
+  const totale = sumBy(filtered, 'importo');
   return {
     totale_uscite: totale,
-    per_missione: groupSum(aliased, 'settore_interv_inv', 'importo'),
-    top10_programmi: groupSum(aliased, 'sottosettore_interv_inv', 'importo', 10),
+    per_missione: groupSum(filtered, 'settore_interv_inv', 'importo'),
+    top10_programmi: groupSum(filtered, 'sottosettore_interv_inv', 'importo', 10),
   };
 }
 
 // ----- 3. Opere pubbliche ----------------------------------------------------
-// v2.0: 'codice_stato_cup' (ex 'stato'), 'costo_lavori_previsto' (ex 'importo_euro'),
-// 'nome_completo' (ex 'rup' — persona fisica RUP, mappa a cpv:fullName).
-// 'fonte_finanziamento' resta (LLM).
+// Comune Ideale: header demo Worker publiccontract → id,cig,cup,oggetto_contratto,importo_aggiudicazione,...
+// Bologna/Lecce/Potenza: vecchio formato con codice_stato_cup, fonte_finanziamento, lat, lon
 export function calc_opere(rows) {
   const aliased = rows.map(r => withAliases(r, {
     stato: 'codice_stato_cup',
     importo_euro: 'importo_aggiudicazione',
     costo_lavori_previsto: 'importo_aggiudicazione',
     rup: 'nome_completo',
+    aggiudicatario: 'nome_completo',  // per CPV:fullName
+    modalita_scelta: 'codice_stato_cup',  // surrogato per "stato/modalità"
   }));
   const cup_count = aliased.filter(r => r.cup && String(r.cup).trim().length > 0).length;
   return {
     totale: aliased.length,
     per_stato: countBy(aliased, 'codice_stato_cup'),
-    per_fonte: countBy(aliased, 'fonte_finanziamento'),
+    per_fonte: countBy(aliased, 'fonte_finanziamento') || countBy(aliased, 'cpv_codice'),
     cup_count,
     importo_totale: sumBy(aliased, 'importo_aggiudicazione'),
     opere_geo: geoPoints(aliased),
@@ -199,31 +211,36 @@ export function calc_opere(rows) {
 }
 
 // ----- 4. Pratiche edilizie --------------------------------------------------
-// v2.0: 'codice_stato_cup' (ex 'esito'), 'data_scadenza' (ex 'data_chiusura'/'chiusura_data')
+// Comune Ideale: header demo Worker cpsv → id,nome_servizio,descrizione_servizio,...
+// Bologna/Lecce/Potenza: vecchio formato data,tipo,codice_stato_cup,data_scadenza,via,civico
 export function calc_pratiche(rows) {
   const aliased = rows.map(r => withAliases(r, {
     esito: 'codice_stato_cup',
     data_chiusura: 'data_scadenza',
     chiusura_data: 'data_scadenza',
+    nome_servizio: 'tipo',  // per groupBy 'tipo'
   }));
   const conChiusura = aliased.filter(r => r.data_scadenza && String(r.data_scadenza).trim() !== '').length;
   const tasso_chiusura = aliased.length > 0 ? (conChiusura / aliased.length) * 100 : null;
   return {
     totale: aliased.length,
     per_tipo: countBy(aliased, 'tipo'),
-    per_esito: countBy(aliased, 'codice_stato_cup'),
+    per_esito: countBy(aliased, 'codice_stato_cup') || countBy(aliased, 'canale_erogazione'),
     tasso_chiusura,
     serie_anni: seriesByYear(aliased, 'data'),
   };
 }
 
 // ----- 5. Servizi sociali ----------------------------------------------------
-// v2.0: 'numero' (ex 'utenti'), 'totale_costo' (ex 'spesa_euro')
+// Comune Ideale: header demo Worker strutture_sociali → codice_struttura,nome_struttura,tipo_struttura,...,posti_letto,accreditata
+// Bologna/Lecce/Potenza: vecchio formato anno,categoria,numero,totale_costo,interventi
 export function calc_sociali(rows) {
   const aliased = rows.map(r => withAliases(r, {
     utenti: 'numero',
+    posti_letto: 'numero',  // per Comune Ideale demo Worker
     spesa_euro: 'importo',
     totale_costo: 'importo',
+    tipo_struttura: 'categoria',  // per groupSum
   }));
   return {
     utenti_totali: sumBy(aliased, 'numero'),
@@ -234,18 +251,19 @@ export function calc_sociali(rows) {
 }
 
 // ----- 6. Istruzione ---------------------------------------------------------
-// v2.0: 'denominazione' (ex 'struttura'), 'totale_alunni' (ex 'iscritti'),
-// 'tipologia' (ex 'tipo_struttura')
+// Comune Ideale: header demo Worker istituti_scolastici → codice_meccanografico,nome_istituto,tipo_istituto,...,numero_alunni,numero_classi
+// Bologna/Lecce/Potenza: vecchio formato denominazione,anno,totale_alunni,tipologia,...
 export function calc_istruzione(rows) {
   const aliased = rows.map(r => withAliases(r, {
     struttura: 'denominazione',
     denominazione_scuola: 'denominazione',
+    nome_istituto: 'denominazione',  // demo Worker
     iscritti: 'totale_alunni',
+    numero_alunni: 'totale_alunni',  // demo Worker
     tipo_struttura: 'tipologia',
     tipo_scuola: 'tipologia',
+    tipo_istituto: 'tipologia',  // demo Worker
   }));
-  // Se nessuna riga ha 'totale_alunni' numerico, fallback a conteggio strutture
-  // (es. dati MIM Anagrafe Scuole — solo anagrafica, no iscritti)
   const hasIscritti = aliased.some(r => toNum(r.totale_alunni) != null);
   return {
     totale_iscritti: sumBy(aliased, 'totale_alunni'),
@@ -258,11 +276,14 @@ export function calc_istruzione(rows) {
 }
 
 // ----- 7. Incidenti stradali -------------------------------------------------
-// v2.0: 'decessi' (ex 'morti') e 'localita' (ex 'zona')
+// Comune Ideale: header demo Worker incidenti_stradali → data,ora,comune,via,lat,lon,tipo_incidente,veicoli_coinvolti,feriti,morti,condizioni_meteo
+// Bologna/Lecce/Potenza: vecchio formato data,lat,lon,decessi,feriti,localita,ora
 export function calc_incidenti(rows) {
   const aliased = rows.map(r => withAliases(r, {
     morti: 'decessi',
     zona: 'localita',
+    via: 'localita',  // demo Worker
+    tipo_incidente: 'tipo',  // demo Worker
   }));
   const totale_morti = sumBy(aliased, 'decessi') || 0;
   const totale_feriti = sumBy(aliased, 'feriti') || 0;
@@ -289,9 +310,14 @@ export function calc_rifiuti(rows) {
     return { rd_pct_ultimo_anno: null, trend_pct: null, serie_anni: [], per_frazione: [] };
   }
 
-  // Applico alias per retrocompat: valore_assoluto → valore (rinominato per Worker QB)
+  // Applico alias per retrocompat: 
+  //  - valore_assoluto → valore (Bologna/Lecce/Potenza)
+  //  - quantita → valore (Comune Ideale formato superficie_agricola adapted)
+  //  - tipo_frazione → frazione (Comune Ideale)
   rows = rows.map(r => withAliases(r, {
     valore_assoluto: 'valore',
+    quantita: 'valore',
+    tipo_frazione: 'frazione',
   }));
 
   // Detect formato: long se almeno una riga ha 'valore' E 'frazione' E NON ha rd_pct/kg_totali
@@ -364,27 +390,27 @@ export function calc_rifiuti(rows) {
 }
 
 // ----- 9. Eventi culturali ---------------------------------------------------
-// v2.0: 'datainizio'/'datafine' (senza underscore) come da DET_COL_RULES (CPEV)
-// Retrocompat con 'data_inizio'/'data_fine'
+// Comune Ideale: header demo Worker cpev → id,titolo_evento,tipo_evento,data_inizio,data_fine,...
+// Bologna/Lecce/Potenza: vecchio formato nome,datainizio,datafine,categoria,...
 export function calc_eventi(rows) {
-  // (qui non ci sono campi date direttamente nelle metriche, ma applico l'alias
-  // comunque così se in futuro le aggiungiamo lavora già con il nuovo nome)
   const aliased = rows.map(r => withAliases(r, {
     data_inizio: 'datainizio',
     data_fine: 'datafine',
+    tipo_evento: 'categoria',  // demo Worker
+    titolo_evento: 'nome',
   }));
   return {
     totale_anno: aliased.length,
     per_categoria: countBy(aliased, 'categoria'),
     per_quartiere: countBy(aliased, 'quartiere'),
-    per_ingresso: countBy(aliased, 'ingresso'),
+    per_ingresso: countBy(aliased, 'ingresso') || countBy(aliased, 'format_evento'),
     eventi_geo: geoPoints(aliased, 300),
   };
 }
 
 // ----- 10. Delibere ----------------------------------------------------------
-// v2.0: nuove colonne canoniche 'data_atto', 'tipo_atto', 'numero_atto', 'uo_proponente'
-// Retrocompat con 'data', 'tipo', 'numero', 'ufficio', 'settore'
+// Comune Ideale: header demo Worker transparency → id,denominazione,obbligo_trasparenza,categoria_trasparenza,...,anno_pubblicazione
+// Bologna/Lecce/Potenza: vecchio formato data_atto,tipo_atto,numero_atto,oggetto,uo_proponente
 export function calc_delibere(rows) {
   const aliased = rows.map(r => withAliases(r, {
     data: 'data_atto',
@@ -392,6 +418,9 @@ export function calc_delibere(rows) {
     numero: 'numero_atto',
     ufficio: 'uo_proponente',
     settore: 'uo_proponente',
+    categoria_trasparenza: 'tipo_atto',  // demo Worker
+    ente: 'uo_proponente',                // demo Worker
+    anno_pubblicazione: 'data_atto',      // surrogato per serie temporale
   }));
   return {
     totale_anno: aliased.length,
@@ -402,20 +431,22 @@ export function calc_delibere(rows) {
 }
 
 // ----- 11. Patrimonio --------------------------------------------------------
-// v2.0: 'rendita' (ex 'valore_euro'), 'qualita' (ex 'vincolo_culturale' boolean → string),
-// 'consistenza' (ex 'uso')
+// Comune Ideale: header demo Worker culturalheritage → id,codice_bene,denominazione_bene,tipo_bene,tutela,vincolo,...
+// Bologna/Lecce/Potenza: vecchio formato denominazione,tipo,indirizzo,lat,lon,rendita,qualita,consistenza
 export function calc_patrimonio(rows) {
   const aliased = rows.map(r => withAliases(r, {
     valore_euro: 'valore',
     rendita: 'valore',
-    vincolo_culturale: 'tipo_bene',
-    qualita: 'tipo_bene',
+    vincolo_culturale: 'vincolo',  // ora demo Worker usa 'vincolo'
+    qualita: 'vincolo',
     uso: 'descrizione',
     consistenza: 'descrizione',
+    denominazione_bene: 'denominazione',  // demo Worker
+    tipo_bene: 'tipo',                    // demo Worker
   }));
-  // 'tipo_bene' è la qualità del vincolo (es. 'monumentale', 'paesaggistico', 'non vincolato')
+  // 'vincolo' indica la qualità del vincolo (es. 'monumentale', 'paesaggistico', 'non vincolato')
   const conVincolo = aliased.filter(r => {
-    const v = r.tipo_bene;
+    const v = r.vincolo;
     if (v == null || v === '' || v === false || v === 'false') return false;
     const s = String(v).toLowerCase().trim();
     return s !== '' && s !== 'no' && s !== 'nessuno' && s !== 'none' && s !== 'non vincolato';
@@ -424,7 +455,7 @@ export function calc_patrimonio(rows) {
   return {
     totale_immobili: aliased.length,
     per_tipo: countBy(aliased, 'tipo'),
-    per_destinazione: countBy(aliased, 'descrizione'),
+    per_destinazione: countBy(aliased, 'descrizione') || countBy(aliased, 'epoca'),
     valore_totale: sumBy(aliased, 'valore'),
     superficie_totale_mq: sumBy(aliased, 'superficie_mq'),
     pct_vincolo,
@@ -441,6 +472,9 @@ export function calc_tributi(rows) {
     gettito_euro: 'totale_entrate',
     n_contribuenti: 'numero',
     aliquota_base: 'valore',
+    denominazione: 'tipo_atto',         // demo Worker indicator
+    valore_indicatore: 'totale_entrate', // demo Worker
+    fonte_indicatore: 'descrizione',     // demo Worker
   }));
   // Anno più recente disponibile
   const anni = [...new Set(aliased.map(r => parseInt(r.anno) || 0).filter(a => a > 1900))];

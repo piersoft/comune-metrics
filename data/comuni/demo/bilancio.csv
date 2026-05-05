@@ -1,24 +1,24 @@
-anno,settore_interv_inv,importo,sottosettore_interv_inv,misura
-2024,"Servizi istituzionali, generali e di gestione",4280000,Organi istituzionali,euro
-2024,"Servizi istituzionali, generali e di gestione",2150000,Segreteria generale,euro
-2024,Giustizia,380000,,euro
-2024,Ordine pubblico e sicurezza,890000,Polizia locale,euro
-2024,Istruzione e diritto allo studio,3420000,Istruzione prescolastica,euro
-2024,Tutela e valorizzazione dei beni e attività culturali,1180000,,euro
-2024,"Politiche giovanili, sport e tempo libero",760000,,euro
-2024,Turismo,420000,,euro
-2024,Assetto del territorio ed edilizia abitativa,1840000,,euro
-2024,Sviluppo sostenibile e tutela del territorio e dell'ambiente,2980000,Rifiuti,euro
-2024,Trasporti e diritto alla mobilità,2150000,,euro
-2024,Soccorso civile,340000,,euro
-2024,"Diritti sociali, politiche sociali e famiglia",4520000,Interventi per le famiglie,euro
-2024,Tutela della salute,520000,,euro
-2024,Sviluppo economico e competitività,680000,,euro
-2024,Politiche per il lavoro e la formazione professionale,290000,,euro
-2024,"Agricoltura, politiche agroalimentari e pesca",180000,,euro
-2024,Energia e diversificazione delle fonti energetiche,240000,,euro
-2024,Relazioni con le altre autonomie territoriali e locali,110000,,euro
-2024,Fondi e accantonamenti,890000,,euro
-2024,Debito pubblico,2400000,,euro
-2024,Anticipazioni finanziarie,5800000,,euro
-2024,Servizi per conto terzi,1450000,,euro
+Tipo;PDC-Missione;PDC-Descrizione Missione;PDC-Programma;PDC-Descrizione Programma;PDC-Livello1;PDC-Descrizione Livello1;PDC-Livello2;PDC-Descrizione Livello2;PDC-Livello3;PDC-Descrizione Livello3;PDC-Livello4;PDC-Descrizione Livello4;Centro di Costo;Descrizione Centro di Costo;Capitolo;Articolo;Numero;Descrizione capitolo;Centro di Responsabilità;Descrizione Centro di Responsabilità;Rendiconto 2023;Rendiconto 2024;Stanziamento 2025;Stanziamento 2026;Stanziamento 2027;Stanziamento di cassa 2025;Codice Direzione;Descrizione Direzione
+USCITE;1;Servizi istituzionali, generali e di gestione;1;Organi istituzionali;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;101;Centro Costo Generico;11;1;1;Organi istituzionali;81;Area Bilancio;4066000;4194400;4280000;4280000;4280000;4280000;DIR01;DIREZIONE GENERICA
+USCITE;1;Servizi istituzionali, generali e di gestione;2;Segreteria generale;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;102;Centro Costo Generico;12;1;2;Segreteria generale;82;Area Bilancio;2042500;2107000;2150000;2150000;2150000;2150000;DIR02;DIREZIONE GENERICA
+USCITE;2;Giustizia;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;103;Centro Costo Generico;13;1;3;Capitolo generico;83;Area Bilancio;361000;372400;380000;380000;380000;380000;DIR03;DIREZIONE GENERICA
+USCITE;3;Ordine pubblico e sicurezza;4;Polizia locale;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;104;Centro Costo Generico;14;1;4;Polizia locale;84;Area Bilancio;845500;872200;890000;890000;890000;890000;DIR04;DIREZIONE GENERICA
+USCITE;4;Istruzione e diritto allo studio;5;Istruzione prescolastica;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;105;Centro Costo Generico;15;1;5;Istruzione prescolastica;85;Area Bilancio;3249000;3351600;3420000;3420000;3420000;3420000;DIR05;DIREZIONE GENERICA
+USCITE;5;Tutela e valorizzazione dei beni e attività culturali;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;106;Centro Costo Generico;16;1;6;Capitolo generico;86;Area Bilancio;1121000;1156400;1180000;1180000;1180000;1180000;DIR06;DIREZIONE GENERICA
+USCITE;6;Politiche giovanili, sport e tempo libero;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;107;Centro Costo Generico;17;1;7;Capitolo generico;87;Area Bilancio;722000;744800;760000;760000;760000;760000;DIR07;DIREZIONE GENERICA
+USCITE;7;Turismo;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;108;Centro Costo Generico;18;1;8;Capitolo generico;88;Area Bilancio;399000;411600;420000;420000;420000;420000;DIR08;DIREZIONE GENERICA
+USCITE;8;Assetto del territorio ed edilizia abitativa;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;109;Centro Costo Generico;19;1;9;Capitolo generico;89;Area Bilancio;1748000;1803200;1840000;1840000;1840000;1840000;DIR09;DIREZIONE GENERICA
+USCITE;9;Sviluppo sostenibile e tutela del territorio e dell'ambiente;6;Rifiuti;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;110;Centro Costo Generico;20;1;10;Rifiuti;90;Area Bilancio;2831000;2920400;2980000;2980000;2980000;2980000;DIR10;DIREZIONE GENERICA
+USCITE;10;Trasporti e diritto alla mobilità;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;111;Centro Costo Generico;21;1;11;Capitolo generico;91;Area Bilancio;2042500;2107000;2150000;2150000;2150000;2150000;DIR11;DIREZIONE GENERICA
+USCITE;11;Soccorso civile;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;112;Centro Costo Generico;22;1;12;Capitolo generico;92;Area Bilancio;323000;333200;340000;340000;340000;340000;DIR12;DIREZIONE GENERICA
+USCITE;12;Diritti sociali, politiche sociali e famiglia;7;Interventi per le famiglie;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;113;Centro Costo Generico;23;1;13;Interventi per le famiglie;93;Area Bilancio;4294000;4429600;4520000;4520000;4520000;4520000;DIR13;DIREZIONE GENERICA
+USCITE;13;Tutela della salute;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;114;Centro Costo Generico;24;1;14;Capitolo generico;94;Area Bilancio;494000;509600;520000;520000;520000;520000;DIR14;DIREZIONE GENERICA
+USCITE;14;Sviluppo economico e competitività;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;115;Centro Costo Generico;25;1;15;Capitolo generico;95;Area Bilancio;646000;666400;680000;680000;680000;680000;DIR15;DIREZIONE GENERICA
+USCITE;15;Politiche per il lavoro e la formazione professionale;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;116;Centro Costo Generico;26;1;16;Capitolo generico;96;Area Bilancio;275500;284200;290000;290000;290000;290000;DIR16;DIREZIONE GENERICA
+USCITE;16;Agricoltura, politiche agroalimentari e pesca;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;117;Centro Costo Generico;27;1;17;Capitolo generico;97;Area Bilancio;171000;176400;180000;180000;180000;180000;DIR17;DIREZIONE GENERICA
+USCITE;17;Energia e diversificazione delle fonti energetiche;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;118;Centro Costo Generico;28;1;18;Capitolo generico;98;Area Bilancio;228000;235200;240000;240000;240000;240000;DIR18;DIREZIONE GENERICA
+USCITE;18;Relazioni con le altre autonomie territoriali e locali;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;119;Centro Costo Generico;29;1;19;Capitolo generico;99;Area Bilancio;104500;107800;110000;110000;110000;110000;DIR19;DIREZIONE GENERICA
+USCITE;19;Fondi e accantonamenti;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;120;Centro Costo Generico;30;1;20;Capitolo generico;100;Area Bilancio;845500;872200;890000;890000;890000;890000;DIR20;DIREZIONE GENERICA
+USCITE;20;Debito pubblico;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;121;Centro Costo Generico;31;1;21;Capitolo generico;101;Area Bilancio;2280000;2352000;2400000;2400000;2400000;2400000;DIR21;DIREZIONE GENERICA
+USCITE;21;Anticipazioni finanziarie;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;122;Centro Costo Generico;32;1;22;Capitolo generico;102;Area Bilancio;5510000;5684000;5800000;5800000;5800000;5800000;DIR22;DIREZIONE GENERICA
+USCITE;22;Servizi per conto terzi;3;;1;SPESE CORRENTI;1;REDDITI DA LAVORO DIPENDENTE;1;RETRIBUZIONI LORDE;1;RETRIBUZIONI IN DENARO;123;Centro Costo Generico;33;1;23;Capitolo generico;103;Area Bilancio;1377500;1421000;1450000;1450000;1450000;1450000;DIR23;DIREZIONE GENERICA

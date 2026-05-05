@@ -13,10 +13,8 @@
   "minItems": 1,
   "items": {
     "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "nome"
-    ],
+    "additionalProperties": true,
+    "required": [],
     "properties": {
       "nome": {
         "type": "string",
@@ -130,6 +128,44 @@
         "minimum": 0,
         "description": "Importo di aggiudicazione in euro (ex costo_lavori_previsto)",
         "rdf_predicate": "pc:totalAmount"
+      },
+      "id": {
+        "type": [
+          "string",
+          "integer",
+          "null"
+        ]
+      },
+      "codice_ipa": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "aggiudicatario": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 300
+      },
+      "cpv_codice": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "data_aggiudicazione": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "modalita_scelta": {
+        "type": [
+          "string",
+          "null"
+        ]
       }
     }
   },

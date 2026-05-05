@@ -13,10 +13,8 @@
   "minItems": 1,
   "items": {
     "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "denominazione"
-    ],
+    "additionalProperties": true,
+    "required": [],
     "properties": {
       "denominazione": {
         "type": "string",
@@ -102,6 +100,67 @@
         "maxLength": 200,
         "description": "Destinazione e descrizione del bene",
         "rdf_predicate": "dct:description"
+      },
+      "id": {
+        "type": [
+          "string",
+          "integer",
+          "null"
+        ]
+      },
+      "codice_bene": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "denominazione_bene": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "tutela": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "vincolo": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "epoca": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "materiale": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "stato_conservazione": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "ente_tutela": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "comune": {
+        "type": [
+          "string",
+          "null"
+        ]
       }
     }
   },

@@ -14,15 +14,7 @@
     "esito": "codice_stato_cup",
     "data_chiusura": "data_scadenza"
   },
-  "required_columns": [
-    {
-      "name": "data",
-      "datatype": "date",
-      "format": "YYYY-MM-DD",
-      "description": "Data di presentazione/protocollo della pratica",
-      "rdf_predicate": "ti:startTime^^xsd:date"
-    }
-  ],
+  "required_columns": [],
   "optional_columns": [
     {
       "name": "tipo",
@@ -68,6 +60,53 @@
       "datatype": "string",
       "max_length": 500,
       "description": "Ufficio comunale responsabile"
+    },
+    {
+      "name": "data",
+      "datatype": "date",
+      "format": "YYYY-MM-DD",
+      "description": "Data di presentazione/protocollo della pratica",
+      "rdf_predicate": "ti:startTime^^xsd:date"
+    },
+    {
+      "name": "id",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
+    },
+    {
+      "name": "nome_servizio",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
+    },
+    {
+      "name": "descrizione_servizio",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
+    },
+    {
+      "name": "ente_erogatore",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
+    },
+    {
+      "name": "codice_ipa",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
+    },
+    {
+      "name": "canale_erogazione",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
+    },
+    {
+      "name": "requisiti_accesso",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
+    },
+    {
+      "name": "url_servizio",
+      "datatype": "string",
+      "description": "Colonna formato demo Worker pratiche_edilizie"
     }
   ],
   "example": "data,tipo,codice_stato_cup,data_scadenza,indirizzo,quartiere\n2024-03-15,CILA,Favorevole,2024-04-02,\"Via Marconi 12\",\"Centro storico\"\n2024-03-16,SCIA,Acquisita,2024-03-16,\"Viale Repubblica 45\",\"Navile\"\n2024-03-18,\"Permesso di costruire\",\"In istruttoria\",,\"Strada Maggiore 89\",\"Santo Stefano\"\n",
@@ -76,5 +115,6 @@
     "data_scadenza vuota = pratica ancora aperta.",
     "Il tasso di chiusura viene calcolato come (pratiche con data_scadenza) / (totale pratiche).",
     "v2.0: rinomina 'esito'→'codice_stato_cup' (adms:status, allineato a PublicContract) e 'data_chiusura'→'data_scadenza' (ti:endTime, semantica CPSV)."
-  ]
+  ],
+  "additional_columns_allowed": true
 }

@@ -18,7 +18,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T16:43:22.186Z",
+      "fetched_at": "2026-05-05T16:53:15.694Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -26,7 +26,7 @@
         "months": 17,
         "iso": "2024-12-31"
       },
-      "n_rows": 45,
+      "n_rows": 15,
       "metrics": {
         "totale_residenti": 36620,
         "serie_anni": [
@@ -91,20 +91,7 @@
             "valore": 36620
           }
         ],
-        "per_quartiere": [
-          {
-            "nome": "Periferia Nord",
-            "valore": 17580
-          },
-          {
-            "nome": "Centro",
-            "valore": 10750
-          },
-          {
-            "nome": "Periferia Sud",
-            "valore": 8290
-          }
-        ]
+        "per_quartiere": null
       },
       "resource_url": null,
       "resource_format": "CSV",
@@ -114,14 +101,19 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "anno",
-        "numero_residenti",
-        "localita"
+        "ANNO",
+        "NATI",
+        "DECESSI",
+        "IMMIGRATI",
+        "EMIGRATI",
+        "SALDO_NATURALE",
+        "SALDO_MIGRATORIO",
+        "TOTALE"
       ]
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T16:43:22.188Z",
+      "fetched_at": "2026-05-05T16:53:15.696Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -249,16 +241,40 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "anno",
-        "settore_interv_inv",
-        "importo",
-        "sottosettore_interv_inv",
-        "misura"
+        "Tipo",
+        "PDC-Missione",
+        "PDC-Descrizione Missione",
+        "PDC-Programma",
+        "PDC-Descrizione Programma",
+        "PDC-Livello1",
+        "PDC-Descrizione Livello1",
+        "PDC-Livello2",
+        "PDC-Descrizione Livello2",
+        "PDC-Livello3",
+        "PDC-Descrizione Livello3",
+        "PDC-Livello4",
+        "PDC-Descrizione Livello4",
+        "Centro di Costo",
+        "Descrizione Centro di Costo",
+        "Capitolo",
+        "Articolo",
+        "Numero",
+        "Descrizione capitolo",
+        "Centro di Responsabilità",
+        "Descrizione Centro di Responsabilità",
+        "Rendiconto 2023",
+        "Rendiconto 2024",
+        "Stanziamento 2025",
+        "Stanziamento 2026",
+        "Stanziamento 2027",
+        "Stanziamento di cassa 2025",
+        "Codice Direzione",
+        "Descrizione Direzione"
       ]
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T16:43:22.189Z",
+      "fetched_at": "2026-05-05T16:53:15.705Z",
       "status": "ok",
       "modified": "2025-04-15",
       "freshness": {
@@ -271,99 +287,14 @@
         "totale": 12,
         "per_stato": [
           {
-            "nome": "in corso",
-            "n": 5
-          },
-          {
-            "nome": "completato",
-            "n": 4
-          },
-          {
-            "nome": "pianificato",
-            "n": 3
+            "nome": "Procedura aperta",
+            "n": 12
           }
         ],
-        "per_fonte": [
-          {
-            "nome": "Comunale",
-            "n": 5
-          },
-          {
-            "nome": "PNRR",
-            "n": 3
-          },
-          {
-            "nome": "Regione",
-            "n": 2
-          },
-          {
-            "nome": "Statale",
-            "n": 1
-          },
-          {
-            "nome": "Conto Termico",
-            "n": 1
-          }
-        ],
+        "per_fonte": [],
         "cup_count": 10,
         "importo_totale": 4153000,
-        "opere_geo": [
-          {
-            "lat": 45.4642,
-            "lon": 9.19,
-            "nome": "Riqualificazione Piazza Centrale"
-          },
-          {
-            "lat": 45.4655,
-            "lon": 9.1905,
-            "nome": "Nuova pista ciclabile via Roma"
-          },
-          {
-            "lat": 45.463,
-            "lon": 9.188,
-            "nome": "Ampliamento scuola primaria centro"
-          },
-          {
-            "lat": 45.464,
-            "lon": 9.1895,
-            "nome": "Restauro fontana storica"
-          },
-          {
-            "lat": 45.467,
-            "lon": 9.192,
-            "nome": "Asfaltatura via XX Settembre"
-          },
-          {
-            "lat": 45.4625,
-            "lon": 9.1885,
-            "nome": "Nuovo parcheggio scolastico"
-          },
-          {
-            "lat": 45.4685,
-            "lon": 9.1925,
-            "nome": "Efficientamento energetico palazzetto"
-          },
-          {
-            "lat": 45.466,
-            "lon": 9.185,
-            "nome": "Riqualificazione parco urbano"
-          },
-          {
-            "lat": 45.4595,
-            "lon": 9.1855,
-            "nome": "Manutenzione marciapiedi quartiere Sud"
-          },
-          {
-            "lat": 45.471,
-            "lon": 9.181,
-            "nome": "Nuovi loculi cimitero comunale"
-          },
-          {
-            "lat": 45.472,
-            "lon": 9.195,
-            "nome": "Nuova rotatoria SS Provinciale"
-          }
-        ]
+        "opere_geo": []
       },
       "resource_url": null,
       "resource_format": "CSV",
@@ -373,23 +304,22 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "nome",
-        "anno",
-        "codice_stato_cup",
-        "importo_aggiudicazione",
-        "cup",
-        "lat",
-        "lon",
-        "fonte_finanziamento",
-        "tipo",
+        "id",
         "cig",
+        "cup",
         "oggetto_contratto",
-        "stazione_appaltante"
+        "importo_aggiudicazione",
+        "stazione_appaltante",
+        "codice_ipa",
+        "aggiudicatario",
+        "cpv_codice",
+        "data_aggiudicazione",
+        "modalita_scelta"
       ]
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T16:43:22.190Z",
+      "fetched_at": "2026-05-05T16:53:15.709Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -402,79 +332,29 @@
         "totale": 399,
         "per_tipo": [
           {
-            "nome": "CILA",
+            "nome": "CILA - Pratica Edilizia",
             "n": 158
           },
           {
-            "nome": "SCIA",
+            "nome": "SCIA - Pratica Edilizia",
             "n": 90
           },
           {
-            "nome": "CIL",
+            "nome": "CIL - Pratica Edilizia",
             "n": 53
           },
           {
-            "nome": "SCIA-Alternativa",
+            "nome": "SCIA-Alternativa - Pratica Edilizia",
             "n": 52
           },
           {
-            "nome": "PdC",
+            "nome": "PdC - Pratica Edilizia",
             "n": 46
           }
         ],
-        "per_esito": [
-          {
-            "nome": "Efficace",
-            "n": 172
-          },
-          {
-            "nome": "Acquisita",
-            "n": 111
-          },
-          {
-            "nome": "In istruttoria",
-            "n": 60
-          },
-          {
-            "nome": "Rigettata",
-            "n": 56
-          }
-        ],
-        "tasso_chiusura": 71.42857142857143,
-        "serie_anni": [
-          {
-            "anno": 2018,
-            "valore": 55
-          },
-          {
-            "anno": 2019,
-            "valore": 52
-          },
-          {
-            "anno": 2020,
-            "valore": 41
-          },
-          {
-            "anno": 2021,
-            "valore": 53
-          },
-          {
-            "anno": 2022,
-            "valore": 54
-          },
-          {
-            "anno": 2023,
-            "valore": 37
-          },
-          {
-            "anno": 2024,
-            "valore": 55
-          },
-          {
-            "anno": 2025,
-            "valore": 52
-          }
-        ]
+        "per_esito": [],
+        "tasso_chiusura": 0,
+        "serie_anni": []
       },
       "resource_url": null,
       "resource_format": "CSV",
@@ -484,19 +364,19 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "data",
-        "tipo",
-        "codice_stato_cup",
-        "data_scadenza",
-        "via",
-        "civico",
-        "oggetto_contratto",
-        "stazione_appaltante"
+        "id",
+        "nome_servizio",
+        "descrizione_servizio",
+        "ente_erogatore",
+        "codice_ipa",
+        "canale_erogazione",
+        "requisiti_accesso",
+        "url_servizio"
       ]
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T16:43:22.194Z",
+      "fetched_at": "2026-05-05T16:53:15.727Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -504,62 +384,37 @@
         "months": 17,
         "iso": "2024-12-31"
       },
-      "n_rows": 30,
+      "n_rows": 6,
       "metrics": {
-        "utenti_totali": 12614,
-        "spesa_totale": 30890000,
+        "utenti_totali": 2521,
+        "spesa_totale": null,
         "per_categoria": [
           {
             "nome": "Anziani",
-            "valore": 5385
+            "valore": 1077
           },
           {
             "nome": "Minori",
-            "valore": 2326
+            "valore": 465
           },
           {
             "nome": "Povertà",
-            "valore": 2170
+            "valore": 434
           },
           {
             "nome": "Disabilità",
-            "valore": 1214
+            "valore": 242
           },
           {
             "nome": "Immigrazione",
-            "valore": 973
+            "valore": 194
           },
           {
             "nome": "Salute mentale",
-            "valore": 546
+            "valore": 109
           }
         ],
-        "spesa_per_categoria": [
-          {
-            "nome": "Anziani",
-            "valore": 10090000
-          },
-          {
-            "nome": "Disabilità",
-            "valore": 8130000
-          },
-          {
-            "nome": "Minori",
-            "valore": 5570000
-          },
-          {
-            "nome": "Povertà",
-            "valore": 3990000
-          },
-          {
-            "nome": "Immigrazione",
-            "valore": 1875000
-          },
-          {
-            "nome": "Salute mentale",
-            "valore": 1235000
-          }
-        ]
+        "spesa_per_categoria": []
       },
       "resource_url": null,
       "resource_format": "CSV",
@@ -569,17 +424,22 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "anno",
-        "categoria",
-        "numero",
-        "importo",
-        "interventi",
-        "misura"
+        "codice_struttura",
+        "nome_struttura",
+        "tipo_struttura",
+        "comune",
+        "indirizzo",
+        "lat",
+        "lon",
+        "telefono",
+        "email",
+        "posti_letto",
+        "accreditata"
       ]
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T16:43:22.195Z",
+      "fetched_at": "2026-05-05T16:53:15.729Z",
       "status": "ok",
       "modified": "2024-09-15",
       "freshness": {
@@ -789,20 +649,22 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "denominazione_scuola",
-        "anno",
-        "totale_alunni",
-        "tipo_scuola",
+        "codice_meccanografico",
+        "nome_istituto",
+        "tipo_istituto",
+        "comune",
+        "indirizzo",
         "lat",
         "lon",
-        "via",
-        "codice_scuola",
-        "ciclo"
+        "telefono",
+        "email",
+        "numero_alunni",
+        "numero_classi"
       ]
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T16:43:22.196Z",
+      "fetched_at": "2026-05-05T16:53:15.730Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -869,7 +731,28 @@
             "n": 28
           }
         ],
-        "per_tipo": [],
+        "per_tipo": [
+          {
+            "nome": "investimento pedone",
+            "n": 102
+          },
+          {
+            "nome": "tamponamento",
+            "n": 102
+          },
+          {
+            "nome": "ribaltamento",
+            "n": 94
+          },
+          {
+            "nome": "uscita di strada",
+            "n": 88
+          },
+          {
+            "nome": "urto laterale",
+            "n": 88
+          }
+        ],
         "serie_anni": [
           {
             "anno": 2020,
@@ -2800,19 +2683,21 @@
       "error": null,
       "fields_present": [
         "data",
+        "ora",
+        "comune",
+        "via",
         "lat",
         "lon",
-        "decessi",
+        "tipo_incidente",
+        "veicoli_coinvolti",
         "feriti",
-        "localita",
-        "ora",
-        "numero_incidenti",
-        "mese"
+        "morti",
+        "condizioni_meteo"
       ]
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T16:43:22.199Z",
+      "fetched_at": "2026-05-05T16:53:15.743Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -2900,15 +2785,17 @@
       "error": null,
       "fields_present": [
         "anno",
-        "frazione",
-        "valore",
+        "regione",
+        "provincia",
+        "tipo_frazione",
+        "quantita",
         "unita_misura",
-        "misura"
+        "localita"
       ]
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T16:43:22.200Z",
+      "fetched_at": "2026-05-05T16:53:15.749Z",
       "status": "ok",
       "modified": "2025-01-31",
       "freshness": {
@@ -3391,19 +3278,23 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "nome",
-        "datainizio",
-        "datafine",
-        "categoria",
+        "id",
+        "titolo_evento",
+        "tipo_evento",
+        "data_inizio",
+        "data_fine",
         "luogo",
+        "comune",
         "lat",
         "lon",
-        "organizzatore"
+        "organizzatore",
+        "pubblico_target",
+        "format_evento"
       ]
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T16:43:22.201Z",
+      "fetched_at": "2026-05-05T16:53:15.757Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -3416,70 +3307,14 @@
         "totale_anno": 591,
         "per_tipo": [
           {
-            "nome": "Determinazione dirigenziale",
-            "n": 336
-          },
-          {
-            "nome": "Giunta",
-            "n": 168
-          },
-          {
-            "nome": "Consiglio",
-            "n": 87
+            "nome": "Provvedimenti",
+            "n": 591
           }
         ],
         "per_ufficio": [
           {
-            "nome": "Patrimonio",
-            "n": 54
-          },
-          {
-            "nome": "Personale",
-            "n": 52
-          },
-          {
-            "nome": "Pubblica istruzione",
-            "n": 51
-          },
-          {
-            "nome": "Servizi cimiteriali",
-            "n": 48
-          },
-          {
-            "nome": "Ambiente",
-            "n": 46
-          },
-          {
-            "nome": "Urbanistica",
-            "n": 45
-          },
-          {
-            "nome": "Servizi sociali",
-            "n": 45
-          },
-          {
-            "nome": "Sport",
-            "n": 43
-          },
-          {
-            "nome": "Lavori pubblici",
-            "n": 43
-          },
-          {
-            "nome": "Bilancio e tributi",
-            "n": 43
-          },
-          {
-            "nome": "Polizia locale",
-            "n": 42
-          },
-          {
-            "nome": "Tributi",
-            "n": 41
-          },
-          {
-            "nome": "Cultura",
-            "n": 38
+            "nome": "Comune Ideale",
+            "n": 591
           }
         ],
         "serie_anni": [
@@ -3509,18 +3344,21 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "data_atto",
-        "tipo_atto",
-        "numero_atto",
-        "oggetto",
-        "uo_proponente",
-        "anno",
-        "descrizione"
+        "id",
+        "denominazione",
+        "obbligo_trasparenza",
+        "categoria_trasparenza",
+        "dato_obbligatorio",
+        "norma_riferimento",
+        "ente",
+        "codice_ipa",
+        "anno_pubblicazione",
+        "url_pubblicazione"
       ]
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T16:43:22.209Z",
+      "fetched_at": "2026-05-05T16:53:15.773Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3581,41 +3419,8 @@
             "n": 1
           }
         ],
-        "per_destinazione": [
-          {
-            "nome": "Scolastico",
-            "n": 10
-          },
-          {
-            "nome": "Disponibile",
-            "n": 8
-          },
-          {
-            "nome": "Storico-artistico",
-            "n": 7
-          },
-          {
-            "nome": "Strumentale",
-            "n": 6
-          },
-          {
-            "nome": "Sportivo",
-            "n": 5
-          },
-          {
-            "nome": "Cimiteriale",
-            "n": 3
-          },
-          {
-            "nome": "In locazione",
-            "n": 2
-          },
-          {
-            "nome": "Amministrativo",
-            "n": 1
-          }
-        ],
-        "valore_totale": 98255000,
+        "per_destinazione": [],
+        "valore_totale": null,
         "superficie_totale_mq": null,
         "pct_vincolo": 21.4,
         "immobili_geo": [
@@ -3839,21 +3644,25 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "denominazione",
-        "tipo",
-        "indirizzo",
+        "id",
+        "codice_bene",
+        "denominazione_bene",
+        "tipo_bene",
+        "tutela",
+        "vincolo",
+        "epoca",
+        "materiale",
+        "stato_conservazione",
+        "ente_tutela",
+        "comune",
         "lat",
         "lon",
-        "valore",
-        "tipo_bene",
-        "descrizione",
-        "autore",
-        "datazione"
+        "indirizzo"
       ]
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T16:43:22.211Z",
+      "fetched_at": "2026-05-05T16:53:15.777Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3888,23 +3697,7 @@
             "valore": 212400
           }
         ],
-        "per_tributo_aliquota": [
-          {
-            "nome": "TASSA_SOGGIORNO",
-            "aliquota": 2.5,
-            "descrizione": "Tassa €2.50/notte categoria 4 stelle"
-          },
-          {
-            "nome": "IMU",
-            "aliquota": 1.06,
-            "descrizione": "Aliquota ordinaria 10.6 per mille - delibera CC"
-          },
-          {
-            "nome": "ADDIZIONALE_IRPEF",
-            "aliquota": 0.8,
-            "descrizione": "Aliquota addizionale 0.80% - delibera CC"
-          }
-        ],
+        "per_tributo_aliquota": [],
         "has_gettito": true,
         "serie_anni": [
           {
@@ -3928,7 +3721,7 @@
             "valore": 13466888.18
           }
         ],
-        "contribuenti_ultimo_anno": 29218
+        "contribuenti_ultimo_anno": null
       },
       "resource_url": null,
       "resource_format": "CSV",
@@ -3938,13 +3731,17 @@
       "source_url": null,
       "error": null,
       "fields_present": [
+        "id",
+        "denominazione",
+        "tipo_indicatore",
         "anno",
-        "tipo_atto",
-        "totale_entrate",
-        "numero",
-        "valore",
-        "descrizione",
-        "categoria"
+        "valore_indicatore",
+        "baseline",
+        "target",
+        "unita_misura",
+        "fonte_indicatore",
+        "ente",
+        "codice_ipa"
       ]
     }
   }
