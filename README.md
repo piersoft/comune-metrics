@@ -38,9 +38,9 @@ Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 12
 
 Il Comune **non deve** pubblicarli tutti per essere visibile: i dataset mancanti vengono dichiarati `presente: false` nel manifest.
 
-Schemi formali completi in [`schemas/csv/`](schemas/csv/) — specifica leggibile in [`docs/PANIERE_CSV_SCHEMA.md`](docs/PANIERE_CSV_SCHEMA.md).
+Schemi formali completi in [`schemas/csv/`](schemas/csv/) — specifica leggibile in [`PANIERE_CSV_SCHEMA.md`](docs/PANIERE_CSV_SCHEMA.md).
 
-**Per i Comuni**: la [guida pratica `docs/PANIERE.md`](docs/PANIERE.md) spiega come ricavare i CSV partendo dai gestionali interni (anagrafe, finanziaria, SUE, polizia locale, ecc.) e a quale ufficio rivolgersi per ciascun dataset.
+**Per i Comuni**: la [guida pratica](docs/PANIERE.md) spiega come ricavare i CSV partendo dai gestionali interni (anagrafe, finanziaria, SUE, polizia locale, ecc.) e a quale ufficio rivolgersi per ciascun dataset.
 
 ---
 
