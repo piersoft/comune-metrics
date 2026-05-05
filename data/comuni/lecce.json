@@ -34,7 +34,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T15:48:58.208Z",
+      "fetched_at": "2026-05-05T15:52:48.993Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -79,7 +79,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T15:49:00.256Z",
+      "fetched_at": "2026-05-05T15:52:50.662Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -213,7 +213,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T15:49:00.262Z",
+      "fetched_at": "2026-05-05T15:52:50.671Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -371,7 +371,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T15:49:02.399Z",
+      "fetched_at": "2026-05-05T15:52:52.346Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -634,7 +634,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "__fixture__:servizi_sociali",
-      "fetched_at": "2026-05-05T15:49:02.595Z",
+      "fetched_at": "2026-05-05T15:52:52.504Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -703,7 +703,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T15:49:02.595Z",
+      "fetched_at": "2026-05-05T15:52:52.527Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -875,7 +875,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "__fixture__:incidenti_stradali",
-      "fetched_at": "2026-05-05T15:49:04.555Z",
+      "fetched_at": "2026-05-05T15:52:54.907Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -20937,7 +20937,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "__fixture__:rifiuti",
-      "fetched_at": "2026-05-05T15:49:04.582Z",
+      "fetched_at": "2026-05-05T15:52:54.931Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21000,7 +21000,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T15:49:04.583Z",
+      "fetched_at": "2026-05-05T15:52:54.933Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21115,7 +21115,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T15:49:04.586Z",
+      "fetched_at": "2026-05-05T15:52:54.937Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21163,7 +21163,7 @@
     "tributi": {
       "dataset_key": "tributi",
       "slug": "__fixture__:tributi",
-      "fetched_at": "2026-05-05T15:49:04.588Z",
+      "fetched_at": "2026-05-05T15:52:54.947Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {

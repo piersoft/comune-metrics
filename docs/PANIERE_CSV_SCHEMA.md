@@ -1,37 +1,6 @@
-# Paniere CSV — Schema Canonico v2.0
+# Paniere CSV — Schema canonico
 
 > Specifica del formato CSV richiesto per la pubblicazione dei dataset CORE nel cruscotto ComuneMetrics.
-
-## Cosa è cambiato in v2.0
-
-Dal 5 maggio 2026 alcuni nomi di colonna del paniere sono stati allineati al **vocabolario standard** usato per la conversione automatica dei CSV in formato Linked Open Data, secondo le ontologie e i vocabolari controllati pubblicati su [schema.gov.it](https://schema.gov.it/) (Catalogo Nazionale Dati). Risultato: chi pubblica seguendo questa specifica ottiene una traduzione RDF corretta senza intervento manuale.
-
-**Cosa significa in pratica per chi pubblica**:
-
-- I **nuovi CSV** vanno scritti con i nomi di colonna v2.0 documentati nelle schede dei 12 dataset più sotto.
-- I **CSV già pubblicati** con i vecchi nomi continuano a funzionare: il sistema li riconosce automaticamente. Non serve aggiornare retroattivamente.
-- Il caso del dataset `rifiuti` è particolare (cambio di struttura, non solo di nome): vedi la scheda specifica.
-
-I nomi di colonna sono cambiati così:
-
-| Dataset | Prima (v1) | Adesso (v2) |
-|---|---|---|
-| bilancio | `missione`, `programma`, `importo_euro` | `settore_interv_inv`, `sottosettore_interv_inv`, `totale_uscite` |
-| delibere | `data`, `tipo`, `numero`, `settore` | `data_atto`, `tipo_atto`, `numero_atto`, `uo_proponente` |
-| eventi_culturali | `data_inizio`, `data_fine` | `datainizio`, `datafine` |
-| incidenti_stradali | `morti`, `zona` | `decessi`, `localita` |
-| istruzione | `struttura`, `iscritti`, `tipo_struttura` | `denominazione`, `totale_alunni`, `tipologia` |
-| opere_pubbliche | `stato`, `importo_euro`, `rup` | `codice_stato_cup`, `costo_lavori_previsto`, `nome_completo` |
-| patrimonio | `valore_euro`, `vincolo_culturale`, `uso` | `rendita`, `qualita`, `consistenza` |
-| popolazione | `residenti`, `quartiere` | `totale_residenti`, `localita` |
-| pratiche_edilizie | `esito`, `chiusura_data` | `codice_stato_cup`, `data_scadenza` |
-| rifiuti | formato a righe-anno con colonne `kg_totali`, `rd_pct`, ecc. | formato a righe-osservazione: `anno`, `frazione`, `valore_assoluto`, `unita_misura` |
-| servizi_sociali | `utenti`, `spesa_euro` | `numero`, `totale_costo` |
-| tributi | `tributo`, `gettito_euro`, `n_contribuenti`, `aliquota_base` | `tipo_atto`, `totale_entrate`, `numero`, `valore` (+ `unita_misura`) |
-
-> Nota su `opere_pubbliche.nome_completo`: questa colonna è il **nome del RUP**, cioè la persona fisica responsabile del procedimento. Non confonderla con il titolare giuridico dell'opera (Comune, Regione, Ministero), che è cosa diversa.
-
----
 
 ## Riferimento canonico
 
@@ -43,7 +12,7 @@ Il **[Comune IDEALE](../data/comuni/demo/)** (visibile nella dashboard live) è 
 
 Il **Paniere CSV** è uno standard **federato e replicabile**. Ogni Comune produce CSV nel formato canonico documentato qui; il cruscotto li legge senza richiedere alias, sinonimi, o adattamenti specifici per portale.
 
-A differenza del modello v1 (che era pieno di sinonimi colonne accumulati per ogni nuovo Comune), il modello v2 (questa specifica) impone:
+Lo schema impone:
 
 - **Nomi colonne canonici** (case-sensitive, senza alias)
 - **Validazione obbligatoria** prima del calcolo (CSV non conformi rifiutati)
@@ -104,6 +73,8 @@ anno,settore_interv_inv,sottosettore_interv_inv,totale_uscite,tipo
 nome,anno,codice_stato_cup,costo_lavori_previsto,cup,fonte_finanziamento,lat,lon,tipo,nome_completo
 "NODO COMPLESSO DEL GALLITELLO",2007,ATTIVO,29884600.00,B31B05000260007,Statale,40.6406,15.8059,"NUOVA REALIZZAZIONE","Mario Rossi"
 ```
+
+> Il campo `nome_completo` è la persona fisica responsabile del procedimento (RUP), non il titolare giuridico dell'opera (Comune, Regione, Ministero) che è informazione diversa.
 
 > **Comuni che non pubblicano le opere pubbliche**: l'elenco delle opere CUP intestate al Comune è ricostruibile dalle banche dati nazionali del MEF. Vedi [`PANIERE.md` § Comuni che non pubblicano](PANIERE.md#comuni-che-non-pubblicano-il-fallback-nazionale).
 
@@ -277,14 +248,6 @@ R: Sì, per il formato canonico. Se non puoi rinominarli alla fonte, scrivi un p
 **D: Posso pubblicare un CSV con dati fino al 2018 e basta? Verrà mostrato come "obsoleto"?**
 R: Sì, viene comunque accettato. La dashboard mostra un flag freshness: `🟢 recente` (< 12 mesi), `🟡 datato` (1-3 anni), `🔴 obsoleto` (> 3 anni). Lecce ha molti dataset `obsoleto` perché si sono fermati al 2017-2019.
 
-## Versionamento
+---
 
-Versione corrente: **csv-v2** (5 maggio 2026).
-
-Lo schema è versionato. I CSV già pubblicati con la versione precedente continuano ad essere accettati: il sistema riconosce automaticamente sia i vecchi che i nuovi nomi di colonna.
-
-### Storia
-
-- **csv-v2** (5 maggio 2026): allineamento dei nomi di colonna al vocabolario standard per la conversione automatica in Linked Open Data. Cambia anche la struttura del CSV `rifiuti` (formato a righe-osservazione invece di una sola riga per anno con molte colonne). I CSV v1 restano validi.
-- **csv-v1** (4 maggio 2026): schema iniziale con 11 dataset CORE.
-  - 5 maggio 2026: aggiunto il 12° dataset, `tributi` (gettito IMU, TARI, tassa di soggiorno, addizionale IRPEF, ecc.).
+Se hai pubblicato in passato CSV con nomi colonna diversi da quelli documentati qui (`missione`, `importo_euro`, `gettito_euro`, ecc.), continuano a essere accettati: il sistema riconosce automaticamente i nomi precedenti.
