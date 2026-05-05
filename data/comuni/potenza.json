@@ -17,7 +17,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T15:58:05.543Z",
+      "fetched_at": "2026-05-05T16:41:54.535Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -90,7 +90,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T15:58:05.547Z",
+      "fetched_at": "2026-05-05T16:41:54.536Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -179,76 +179,30 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T15:58:05.548Z",
-      "status": "ok",
+      "fetched_at": "2026-05-05T16:41:54.536Z",
+      "status": "schema_error",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": 94,
-      "metrics": {
-        "totale": 94,
-        "per_stato": [
-          {
-            "nome": "ATTIVO",
-            "n": 87
-          },
-          {
-            "nome": "CHIUSO",
-            "n": 7
-          }
-        ],
-        "per_fonte": [
-          {
-            "nome": "Altro",
-            "n": 74
-          },
-          {
-            "nome": "Comunale/Regionale",
-            "n": 6
-          },
-          {
-            "nome": "Statale",
-            "n": 3
-          },
-          {
-            "nome": "Europeo",
-            "n": 2
-          },
-          {
-            "nome": "Privato",
-            "n": 1
-          }
-        ],
-        "cup_count": 94,
-        "importo_totale": 140116503.63,
-        "opere_geo": []
-      },
+      "n_rows": null,
+      "metrics": null,
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
       "source_origin": "BDAP-RGS / MEF",
       "source_note": "BDAP MEF — Soggetti titolari Opere Pubbliche MOP Basilicata: 94 opere CUP intestate al Comune di Potenza, range 2004-2024. Top: Nodo Gallitello (€29,8M, 2007), Nuovo Cimitero (€19,9M, 2011), Impianto pedonale meccanizzato (€8,8M, 2017), Bucaletto Settore 15 (€7M, 2023). Stati: 87 ATTIVO + 7 CHIUSO. Il campo nome_completo (RUP) non è disponibile in MOP.",
       "source_url": "https://bdap-opendata.rgs.mef.gov.it/SpodCkanApi/api/3/action/package_show?id=spd_mop_sog_mon_reg17_01_9999",
-      "error": null,
-      "fields_present": [
-        "nome",
-        "anno",
-        "codice_stato_cup",
-        "costo_lavori_previsto",
-        "cup",
-        "fonte_finanziamento",
-        "lat",
-        "lon",
-        "tipo",
-        "nome_completo"
+      "error": "CSV non conforme allo schema canonico (1 errori). Primi 3: Colonna sconosciuta: 'costo_lavori_previsto' (ammesse: nome, anno, codice_stato_cup, cup, fonte_finanziamento, lat, lon, tipo, nome_completo, cig, oggetto_contratto, stazione_appaltante, importo_aggiudicazione)",
+      "schema_errors": [
+        "Colonna sconosciuta: 'costo_lavori_previsto' (ammesse: nome, anno, codice_stato_cup, cup, fonte_finanziamento, lat, lon, tipo, nome_completo, cig, oggetto_contratto, stazione_appaltante, importo_aggiudicazione)"
       ]
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T15:58:05.559Z",
+      "fetched_at": "2026-05-05T16:41:54.540Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -268,7 +222,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T15:58:05.559Z",
+      "fetched_at": "2026-05-05T16:41:54.540Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -288,7 +242,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T15:58:05.559Z",
+      "fetched_at": "2026-05-05T16:41:54.540Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -427,7 +381,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T15:58:05.565Z",
+      "fetched_at": "2026-05-05T16:41:54.541Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -447,7 +401,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T15:58:05.565Z",
+      "fetched_at": "2026-05-05T16:41:54.541Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -496,7 +450,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T15:58:05.565Z",
+      "fetched_at": "2026-05-05T16:41:54.541Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -581,7 +535,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T15:58:05.566Z",
+      "fetched_at": "2026-05-05T16:41:54.546Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -601,168 +555,31 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T15:58:05.566Z",
-      "status": "ok",
+      "fetched_at": "2026-05-05T16:41:54.546Z",
+      "status": "schema_error",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": 41,
-      "metrics": {
-        "totale_immobili": 41,
-        "per_tipo": [
-          {
-            "nome": "Fabbricato",
-            "n": 14
-          },
-          {
-            "nome": "Infrastruttura",
-            "n": 9
-          },
-          {
-            "nome": "Palazzo",
-            "n": 7
-          },
-          {
-            "nome": "Ponte",
-            "n": 2
-          },
-          {
-            "nome": "Masseria",
-            "n": 2
-          },
-          {
-            "nome": "Torre",
-            "n": 2
-          },
-          {
-            "nome": "Convento",
-            "n": 1
-          },
-          {
-            "nome": "Teatro",
-            "n": 1
-          },
-          {
-            "nome": "Chiesa",
-            "n": 1
-          },
-          {
-            "nome": "Parco",
-            "n": 1
-          },
-          {
-            "nome": "Tessuto urbano",
-            "n": 1
-          }
-        ],
-        "per_destinazione": [
-          {
-            "nome": "Ex complesso ospedaliero psichiatrico",
-            "n": 10
-          },
-          {
-            "nome": "Edificio storico",
-            "n": 4
-          },
-          {
-            "nome": "Edificio pubblico storico",
-            "n": 3
-          },
-          {
-            "nome": "Edificio religioso storico",
-            "n": 2
-          },
-          {
-            "nome": "Architettura rurale storica",
-            "n": 2
-          },
-          {
-            "nome": "Porta storica della citta",
-            "n": 2
-          },
-          {
-            "nome": "Stazione ferroviaria storica",
-            "n": 2
-          },
-          {
-            "nome": "Edificio storico dismesso",
-            "n": 1
-          },
-          {
-            "nome": "Sede museale (oggi Museo Dinu Adamesteanu)",
-            "n": 1
-          },
-          {
-            "nome": "Cavalcavia ferroviario storico",
-            "n": 1
-          },
-          {
-            "nome": "Ponte di Sergio Musmeci - opera architettonica simbolo della citta",
-            "n": 1
-          },
-          {
-            "nome": "Sede istituzionale",
-            "n": 1
-          },
-          {
-            "nome": "Edificio storico ex museale",
-            "n": 1
-          },
-          {
-            "nome": "Torre medievale",
-            "n": 1
-          },
-          {
-            "nome": "Teatro storico cittadino",
-            "n": 1
-          },
-          {
-            "nome": "Ponte di epoca romana",
-            "n": 1
-          },
-          {
-            "nome": "Edificio religioso e spazio urbano storico",
-            "n": 1
-          },
-          {
-            "nome": "Edificio militare storico",
-            "n": 1
-          },
-          {
-            "nome": "Torre medievale - simbolo della citta",
-            "n": 1
-          },
-          {
-            "nome": "Parco commemorativo - Parco della Rimembranza Orto botanico",
-            "n": 1
-          }
-        ],
-        "valore_totale": null,
-        "superficie_totale_mq": null,
-        "pct_vincolo": 100,
-        "immobili_geo": []
-      },
+      "n_rows": null,
+      "metrics": null,
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
       "source_origin": "ArCo / MiC",
       "source_note": "ArCo SPARQL — Catalogo Generale dei Beni Culturali ICCD-MiC — 41 immobili storico-architettonici catalogati a Potenza (Ponte Musmeci, Teatro Stabile, Palazzo Loffredo, Torre del Castello, ecc.)",
       "source_url": "https://dati.cultura.gov.it/sparql",
-      "error": null,
-      "fields_present": [
-        "denominazione",
-        "tipo",
-        "indirizzo",
-        "qualita",
-        "consistenza"
+      "error": "CSV non conforme allo schema canonico (2 errori). Primi 3: Colonna sconosciuta: 'qualita' (ammesse: denominazione, tipo, indirizzo, lat, lon, autore, datazione, valore, tipo_bene, descrizione) | Colonna sconosciuta: 'consistenza' (ammesse: denominazione, tipo, indirizzo, lat, lon, autore, datazione, valore, tipo_bene, descrizione)",
+      "schema_errors": [
+        "Colonna sconosciuta: 'qualita' (ammesse: denominazione, tipo, indirizzo, lat, lon, autore, datazione, valore, tipo_bene, descrizione)",
+        "Colonna sconosciuta: 'consistenza' (ammesse: denominazione, tipo, indirizzo, lat, lon, autore, datazione, valore, tipo_bene, descrizione)"
       ]
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T15:58:05.571Z",
+      "fetched_at": "2026-05-05T16:41:54.546Z",
       "status": "ok",
       "modified": null,
       "freshness": {

@@ -1,24 +1,24 @@
-anno,settore_interv_inv,totale_uscite,sottosettore_interv_inv
-2024,"Servizi istituzionali, generali e di gestione",4280000,Organi istituzionali
-2024,"Servizi istituzionali, generali e di gestione",2150000,Segreteria generale
-2024,Giustizia,380000,
-2024,Ordine pubblico e sicurezza,890000,Polizia locale
-2024,Istruzione e diritto allo studio,3420000,Istruzione prescolastica
-2024,Tutela e valorizzazione dei beni e attività culturali,1180000,
-2024,"Politiche giovanili, sport e tempo libero",760000,
-2024,Turismo,420000,
-2024,Assetto del territorio ed edilizia abitativa,1840000,
-2024,Sviluppo sostenibile e tutela del territorio e dell'ambiente,2980000,Rifiuti
-2024,Trasporti e diritto alla mobilità,2150000,
-2024,Soccorso civile,340000,
-2024,"Diritti sociali, politiche sociali e famiglia",4520000,Interventi per le famiglie
-2024,Tutela della salute,520000,
-2024,Sviluppo economico e competitività,680000,
-2024,Politiche per il lavoro e la formazione professionale,290000,
-2024,"Agricoltura, politiche agroalimentari e pesca",180000,
-2024,Energia e diversificazione delle fonti energetiche,240000,
-2024,Relazioni con le altre autonomie territoriali e locali,110000,
-2024,Fondi e accantonamenti,890000,
-2024,Debito pubblico,2400000,
-2024,Anticipazioni finanziarie,5800000,
-2024,Servizi per conto terzi,1450000,
+anno,settore_interv_inv,importo,sottosettore_interv_inv,misura
+2024,"Servizi istituzionali, generali e di gestione",4280000,Organi istituzionali,euro
+2024,"Servizi istituzionali, generali e di gestione",2150000,Segreteria generale,euro
+2024,Giustizia,380000,,euro
+2024,Ordine pubblico e sicurezza,890000,Polizia locale,euro
+2024,Istruzione e diritto allo studio,3420000,Istruzione prescolastica,euro
+2024,Tutela e valorizzazione dei beni e attività culturali,1180000,,euro
+2024,"Politiche giovanili, sport e tempo libero",760000,,euro
+2024,Turismo,420000,,euro
+2024,Assetto del territorio ed edilizia abitativa,1840000,,euro
+2024,Sviluppo sostenibile e tutela del territorio e dell'ambiente,2980000,Rifiuti,euro
+2024,Trasporti e diritto alla mobilità,2150000,,euro
+2024,Soccorso civile,340000,,euro
+2024,"Diritti sociali, politiche sociali e famiglia",4520000,Interventi per le famiglie,euro
+2024,Tutela della salute,520000,,euro
+2024,Sviluppo economico e competitività,680000,,euro
+2024,Politiche per il lavoro e la formazione professionale,290000,,euro
+2024,"Agricoltura, politiche agroalimentari e pesca",180000,,euro
+2024,Energia e diversificazione delle fonti energetiche,240000,,euro
+2024,Relazioni con le altre autonomie territoriali e locali,110000,,euro
+2024,Fondi e accantonamenti,890000,,euro
+2024,Debito pubblico,2400000,,euro
+2024,Anticipazioni finanziarie,5800000,,euro
+2024,Servizi per conto terzi,1450000,,euro

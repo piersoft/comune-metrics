@@ -5,7 +5,10 @@
   "description": "Una riga per pratica edilizia presentata al SUE.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "esito": "codice_stato_cup",
@@ -53,6 +56,18 @@
       "datatype": "string",
       "max_length": 200,
       "description": "Quartiere"
+    },
+    {
+      "name": "oggetto_contratto",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Oggetto della pratica"
+    },
+    {
+      "name": "stazione_appaltante",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Ufficio comunale responsabile"
     }
   ],
   "example": "data,tipo,codice_stato_cup,data_scadenza,indirizzo,quartiere\n2024-03-15,CILA,Favorevole,2024-04-02,\"Via Marconi 12\",\"Centro storico\"\n2024-03-16,SCIA,Acquisita,2024-03-16,\"Viale Repubblica 45\",\"Navile\"\n2024-03-18,\"Permesso di costruire\",\"In istruttoria\",,\"Strada Maggiore 89\",\"Santo Stefano\"\n",

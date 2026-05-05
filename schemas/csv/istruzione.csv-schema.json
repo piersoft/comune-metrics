@@ -5,7 +5,10 @@
   "description": "Una riga per scuola/struttura educativa con iscritti, geo, tipologia.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "struttura": "denominazione",
@@ -31,28 +34,47 @@
     {
       "name": "tipologia",
       "datatype": "string",
-      "enum": ["Asilo nido", "Infanzia", "Primaria", "Secondaria I grado", "Secondaria II grado", "Liceo", "Tecnico", "Professionale", "CPA", "Altro"],
+      "enum": [
+        "Asilo nido",
+        "Infanzia",
+        "Primaria",
+        "Secondaria I grado",
+        "Secondaria II grado",
+        "Liceo",
+        "Tecnico",
+        "Professionale",
+        "CPA",
+        "Altro"
+      ],
       "description": "Tipologia di struttura educativa (ex 'tipo_struttura')",
       "rdf_predicate": "dct:type@it"
     },
     {
       "name": "totale_alunni",
       "datatype": "integer",
-      "constraints": { "min": 0 },
+      "constraints": {
+        "min": 0
+      },
       "description": "Numero di iscritti / alunni (ex 'iscritti')",
       "rdf_predicate": "sdmx-measure:obsValue"
     },
     {
       "name": "lat",
       "datatype": "number",
-      "constraints": { "min": -90, "max": 90 },
+      "constraints": {
+        "min": -90,
+        "max": 90
+      },
       "description": "Latitudine",
       "rdf_predicate": "geo:lat"
     },
     {
       "name": "lon",
       "datatype": "number",
-      "constraints": { "min": -180, "max": 180 },
+      "constraints": {
+        "min": -180,
+        "max": 180
+      },
       "description": "Longitudine",
       "rdf_predicate": "geo:long"
     },
@@ -71,14 +93,46 @@
     {
       "name": "gestione",
       "datatype": "string",
-      "enum": ["Statale", "Comunale", "Paritaria", "Privata"],
+      "enum": [
+        "Statale",
+        "Comunale",
+        "Paritaria",
+        "Privata"
+      ],
       "description": "Tipologia di gestione"
     },
     {
       "name": "mensa",
       "datatype": "string",
-      "enum": ["Sì", "No"],
+      "enum": [
+        "Sì",
+        "No"
+      ],
       "description": "Presenza servizio mensa"
+    },
+    {
+      "name": "codice_scuola",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Codice scuola MIM"
+    },
+    {
+      "name": "ciclo",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Ciclo scolastico (Infanzia, Primaria, Secondaria)"
+    },
+    {
+      "name": "tipo_scuola",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Tipo scuola (alias di tipologia, per compat con ontologie SMAPIT)"
+    },
+    {
+      "name": "denominazione_scuola",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Denominazione scuola (alias di denominazione)"
     }
   ],
   "example": "denominazione,anno_scolastico,tipologia,totale_alunni,lat,lon,indirizzo,gestione,mensa\n\"Liceo Scientifico Banzi\",2024-2025,\"Liceo\",1771,40.3528,18.1718,\"Via Giuseppe Cesare Abba 5\",\"Statale\",\"No\"\n\"Scuola Infanzia Cesare Battisti\",2024-2025,\"Infanzia\",160,40.3538,18.1750,\"Via Salvatore Trinchese\",\"Statale\",\"Sì\"\n",

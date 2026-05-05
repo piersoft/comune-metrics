@@ -34,15 +34,15 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T15:58:46.430Z",
-      "status": "ok",
+      "fetched_at": "2026-05-05T16:42:22.338Z",
+      "status": "fetch_error",
       "modified": "2019-02-12",
       "freshness": {
         "level": "stale",
         "months": 87,
         "iso": "2019-02-12"
       },
-      "n_rows": 12,
+      "n_rows": null,
       "fields_expected": [
         "anno",
         "eta",
@@ -51,35 +51,22 @@
         "quartiere",
         "residenti"
       ],
-      "fields_present": [
-        "anno"
-      ],
-      "fields_missing": [
-        "eta",
-        "sesso",
-        "cittadinanza",
-        "quartiere",
-        "residenti"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
-        "totale_residenti": 11,
-        "serie_anni": [
-          {
-            "anno": 2019,
-            "valore": 11
-          }
-        ],
+        "totale_residenti": null,
+        "serie_anni": null,
         "serie_residenti": null,
         "per_quartiere": null
       },
       "resource_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcFy1ECsB4VjnnS4BH_uBUaOeLRtK86KpUyDNV-z6EMcnDZQau6BOrGi_4fVxHWzXvZLjXbswzLb8D/pub?gid=150030403&single=true&output=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Download fallito (CSV)"
     },
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T15:58:48.075Z",
+      "fetched_at": "2026-05-05T16:42:31.252Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -213,15 +200,15 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T15:58:48.084Z",
-      "status": "ok",
+      "fetched_at": "2026-05-05T16:42:31.256Z",
+      "status": "fetch_error",
       "modified": "2020-11-13",
       "freshness": {
         "level": "stale",
         "months": 66,
         "iso": "2020-11-13"
       },
-      "n_rows": 168,
+      "n_rows": null,
       "fields_expected": [
         "nome",
         "stato",
@@ -239,139 +226,24 @@
         "sal",
         "fonte"
       ],
-      "fields_present": [
-        "nome",
-        "stato",
-        "data_inizio",
-        "tipo_lavoro",
-        "cup",
-        "importo",
-        "fonte"
-      ],
-      "fields_missing": [
-        "lat",
-        "lon",
-        "pin_point",
-        "indirizzo",
-        "data_fine",
-        "quartiere",
-        "anno",
-        "sal"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
-        "totale": 168,
-        "per_stato": [
-          {
-            "nome": "1",
-            "n": 85
-          },
-          {
-            "nome": "2",
-            "n": 79
-          },
-          {
-            "nome": "-",
-            "n": 2
-          },
-          {
-            "nome": "3",
-            "n": 1
-          }
-        ],
+        "totale": null,
+        "per_stato": null,
         "opere_geo": null,
-        "cup_count": 95,
-        "importo_totale": 44670513,
-        "per_fonte": [
-          {
-            "nome": "in definizione",
-            "n": 66
-          },
-          {
-            "nome": "Statale CIS",
-            "n": 37
-          },
-          {
-            "nome": "Statale Piano Triennale Edilizia Scolastica",
-            "n": 17
-          },
-          {
-            "nome": "Statale",
-            "n": 5
-          },
-          {
-            "nome": "Statale Piano triennale Edilizia Scolastica",
-            "n": 4
-          },
-          {
-            "nome": "Statale Ministero dell'Ambiente",
-            "n": 4
-          },
-          {
-            "nome": "Statale PO FERS FSE 2014/2021",
-            "n": 3
-          },
-          {
-            "nome": "Statale CIPE",
-            "n": 3
-          },
-          {
-            "nome": "Regione Puglia-risorse Ministeriali",
-            "n": 3
-          },
-          {
-            "nome": "Regionae SISUS Sviluppo Urbano Sostenibile",
-            "n": 3
-          },
-          {
-            "nome": "Statale Piano Nazionale di Edilizia Abitativa-programma di interventi DPCM 16.7.2009APQ-Regione Puglia",
-            "n": 2
-          },
-          {
-            "nome": "Regionale POR Puglia 2014/2020",
-            "n": 2
-          },
-          {
-            "nome": "Regionale",
-            "n": 2
-          },
-          {
-            "nome": "Statale Programma Operativo Naionale Legalità",
-            "n": 1
-          },
-          {
-            "nome": "PO FERS FSE 2014/2021",
-            "n": 1
-          },
-          {
-            "nome": "Statale Programma straordinario per la riqualificazione urbana e la sicurezza delle periferie",
-            "n": 1
-          },
-          {
-            "nome": "Statale Contratto di quartiere -Stadio",
-            "n": 1
-          },
-          {
-            "nome": "Statale Fondo per lo Sviluppo e la Coesione",
-            "n": 1
-          },
-          {
-            "nome": "Statale CIPE - FSC - Accordo di Programma Rafforzato Trasporti",
-            "n": 1
-          },
-          {
-            "nome": "Statale Programma Opere Minori",
-            "n": 1
-          }
-        ]
+        "cup_count": null,
+        "importo_totale": null,
+        "per_fonte": null
       },
       "resource_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vShmL3XYJrJO6ydV9kTctXuFlgrDR1PmD7yERmIdUjD3yf4-bhUmSUSM9Zy1B29C02uWCBmwlppHA0T/pub?output=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Download fallito (CSV)"
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T15:58:50.055Z",
+      "fetched_at": "2026-05-05T16:42:38.422Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -634,7 +506,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "__fixture__:servizi_sociali",
-      "fetched_at": "2026-05-05T15:58:50.215Z",
+      "fetched_at": "2026-05-05T16:42:38.613Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -703,15 +575,15 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T15:58:50.240Z",
-      "status": "ok",
+      "fetched_at": "2026-05-05T16:42:38.633Z",
+      "status": "fetch_error",
       "modified": "2022-01-21",
       "freshness": {
         "level": "stale",
         "months": 52,
         "iso": "2022-01-21"
       },
-      "n_rows": 93,
+      "n_rows": null,
       "fields_expected": [
         "anno",
         "tipo_struttura",
@@ -721,161 +593,22 @@
         "lat",
         "lon"
       ],
-      "fields_present": [
-        "tipo_struttura",
-        "struttura",
-        "quartiere",
-        "iscritti",
-        "lat",
-        "lon"
-      ],
-      "fields_missing": [
-        "anno"
-      ],
+      "fields_present": null,
+      "fields_missing": null,
       "metrics": {
-        "totale_iscritti": 24166,
-        "per_struttura": [
-          {
-            "nome": "LICEO SCENTIFICO BANZI",
-            "valore": 1771
-          },
-          {
-            "nome": "LICEO CLASSICO E MUSICALE G. PALMIERI",
-            "valore": 1527
-          },
-          {
-            "nome": "LICEO SCENTIFICO DE GIORGI",
-            "valore": 1425
-          },
-          {
-            "nome": "LICEO P. SICILIANI",
-            "valore": 1253
-          },
-          {
-            "nome": "S. AMMIRATO - FALCONE",
-            "valore": 1187
-          },
-          {
-            "nome": "IST. SUPERIORE GALILEO COSTA SCARAMBONE",
-            "valore": 1075
-          },
-          {
-            "nome": "ISTITUTO TECNICO ADRIANO OLIVETTI",
-            "valore": 1032
-          },
-          {
-            "nome": "IST. TECNICO GRAZIA DE LEDDA",
-            "valore": 1022
-          },
-          {
-            "nome": "IST. ENRICO FERMI",
-            "valore": 952
-          },
-          {
-            "nome": "LICEO ARTISTICO  CIARDO PELLEGRINO",
-            "valore": 922
-          },
-          {
-            "nome": "DANTE ALIGHIERI - DIAZ",
-            "valore": 902
-          },
-          {
-            "nome": "STOMEO - ZIMBALO",
-            "valore": 895
-          },
-          {
-            "nome": "L. TEMPESTA",
-            "valore": 886
-          },
-          {
-            "nome": "IST. SUPERIORE COLUMELLA",
-            "valore": 834
-          },
-          {
-            "nome": "ISTITUTO SUP. ANTONIETTA DE PACE",
-            "valore": 813
-          },
-          {
-            "nome": "ASCANIO GRANDI",
-            "valore": 799
-          },
-          {
-            "nome": "E. DE AMICIS",
-            "valore": 787
-          },
-          {
-            "nome": "S. CASTROMEDIANO",
-            "valore": 767
-          },
-          {
-            "nome": "LICEO CLASSICO VIRGILIO REDI",
-            "valore": 687
-          },
-          {
-            "nome": "CESARE BATTISTI",
-            "valore": 682
-          },
-          {
-            "nome": "GALATEO",
-            "valore": 643
-          },
-          {
-            "nome": "IST. SUP. F. CALASSO",
-            "valore": 614
-          },
-          {
-            "nome": "QUINTO ENNIO",
-            "valore": 584
-          },
-          {
-            "nome": "ISTITUTO MARCELLINE",
-            "valore": 433
-          },
-          {
-            "nome": "FILIPPO  SMALDONE",
-            "valore": 333
-          },
-          {
-            "nome": "C.P.I.A.",
-            "valore": 331
-          },
-          {
-            "nome": "OXFORD",
-            "valore": 253
-          },
-          {
-            "nome": "CUORE IMMAC. DI MARIA",
-            "valore": 190
-          },
-          {
-            "nome": "GESU' EUCARISTICO",
-            "valore": 136
-          },
-          {
-            "nome": "ISTITUTO TECNICO COMMERCIALE SALOMI",
-            "valore": 96
-          }
-        ],
-        "per_quartiere": [
-          {
-            "nome": "NO",
-            "valore": 20539
-          },
-          {
-            "nome": "SI",
-            "valore": 3627
-          }
-        ],
+        "totale_iscritti": null,
+        "per_struttura": null,
+        "per_quartiere": null,
         "serie_anni": null
       },
       "resource_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQmJ-L2MFgTTCFSaQYZ7jG43CvFZQLM7a_KQ9mAYk73oTiLThGSe3S_aNo9uYWVNJSS3va9hcAS0MyO/pub?output=csv",
       "resource_format": "CSV",
-      "error": null
+      "error": "Download fallito (CSV)"
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "__fixture__:incidenti_stradali",
-      "fetched_at": "2026-05-05T15:58:52.338Z",
+      "fetched_at": "2026-05-05T16:42:45.251Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -20937,7 +20670,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "__fixture__:rifiuti",
-      "fetched_at": "2026-05-05T15:58:52.363Z",
+      "fetched_at": "2026-05-05T16:42:45.276Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21000,7 +20733,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T15:58:52.365Z",
+      "fetched_at": "2026-05-05T16:42:45.278Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21115,7 +20848,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T15:58:52.369Z",
+      "fetched_at": "2026-05-05T16:42:45.281Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21163,7 +20896,7 @@
     "tributi": {
       "dataset_key": "tributi",
       "slug": "__fixture__:tributi",
-      "fetched_at": "2026-05-05T15:58:52.371Z",
+      "fetched_at": "2026-05-05T16:42:45.283Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {

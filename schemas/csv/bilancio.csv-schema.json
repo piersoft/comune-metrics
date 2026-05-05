@@ -5,7 +5,10 @@
   "description": "Una riga per (anno, settore_interv_inv, sottosettore_interv_inv) con il totale uscite in euro.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "missione": "settore_interv_inv",
@@ -16,7 +19,10 @@
     {
       "name": "anno",
       "datatype": "integer",
-      "constraints": { "min": 1900, "max": 2050 },
+      "constraints": {
+        "min": 1900,
+        "max": 2050
+      },
       "description": "Anno di esercizio del bilancio",
       "rdf_predicate": "sdmx-dimension:refPeriod"
     },
@@ -28,10 +34,12 @@
       "rdf_predicate": "dct:subject@it"
     },
     {
-      "name": "totale_uscite",
+      "name": "importo",
       "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Totale uscite in euro (numero positivo, decimale separato da punto) (ex 'importo_euro')",
+      "constraints": {
+        "min": 0
+      },
+      "description": "Importo di spesa in euro (ex 'totale_uscite')",
       "rdf_predicate": "sdmx-measure:obsValue"
     }
   ],
@@ -46,7 +54,12 @@
     {
       "name": "tipo",
       "datatype": "string",
-      "enum": ["previsione", "impegno", "pagamento", "consuntivo"],
+      "enum": [
+        "previsione",
+        "impegno",
+        "pagamento",
+        "consuntivo"
+      ],
       "description": "Tipo di importo",
       "rdf_predicate": "dct:type@it"
     },
@@ -55,6 +68,12 @@
       "datatype": "string",
       "max_length": 200,
       "description": "Macroaggregato di spesa"
+    },
+    {
+      "name": "misura",
+      "datatype": "string",
+      "max_length": 50,
+      "description": "Unità di misura (es. 'euro')"
     }
   ],
   "example": "anno,settore_interv_inv,sottosettore_interv_inv,totale_uscite\n2024,\"Servizi istituzionali, generali e di gestione\",\"Organi istituzionali\",1250000.50\n2024,\"Ordine pubblico e sicurezza\",\"Polizia locale e amministrativa\",4500000.00\n2024,\"Istruzione e diritto allo studio\",\"Istruzione prescolastica\",8900000.00\n",

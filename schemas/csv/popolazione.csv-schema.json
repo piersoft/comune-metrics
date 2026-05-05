@@ -5,7 +5,10 @@
   "description": "Una riga per (anno, localita) con il numero di residenti aggregato.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "residenti": "totale_residenti",
@@ -15,15 +18,20 @@
     {
       "name": "anno",
       "datatype": "integer",
-      "constraints": { "min": 1900, "max": 2050 },
+      "constraints": {
+        "min": 1900,
+        "max": 2050
+      },
       "description": "Anno di riferimento",
       "rdf_predicate": "sdmx-dimension:refPeriod"
     },
     {
-      "name": "totale_residenti",
+      "name": "numero_residenti",
       "datatype": "integer",
-      "constraints": { "min": 0 },
-      "description": "Numero di residenti totali (intero positivo) (ex 'residenti'). Semantica unica → arricchimento via LLM."
+      "constraints": {
+        "min": 0
+      },
+      "description": "Numero di residenti totali"
     }
   ],
   "optional_columns": [
@@ -37,7 +45,11 @@
     {
       "name": "sesso",
       "datatype": "string",
-      "enum": ["M", "F", "Totale"],
+      "enum": [
+        "M",
+        "F",
+        "Totale"
+      ],
       "description": "Sesso (M/F/Totale)",
       "rdf_predicate": "cpv:sexID"
     },

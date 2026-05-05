@@ -1,400 +1,400 @@
-data,tipo,codice_stato_cup,data_scadenza,via,civico
-2018-02-01,SCIA,Acquisita,2018-03-14,Via Cavour,140
-2018-02-19,CIL,Efficace,2018-05-05,Via Verdi,130
-2018-10-01,CILA,Rigettata,2019-03-15,Via XX Settembre,57
-2018-08-19,SCIA,In istruttoria,,Viale Europa,2
-2018-03-23,CIL,Efficace,2018-06-09,Via dei Mille,87
-2018-02-03,CIL,Efficace,2018-05-22,Via Vittorio Emanuele,68
-2018-01-24,SCIA-Alternativa,Acquisita,2018-05-23,Via Garibaldi,142
-2018-05-27,CILA,Acquisita,2018-07-03,Via Roma,59
-2018-05-03,CILA,In istruttoria,,Via Garibaldi,98
-2018-05-15,CILA,Acquisita,2018-07-27,Via Cavour,69
-2018-12-22,SCIA,Acquisita,2019-06-05,Piazza San Marco,63
-2018-03-15,CIL,Efficace,,Via Cavour,143
-2018-04-22,CILA,In istruttoria,,Via dei Mille,15
-2018-04-27,CILA,In istruttoria,,Via Dante,103
-2018-05-03,CILA,Acquisita,,Via Dante,55
-2018-11-16,CIL,Rigettata,2019-02-14,Via Mazzini,64
-2018-12-18,SCIA,Rigettata,2019-06-14,Via XX Settembre,93
-2018-04-05,SCIA-Alternativa,Efficace,2018-05-20,Via Mazzini,41
-2018-11-14,SCIA,Efficace,2019-04-08,Via della Repubblica,65
-2018-09-28,CILA,Rigettata,2019-03-12,Via dei Mille,69
-2018-11-11,SCIA,Efficace,2019-04-02,Via Roma,68
-2018-09-25,PdC,Acquisita,,Viale Europa,77
-2018-11-17,CILA,Acquisita,2019-01-17,Via della Repubblica,136
-2018-01-20,CILA,Efficace,2018-05-15,Via San Francesco,79
-2018-04-02,CILA,Acquisita,,Via Garibaldi,125
-2018-02-25,PdC,Acquisita,2018-08-12,Via Mazzini,68
-2018-09-28,CIL,Acquisita,,Via dei Mille,52
-2018-12-10,CIL,Rigettata,2019-04-25,Via San Francesco,133
-2018-08-04,CILA,Acquisita,2018-08-24,Via Vittorio Emanuele,142
-2018-04-19,CILA,Efficace,2018-10-27,Via Roma,59
-2018-02-02,CILA,Efficace,2018-05-04,Via Cavour,125
-2018-04-18,PdC,Rigettata,,Via Vittorio Emanuele,148
-2018-08-08,SCIA-Alternativa,In istruttoria,,Via XX Settembre,49
-2018-02-04,CIL,Efficace,2018-06-26,Viale Europa,14
-2018-11-21,SCIA,Efficace,2019-03-10,Via dei Mille,28
-2018-04-07,CILA,Acquisita,2018-08-18,Via Mazzini,72
-2018-08-08,SCIA,Efficace,2019-01-23,Via Garibaldi,13
-2018-11-18,CILA,Efficace,,Viale Europa,61
-2018-03-14,SCIA-Alternativa,Efficace,2018-07-19,Via San Francesco,16
-2018-03-13,CILA,Efficace,2018-08-04,Via Manzoni,109
-2018-12-24,SCIA-Alternativa,Acquisita,2019-03-10,Via Roma,149
-2018-12-18,CILA,Rigettata,2019-01-17,Via Vittorio Emanuele,123
-2018-09-28,PdC,Efficace,,Via Garibaldi,48
-2018-02-20,SCIA,Rigettata,,Via XX Settembre,31
-2018-10-08,CILA,Acquisita,2019-04-04,Via Vittorio Emanuele,134
-2018-06-09,CILA,Rigettata,2018-09-01,Via Manzoni,102
-2018-03-22,SCIA,Efficace,2018-04-27,Via Roma,118
-2018-10-19,SCIA,Efficace,2019-03-23,Via Manzoni,34
-2018-06-03,CILA,Efficace,2018-10-18,Viale Europa,140
-2018-12-10,CILA,Rigettata,2019-03-17,Via San Francesco,27
-2018-03-09,SCIA,Efficace,2018-05-07,Via Manzoni,73
-2018-10-07,CILA,Acquisita,2019-01-05,Via della Repubblica,126
-2018-05-28,CILA,Efficace,2018-09-01,Via Roma,1
-2018-06-25,PdC,Rigettata,,Via Mazzini,114
-2018-09-23,CIL,Acquisita,2018-11-01,Via San Francesco,39
-2019-01-27,CILA,Acquisita,2019-06-12,Via Mazzini,11
-2019-05-12,CILA,Efficace,2019-08-06,Via Cavour,27
-2019-06-25,CIL,Acquisita,2019-09-16,Viale Europa,42
-2019-03-14,CILA,Acquisita,2019-07-02,Via dei Mille,106
-2019-11-28,CILA,Efficace,2020-01-14,Via XX Settembre,10
-2019-08-08,CILA,In istruttoria,,Via San Francesco,118
-2019-06-10,CILA,Acquisita,2019-08-18,Via XX Settembre,85
-2019-05-28,SCIA,In istruttoria,,Via Manzoni,90
-2019-11-17,CIL,Rigettata,,Via della Repubblica,85
-2019-01-04,SCIA,Acquisita,2019-04-02,Via Roma,28
-2019-10-14,CILA,Rigettata,2020-02-28,Via Vittorio Emanuele,131
-2019-02-13,CILA,Efficace,2019-06-27,Via Roma,134
-2019-09-22,CILA,Efficace,2020-01-09,Via Vittorio Emanuele,81
-2019-11-28,SCIA,Rigettata,,Via della Repubblica,80
-2019-11-14,CILA,Efficace,2020-05-02,Via Mazzini,50
-2019-07-22,CIL,Rigettata,2019-09-25,Via Vittorio Emanuele,146
-2019-05-13,CILA,Efficace,2019-09-26,Via dei Mille,149
-2019-10-21,CILA,Efficace,2020-01-06,Via della Repubblica,122
-2019-12-06,SCIA,Efficace,2020-06-15,Via Vittorio Emanuele,86
-2019-02-27,CILA,Rigettata,2019-05-08,Via Mazzini,7
-2019-01-08,SCIA-Alternativa,Acquisita,2019-02-13,Corso Italia,107
-2019-11-19,CILA,Rigettata,2020-04-20,Via XX Settembre,63
-2019-03-21,CILA,In istruttoria,,Viale Europa,28
-2019-07-08,PdC,In istruttoria,,Piazza San Marco,133
-2019-08-02,CILA,In istruttoria,,Via Garibaldi,117
-2019-03-26,SCIA-Alternativa,Rigettata,2019-09-16,Via Vittorio Emanuele,82
-2019-08-20,CIL,In istruttoria,,Via San Francesco,141
-2019-08-06,SCIA-Alternativa,Efficace,2019-10-28,Viale Europa,71
-2019-09-16,CILA,Efficace,2019-12-20,Via Verdi,70
-2019-06-11,SCIA,Acquisita,2019-10-12,Piazza San Marco,40
-2019-12-07,SCIA,Efficace,2020-05-20,Corso Italia,107
-2019-01-07,CIL,Efficace,,Via Vittorio Emanuele,6
-2019-10-13,SCIA-Alternativa,Efficace,,Via Manzoni,100
-2019-07-18,CILA,Efficace,2019-12-04,Corso Italia,8
-2019-07-11,CIL,Rigettata,2019-12-05,Via San Francesco,33
-2019-10-18,CILA,Efficace,2019-11-11,Via Garibaldi,110
-2019-03-28,SCIA-Alternativa,Acquisita,2019-07-28,Via Dante,55
-2019-08-11,CILA,In istruttoria,,Via San Francesco,98
-2019-05-25,CIL,Efficace,2019-10-20,Via Roma,139
-2019-01-12,CILA,Rigettata,2019-02-09,Via dei Mille,8
-2019-04-07,CILA,Acquisita,2019-05-26,Corso Italia,30
-2019-10-07,SCIA-Alternativa,Rigettata,2020-02-04,Via Mazzini,30
-2019-03-10,SCIA,Acquisita,2019-06-20,Via Vittorio Emanuele,97
-2019-07-23,CILA,Efficace,2020-02-02,Via Verdi,27
-2019-12-25,SCIA,In istruttoria,,Via Cavour,31
-2019-10-26,CILA,Efficace,2020-02-23,Via Garibaldi,130
-2019-11-11,CILA,In istruttoria,,Via XX Settembre,126
-2019-02-14,CILA,Rigettata,,Corso Italia,40
-2019-07-06,SCIA,Acquisita,2019-12-18,Via dei Mille,124
-2019-08-14,SCIA,Efficace,,Viale Europa,23
-2019-05-15,CILA,In istruttoria,,Corso Italia,146
-2019-10-22,CIL,Efficace,2020-02-08,Via Mazzini,125
-2020-06-26,SCIA,Efficace,2020-12-25,Piazza San Marco,71
-2020-09-01,CILA,Efficace,2021-01-08,Corso Italia,143
-2020-04-23,SCIA-Alternativa,Rigettata,2020-09-12,Via dei Mille,5
-2020-02-10,CILA,Efficace,2020-05-19,Via Cavour,149
-2020-06-16,CILA,Efficace,,Via della Repubblica,85
-2020-06-23,SCIA-Alternativa,Efficace,2020-09-13,Via Garibaldi,50
-2020-06-04,PdC,Acquisita,2020-11-02,Via Manzoni,135
-2020-10-10,SCIA,In istruttoria,,Via Verdi,76
-2020-04-12,PdC,Efficace,2020-09-23,Via Mazzini,71
-2020-01-02,SCIA,Rigettata,,Via Cavour,126
-2020-02-28,CILA,Acquisita,2020-07-25,Corso Italia,88
-2020-03-02,SCIA,In istruttoria,,Corso Italia,30
-2020-02-13,SCIA-Alternativa,Efficace,2020-03-13,Via Mazzini,39
-2020-10-10,SCIA,Acquisita,2021-02-19,Via Vittorio Emanuele,58
-2020-09-13,SCIA-Alternativa,Efficace,2021-03-10,Via XX Settembre,79
-2020-10-20,CILA,Acquisita,,Via Garibaldi,54
-2020-11-07,SCIA,Rigettata,2021-01-27,Via Mazzini,142
-2020-02-06,CILA,Efficace,2020-08-05,Corso Italia,75
-2020-01-08,SCIA,Rigettata,2020-05-27,Via Garibaldi,60
-2020-05-26,CILA,Efficace,2020-08-14,Via Cavour,39
-2020-05-27,PdC,Efficace,2020-09-08,Via Vittorio Emanuele,146
-2020-05-15,SCIA,Efficace,2020-09-21,Via Manzoni,129
-2020-09-16,SCIA-Alternativa,Efficace,2021-02-01,Piazza San Marco,83
-2020-10-09,CILA,Efficace,2021-04-03,Via Vittorio Emanuele,6
-2020-11-27,SCIA,Acquisita,2021-02-02,Corso Italia,133
-2020-11-15,SCIA,Acquisita,,Via XX Settembre,126
-2020-02-16,CILA,Efficace,2020-04-01,Viale Europa,42
-2020-06-14,SCIA-Alternativa,Efficace,2020-10-19,Viale Europa,141
-2020-01-15,SCIA,Efficace,2020-03-03,Via dei Mille,104
-2020-09-27,CILA,Rigettata,,Corso Italia,106
-2020-01-07,CILA,Acquisita,2020-07-14,Corso Italia,14
-2020-04-09,PdC,Efficace,2020-09-08,Via Garibaldi,8
-2020-11-20,CILA,Rigettata,2021-05-08,Via Roma,142
-2020-07-03,CILA,In istruttoria,,Via San Francesco,30
-2020-08-04,PdC,Efficace,,Via Manzoni,131
-2020-12-09,CIL,In istruttoria,,Corso Italia,121
-2020-04-15,PdC,Efficace,2020-10-15,Via della Repubblica,35
-2020-02-09,CIL,Efficace,,Via della Repubblica,69
-2020-01-10,SCIA,In istruttoria,,Via Vittorio Emanuele,149
-2020-11-16,PdC,Efficace,2021-03-07,Via Dante,142
-2020-09-13,SCIA-Alternativa,Efficace,,Piazza San Marco,62
-2021-07-08,CIL,Efficace,2021-12-04,Piazza San Marco,98
-2021-07-22,PdC,Efficace,,Via Mazzini,129
-2021-10-11,SCIA,In istruttoria,,Viale Europa,113
-2021-02-17,SCIA-Alternativa,Efficace,2021-06-24,Viale Europa,40
-2021-02-16,SCIA,Efficace,2021-06-20,Via Cavour,21
-2021-06-28,CIL,Efficace,2021-11-27,Viale Europa,139
-2021-01-20,SCIA,Acquisita,2021-04-24,Via Verdi,24
-2021-07-04,SCIA,Efficace,2021-10-11,Via San Francesco,8
-2021-01-11,CILA,Efficace,2021-05-24,Via Mazzini,63
-2021-09-14,PdC,Acquisita,2022-03-17,Viale Europa,98
-2021-10-22,CILA,Efficace,,Via Mazzini,60
-2021-08-21,SCIA,Efficace,2021-09-10,Via San Francesco,120
-2021-05-22,PdC,Efficace,2021-09-13,Via Vittorio Emanuele,77
-2021-11-14,SCIA,Efficace,2022-01-23,Via XX Settembre,124
-2021-02-08,CIL,Acquisita,2021-05-14,Piazza San Marco,76
-2021-01-27,CIL,Efficace,2021-02-26,Via San Francesco,128
-2021-05-25,CILA,Acquisita,2021-08-12,Via Cavour,49
-2021-10-09,PdC,Rigettata,2022-04-16,Via Cavour,11
-2021-05-26,SCIA-Alternativa,Efficace,2021-07-18,Via Garibaldi,76
-2021-06-24,CIL,Acquisita,2021-12-09,Via San Francesco,94
-2021-09-17,SCIA,In istruttoria,,Via Mazzini,66
-2021-08-26,SCIA,Rigettata,,Via dei Mille,30
-2021-08-03,PdC,In istruttoria,,Via Verdi,102
-2021-09-12,SCIA,In istruttoria,,Via XX Settembre,4
-2021-05-18,SCIA,Efficace,2021-08-16,Via Vittorio Emanuele,98
-2021-11-12,SCIA,Rigettata,2021-12-05,Via Vittorio Emanuele,144
-2021-06-20,CILA,Rigettata,2021-11-13,Via San Francesco,78
-2021-11-14,SCIA,Acquisita,2021-12-10,Via Manzoni,127
-2021-02-04,CILA,Acquisita,2021-06-23,Via Dante,139
-2021-07-19,PdC,Efficace,2021-12-19,Via Vittorio Emanuele,105
-2021-05-02,CILA,Acquisita,2021-07-21,Viale Europa,93
-2021-02-22,CILA,Acquisita,,Via Cavour,92
-2021-01-13,SCIA,Acquisita,,Viale Europa,117
-2021-02-22,CILA,Rigettata,2021-03-14,Via Roma,86
-2021-04-05,CILA,Efficace,2021-09-21,Via Verdi,56
-2021-04-11,PdC,In istruttoria,,Via San Francesco,1
-2021-05-28,PdC,Acquisita,2021-08-03,Via Garibaldi,7
-2021-03-01,CILA,In istruttoria,,Via dei Mille,61
-2021-10-11,CILA,Acquisita,2021-12-02,Piazza San Marco,108
-2021-09-04,SCIA,Efficace,2021-12-27,Via della Repubblica,28
-2021-08-17,CILA,Acquisita,2022-01-25,Via Manzoni,118
-2021-11-01,CILA,Efficace,2022-03-13,Via Cavour,28
-2021-08-23,SCIA-Alternativa,Efficace,,Via Dante,38
-2021-02-05,SCIA,Acquisita,2021-07-20,Piazza San Marco,84
-2021-07-20,SCIA,Efficace,2021-12-05,Via Garibaldi,30
-2021-11-21,CILA,Efficace,2022-02-10,Via XX Settembre,87
-2021-08-13,CIL,Rigettata,2021-12-25,Via Dante,66
-2021-06-05,SCIA-Alternativa,Efficace,2021-07-13,Via Garibaldi,111
-2021-02-24,CILA,In istruttoria,,Via Mazzini,143
-2021-01-19,CILA,Rigettata,2021-05-12,Viale Europa,109
-2021-12-02,SCIA,Acquisita,2022-01-15,Via Vittorio Emanuele,130
-2021-04-05,SCIA-Alternativa,Acquisita,2021-07-25,Viale Europa,143
-2021-06-04,SCIA,Acquisita,2021-10-16,Viale Europa,144
-2022-10-22,CILA,Acquisita,,Viale Europa,69
-2022-01-06,SCIA,Rigettata,2022-04-23,Via Dante,2
-2022-03-28,PdC,Acquisita,2022-05-04,Via Mazzini,8
-2022-02-24,CILA,Efficace,2022-06-14,Via Mazzini,95
-2022-05-24,CILA,In istruttoria,,Via Vittorio Emanuele,22
-2022-01-05,PdC,In istruttoria,,Via Vittorio Emanuele,13
-2022-11-03,SCIA,Efficace,2023-04-02,Via Vittorio Emanuele,114
-2022-07-09,CILA,In istruttoria,,Via della Repubblica,30
-2022-06-14,SCIA,Efficace,2022-12-12,Corso Italia,135
-2022-11-10,CILA,Acquisita,2023-05-10,Via Roma,2
-2022-04-10,CILA,In istruttoria,,Via Mazzini,66
-2022-05-11,SCIA,Efficace,2022-09-24,Via Mazzini,34
-2022-07-18,CILA,Acquisita,2022-11-11,Via Garibaldi,102
-2022-12-02,CIL,Efficace,2023-01-08,Viale Europa,81
-2022-10-14,CIL,Rigettata,2023-01-19,Via Garibaldi,104
-2022-01-11,PdC,In istruttoria,,Via Vittorio Emanuele,118
-2022-12-12,SCIA,Efficace,2023-03-05,Via XX Settembre,103
-2022-09-03,CIL,In istruttoria,,Via Manzoni,87
-2022-04-11,PdC,Efficace,2022-05-27,Via della Repubblica,131
-2022-04-25,CILA,Efficace,2022-11-09,Viale Europa,38
-2022-04-04,PdC,Efficace,2022-10-05,Via Mazzini,20
-2022-03-25,SCIA-Alternativa,Efficace,2022-09-20,Corso Italia,145
-2022-11-21,CILA,In istruttoria,,Via Cavour,81
-2022-03-15,SCIA,Efficace,2022-06-23,Via dei Mille,71
-2022-10-02,CILA,Acquisita,2023-02-23,Corso Italia,10
-2022-01-12,SCIA,Efficace,2022-02-22,Via Vittorio Emanuele,130
-2022-07-15,CILA,Efficace,,Via Vittorio Emanuele,49
-2022-06-20,SCIA-Alternativa,Acquisita,2022-07-22,Corso Italia,27
-2022-06-23,SCIA,Acquisita,2022-07-20,Via Verdi,113
-2022-08-17,PdC,Efficace,2022-11-20,Via XX Settembre,105
-2022-06-22,CILA,In istruttoria,,Via Cavour,86
-2022-02-11,SCIA,Acquisita,2022-05-14,Via Manzoni,39
-2022-06-03,PdC,Efficace,2022-10-06,Via Mazzini,22
-2022-05-18,CIL,Rigettata,2022-07-09,Via Cavour,135
-2022-02-21,CIL,Acquisita,2022-06-16,Via Manzoni,47
-2022-04-11,SCIA-Alternativa,Acquisita,2022-06-05,Via Mazzini,20
-2022-05-28,SCIA,Acquisita,2022-11-09,Via Roma,87
-2022-10-05,CIL,Acquisita,2023-04-11,Via dei Mille,43
-2022-12-15,CILA,Efficace,2023-03-06,Corso Italia,73
-2022-12-26,SCIA-Alternativa,Acquisita,2023-04-08,Via dei Mille,121
-2022-04-12,SCIA-Alternativa,Efficace,2022-08-12,Via della Repubblica,136
-2022-07-06,CILA,In istruttoria,,Via Vittorio Emanuele,36
-2022-05-02,SCIA-Alternativa,In istruttoria,,Via Dante,142
-2022-02-23,SCIA,Efficace,2022-04-23,Via Manzoni,116
-2022-09-05,CIL,Efficace,,Via Verdi,116
-2022-06-01,CIL,Efficace,2022-09-27,Via Verdi,99
-2022-02-12,CILA,Efficace,2022-03-24,Viale Europa,86
-2022-03-05,CILA,Efficace,,Corso Italia,36
-2022-12-16,SCIA-Alternativa,Acquisita,2023-01-23,Via Roma,66
-2022-04-27,PdC,Acquisita,,Via Vittorio Emanuele,136
-2022-07-04,SCIA,Acquisita,2022-08-03,Via Verdi,108
-2022-11-26,SCIA-Alternativa,Efficace,2023-04-28,Via Vittorio Emanuele,138
-2022-01-21,CILA,Rigettata,2022-06-05,Via Roma,91
-2022-04-19,CIL,Acquisita,2022-05-27,Via della Repubblica,93
-2023-09-18,CILA,Efficace,,Via Roma,100
-2023-06-09,CILA,Efficace,2023-09-28,Via Verdi,27
-2023-10-24,CILA,Acquisita,2024-04-10,Via Dante,45
-2023-11-15,SCIA-Alternativa,Rigettata,2024-01-08,Via Garibaldi,118
-2023-01-10,CILA,Efficace,2023-02-07,Via Dante,80
-2023-09-13,SCIA-Alternativa,Efficace,2024-03-25,Via Verdi,74
-2023-06-28,CILA,In istruttoria,,Via Cavour,85
-2023-05-04,CILA,Efficace,,Piazza San Marco,113
-2023-07-11,PdC,Efficace,2023-11-08,Via San Francesco,133
-2023-05-26,SCIA,Rigettata,2023-10-11,Via Vittorio Emanuele,47
-2023-09-10,CILA,Efficace,2023-12-16,Via Manzoni,115
-2023-10-23,CIL,Acquisita,2024-02-15,Corso Italia,11
-2023-12-28,CILA,Acquisita,,Via Manzoni,15
-2023-02-22,CIL,Efficace,2023-04-21,Via Roma,37
-2023-10-22,SCIA-Alternativa,Efficace,2024-01-13,Via dei Mille,94
-2023-06-13,CILA,Acquisita,2023-11-03,Via Dante,96
-2023-08-25,SCIA,Acquisita,2023-12-21,Via XX Settembre,81
-2023-11-09,CILA,Efficace,2024-01-15,Corso Italia,133
-2023-07-18,SCIA,Efficace,2023-12-07,Via Verdi,74
-2023-12-16,CILA,Efficace,2024-01-21,Corso Italia,45
-2023-12-15,SCIA,In istruttoria,,Via Cavour,82
-2023-11-12,SCIA,Acquisita,2024-02-19,Viale Europa,41
-2023-12-23,PdC,In istruttoria,,Via Dante,131
-2023-04-04,CILA,In istruttoria,,Via Mazzini,61
-2023-08-01,CILA,Acquisita,2023-12-23,Via dei Mille,142
-2023-03-20,SCIA,Efficace,2023-08-17,Via della Repubblica,106
-2023-07-27,SCIA,Acquisita,,Via Cavour,19
-2023-08-15,CILA,Acquisita,,Via dei Mille,142
-2023-11-19,PdC,In istruttoria,,Via Mazzini,111
-2023-09-28,CILA,In istruttoria,,Via Garibaldi,133
-2023-03-10,PdC,Acquisita,2023-05-26,Via Dante,133
-2023-05-28,SCIA,Efficace,2023-11-16,Via Manzoni,33
-2023-11-10,SCIA,Acquisita,2024-05-08,Via Vittorio Emanuele,40
-2023-03-22,CILA,In istruttoria,,Via San Francesco,145
-2023-01-27,CILA,Efficace,2023-08-10,Via dei Mille,148
-2023-05-21,CILA,In istruttoria,,Via Vittorio Emanuele,107
-2023-10-21,CILA,Efficace,,Via della Repubblica,75
-2024-05-16,CILA,In istruttoria,,Via dei Mille,104
-2024-05-15,SCIA,Rigettata,2024-10-02,Via XX Settembre,124
-2024-08-07,CILA,Acquisita,2024-11-19,Piazza San Marco,89
-2024-07-05,CILA,Acquisita,2024-10-17,Via Verdi,120
-2024-02-09,SCIA-Alternativa,Acquisita,2024-03-08,Via Manzoni,99
-2024-10-14,CILA,In istruttoria,,Via San Francesco,41
-2024-06-19,CILA,Acquisita,2024-11-21,Via della Repubblica,120
-2024-08-10,SCIA-Alternativa,Efficace,2024-12-13,Via della Repubblica,118
-2024-04-07,CILA,Efficace,2024-09-08,Via Vittorio Emanuele,121
-2024-05-18,CILA,In istruttoria,,Via Garibaldi,111
-2024-03-09,CILA,In istruttoria,,Via XX Settembre,94
-2024-01-13,CILA,Acquisita,2024-05-08,Via della Repubblica,74
-2024-02-13,SCIA-Alternativa,In istruttoria,,Via della Repubblica,72
-2024-10-22,SCIA,Acquisita,,Via XX Settembre,96
-2024-06-18,CILA,In istruttoria,,Via Mazzini,51
-2024-10-17,CIL,Acquisita,2024-11-13,Via Mazzini,86
-2024-08-17,SCIA-Alternativa,Acquisita,2025-01-23,Via Mazzini,84
-2024-10-11,PdC,Efficace,,Piazza San Marco,77
-2024-10-11,SCIA-Alternativa,Rigettata,2025-03-07,Viale Europa,5
-2024-06-11,SCIA,Efficace,2024-12-19,Via Roma,122
-2024-05-21,CILA,Rigettata,2024-10-18,Via Mazzini,135
-2024-11-24,CIL,Acquisita,2025-02-17,Via Roma,147
-2024-12-04,CILA,Efficace,2025-04-14,Via Mazzini,106
-2024-12-07,CIL,Acquisita,2025-05-02,Viale Europa,16
-2024-12-05,CILA,Acquisita,2025-05-02,Via della Repubblica,97
-2024-06-06,SCIA-Alternativa,Acquisita,2024-09-27,Via Cavour,68
-2024-10-16,CILA,Acquisita,2025-01-23,Via Verdi,77
-2024-05-23,CILA,Rigettata,2024-09-07,Corso Italia,90
-2024-09-26,SCIA,Efficace,2025-03-12,Via XX Settembre,102
-2024-06-25,PdC,Efficace,2024-08-04,Via Dante,114
-2024-11-09,SCIA-Alternativa,Acquisita,2025-04-21,Via Manzoni,144
-2024-12-09,PdC,Efficace,2025-06-06,Via Verdi,63
-2024-01-22,CILA,Rigettata,2024-03-06,Via XX Settembre,85
-2024-12-16,SCIA,Rigettata,2025-01-04,Via della Repubblica,41
-2024-07-21,SCIA-Alternativa,Efficace,2024-10-25,Via Dante,74
-2024-11-02,SCIA,Rigettata,2025-04-13,Piazza San Marco,10
-2024-03-14,PdC,Efficace,,Via XX Settembre,127
-2024-03-24,SCIA,Efficace,2024-09-16,Via Vittorio Emanuele,28
-2024-06-10,SCIA-Alternativa,Rigettata,2024-11-11,Via San Francesco,35
-2024-09-15,SCIA,Acquisita,2025-01-02,Via Mazzini,118
-2024-11-09,PdC,Efficace,2025-02-15,Via Vittorio Emanuele,50
-2024-03-20,CIL,In istruttoria,,Via XX Settembre,132
-2024-06-03,CIL,Rigettata,2024-07-25,Corso Italia,83
-2024-04-01,SCIA,Efficace,2024-06-28,Via Dante,78
-2024-10-24,CILA,Efficace,2025-01-15,Via Roma,31
-2024-08-10,PdC,Efficace,2024-11-20,Piazza San Marco,31
-2024-11-10,CILA,Acquisita,2025-01-03,Corso Italia,40
-2024-08-24,CILA,Efficace,2025-01-19,Via dei Mille,138
-2024-11-27,CILA,In istruttoria,,Via Verdi,21
-2024-09-15,CILA,Efficace,,Via Garibaldi,16
-2024-09-17,CILA,Acquisita,2024-11-18,Via Dante,134
-2024-08-04,CILA,Rigettata,2024-09-14,Via San Francesco,131
-2024-08-26,CILA,Efficace,2025-01-07,Corso Italia,145
-2024-01-18,SCIA-Alternativa,Rigettata,2024-02-10,Via XX Settembre,66
-2024-01-24,CILA,Acquisita,2024-06-07,Via Dante,17
-2025-01-03,SCIA-Alternativa,Efficace,2025-03-08,Via dei Mille,35
-2025-11-24,CIL,Efficace,,Via XX Settembre,115
-2025-07-13,SCIA,Rigettata,,Viale Europa,139
-2025-03-21,CILA,Efficace,2025-09-05,Via XX Settembre,136
-2025-03-24,CILA,In istruttoria,,Via Roma,6
-2025-05-15,CIL,Acquisita,2025-08-04,Via Verdi,118
-2025-06-05,SCIA,Acquisita,,Piazza San Marco,29
-2025-01-26,CIL,Acquisita,2025-02-17,Via Verdi,53
-2025-02-04,CILA,Efficace,2025-03-03,Via Verdi,12
-2025-07-15,CILA,Acquisita,2025-08-16,Via Mazzini,129
-2025-05-08,CILA,Acquisita,2025-08-21,Via Verdi,78
-2025-03-22,CILA,Efficace,2025-04-24,Via della Repubblica,45
-2025-11-22,CIL,Acquisita,2026-03-13,Via Cavour,98
-2025-09-11,CIL,Efficace,2026-01-10,Via Mazzini,138
-2025-08-08,CILA,Efficace,,Via Mazzini,119
-2025-01-18,CIL,Efficace,2025-03-11,Via XX Settembre,63
-2025-05-07,CILA,Rigettata,2025-09-25,Viale Europa,95
-2025-02-18,CILA,Efficace,2025-08-19,Via Vittorio Emanuele,11
-2025-02-07,CILA,Efficace,2025-05-23,Via Manzoni,4
-2025-04-07,SCIA,Rigettata,,Corso Italia,63
-2025-12-20,CILA,Efficace,,Via della Repubblica,83
-2025-05-13,SCIA-Alternativa,Acquisita,2025-08-22,Via Manzoni,93
-2025-09-16,SCIA-Alternativa,Efficace,2026-02-11,Via dei Mille,82
-2025-04-12,CILA,Efficace,2025-06-27,Piazza San Marco,38
-2025-01-09,CIL,Efficace,2025-04-24,Via Verdi,98
-2025-10-27,CILA,Efficace,2026-02-16,Via Manzoni,126
-2025-12-21,SCIA-Alternativa,Efficace,2026-04-14,Via Mazzini,36
-2025-12-18,SCIA-Alternativa,Acquisita,,Via della Repubblica,16
-2025-09-02,SCIA,In istruttoria,,Via Cavour,13
-2025-01-14,PdC,In istruttoria,,Via Cavour,60
-2025-02-23,PdC,Efficace,2025-07-14,Via Dante,16
-2025-10-21,SCIA-Alternativa,Rigettata,2025-11-09,Via della Repubblica,142
-2025-07-01,CILA,Acquisita,2025-12-13,Via Manzoni,5
-2025-09-27,CIL,In istruttoria,,Via San Francesco,46
-2025-02-04,PdC,Acquisita,2025-07-13,Via Manzoni,91
-2025-05-26,CIL,Efficace,2025-10-04,Corso Italia,145
-2025-04-23,CILA,Efficace,2025-06-02,Via Cavour,9
-2025-02-13,CIL,Efficace,2025-03-14,Via Cavour,3
-2025-12-06,SCIA,Efficace,2026-06-18,Via dei Mille,85
-2025-10-28,SCIA,Acquisita,,Via Verdi,55
-2025-12-19,SCIA-Alternativa,Efficace,2026-01-25,Via Cavour,72
-2025-09-19,CILA,Acquisita,,Via Dante,5
-2025-04-19,PdC,In istruttoria,,Viale Europa,102
-2025-02-10,PdC,Acquisita,2025-06-12,Via Cavour,139
-2025-06-13,PdC,In istruttoria,,Piazza San Marco,21
-2025-09-24,CILA,Efficace,2025-12-14,Viale Europa,20
-2025-06-20,CIL,In istruttoria,,Via Dante,8
-2025-11-09,SCIA-Alternativa,Efficace,2026-04-25,Via XX Settembre,111
-2025-03-22,CIL,Efficace,2025-06-28,Via dei Mille,64
-2025-12-03,SCIA,Efficace,2026-06-12,Via Mazzini,100
-2025-06-12,SCIA,Efficace,2025-09-21,Corso Italia,93
-2025-05-04,PdC,Efficace,2025-09-21,Via della Repubblica,143
+data,tipo,codice_stato_cup,data_scadenza,via,civico,oggetto_contratto,stazione_appaltante
+2018-02-01,SCIA,Acquisita,2018-03-14,Via Cavour,140,Pratica edilizia,Comune
+2018-02-19,CIL,Efficace,2018-05-05,Via Verdi,130,Pratica edilizia,Comune
+2018-10-01,CILA,Rigettata,2019-03-15,Via XX Settembre,57,Pratica edilizia,Comune
+2018-08-19,SCIA,In istruttoria,,Viale Europa,2,Pratica edilizia,Comune
+2018-03-23,CIL,Efficace,2018-06-09,Via dei Mille,87,Pratica edilizia,Comune
+2018-02-03,CIL,Efficace,2018-05-22,Via Vittorio Emanuele,68,Pratica edilizia,Comune
+2018-01-24,SCIA-Alternativa,Acquisita,2018-05-23,Via Garibaldi,142,Pratica edilizia,Comune
+2018-05-27,CILA,Acquisita,2018-07-03,Via Roma,59,Pratica edilizia,Comune
+2018-05-03,CILA,In istruttoria,,Via Garibaldi,98,Pratica edilizia,Comune
+2018-05-15,CILA,Acquisita,2018-07-27,Via Cavour,69,Pratica edilizia,Comune
+2018-12-22,SCIA,Acquisita,2019-06-05,Piazza San Marco,63,Pratica edilizia,Comune
+2018-03-15,CIL,Efficace,,Via Cavour,143,Pratica edilizia,Comune
+2018-04-22,CILA,In istruttoria,,Via dei Mille,15,Pratica edilizia,Comune
+2018-04-27,CILA,In istruttoria,,Via Dante,103,Pratica edilizia,Comune
+2018-05-03,CILA,Acquisita,,Via Dante,55,Pratica edilizia,Comune
+2018-11-16,CIL,Rigettata,2019-02-14,Via Mazzini,64,Pratica edilizia,Comune
+2018-12-18,SCIA,Rigettata,2019-06-14,Via XX Settembre,93,Pratica edilizia,Comune
+2018-04-05,SCIA-Alternativa,Efficace,2018-05-20,Via Mazzini,41,Pratica edilizia,Comune
+2018-11-14,SCIA,Efficace,2019-04-08,Via della Repubblica,65,Pratica edilizia,Comune
+2018-09-28,CILA,Rigettata,2019-03-12,Via dei Mille,69,Pratica edilizia,Comune
+2018-11-11,SCIA,Efficace,2019-04-02,Via Roma,68,Pratica edilizia,Comune
+2018-09-25,PdC,Acquisita,,Viale Europa,77,Pratica edilizia,Comune
+2018-11-17,CILA,Acquisita,2019-01-17,Via della Repubblica,136,Pratica edilizia,Comune
+2018-01-20,CILA,Efficace,2018-05-15,Via San Francesco,79,Pratica edilizia,Comune
+2018-04-02,CILA,Acquisita,,Via Garibaldi,125,Pratica edilizia,Comune
+2018-02-25,PdC,Acquisita,2018-08-12,Via Mazzini,68,Pratica edilizia,Comune
+2018-09-28,CIL,Acquisita,,Via dei Mille,52,Pratica edilizia,Comune
+2018-12-10,CIL,Rigettata,2019-04-25,Via San Francesco,133,Pratica edilizia,Comune
+2018-08-04,CILA,Acquisita,2018-08-24,Via Vittorio Emanuele,142,Pratica edilizia,Comune
+2018-04-19,CILA,Efficace,2018-10-27,Via Roma,59,Pratica edilizia,Comune
+2018-02-02,CILA,Efficace,2018-05-04,Via Cavour,125,Pratica edilizia,Comune
+2018-04-18,PdC,Rigettata,,Via Vittorio Emanuele,148,Pratica edilizia,Comune
+2018-08-08,SCIA-Alternativa,In istruttoria,,Via XX Settembre,49,Pratica edilizia,Comune
+2018-02-04,CIL,Efficace,2018-06-26,Viale Europa,14,Pratica edilizia,Comune
+2018-11-21,SCIA,Efficace,2019-03-10,Via dei Mille,28,Pratica edilizia,Comune
+2018-04-07,CILA,Acquisita,2018-08-18,Via Mazzini,72,Pratica edilizia,Comune
+2018-08-08,SCIA,Efficace,2019-01-23,Via Garibaldi,13,Pratica edilizia,Comune
+2018-11-18,CILA,Efficace,,Viale Europa,61,Pratica edilizia,Comune
+2018-03-14,SCIA-Alternativa,Efficace,2018-07-19,Via San Francesco,16,Pratica edilizia,Comune
+2018-03-13,CILA,Efficace,2018-08-04,Via Manzoni,109,Pratica edilizia,Comune
+2018-12-24,SCIA-Alternativa,Acquisita,2019-03-10,Via Roma,149,Pratica edilizia,Comune
+2018-12-18,CILA,Rigettata,2019-01-17,Via Vittorio Emanuele,123,Pratica edilizia,Comune
+2018-09-28,PdC,Efficace,,Via Garibaldi,48,Pratica edilizia,Comune
+2018-02-20,SCIA,Rigettata,,Via XX Settembre,31,Pratica edilizia,Comune
+2018-10-08,CILA,Acquisita,2019-04-04,Via Vittorio Emanuele,134,Pratica edilizia,Comune
+2018-06-09,CILA,Rigettata,2018-09-01,Via Manzoni,102,Pratica edilizia,Comune
+2018-03-22,SCIA,Efficace,2018-04-27,Via Roma,118,Pratica edilizia,Comune
+2018-10-19,SCIA,Efficace,2019-03-23,Via Manzoni,34,Pratica edilizia,Comune
+2018-06-03,CILA,Efficace,2018-10-18,Viale Europa,140,Pratica edilizia,Comune
+2018-12-10,CILA,Rigettata,2019-03-17,Via San Francesco,27,Pratica edilizia,Comune
+2018-03-09,SCIA,Efficace,2018-05-07,Via Manzoni,73,Pratica edilizia,Comune
+2018-10-07,CILA,Acquisita,2019-01-05,Via della Repubblica,126,Pratica edilizia,Comune
+2018-05-28,CILA,Efficace,2018-09-01,Via Roma,1,Pratica edilizia,Comune
+2018-06-25,PdC,Rigettata,,Via Mazzini,114,Pratica edilizia,Comune
+2018-09-23,CIL,Acquisita,2018-11-01,Via San Francesco,39,Pratica edilizia,Comune
+2019-01-27,CILA,Acquisita,2019-06-12,Via Mazzini,11,Pratica edilizia,Comune
+2019-05-12,CILA,Efficace,2019-08-06,Via Cavour,27,Pratica edilizia,Comune
+2019-06-25,CIL,Acquisita,2019-09-16,Viale Europa,42,Pratica edilizia,Comune
+2019-03-14,CILA,Acquisita,2019-07-02,Via dei Mille,106,Pratica edilizia,Comune
+2019-11-28,CILA,Efficace,2020-01-14,Via XX Settembre,10,Pratica edilizia,Comune
+2019-08-08,CILA,In istruttoria,,Via San Francesco,118,Pratica edilizia,Comune
+2019-06-10,CILA,Acquisita,2019-08-18,Via XX Settembre,85,Pratica edilizia,Comune
+2019-05-28,SCIA,In istruttoria,,Via Manzoni,90,Pratica edilizia,Comune
+2019-11-17,CIL,Rigettata,,Via della Repubblica,85,Pratica edilizia,Comune
+2019-01-04,SCIA,Acquisita,2019-04-02,Via Roma,28,Pratica edilizia,Comune
+2019-10-14,CILA,Rigettata,2020-02-28,Via Vittorio Emanuele,131,Pratica edilizia,Comune
+2019-02-13,CILA,Efficace,2019-06-27,Via Roma,134,Pratica edilizia,Comune
+2019-09-22,CILA,Efficace,2020-01-09,Via Vittorio Emanuele,81,Pratica edilizia,Comune
+2019-11-28,SCIA,Rigettata,,Via della Repubblica,80,Pratica edilizia,Comune
+2019-11-14,CILA,Efficace,2020-05-02,Via Mazzini,50,Pratica edilizia,Comune
+2019-07-22,CIL,Rigettata,2019-09-25,Via Vittorio Emanuele,146,Pratica edilizia,Comune
+2019-05-13,CILA,Efficace,2019-09-26,Via dei Mille,149,Pratica edilizia,Comune
+2019-10-21,CILA,Efficace,2020-01-06,Via della Repubblica,122,Pratica edilizia,Comune
+2019-12-06,SCIA,Efficace,2020-06-15,Via Vittorio Emanuele,86,Pratica edilizia,Comune
+2019-02-27,CILA,Rigettata,2019-05-08,Via Mazzini,7,Pratica edilizia,Comune
+2019-01-08,SCIA-Alternativa,Acquisita,2019-02-13,Corso Italia,107,Pratica edilizia,Comune
+2019-11-19,CILA,Rigettata,2020-04-20,Via XX Settembre,63,Pratica edilizia,Comune
+2019-03-21,CILA,In istruttoria,,Viale Europa,28,Pratica edilizia,Comune
+2019-07-08,PdC,In istruttoria,,Piazza San Marco,133,Pratica edilizia,Comune
+2019-08-02,CILA,In istruttoria,,Via Garibaldi,117,Pratica edilizia,Comune
+2019-03-26,SCIA-Alternativa,Rigettata,2019-09-16,Via Vittorio Emanuele,82,Pratica edilizia,Comune
+2019-08-20,CIL,In istruttoria,,Via San Francesco,141,Pratica edilizia,Comune
+2019-08-06,SCIA-Alternativa,Efficace,2019-10-28,Viale Europa,71,Pratica edilizia,Comune
+2019-09-16,CILA,Efficace,2019-12-20,Via Verdi,70,Pratica edilizia,Comune
+2019-06-11,SCIA,Acquisita,2019-10-12,Piazza San Marco,40,Pratica edilizia,Comune
+2019-12-07,SCIA,Efficace,2020-05-20,Corso Italia,107,Pratica edilizia,Comune
+2019-01-07,CIL,Efficace,,Via Vittorio Emanuele,6,Pratica edilizia,Comune
+2019-10-13,SCIA-Alternativa,Efficace,,Via Manzoni,100,Pratica edilizia,Comune
+2019-07-18,CILA,Efficace,2019-12-04,Corso Italia,8,Pratica edilizia,Comune
+2019-07-11,CIL,Rigettata,2019-12-05,Via San Francesco,33,Pratica edilizia,Comune
+2019-10-18,CILA,Efficace,2019-11-11,Via Garibaldi,110,Pratica edilizia,Comune
+2019-03-28,SCIA-Alternativa,Acquisita,2019-07-28,Via Dante,55,Pratica edilizia,Comune
+2019-08-11,CILA,In istruttoria,,Via San Francesco,98,Pratica edilizia,Comune
+2019-05-25,CIL,Efficace,2019-10-20,Via Roma,139,Pratica edilizia,Comune
+2019-01-12,CILA,Rigettata,2019-02-09,Via dei Mille,8,Pratica edilizia,Comune
+2019-04-07,CILA,Acquisita,2019-05-26,Corso Italia,30,Pratica edilizia,Comune
+2019-10-07,SCIA-Alternativa,Rigettata,2020-02-04,Via Mazzini,30,Pratica edilizia,Comune
+2019-03-10,SCIA,Acquisita,2019-06-20,Via Vittorio Emanuele,97,Pratica edilizia,Comune
+2019-07-23,CILA,Efficace,2020-02-02,Via Verdi,27,Pratica edilizia,Comune
+2019-12-25,SCIA,In istruttoria,,Via Cavour,31,Pratica edilizia,Comune
+2019-10-26,CILA,Efficace,2020-02-23,Via Garibaldi,130,Pratica edilizia,Comune
+2019-11-11,CILA,In istruttoria,,Via XX Settembre,126,Pratica edilizia,Comune
+2019-02-14,CILA,Rigettata,,Corso Italia,40,Pratica edilizia,Comune
+2019-07-06,SCIA,Acquisita,2019-12-18,Via dei Mille,124,Pratica edilizia,Comune
+2019-08-14,SCIA,Efficace,,Viale Europa,23,Pratica edilizia,Comune
+2019-05-15,CILA,In istruttoria,,Corso Italia,146,Pratica edilizia,Comune
+2019-10-22,CIL,Efficace,2020-02-08,Via Mazzini,125,Pratica edilizia,Comune
+2020-06-26,SCIA,Efficace,2020-12-25,Piazza San Marco,71,Pratica edilizia,Comune
+2020-09-01,CILA,Efficace,2021-01-08,Corso Italia,143,Pratica edilizia,Comune
+2020-04-23,SCIA-Alternativa,Rigettata,2020-09-12,Via dei Mille,5,Pratica edilizia,Comune
+2020-02-10,CILA,Efficace,2020-05-19,Via Cavour,149,Pratica edilizia,Comune
+2020-06-16,CILA,Efficace,,Via della Repubblica,85,Pratica edilizia,Comune
+2020-06-23,SCIA-Alternativa,Efficace,2020-09-13,Via Garibaldi,50,Pratica edilizia,Comune
+2020-06-04,PdC,Acquisita,2020-11-02,Via Manzoni,135,Pratica edilizia,Comune
+2020-10-10,SCIA,In istruttoria,,Via Verdi,76,Pratica edilizia,Comune
+2020-04-12,PdC,Efficace,2020-09-23,Via Mazzini,71,Pratica edilizia,Comune
+2020-01-02,SCIA,Rigettata,,Via Cavour,126,Pratica edilizia,Comune
+2020-02-28,CILA,Acquisita,2020-07-25,Corso Italia,88,Pratica edilizia,Comune
+2020-03-02,SCIA,In istruttoria,,Corso Italia,30,Pratica edilizia,Comune
+2020-02-13,SCIA-Alternativa,Efficace,2020-03-13,Via Mazzini,39,Pratica edilizia,Comune
+2020-10-10,SCIA,Acquisita,2021-02-19,Via Vittorio Emanuele,58,Pratica edilizia,Comune
+2020-09-13,SCIA-Alternativa,Efficace,2021-03-10,Via XX Settembre,79,Pratica edilizia,Comune
+2020-10-20,CILA,Acquisita,,Via Garibaldi,54,Pratica edilizia,Comune
+2020-11-07,SCIA,Rigettata,2021-01-27,Via Mazzini,142,Pratica edilizia,Comune
+2020-02-06,CILA,Efficace,2020-08-05,Corso Italia,75,Pratica edilizia,Comune
+2020-01-08,SCIA,Rigettata,2020-05-27,Via Garibaldi,60,Pratica edilizia,Comune
+2020-05-26,CILA,Efficace,2020-08-14,Via Cavour,39,Pratica edilizia,Comune
+2020-05-27,PdC,Efficace,2020-09-08,Via Vittorio Emanuele,146,Pratica edilizia,Comune
+2020-05-15,SCIA,Efficace,2020-09-21,Via Manzoni,129,Pratica edilizia,Comune
+2020-09-16,SCIA-Alternativa,Efficace,2021-02-01,Piazza San Marco,83,Pratica edilizia,Comune
+2020-10-09,CILA,Efficace,2021-04-03,Via Vittorio Emanuele,6,Pratica edilizia,Comune
+2020-11-27,SCIA,Acquisita,2021-02-02,Corso Italia,133,Pratica edilizia,Comune
+2020-11-15,SCIA,Acquisita,,Via XX Settembre,126,Pratica edilizia,Comune
+2020-02-16,CILA,Efficace,2020-04-01,Viale Europa,42,Pratica edilizia,Comune
+2020-06-14,SCIA-Alternativa,Efficace,2020-10-19,Viale Europa,141,Pratica edilizia,Comune
+2020-01-15,SCIA,Efficace,2020-03-03,Via dei Mille,104,Pratica edilizia,Comune
+2020-09-27,CILA,Rigettata,,Corso Italia,106,Pratica edilizia,Comune
+2020-01-07,CILA,Acquisita,2020-07-14,Corso Italia,14,Pratica edilizia,Comune
+2020-04-09,PdC,Efficace,2020-09-08,Via Garibaldi,8,Pratica edilizia,Comune
+2020-11-20,CILA,Rigettata,2021-05-08,Via Roma,142,Pratica edilizia,Comune
+2020-07-03,CILA,In istruttoria,,Via San Francesco,30,Pratica edilizia,Comune
+2020-08-04,PdC,Efficace,,Via Manzoni,131,Pratica edilizia,Comune
+2020-12-09,CIL,In istruttoria,,Corso Italia,121,Pratica edilizia,Comune
+2020-04-15,PdC,Efficace,2020-10-15,Via della Repubblica,35,Pratica edilizia,Comune
+2020-02-09,CIL,Efficace,,Via della Repubblica,69,Pratica edilizia,Comune
+2020-01-10,SCIA,In istruttoria,,Via Vittorio Emanuele,149,Pratica edilizia,Comune
+2020-11-16,PdC,Efficace,2021-03-07,Via Dante,142,Pratica edilizia,Comune
+2020-09-13,SCIA-Alternativa,Efficace,,Piazza San Marco,62,Pratica edilizia,Comune
+2021-07-08,CIL,Efficace,2021-12-04,Piazza San Marco,98,Pratica edilizia,Comune
+2021-07-22,PdC,Efficace,,Via Mazzini,129,Pratica edilizia,Comune
+2021-10-11,SCIA,In istruttoria,,Viale Europa,113,Pratica edilizia,Comune
+2021-02-17,SCIA-Alternativa,Efficace,2021-06-24,Viale Europa,40,Pratica edilizia,Comune
+2021-02-16,SCIA,Efficace,2021-06-20,Via Cavour,21,Pratica edilizia,Comune
+2021-06-28,CIL,Efficace,2021-11-27,Viale Europa,139,Pratica edilizia,Comune
+2021-01-20,SCIA,Acquisita,2021-04-24,Via Verdi,24,Pratica edilizia,Comune
+2021-07-04,SCIA,Efficace,2021-10-11,Via San Francesco,8,Pratica edilizia,Comune
+2021-01-11,CILA,Efficace,2021-05-24,Via Mazzini,63,Pratica edilizia,Comune
+2021-09-14,PdC,Acquisita,2022-03-17,Viale Europa,98,Pratica edilizia,Comune
+2021-10-22,CILA,Efficace,,Via Mazzini,60,Pratica edilizia,Comune
+2021-08-21,SCIA,Efficace,2021-09-10,Via San Francesco,120,Pratica edilizia,Comune
+2021-05-22,PdC,Efficace,2021-09-13,Via Vittorio Emanuele,77,Pratica edilizia,Comune
+2021-11-14,SCIA,Efficace,2022-01-23,Via XX Settembre,124,Pratica edilizia,Comune
+2021-02-08,CIL,Acquisita,2021-05-14,Piazza San Marco,76,Pratica edilizia,Comune
+2021-01-27,CIL,Efficace,2021-02-26,Via San Francesco,128,Pratica edilizia,Comune
+2021-05-25,CILA,Acquisita,2021-08-12,Via Cavour,49,Pratica edilizia,Comune
+2021-10-09,PdC,Rigettata,2022-04-16,Via Cavour,11,Pratica edilizia,Comune
+2021-05-26,SCIA-Alternativa,Efficace,2021-07-18,Via Garibaldi,76,Pratica edilizia,Comune
+2021-06-24,CIL,Acquisita,2021-12-09,Via San Francesco,94,Pratica edilizia,Comune
+2021-09-17,SCIA,In istruttoria,,Via Mazzini,66,Pratica edilizia,Comune
+2021-08-26,SCIA,Rigettata,,Via dei Mille,30,Pratica edilizia,Comune
+2021-08-03,PdC,In istruttoria,,Via Verdi,102,Pratica edilizia,Comune
+2021-09-12,SCIA,In istruttoria,,Via XX Settembre,4,Pratica edilizia,Comune
+2021-05-18,SCIA,Efficace,2021-08-16,Via Vittorio Emanuele,98,Pratica edilizia,Comune
+2021-11-12,SCIA,Rigettata,2021-12-05,Via Vittorio Emanuele,144,Pratica edilizia,Comune
+2021-06-20,CILA,Rigettata,2021-11-13,Via San Francesco,78,Pratica edilizia,Comune
+2021-11-14,SCIA,Acquisita,2021-12-10,Via Manzoni,127,Pratica edilizia,Comune
+2021-02-04,CILA,Acquisita,2021-06-23,Via Dante,139,Pratica edilizia,Comune
+2021-07-19,PdC,Efficace,2021-12-19,Via Vittorio Emanuele,105,Pratica edilizia,Comune
+2021-05-02,CILA,Acquisita,2021-07-21,Viale Europa,93,Pratica edilizia,Comune
+2021-02-22,CILA,Acquisita,,Via Cavour,92,Pratica edilizia,Comune
+2021-01-13,SCIA,Acquisita,,Viale Europa,117,Pratica edilizia,Comune
+2021-02-22,CILA,Rigettata,2021-03-14,Via Roma,86,Pratica edilizia,Comune
+2021-04-05,CILA,Efficace,2021-09-21,Via Verdi,56,Pratica edilizia,Comune
+2021-04-11,PdC,In istruttoria,,Via San Francesco,1,Pratica edilizia,Comune
+2021-05-28,PdC,Acquisita,2021-08-03,Via Garibaldi,7,Pratica edilizia,Comune
+2021-03-01,CILA,In istruttoria,,Via dei Mille,61,Pratica edilizia,Comune
+2021-10-11,CILA,Acquisita,2021-12-02,Piazza San Marco,108,Pratica edilizia,Comune
+2021-09-04,SCIA,Efficace,2021-12-27,Via della Repubblica,28,Pratica edilizia,Comune
+2021-08-17,CILA,Acquisita,2022-01-25,Via Manzoni,118,Pratica edilizia,Comune
+2021-11-01,CILA,Efficace,2022-03-13,Via Cavour,28,Pratica edilizia,Comune
+2021-08-23,SCIA-Alternativa,Efficace,,Via Dante,38,Pratica edilizia,Comune
+2021-02-05,SCIA,Acquisita,2021-07-20,Piazza San Marco,84,Pratica edilizia,Comune
+2021-07-20,SCIA,Efficace,2021-12-05,Via Garibaldi,30,Pratica edilizia,Comune
+2021-11-21,CILA,Efficace,2022-02-10,Via XX Settembre,87,Pratica edilizia,Comune
+2021-08-13,CIL,Rigettata,2021-12-25,Via Dante,66,Pratica edilizia,Comune
+2021-06-05,SCIA-Alternativa,Efficace,2021-07-13,Via Garibaldi,111,Pratica edilizia,Comune
+2021-02-24,CILA,In istruttoria,,Via Mazzini,143,Pratica edilizia,Comune
+2021-01-19,CILA,Rigettata,2021-05-12,Viale Europa,109,Pratica edilizia,Comune
+2021-12-02,SCIA,Acquisita,2022-01-15,Via Vittorio Emanuele,130,Pratica edilizia,Comune
+2021-04-05,SCIA-Alternativa,Acquisita,2021-07-25,Viale Europa,143,Pratica edilizia,Comune
+2021-06-04,SCIA,Acquisita,2021-10-16,Viale Europa,144,Pratica edilizia,Comune
+2022-10-22,CILA,Acquisita,,Viale Europa,69,Pratica edilizia,Comune
+2022-01-06,SCIA,Rigettata,2022-04-23,Via Dante,2,Pratica edilizia,Comune
+2022-03-28,PdC,Acquisita,2022-05-04,Via Mazzini,8,Pratica edilizia,Comune
+2022-02-24,CILA,Efficace,2022-06-14,Via Mazzini,95,Pratica edilizia,Comune
+2022-05-24,CILA,In istruttoria,,Via Vittorio Emanuele,22,Pratica edilizia,Comune
+2022-01-05,PdC,In istruttoria,,Via Vittorio Emanuele,13,Pratica edilizia,Comune
+2022-11-03,SCIA,Efficace,2023-04-02,Via Vittorio Emanuele,114,Pratica edilizia,Comune
+2022-07-09,CILA,In istruttoria,,Via della Repubblica,30,Pratica edilizia,Comune
+2022-06-14,SCIA,Efficace,2022-12-12,Corso Italia,135,Pratica edilizia,Comune
+2022-11-10,CILA,Acquisita,2023-05-10,Via Roma,2,Pratica edilizia,Comune
+2022-04-10,CILA,In istruttoria,,Via Mazzini,66,Pratica edilizia,Comune
+2022-05-11,SCIA,Efficace,2022-09-24,Via Mazzini,34,Pratica edilizia,Comune
+2022-07-18,CILA,Acquisita,2022-11-11,Via Garibaldi,102,Pratica edilizia,Comune
+2022-12-02,CIL,Efficace,2023-01-08,Viale Europa,81,Pratica edilizia,Comune
+2022-10-14,CIL,Rigettata,2023-01-19,Via Garibaldi,104,Pratica edilizia,Comune
+2022-01-11,PdC,In istruttoria,,Via Vittorio Emanuele,118,Pratica edilizia,Comune
+2022-12-12,SCIA,Efficace,2023-03-05,Via XX Settembre,103,Pratica edilizia,Comune
+2022-09-03,CIL,In istruttoria,,Via Manzoni,87,Pratica edilizia,Comune
+2022-04-11,PdC,Efficace,2022-05-27,Via della Repubblica,131,Pratica edilizia,Comune
+2022-04-25,CILA,Efficace,2022-11-09,Viale Europa,38,Pratica edilizia,Comune
+2022-04-04,PdC,Efficace,2022-10-05,Via Mazzini,20,Pratica edilizia,Comune
+2022-03-25,SCIA-Alternativa,Efficace,2022-09-20,Corso Italia,145,Pratica edilizia,Comune
+2022-11-21,CILA,In istruttoria,,Via Cavour,81,Pratica edilizia,Comune
+2022-03-15,SCIA,Efficace,2022-06-23,Via dei Mille,71,Pratica edilizia,Comune
+2022-10-02,CILA,Acquisita,2023-02-23,Corso Italia,10,Pratica edilizia,Comune
+2022-01-12,SCIA,Efficace,2022-02-22,Via Vittorio Emanuele,130,Pratica edilizia,Comune
+2022-07-15,CILA,Efficace,,Via Vittorio Emanuele,49,Pratica edilizia,Comune
+2022-06-20,SCIA-Alternativa,Acquisita,2022-07-22,Corso Italia,27,Pratica edilizia,Comune
+2022-06-23,SCIA,Acquisita,2022-07-20,Via Verdi,113,Pratica edilizia,Comune
+2022-08-17,PdC,Efficace,2022-11-20,Via XX Settembre,105,Pratica edilizia,Comune
+2022-06-22,CILA,In istruttoria,,Via Cavour,86,Pratica edilizia,Comune
+2022-02-11,SCIA,Acquisita,2022-05-14,Via Manzoni,39,Pratica edilizia,Comune
+2022-06-03,PdC,Efficace,2022-10-06,Via Mazzini,22,Pratica edilizia,Comune
+2022-05-18,CIL,Rigettata,2022-07-09,Via Cavour,135,Pratica edilizia,Comune
+2022-02-21,CIL,Acquisita,2022-06-16,Via Manzoni,47,Pratica edilizia,Comune
+2022-04-11,SCIA-Alternativa,Acquisita,2022-06-05,Via Mazzini,20,Pratica edilizia,Comune
+2022-05-28,SCIA,Acquisita,2022-11-09,Via Roma,87,Pratica edilizia,Comune
+2022-10-05,CIL,Acquisita,2023-04-11,Via dei Mille,43,Pratica edilizia,Comune
+2022-12-15,CILA,Efficace,2023-03-06,Corso Italia,73,Pratica edilizia,Comune
+2022-12-26,SCIA-Alternativa,Acquisita,2023-04-08,Via dei Mille,121,Pratica edilizia,Comune
+2022-04-12,SCIA-Alternativa,Efficace,2022-08-12,Via della Repubblica,136,Pratica edilizia,Comune
+2022-07-06,CILA,In istruttoria,,Via Vittorio Emanuele,36,Pratica edilizia,Comune
+2022-05-02,SCIA-Alternativa,In istruttoria,,Via Dante,142,Pratica edilizia,Comune
+2022-02-23,SCIA,Efficace,2022-04-23,Via Manzoni,116,Pratica edilizia,Comune
+2022-09-05,CIL,Efficace,,Via Verdi,116,Pratica edilizia,Comune
+2022-06-01,CIL,Efficace,2022-09-27,Via Verdi,99,Pratica edilizia,Comune
+2022-02-12,CILA,Efficace,2022-03-24,Viale Europa,86,Pratica edilizia,Comune
+2022-03-05,CILA,Efficace,,Corso Italia,36,Pratica edilizia,Comune
+2022-12-16,SCIA-Alternativa,Acquisita,2023-01-23,Via Roma,66,Pratica edilizia,Comune
+2022-04-27,PdC,Acquisita,,Via Vittorio Emanuele,136,Pratica edilizia,Comune
+2022-07-04,SCIA,Acquisita,2022-08-03,Via Verdi,108,Pratica edilizia,Comune
+2022-11-26,SCIA-Alternativa,Efficace,2023-04-28,Via Vittorio Emanuele,138,Pratica edilizia,Comune
+2022-01-21,CILA,Rigettata,2022-06-05,Via Roma,91,Pratica edilizia,Comune
+2022-04-19,CIL,Acquisita,2022-05-27,Via della Repubblica,93,Pratica edilizia,Comune
+2023-09-18,CILA,Efficace,,Via Roma,100,Pratica edilizia,Comune
+2023-06-09,CILA,Efficace,2023-09-28,Via Verdi,27,Pratica edilizia,Comune
+2023-10-24,CILA,Acquisita,2024-04-10,Via Dante,45,Pratica edilizia,Comune
+2023-11-15,SCIA-Alternativa,Rigettata,2024-01-08,Via Garibaldi,118,Pratica edilizia,Comune
+2023-01-10,CILA,Efficace,2023-02-07,Via Dante,80,Pratica edilizia,Comune
+2023-09-13,SCIA-Alternativa,Efficace,2024-03-25,Via Verdi,74,Pratica edilizia,Comune
+2023-06-28,CILA,In istruttoria,,Via Cavour,85,Pratica edilizia,Comune
+2023-05-04,CILA,Efficace,,Piazza San Marco,113,Pratica edilizia,Comune
+2023-07-11,PdC,Efficace,2023-11-08,Via San Francesco,133,Pratica edilizia,Comune
+2023-05-26,SCIA,Rigettata,2023-10-11,Via Vittorio Emanuele,47,Pratica edilizia,Comune
+2023-09-10,CILA,Efficace,2023-12-16,Via Manzoni,115,Pratica edilizia,Comune
+2023-10-23,CIL,Acquisita,2024-02-15,Corso Italia,11,Pratica edilizia,Comune
+2023-12-28,CILA,Acquisita,,Via Manzoni,15,Pratica edilizia,Comune
+2023-02-22,CIL,Efficace,2023-04-21,Via Roma,37,Pratica edilizia,Comune
+2023-10-22,SCIA-Alternativa,Efficace,2024-01-13,Via dei Mille,94,Pratica edilizia,Comune
+2023-06-13,CILA,Acquisita,2023-11-03,Via Dante,96,Pratica edilizia,Comune
+2023-08-25,SCIA,Acquisita,2023-12-21,Via XX Settembre,81,Pratica edilizia,Comune
+2023-11-09,CILA,Efficace,2024-01-15,Corso Italia,133,Pratica edilizia,Comune
+2023-07-18,SCIA,Efficace,2023-12-07,Via Verdi,74,Pratica edilizia,Comune
+2023-12-16,CILA,Efficace,2024-01-21,Corso Italia,45,Pratica edilizia,Comune
+2023-12-15,SCIA,In istruttoria,,Via Cavour,82,Pratica edilizia,Comune
+2023-11-12,SCIA,Acquisita,2024-02-19,Viale Europa,41,Pratica edilizia,Comune
+2023-12-23,PdC,In istruttoria,,Via Dante,131,Pratica edilizia,Comune
+2023-04-04,CILA,In istruttoria,,Via Mazzini,61,Pratica edilizia,Comune
+2023-08-01,CILA,Acquisita,2023-12-23,Via dei Mille,142,Pratica edilizia,Comune
+2023-03-20,SCIA,Efficace,2023-08-17,Via della Repubblica,106,Pratica edilizia,Comune
+2023-07-27,SCIA,Acquisita,,Via Cavour,19,Pratica edilizia,Comune
+2023-08-15,CILA,Acquisita,,Via dei Mille,142,Pratica edilizia,Comune
+2023-11-19,PdC,In istruttoria,,Via Mazzini,111,Pratica edilizia,Comune
+2023-09-28,CILA,In istruttoria,,Via Garibaldi,133,Pratica edilizia,Comune
+2023-03-10,PdC,Acquisita,2023-05-26,Via Dante,133,Pratica edilizia,Comune
+2023-05-28,SCIA,Efficace,2023-11-16,Via Manzoni,33,Pratica edilizia,Comune
+2023-11-10,SCIA,Acquisita,2024-05-08,Via Vittorio Emanuele,40,Pratica edilizia,Comune
+2023-03-22,CILA,In istruttoria,,Via San Francesco,145,Pratica edilizia,Comune
+2023-01-27,CILA,Efficace,2023-08-10,Via dei Mille,148,Pratica edilizia,Comune
+2023-05-21,CILA,In istruttoria,,Via Vittorio Emanuele,107,Pratica edilizia,Comune
+2023-10-21,CILA,Efficace,,Via della Repubblica,75,Pratica edilizia,Comune
+2024-05-16,CILA,In istruttoria,,Via dei Mille,104,Pratica edilizia,Comune
+2024-05-15,SCIA,Rigettata,2024-10-02,Via XX Settembre,124,Pratica edilizia,Comune
+2024-08-07,CILA,Acquisita,2024-11-19,Piazza San Marco,89,Pratica edilizia,Comune
+2024-07-05,CILA,Acquisita,2024-10-17,Via Verdi,120,Pratica edilizia,Comune
+2024-02-09,SCIA-Alternativa,Acquisita,2024-03-08,Via Manzoni,99,Pratica edilizia,Comune
+2024-10-14,CILA,In istruttoria,,Via San Francesco,41,Pratica edilizia,Comune
+2024-06-19,CILA,Acquisita,2024-11-21,Via della Repubblica,120,Pratica edilizia,Comune
+2024-08-10,SCIA-Alternativa,Efficace,2024-12-13,Via della Repubblica,118,Pratica edilizia,Comune
+2024-04-07,CILA,Efficace,2024-09-08,Via Vittorio Emanuele,121,Pratica edilizia,Comune
+2024-05-18,CILA,In istruttoria,,Via Garibaldi,111,Pratica edilizia,Comune
+2024-03-09,CILA,In istruttoria,,Via XX Settembre,94,Pratica edilizia,Comune
+2024-01-13,CILA,Acquisita,2024-05-08,Via della Repubblica,74,Pratica edilizia,Comune
+2024-02-13,SCIA-Alternativa,In istruttoria,,Via della Repubblica,72,Pratica edilizia,Comune
+2024-10-22,SCIA,Acquisita,,Via XX Settembre,96,Pratica edilizia,Comune
+2024-06-18,CILA,In istruttoria,,Via Mazzini,51,Pratica edilizia,Comune
+2024-10-17,CIL,Acquisita,2024-11-13,Via Mazzini,86,Pratica edilizia,Comune
+2024-08-17,SCIA-Alternativa,Acquisita,2025-01-23,Via Mazzini,84,Pratica edilizia,Comune
+2024-10-11,PdC,Efficace,,Piazza San Marco,77,Pratica edilizia,Comune
+2024-10-11,SCIA-Alternativa,Rigettata,2025-03-07,Viale Europa,5,Pratica edilizia,Comune
+2024-06-11,SCIA,Efficace,2024-12-19,Via Roma,122,Pratica edilizia,Comune
+2024-05-21,CILA,Rigettata,2024-10-18,Via Mazzini,135,Pratica edilizia,Comune
+2024-11-24,CIL,Acquisita,2025-02-17,Via Roma,147,Pratica edilizia,Comune
+2024-12-04,CILA,Efficace,2025-04-14,Via Mazzini,106,Pratica edilizia,Comune
+2024-12-07,CIL,Acquisita,2025-05-02,Viale Europa,16,Pratica edilizia,Comune
+2024-12-05,CILA,Acquisita,2025-05-02,Via della Repubblica,97,Pratica edilizia,Comune
+2024-06-06,SCIA-Alternativa,Acquisita,2024-09-27,Via Cavour,68,Pratica edilizia,Comune
+2024-10-16,CILA,Acquisita,2025-01-23,Via Verdi,77,Pratica edilizia,Comune
+2024-05-23,CILA,Rigettata,2024-09-07,Corso Italia,90,Pratica edilizia,Comune
+2024-09-26,SCIA,Efficace,2025-03-12,Via XX Settembre,102,Pratica edilizia,Comune
+2024-06-25,PdC,Efficace,2024-08-04,Via Dante,114,Pratica edilizia,Comune
+2024-11-09,SCIA-Alternativa,Acquisita,2025-04-21,Via Manzoni,144,Pratica edilizia,Comune
+2024-12-09,PdC,Efficace,2025-06-06,Via Verdi,63,Pratica edilizia,Comune
+2024-01-22,CILA,Rigettata,2024-03-06,Via XX Settembre,85,Pratica edilizia,Comune
+2024-12-16,SCIA,Rigettata,2025-01-04,Via della Repubblica,41,Pratica edilizia,Comune
+2024-07-21,SCIA-Alternativa,Efficace,2024-10-25,Via Dante,74,Pratica edilizia,Comune
+2024-11-02,SCIA,Rigettata,2025-04-13,Piazza San Marco,10,Pratica edilizia,Comune
+2024-03-14,PdC,Efficace,,Via XX Settembre,127,Pratica edilizia,Comune
+2024-03-24,SCIA,Efficace,2024-09-16,Via Vittorio Emanuele,28,Pratica edilizia,Comune
+2024-06-10,SCIA-Alternativa,Rigettata,2024-11-11,Via San Francesco,35,Pratica edilizia,Comune
+2024-09-15,SCIA,Acquisita,2025-01-02,Via Mazzini,118,Pratica edilizia,Comune
+2024-11-09,PdC,Efficace,2025-02-15,Via Vittorio Emanuele,50,Pratica edilizia,Comune
+2024-03-20,CIL,In istruttoria,,Via XX Settembre,132,Pratica edilizia,Comune
+2024-06-03,CIL,Rigettata,2024-07-25,Corso Italia,83,Pratica edilizia,Comune
+2024-04-01,SCIA,Efficace,2024-06-28,Via Dante,78,Pratica edilizia,Comune
+2024-10-24,CILA,Efficace,2025-01-15,Via Roma,31,Pratica edilizia,Comune
+2024-08-10,PdC,Efficace,2024-11-20,Piazza San Marco,31,Pratica edilizia,Comune
+2024-11-10,CILA,Acquisita,2025-01-03,Corso Italia,40,Pratica edilizia,Comune
+2024-08-24,CILA,Efficace,2025-01-19,Via dei Mille,138,Pratica edilizia,Comune
+2024-11-27,CILA,In istruttoria,,Via Verdi,21,Pratica edilizia,Comune
+2024-09-15,CILA,Efficace,,Via Garibaldi,16,Pratica edilizia,Comune
+2024-09-17,CILA,Acquisita,2024-11-18,Via Dante,134,Pratica edilizia,Comune
+2024-08-04,CILA,Rigettata,2024-09-14,Via San Francesco,131,Pratica edilizia,Comune
+2024-08-26,CILA,Efficace,2025-01-07,Corso Italia,145,Pratica edilizia,Comune
+2024-01-18,SCIA-Alternativa,Rigettata,2024-02-10,Via XX Settembre,66,Pratica edilizia,Comune
+2024-01-24,CILA,Acquisita,2024-06-07,Via Dante,17,Pratica edilizia,Comune
+2025-01-03,SCIA-Alternativa,Efficace,2025-03-08,Via dei Mille,35,Pratica edilizia,Comune
+2025-11-24,CIL,Efficace,,Via XX Settembre,115,Pratica edilizia,Comune
+2025-07-13,SCIA,Rigettata,,Viale Europa,139,Pratica edilizia,Comune
+2025-03-21,CILA,Efficace,2025-09-05,Via XX Settembre,136,Pratica edilizia,Comune
+2025-03-24,CILA,In istruttoria,,Via Roma,6,Pratica edilizia,Comune
+2025-05-15,CIL,Acquisita,2025-08-04,Via Verdi,118,Pratica edilizia,Comune
+2025-06-05,SCIA,Acquisita,,Piazza San Marco,29,Pratica edilizia,Comune
+2025-01-26,CIL,Acquisita,2025-02-17,Via Verdi,53,Pratica edilizia,Comune
+2025-02-04,CILA,Efficace,2025-03-03,Via Verdi,12,Pratica edilizia,Comune
+2025-07-15,CILA,Acquisita,2025-08-16,Via Mazzini,129,Pratica edilizia,Comune
+2025-05-08,CILA,Acquisita,2025-08-21,Via Verdi,78,Pratica edilizia,Comune
+2025-03-22,CILA,Efficace,2025-04-24,Via della Repubblica,45,Pratica edilizia,Comune
+2025-11-22,CIL,Acquisita,2026-03-13,Via Cavour,98,Pratica edilizia,Comune
+2025-09-11,CIL,Efficace,2026-01-10,Via Mazzini,138,Pratica edilizia,Comune
+2025-08-08,CILA,Efficace,,Via Mazzini,119,Pratica edilizia,Comune
+2025-01-18,CIL,Efficace,2025-03-11,Via XX Settembre,63,Pratica edilizia,Comune
+2025-05-07,CILA,Rigettata,2025-09-25,Viale Europa,95,Pratica edilizia,Comune
+2025-02-18,CILA,Efficace,2025-08-19,Via Vittorio Emanuele,11,Pratica edilizia,Comune
+2025-02-07,CILA,Efficace,2025-05-23,Via Manzoni,4,Pratica edilizia,Comune
+2025-04-07,SCIA,Rigettata,,Corso Italia,63,Pratica edilizia,Comune
+2025-12-20,CILA,Efficace,,Via della Repubblica,83,Pratica edilizia,Comune
+2025-05-13,SCIA-Alternativa,Acquisita,2025-08-22,Via Manzoni,93,Pratica edilizia,Comune
+2025-09-16,SCIA-Alternativa,Efficace,2026-02-11,Via dei Mille,82,Pratica edilizia,Comune
+2025-04-12,CILA,Efficace,2025-06-27,Piazza San Marco,38,Pratica edilizia,Comune
+2025-01-09,CIL,Efficace,2025-04-24,Via Verdi,98,Pratica edilizia,Comune
+2025-10-27,CILA,Efficace,2026-02-16,Via Manzoni,126,Pratica edilizia,Comune
+2025-12-21,SCIA-Alternativa,Efficace,2026-04-14,Via Mazzini,36,Pratica edilizia,Comune
+2025-12-18,SCIA-Alternativa,Acquisita,,Via della Repubblica,16,Pratica edilizia,Comune
+2025-09-02,SCIA,In istruttoria,,Via Cavour,13,Pratica edilizia,Comune
+2025-01-14,PdC,In istruttoria,,Via Cavour,60,Pratica edilizia,Comune
+2025-02-23,PdC,Efficace,2025-07-14,Via Dante,16,Pratica edilizia,Comune
+2025-10-21,SCIA-Alternativa,Rigettata,2025-11-09,Via della Repubblica,142,Pratica edilizia,Comune
+2025-07-01,CILA,Acquisita,2025-12-13,Via Manzoni,5,Pratica edilizia,Comune
+2025-09-27,CIL,In istruttoria,,Via San Francesco,46,Pratica edilizia,Comune
+2025-02-04,PdC,Acquisita,2025-07-13,Via Manzoni,91,Pratica edilizia,Comune
+2025-05-26,CIL,Efficace,2025-10-04,Corso Italia,145,Pratica edilizia,Comune
+2025-04-23,CILA,Efficace,2025-06-02,Via Cavour,9,Pratica edilizia,Comune
+2025-02-13,CIL,Efficace,2025-03-14,Via Cavour,3,Pratica edilizia,Comune
+2025-12-06,SCIA,Efficace,2026-06-18,Via dei Mille,85,Pratica edilizia,Comune
+2025-10-28,SCIA,Acquisita,,Via Verdi,55,Pratica edilizia,Comune
+2025-12-19,SCIA-Alternativa,Efficace,2026-01-25,Via Cavour,72,Pratica edilizia,Comune
+2025-09-19,CILA,Acquisita,,Via Dante,5,Pratica edilizia,Comune
+2025-04-19,PdC,In istruttoria,,Viale Europa,102,Pratica edilizia,Comune
+2025-02-10,PdC,Acquisita,2025-06-12,Via Cavour,139,Pratica edilizia,Comune
+2025-06-13,PdC,In istruttoria,,Piazza San Marco,21,Pratica edilizia,Comune
+2025-09-24,CILA,Efficace,2025-12-14,Viale Europa,20,Pratica edilizia,Comune
+2025-06-20,CIL,In istruttoria,,Via Dante,8,Pratica edilizia,Comune
+2025-11-09,SCIA-Alternativa,Efficace,2026-04-25,Via XX Settembre,111,Pratica edilizia,Comune
+2025-03-22,CIL,Efficace,2025-06-28,Via dei Mille,64,Pratica edilizia,Comune
+2025-12-03,SCIA,Efficace,2026-06-12,Via Mazzini,100,Pratica edilizia,Comune
+2025-06-12,SCIA,Efficace,2025-09-21,Corso Italia,93,Pratica edilizia,Comune
+2025-05-04,PdC,Efficace,2025-09-21,Via della Repubblica,143,Pratica edilizia,Comune

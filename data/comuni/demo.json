@@ -18,7 +18,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T15:58:05.486Z",
+      "fetched_at": "2026-05-05T16:41:54.453Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -115,13 +115,13 @@
       "error": null,
       "fields_present": [
         "anno",
-        "totale_residenti",
+        "numero_residenti",
         "localita"
       ]
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T15:58:05.489Z",
+      "fetched_at": "2026-05-05T16:41:54.459Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -251,13 +251,14 @@
       "fields_present": [
         "anno",
         "settore_interv_inv",
-        "totale_uscite",
-        "sottosettore_interv_inv"
+        "importo",
+        "sottosettore_interv_inv",
+        "misura"
       ]
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T15:58:05.490Z",
+      "fetched_at": "2026-05-05T16:41:54.459Z",
       "status": "ok",
       "modified": "2025-04-15",
       "freshness": {
@@ -375,17 +376,20 @@
         "nome",
         "anno",
         "codice_stato_cup",
-        "costo_lavori_previsto",
+        "importo_aggiudicazione",
         "cup",
         "lat",
         "lon",
         "fonte_finanziamento",
-        "tipo"
+        "tipo",
+        "cig",
+        "oggetto_contratto",
+        "stazione_appaltante"
       ]
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T15:58:05.491Z",
+      "fetched_at": "2026-05-05T16:41:54.462Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -485,12 +489,14 @@
         "codice_stato_cup",
         "data_scadenza",
         "via",
-        "civico"
+        "civico",
+        "oggetto_contratto",
+        "stazione_appaltante"
       ]
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T15:58:05.503Z",
+      "fetched_at": "2026-05-05T16:41:54.477Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -566,13 +572,14 @@
         "anno",
         "categoria",
         "numero",
-        "totale_costo",
-        "interventi"
+        "importo",
+        "interventi",
+        "misura"
       ]
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T15:58:05.506Z",
+      "fetched_at": "2026-05-05T16:41:54.482Z",
       "status": "ok",
       "modified": "2024-09-15",
       "freshness": {
@@ -782,18 +789,20 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "denominazione",
+        "denominazione_scuola",
         "anno",
         "totale_alunni",
-        "tipologia",
+        "tipo_scuola",
         "lat",
         "lon",
-        "via"
+        "via",
+        "codice_scuola",
+        "ciclo"
       ]
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T15:58:05.506Z",
+      "fetched_at": "2026-05-05T16:41:54.482Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -2796,12 +2805,14 @@
         "decessi",
         "feriti",
         "localita",
-        "ora"
+        "ora",
+        "numero_incidenti",
+        "mese"
       ]
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T15:58:05.513Z",
+      "fetched_at": "2026-05-05T16:41:54.493Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -2890,13 +2901,14 @@
       "fields_present": [
         "anno",
         "frazione",
-        "valore_assoluto",
-        "unita_misura"
+        "valore",
+        "unita_misura",
+        "misura"
       ]
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T15:58:05.514Z",
+      "fetched_at": "2026-05-05T16:41:54.498Z",
       "status": "ok",
       "modified": "2025-01-31",
       "freshness": {
@@ -3391,7 +3403,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T15:58:05.518Z",
+      "fetched_at": "2026-05-05T16:41:54.501Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -3501,12 +3513,14 @@
         "tipo_atto",
         "numero_atto",
         "oggetto",
-        "uo_proponente"
+        "uo_proponente",
+        "anno",
+        "descrizione"
       ]
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T15:58:05.529Z",
+      "fetched_at": "2026-05-05T16:41:54.522Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3830,14 +3844,16 @@
         "indirizzo",
         "lat",
         "lon",
-        "rendita",
-        "qualita",
-        "consistenza"
+        "valore",
+        "tipo_bene",
+        "descrizione",
+        "autore",
+        "datazione"
       ]
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T15:58:05.535Z",
+      "fetched_at": "2026-05-05T16:41:54.523Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {

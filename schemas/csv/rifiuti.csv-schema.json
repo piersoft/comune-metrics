@@ -5,7 +5,10 @@
   "description": "Una riga per (anno, frazione, localita) con il valore osservato e l'unità di misura. Formato long ('tidy data').",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "kg_totali": "FRAZIONE_LONG: una riga con frazione='Totale', unita_misura='kg'",
@@ -18,7 +21,10 @@
     {
       "name": "anno",
       "datatype": "integer",
-      "constraints": { "min": 1900, "max": 2050 },
+      "constraints": {
+        "min": 1900,
+        "max": 2050
+      },
       "description": "Anno di riferimento",
       "rdf_predicate": "sdmx-dimension:refPeriod"
     },
@@ -30,10 +36,12 @@
       "rdf_predicate": "dct:type@it"
     },
     {
-      "name": "valore_assoluto",
+      "name": "valore",
       "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Valore osservato (kg, %, tonnellate, ecc.). L'unità è specificata in 'unita_misura'.",
+      "constraints": {
+        "min": 0
+      },
+      "description": "Valore osservato",
       "rdf_predicate": "sdmx-measure:obsValue"
     }
   ],
@@ -42,7 +50,14 @@
       "name": "unita_misura",
       "datatype": "string",
       "max_length": 20,
-      "enum": ["kg", "t", "tonnellate", "%", "kg/abitante", "kg/giorno"],
+      "enum": [
+        "kg",
+        "t",
+        "tonnellate",
+        "%",
+        "kg/abitante",
+        "kg/giorno"
+      ],
       "description": "Unità di misura del valore_assoluto",
       "rdf_predicate": "mu:hasMeasurementUnit"
     },
@@ -58,6 +73,12 @@
       "datatype": "string",
       "max_length": 20,
       "description": "Codice CER (Catalogo Europeo dei Rifiuti)"
+    },
+    {
+      "name": "misura",
+      "datatype": "string",
+      "max_length": 50,
+      "description": "Unità di misura QB"
     }
   ],
   "example": "anno,frazione,valore_assoluto,unita_misura\n2024,Totale,16910000,kg\n2024,Differenziata_pct,73.2,%\n2023,Totale,16980000,kg\n2023,Differenziata_pct,71.5,%\n2024,Carta,3450000,kg\n2024,Plastica,1820000,kg\n2024,Vetro,2100000,kg\n2024,Organico,4520000,kg\n",

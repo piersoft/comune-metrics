@@ -5,7 +5,10 @@
   "description": "Una riga per delibera/atto pubblicato all'Albo Pretorio.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "data": "data_atto",
@@ -57,6 +60,17 @@
       "datatype": "string",
       "max_length": 1000,
       "description": "URL del documento integrale"
+    },
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "description": "Anno della delibera"
+    },
+    {
+      "name": "descrizione",
+      "datatype": "string",
+      "description": "Descrizione/abstract",
+      "max_length": 500
     }
   ],
   "example": "data_atto,tipo_atto,numero_atto,oggetto,uo_proponente\n2024-03-15,\"Delibera Giunta\",87,\"Approvazione bilancio di previsione 2024\",\"Ragioneria\"\n2024-03-16,\"Determina dirigenziale\",234,\"Affidamento servizio mensa scolastica\",\"Pubblica Istruzione\"\n",

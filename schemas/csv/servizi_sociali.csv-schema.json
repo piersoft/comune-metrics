@@ -5,7 +5,10 @@
   "description": "Una riga per (anno, categoria di intervento) con utenti serviti e spesa.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "utenti": "numero",
@@ -15,7 +18,10 @@
     {
       "name": "anno",
       "datatype": "integer",
-      "constraints": { "min": 1900, "max": 2050 },
+      "constraints": {
+        "min": 1900,
+        "max": 2050
+      },
       "description": "Anno di riferimento",
       "rdf_predicate": "sdmx-dimension:refPeriod"
     },
@@ -31,15 +37,19 @@
     {
       "name": "numero",
       "datatype": "integer",
-      "constraints": { "min": 0 },
+      "constraints": {
+        "min": 0
+      },
       "description": "Numero utenti che hanno ricevuto il servizio (ex 'utenti')",
       "rdf_predicate": "sdmx-measure:obsValue"
     },
     {
-      "name": "totale_costo",
+      "name": "importo",
       "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Spesa in euro per la categoria (ex 'spesa_euro')",
+      "constraints": {
+        "min": 0
+      },
+      "description": "Importo speso in euro",
       "rdf_predicate": "sdmx-measure:obsValue"
     },
     {
@@ -47,6 +57,12 @@
       "datatype": "string",
       "max_length": 300,
       "description": "Tipo specifico (es. 'Assistenza domiciliare', 'Centro diurno', 'Contributo economico'). Etichetta testuale → arricchimento via LLM."
+    },
+    {
+      "name": "misura",
+      "datatype": "string",
+      "max_length": 50,
+      "description": "Unità di misura"
     }
   ],
   "example": "anno,categoria,numero,totale_costo,tipo_intervento\n2024,Anziani,1245,2400000.00,\"Assistenza domiciliare\"\n2024,Anziani,389,1800000.00,\"Centro diurno\"\n2024,Minori,567,950000.00,\"Affido familiare\"\n2024,\"Disabilità\",234,3200000.00,\"Servizi residenziali\"\n",

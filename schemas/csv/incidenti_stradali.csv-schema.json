@@ -5,7 +5,10 @@
   "description": "Una riga per incidente con data, geo, vittime.",
   "version": "2.0",
   "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
   "decimal_separator": ".",
   "rename_aliases": {
     "morti": "decessi",
@@ -24,28 +27,38 @@
     {
       "name": "lat",
       "datatype": "number",
-      "constraints": { "min": -90, "max": 90 },
+      "constraints": {
+        "min": -90,
+        "max": 90
+      },
       "description": "Latitudine del punto dell'incidente",
       "rdf_predicate": "geo:lat"
     },
     {
       "name": "lon",
       "datatype": "number",
-      "constraints": { "min": -180, "max": 180 },
+      "constraints": {
+        "min": -180,
+        "max": 180
+      },
       "description": "Longitudine",
       "rdf_predicate": "geo:long"
     },
     {
       "name": "decessi",
       "datatype": "integer",
-      "constraints": { "min": 0 },
+      "constraints": {
+        "min": 0
+      },
       "description": "Numero di morti nell'incidente (ex 'morti')",
       "rdf_predicate": "sdmx-measure:obsValue"
     },
     {
       "name": "feriti",
       "datatype": "integer",
-      "constraints": { "min": 0 },
+      "constraints": {
+        "min": 0
+      },
       "description": "Numero di feriti (semantica unica → arricchimento via LLM)"
     },
     {
@@ -65,8 +78,21 @@
     {
       "name": "veicoli_coinvolti",
       "datatype": "integer",
-      "constraints": { "min": 0 },
+      "constraints": {
+        "min": 0
+      },
       "description": "Numero di veicoli coinvolti"
+    },
+    {
+      "name": "numero_incidenti",
+      "datatype": "integer",
+      "description": "Conteggio (sempre 1 per riga di sinistro)"
+    },
+    {
+      "name": "mese",
+      "datatype": "string",
+      "description": "Mese (per QB)",
+      "max_length": 10
     }
   ],
   "example": "data,lat,lon,decessi,feriti,localita,tipo\n2024-01-15,40.37924,18.15166,0,2,\"Viale Marche\",\"tamponamento\"\n2024-01-22,40.36422,18.14054,1,0,\"Via Lecce-San Cataldo\",\"investimento pedone\"\n2024-02-03,40.33956,18.17699,0,3,\"Tangenziale Est\",\"scontro frontale\"\n",

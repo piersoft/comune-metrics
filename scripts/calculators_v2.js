@@ -135,13 +135,12 @@ function geoPoints(rows, max = 300) {
 // v2.0: 'totale_residenti' (ex 'residenti'), 'localita' (ex 'quartiere')
 export function calc_popolazione(rows) {
   const aliased = rows.map(r => withAliases(r, {
-    residenti: 'totale_residenti',
+    residenti: 'numero_residenti',
+    totale_residenti: 'numero_residenti',
     quartiere: 'localita',
   }));
-  // Calcola serie per anno; "totale_residenti" = ULTIMO anno (non somma)
-  const serie = seriesByYear(aliased, 'anno', 'totale_residenti');
+  const serie = seriesByYear(aliased, 'anno', 'numero_residenti');
   const totale = serie.length > 0 ? serie[serie.length - 1].valore : null;
-  // Per quartiere/localita: solo l'ultimo anno (altrimenti somma 15 anni di residenti)
   const ultimoAnno = serie.length > 0 ? serie[serie.length - 1].anno : null;
   let perQuartiere = null;
   if (ultimoAnno !== null) {
@@ -149,7 +148,7 @@ export function calc_popolazione(rows) {
       const y = typeof r.anno === 'string' ? parseInt(r.anno, 10) : r.anno;
       return y === ultimoAnno;
     });
-    perQuartiere = groupSum(rowsUltimoAnno, 'localita', 'totale_residenti');
+    perQuartiere = groupSum(rowsUltimoAnno, 'localita', 'numero_residenti');
     if (!perQuartiere || perQuartiere.length === 0) perQuartiere = null;
   }
   return {
@@ -164,15 +163,16 @@ export function calc_popolazione(rows) {
 // Retrocompat con vecchie colonne 'importo_euro', 'missione', 'programma'
 export function calc_bilancio(rows) {
   const aliased = rows.map(r => withAliases(r, {
-    importo_euro: 'totale_uscite',
+    importo_euro: 'importo',
+    totale_uscite: 'importo',
     missione: 'settore_interv_inv',
     programma: 'sottosettore_interv_inv',
   }));
-  const totale = sumBy(aliased, 'totale_uscite');
+  const totale = sumBy(aliased, 'importo');
   return {
     totale_uscite: totale,
-    per_missione: groupSum(aliased, 'settore_interv_inv', 'totale_uscite'),
-    top10_programmi: groupSum(aliased, 'sottosettore_interv_inv', 'totale_uscite', 10),
+    per_missione: groupSum(aliased, 'settore_interv_inv', 'importo'),
+    top10_programmi: groupSum(aliased, 'sottosettore_interv_inv', 'importo', 10),
   };
 }
 
@@ -183,7 +183,8 @@ export function calc_bilancio(rows) {
 export function calc_opere(rows) {
   const aliased = rows.map(r => withAliases(r, {
     stato: 'codice_stato_cup',
-    importo_euro: 'costo_lavori_previsto',
+    importo_euro: 'importo_aggiudicazione',
+    costo_lavori_previsto: 'importo_aggiudicazione',
     rup: 'nome_completo',
   }));
   const cup_count = aliased.filter(r => r.cup && String(r.cup).trim().length > 0).length;
@@ -192,7 +193,7 @@ export function calc_opere(rows) {
     per_stato: countBy(aliased, 'codice_stato_cup'),
     per_fonte: countBy(aliased, 'fonte_finanziamento'),
     cup_count,
-    importo_totale: sumBy(aliased, 'costo_lavori_previsto'),
+    importo_totale: sumBy(aliased, 'importo_aggiudicazione'),
     opere_geo: geoPoints(aliased),
   };
 }
@@ -221,13 +222,14 @@ export function calc_pratiche(rows) {
 export function calc_sociali(rows) {
   const aliased = rows.map(r => withAliases(r, {
     utenti: 'numero',
-    spesa_euro: 'totale_costo',
+    spesa_euro: 'importo',
+    totale_costo: 'importo',
   }));
   return {
     utenti_totali: sumBy(aliased, 'numero'),
-    spesa_totale: sumBy(aliased, 'totale_costo'),
+    spesa_totale: sumBy(aliased, 'importo'),
     per_categoria: groupSum(aliased, 'categoria', 'numero') || countBy(aliased, 'categoria'),
-    spesa_per_categoria: groupSum(aliased, 'categoria', 'totale_costo'),
+    spesa_per_categoria: groupSum(aliased, 'categoria', 'importo'),
   };
 }
 
@@ -237,8 +239,10 @@ export function calc_sociali(rows) {
 export function calc_istruzione(rows) {
   const aliased = rows.map(r => withAliases(r, {
     struttura: 'denominazione',
+    denominazione_scuola: 'denominazione',
     iscritti: 'totale_alunni',
     tipo_struttura: 'tipologia',
+    tipo_scuola: 'tipologia',
   }));
   // Se nessuna riga ha 'totale_alunni' numerico, fallback a conteggio strutture
   // (es. dati MIM Anagrafe Scuole — solo anagrafica, no iscritti)
@@ -285,9 +289,14 @@ export function calc_rifiuti(rows) {
     return { rd_pct_ultimo_anno: null, trend_pct: null, serie_anni: [], per_frazione: [] };
   }
 
-  // Detect formato: long se almeno una riga ha 'valore_assoluto' E 'frazione' E NON ha rd_pct/kg_totali
+  // Applico alias per retrocompat: valore_assoluto → valore (rinominato per Worker QB)
+  rows = rows.map(r => withAliases(r, {
+    valore_assoluto: 'valore',
+  }));
+
+  // Detect formato: long se almeno una riga ha 'valore' E 'frazione' E NON ha rd_pct/kg_totali
   const isLong = rows.some(r =>
-    r.valore_assoluto != null && r.frazione != null &&
+    r.valore != null && r.frazione != null &&
     r.rd_pct == null && r.kg_totali == null
   );
 
@@ -300,7 +309,7 @@ export function calc_rifiuti(rows) {
       if (!byYear.has(anno)) byYear.set(anno, { anno, frazioni: {} });
       const y = byYear.get(anno);
       const fraz = String(r.frazione || '').trim();
-      const val = toNum(r.valore_assoluto);
+      const val = toNum(r.valore);
       const unit = String(r.unita_misura || '').trim().toLowerCase();
       if (val == null || !fraz) continue;
       // Mappature canoniche
@@ -397,24 +406,26 @@ export function calc_delibere(rows) {
 // 'consistenza' (ex 'uso')
 export function calc_patrimonio(rows) {
   const aliased = rows.map(r => withAliases(r, {
-    valore_euro: 'rendita',
-    vincolo_culturale: 'qualita',
-    uso: 'consistenza',
+    valore_euro: 'valore',
+    rendita: 'valore',
+    vincolo_culturale: 'tipo_bene',
+    qualita: 'tipo_bene',
+    uso: 'descrizione',
+    consistenza: 'descrizione',
   }));
-  // 'qualita' può essere boolean (vecchio formato) o string (nuovo): conta come "vincolato"
-  // qualunque valore truthy/non-vuoto/non-"nessuno"
+  // 'tipo_bene' è la qualità del vincolo (es. 'monumentale', 'paesaggistico', 'non vincolato')
   const conVincolo = aliased.filter(r => {
-    const v = r.qualita;
+    const v = r.tipo_bene;
     if (v == null || v === '' || v === false || v === 'false') return false;
     const s = String(v).toLowerCase().trim();
-    return s !== '' && s !== 'no' && s !== 'nessuno' && s !== 'none';
+    return s !== '' && s !== 'no' && s !== 'nessuno' && s !== 'none' && s !== 'non vincolato';
   }).length;
   const pct_vincolo = aliased.length > 0 ? Math.round((conVincolo / aliased.length) * 1000) / 10 : null;
   return {
     totale_immobili: aliased.length,
     per_tipo: countBy(aliased, 'tipo'),
-    per_destinazione: countBy(aliased, 'consistenza'),
-    valore_totale: sumBy(aliased, 'rendita'),
+    per_destinazione: countBy(aliased, 'descrizione'),
+    valore_totale: sumBy(aliased, 'valore'),
     superficie_totale_mq: sumBy(aliased, 'superficie_mq'),
     pct_vincolo,
     immobili_geo: geoPoints(aliased, 300),

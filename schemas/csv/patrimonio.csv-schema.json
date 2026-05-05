@@ -14,7 +14,9 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["denominazione"],
+    "required": [
+      "denominazione"
+    ],
     "properties": {
       "denominazione": {
         "type": "string",
@@ -23,44 +25,82 @@
         "rdf_predicate": "rdfs:label@it"
       },
       "tipo": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 200,
         "description": "Es. 'Scuola', 'Ufficio', 'Magazzino', 'Cimitero'",
         "rdf_predicate": "dct:type@it"
       },
       "indirizzo": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 500,
         "description": "Indirizzo (aggregato in clv:Address dal tool)"
       },
       "lat": {
-        "type": ["number", "null"],
+        "type": [
+          "number",
+          "null"
+        ],
         "minimum": 35,
         "maximum": 48,
         "rdf_predicate": "geo:lat"
       },
       "lon": {
-        "type": ["number", "null"],
+        "type": [
+          "number",
+          "null"
+        ],
         "minimum": 6,
         "maximum": 19,
         "rdf_predicate": "geo:long"
       },
-      "rendita": {
-        "type": ["number", "null"],
+      "autore": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 300,
+        "description": "Autore del bene"
+      },
+      "datazione": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 100,
+        "description": "Datazione del bene (es. 'sec. XX')"
+      },
+      "valore": {
+        "type": [
+          "number",
+          "null"
+        ],
         "minimum": 0,
-        "description": "Valore patrimoniale o rendita catastale in euro (ex 'valore_euro')",
+        "description": "Valore patrimoniale o rendita catastale in euro",
         "rdf_predicate": "sdmx-measure:obsValue"
       },
-      "qualita": {
-        "type": ["string", "null", "boolean"],
+      "tipo_bene": {
+        "type": [
+          "string",
+          "null",
+          "boolean"
+        ],
         "maxLength": 100,
-        "description": "Tipo di vincolo o qualità del bene (es. 'monumentale', 'paesaggistico', 'nessuno') (ex 'vincolo_culturale' boolean)",
+        "description": "Tipo di vincolo o qualità del bene (es. 'monumentale')",
         "rdf_predicate": "dct:type@it"
       },
-      "consistenza": {
-        "type": ["string", "null"],
+      "descrizione": {
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 200,
-        "description": "Uso/destinazione e consistenza dell'immobile (es. 'Strumentale', 'Disponibile', 'Storico-artistico') (ex 'uso')",
+        "description": "Destinazione e descrizione del bene",
         "rdf_predicate": "dct:description"
       }
     }

@@ -1,43 +1,43 @@
-denominazione,tipo,indirizzo,lat,lon,rendita,qualita,consistenza
-Scuola Primaria E. De Amicis,Scuola,Piazza Marconi 3,45.47585,9.186,4500000,false,Scolastico
-Scuola Primaria G. Carducci,Scuola,Via Carducci 14,45.46686,9.20439,3800000,false,Scolastico
-Scuola Primaria A. Manzoni,Scuola,Viale Europa 10,45.45606,9.19063,3200000,false,Scolastico
-Scuola Materna San Giuseppe,Scuola,Via Mazzini 8,45.46671,9.20789,1800000,false,Scolastico
-Scuola Materna G. Rodari,Scuola,Via Verdi 18,45.45017,9.17276,1650000,false,Scolastico
-Scuola Media G. Pascoli,Scuola,Via Pascoli 7,45.4588,9.203,5200000,false,Scolastico
-Scuola Media L. Da Vinci,Scuola,Via Leonardo 22,45.47449,9.17542,4900000,false,Scolastico
-Asilo Nido Arcobaleno,Scuola,Via Roma 12,45.47679,9.19111,1200000,false,Scolastico
-Asilo Nido Girotondo,Scuola,Via Garibaldi 45,45.47824,9.20738,1350000,false,Scolastico
-Asilo Nido Stelle,Scuola,Via Manzoni 22,45.45199,9.20897,980000,false,Scolastico
-Palazzo Comunale - Sede principale,Casa comunale,Piazza San Marco 1,45.46356,9.17624,8500000,true,Amministrativo
-Sede Polizia Locale,Ufficio,Via Cavour 5,45.46317,9.17297,2100000,false,Strumentale
-Ufficio Anagrafe distaccato,Ufficio,Via XX Settembre 12,45.47167,9.19178,850000,false,Strumentale
-Magazzino Comunale Lavori Pubblici,Magazzino,Strada Provinciale 5 km 3,45.45248,9.17905,650000,false,Strumentale
-Centro Operativo Protezione Civile,Edificio polifunzionale,Via dell'Industria 8,45.4644,9.20114,1100000,false,Strumentale
-Biblioteca Civica,Biblioteca,Via dei Tigli 4,45.45745,9.17427,2800000,true,Strumentale
-Museo Civico Archeologico,Museo,Piazza San Marco 8,45.45984,9.17276,4200000,true,Storico-artistico
-Teatro Sociale,Edificio storico,Via Roma 25,45.45927,9.20487,6500000,true,Storico-artistico
-Auditorium Comunale,Edificio polifunzionale,Via Mazzini 30,45.45471,9.18207,3400000,false,Strumentale
-Villa Comunale (sede mostre),Edificio storico,Viale dei Tigli 1,45.4724,9.17815,5800000,true,Storico-artistico
-Centro Sportivo Comunale,Impianto sportivo,Via dello Sport 1,45.45265,9.17993,4500000,false,Sportivo
-Palazzetto dello Sport,Impianto sportivo,Via Volta 30,45.46751,9.19847,5200000,false,Sportivo
-Piscina Comunale,Impianto sportivo,Viale Europa 50,45.4695,9.17258,3800000,false,Sportivo
-"Campo da Calcio ""Stadio Comunale""",Impianto sportivo,Via dello Stadio 2,45.45772,9.17463,2200000,false,Sportivo
-Palestra ITIS Volta,Impianto sportivo,Via Volta 15,45.466,9.18463,1450000,false,Sportivo
-Cimitero Comunale Capoluogo,Cimitero,Via del Cimitero 1,45.47174,9.19274,1800000,false,Cimiteriale
-Cimitero Frazione Nord,Cimitero,Via Cimitero Nord,45.46667,9.17686,450000,false,Cimiteriale
-Cimitero Frazione Sud,Cimitero,Via Cimitero Sud,45.46548,9.17263,380000,false,Cimiteriale
-Torre Civica medievale,Edificio storico,Piazza Vecchia 1,45.45222,9.20433,2100000,true,Storico-artistico
-Casa Natale del poeta Tal dei Tali,Edificio storico,Via del Poeta 15,45.45443,9.17004,850000,true,Storico-artistico
-Palazzo dei Notari,Edificio storico,Piazza San Marco 5,45.47068,9.17742,3200000,true,Storico-artistico
-Chiostro di San Francesco,Edificio storico,Via San Francesco 1,45.45823,9.19299,1450000,true,Storico-artistico
-Ex Macello Comunale,Edificio polifunzionale,Via dei Mille 22,45.4774,9.17093,1800000,false,Disponibile
-Casa colonica San Lorenzo,Edificio storico,Loc. San Lorenzo,45.46868,9.1714,350000,false,Disponibile
-Box auto Piazza Mercato n.1-4,Box auto,Piazza Mercato,45.47245,9.18462,60000,false,In locazione
-Box auto Piazza Mercato n.5-8,Box auto,Piazza Mercato,45.45177,9.18568,60000,false,In locazione
-Negozio sfitto Via Cavour 18,Ufficio,Via Cavour 18,45.46872,9.17543,280000,false,Disponibile
-Appartamento ex custode scuola,Edificio polifunzionale,Via Verdi 18,45.46063,9.20122,220000,false,Disponibile
-Area verde Parco Civico,Terreno,Via del Parco,45.47379,9.19911,2500000,false,Disponibile
-Terreno agricolo Loc. Cascine,Terreno,Loc. Cascine,45.46333,9.1982,180000,false,Disponibile
-Area edificabile zona PEEP,Terreno,Via PEEP 1,45.45367,9.18534,850000,false,Disponibile
-Terreno boschivo Monte Sole,Terreno,Loc. Monte Sole,45.45855,9.17528,95000,false,Disponibile
+denominazione,tipo,indirizzo,lat,lon,valore,tipo_bene,descrizione,autore,datazione
+Scuola Primaria E. De Amicis,Scuola,Piazza Marconi 3,45.47585,9.186,4500000,non vincolato,Scolastico,autore non documentato,sec. XX
+Scuola Primaria G. Carducci,Scuola,Via Carducci 14,45.46686,9.20439,3800000,non vincolato,Scolastico,autore non documentato,sec. XX
+Scuola Primaria A. Manzoni,Scuola,Viale Europa 10,45.45606,9.19063,3200000,non vincolato,Scolastico,autore non documentato,sec. XX
+Scuola Materna San Giuseppe,Scuola,Via Mazzini 8,45.46671,9.20789,1800000,non vincolato,Scolastico,autore non documentato,sec. XX
+Scuola Materna G. Rodari,Scuola,Via Verdi 18,45.45017,9.17276,1650000,non vincolato,Scolastico,autore non documentato,sec. XX
+Scuola Media G. Pascoli,Scuola,Via Pascoli 7,45.4588,9.203,5200000,non vincolato,Scolastico,autore non documentato,sec. XX
+Scuola Media L. Da Vinci,Scuola,Via Leonardo 22,45.47449,9.17542,4900000,non vincolato,Scolastico,autore non documentato,sec. XX
+Asilo Nido Arcobaleno,Scuola,Via Roma 12,45.47679,9.19111,1200000,non vincolato,Scolastico,autore non documentato,sec. XX
+Asilo Nido Girotondo,Scuola,Via Garibaldi 45,45.47824,9.20738,1350000,non vincolato,Scolastico,autore non documentato,sec. XX
+Asilo Nido Stelle,Scuola,Via Manzoni 22,45.45199,9.20897,980000,non vincolato,Scolastico,autore non documentato,sec. XX
+Palazzo Comunale - Sede principale,Casa comunale,Piazza San Marco 1,45.46356,9.17624,8500000,monumentale,Amministrativo,autore non documentato,sec. XX
+Sede Polizia Locale,Ufficio,Via Cavour 5,45.46317,9.17297,2100000,non vincolato,Strumentale,autore non documentato,sec. XX
+Ufficio Anagrafe distaccato,Ufficio,Via XX Settembre 12,45.47167,9.19178,850000,non vincolato,Strumentale,autore non documentato,sec. XX
+Magazzino Comunale Lavori Pubblici,Magazzino,Strada Provinciale 5 km 3,45.45248,9.17905,650000,non vincolato,Strumentale,autore non documentato,sec. XX
+Centro Operativo Protezione Civile,Edificio polifunzionale,Via dell'Industria 8,45.4644,9.20114,1100000,non vincolato,Strumentale,autore non documentato,sec. XX
+Biblioteca Civica,Biblioteca,Via dei Tigli 4,45.45745,9.17427,2800000,monumentale,Strumentale,autore non documentato,sec. XX
+Museo Civico Archeologico,Museo,Piazza San Marco 8,45.45984,9.17276,4200000,monumentale,Storico-artistico,autore non documentato,sec. XX
+Teatro Sociale,Edificio storico,Via Roma 25,45.45927,9.20487,6500000,monumentale,Storico-artistico,autore non documentato,sec. XX
+Auditorium Comunale,Edificio polifunzionale,Via Mazzini 30,45.45471,9.18207,3400000,non vincolato,Strumentale,autore non documentato,sec. XX
+Villa Comunale (sede mostre),Edificio storico,Viale dei Tigli 1,45.4724,9.17815,5800000,monumentale,Storico-artistico,autore non documentato,sec. XX
+Centro Sportivo Comunale,Impianto sportivo,Via dello Sport 1,45.45265,9.17993,4500000,non vincolato,Sportivo,autore non documentato,sec. XX
+Palazzetto dello Sport,Impianto sportivo,Via Volta 30,45.46751,9.19847,5200000,non vincolato,Sportivo,autore non documentato,sec. XX
+Piscina Comunale,Impianto sportivo,Viale Europa 50,45.4695,9.17258,3800000,non vincolato,Sportivo,autore non documentato,sec. XX
+"Campo da Calcio ""Stadio Comunale""",Impianto sportivo,Via dello Stadio 2,45.45772,9.17463,2200000,non vincolato,Sportivo,autore non documentato,sec. XX
+Palestra ITIS Volta,Impianto sportivo,Via Volta 15,45.466,9.18463,1450000,non vincolato,Sportivo,autore non documentato,sec. XX
+Cimitero Comunale Capoluogo,Cimitero,Via del Cimitero 1,45.47174,9.19274,1800000,non vincolato,Cimiteriale,autore non documentato,sec. XX
+Cimitero Frazione Nord,Cimitero,Via Cimitero Nord,45.46667,9.17686,450000,non vincolato,Cimiteriale,autore non documentato,sec. XX
+Cimitero Frazione Sud,Cimitero,Via Cimitero Sud,45.46548,9.17263,380000,non vincolato,Cimiteriale,autore non documentato,sec. XX
+Torre Civica medievale,Edificio storico,Piazza Vecchia 1,45.45222,9.20433,2100000,monumentale,Storico-artistico,autore non documentato,sec. XX
+Casa Natale del poeta Tal dei Tali,Edificio storico,Via del Poeta 15,45.45443,9.17004,850000,monumentale,Storico-artistico,autore non documentato,sec. XX
+Palazzo dei Notari,Edificio storico,Piazza San Marco 5,45.47068,9.17742,3200000,monumentale,Storico-artistico,autore non documentato,sec. XX
+Chiostro di San Francesco,Edificio storico,Via San Francesco 1,45.45823,9.19299,1450000,monumentale,Storico-artistico,autore non documentato,sec. XX
+Ex Macello Comunale,Edificio polifunzionale,Via dei Mille 22,45.4774,9.17093,1800000,non vincolato,Disponibile,autore non documentato,sec. XX
+Casa colonica San Lorenzo,Edificio storico,Loc. San Lorenzo,45.46868,9.1714,350000,non vincolato,Disponibile,autore non documentato,sec. XX
+Box auto Piazza Mercato n.1-4,Box auto,Piazza Mercato,45.47245,9.18462,60000,non vincolato,In locazione,autore non documentato,sec. XX
+Box auto Piazza Mercato n.5-8,Box auto,Piazza Mercato,45.45177,9.18568,60000,non vincolato,In locazione,autore non documentato,sec. XX
+Negozio sfitto Via Cavour 18,Ufficio,Via Cavour 18,45.46872,9.17543,280000,non vincolato,Disponibile,autore non documentato,sec. XX
+Appartamento ex custode scuola,Edificio polifunzionale,Via Verdi 18,45.46063,9.20122,220000,non vincolato,Disponibile,autore non documentato,sec. XX
+Area verde Parco Civico,Terreno,Via del Parco,45.47379,9.19911,2500000,non vincolato,Disponibile,autore non documentato,sec. XX
+Terreno agricolo Loc. Cascine,Terreno,Loc. Cascine,45.46333,9.1982,180000,non vincolato,Disponibile,autore non documentato,sec. XX
+Area edificabile zona PEEP,Terreno,Via PEEP 1,45.45367,9.18534,850000,non vincolato,Disponibile,autore non documentato,sec. XX
+Terreno boschivo Monte Sole,Terreno,Loc. Monte Sole,45.45855,9.17528,95000,non vincolato,Disponibile,autore non documentato,sec. XX

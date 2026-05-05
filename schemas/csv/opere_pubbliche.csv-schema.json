@@ -14,7 +14,9 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["nome"],
+    "required": [
+      "nome"
+    ],
     "properties": {
       "nome": {
         "type": "string",
@@ -24,59 +26,110 @@
         "rdf_predicate": "rdfs:label@it"
       },
       "anno": {
-        "type": ["integer", "null"],
+        "type": [
+          "integer",
+          "null"
+        ],
         "minimum": 1900,
         "maximum": 2050,
         "rdf_predicate": "sdmx-dimension:refPeriod"
       },
       "codice_stato_cup": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 100,
         "description": "Es. 'in corso', 'concluso', 'progettazione', 'gara' (ex 'stato')",
         "rdf_predicate": "adms:status"
       },
-      "costo_lavori_previsto": {
-        "type": ["number", "null"],
-        "minimum": 0,
-        "description": "Costo previsto dei lavori in euro (ex 'importo_euro')",
-        "rdf_predicate": "pc:totalAmount"
-      },
       "cup": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "pattern": "^[A-Z][0-9]{2}[A-Z][0-9]{7}[0-9]{4}$",
         "description": "Codice Unico di Progetto (15 caratteri)",
         "rdf_predicate": "dct:identifier"
       },
       "fonte_finanziamento": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 200,
         "description": "Es. 'PNRR', 'Comunale', 'Statale', 'Europeo' (semantica unica → arricchimento via LLM)"
       },
       "lat": {
-        "type": ["number", "null"],
+        "type": [
+          "number",
+          "null"
+        ],
         "minimum": 35,
         "maximum": 48,
         "description": "Latitudine (Italia: 35-48)",
         "rdf_predicate": "geo:lat"
       },
       "lon": {
-        "type": ["number", "null"],
+        "type": [
+          "number",
+          "null"
+        ],
         "minimum": 6,
         "maximum": 19,
         "description": "Longitudine (Italia: 6-19)",
         "rdf_predicate": "geo:long"
       },
       "tipo": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 200,
         "description": "Es. 'nuova realizzazione', 'manutenzione ordinaria', 'manutenzione straordinaria'",
         "rdf_predicate": "dct:type@it"
       },
       "nome_completo": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "maxLength": 200,
         "description": "Nome completo del Responsabile Unico del Procedimento (RUP) — persona fisica (ex 'rup'). NB: il titolare giuridico (Comune/Regione/Ente) è una cosa diversa, andrebbe in 'descrizione_ente' (foaf:name) se serve.",
         "rdf_predicate": "cpv:fullName"
+      },
+      "cig": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 10,
+        "description": "Codice Identificativo Gara (CIG ANAC)"
+      },
+      "oggetto_contratto": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 500,
+        "description": "Oggetto del contratto/affidamento"
+      },
+      "stazione_appaltante": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "maxLength": 300,
+        "description": "Stazione appaltante (Comune, Centrale, ecc.)"
+      },
+      "importo_aggiudicazione": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 0,
+        "description": "Importo di aggiudicazione in euro (ex costo_lavori_previsto)",
+        "rdf_predicate": "pc:totalAmount"
       }
     }
   },
