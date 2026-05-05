@@ -1,6 +1,62 @@
-# Paniere CSV — Schema Canonico v1
+# Paniere CSV — Schema Canonico v2.0
 
 > Specifica del formato CSV richiesto per la pubblicazione dei dataset CORE nel cruscotto ComuneMetrics.
+
+## Changelog v2.0 (allineamento al tool CSV-to-RDF)
+
+In v2.0 i nomi delle colonne sono stati allineati al **dizionario `DET_COL_RULES`** del tool [CSV-to-RDF di Piersoft](https://github.com/piersoft/CSV-to-RDF) per massimizzare la coverage del mapper deterministico zero-token.
+
+**Coverage raggiunta**: 73 colonne su 78 totali del paniere → **93% deterministico** (le 5 restanti hanno semantica unica e vanno via fallback LLM).
+
+### Tabella rinomine (riassunto)
+
+| Dataset | Vecchio nome | Nuovo nome v2.0 | Predicato RDF |
+|---|---|---|---|
+| bilancio | `missione` | `settore_interv_inv` | `dct:subject@it` |
+| bilancio | `importo_euro` | `totale_uscite` | `sdmx-measure:obsValue` |
+| bilancio | `programma` | `sottosettore_interv_inv` | `dct:subject@it` |
+| delibere | `data` | `data_atto` | `dct:date` |
+| delibere | `tipo` | `tipo_atto` | `dct:type@it` |
+| delibere | `numero` | `numero_atto` | `dct:identifier` |
+| delibere | `ufficio`/`settore` | `uo_proponente` | `dct:publisher@it` |
+| eventi_culturali | `data_inizio` | `datainizio` (CPEV) | `ti:startTime^^xsd:date` |
+| eventi_culturali | `data_fine` | `datafine` (CPEV) | `ti:endTime^^xsd:date` |
+| incidenti_stradali | `morti` | `decessi` | `sdmx-measure:obsValue` |
+| incidenti_stradali | `zona` | `localita` | `clv:hasSpatialCoverage` |
+| incidenti_stradali | `feriti` | (resta — semantica unica) | LLM |
+| istruzione | `struttura` | `denominazione` | `rdfs:label@it` |
+| istruzione | `iscritti` | `totale_alunni` | `sdmx-measure:obsValue` |
+| istruzione | `tipo_struttura` | `tipologia` | `dct:type@it` |
+| opere_pubbliche | `stato` | `codice_stato_cup` | `adms:status` |
+| opere_pubbliche | `importo_euro` | `costo_lavori_previsto` | `pc:totalAmount` |
+| opere_pubbliche | `rup` | `nome_completo` (persona) | `cpv:fullName` |
+| opere_pubbliche | `fonte_finanziamento` | (resta — semantica unica) | LLM |
+| patrimonio | `valore_euro` | `rendita` | `sdmx-measure:obsValue` |
+| patrimonio | `vincolo_culturale` | `qualita` | `dct:type@it` |
+| patrimonio | `uso` | `consistenza` | `dct:description` |
+| popolazione | `residenti` | `totale_residenti` | LLM (semantica unica) |
+| popolazione | `quartiere` | `localita` | `clv:hasSpatialCoverage` |
+| pratiche_edilizie | `esito` | `codice_stato_cup` | `adms:status` |
+| pratiche_edilizie | `data_chiusura` | `data_scadenza` | `ti:endTime^^xsd:date` |
+| rifiuti | `(wide: anno,kg_totali,kg_diff,kg_indiff,rd_pct,frazione,quartiere)` | **RISTRUTTURATO LONG: `(anno, frazione, valore_assoluto, unita_misura, localita)`** | `sdmx-measure:obsValue` + `mu:hasMeasurementUnit` + `dct:type@it` |
+| servizi_sociali | `utenti` | `numero` | `sdmx-measure:obsValue` |
+| servizi_sociali | `spesa_euro` | `totale_costo` | `sdmx-measure:obsValue` |
+| tributi | `tributo` | `tipo_atto` | `dct:type@it` |
+| tributi | `gettito_euro` | `totale_entrate` | `sdmx-measure:obsValue` |
+| tributi | `n_contribuenti` | `numero` | `sdmx-measure:obsValue` |
+| tributi | `aliquota_base` | `valore` (+ `unita_misura`) | `iot:hasObservationValue` |
+
+### Nota semantica importante: persone vs enti
+
+Per `opere_pubbliche.nome_completo` (ex `rup`): il **RUP è una persona fisica** (`cpv:Person` → `cpv:fullName`), non un'organizzazione. Il **titolare giuridico** (Comune/Regione/Ministero) è una entità diversa, vive in una colonna separata `descrizione_ente` (`foaf:name@it`, ontologia COV) opzionale.
+
+### Retrocompatibilità
+
+I calcolatori (`scripts/calculators_v2.js`) supportano **entrambi i formati** tramite la funzione helper `withAliases(row, {vecchio: 'nuovo'})`. I CSV con i vecchi nomi (Bologna, Lecce, Potenza) continuano a funzionare senza modifiche.
+
+Il caso speciale di `rifiuti` (formato wide → long) è gestito da auto-detect dell'header: se sono presenti le colonne wide (`kg_totali`, `rd_pct`) il calcolatore usa il path legacy; se sono presenti le colonne long (`frazione`, `valore_assoluto`, `unita_misura`) il calcolatore fa pivot e calcola.
+
+---
 
 ## Riferimento canonico
 

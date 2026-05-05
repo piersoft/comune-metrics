@@ -1,4 +1,4 @@
-anno,tributo,gettito_euro,n_contribuenti,aliquota_base,descrizione,categoria
+anno,tipo_atto,totale_entrate,numero,valore,descrizione,categoria
 2020,IMU,5225042.07,11800,1.06,Aliquota ordinaria 10.6 per mille - delibera CC,
 2020,TARI,3324905.86,14500,,,Utenze domestiche
 2020,TARI,1684905.23,1850,,,Utenze non domestiche

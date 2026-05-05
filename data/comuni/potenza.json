@@ -17,7 +17,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T11:04:53.885Z",
+      "fetched_at": "2026-05-05T13:38:23.196Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -90,7 +90,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T11:04:53.885Z",
+      "fetched_at": "2026-05-05T13:38:23.196Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -110,7 +110,7 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T11:04:53.885Z",
+      "fetched_at": "2026-05-05T13:38:23.196Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -130,7 +130,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T11:04:53.885Z",
+      "fetched_at": "2026-05-05T13:38:23.196Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -150,7 +150,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T11:04:53.885Z",
+      "fetched_at": "2026-05-05T13:38:23.196Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -170,7 +170,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T11:04:53.885Z",
+      "fetched_at": "2026-05-05T13:38:23.196Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -309,7 +309,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T11:04:53.887Z",
+      "fetched_at": "2026-05-05T13:38:23.200Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -329,7 +329,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T11:04:53.887Z",
+      "fetched_at": "2026-05-05T13:38:23.200Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -378,7 +378,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T11:04:53.887Z",
+      "fetched_at": "2026-05-05T13:38:23.200Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -463,7 +463,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T11:04:53.888Z",
+      "fetched_at": "2026-05-05T13:38:23.209Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -483,146 +483,51 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T11:04:53.888Z",
-      "status": "ok",
+      "fetched_at": "2026-05-05T13:38:23.209Z",
+      "status": "schema_error",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": 41,
-      "metrics": {
-        "totale_immobili": 41,
-        "per_tipo": [
-          {
-            "nome": "Fabbricato",
-            "n": 14
-          },
-          {
-            "nome": "Infrastruttura",
-            "n": 9
-          },
-          {
-            "nome": "Palazzo",
-            "n": 7
-          },
-          {
-            "nome": "Ponte",
-            "n": 2
-          },
-          {
-            "nome": "Masseria",
-            "n": 2
-          },
-          {
-            "nome": "Torre",
-            "n": 2
-          },
-          {
-            "nome": "Convento",
-            "n": 1
-          },
-          {
-            "nome": "Teatro",
-            "n": 1
-          },
-          {
-            "nome": "Chiesa",
-            "n": 1
-          },
-          {
-            "nome": "Parco",
-            "n": 1
-          },
-          {
-            "nome": "Tessuto urbano",
-            "n": 1
-          }
-        ],
-        "per_destinazione": [],
-        "valore_totale": null,
-        "superficie_totale_mq": null,
-        "pct_vincolo": 100,
-        "immobili_geo": []
-      },
+      "n_rows": null,
+      "metrics": null,
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
       "source_origin": "ArCo / MiC",
       "source_note": "ArCo SPARQL — Catalogo Generale dei Beni Culturali ICCD-MiC — 41 immobili storico-architettonici catalogati a Potenza (Ponte Musmeci, Teatro Stabile, Palazzo Loffredo, Torre del Castello, ecc.)",
       "source_url": "https://dati.cultura.gov.it/sparql",
-      "error": null,
-      "fields_present": [
-        "denominazione",
-        "tipo",
-        "indirizzo",
-        "vincolo_culturale",
-        "uso"
+      "error": "CSV non conforme allo schema canonico (2 errori). Primi 3: Colonna sconosciuta: 'vincolo_culturale' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza) | Colonna sconosciuta: 'uso' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza)",
+      "schema_errors": [
+        "Colonna sconosciuta: 'vincolo_culturale' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza)",
+        "Colonna sconosciuta: 'uso' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza)"
       ]
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T11:04:53.888Z",
-      "status": "ok",
+      "fetched_at": "2026-05-05T13:38:23.210Z",
+      "status": "schema_error",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": 4,
-      "metrics": {
-        "gettito_totale_ultimo_anno": 0,
-        "anno_ultimo": 2025,
-        "n_tributi_distinti": 2,
-        "per_tributo_ultimo_anno": [
-          {
-            "nome": "ADDIZIONALE_IRPEF",
-            "valore": 0
-          },
-          {
-            "nome": "IMU",
-            "valore": 0
-          }
-        ],
-        "per_tributo_aliquota": [
-          {
-            "nome": "IMU",
-            "aliquota": 1.06,
-            "descrizione": "Aliquota ordinaria confermata"
-          },
-          {
-            "nome": "ADDIZIONALE_IRPEF",
-            "aliquota": 0.8,
-            "descrizione": "Aliquota confermata 0.80 percento + 0.20 percento per redditi oltre 50000 euro"
-          }
-        ],
-        "has_gettito": false,
-        "serie_anni": [
-          {
-            "anno": 2024,
-            "valore": 0
-          },
-          {
-            "anno": 2025,
-            "valore": 0
-          }
-        ],
-        "contribuenti_ultimo_anno": null
-      },
+      "n_rows": null,
+      "metrics": null,
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
       "source_origin": "MEF Federalismo Fiscale",
       "source_note": "Portale del Federalismo Fiscale (MEF) e delibere consiliari Comune di Potenza — aliquote IMU e Addizionale IRPEF 2024-2025 nel quadro del piano di riequilibrio finanziario (Decreto salva Potenza)",
       "source_url": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/",
-      "error": null,
-      "fields_present": [
-        "anno",
-        "tributo",
-        "aliquota_base",
-        "descrizione"
+      "error": "CSV non conforme allo schema canonico (3 errori). Primi 3: Colonna obbligatoria mancante: 'tipo_atto' | Colonna sconosciuta: 'tributo' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria) | Colonna sconosciuta: 'aliquota_base' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria)",
+      "schema_errors": [
+        "Colonna obbligatoria mancante: 'tipo_atto'",
+        "Colonna sconosciuta: 'tributo' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria)",
+        "Colonna sconosciuta: 'aliquota_base' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria)"
       ]
     }
   }

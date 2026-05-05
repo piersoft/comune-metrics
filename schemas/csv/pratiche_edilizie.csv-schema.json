@@ -3,16 +3,21 @@
   "dataset": "pratiche_edilizie",
   "title": "Pratiche edilizie (CILA, SCIA, permessi)",
   "description": "Una riga per pratica edilizia presentata al SUE.",
-  "version": "1.0",
+  "version": "2.0",
   "encoding": "UTF-8",
   "delimiter_allowed": [",", ";"],
   "decimal_separator": ".",
+  "rename_aliases": {
+    "esito": "codice_stato_cup",
+    "data_chiusura": "data_scadenza"
+  },
   "required_columns": [
     {
       "name": "data",
       "datatype": "date",
       "format": "YYYY-MM-DD",
-      "description": "Data di presentazione/protocollo della pratica"
+      "description": "Data di presentazione/protocollo della pratica",
+      "rdf_predicate": "ti:startTime^^xsd:date"
     }
   ],
   "optional_columns": [
@@ -20,25 +25,28 @@
       "name": "tipo",
       "datatype": "string",
       "max_length": 200,
-      "description": "Tipo di pratica (es. 'CILA', 'SCIA', 'Permesso di costruire')"
+      "description": "Tipo di pratica (es. 'CILA', 'SCIA', 'Permesso di costruire')",
+      "rdf_predicate": "dct:type@it"
     },
     {
-      "name": "esito",
+      "name": "codice_stato_cup",
       "datatype": "string",
       "max_length": 100,
-      "description": "Esito (es. 'Favorevole', 'Sfavorevole', 'Acquisita', 'In istruttoria')"
+      "description": "Esito o stato (es. 'Favorevole', 'Sfavorevole', 'Acquisita', 'In istruttoria') (ex 'esito')",
+      "rdf_predicate": "adms:status"
     },
     {
-      "name": "data_chiusura",
+      "name": "data_scadenza",
       "datatype": "date",
       "format": "YYYY-MM-DD",
-      "description": "Data di chiusura/disposto"
+      "description": "Data di chiusura/disposto (ex 'data_chiusura')",
+      "rdf_predicate": "ti:endTime^^xsd:date"
     },
     {
       "name": "indirizzo",
       "datatype": "string",
       "max_length": 500,
-      "description": "Indirizzo dell'intervento"
+      "description": "Indirizzo dell'intervento (aggregato in clv:Address dal tool)"
     },
     {
       "name": "quartiere",
@@ -47,10 +55,11 @@
       "description": "Quartiere"
     }
   ],
-  "example": "data,tipo,esito,data_chiusura,indirizzo,quartiere\n2024-03-15,CILA,Favorevole,2024-04-02,\"Via Marconi 12\",\"Centro storico\"\n2024-03-16,SCIA,Acquisita,2024-03-16,\"Viale Repubblica 45\",\"Navile\"\n2024-03-18,\"Permesso di costruire\",\"In istruttoria\",,\"Strada Maggiore 89\",\"Santo Stefano\"\n",
+  "example": "data,tipo,codice_stato_cup,data_scadenza,indirizzo,quartiere\n2024-03-15,CILA,Favorevole,2024-04-02,\"Via Marconi 12\",\"Centro storico\"\n2024-03-16,SCIA,Acquisita,2024-03-16,\"Viale Repubblica 45\",\"Navile\"\n2024-03-18,\"Permesso di costruire\",\"In istruttoria\",,\"Strada Maggiore 89\",\"Santo Stefano\"\n",
   "notes": [
     "Le date devono essere in formato ISO YYYY-MM-DD.",
-    "data_chiusura vuota = pratica ancora aperta.",
-    "Il tasso di chiusura viene calcolato come (pratiche con data_chiusura) / (totale pratiche)."
+    "data_scadenza vuota = pratica ancora aperta.",
+    "Il tasso di chiusura viene calcolato come (pratiche con data_scadenza) / (totale pratiche).",
+    "v2.0: rinomina 'esito'→'codice_stato_cup' (adms:status, allineato a PublicContract) e 'data_chiusura'→'data_scadenza' (ti:endTime, semantica CPSV)."
   ]
 }

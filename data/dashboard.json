@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-05T11:04:53.862Z",
+  "built_at": "2026-05-05T13:38:23.130Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "demo": {
@@ -23,7 +23,7 @@
       "paniere_version": "csv-v1",
       "n_datasets_pubblicati": 6,
       "n_datasets_totali": 12,
-      "n_datasets_ok": 6
+      "n_datasets_ok": 4
     },
     "bologna": {
       "key": "bologna",

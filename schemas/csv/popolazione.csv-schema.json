@@ -2,50 +2,59 @@
   "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
   "dataset": "popolazione",
   "title": "Popolazione residente",
-  "description": "Una riga per (anno, quartiere) con il numero di residenti aggregato.",
-  "version": "1.0",
+  "description": "Una riga per (anno, localita) con il numero di residenti aggregato.",
+  "version": "2.0",
   "encoding": "UTF-8",
   "delimiter_allowed": [",", ";"],
   "decimal_separator": ".",
+  "rename_aliases": {
+    "residenti": "totale_residenti",
+    "quartiere": "localita"
+  },
   "required_columns": [
     {
       "name": "anno",
       "datatype": "integer",
       "constraints": { "min": 1900, "max": 2050 },
-      "description": "Anno di riferimento"
+      "description": "Anno di riferimento",
+      "rdf_predicate": "sdmx-dimension:refPeriod"
     },
     {
-      "name": "residenti",
+      "name": "totale_residenti",
       "datatype": "integer",
       "constraints": { "min": 0 },
-      "description": "Numero di residenti totali (intero positivo)"
+      "description": "Numero di residenti totali (intero positivo) (ex 'residenti'). Semantica unica → arricchimento via LLM."
     }
   ],
   "optional_columns": [
     {
-      "name": "quartiere",
+      "name": "localita",
       "datatype": "string",
       "max_length": 200,
-      "description": "Quartiere o zona del Comune"
+      "description": "Quartiere o zona del Comune (ex 'quartiere')",
+      "rdf_predicate": "clv:hasSpatialCoverage"
     },
     {
       "name": "sesso",
       "datatype": "string",
       "enum": ["M", "F", "Totale"],
-      "description": "Sesso (M/F/Totale)"
+      "description": "Sesso (M/F/Totale)",
+      "rdf_predicate": "cpv:sexID"
     },
     {
       "name": "fascia_eta",
       "datatype": "string",
       "max_length": 20,
-      "description": "Fascia d'età (es. '0-14', '15-64', '65+')"
+      "description": "Fascia d'età (es. '0-14', '15-64', '65+')",
+      "rdf_predicate": "sdmx-attribute:obsStatus"
     }
   ],
-  "example": "anno,residenti,quartiere\n2024,55421,Navile\n2024,42183,Borgo Panigale\n2024,38951,Porto-Saragozza\n2023,55892,Navile\n",
+  "example": "anno,totale_residenti,localita\n2024,55421,Navile\n2024,42183,Borgo Panigale\n2024,38951,Porto-Saragozza\n2023,55892,Navile\n",
   "notes": [
     "Se non hai aggregazione per quartiere, una riga per anno con il totale.",
     "L'ordine delle colonne è libero, ma i nomi devono corrispondere ESATTAMENTE (case-sensitive).",
     "Il decimale separator deve essere il punto (.).",
-    "Encoding UTF-8 obbligatorio."
+    "Encoding UTF-8 obbligatorio.",
+    "v2.0: rinomina 'residenti'→'totale_residenti' e 'quartiere'→'localita'. 'totale_residenti' non è in DET_COL_RULES: il tool lo manderà al fallback LLM (semantica unica)."
   ]
 }

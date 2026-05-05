@@ -1,4 +1,4 @@
-denominazione,tipo,indirizzo,lat,lon,valore_euro,vincolo_culturale,uso
+denominazione,tipo,indirizzo,lat,lon,rendita,qualita,consistenza
 Scuola Primaria E. De Amicis,Scuola,Piazza Marconi 3,45.47585,9.186,4500000,false,Scolastico
 Scuola Primaria G. Carducci,Scuola,Via Carducci 14,45.46686,9.20439,3800000,false,Scolastico
 Scuola Primaria A. Manzoni,Scuola,Viale Europa 10,45.45606,9.19063,3200000,false,Scolastico

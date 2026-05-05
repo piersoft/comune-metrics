@@ -3,16 +3,22 @@
   "dataset": "istruzione",
   "title": "Istruzione e asili nido",
   "description": "Una riga per scuola/struttura educativa con iscritti, geo, tipologia.",
-  "version": "1.0",
+  "version": "2.0",
   "encoding": "UTF-8",
   "delimiter_allowed": [",", ";"],
   "decimal_separator": ".",
+  "rename_aliases": {
+    "struttura": "denominazione",
+    "iscritti": "totale_alunni",
+    "tipo_struttura": "tipologia"
+  },
   "required_columns": [
     {
-      "name": "struttura",
+      "name": "denominazione",
       "datatype": "string",
       "max_length": 300,
-      "description": "Nome della scuola o struttura educativa"
+      "description": "Nome della scuola o struttura educativa (ex 'struttura')",
+      "rdf_predicate": "rdfs:label@it"
     }
   ],
   "optional_columns": [
@@ -23,34 +29,38 @@
       "description": "Anno scolastico (es. '2024-2025' o '2024')"
     },
     {
-      "name": "tipo_struttura",
+      "name": "tipologia",
       "datatype": "string",
       "enum": ["Asilo nido", "Infanzia", "Primaria", "Secondaria I grado", "Secondaria II grado", "Liceo", "Tecnico", "Professionale", "CPA", "Altro"],
-      "description": "Tipologia di struttura educativa"
+      "description": "Tipologia di struttura educativa (ex 'tipo_struttura')",
+      "rdf_predicate": "dct:type@it"
     },
     {
-      "name": "iscritti",
+      "name": "totale_alunni",
       "datatype": "integer",
       "constraints": { "min": 0 },
-      "description": "Numero di iscritti / alunni"
+      "description": "Numero di iscritti / alunni (ex 'iscritti')",
+      "rdf_predicate": "sdmx-measure:obsValue"
     },
     {
       "name": "lat",
       "datatype": "number",
       "constraints": { "min": -90, "max": 90 },
-      "description": "Latitudine"
+      "description": "Latitudine",
+      "rdf_predicate": "geo:lat"
     },
     {
       "name": "lon",
       "datatype": "number",
       "constraints": { "min": -180, "max": 180 },
-      "description": "Longitudine"
+      "description": "Longitudine",
+      "rdf_predicate": "geo:long"
     },
     {
       "name": "indirizzo",
       "datatype": "string",
       "max_length": 500,
-      "description": "Indirizzo della struttura"
+      "description": "Indirizzo della struttura (aggregato in clv:Address dal tool)"
     },
     {
       "name": "quartiere",
@@ -71,9 +81,10 @@
       "description": "Presenza servizio mensa"
     }
   ],
-  "example": "struttura,anno_scolastico,tipo_struttura,iscritti,lat,lon,indirizzo,gestione,mensa\n\"Liceo Scientifico Banzi\",2024-2025,\"Liceo\",1771,40.3528,18.1718,\"Via Giuseppe Cesare Abba 5\",\"Statale\",\"No\"\n\"Scuola Infanzia Cesare Battisti\",2024-2025,\"Infanzia\",160,40.3538,18.1750,\"Via Salvatore Trinchese\",\"Statale\",\"Sì\"\n",
+  "example": "denominazione,anno_scolastico,tipologia,totale_alunni,lat,lon,indirizzo,gestione,mensa\n\"Liceo Scientifico Banzi\",2024-2025,\"Liceo\",1771,40.3528,18.1718,\"Via Giuseppe Cesare Abba 5\",\"Statale\",\"No\"\n\"Scuola Infanzia Cesare Battisti\",2024-2025,\"Infanzia\",160,40.3538,18.1750,\"Via Salvatore Trinchese\",\"Statale\",\"Sì\"\n",
   "notes": [
-    "Il dataset può coprire dagli asili nido alle scuole superiori — usa il campo tipo_struttura per disambiguare.",
-    "Se hai solo asili nido (caso più comune), tipo_struttura sarà sempre 'Asilo nido'."
+    "Il dataset può coprire dagli asili nido alle scuole superiori — usa il campo tipologia per disambiguare.",
+    "Se hai solo asili nido (caso più comune), tipologia sarà sempre 'Asilo nido'.",
+    "v2.0: rinomina 'struttura'→'denominazione', 'iscritti'→'totale_alunni', 'tipo_struttura'→'tipologia' per allineamento al tool CSV-to-RDF (DET_COL_RULES, ontologia SMAPIT)."
   ]
 }

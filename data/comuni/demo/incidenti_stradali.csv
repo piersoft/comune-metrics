@@ -1,4 +1,4 @@
-data,lat,lon,morti,feriti,zona,ora
+data,lat,lon,decessi,feriti,localita,ora
 2020-05-23,45.4705,9.20654,0,0,Tangenziale Nord,14:45
 2020-10-01,45.46454,9.19276,0,0,Via dei Mille,13:45
 2020-03-02,45.47262,9.20153,0,1,Strada Provinciale 5,04:45
