@@ -68,7 +68,7 @@ comuni:
     # il builder fa comunque fetch normale.
     mode: static_snapshot
     snapshot_date: "2026-05-05"
-    snapshot_reason: "Pubblicava 11/11 dataset CORE come Comune virtuoso. Il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV originali sono salvati come fixture statiche scaricate manualmente. La maggior parte dei dataset si ferma al 2015-2019: il portale OpenData del Comune non è più aggiornato per quasi tutti i settori (popolazione, bilancio, opere pubbliche, servizi sociali, rifiuti, patrimonio). Fa eccezione il dataset incidenti stradali, aggiornato al 31 dicembre 2023 (7.444 sinistri, 11 anni di serie storica). L'unico dataset CORE non recuperabile per statistiche è 'delibere': l'Albo Pretorio è esposto come feed RSS live ma senza storico."
+    snapshot_reason: "Comune in passato virtuoso sull'OpenData (pubblicava 12/12 dataset CORE), ora con pubblicazione progressivamente ferma al 2015-2019 per quasi tutti i settori, eccezione incidenti stradali aggiornati al 2023. In aggiunta il portale comunale ha configurazioni tecniche che impediscono l'accesso automatico (HTTP non HTTPS, firewall che blocca IP non italiani, fogli Google con accesso limitato). I CSV sono stati scaricati manualmente da browser italiano e committati come fixture."
     datasets:
       popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019  # Google Sheets, fetch live
       bilancio: __fixture__:bilancio                                                # consuntivo 2019
