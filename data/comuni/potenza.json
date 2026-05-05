@@ -1,0 +1,510 @@
+{
+  "key": "potenza",
+  "nome": "Comune di Potenza",
+  "ipa": "c_g942",
+  "istat": "076063",
+  "popolazione_attesa": 63864,
+  "mandato": "2024-2029",
+  "sindaco": "Vincenzo Telesca",
+  "mappa_center": [
+    40.6406,
+    15.8059
+  ],
+  "mode": "reconstructed_from_national",
+  "snapshot_date": "2026-05-05",
+  "snapshot_reason": null,
+  "paniere_version": "csv-v1",
+  "datasets": {
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "status": "ok",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": 11,
+      "metrics": {
+        "totale_residenti": 63864,
+        "serie_anni": [
+          {
+            "anno": 2014,
+            "valore": 67348
+          },
+          {
+            "anno": 2015,
+            "valore": 67122
+          },
+          {
+            "anno": 2016,
+            "valore": 67168
+          },
+          {
+            "anno": 2017,
+            "valore": 67211
+          },
+          {
+            "anno": 2018,
+            "valore": 66734
+          },
+          {
+            "anno": 2019,
+            "valore": 66393
+          },
+          {
+            "anno": 2020,
+            "valore": 65420
+          },
+          {
+            "anno": 2021,
+            "valore": 64850
+          },
+          {
+            "anno": 2022,
+            "valore": 64470
+          },
+          {
+            "anno": 2023,
+            "valore": 64070
+          },
+          {
+            "anno": 2024,
+            "valore": 63864
+          }
+        ],
+        "per_quartiere": null
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": "ISTAT",
+      "source_note": "ISTAT — popolazione residente comunale al 31 dicembre, serie storica 2014-2024",
+      "source_url": "https://www.tuttitalia.it/basilicata/71-potenza/statistiche/popolazione-andamento-demografico/",
+      "error": null,
+      "fields_present": [
+        "anno",
+        "residenti"
+      ]
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "BDAP MEF è la fonte nazionale del bilancio armonizzato dei Comuni ma non espone API pubbliche; openbilanci.it (Fondazione Openpolis, dati RGS) si è fermato ai consuntivi 2021"
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "OpenCUP non espone API pubbliche documentate; OpenCoesione applica geo-fencing che blocca i runner GitHub Actions"
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "Non esiste una fonte nazionale aperta dei permessi di costruire / SCIA / CILA a livello comunale"
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "I dati del Ministero del Lavoro sui servizi sociali sono regionali, non comunali"
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "status": "ok",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": 69,
+      "metrics": {
+        "totale_iscritti": null,
+        "totale_strutture": 69,
+        "per_struttura": [],
+        "per_tipo": [],
+        "per_quartiere": [],
+        "strutture_geo": []
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": "MIM",
+      "source_note": "Ministero dell'Istruzione e del Merito — anagrafe scuole statali a.s. 2025/26 (69 scuole con sede a Potenza)",
+      "source_url": "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/?area=Scuole",
+      "error": null,
+      "fields_present": [
+        "struttura",
+        "anno",
+        "tipo_struttura",
+        "via"
+      ]
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "fetched_at": "2026-05-05T10:57:03.980Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "ISTAT pubblica i dati incidenti stradali a livello provinciale e per comuni capoluogo (Tavola 1.11) ma le tabelle sono in formato XLSX e richiedono accesso diretto al sito ISTAT"
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "fetched_at": "2026-05-05T10:57:03.980Z",
+      "status": "ok",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": 4,
+      "metrics": {
+        "rd_pct_ultimo_anno": {
+          "anno": 2023,
+          "valore": 61.1
+        },
+        "trend_pct": 22.2,
+        "serie_anni": [
+          {
+            "anno": 2017,
+            "valore": 50
+          },
+          {
+            "anno": 2019,
+            "valore": 64
+          },
+          {
+            "anno": 2022,
+            "valore": 60.7
+          },
+          {
+            "anno": 2023,
+            "valore": 61.1
+          }
+        ],
+        "per_frazione": []
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": "ISPRA",
+      "source_note": "ISPRA Catasto Rifiuti + dichiarazioni Legambiente Comuni Ricicloni — percentuale di raccolta differenziata 2017-2023",
+      "source_url": "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=comune&aa=2023&regid=17&prid=PZ&comid=063",
+      "error": null,
+      "fields_present": [
+        "anno",
+        "rd_pct"
+      ]
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "fetched_at": "2026-05-05T10:57:03.981Z",
+      "status": "ok",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": 40,
+      "metrics": {
+        "totale_anno": 40,
+        "per_categoria": [
+          {
+            "nome": "Concerto",
+            "n": 7
+          },
+          {
+            "nome": "Apertura Straordinaria",
+            "n": 6
+          },
+          {
+            "nome": "Convegno",
+            "n": 5
+          },
+          {
+            "nome": "Visita Guidata",
+            "n": 4
+          },
+          {
+            "nome": "Incontro",
+            "n": 3
+          },
+          {
+            "nome": "Mostra",
+            "n": 3
+          },
+          {
+            "nome": "Apertura festiva",
+            "n": 3
+          },
+          {
+            "nome": "Concorso",
+            "n": 2
+          },
+          {
+            "nome": "Attivita Didattica",
+            "n": 2
+          },
+          {
+            "nome": "Proiezione",
+            "n": 2
+          },
+          {
+            "nome": "Visita Libera",
+            "n": 1
+          },
+          {
+            "nome": "Spettacolo",
+            "n": 1
+          },
+          {
+            "nome": "Seminario",
+            "n": 1
+          }
+        ],
+        "per_quartiere": [],
+        "per_ingresso": [],
+        "eventi_geo": []
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": "ArCo / MiC",
+      "source_note": "ArCo SPARQL — DB Unico Luoghi della Cultura del Ministero della Cultura — eventi culturali ospitati nelle sedi MiC di Potenza (Museo Adamesteanu, Biblioteca Nazionale, Archivio di Stato, Soprintendenza)",
+      "source_url": "https://dati.cultura.gov.it/sparql",
+      "error": null,
+      "fields_present": [
+        "nome",
+        "categoria",
+        "luogo",
+        "organizzatore"
+      ]
+    },
+    "delibere": {
+      "dataset_key": "delibere",
+      "fetched_at": "2026-05-05T10:57:03.981Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "Le delibere comunali non sono raccolte in alcuna banca dati nazionale aperta; ogni Comune le pubblica solo sul proprio Albo Pretorio"
+    },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "fetched_at": "2026-05-05T10:57:03.981Z",
+      "status": "ok",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": 41,
+      "metrics": {
+        "totale_immobili": 41,
+        "per_tipo": [
+          {
+            "nome": "Fabbricato",
+            "n": 14
+          },
+          {
+            "nome": "Infrastruttura",
+            "n": 9
+          },
+          {
+            "nome": "Palazzo",
+            "n": 7
+          },
+          {
+            "nome": "Ponte",
+            "n": 2
+          },
+          {
+            "nome": "Masseria",
+            "n": 2
+          },
+          {
+            "nome": "Torre",
+            "n": 2
+          },
+          {
+            "nome": "Convento",
+            "n": 1
+          },
+          {
+            "nome": "Teatro",
+            "n": 1
+          },
+          {
+            "nome": "Chiesa",
+            "n": 1
+          },
+          {
+            "nome": "Parco",
+            "n": 1
+          },
+          {
+            "nome": "Tessuto urbano",
+            "n": 1
+          }
+        ],
+        "per_destinazione": [],
+        "valore_totale": null,
+        "superficie_totale_mq": null,
+        "pct_vincolo": 100,
+        "immobili_geo": []
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": "ArCo / MiC",
+      "source_note": "ArCo SPARQL — Catalogo Generale dei Beni Culturali ICCD-MiC — 41 immobili storico-architettonici catalogati a Potenza (Ponte Musmeci, Teatro Stabile, Palazzo Loffredo, Torre del Castello, ecc.)",
+      "source_url": "https://dati.cultura.gov.it/sparql",
+      "error": null,
+      "fields_present": [
+        "denominazione",
+        "tipo",
+        "indirizzo",
+        "vincolo_culturale",
+        "uso"
+      ]
+    },
+    "tributi": {
+      "dataset_key": "tributi",
+      "fetched_at": "2026-05-05T10:57:03.983Z",
+      "status": "ok",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": 4,
+      "metrics": {
+        "gettito_totale_ultimo_anno": 0,
+        "anno_ultimo": 2025,
+        "n_tributi_distinti": 2,
+        "per_tributo_ultimo_anno": [
+          {
+            "nome": "ADDIZIONALE_IRPEF",
+            "valore": 0
+          },
+          {
+            "nome": "IMU",
+            "valore": 0
+          }
+        ],
+        "serie_anni": [
+          {
+            "anno": 2024,
+            "valore": 0
+          },
+          {
+            "anno": 2025,
+            "valore": 0
+          }
+        ],
+        "contribuenti_ultimo_anno": null
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": "MEF Federalismo Fiscale",
+      "source_note": "Portale del Federalismo Fiscale (MEF) e delibere consiliari Comune di Potenza — aliquote IMU e Addizionale IRPEF 2024-2025 nel quadro del piano di riequilibrio finanziario (Decreto salva Potenza)",
+      "source_url": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/",
+      "error": null,
+      "fields_present": [
+        "anno",
+        "tributo",
+        "aliquota_base",
+        "descrizione"
+      ]
+    }
+  }
+}

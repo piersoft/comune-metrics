@@ -18,7 +18,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T09:30:29.597Z",
+      "fetched_at": "2026-05-05T10:57:03.958Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -109,6 +109,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "anno",
@@ -118,7 +121,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T09:30:29.599Z",
+      "fetched_at": "2026-05-05T10:57:03.960Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -241,6 +244,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "anno",
@@ -251,7 +257,7 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T09:30:29.599Z",
+      "fetched_at": "2026-05-05T10:57:03.961Z",
       "status": "ok",
       "modified": "2025-04-15",
       "freshness": {
@@ -361,6 +367,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "nome",
@@ -376,7 +385,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T09:30:29.601Z",
+      "fetched_at": "2026-05-05T10:57:03.962Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -466,6 +475,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "data",
@@ -478,7 +490,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T09:30:29.604Z",
+      "fetched_at": "2026-05-05T10:57:03.966Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -546,6 +558,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "anno",
@@ -557,7 +572,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T09:30:29.604Z",
+      "fetched_at": "2026-05-05T10:57:03.966Z",
       "status": "ok",
       "modified": "2024-09-15",
       "freshness": {
@@ -762,6 +777,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "struttura",
@@ -775,7 +793,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T09:30:29.605Z",
+      "fetched_at": "2026-05-05T10:57:03.967Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3241,6 +3259,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "data",
@@ -3254,7 +3275,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T09:30:29.608Z",
+      "fetched_at": "2026-05-05T10:57:03.970Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3336,6 +3357,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "anno",
@@ -3345,7 +3369,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T09:30:29.608Z",
+      "fetched_at": "2026-05-05T10:57:03.970Z",
       "status": "ok",
       "modified": "2025-01-31",
       "freshness": {
@@ -3823,6 +3847,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "nome",
@@ -3837,7 +3864,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T09:30:29.609Z",
+      "fetched_at": "2026-05-05T10:57:03.971Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -3885,6 +3912,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "data",
@@ -3896,7 +3926,7 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T09:30:29.612Z",
+      "fetched_at": "2026-05-05T10:57:03.974Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -4177,6 +4207,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "denominazione",
@@ -4191,7 +4224,7 @@
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T09:30:29.613Z",
+      "fetched_at": "2026-05-05T10:57:03.975Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -4253,6 +4286,9 @@
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
       "error": null,
       "fields_present": [
         "anno",
