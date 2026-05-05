@@ -17,7 +17,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T17:05:09.716Z",
+      "fetched_at": "2026-05-05T18:13:11.575Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -90,7 +90,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T17:05:09.721Z",
+      "fetched_at": "2026-05-05T18:13:11.579Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -179,7 +179,7 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T17:05:09.723Z",
+      "fetched_at": "2026-05-05T18:13:11.583Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -248,7 +248,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T17:05:09.744Z",
+      "fetched_at": "2026-05-05T18:13:11.599Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -268,7 +268,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T17:05:09.744Z",
+      "fetched_at": "2026-05-05T18:13:11.599Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -288,7 +288,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T17:05:09.744Z",
+      "fetched_at": "2026-05-05T18:13:11.600Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -427,7 +427,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T17:05:09.752Z",
+      "fetched_at": "2026-05-05T18:13:11.607Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -447,7 +447,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T17:05:09.752Z",
+      "fetched_at": "2026-05-05T18:13:11.607Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -496,7 +496,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T17:05:09.755Z",
+      "fetched_at": "2026-05-05T18:13:11.607Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -581,7 +581,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T17:05:09.763Z",
+      "fetched_at": "2026-05-05T18:13:11.608Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -601,7 +601,7 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T17:05:09.763Z",
+      "fetched_at": "2026-05-05T18:13:11.608Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -762,7 +762,7 @@
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T17:05:09.765Z",
+      "fetched_at": "2026-05-05T18:13:11.611Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -823,6 +823,46 @@
         "valore",
         "descrizione"
       ]
+    },
+    "defibrillatori": {
+      "dataset_key": "defibrillatori",
+      "fetched_at": "2026-05-05T18:13:11.611Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "Il Comune di Potenza non pubblica un registro dei defibrillatori. Esiste un Registro Regionale Basilicata gestito dal 118, ma i dati non sono pubblicati come open data accessibili via API"
+    },
+    "parcheggi": {
+      "dataset_key": "parcheggi",
+      "fetched_at": "2026-05-05T18:13:11.611Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "Il Comune di Potenza non pubblica un dataset dei parcheggi pubblici come open data; le informazioni sono disponibili solo sul portale TPL e sulle pagine istituzionali in formato non strutturato"
     }
   }
 }

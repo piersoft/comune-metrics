@@ -4,10 +4,10 @@
 # Questo NON è un Comune reale. È il Comune di RIFERIMENTO, costruito con
 # struttura di CSV/JSON perfettamente allineata agli schemi canonici del
 # paniere ComuneMetrics. Serve come "stella polare" per gli altri Comuni:
-# guarda come il Comune Ideale formatta i suoi 12 dataset e replica la
-# stessa struttura per avvicinarti al 12/12.
+# guarda come il Comune Ideale formatta i suoi 14 dataset e replica la
+# stessa struttura per avvicinarti al 14/14.
 #
-# COPERTURA: 12/12 dataset CORE — copertura completa del paniere come prova
+# COPERTURA: 14/14 dataset CORE — copertura completa del paniere come prova
 # del fuoco che il modello federato regge per un Comune medio italiano.
 #
 # I dati sono sintetici plausibili (Comune ~36.620 abitanti, capoluogo di
@@ -88,3 +88,13 @@ datasets:
     source_type: fixture
     aggiornato: "2024-12-31"
     fonte: "Settore Tributi - gettito IMU/TARI/tassa soggiorno 2020-2024 (sintetici)"
+
+  defibrillatori:
+    source_type: fixture
+    aggiornato: "2025-01-15"
+    fonte: "Polizia Locale + Protezione Civile (sintetici, 25 postazioni DAE)"
+
+  parcheggi:
+    source_type: fixture
+    aggiornato: "2025-01-15"
+    fonte: "Settore Mobilità (sintetici, 20 strutture di parcheggio)"

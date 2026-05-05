@@ -538,9 +538,107 @@ export function calc_tributi(rows, fieldMap) {
   };
 }
 
+// ─── CORE 13 — Defibrillatori (DAE) ─────────────────────────────────────────
+// Bologna ODS progetto-dae (5060 record, filtra per citta=BOLOGNA)
+// Lecce Google Sheets fixture (113 record)
+export function calc_defibrillatori(rows, fieldMap) {
+  // Filtro Bologna: tieni solo i DAE nel territorio comunale
+  // Il dataset Bologna è regionale e include "FUORI BOLOGNA"
+  const comuneCol = fieldMap.comune;
+  let filteredRows = rows;
+  if (comuneCol) {
+    const hasFuori = rows.some(r => {
+      const c = r[comuneCol];
+      return c && String(c).toUpperCase().trim() === 'BOLOGNA';
+    });
+    if (hasFuori) {
+      filteredRows = rows.filter(r => {
+        const c = r[comuneCol];
+        return c && String(c).toUpperCase().trim() === 'BOLOGNA';
+      });
+    }
+  }
+
+  const h24Col = fieldMap.accessibile_h24;
+  let h24Count = 0;
+  if (h24Col) {
+    h24Count = filteredRows.filter(r => {
+      const v = r[h24Col];
+      if (!v) return false;
+      const s = String(v).toLowerCase().trim();
+      return s === 'si' || s === 'sì' || s === 'true' || s === '1' || s.includes('h24') || s.includes('24/24');
+    }).length;
+  }
+
+  return {
+    totale: filteredRows.length,
+    h24_count: h24Count,
+    h24_pct: filteredRows.length > 0 ? Math.round((h24Count / filteredRows.length) * 1000) / 10 : null,
+    dae_geo: geoPoints(filteredRows, fieldMap, 'nome', 500),
+    per_quartiere: countBy(filteredRows, fieldMap, 'quartiere'),
+  };
+}
+
+// ─── CORE 14 — Parcheggi pubblici ────────────────────────────────────────────
+// Bologna ODS parcheggi-strutture (44 record)
+// Lecce: GeoJSON HTTP geo-fenced, presente: false
+export function calc_parcheggi(rows, fieldMap) {
+  const stalliCol = fieldMap.stalli;
+  const disabiliCol = fieldMap.posti_disabili;
+  const tariffaCol = fieldMap.tariffa_oraria;
+
+  const num = (v) => {
+    if (v == null || v === '') return 0;
+    if (typeof v === 'number') return v;
+    const s = String(v).replace(/[€\s]/g, '').replace(',', '.');
+    const f = parseFloat(s);
+    return isNaN(f) ? 0 : f;
+  };
+
+  const totaleStalli = stalliCol ? rows.reduce((s, r) => s + num(r[stalliCol]), 0) : 0;
+  const totaleDisabili = disabiliCol ? rows.reduce((s, r) => s + num(r[disabiliCol]), 0) : 0;
+
+  // Tariffa: per Bologna è una stringa "abbonamento"/"pagamento"/"libero", non un numero.
+  // Per Comune Ideale è numerica. Tento parse, se fallisce calcolo % gratuiti per testo.
+  let tariffaMedia = null;
+  let pctGratuiti = null;
+  if (tariffaCol) {
+    const numericTariffe = rows
+      .map(r => num(r[tariffaCol]))
+      .filter(v => v > 0);
+    if (numericTariffe.length > 0) {
+      tariffaMedia = Math.round((numericTariffe.reduce((a, b) => a + b, 0) / numericTariffe.length) * 100) / 100;
+    }
+    // % gratuiti: 0 numerico OPPURE testo che contiene "libero"/"gratuito"/"free"
+    const gratuiti = rows.filter(r => {
+      const v = r[tariffaCol];
+      if (v == null || v === '') return false;
+      const numV = num(v);
+      if (numV === 0 && String(v).trim() !== '0') {
+        const s = String(v).toLowerCase();
+        return s.includes('libero') || s.includes('gratuit') || s.includes('free');
+      }
+      return numV === 0;
+    }).length;
+    pctGratuiti = rows.length > 0 ? Math.round((gratuiti / rows.length) * 1000) / 10 : null;
+  }
+
+  return {
+    totale: rows.length,
+    totale_stalli: totaleStalli,
+    totale_disabili: totaleDisabili,
+    tariffa_media: tariffaMedia,
+    pct_gratuiti: pctGratuiti,
+    per_tipo: countBy(rows, fieldMap, 'tipo_parcheggio'),
+    per_quartiere: countBy(rows, fieldMap, 'quartiere'),
+    parcheggi_geo: geoPoints(rows, fieldMap, 'nome', 500),
+  };
+}
+
 // Lookup table esposta al builder
 export const CALCULATORS = {
   calc_popolazione, calc_bilancio, calc_opere, calc_pratiche,
   calc_sociali, calc_istruzione, calc_incidenti, calc_rifiuti,
   calc_eventi, calc_delibere, calc_patrimonio, calc_tributi,
+  calc_defibrillatori, calc_parcheggi,
 };

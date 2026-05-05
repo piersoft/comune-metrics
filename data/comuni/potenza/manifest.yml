@@ -146,3 +146,19 @@ datasets:
     source_origin: "MEF Federalismo Fiscale"
     source_note: "Portale del Federalismo Fiscale (MEF) e delibere consiliari Comune di Potenza — aliquote IMU e Addizionale IRPEF 2024-2025 nel quadro del piano di riequilibrio finanziario (Decreto salva Potenza)"
     source_url: "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/"
+
+  # ============================================================
+  # 13. DEFIBRILLATORI (DAE) — non disponibile a livello comunale
+  # ============================================================
+  defibrillatori:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "Il Comune di Potenza non pubblica un registro dei defibrillatori. Esiste un Registro Regionale Basilicata gestito dal 118, ma i dati non sono pubblicati come open data accessibili via API"
+
+  # ============================================================
+  # 14. PARCHEGGI PUBBLICI — non disponibile a livello comunale
+  # ============================================================
+  parcheggi:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "Il Comune di Potenza non pubblica un dataset dei parcheggi pubblici come open data; le informazioni sono disponibili solo sul portale TPL e sulle pagine istituzionali in formato non strutturato"

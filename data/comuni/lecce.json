@@ -31,10 +31,35 @@
         "serie_anni": null
       }
     },
+    "parcheggi": {
+      "dataset_key": "parcheggi",
+      "slug": null,
+      "status": "not_published",
+      "fields_expected": [
+        "nome",
+        "indirizzo",
+        "lat",
+        "lon",
+        "stalli",
+        "posti_disabili",
+        "tariffa_oraria",
+        "tipo_parcheggio",
+        "accessibile_h24",
+        "quartiere"
+      ],
+      "metrics": {
+        "totale": null,
+        "totale_stalli": null,
+        "totale_disabili": null,
+        "tariffa_media": null,
+        "pct_gratuiti": null,
+        "parcheggi_geo": null
+      }
+    },
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T17:05:50.998Z",
+      "fetched_at": "2026-05-05T18:14:03.183Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -79,7 +104,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T17:05:53.211Z",
+      "fetched_at": "2026-05-05T18:14:09.315Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -213,7 +238,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T17:05:53.222Z",
+      "fetched_at": "2026-05-05T18:14:09.323Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -371,7 +396,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T17:05:55.363Z",
+      "fetched_at": "2026-05-05T18:14:12.246Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -634,7 +659,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "__fixture__:servizi_sociali",
-      "fetched_at": "2026-05-05T17:05:55.859Z",
+      "fetched_at": "2026-05-05T18:14:12.695Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -703,7 +728,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T17:05:55.908Z",
+      "fetched_at": "2026-05-05T18:14:12.697Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -875,7 +900,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "__fixture__:incidenti_stradali",
-      "fetched_at": "2026-05-05T17:05:58.331Z",
+      "fetched_at": "2026-05-05T18:14:16.023Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -20937,7 +20962,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "__fixture__:rifiuti",
-      "fetched_at": "2026-05-05T17:05:58.367Z",
+      "fetched_at": "2026-05-05T18:14:16.061Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21000,7 +21025,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T17:05:58.370Z",
+      "fetched_at": "2026-05-05T18:14:16.063Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21115,7 +21140,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T17:05:58.371Z",
+      "fetched_at": "2026-05-05T18:14:16.069Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21163,7 +21188,7 @@
     "tributi": {
       "dataset_key": "tributi",
       "slug": "__fixture__:tributi",
-      "fetched_at": "2026-05-05T17:05:58.377Z",
+      "fetched_at": "2026-05-05T18:14:16.072Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21218,6 +21243,621 @@
         "contribuenti_ultimo_anno": null
       },
       "resource_url": "data/fixtures/lecce/tributi.csv",
+      "resource_format": "CSV",
+      "error": null,
+      "is_static_snapshot": true
+    },
+    "defibrillatori": {
+      "dataset_key": "defibrillatori",
+      "slug": "__fixture__:defibrillatori",
+      "fetched_at": "2026-05-05T18:14:16.073Z",
+      "status": "ok",
+      "modified": "2026-05-05",
+      "freshness": {
+        "level": "fresh",
+        "months": 0,
+        "iso": "2026-05-05"
+      },
+      "n_rows": 114,
+      "fields_expected": [
+        "nome",
+        "lat",
+        "lon",
+        "indirizzo",
+        "comune",
+        "accessibile_h24",
+        "quartiere"
+      ],
+      "fields_present": [
+        "nome",
+        "lat",
+        "lon",
+        "indirizzo",
+        "accessibile_h24"
+      ],
+      "fields_missing": [
+        "comune",
+        "quartiere"
+      ],
+      "metrics": {
+        "totale": 114,
+        "h24_count": 9,
+        "h24_pct": 7.9,
+        "dae_geo": [
+          {
+            "lat": 40.350173,
+            "lon": 18.177244,
+            "nome": "ACI LECCE"
+          },
+          {
+            "lat": 40.34231244,
+            "lon": 18.16008389,
+            "nome": "CHECK UP CENTRE"
+          },
+          {
+            "lat": 40.36387693,
+            "lon": 18.182652,
+            "nome": "CHIESA DEI SALESIANI"
+          },
+          {
+            "lat": 40.35687894,
+            "lon": 18.16803932,
+            "nome": "CIRCOLO TENNIS"
+          },
+          {
+            "lat": 40.35205513,
+            "lon": 18.18286657,
+            "nome": "CLIOCOM"
+          },
+          {
+            "lat": 40.3444508,
+            "lon": 18.18308115,
+            "nome": "CONFCOMMERCIO"
+          },
+          {
+            "lat": 40.3520763,
+            "lon": 18.181077,
+            "nome": "FARMACIA DE PACE LICIGNANO"
+          },
+          {
+            "lat": 40.34373121,
+            "lon": 18.17505598,
+            "nome": "FARMACIA ELIA"
+          },
+          {
+            "lat": 40.35292998,
+            "lon": 18.17311406,
+            "nome": "FARMACIA FEROCINO"
+          },
+          {
+            "lat": 40.35920078,
+            "lon": 18.19284439,
+            "nome": "FARMACIA MESSA"
+          },
+          {
+            "lat": 40.3585204,
+            "lon": 18.166251,
+            "nome": "UNIVERSITA' DEL SALENTO SEDE \"EDIFICIO STUDIUM 6\""
+          },
+          {
+            "lat": 40.36376248,
+            "lon": 18.18076372,
+            "nome": "HOTEL HILTON"
+          },
+          {
+            "lat": 40.34739451,
+            "lon": 18.17378998,
+            "nome": "ISTITUTO MAGISTRALE SICILIANI"
+          },
+          {
+            "lat": 40.35457336,
+            "lon": 18.16616178,
+            "nome": "LICEO CLASSICO PALMIERI"
+          },
+          {
+            "lat": 40.35748393,
+            "lon": 18.19732904,
+            "nome": "MUV"
+          },
+          {
+            "lat": 40.36145714,
+            "lon": 18.16829681,
+            "nome": "PALAZZETTO DELLO SPORT MARIO STASI C.U.S. LECCE"
+          },
+          {
+            "lat": 40.35373941,
+            "lon": 18.17208409,
+            "nome": "PALAZZO CARAFA"
+          },
+          {
+            "lat": 40.34716556,
+            "lon": 18.16559315,
+            "nome": "PIGNATELLI CENTRO MEDICO"
+          },
+          {
+            "lat": 40.3475744,
+            "lon": 18.16615105,
+            "nome": "PIGNATELLI LABORATORIO ANALISI"
+          },
+          {
+            "lat": 40.34956951,
+            "lon": 18.1857419,
+            "nome": "POLIZIA LOCALE"
+          },
+          {
+            "lat": 40.31978399,
+            "lon": 18.13495159,
+            "nome": "RX CALABRESE"
+          },
+          {
+            "lat": 40.35545636,
+            "lon": 18.18254471,
+            "nome": "SCUOLA MEDIA QUINTO ENNIO"
+          },
+          {
+            "lat": 40.35874,
+            "lon": 18.17337,
+            "nome": "TRIBUNALE PENALE"
+          },
+          {
+            "lat": 40.36238,
+            "lon": 18.17058,
+            "nome": "TRIBUNALE CIVILE"
+          },
+          {
+            "lat": 40.36219,
+            "lon": 18.17089,
+            "nome": "GIUDICE DI PACE"
+          },
+          {
+            "lat": 40.361181,
+            "lon": 18.192707,
+            "nome": "LICEO SCIENTIFICO G. BANZI BAZOLI"
+          },
+          {
+            "lat": 40.346963,
+            "lon": 18.178756,
+            "nome": "I.I.S.S. A. DE PACE"
+          },
+          {
+            "lat": 40.361185,
+            "lon": 18.194015,
+            "nome": "ISTITUTO TECNICO GRAZIA DELEDDA"
+          },
+          {
+            "lat": 40.351813,
+            "lon": 18.161824,
+            "nome": "FARMACIA DE PASCALIS"
+          },
+          {
+            "lat": 40.354449,
+            "lon": 18.152092,
+            "nome": "MEDIC'S BIOMEDICA"
+          },
+          {
+            "lat": 40.346069,
+            "lon": 18.184257,
+            "nome": "STUDIO MEDICO DOTT. MARIO GAZZABIN"
+          },
+          {
+            "lat": 40.35912,
+            "lon": 18.157813,
+            "nome": "ICOS"
+          },
+          {
+            "lat": 40.35245,
+            "lon": 18.16934,
+            "nome": "UFFICI COMUNALI PRESSO TEATINI"
+          },
+          {
+            "lat": 40.34752,
+            "lon": 18.15433,
+            "nome": "CASERMA S. ZAPPALA’ COMANDO SCUOLA DI CAVALLERIA"
+          },
+          {
+            "lat": 40.34515,
+            "lon": 18.14832,
+            "nome": "CASERMA NACCI"
+          },
+          {
+            "lat": 40.35362,
+            "lon": 18.21516,
+            "nome": "CENTRO IPPICO MILITARE FEDERIGO CAPRILLI SCUOLA DI CAVALLERIA"
+          },
+          {
+            "lat": 40.345593,
+            "lon": 18.184565,
+            "nome": "STUDIO ANALISI CLINICHE DE VITIS"
+          },
+          {
+            "lat": 40.33704,
+            "lon": 18.18325,
+            "nome": "CENTRO TKD OLIMPICO C/O SEMINARIO"
+          },
+          {
+            "lat": 40.3511,
+            "lon": 18.18141,
+            "nome": "STUDIO RADIOLOGICO QUARTA COLOSSO"
+          },
+          {
+            "lat": 40.35312,
+            "lon": 18.18315,
+            "nome": "CRIO"
+          },
+          {
+            "lat": 40.35972,
+            "lon": 18.1719,
+            "nome": "LICEO SCIENTIFICO COSIMO DE GIORGI"
+          },
+          {
+            "lat": 40.35692,
+            "lon": 18.16062,
+            "nome": "LICEO SCIENTIFICO COSIMO DE GIORGI - POLO DIDATTICO DISTACCATO"
+          },
+          {
+            "lat": 40.36893,
+            "lon": 18.17321,
+            "nome": "ISTITUTO TECNICO COMMERCIALE I.I.S.S. FRANCESCO CALASSO"
+          },
+          {
+            "lat": 40.36286,
+            "lon": 18.19246,
+            "nome": "PALAZZETTO DELLO SPORT GERMANO VENTURA"
+          },
+          {
+            "lat": 40.36478,
+            "lon": 18.17512,
+            "nome": "CENTRO SPORTIVO SANTA ROSA"
+          },
+          {
+            "lat": 40.34282,
+            "lon": 18.17547,
+            "nome": "CASA DI CURA VILLA BIANCA"
+          },
+          {
+            "lat": 40.34637,
+            "lon": 18.17848,
+            "nome": "ASD SPORTING CLUB C/O DIREZIONE GENERALE ASL LECCE EX OPIS"
+          },
+          {
+            "lat": 40.34749,
+            "lon": 18.16457,
+            "nome": "LICEO MAGISTRALE SICILIANI SUCCURSALE"
+          },
+          {
+            "lat": 40.3661953,
+            "lon": 18.177076,
+            "nome": "CAMPO CONI"
+          },
+          {
+            "lat": 40.3582437,
+            "lon": 18.1674785,
+            "nome": "SEDE UFFICI CONI"
+          },
+          {
+            "lat": 40.3559935,
+            "lon": 18.2000288,
+            "nome": "ENEL"
+          },
+          {
+            "lat": 40.3445706,
+            "lon": 18.1724833,
+            "nome": "I.I.S.S. A. DE PACE SEDE CENTRALE"
+          },
+          {
+            "lat": 40.3608395,
+            "lon": 18.1806765,
+            "nome": "FARMACIA MIGALI"
+          },
+          {
+            "lat": 40.3280107,
+            "lon": 18.1360854,
+            "nome": "CIRCOLO IPPICO IL DIRUPO"
+          },
+          {
+            "lat": 40.3629523,
+            "lon": 18.1991101,
+            "nome": "SCUOLA MEDIA STOMEO ZIMBALO"
+          },
+          {
+            "lat": 40.3870247,
+            "lon": 18.3042592,
+            "nome": "LIDO YORK SAN CATALDO"
+          },
+          {
+            "lat": 40.3911358,
+            "lon": 18.3055254,
+            "nome": "LIDO TURRISI SAN CATALDO"
+          },
+          {
+            "lat": 40.3918738,
+            "lon": 18.3048301,
+            "nome": "LIDO PEVERO BEACH SAN CATALDO"
+          },
+          {
+            "lat": 40.3929733,
+            "lon": 18.3032911,
+            "nome": "LIDO SOLE LUNA SAN CATALDO"
+          },
+          {
+            "lat": 40.3933778,
+            "lon": 18.3022397,
+            "nome": "LIDO PACHA MAMA SAN CATALDO"
+          },
+          {
+            "lat": 40.3959302,
+            "lon": 18.2981568,
+            "nome": "LIDO PONTICELLO SAN CATALDO"
+          },
+          {
+            "lat": 40.4285587,
+            "lon": 18.2540488,
+            "nome": "LIDO SMERALDO FRIGOLE"
+          },
+          {
+            "lat": 40.4300908,
+            "lon": 18.2528467,
+            "nome": "LIDO LA STAFFA FRIGOLE"
+          },
+          {
+            "lat": 40.4304957,
+            "lon": 18.2525609,
+            "nome": "LIDO GRANCHIO ROSSO FRIGOLE"
+          },
+          {
+            "lat": 40.437637,
+            "lon": 18.2483361,
+            "nome": "LIDO PANTAREI FRIGOLE"
+          },
+          {
+            "lat": 40.4510463,
+            "lon": 18.2263061,
+            "nome": "LIDO STELLA TORRE CHIANCA"
+          },
+          {
+            "lat": 40.4674296,
+            "lon": 18.194589,
+            "nome": "LIDO CIRCEO TORRE CHIANCA"
+          },
+          {
+            "lat": 40.467717,
+            "lon": 18.1928173,
+            "nome": "LIDO APPRODO TORRE CHIANCA"
+          },
+          {
+            "lat": 40.4681134,
+            "lon": 18.1888702,
+            "nome": "LIDO BACINO CAMBUSA TORRE CHIANCA"
+          },
+          {
+            "lat": 40.4688838,
+            "lon": 18.1863921,
+            "nome": "LIDO KALU' SPIAGGIABELLA"
+          },
+          {
+            "lat": 40.4692115,
+            "lon": 18.1855403,
+            "nome": "LIDO BACINO IDUME SPIAGGIABELLA"
+          },
+          {
+            "lat": 40.4696044,
+            "lon": 18.1841701,
+            "nome": "LIDO POLE POLE BEACH SPIAGGIABELLA"
+          },
+          {
+            "lat": 40.4701776,
+            "lon": 18.1832294,
+            "nome": "LIDO DENISE SPIAGGIABELLA"
+          },
+          {
+            "lat": 40.4850326,
+            "lon": 18.1460729,
+            "nome": "VILLAGGIO CLUB TORRE RINALDA"
+          },
+          {
+            "lat": 40.4309529,
+            "lon": 18.2522,
+            "nome": "LIDO ESPOSITO"
+          },
+          {
+            "lat": 40.3538766,
+            "lon": 18.1748729,
+            "nome": "I.I.S.S. COSTA"
+          },
+          {
+            "lat": 40.35809301,
+            "lon": 18.15976739,
+            "nome": "PALESTRA IL CERCHIO"
+          },
+          {
+            "lat": 40.36370321,
+            "lon": 18.17012608,
+            "nome": "ISTITUTO COMPRENSIVO A. GALATEO - FRIGOLE"
+          },
+          {
+            "lat": 40.3392534,
+            "lon": 18.1643802,
+            "nome": "POLIGONO DI TIRO"
+          },
+          {
+            "lat": 40.3852883,
+            "lon": 18.1685557,
+            "nome": "OUTLINE"
+          },
+          {
+            "lat": 40.3439696,
+            "lon": 18.1724748,
+            "nome": "INPS LECCE"
+          },
+          {
+            "lat": 40.344372,
+            "lon": 18.1857215,
+            "nome": "ISTITUTO TECNICO COMMERCIALE OLIVETTI"
+          },
+          {
+            "lat": 40.3520675,
+            "lon": 18.1715484,
+            "nome": "DEFIBRILLATORE PUBBLICO N. 1"
+          },
+          {
+            "lat": 40.3371415,
+            "lon": 18.1766756,
+            "nome": "I.C. AMMIRATO FALCONE"
+          },
+          {
+            "lat": 40.3437026,
+            "lon": 18.2116447,
+            "nome": "POLISPORTIVA MATCH POINT"
+          },
+          {
+            "lat": 40.3526872,
+            "lon": 18.1640484,
+            "nome": "ISTITUTO COMPRENSIVO DANTE ALIGHERI-ARMANDO DIAZ"
+          },
+          {
+            "lat": 40.425764,
+            "lon": 18.2565181,
+            "nome": "LIDO MOLO 13"
+          },
+          {
+            "lat": 40.3385287,
+            "lon": 18.1808158,
+            "nome": "IV CIRCOLO SIGISMONDO CASTROMEDIANO"
+          },
+          {
+            "lat": 40.3778954,
+            "lon": 18.1298536,
+            "nome": "INTERFRUTTA"
+          },
+          {
+            "lat": 40.3545986,
+            "lon": 18.1779104,
+            "nome": "STUDIO DENTISTICO PETRILLO"
+          },
+          {
+            "lat": 40.3532803,
+            "lon": 18.1675378,
+            "nome": "STUDIO DENTISTICO CALO'"
+          },
+          {
+            "lat": 40.358065,
+            "lon": 18.1181601,
+            "nome": "COMUNITA' EMMANUEL LE SORGENTI"
+          },
+          {
+            "lat": 40.3605497,
+            "lon": 18.1012532,
+            "nome": "COMUNITA' EMMANUEL VILLA MARSELLO"
+          },
+          {
+            "lat": 40.3476499,
+            "lon": 18.1647116,
+            "nome": "ADISU LECCE RESIDENZA UNIVERSITARIA"
+          },
+          {
+            "lat": 40.3536488,
+            "lon": 18.1945798,
+            "nome": "LAICA LIBERA ASSOCIAZIONE DELLE IMPRESE DEL SALENTO"
+          },
+          {
+            "lat": 40.3447211,
+            "lon": 18.1825795,
+            "nome": "PALESTRA EXCITE"
+          },
+          {
+            "lat": 40.3609655,
+            "lon": 18.1578966,
+            "nome": "PALESTRA EXCITE PURE STRENGTH"
+          },
+          {
+            "lat": 40.3489256,
+            "lon": 18.1741015,
+            "nome": "ISTITUTO MARCELLINE"
+          },
+          {
+            "lat": 40.3534013,
+            "lon": 18.1727687,
+            "nome": "MCDONALD'S"
+          },
+          {
+            "lat": 40.367024,
+            "lon": 18.196739,
+            "nome": "CENTRO SPORTIVO KOLBE"
+          },
+          {
+            "lat": 40.351552,
+            "lon": 18.1627386,
+            "nome": "TRIBUNALE DEI MINORENNI"
+          },
+          {
+            "lat": 40.3583546,
+            "lon": 18.1788399,
+            "nome": "SCUOLA DI DANZA IN PUNTA DI PIEDI"
+          },
+          {
+            "lat": 40.361806,
+            "lon": 18.2046824,
+            "nome": "A.S.D. BIANCO TEAM"
+          },
+          {
+            "lat": 40.3542818,
+            "lon": 18.1754379,
+            "nome": "I CIRCOLO DIDATTICO \"CESARE BATTISTI\""
+          },
+          {
+            "lat": 40.3555713,
+            "lon": 18.1873653,
+            "nome": "SCUOLA DELL'INFANZIA"
+          },
+          {
+            "lat": 40.3624284,
+            "lon": 18.1829304,
+            "nome": "STUDIO FISIOTERAPEUTICO UN PASSO VERSO IL SOLE"
+          },
+          {
+            "lat": 40.3484898,
+            "lon": 18.1898822,
+            "nome": "CONSERVATORIO MUSICALE \"TITO SCHIPA\""
+          },
+          {
+            "lat": 40.3523821,
+            "lon": 18.1743543,
+            "nome": "CASTELLO CARLO V"
+          },
+          {
+            "lat": 40.3490106,
+            "lon": 18.1499283,
+            "nome": "CROSSFIT SUD ASD"
+          },
+          {
+            "lat": 40.3369487,
+            "lon": 18.1240799,
+            "nome": "UNIVERSITA' DEL SALENTO ECOTEKNE EDIFICIO ISUFI"
+          },
+          {
+            "lat": 40.3352925,
+            "lon": 18.1198728,
+            "nome": "UNIVERSITA' DEL SALENTO ECOTEKNE PLESSO E"
+          },
+          {
+            "lat": 40.3348284,
+            "lon": 18.1173953,
+            "nome": "UNIVERSITA' DEL SALENTO ECOTEKNE EDIFICIO CENTRO CONGRESSI"
+          },
+          {
+            "lat": 40.3497084,
+            "lon": 18.1672741,
+            "nome": "UNIVERSITA' DEL SALENTO RETTORATO EX CASERMA ROASIO"
+          },
+          {
+            "lat": 40.3584422,
+            "lon": 18.168113,
+            "nome": "UNIVERSITA' DEL SALENTO SEDE \"EX SPERIMENTALE TABACCHI\""
+          }
+        ],
+        "per_quartiere": null
+      },
+      "resource_url": "data/fixtures/lecce/defibrillatori.csv",
       "resource_format": "CSV",
       "error": null,
       "is_static_snapshot": true

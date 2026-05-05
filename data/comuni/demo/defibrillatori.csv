@@ -1,0 +1,26 @@
+id,nome_poi,tipo_poi,lat,lon,indirizzo,comune,accessibile_h24,email
+1,Municipio Centrale,DAE,45.4654,9.1859,Piazza del Comune 1,Comune Ideale,si,dae@comuneideale.it
+2,Stazione Centrale,DAE,45.4862,9.2055,Piazza Duca d'Aosta 1,Comune Ideale,si,
+3,Ospedale San Raffaele,DAE,45.5052,9.2641,Via Olgettina 60,Comune Ideale,si,dae@hsr.it
+4,Stadio Comunale,DAE,45.4781,9.124,Via Piccolomini 5,Comune Ideale,no,custodi@stadio.it
+5,Biblioteca Centrale,DAE,45.4641,9.19,Via San Vittore 21,Comune Ideale,no,biblioteca@comuneideale.it
+6,Piscina Comunale,DAE,45.4708,9.2104,Via Cavalcanti 12,Comune Ideale,no,sport@comuneideale.it
+7,Mercato Coperto,DAE,45.4723,9.1812,Via Vettabbia 9,Comune Ideale,no,
+8,Parco Sempione,DAE,45.4724,9.1781,Piazza Sempione,Comune Ideale,si,
+9,Centro Anziani,DAE,45.4612,9.2003,Via Padova 88,Comune Ideale,no,centroanziani@comuneideale.it
+10,Scuola Manzoni,DAE,45.4678,9.1722,Via Manzoni 14,Comune Ideale,no,scuolamanzoni@istruzione.it
+11,Palazzetto Sport,DAE,45.4501,9.1998,Via Anassagora 7,Comune Ideale,no,sport@comuneideale.it
+12,Caserma Polizia Municipale,DAE,45.4633,9.1873,Via Beccaria 19,Comune Ideale,si,dae@polizia.comuneideale.it
+13,Centro Commerciale Nord,DAE,45.5101,9.1654,Viale Sarca 336,Comune Ideale,si,sicurezza@cc-nord.it
+14,Casa di Riposo San Giuseppe,DAE,45.4598,9.2133,Via Padova 234,Comune Ideale,si,direzione@rsa-sg.it
+15,Tribunale,DAE,45.4631,9.1754,Via Freguglia 1,Comune Ideale,no,dae@tribunale.it
+16,Università Ingegneria,DAE,45.4789,9.2333,Piazza Leonardo da Vinci 32,Comune Ideale,no,sicurezza@polimi.it
+17,Aeroporto Linate,DAE,45.4451,9.2767,Viale Forlanini,Comune Ideale,si,dae@linate.it
+18,Parrocchia San Pietro,DAE,45.455,9.17,Via San Pietro 5,Comune Ideale,si,
+19,Centro Civico Quartiere 4,DAE,45.445,9.22,Via Tibaldi 41,Comune Ideale,no,quartiere4@comuneideale.it
+20,Cimitero Monumentale,DAE,45.4847,9.1748,Piazzale Cimitero Monumentale,Comune Ideale,si,
+21,Stazione Carabinieri,DAE,45.4699,9.1801,Via Moscova 19,Comune Ideale,si,dae@carabinieri.it
+22,Centro Sportivo Sud,DAE,45.4321,9.1876,Via Lorenteggio 222,Comune Ideale,no,sport@cs-sud.it
+23,Asilo Comunale,DAE,45.469,9.2023,Via Bonvesin de la Riva 14,Comune Ideale,no,asilo@comuneideale.it
+24,Teatro Comunale,DAE,45.4659,9.1859,Piazza della Scala 1,Comune Ideale,si,teatro@comuneideale.it
+25,Centro Diurno Disabili,DAE,45.4577,9.2289,Via Calabria 10,Comune Ideale,no,cdd@comuneideale.it

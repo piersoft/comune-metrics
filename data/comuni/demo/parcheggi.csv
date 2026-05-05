@@ -1,0 +1,21 @@
+id,nome,indirizzo,comune,provincia,lat,lon,stalli,posti_disabili,tariffa_oraria,tipo_parcheggio,accessibile_h24
+1,P. Centrale Stazione,Via Stazione 1,Comune Ideale,BA,45.4862,9.2055,250,12,1.5,Coperto,si
+2,P. Piazza Duomo,Piazza Duomo,Comune Ideale,BA,45.4641,9.19,80,4,2.0,Scoperto,no
+3,P. Ospedale San Raffaele,Via Olgettina 60,Comune Ideale,BA,45.5052,9.2641,400,20,1.2,Multipiano,si
+4,P. Stadio,Via Piccolomini 5,Comune Ideale,BA,45.4781,9.124,500,15,0.0,Scoperto,no
+5,P. Mercato,Via Vettabbia 9,Comune Ideale,BA,45.4723,9.1812,150,8,1.0,Scoperto,no
+6,P. Parco Sempione,Piazza Sempione,Comune Ideale,BA,45.4724,9.1781,90,5,0.5,Scoperto,si
+7,P. Università,Piazza Leonardo da Vinci 32,Comune Ideale,BA,45.4789,9.2333,180,9,1.0,Multipiano,no
+8,P. Aeroporto Linate Lunga,Viale Forlanini,Comune Ideale,BA,45.4451,9.2767,2000,40,0.8,Multipiano,si
+9,P. Aeroporto Linate Breve,Viale Forlanini,Comune Ideale,BA,45.4445,9.275,300,15,3.0,Multipiano,si
+10,P. Tribunale,Via Freguglia 1,Comune Ideale,BA,45.4631,9.1754,60,3,2.5,Scoperto,no
+11,P. Cimitero,Piazzale Cimitero Monumentale,Comune Ideale,BA,45.4847,9.1748,200,10,0.0,Scoperto,si
+12,P. Quartiere 4,Via Tibaldi 41,Comune Ideale,BA,45.445,9.22,120,6,0.5,Scoperto,no
+13,P. Centro Commerciale Nord,Viale Sarca 336,Comune Ideale,BA,45.5101,9.1654,800,30,0.0,Multipiano,si
+14,P. Piscina Comunale,Via Cavalcanti 12,Comune Ideale,BA,45.4708,9.2104,70,4,1.0,Scoperto,no
+15,P. Teatro,Piazza della Scala 1,Comune Ideale,BA,45.4659,9.1859,100,5,3.0,Multipiano,no
+16,P. Casa di Riposo,Via Padova 234,Comune Ideale,BA,45.4598,9.2133,50,8,0.0,Scoperto,si
+17,P. Palazzetto Sport,Via Anassagora 7,Comune Ideale,BA,45.4501,9.1998,250,12,0.5,Scoperto,no
+18,P. Bus Turistici,Via Cermenate 5,Comune Ideale,BA,45.4501,9.1875,40,2,5.0,Scoperto,no
+19,P. Disabili Centro,Via Manzoni 14,Comune Ideale,BA,45.4678,9.1722,15,15,0.0,Scoperto,si
+20,P. Tribunale Lavoro,Via San Barnaba 50,Comune Ideale,BA,45.4609,9.2014,90,5,2.0,Multipiano,no

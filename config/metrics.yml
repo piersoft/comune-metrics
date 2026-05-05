@@ -237,3 +237,42 @@ datasets:
       - gettito_totale_ultimo_anno
       - per_tributo_ultimo_anno
       - serie_anni
+
+  defibrillatori:
+    titolo_paniere: "Defibrillatori (DAE)"
+    calculator: calc_defibrillatori
+    expected_fields:
+      nome: ["nome", "Nome", "nome_poi", "name", "denominazione"]
+      lat: ["lat", "Lat", "Latitudine", "latitude", "geo_lat"]
+      lon: ["lon", "Lon", "Longitudine", "longitude", "geo_lon"]
+      indirizzo: ["indirizzo", "Indirizzo", "INDIRIZZO", "via", "Via"]
+      comune: ["comune", "Comune", "citta", "Citta", "CITTA"]
+      accessibile_h24: ["accessibile_h24", "h24", "orari"]
+      quartiere: ["quartiere", "Quartiere", "zona", "zona_di_prossimita"]
+    kpi:
+      - totale
+      - h24_count
+      - h24_pct
+      - dae_geo
+
+  parcheggi:
+    titolo_paniere: "Parcheggi pubblici"
+    calculator: calc_parcheggi
+    expected_fields:
+      nome: ["nome", "Nome", "name", "denominazione"]
+      indirizzo: ["indirizzo", "Indirizzo", "via"]
+      lat: ["lat", "Lat", "Latitudine", "geo_point_2d"]
+      lon: ["lon", "Lon", "Longitudine"]
+      stalli: ["stalli", "posti", "n_posti", "numero_posti", "totale_posti"]
+      posti_disabili: ["posti_disabili", "n_disabili", "stalli_disabili"]
+      tariffa_oraria: ["tariffa_oraria", "tariffa", "Tariffa"]
+      tipo_parcheggio: ["tipo_parcheggio", "tipologia", "Tipologia", "tipo"]
+      accessibile_h24: ["accessibile_h24", "h24"]
+      quartiere: ["quartiere", "nomezona", "zona"]
+    kpi:
+      - totale
+      - totale_stalli
+      - totale_disabili
+      - tariffa_media
+      - pct_gratuiti
+      - parcheggi_geo

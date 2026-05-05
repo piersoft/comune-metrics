@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "dataset": "parcheggi",
+  "title": "Parcheggi pubblici",
+  "description": "Strutture e aree di parcheggio pubblico nel territorio comunale (multipiano, raso, scoperto). Mappa al modello PARK di OntoPiA, classe park:CarPark. Ogni riga = una struttura di parcheggio georeferenziata con numero stalli, posti disabili e tariffa.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
+  "decimal_separator": ".",
+  "required_columns": [],
+  "optional_columns": [
+    {
+      "name": "id",
+      "datatype": "integer",
+      "description": "Identificativo univoco del parcheggio"
+    },
+    {
+      "name": "nome",
+      "datatype": "string",
+      "description": "Denominazione del parcheggio"
+    },
+    {
+      "name": "indirizzo",
+      "datatype": "string",
+      "description": "Indirizzo o ubicazione"
+    },
+    {
+      "name": "comune",
+      "datatype": "string",
+      "description": "Nome del comune"
+    },
+    {
+      "name": "provincia",
+      "datatype": "string",
+      "description": "Sigla provincia (2 lettere)"
+    },
+    {
+      "name": "lat",
+      "datatype": "number",
+      "description": "Latitudine WGS84"
+    },
+    {
+      "name": "lon",
+      "datatype": "number",
+      "description": "Longitudine WGS84"
+    },
+    {
+      "name": "stalli",
+      "datatype": "integer",
+      "description": "Numero totale di stalli"
+    },
+    {
+      "name": "posti_disabili",
+      "datatype": "integer",
+      "description": "Numero stalli riservati a persone con disabilità"
+    },
+    {
+      "name": "tariffa_oraria",
+      "datatype": "number",
+      "description": "Tariffa oraria in euro (0 = gratuito)"
+    },
+    {
+      "name": "tipo_parcheggio",
+      "datatype": "string",
+      "description": "Tipologia: 'Multipiano', 'Coperto', 'Scoperto', 'Raso', 'Struttura'"
+    },
+    {
+      "name": "accessibile_h24",
+      "datatype": "string",
+      "description": "si/no — parcheggio aperto h24"
+    }
+  ],
+  "additional_columns_allowed": true
+}

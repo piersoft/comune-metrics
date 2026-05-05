@@ -18,7 +18,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T17:05:09.500Z",
+      "fetched_at": "2026-05-05T18:13:11.324Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -113,7 +113,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T17:05:09.510Z",
+      "fetched_at": "2026-05-05T18:13:11.335Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -274,7 +274,7 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T17:05:09.521Z",
+      "fetched_at": "2026-05-05T18:13:11.343Z",
       "status": "ok",
       "modified": "2025-04-15",
       "freshness": {
@@ -319,7 +319,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T17:05:09.527Z",
+      "fetched_at": "2026-05-05T18:13:11.350Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -376,7 +376,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T17:05:09.572Z",
+      "fetched_at": "2026-05-05T18:13:11.416Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -439,7 +439,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T17:05:09.579Z",
+      "fetched_at": "2026-05-05T18:13:11.418Z",
       "status": "ok",
       "modified": "2024-09-15",
       "freshness": {
@@ -664,7 +664,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T17:05:09.581Z",
+      "fetched_at": "2026-05-05T18:13:11.419Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -2697,7 +2697,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T17:05:09.611Z",
+      "fetched_at": "2026-05-05T18:13:11.451Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -2795,7 +2795,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T17:05:09.615Z",
+      "fetched_at": "2026-05-05T18:13:11.463Z",
       "status": "ok",
       "modified": "2025-01-31",
       "freshness": {
@@ -3294,7 +3294,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T17:05:09.635Z",
+      "fetched_at": "2026-05-05T18:13:11.471Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -3358,7 +3358,7 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T17:05:09.700Z",
+      "fetched_at": "2026-05-05T18:13:11.552Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3662,7 +3662,7 @@
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T17:05:09.703Z",
+      "fetched_at": "2026-05-05T18:13:11.554Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3742,6 +3742,326 @@
         "fonte_indicatore",
         "ente",
         "codice_ipa"
+      ]
+    },
+    "defibrillatori": {
+      "dataset_key": "defibrillatori",
+      "fetched_at": "2026-05-05T18:13:11.562Z",
+      "status": "ok",
+      "modified": "2025-01-15",
+      "freshness": {
+        "level": "aged",
+        "months": 16,
+        "iso": "2025-01-15"
+      },
+      "n_rows": 25,
+      "metrics": {
+        "totale": 25,
+        "h24_count": 12,
+        "h24_pct": 48,
+        "per_quartiere": [],
+        "dae_geo": [
+          {
+            "lat": 45.4654,
+            "lon": 9.1859,
+            "nome": "Municipio Centrale"
+          },
+          {
+            "lat": 45.4862,
+            "lon": 9.2055,
+            "nome": "Stazione Centrale"
+          },
+          {
+            "lat": 45.5052,
+            "lon": 9.2641,
+            "nome": "Ospedale San Raffaele"
+          },
+          {
+            "lat": 45.4781,
+            "lon": 9.124,
+            "nome": "Stadio Comunale"
+          },
+          {
+            "lat": 45.4641,
+            "lon": 9.19,
+            "nome": "Biblioteca Centrale"
+          },
+          {
+            "lat": 45.4708,
+            "lon": 9.2104,
+            "nome": "Piscina Comunale"
+          },
+          {
+            "lat": 45.4723,
+            "lon": 9.1812,
+            "nome": "Mercato Coperto"
+          },
+          {
+            "lat": 45.4724,
+            "lon": 9.1781,
+            "nome": "Parco Sempione"
+          },
+          {
+            "lat": 45.4612,
+            "lon": 9.2003,
+            "nome": "Centro Anziani"
+          },
+          {
+            "lat": 45.4678,
+            "lon": 9.1722,
+            "nome": "Scuola Manzoni"
+          },
+          {
+            "lat": 45.4501,
+            "lon": 9.1998,
+            "nome": "Palazzetto Sport"
+          },
+          {
+            "lat": 45.4633,
+            "lon": 9.1873,
+            "nome": "Caserma Polizia Municipale"
+          },
+          {
+            "lat": 45.5101,
+            "lon": 9.1654,
+            "nome": "Centro Commerciale Nord"
+          },
+          {
+            "lat": 45.4598,
+            "lon": 9.2133,
+            "nome": "Casa di Riposo San Giuseppe"
+          },
+          {
+            "lat": 45.4631,
+            "lon": 9.1754,
+            "nome": "Tribunale"
+          },
+          {
+            "lat": 45.4789,
+            "lon": 9.2333,
+            "nome": "Università Ingegneria"
+          },
+          {
+            "lat": 45.4451,
+            "lon": 9.2767,
+            "nome": "Aeroporto Linate"
+          },
+          {
+            "lat": 45.455,
+            "lon": 9.17,
+            "nome": "Parrocchia San Pietro"
+          },
+          {
+            "lat": 45.445,
+            "lon": 9.22,
+            "nome": "Centro Civico Quartiere 4"
+          },
+          {
+            "lat": 45.4847,
+            "lon": 9.1748,
+            "nome": "Cimitero Monumentale"
+          },
+          {
+            "lat": 45.4699,
+            "lon": 9.1801,
+            "nome": "Stazione Carabinieri"
+          },
+          {
+            "lat": 45.4321,
+            "lon": 9.1876,
+            "nome": "Centro Sportivo Sud"
+          },
+          {
+            "lat": 45.469,
+            "lon": 9.2023,
+            "nome": "Asilo Comunale"
+          },
+          {
+            "lat": 45.4659,
+            "lon": 9.1859,
+            "nome": "Teatro Comunale"
+          },
+          {
+            "lat": 45.4577,
+            "lon": 9.2289,
+            "nome": "Centro Diurno Disabili"
+          }
+        ]
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": null,
+      "fields_present": [
+        "id",
+        "nome_poi",
+        "tipo_poi",
+        "lat",
+        "lon",
+        "indirizzo",
+        "comune",
+        "accessibile_h24",
+        "email"
+      ]
+    },
+    "parcheggi": {
+      "dataset_key": "parcheggi",
+      "fetched_at": "2026-05-05T18:13:11.567Z",
+      "status": "ok",
+      "modified": "2025-01-15",
+      "freshness": {
+        "level": "aged",
+        "months": 16,
+        "iso": "2025-01-15"
+      },
+      "n_rows": 20,
+      "metrics": {
+        "totale": 20,
+        "totale_stalli": 5745,
+        "totale_disabili": 228,
+        "tariffa_media": 1.7,
+        "pct_gratuiti": 25,
+        "per_tipo": [
+          {
+            "nome": "Scoperto",
+            "n": 12
+          },
+          {
+            "nome": "Multipiano",
+            "n": 7
+          },
+          {
+            "nome": "Coperto",
+            "n": 1
+          }
+        ],
+        "per_quartiere": [],
+        "parcheggi_geo": [
+          {
+            "lat": 45.4862,
+            "lon": 9.2055,
+            "nome": "P. Centrale Stazione"
+          },
+          {
+            "lat": 45.4641,
+            "lon": 9.19,
+            "nome": "P. Piazza Duomo"
+          },
+          {
+            "lat": 45.5052,
+            "lon": 9.2641,
+            "nome": "P. Ospedale San Raffaele"
+          },
+          {
+            "lat": 45.4781,
+            "lon": 9.124,
+            "nome": "P. Stadio"
+          },
+          {
+            "lat": 45.4723,
+            "lon": 9.1812,
+            "nome": "P. Mercato"
+          },
+          {
+            "lat": 45.4724,
+            "lon": 9.1781,
+            "nome": "P. Parco Sempione"
+          },
+          {
+            "lat": 45.4789,
+            "lon": 9.2333,
+            "nome": "P. Università"
+          },
+          {
+            "lat": 45.4451,
+            "lon": 9.2767,
+            "nome": "P. Aeroporto Linate Lunga"
+          },
+          {
+            "lat": 45.4445,
+            "lon": 9.275,
+            "nome": "P. Aeroporto Linate Breve"
+          },
+          {
+            "lat": 45.4631,
+            "lon": 9.1754,
+            "nome": "P. Tribunale"
+          },
+          {
+            "lat": 45.4847,
+            "lon": 9.1748,
+            "nome": "P. Cimitero"
+          },
+          {
+            "lat": 45.445,
+            "lon": 9.22,
+            "nome": "P. Quartiere 4"
+          },
+          {
+            "lat": 45.5101,
+            "lon": 9.1654,
+            "nome": "P. Centro Commerciale Nord"
+          },
+          {
+            "lat": 45.4708,
+            "lon": 9.2104,
+            "nome": "P. Piscina Comunale"
+          },
+          {
+            "lat": 45.4659,
+            "lon": 9.1859,
+            "nome": "P. Teatro"
+          },
+          {
+            "lat": 45.4598,
+            "lon": 9.2133,
+            "nome": "P. Casa di Riposo"
+          },
+          {
+            "lat": 45.4501,
+            "lon": 9.1998,
+            "nome": "P. Palazzetto Sport"
+          },
+          {
+            "lat": 45.4501,
+            "lon": 9.1875,
+            "nome": "P. Bus Turistici"
+          },
+          {
+            "lat": 45.4678,
+            "lon": 9.1722,
+            "nome": "P. Disabili Centro"
+          },
+          {
+            "lat": 45.4609,
+            "lon": 9.2014,
+            "nome": "P. Tribunale Lavoro"
+          }
+        ]
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": null,
+      "fields_present": [
+        "id",
+        "nome",
+        "indirizzo",
+        "comune",
+        "provincia",
+        "lat",
+        "lon",
+        "stalli",
+        "posti_disabili",
+        "tariffa_oraria",
+        "tipo_parcheggio",
+        "accessibile_h24"
       ]
     }
   }

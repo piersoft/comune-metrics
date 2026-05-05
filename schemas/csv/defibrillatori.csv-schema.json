@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "dataset": "defibrillatori",
+  "title": "Defibrillatori semiautomatici esterni (DAE)",
+  "description": "Postazioni di defibrillatori DAE pubblicamente accessibili nel territorio comunale. Mappa al modello POI (Point of Interest) di OntoPiA, classe poi:PointOfInterest. Ogni riga = una postazione DAE georeferenziata.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [
+    ",",
+    ";"
+  ],
+  "decimal_separator": ".",
+  "required_columns": [],
+  "optional_columns": [
+    {
+      "name": "id",
+      "datatype": "integer",
+      "description": "Identificativo univoco della postazione DAE"
+    },
+    {
+      "name": "nome_poi",
+      "datatype": "string",
+      "description": "Nome o denominazione della postazione (es. 'Defibrillatore Stazione Centrale')"
+    },
+    {
+      "name": "tipo_poi",
+      "datatype": "string",
+      "description": "Tipologia POI; per DAE valore fisso 'DAE'"
+    },
+    {
+      "name": "lat",
+      "datatype": "number",
+      "description": "Latitudine WGS84 della postazione"
+    },
+    {
+      "name": "lon",
+      "datatype": "number",
+      "description": "Longitudine WGS84 della postazione"
+    },
+    {
+      "name": "indirizzo",
+      "datatype": "string",
+      "description": "Indirizzo della postazione"
+    },
+    {
+      "name": "comune",
+      "datatype": "string",
+      "description": "Nome del comune"
+    },
+    {
+      "name": "accessibile_h24",
+      "datatype": "string",
+      "description": "si/no — DAE accessibile 24h o solo in orari di apertura della struttura ospitante"
+    },
+    {
+      "name": "email",
+      "datatype": "string",
+      "description": "Email di contatto del responsabile della postazione"
+    }
+  ],
+  "additional_columns_allowed": true
+}

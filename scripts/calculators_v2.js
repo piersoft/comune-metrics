@@ -533,6 +533,73 @@ export function calc_tributi(rows) {
   };
 }
 
+// ----- 13. Defibrillatori (DAE) ---------------------------------------------
+// Comune Ideale: header demo Worker poi → id,nome_poi,tipo_poi,lat,lon,indirizzo,comune,accessibile_h24,email
+// Bologna ODS progetto-dae: nome,citta,indirizzo,ubicazione,note,orari,telefono,geo_point,quartiere,zona_di_prossimita,area_statistica
+// Lecce Google Sheets: ID,latitude,longitude,name,TOPONIMO,INDIRIZZO,CIVICO,DESCRIZIONE,orari_comunicati,...
+export function calc_defibrillatori(rows) {
+  const aliased = rows.map(r => withAliases(r, {
+    nome_poi: 'nome',
+    name: 'nome',           // Bologna/Lecce
+    citta: 'comune',        // Bologna
+    latitude: 'lat',        // Lecce
+    longitude: 'lon',       // Lecce
+    INDIRIZZO: 'indirizzo', // Lecce
+    ubicazione: 'descrizione', // Bologna
+  }));
+  // Conta DAE accessibili h24
+  const h24_count = aliased.filter(r => {
+    const v = r.accessibile_h24;
+    if (!v) return false;
+    return String(v).toLowerCase().trim() === 'si' || String(v).toLowerCase().trim() === 'sì';
+  }).length;
+  return {
+    totale: aliased.length,
+    h24_count,
+    h24_pct: aliased.length > 0 ? Math.round((h24_count / aliased.length) * 1000) / 10 : null,
+    per_quartiere: countBy(aliased, 'quartiere'),
+    dae_geo: geoPoints(aliased, 500),
+  };
+}
+
+// ----- 14. Parcheggi pubblici -----------------------------------------------
+// Comune Ideale: header demo Worker park → id,nome,indirizzo,comune,provincia,lat,lon,stalli,posti_disabili,tariffa_oraria,tipo_parcheggio,accessibile_h24
+// Bologna ODS parcheggi: name,tipologia,posti,tariffa,geo_point_2d,nomezona
+// Lecce: GeoJSON non disponibile (presente: false)
+export function calc_parcheggi(rows) {
+  const aliased = rows.map(r => withAliases(r, {
+    name: 'nome',                    // Bologna
+    posti: 'stalli',                 // Bologna
+    tipologia: 'tipo_parcheggio',    // Bologna
+    nomezona: 'quartiere',           // Bologna
+  }));
+  const totale_stalli = sumBy(aliased, 'stalli') || 0;
+  const totale_disabili = sumBy(aliased, 'posti_disabili') || 0;
+  // Tariffa media (escludendo 0 = gratuiti)
+  const tariffe = aliased
+    .map(r => parseFloat(r.tariffa_oraria))
+    .filter(v => !isNaN(v) && v > 0);
+  const tariffa_media = tariffe.length > 0
+    ? Math.round((tariffe.reduce((a, b) => a + b, 0) / tariffe.length) * 100) / 100
+    : null;
+  // % parcheggi gratuiti
+  const gratuiti = aliased.filter(r => {
+    const v = parseFloat(r.tariffa_oraria);
+    return !isNaN(v) && v === 0;
+  }).length;
+  const pct_gratuiti = aliased.length > 0 ? Math.round((gratuiti / aliased.length) * 1000) / 10 : null;
+  return {
+    totale: aliased.length,
+    totale_stalli,
+    totale_disabili,
+    tariffa_media,
+    pct_gratuiti,
+    per_tipo: countBy(aliased, 'tipo_parcheggio'),
+    per_quartiere: countBy(aliased, 'quartiere'),
+    parcheggi_geo: geoPoints(aliased, 500),
+  };
+}
+
 // ----- Registry -------------------------------------------------------------
 export const CALCULATORS_V2 = {
   popolazione:        calc_popolazione,
@@ -547,4 +614,6 @@ export const CALCULATORS_V2 = {
   delibere:           calc_delibere,
   patrimonio:         calc_patrimonio,
   tributi:            calc_tributi,
+  defibrillatori:     calc_defibrillatori,
+  parcheggi:          calc_parcheggi,
 };

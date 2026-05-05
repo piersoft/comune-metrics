@@ -39,6 +39,8 @@ comuni:
       delibere: null
       patrimonio: null
       tributi: null  # Bologna su Opendatasoft non espone dataset tributi facilmente aggregabili
+      defibrillatori: registro-regionale-unico-dei-defibrillatori-dae  # Slug dati.gov.it (5060 record, filtrare per citta=BOLOGNA in fase di calcolo)
+      parcheggi: parcheggi-strutture  # Slug dati.gov.it - 44 strutture (multipiano + raso)
 
   # Milano: rimosso dai casi d'uso ComuneMetrics v0.2 perché il WAF
   # Microsoft-Azure-Application-Gateway/v2 di dati.comune.milano.it
@@ -82,3 +84,5 @@ comuni:
       delibere: null  # Solo feed RSS in tempo reale, senza storico per statistiche
       patrimonio: __fixture__:patrimonio                                            # 170 fabbricati NAC 2023
       tributi: __fixture__:tributi                                                   # IMU riscosso 2015-2017 (€ 34M-37M annui), 6 righe
+      defibrillatori: __fixture__:defibrillatori                                     # Progetto Comune Cardioprotetto, 113 postazioni DAE da Google Sheets (Dott. Fuggiano)
+      parcheggi: null  # Piano Sosta Tariffata Lecce esiste come dataset Comune di Lecce su dati.gov.it, ma il GeoJSON è ospitato su dati.comune.lecce.it (HTTP geo-fenced) e non scaricabile da CI
