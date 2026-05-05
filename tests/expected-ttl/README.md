@@ -1,6 +1,6 @@
 # TTL ground-truth — Linked Open Data del Comune Ideale
 
-Questa cartella contiene i 14 file Turtle (TTL) generati dai CSV del Comune Ideale tramite il Worker [`csv2rdf.datigovit.workers.dev`](https://github.com/piersoft/CSV-to-RDF).
+Questa cartella contiene i **14 file Turtle (TTL)** di esempio, generati dai CSV del Comune Ideale e validati con `rdflib`.
 
 Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottenere quando converte i propri CSV in RDF: predicati DCAT-AP_IT corretti, classi semantiche ex-OntoPiA, conformità al [Catalogo Nazionale Dati Semantici](https://schema.gov.it/).
 
@@ -8,49 +8,37 @@ Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottener
 
 ## A cosa servono
 
-- **Validare** che le proprie modifiche ai CSV demo non rompano la mappatura semantica
-- **Esempio** di output atteso per chi vuole replicare il paniere nel proprio Comune
-- **Test di regressione**: rigenera i TTL e confronta con questi per scoprire cambiamenti silenziosi
+- **Esempio** di output atteso per chi vuole esporre i propri dati come Linked Open Data nel proprio Comune
+- **Validare** che le proprie modifiche ai CSV demo del paniere non rompano la mappatura semantica
+- **Test di regressione**: rigenera i TTL con il proprio strumento di conversione preferito e confronta con questi per scoprire cambiamenti silenziosi
+- **Riferimento canonico** delle classi e ontologie ex-OntoPiA da usare per ciascun dataset CORE
 
 ---
 
 ## Mapping CSV → Ontologia
 
-| # | Dataset CORE | Demo Worker fonte | Ontologia DCAT-AP_IT | Classe principale |
-|---|---|---|---|---|
-| 1 | Popolazione | `andamento_demografico` | QB + CLV | `qb:Observation` |
-| 2 | Bilancio | `peg_bilancio_comunale` | QB + CPSV-AP + COV | `cpsv:PublicService` |
-| 3 | Opere pubbliche | `publiccontract` | PublicContract + CPV + COV + TI + QB | `pc:Contract` |
-| 4 | Pratiche edilizie | `cpsv` | CPSV-AP + COV | `cpsv:PublicService` |
-| 5 | Servizi sociali | `strutture_sociali` | COV + CLV + POI + SM + ACCO | `acco:Accommodation` |
-| 6 | Istruzione | `istituti_scolastici` | SMAPIT + CLV + SM | `smapit:School` |
-| 7 | Incidenti stradali | `incidenti_stradali` | POI + CLV + TI | `poi:PointOfInterest` |
-| 8 | Rifiuti | (schema QB+CLV) | QB + CLV | `qb:Observation` |
-| 9 | Eventi culturali | `cpev` | CPEV + TI + POI + CLV | `cpev:PublicEvent` |
-| 10 | Delibere | `transparency` | Transparency + COV | `tr:TransparencyObligation` |
-| 11 | Patrimonio | `culturalheritage` | CulturalHeritage + CLV | `ch:CulturalHeritage` |
-| 12 | Tributi | `indicator` | Indicator + QB + COV | `indicator:Indicator` |
-| 13 | Defibrillatori (DAE) | `poi` | POI + CLV + SM | `poi:PointOfInterest` |
-| 14 | Parcheggi pubblici | `park` | PARK + POI + CLV | `park:CarPark` |
-
----
-
-## Come rigenerare
-
-Ogni TTL si rigenera al volo passando il CSV pubblico al Worker, con il parametro `?onto=` per forzare le ontologie:
-
-```bash
-curl "https://csv2rdf.datigovit.workers.dev/?url=https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/popolazione.csv&ipa=c_ideal&pa=Comune+Ideale&onto=QB,CLV,L0" \
-  -o popolazione.ttl
-```
-
-I link diretti ai 12 endpoint Worker sono nel [PANIERE_CSV_SCHEMA.md](../../docs/PANIERE_CSV_SCHEMA.md) sotto la sezione "Linked Open Data".
+| # | Dataset CORE | Ontologia DCAT-AP_IT | Classe principale |
+|---|---|---|---|
+| 1 | Popolazione | QB + CLV | `qb:Observation` |
+| 2 | Bilancio | QB + CPSV-AP + COV | `cpsv:PublicService` |
+| 3 | Opere pubbliche | PublicContract + CPV + COV + TI + QB | `pc:Contract` |
+| 4 | Pratiche edilizie | CPSV-AP + COV | `cpsv:PublicService` |
+| 5 | Servizi sociali | COV + CLV + POI + SM + ACCO | `acco:Accommodation` |
+| 6 | Istruzione | SMAPIT + CLV + SM | `smapit:School` |
+| 7 | Incidenti stradali | POI + CLV + TI | `poi:PointOfInterest` |
+| 8 | Rifiuti | QB + CLV | `qb:Observation` |
+| 9 | Eventi culturali | CPEV + TI + POI + CLV | `cpev:PublicEvent` |
+| 10 | Delibere | Transparency + COV | `tr:TransparencyObligation` |
+| 11 | Patrimonio | CulturalHeritage + CLV | `ch:CulturalHeritage` |
+| 12 | Tributi | Indicator + QB + COV | `indicator:Indicator` |
+| 13 | Defibrillatori (DAE) | POI + CLV + SM | `poi:PointOfInterest` |
+| 14 | Parcheggi pubblici | PARK + POI + CLV | `park:CarPark` |
 
 ---
 
 ## Validazione
 
-I 12 TTL sono parsabili da [rdflib](https://rdflib.readthedocs.io/) (Python) senza errori:
+I 14 TTL sono parsabili da [rdflib](https://rdflib.readthedocs.io/) (Python) senza errori:
 
 ```python
 import rdflib
@@ -59,10 +47,37 @@ g.parse('popolazione.ttl', format='turtle')
 print(f'Triple: {len(g)}')
 ```
 
+Per validare tutti e 14 in batch:
+
+```bash
+for ttl in tests/expected-ttl/*.ttl; do
+  python3 -c "
+import rdflib
+g = rdflib.Graph()
+g.parse('$ttl', format='turtle')
+print(f'$ttl: {len(g)} triple OK')
+"
+done
+```
+
 ---
 
-## Note
+## Come ricreare i TTL nel proprio Comune
+
+Per la conversione CSV → RDF nel proprio Comune ognuno è libero di usare lo strumento che preferisce: librerie Python (`rdflib`, `csvw`), Java (`Jena`), tool open source di mapping CSV → RDF, oppure scriversi un convertitore basato sui mapping della tabella sopra.
+
+Una volta prodotto il TTL, può essere caricato in un endpoint SPARQL Virtuoso, in un catalogo DCAT-AP_IT su [dati.gov.it](https://www.dati.gov.it), o in un harvester piveau.
+
+Lo strumento [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) (open source) è quello che è stato usato per generare i 14 TTL di questa cartella e contiene il motore di matching colonne → ontologie ex-OntoPiA. Il suo README spiega come deployarlo per un uso autonomo, in locale o come servizio interno della propria PA.
+
+**Nota**: i 14 TTL in questa cartella sono **statici, generati una tantum**. Non vengono rigenerati automaticamente. Se modifichi i CSV in `data/comuni/demo/`, ricordati di rigenerare manualmente i TTL corrispondenti col tuo strumento di conversione e ricommittarli.
+
+---
+
+## Note tecniche sui TTL
 
 - **`patrimonio.ttl`** usa la classe `ch:CulturalHeritage` invece di `cis:CulturalInstituteOrSite`. Entrambe sono valide: `CulturalHeritage` è più appropriata per beni patrimoniali del Comune, `Cultural-ON` lo è per istituti culturali (musei, biblioteche).
-- **`servizi_sociali.ttl`** usa `acco:Accommodation`. È coerente: RSA, case di riposo e centri diurni sono strutture ricettive sociali con `posti_letto`. Il Worker rileva la colonna e attiva ACCO automaticamente.
-- I TTL sono generati col Comune Ideale come ente pubblicante (`ipa=c_ideal`). Per usare i CSV nel proprio Comune sostituire `ipa` con il proprio codice IPA.
+- **`servizi_sociali.ttl`** usa `acco:Accommodation`. È coerente: RSA, case di riposo e centri diurni sono strutture ricettive sociali con `posti_letto`.
+- **`defibrillatori.ttl`** mappa su `poi:PointOfInterest`: ogni postazione DAE è un punto di interesse pubblico georeferenziato con accessibilità h24.
+- **`parcheggi.ttl`** mappa su `park:CarPark` (ontologia PARK del Catalogo Nazionale): include `posti_disabili`, `tariffa_oraria`, `tipo_parcheggio`.
+- I TTL sono generati col Comune Ideale come ente pubblicante (`ipa=c_ideal`). Per usare i CSV nel proprio Comune sostituire `ipa` con il proprio codice IPA reale.

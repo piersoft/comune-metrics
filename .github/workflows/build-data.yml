@@ -1,18 +1,32 @@
 name: Build dashboard data
 
+# AUTOMATISMI DISATTIVATI (2026-05-05).
+# Decisione: per ora la dashboard non si auto-aggiorna.
+# - schedule cron disabilitato (era 0 3 * * 0 = ogni domenica notte)
+# - push automatico disabilitato (era su modifiche a config/, scripts/,
+#   data/comuni/**/manifest.yml, data/comuni/**/*.csv, schemas/csv/**)
+# - resta SOLO il trigger manuale workflow_dispatch
+#
+# Per rilanciare il build: GitHub UI → Actions → "Build dashboard data"
+# → "Run workflow" sul branch main. Oppure via gh CLI:
+#   gh workflow run build-data.yml
+#
+# Per riabilitare gli automatismi, ripristinare le sezioni 'schedule'
+# e 'push' commentate qui sotto.
+
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 3 * * 0'
-  push:
-    branches: [main]
-    paths:
-      - 'config/comuni.yml'
-      - 'config/metrics.yml'
-      - 'scripts/**'
-      - 'data/comuni/**/manifest.yml'
-      - 'data/comuni/**/*.csv'
-      - 'schemas/csv/**'
+  # schedule:
+  #   - cron: '0 3 * * 0'
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - 'config/comuni.yml'
+  #     - 'config/metrics.yml'
+  #     - 'scripts/**'
+  #     - 'data/comuni/**/manifest.yml'
+  #     - 'data/comuni/**/*.csv'
+  #     - 'schemas/csv/**'
 
 permissions:
   contents: write

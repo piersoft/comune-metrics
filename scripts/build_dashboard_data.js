@@ -28,13 +28,14 @@ const FETCH_TIMEOUT = process.env.GITHUB_ACTIONS ? 45_000 : 15_000;
 const MAX_BYTES = 30 * 1024 * 1024; // 30 MB (più conservativo, evita lock su file enormi)
 const MAX_ROWS_PROCESSED = 150_000; // cap di sicurezza per il parser
 const POOL_SIZE = 1; // sequenziale: fetch CSV da portali comunali può essere lento
-const REQUEST_DELAY_MS = 500; // throttle per CSV diretti (Worker MCP non rate-limited)
+const REQUEST_DELAY_MS = 500; // throttle per CSV diretti
 const SUPPORTED_FORMATS = new Set(["JSON", "JSONL", "CSV"]);
 
-// CKAN MCP Worker su Cloudflare: bypassa il WAF di dati.gov.it che blocca i runner
-// GitHub Actions. Il Worker gira su rete Cloudflare ed è accettato dal WAF.
-// Endpoint MCP via JSON-RPC HTTP semplice — niente SDK necessario.
-const MCP_WORKER_URL = "https://ckan-mcp-server.datigovit.workers.dev/mcp";
+// CKAN package_show via API ufficiale.
+// NOTA: dati.gov.it può bloccare richieste da runner GitHub Actions (cloud Azure
+// US/EU) tramite il proprio WAF. Il workflow build-data.yml è stato disattivato
+// dagli automatismi (resta solo trigger manuale): quando viene lanciato manualmente
+// dal proprio IP, dati.gov.it normalmente accetta le richieste.
 
 // ── Logger ────────────────────────────────────────────────────────────────────
 function ts() {
@@ -259,50 +260,33 @@ async function httpGetText(url) {
 }
 
 async function fetchPackage(ckanServer, slug) {
-  // Uso il CKAN MCP Worker (Cloudflare) come proxy: dati.gov.it blocca i runner
-  // GitHub Actions con WAF, ma accetta richieste da Cloudflare.
-  // Il Worker espone tools MCP via JSON-RPC HTTP semplice.
+  // Chiamata diretta all'endpoint CKAN package_show.
+  // Funziona out-of-the-box per Bologna ODS (URL diverso, vedi sotto) e per
+  // dati.gov.it quando il build è eseguito manualmente da un IP non bloccato dal WAF.
+  // Per portali Opendatasoft (es. opendata.comune.bologna.it) il path API è
+  // /api/explore/v2.1/catalog/datasets/<slug>; il caller passa l'URL di dati.gov.it
+  // standard, dove gli stessi dataset sono harvested.
+  const apiUrl = `${ckanServer.replace(/\/$/, "")}/api/3/action/package_show?id=${encodeURIComponent(slug)}`;
   try {
-    const r = await fetchWithTimeout(MCP_WORKER_URL, {
-      method: "POST",
+    const r = await fetchWithTimeout(apiUrl, {
+      method: "GET",
       headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json, text/event-stream",
+        "Accept": "application/json",
+        "User-Agent": "comune-metrics-builder/1.0 (https://github.com/piersoft/comune-metrics)",
       },
-      body: JSON.stringify({
-        jsonrpc: "2.0",
-        id: 1,
-        method: "tools/call",
-        params: {
-          name: "ckan_package_show",
-          arguments: {
-            server_url: ckanServer,
-            id: slug,
-            response_format: "json",
-          },
-        },
-      }),
     });
     if (!r.ok) {
-      warn(`  ✗ Worker HTTP ${r.status} per ${slug}`);
+      warn(`  ✗ CKAN HTTP ${r.status} per ${slug}`);
       return null;
     }
     const body = await r.json();
-    // La risposta MCP ha la forma:
-    // { result: { content: [ { type:"text", text: "<json string>" } ] } }
-    if (body.error) {
-      warn(`  ✗ Worker error: ${body.error.message || JSON.stringify(body.error)}`);
+    if (!body.success) {
+      warn(`  ✗ CKAN error: ${body.error?.message || JSON.stringify(body.error)}`);
       return null;
     }
-    const content = body.result?.content?.[0]?.text;
-    if (!content) {
-      warn(`  ✗ Worker response senza content`);
-      return null;
-    }
-    const pkg = JSON.parse(content);
-    return pkg;
+    return body.result;
   } catch (e) {
-    warn(`  ✗ Worker fetch ${e.name}: ${e.message}`);
+    warn(`  ✗ CKAN fetch ${e.name}: ${e.message}`);
     return null;
   }
 }

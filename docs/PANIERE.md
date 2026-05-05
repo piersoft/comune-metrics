@@ -248,13 +248,9 @@ I metadati DCAT-AP_IT del dataset originale rimangono invariati. Il Comune manti
 
 ## Esposizione come Linked Open Data (RDF)
 
-Una volta che i CSV sono pubblicati nel formato canonico del paniere, possono essere convertiti in RDF/Turtle conforme alle ontologie [DCAT-AP_IT / ex-OntoPiA](https://schema.gov.it/) **senza alcuno sforzo aggiuntivo** da parte del Comune. Il servizio pubblico [CSV-to-RDF](https://csv2rdf.datigovit.workers.dev/) fa la conversione al volo passando l'URL del CSV.
+Una volta che i CSV sono pubblicati nel formato canonico del paniere, possono essere convertiti in RDF/Turtle conforme alle ontologie [DCAT-AP_IT / ex-OntoPiA](https://schema.gov.it/) usando lo strumento di conversione che si preferisce (librerie Python come `rdflib` o `csvw`, Java `Jena`, oppure un convertitore custom basato sui mapping documentati qui sotto).
 
-Esempio per la popolazione del Comune Ideale:
-
-```
-https://csv2rdf.datigovit.workers.dev/?url=<url_csv>&ipa=<ipa>&pa=<nome_ente>&onto=QB,CLV,L0
-```
+Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) sono disponibili i **14 file TTL di esempio** già generati dai CSV del Comune Ideale: rappresentano il riferimento canonico di output corretto e possono essere usati come gold standard per validare la propria pipeline di conversione. Il repo open source [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) è lo strumento che è stato usato per generarli e contiene il motore di matching colonne → ontologie ex-OntoPiA: il suo README spiega come deployarlo in locale o come servizio interno della propria PA.
 
 I 14 dataset del paniere mappano su classi semantiche corrette:
 
