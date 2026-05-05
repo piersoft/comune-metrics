@@ -7,7 +7,37 @@
 function num(x) {
   if (x === null || x === undefined || x === '') return null;
   if (typeof x === 'number') return x;
-  const s = String(x).trim().replace(/\./g, '').replace(',', '.');
+  let s = String(x).trim();
+  if (!s) return null;
+  const dots = (s.match(/\./g) || []).length;
+  const commas = (s.match(/,/g) || []).length;
+  // Casi:
+  //  "40.37924"   → 1 punto, 0 virgole → decimale puro (puntoeng)
+  //  "1,234.56"   → 1 punto, 1+ virgole → punto decimale, virgola migliaia
+  //  "1.234,56"   → 1 virgola, 1+ punti → virgola decimale, punto migliaia
+  //  "40,37924"   → 1 virgola, 0 punti → decimale italiano
+  //  "1.234.567"  → 2+ punti, 0 virgole → migliaia eu
+  //  "12,345"     → 1 virgola, 0 punti → ambiguo: decimale italiano (preferiamo)
+  if (dots > 0 && commas === 0) {
+    // Punti only: se >1 punti => migliaia; se 1 punto => decimale
+    if (dots > 1) s = s.replace(/\./g, '');
+    // else: lascia il punto come decimale
+  } else if (commas > 0 && dots === 0) {
+    // Virgole only: 1 virgola = decimale; >1 virgole = migliaia (raro)
+    if (commas === 1) s = s.replace(',', '.');
+    else s = s.replace(/,/g, '');
+  } else if (dots > 0 && commas > 0) {
+    // Entrambi: l'ultimo che appare è il decimale
+    const lastDot = s.lastIndexOf('.');
+    const lastComma = s.lastIndexOf(',');
+    if (lastDot > lastComma) {
+      // Punto è decimale (formato US)
+      s = s.replace(/,/g, '');
+    } else {
+      // Virgola è decimale (formato EU)
+      s = s.replace(/\./g, '').replace(',', '.');
+    }
+  }
   const n = parseFloat(s);
   return Number.isFinite(n) ? n : null;
 }
@@ -110,18 +140,28 @@ function geoPoints(rows, fieldMap, nameKey = null, max = 200) {
 
 function parseYear(x) {
   if (x === null || x === undefined || x === '') return null;
-  if (typeof x === 'number') return Math.floor(x);
-  const s = String(x).trim();
-  // YYYY-MM-DD
-  const ymd = s.match(/^(\d{4})-\d{2}-\d{2}/);
-  if (ymd) return parseInt(ymd[1], 10);
-  // DD/MM/YYYY
-  const dmy = s.match(/^\d{1,2}\/\d{1,2}\/(\d{4})/);
-  if (dmy) return parseInt(dmy[1], 10);
-  // YYYY
-  const y = s.match(/^(\d{4})$/);
-  if (y) return parseInt(y[1], 10);
-  return null;
+  let y = null;
+  if (typeof x === 'number') y = Math.floor(x);
+  else {
+    const s = String(x).trim();
+    // YYYY-MM-DD
+    const ymd = s.match(/^(\d{4})-\d{2}-\d{2}/);
+    if (ymd) y = parseInt(ymd[1], 10);
+    // DD/MM/YYYY
+    else {
+      const dmy = s.match(/^\d{1,2}\/\d{1,2}\/(\d{4})/);
+      if (dmy) y = parseInt(dmy[1], 10);
+      // YYYY
+      else {
+        const yy = s.match(/^(\d{4})$/);
+        if (yy) y = parseInt(yy[1], 10);
+      }
+    }
+  }
+  if (y === null) return null;
+  // Filtra anni fuori range plausibile (es. progressivi 1017 in pratiche Lecce)
+  if (y < 1900 || y > 2050) return null;
+  return y;
 }
 
 function seriesByYear(rows, fieldMap, yearKey, valueKey = null) {
@@ -199,7 +239,7 @@ export function calc_pratiche(rows, fieldMap) {
     per_tipo: countBy(rows, fieldMap, 'tipo'),
     per_esito: countBy(rows, fieldMap, 'esito'),
     tasso_chiusura: tassoChiusura,
-    serie_anni: seriesByYear(rows, fieldMap, 'anno_prot') || seriesByYear(rows, fieldMap, 'data'),
+    serie_anni: seriesByYear(rows, fieldMap, 'data') || seriesByYear(rows, fieldMap, 'anno_prot'),
   };
 }
 

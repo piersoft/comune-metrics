@@ -209,7 +209,7 @@
 <header class="site-header">
   <div class="container header-content">
     <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 11 Dataset CORE del Paniere</sub></h1>
-    <span class="version-badge" id="versionBadge">v2026.05.04.18</span>
+    <span class="version-badge" id="versionBadge">v2026.05.04.19</span>
   </div>
 </header>
 
@@ -356,20 +356,28 @@ function makeChart(canvasId, config) {
 }
 
 function renderPopolazione(canvasId, m) {
+  const hasSerieAnni = m.serie_anni && m.serie_anni.length > 1;
+  const hasQuartieri = m.per_quartiere && m.per_quartiere.length > 1;
+  const totale = m.totale_residenti != null ? m.totale_residenti : (hasSerieAnni ? m.serie_anni[m.serie_anni.length-1].valore : null);
   const html = `
     <div class="kpi-row">
-      <div class="kpi-big"><div class="value">${fmtNum(m.totale_residenti)}</div><div class="label">Residenti totali</div></div>
-      <div class="kpi-big"><div class="value">${m.serie_anni?m.serie_anni.length:0}</div><div class="label">Anni serie storica</div></div>
+      <div class="kpi-big"><div class="value">${fmtNum(totale)}</div><div class="label">Residenti</div></div>
+      <div class="kpi-big"><div class="value">${m.serie_anni?m.serie_anni.length:0}</div><div class="label">Anni serie</div></div>
+      ${hasQuartieri ? `<div class="kpi-big"><div class="value">${m.per_quartiere.length}</div><div class="label">Quartieri</div></div>` : ''}
     </div>
-    <div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>`;
+    ${(hasSerieAnni || hasQuartieri) ? `<div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` :
+      `<div style="background:var(--brand-blue-light);padding:16px;border-radius:6px;font-size:13px;color:var(--ink);text-align:center;line-height:1.55;">
+        Il dataset pubblicato copre <strong>un solo periodo</strong> (anno ${m.serie_anni && m.serie_anni[0] ? m.serie_anni[0].anno : '?'}).<br>
+        <span style="color:var(--ink-soft);font-size:12px;">Per una serie storica e una distribuzione per quartiere serve un dataset multi-annuale.</span>
+       </div>`}`;
   setTimeout(() => {
-    if (m.serie_anni && m.serie_anni.length > 1) {
+    if (hasSerieAnni) {
       makeChart(canvasId, {
         type: 'line',
         data: { labels: m.serie_anni.map(d=>d.anno), datasets: [{ data: m.serie_anni.map(d=>d.valore), borderColor: PALETTE[0], backgroundColor: 'rgba(0,102,204,0.08)', fill: true, tension: 0.3, borderWidth: 2, pointRadius: 2, pointHoverRadius: 5 }] },
         options: chartLine({ yCallback: v => fmtNum(v), beginAtZero: false }),
       });
-    } else if (m.per_quartiere && m.per_quartiere.length) {
+    } else if (hasQuartieri) {
       makeChart(canvasId, {
         type: 'bar',
         data: { labels: m.per_quartiere.map(d=>d.nome), datasets: [{ data: m.per_quartiere.map(d=>d.valore||d.n), backgroundColor: PALETTE[0] }] },
@@ -575,15 +583,19 @@ function renderDelibere(canvasId, m) {
 }
 
 function renderPatrimonio(canvasId, m) {
+  const hasMultiTipi = m.per_tipo && m.per_tipo.length > 1;
   const html = `
     <div class="kpi-row">
       <div class="kpi-big"><div class="value">${fmtNum(m.totale_immobili)}</div><div class="label">Immobili</div></div>
       <div class="kpi-big"><div class="value">${m.per_tipo?m.per_tipo.length:0}</div><div class="label">Tipologie</div></div>
       ${m.pct_vincolo != null ? `<div class="kpi-big"><div class="value">${fmtPct(m.pct_vincolo)}</div><div class="label">Con vincolo</div></div>` : ''}
     </div>
-    <div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>`;
+    ${hasMultiTipi ? `<div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` :
+      `<div style="background:var(--brand-blue-light);padding:16px;border-radius:6px;font-size:13px;color:var(--ink);line-height:1.55;">
+        ${m.per_tipo && m.per_tipo[0] ? `<strong>Categoria unica</strong>: ${escapeHtml(m.per_tipo[0].nome)}<br><span style="color:var(--ink-soft);font-size:12px;">Tutti i ${fmtNum(m.totale_immobili)} immobili rientrano in una sola tipologia contabile.</span>` : 'Distribuzione per tipologia non disponibile'}
+       </div>`}`;
   setTimeout(() => {
-    if (m.per_tipo && m.per_tipo.length) {
+    if (hasMultiTipi) {
       const top = m.per_tipo.slice(0, 8);
       makeChart(canvasId, {
         type: 'bar',
