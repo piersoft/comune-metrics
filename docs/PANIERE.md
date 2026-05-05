@@ -10,7 +10,11 @@
 
 ## Cosa è il paniere
 
-Il paniere è un insieme di **12 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano:
+Il paniere è un insieme di **12 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano.
+
+> **Riferimento canonico**: il **Comune IDEALE** (visibile nella dashboard live) è costruito con CSV/JSON perfettamente allineati agli schemi del paniere. Per allinearsi velocemente, un Comune nuovo replica alla lettera la sua struttura (nomi colonne, formati, tipi). I CSV del Comune Ideale sono in [`data/comuni/demo/`](../data/comuni/demo/).
+
+I 12 dataset CORE sono:
 
 | # | Dataset | Cosa contiene |
 |---|---|---|

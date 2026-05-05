@@ -1,17 +1,21 @@
 # =============================================================================
-# Comune DEMO — esempio di adozione del Paniere CSV federato v0.2
+# Comune IDEALE — riferimento di adozione del Paniere CSV federato v0.2
 # =============================================================================
-# Questo NON è un Comune reale. È un esempio sintetico per dimostrare il flusso
-# end-to-end di adozione del paniere ComuneMetrics da parte di un Comune nuovo.
+# Questo NON è un Comune reale. È il Comune di RIFERIMENTO, costruito con
+# struttura di CSV/JSON perfettamente allineata agli schemi canonici del
+# paniere ComuneMetrics. Serve come "stella polare" per gli altri Comuni:
+# guarda come il Comune Ideale formatta i suoi 12 dataset e replica la
+# stessa struttura per avvicinarti al 12/12.
 #
 # COPERTURA: 12/12 dataset CORE — copertura completa del paniere come prova
 # del fuoco che il modello federato regge per un Comune medio italiano.
 #
 # I dati sono sintetici plausibili (Comune ~36.620 abitanti, capoluogo di
-# provincia in Lombardia). Servono solo come test del tool.
+# provincia in Lombardia). Servono solo come test del tool E come riferimento
+# canonico di formattazione CSV.
 # =============================================================================
 
-nome: "Comune DEMO"
+nome: "Comune IDEALE"
 ipa: "c_demo01"
 istat: "999001"
 popolazione_attesa: 36620

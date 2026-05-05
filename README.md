@@ -10,11 +10,11 @@ Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 11
 
 | Comune | Dataset OK | Modalità | Note |
 |---|---|---|---|
-| **Demo** | 11/11 | manifest CSV | Comune sintetico, esempio di adozione completa del paniere |
-| **Bologna** | 8/9 | live API | Caso speciale: portale Opendatasoft con API aggregations |
-| **Lecce** | 8/8 | snapshot statico | Server publisher inaccessibile dai runner GitHub, fixture committate manualmente |
+| **Comune IDEALE** | 12/12 | manifest CSV | Riferimento canonico: struttura CSV perfettamente allineata agli schemi del paniere |
+| **Bologna** | 9/12 | live API | Portale Opendatasoft con API aggregations |
+| **Lecce** | 11/12 | snapshot statico | Comune in passato virtuoso, ora portale con limiti tecnici (HTTP, geo-fencing) |
 
-**Demo è il modello di riferimento** che ogni Comune può copiare per replicare il cruscotto.
+**Il Comune IDEALE è il modello di riferimento** che ogni Comune deve seguire alla lettera per allineare struttura CSV e nomi colonna agli schemi canonici. Replicando la sua impostazione, un Comune nuovo arriva senza fatica al 12/12.
 
 ---
 
@@ -56,7 +56,7 @@ cd comune-metrics
 
 ### Passo 2 — Crea la cartella del tuo Comune
 
-Copia la cartella `demo` come modello:
+Copia la cartella `demo` (il **Comune IDEALE**, modello di riferimento) come base di partenza:
 ```bash
 cp -r data/comuni/demo data/comuni/<chiave-comune>
 ```
@@ -140,7 +140,7 @@ anno,missione,programma,importo_euro
 2024,"Istruzione e diritto allo studio","Istruzione prescolastica",8900000.00
 ```
 
-I CSV del Comune Demo sono il riferimento pratico: vedi [`data/comuni/demo/`](data/comuni/demo/).
+I CSV del **Comune IDEALE** sono il riferimento canonico: vedi [`data/comuni/demo/`](data/comuni/demo/) (la cartella si chiama ancora "demo" per ragioni storiche, ma rappresenta il Comune Ideale).
 
 ### Passo 5 — Valida i CSV in locale
 
