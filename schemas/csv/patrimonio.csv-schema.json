@@ -1,87 +1,23 @@
 {
-  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
-  "dataset": "patrimonio",
-  "title": "Patrimonio immobiliare",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://piersoft.github.io/comune-metrics/schemas/csv/patrimonio.csv-schema.json",
+  "title": "Paniere CSV — patrimonio.csv",
   "description": "Una riga per immobile di proprietà comunale.",
-  "version": "1.0",
-  "encoding": "UTF-8",
-  "delimiter_allowed": [",", ";"],
-  "decimal_separator": ".",
-  "required_columns": [
-    {
-      "name": "denominazione",
-      "datatype": "string",
-      "max_length": 500,
-      "description": "Nome o denominazione dell'immobile"
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["denominazione"],
+    "properties": {
+      "denominazione": { "type": "string", "minLength": 1, "maxLength": 500 },
+      "tipo": { "type": ["string", "null"], "maxLength": 200, "description": "Es. 'Scuola', 'Ufficio', 'Magazzino', 'Cimitero'" },
+      "indirizzo": { "type": ["string", "null"], "maxLength": 500 },
+      "lat": { "type": ["number", "null"], "minimum": 35, "maximum": 48 },
+      "lon": { "type": ["number", "null"], "minimum": 6, "maximum": 19 },
+      "valore_euro": { "type": ["number", "null"], "minimum": 0 },
+      "vincolo_culturale": { "type": ["boolean", "null"] },
+      "uso": { "type": ["string", "null"], "maxLength": 200, "description": "Es. 'Strumentale', 'Disponibile', 'Storico-artistico'" }
     }
-  ],
-  "optional_columns": [
-    {
-      "name": "tipo",
-      "datatype": "string",
-      "max_length": 200,
-      "description": "Tipologia (es. 'Edificio scolastico', 'Ufficio amministrativo', 'Magazzino', 'Bene storico-artistico')"
-    },
-    {
-      "name": "indirizzo",
-      "datatype": "string",
-      "max_length": 500,
-      "description": "Indirizzo dell'immobile"
-    },
-    {
-      "name": "lat",
-      "datatype": "number",
-      "constraints": { "min": -90, "max": 90 }
-    },
-    {
-      "name": "lon",
-      "datatype": "number",
-      "constraints": { "min": -180, "max": 180 }
-    },
-    {
-      "name": "valore_euro",
-      "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Valore catastale o di iscrizione a bilancio in euro"
-    },
-    {
-      "name": "destinazione_uso",
-      "datatype": "string",
-      "max_length": 300,
-      "description": "Destinazione d'uso attuale"
-    },
-    {
-      "name": "vincolo_culturale",
-      "datatype": "string",
-      "enum": ["Sì", "No"],
-      "description": "Presenza vincolo ai sensi del Codice dei Beni Culturali (DLgs 42/2004)"
-    },
-    {
-      "name": "stato_giuridico",
-      "datatype": "string",
-      "max_length": 200,
-      "description": "Stato giuridico (es. 'Disponibile', 'Indisponibile', 'Demaniale')"
-    },
-    {
-      "name": "superficie_mq",
-      "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Superficie in metri quadri"
-    },
-    {
-      "name": "foglio_catastale",
-      "datatype": "string",
-      "max_length": 50
-    },
-    {
-      "name": "particella",
-      "datatype": "string",
-      "max_length": 50
-    }
-  ],
-  "example": "denominazione,tipo,indirizzo,lat,lon,destinazione_uso,vincolo_culturale\n\"Palazzo Carafa - Sede municipale\",\"Edificio amministrativo\",\"Piazza Sant'Oronzo\",40.3528,18.1718,\"Uffici comunali\",\"Sì\"\n\"Scuola Primaria Edmondo De Amicis\",\"Edificio scolastico\",\"Via Achille Daniele\",40.3645,18.1867,\"Scuola primaria\",\"No\"\n",
-  "notes": [
-    "Solo 'denominazione' è obbligatoria. Più dati fornisci (tipo, geo, valore), più ricca la dashboard.",
-    "Per i Comuni con elenco beni catastali (NAC), il file può avere centinaia di righe — ottimo."
-  ]
+  }
 }

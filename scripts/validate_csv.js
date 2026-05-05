@@ -1,32 +1,5 @@
 // =============================================================================
-// validate_csv.js — validatore CSV contro schema canonico del Paniere
-// =============================================================================
-//
-// Uso (CLI):
-//   node scripts/validate_csv.js <dataset> <path/to/file.csv>
-//   esempio: node scripts/validate_csv.js popolazione data/comuni/lecce/popolazione.csv
-//
-// Uso (API):
-//   import { validateCsv } from './validate_csv.js';
-//   const result = validateCsv(csvText, schemaObject);
-//   // → { ok: true } oppure { ok: false, errors: [...] }
-//
-// Lo schema è un oggetto come schemas/csv/<dataset>.csv-schema.json:
-//   {
-//     dataset, version,
-//     delimiter_allowed: [",", ";"],
-//     decimal_separator: ".",
-//     required_columns: [{name, datatype, constraints, ...}],
-//     optional_columns: [...]
-//   }
-//
-// Errori di validazione (stop alla prima per chiarezza):
-//   - encoding non UTF-8
-//   - delimitatore non riconosciuto
-//   - colonna obbligatoria mancante
-//   - colonna sconosciuta (non in required + optional)
-//   - tipo dato sbagliato in una cella (max 5 errori segnalati)
-//   - constraint violato (es. anno fuori range, lat fuori -90/90)
+// validate_csv.js — validatore CSV contro JSON Schema (Draft 2020-12)
 // =============================================================================
 
 import { readFileSync } from 'node:fs';
@@ -35,12 +8,10 @@ import { dirname, resolve } from 'node:path';
 
 const SCHEMA_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'schemas', 'csv');
 
-// ----- CSV parser minimale (gestisce campi quotati con virgole/escape "") -----
-function detectDelimiter(text, allowed) {
+function detectDelimiter(text) {
   const firstLine = text.split('\n', 1)[0];
-  const candidates = allowed || [',', ';', '\t'];
-  let best = candidates[0];
-  let bestCount = -1;
+  const candidates = [',', ';', '\t'];
+  let best = ',', bestCount = -1;
   for (const c of candidates) {
     const n = (firstLine.match(new RegExp(escapeReg(c), 'g')) || []).length;
     if (n > bestCount) { bestCount = n; best = c; }
@@ -49,196 +20,150 @@ function detectDelimiter(text, allowed) {
 }
 function escapeReg(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
-function parseCSVRow(line, delimiter) {
-  const out = [];
-  let cur = '';
-  let inQ = false;
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (inQ) {
+function parseCsvText(text, delim) {
+  const rows = [];
+  let row = [], field = '', inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQuotes) {
       if (c === '"') {
-        if (line[i + 1] === '"') { cur += '"'; i++; }
-        else inQ = false;
-      } else cur += c;
+        if (text[i + 1] === '"') { field += '"'; i++; }
+        else { inQuotes = false; }
+      } else { field += c; }
     } else {
-      if (c === '"') inQ = true;
-      else if (c === delimiter) { out.push(cur); cur = ''; }
-      else cur += c;
+      if (c === '"') inQuotes = true;
+      else if (c === delim) { row.push(field); field = ''; }
+      else if (c === '\n' || c === '\r') {
+        if (c === '\r' && text[i + 1] === '\n') i++;
+        row.push(field); field = '';
+        if (row.length > 1 || row[0] !== '') rows.push(row);
+        row = [];
+      } else field += c;
     }
   }
-  out.push(cur);
-  return out;
+  if (field !== '' || row.length > 0) { row.push(field); rows.push(row); }
+  return rows;
 }
 
-function parseCSV(text, delimiter) {
-  // Rimuovi BOM
-  if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
-  // Normalizza line endings
-  text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-  const lines = text.split('\n');
-  // Filtra righe vuote in coda ma non in mezzo (potrebbero essere significative)
-  while (lines.length && lines[lines.length - 1].trim() === '') lines.pop();
-  if (lines.length === 0) return { headers: [], rows: [] };
-  const headers = parseCSVRow(lines[0], delimiter).map(h => h.trim());
-  const rows = lines.slice(1).map(l => parseCSVRow(l, delimiter));
-  return { headers, rows };
+function coerceValue(rawStr, propSchema) {
+  if (rawStr === '' || rawStr === undefined || rawStr === null) return null;
+  const types = Array.isArray(propSchema.type) ? propSchema.type : [propSchema.type];
+  if (types.includes('integer')) {
+    const n = parseInt(rawStr, 10);
+    if (Number.isFinite(n) && String(n) === rawStr.trim()) return n;
+  }
+  if (types.includes('number')) {
+    const cleaned = rawStr.replace(',', '.');
+    const n = parseFloat(cleaned);
+    if (Number.isFinite(n)) return n;
+  }
+  if (types.includes('boolean')) {
+    const s = rawStr.toLowerCase();
+    if (s === 'true' || s === '1' || s === 'sì' || s === 'si') return true;
+    if (s === 'false' || s === '0' || s === 'no') return false;
+  }
+  if (types.includes('string')) return rawStr;
+  return rawStr;
 }
 
-// ----- Type checkers --------------------------------------------------------
-function checkInteger(val) {
-  if (val === '' || val == null) return null;
-  const s = String(val).trim();
-  if (!/^-?\d+$/.test(s)) return `non è un intero: '${s}'`;
-  return null;
-}
-function checkNumber(val) {
-  if (val === '' || val == null) return null;
-  const s = String(val).trim();
-  // Solo punto come separatore decimale (vincolo di schema)
-  if (!/^-?\d+(\.\d+)?$/.test(s)) {
-    if (/,/.test(s)) return `numero con virgola decimale (usa il punto): '${s}'`;
-    return `non è un numero: '${s}'`;
+function validateValue(value, schema, fieldName, rowIdx) {
+  const errors = [];
+  const types = Array.isArray(schema.type) ? schema.type : [schema.type];
+  if (value === null) {
+    if (!types.includes('null')) {
+      errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' è vuoto ma non ammesso null`);
+    }
+    return errors;
   }
-  return null;
-}
-function checkDate(val) {
-  if (val === '' || val == null) return null;
-  const s = String(val).trim();
-  if (!/^\d{4}-\d{2}-\d{2}/.test(s)) return `data non in formato YYYY-MM-DD: '${s}'`;
-  const d = new Date(s);
-  if (isNaN(d.getTime())) return `data non valida: '${s}'`;
-  return null;
-}
-function checkString(val, col) {
-  if (val == null) return null;
-  const s = String(val);
-  if (col.max_length && s.length > col.max_length) {
-    return `stringa troppo lunga (${s.length} > ${col.max_length}): '${s.slice(0, 30)}...'`;
+  const actualType = typeof value === 'number' ?
+    (Number.isInteger(value) ? 'integer' : 'number') :
+    typeof value;
+  const typeOk = types.includes(actualType) ||
+    (actualType === 'integer' && types.includes('number'));
+  if (!typeOk) {
+    errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' = '${value}' (atteso ${types.filter(t => t !== 'null').join('/')}, trovato ${actualType})`);
+    return errors;
   }
-  if (col.enum && s !== '' && !col.enum.includes(s)) {
-    return `valore non ammesso per enum ${JSON.stringify(col.enum)}: '${s}'`;
+  if ((actualType === 'integer' || actualType === 'number') && typeof value === 'number') {
+    if (schema.minimum !== undefined && value < schema.minimum)
+      errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' = ${value} < minimum ${schema.minimum}`);
+    if (schema.maximum !== undefined && value > schema.maximum)
+      errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' = ${value} > maximum ${schema.maximum}`);
   }
-  if (col.pattern && s !== '' && !new RegExp(col.pattern).test(s)) {
-    return `pattern non rispettato (${col.pattern}): '${s}'`;
+  if (actualType === 'string') {
+    if (schema.minLength !== undefined && value.length < schema.minLength)
+      errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' troppo corto (< ${schema.minLength})`);
+    if (schema.maxLength !== undefined && value.length > schema.maxLength)
+      errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' troppo lungo (> ${schema.maxLength})`);
+    if (schema.enum && !schema.enum.includes(value))
+      errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' = '${value}' non in enum`);
+    if (schema.pattern) {
+      const re = new RegExp(schema.pattern);
+      if (!re.test(value))
+        errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' non matcha pattern`);
+    }
+    if (schema.format === 'date') {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(value))
+        errors.push(`riga ${rowIdx + 2}: campo '${fieldName}' = '${value}' non è una data YYYY-MM-DD`);
+    }
   }
-  return null;
-}
-function checkConstraints(val, col) {
-  if (!col.constraints || val === '' || val == null) return null;
-  const n = parseFloat(val);
-  if (col.constraints.min != null && n < col.constraints.min) {
-    return `valore ${n} sotto il minimo ${col.constraints.min}`;
-  }
-  if (col.constraints.max != null && n > col.constraints.max) {
-    return `valore ${n} sopra il massimo ${col.constraints.max}`;
-  }
-  return null;
+  return errors;
 }
 
-function checkValue(val, col) {
-  let err = null;
-  switch (col.datatype) {
-    case 'integer': err = checkInteger(val); break;
-    case 'number':  err = checkNumber(val); break;
-    case 'date':    err = checkDate(val); break;
-    case 'string':
-    default:        err = checkString(val, col); break;
-  }
-  if (err) return err;
-  if (['integer', 'number'].includes(col.datatype)) {
-    err = checkConstraints(val, col);
-    if (err) return err;
-  }
-  return null;
-}
-
-// ----- Validator principale -------------------------------------------------
 export function validateCsv(csvText, schema) {
   const errors = [];
-
-  if (!csvText || csvText.length === 0) {
-    return { ok: false, errors: ['CSV vuoto'] };
+  if (!csvText || csvText.trim() === '') {
+    return { ok: false, errors: ['CSV vuoto'], n_rows: 0, headers: [] };
   }
+  const items = schema.items || {};
+  const props = items.properties || {};
+  const required = items.required || [];
+  const additionalProps = items.additionalProperties !== false;
+  const knownCols = Object.keys(props);
 
-  // 1. Detect delimiter
-  const allowed = schema.delimiter_allowed || [',', ';'];
-  const delimiter = detectDelimiter(csvText, allowed);
+  const delim = detectDelimiter(csvText);
+  const rows = parseCsvText(csvText, delim);
+  if (rows.length < 1) return { ok: false, errors: ['CSV senza header'], n_rows: 0, headers: [] };
+  const headers = rows[0].map(h => h.trim());
 
-  // 2. Parse
-  let parsed;
-  try {
-    parsed = parseCSV(csvText, delimiter);
-  } catch (e) {
-    return { ok: false, errors: [`Errore parsing CSV: ${e.message}`] };
-  }
-  const { headers, rows } = parsed;
-
-  if (headers.length === 0) {
-    return { ok: false, errors: ['CSV senza header'] };
-  }
-
-  // 3. Verifica colonne obbligatorie
-  const required = schema.required_columns || [];
-  const optional = schema.optional_columns || [];
-  const knownCols = new Map();
-  for (const c of [...required, ...optional]) knownCols.set(c.name, c);
-
-  const headerSet = new Set(headers);
   for (const req of required) {
-    if (!headerSet.has(req.name)) {
-      errors.push(`Colonna obbligatoria mancante: '${req.name}' (${req.description || req.datatype})`);
+    if (!headers.includes(req)) errors.push(`Colonna obbligatoria mancante: '${req}'`);
+  }
+  if (!additionalProps) {
+    for (const h of headers) {
+      if (!knownCols.includes(h)) {
+        errors.push(`Colonna sconosciuta: '${h}' (ammesse: ${knownCols.join(', ')})`);
+      }
     }
   }
+  if (errors.length > 0) return { ok: false, errors, n_rows: rows.length - 1, headers };
 
-  // 4. Verifica colonne sconosciute (non in required + optional)
-  for (const h of headers) {
-    if (!knownCols.has(h)) {
-      errors.push(`Colonna sconosciuta: '${h}' (non prevista dallo schema; le colonne ammesse sono: ${[...knownCols.keys()].join(', ')})`);
-    }
-  }
-
-  // Stop se ci sono errori strutturali
-  if (errors.length > 0) {
-    return { ok: false, errors, n_rows: rows.length, n_cols: headers.length };
-  }
-
-  // 5. Validazione cella per cella (max 20 errori segnalati)
   const MAX_CELL_ERRORS = 20;
-  let cellErrorCount = 0;
-  for (let r = 0; r < rows.length && cellErrorCount < MAX_CELL_ERRORS; r++) {
-    const row = rows[r];
-    if (row.length === 1 && row[0].trim() === '') continue; // riga vuota
-    for (let c = 0; c < headers.length && cellErrorCount < MAX_CELL_ERRORS; c++) {
-      const colName = headers[c];
-      const colSchema = knownCols.get(colName);
-      if (!colSchema) continue;
-      const val = row[c] != null ? row[c].trim() : '';
-      // Required column must have value (we already checked column EXISTS)
-      const isRequired = required.some(rc => rc.name === colName);
-      if (isRequired && val === '') {
-        errors.push(`Riga ${r + 2}: campo obbligatorio '${colName}' vuoto`);
-        cellErrorCount++;
+  const dataRows = rows.slice(1);
+  outer: for (let r = 0; r < dataRows.length; r++) {
+    const row = dataRows[r];
+    if (row.length === 1 && row[0].trim() === '') continue;
+    for (let c = 0; c < headers.length; c++) {
+      const fieldName = headers[c];
+      const propSchema = props[fieldName];
+      if (!propSchema) continue;
+      const rawStr = (row[c] !== undefined ? row[c] : '').trim();
+      if (rawStr === '' && !required.includes(fieldName)) continue;
+      if (rawStr === '' && required.includes(fieldName)) {
+        errors.push(`riga ${r + 2}: campo obbligatorio '${fieldName}' è vuoto`);
+        if (errors.length >= MAX_CELL_ERRORS) break outer;
         continue;
       }
-      const err = checkValue(val, colSchema);
-      if (err) {
-        errors.push(`Riga ${r + 2}, colonna '${colName}': ${err}`);
-        cellErrorCount++;
+      const value = coerceValue(rawStr, propSchema);
+      const cellErrors = validateValue(value, propSchema, fieldName, r);
+      for (const e of cellErrors) {
+        errors.push(e);
+        if (errors.length >= MAX_CELL_ERRORS) break outer;
       }
     }
   }
-  if (cellErrorCount >= MAX_CELL_ERRORS) {
-    errors.push(`... (troncato: oltre ${MAX_CELL_ERRORS} errori di cella, mostrati solo i primi)`);
-  }
 
-  return {
-    ok: errors.length === 0,
-    errors,
-    n_rows: rows.length,
-    n_cols: headers.length,
-    delimiter,
-    headers,
-  };
+  return { ok: errors.length === 0, errors, n_rows: dataRows.length, headers };
 }
 
 export function loadSchema(datasetName) {
@@ -246,35 +171,23 @@ export function loadSchema(datasetName) {
   return JSON.parse(readFileSync(path, 'utf8'));
 }
 
-// ----- CLI -----------------------------------------------------------------
-const isMain = import.meta.url === `file://${process.argv[1]}`;
-if (isMain) {
+if (process.argv[1] && process.argv[1].endsWith('validate_csv.js')) {
   const [datasetName, csvPath] = process.argv.slice(2);
   if (!datasetName || !csvPath) {
-    console.error('Uso: node scripts/validate_csv.js <dataset> <path/to/file.csv>');
-    console.error('   es: node scripts/validate_csv.js popolazione data/comuni/lecce/popolazione.csv');
-    process.exit(2);
+    console.error('Uso: node scripts/validate_csv.js <dataset> <csv-path>');
+    process.exit(1);
   }
   let schema;
   try { schema = loadSchema(datasetName); }
-  catch (e) {
-    console.error(`✗ Schema non trovato per '${datasetName}': ${e.message}`);
-    process.exit(2);
-  }
-  let csv;
-  try { csv = readFileSync(csvPath, 'utf8'); }
-  catch (e) {
-    console.error(`✗ File non trovato: ${csvPath}`);
-    process.exit(2);
-  }
-  const r = validateCsv(csv, schema);
-  if (r.ok) {
-    console.log(`✓ CSV valido (${r.n_rows} righe, ${r.n_cols} colonne, delimiter='${r.delimiter}')`);
-    console.log(`  Headers: ${r.headers.join(', ')}`);
+  catch (e) { console.error(`Schema non trovato per '${datasetName}'`); process.exit(1); }
+  const csvText = readFileSync(csvPath, 'utf8');
+  const result = validateCsv(csvText, schema);
+  if (result.ok) {
+    console.log(`✓ OK ${csvPath} — ${result.n_rows} righe, ${result.headers.length} colonne`);
     process.exit(0);
   } else {
-    console.error(`✗ CSV non valido (${r.errors.length} errori):`);
-    for (const e of r.errors) console.error(`  - ${e}`);
-    process.exit(1);
+    console.log(`✗ INVALID ${csvPath} — ${result.errors.length} errori:`);
+    for (const e of result.errors.slice(0, 30)) console.log(`  - ${e}`);
+    process.exit(2);
   }
 }
