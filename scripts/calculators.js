@@ -106,7 +106,9 @@ function extractLatLon(row, fieldMap) {
     const lon = num(row[lonCol]);
     if (lat !== null && lon !== null) return { lat, lon };
   }
-  const pinCol = fieldMap.pin_point || fieldMap.coordinate;
+  // Opendatasoft espone le coordinate come singolo campo geo_point: {lat, lon}
+  // (es. Bologna ODS dataset progetto-dae). Cerchiamo geo_point/geo_point_2d/pin_point/coordinate
+  const pinCol = fieldMap.geo_point || fieldMap.pin_point || fieldMap.coordinate;
   if (pinCol && row[pinCol]) {
     const v = row[pinCol];
     if (typeof v === 'object' && v !== null) {
@@ -566,7 +568,19 @@ export function calc_defibrillatori(rows, fieldMap) {
       const v = r[h24Col];
       if (!v) return false;
       const s = String(v).toLowerCase().trim();
-      return s === 'si' || s === 'sì' || s === 'true' || s === '1' || s.includes('h24') || s.includes('24/24');
+      // Caso 1: flag esplicito (Comune Ideale, Lecce nelle colonne dedicate)
+      if (s === 'si' || s === 'sì' || s === 'true' || s === '1' ||
+          s.includes('h24') || s.includes('24/24') || s.includes('24 ore')) {
+        return true;
+      }
+      // Caso 2: stringa orari Bologna ODS (es. "{'LUNEDI':'00:00-23:59',...}")
+      // Se TUTTI i giorni della settimana hanno orario completo 00:00-23:59
+      if (s.includes('00:00-23:59') || s.includes('00.00-23.59')) {
+        // Conta i giorni con range 24h
+        const matches = s.match(/00:00-23:59|00\.00-23\.59/g);
+        if (matches && matches.length >= 7) return true;
+      }
+      return false;
     }).length;
   }
 

@@ -73,7 +73,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      "fetched_at": "2026-05-05T18:18:24.319Z",
+      "fetched_at": "2026-05-05T18:15:11.195Z",
       "status": "ok",
       "modified": "2024-12-31T09:12:53+00:00",
       "freshness": {
@@ -271,7 +271,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "bilancio-di-previsione-previsione-uscite",
-      "fetched_at": "2026-05-05T18:18:45.863Z",
+      "fetched_at": "2026-05-05T18:15:16.872Z",
       "status": "ok",
       "modified": "2025-12-31T12:00:00+00:00",
       "freshness": {
@@ -432,7 +432,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "lavori-in-corso-in-citta",
-      "fetched_at": "2026-05-05T18:18:49.130Z",
+      "fetched_at": "2026-05-05T18:15:19.420Z",
       "status": "ok",
       "modified": "2026-03-21T06:00:03.144000+00:00",
       "freshness": {
@@ -734,7 +734,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "cila-comunicazioni-inizio-lavori",
-      "fetched_at": "2026-05-05T18:18:50.315Z",
+      "fetched_at": "2026-05-05T18:15:21.270Z",
       "status": "ok",
       "modified": "2025-12-31T09:03:43+00:00",
       "freshness": {
@@ -1005,7 +1005,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "welfare-interventi",
-      "fetched_at": "2026-05-05T18:18:58.249Z",
+      "fetched_at": "2026-05-05T18:15:38.543Z",
       "status": "ok",
       "modified": "2025-05-08T12:47:30.798000+00:00",
       "freshness": {
@@ -1106,7 +1106,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      "fetched_at": "2026-05-05T18:18:59.338Z",
+      "fetched_at": "2026-05-05T18:15:39.882Z",
       "status": "ok",
       "modified": "2025-09-24T14:54:00+00:00",
       "freshness": {
@@ -1352,7 +1352,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "incidenti-stradali2",
-      "fetched_at": "2026-05-05T18:19:02.399Z",
+      "fetched_at": "2026-05-05T18:15:41.862Z",
       "status": "ok",
       "modified": "2024-12-31T11:04:38+00:00",
       "freshness": {
@@ -2195,7 +2195,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "indicatori-raccolta-differenziata",
-      "fetched_at": "2026-05-05T18:19:04.255Z",
+      "fetched_at": "2026-05-05T18:15:44.160Z",
       "status": "ok",
       "modified": "2025-04-07T08:28:00+00:00",
       "freshness": {
@@ -2367,7 +2367,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-bologna-agenda-cultura",
-      "fetched_at": "2026-05-05T18:19:05.488Z",
+      "fetched_at": "2026-05-05T18:15:45.249Z",
       "status": "ok",
       "modified": "2026-03-21T02:15:09.258000+00:00",
       "freshness": {
@@ -4012,15 +4012,15 @@
     "defibrillatori": {
       "dataset_key": "defibrillatori",
       "slug": "registro-regionale-unico-dei-defibrillatori-dae",
-      "fetched_at": "2026-05-05T18:19:11.574Z",
+      "fetched_at": "2026-05-05T18:15:54.463Z",
       "status": "ok",
       "modified": "2026-03-20T07:14:36.357000+00:00",
       "freshness": {
         "level": "fresh",
-        "months": 2,
-        "iso": "2026-03-20T07:14:36.357000+00:00"
+        "months": 0,
+        "iso": "2026-04-29"
       },
-      "n_rows": 5060,
+      "n_rows": 222,
       "fields_expected": [
         "nome",
         "lat",
@@ -4032,6 +4032,7 @@
       ],
       "fields_present": [
         "nome",
+        "geo_point",
         "indirizzo",
         "comune",
         "accessibile_h24",
@@ -4045,7 +4046,1118 @@
         "totale": 222,
         "h24_count": 0,
         "h24_pct": 0,
-        "dae_geo": null,
+        "dae_geo": [
+          {
+            "lat": 44.51435,
+            "lon": 11.329198,
+            "nome": "CENTRO COMMERCIALE IPERCOOP CENTROLAME"
+          },
+          {
+            "lat": 44.50043,
+            "lon": 11.324104,
+            "nome": "C.diF. IRC - Montanari"
+          },
+          {
+            "lat": 44.495293,
+            "lon": 11.3484125,
+            "nome": "UFFICI CITTA' METROPOLITANA DI BOLOGNA"
+          },
+          {
+            "lat": 44.496616,
+            "lon": 11.334984,
+            "nome": "UFFICI CITTA' METROPOLITANA BOLOGNA"
+          },
+          {
+            "lat": 44.49652,
+            "lon": 11.3423,
+            "nome": "ORATORIO SAN FILIPPO NERI"
+          },
+          {
+            "lat": 44.4999,
+            "lon": 11.338231,
+            "nome": "AGREA BOLOGNA"
+          },
+          {
+            "lat": 44.4896,
+            "lon": 11.397592,
+            "nome": "LEGA PALLAVOLO SERIE A"
+          },
+          {
+            "lat": 44.513382,
+            "lon": 11.361775,
+            "nome": "C.I.C.L.A.T. SOC. COOP."
+          },
+          {
+            "lat": 44.50203,
+            "lon": 11.353882,
+            "nome": "HERA SPA"
+          },
+          {
+            "lat": 44.50242,
+            "lon": 11.342305,
+            "nome": "ROYAL CARLTON"
+          },
+          {
+            "lat": 44.49692,
+            "lon": 11.339039,
+            "nome": "LICEO MINGHETTI"
+          },
+          {
+            "lat": 44.49477,
+            "lon": 11.34304,
+            "nome": "PAD VIARIZZOLI"
+          },
+          {
+            "lat": 44.535515,
+            "lon": 11.366944,
+            "nome": "SEDE CENTRALE VIGILI DEL FUOCO"
+          },
+          {
+            "lat": 44.51827,
+            "lon": 11.349097,
+            "nome": "ALSTOM FERROVIARIA SPA"
+          },
+          {
+            "lat": 44.511585,
+            "lon": 11.321798,
+            "nome": "TRENITALIA-OMC COMPONENTI BOLOGNA"
+          },
+          {
+            "lat": 44.4960983,
+            "lon": 11.3543216,
+            "nome": "UNIVERSITA' DI BOLOGNA - MUSEO BIOLOGIA"
+          },
+          {
+            "lat": 44.514145,
+            "lon": 11.320499,
+            "nome": "UNIVERSITA' DI BOLOGNA - EX LAZZARETTO"
+          },
+          {
+            "lat": 44.487297,
+            "lon": 11.328171,
+            "nome": "UNIVERSITA' DI BOLOGNA - CHIMICA INDUSTRIALE"
+          },
+          {
+            "lat": 44.497974,
+            "lon": 11.355921,
+            "nome": "UNIVERSITA' DI BOLOGNA"
+          },
+          {
+            "lat": 44.496716,
+            "lon": 11.351693,
+            "nome": "UNIVERSITA' DI BOLOGNA"
+          },
+          {
+            "lat": 44.490658,
+            "lon": 11.348201,
+            "nome": "UNIVERSITA' DI BOLOGNA - SAN GIOVANNI IN MONTE"
+          },
+          {
+            "lat": 44.504955,
+            "lon": 11.304427,
+            "nome": "CONDOMINIO VIA GINO CERVI 21"
+          },
+          {
+            "lat": 44.50477,
+            "lon": 11.3049965,
+            "nome": "CONDOMINIO VIA GINO CERVI 27"
+          },
+          {
+            "lat": 44.50445,
+            "lon": 11.335407,
+            "nome": "VII REPARTO MOBILE"
+          },
+          {
+            "lat": 44.49562,
+            "lon": 11.334688,
+            "nome": "COMMISSARIATO DUE TORRI SAN FRANCESCO"
+          },
+          {
+            "lat": 44.5054,
+            "lon": 11.416201,
+            "nome": "ICA SPA UNITA' OPERATIVA ROVERI 1"
+          },
+          {
+            "lat": 44.50475,
+            "lon": 11.414205,
+            "nome": "ICA SPA UNITA' OPERATIVA ROVERI 5"
+          },
+          {
+            "lat": 44.516506,
+            "lon": 11.351822,
+            "nome": "SCUOLA ELEMENTARE CASARALTA"
+          },
+          {
+            "lat": 44.50314,
+            "lon": 11.3361845,
+            "nome": "LICEO GALVANI SUCCURSALE"
+          },
+          {
+            "lat": 44.50232,
+            "lon": 11.349172,
+            "nome": "ISTITUTO COMPRENSIVO N.6"
+          },
+          {
+            "lat": 44.50409,
+            "lon": 11.309078,
+            "nome": "VANTI SPORT SRL"
+          },
+          {
+            "lat": 44.517284,
+            "lon": 11.361068,
+            "nome": "COTABO COOPERATIVA TASSISTI BOLOGNESI"
+          },
+          {
+            "lat": 44.5103,
+            "lon": 11.355467,
+            "nome": "SUPERMERCATO EUROSPAR"
+          },
+          {
+            "lat": 44.50154,
+            "lon": 11.3588705,
+            "nome": "UNIVERSITA' DI BOLOGNA - AULE RANZANI"
+          },
+          {
+            "lat": 44.49621,
+            "lon": 11.353973,
+            "nome": "UNIVERSITA' DI BOLOGNA - CHIMICA CIAMICIAN"
+          },
+          {
+            "lat": 44.505196,
+            "lon": 11.337684,
+            "nome": "POLFER"
+          },
+          {
+            "lat": 44.5227,
+            "lon": 11.319668,
+            "nome": "FARMACIA SAN MARTINO"
+          },
+          {
+            "lat": 44.528427,
+            "lon": 11.366123,
+            "nome": "FARMACIA PARCO NORD"
+          },
+          {
+            "lat": 44.50112,
+            "lon": 11.340251,
+            "nome": "CGIL EMILIA ROMAGNA"
+          },
+          {
+            "lat": 44.501366,
+            "lon": 11.328486,
+            "nome": "KPMG"
+          },
+          {
+            "lat": 44.52341,
+            "lon": 11.349124,
+            "nome": "PARCHEGGIO DISTRIBUTORE ESSO"
+          },
+          {
+            "lat": 44.529835,
+            "lon": 11.288291,
+            "nome": "TERZO REPARTO VOLO"
+          },
+          {
+            "lat": 44.4987,
+            "lon": 11.343566,
+            "nome": "ZARA BOLOGNA"
+          },
+          {
+            "lat": 44.49372,
+            "lon": 11.288753,
+            "nome": "SUPERMERCATO EUROSPAR"
+          },
+          {
+            "lat": 44.4439,
+            "lon": 11.303301,
+            "nome": "PARCO AVVENTURA CAVAIONI"
+          },
+          {
+            "lat": 44.48618,
+            "lon": 11.348142,
+            "nome": "ISTITUTO DEI CIECHI FRANCESCO CAVAZZA"
+          },
+          {
+            "lat": 44.49885,
+            "lon": 11.336754,
+            "nome": "FONDAZIONE CINETECA DI BOLOGNA"
+          },
+          {
+            "lat": 44.489742,
+            "lon": 11.350824,
+            "nome": "STUDIO NOTARILE ASSOCIATO VICO ROSSI CHIUSOLI TINTI (NOTAI VRCT)"
+          },
+          {
+            "lat": 44.49525,
+            "lon": 11.299984,
+            "nome": "incontri chiosco"
+          },
+          {
+            "lat": 44.490894,
+            "lon": 11.3436,
+            "nome": "BANCA D'ITALIA SEDE DI BOLOGNA"
+          },
+          {
+            "lat": 44.467136,
+            "lon": 11.380321,
+            "nome": "ISTITUTO FARLOTTINE"
+          },
+          {
+            "lat": 44.503284,
+            "lon": 11.367829,
+            "nome": "BIANALISI CENTRO MEDICO SAN DONATO"
+          },
+          {
+            "lat": 44.5059909,
+            "lon": 11.3147474,
+            "nome": "Ospedale Maggiore Bologna"
+          },
+          {
+            "lat": 44.503029,
+            "lon": 11.2559368,
+            "nome": "Villa Bernaroli"
+          },
+          {
+            "lat": 44.497269,
+            "lon": 11.343215,
+            "nome": "OYSHO"
+          },
+          {
+            "lat": 44.5354026,
+            "lon": 11.2711946,
+            "nome": "RIJK ZWAAN ITALIA SRL"
+          },
+          {
+            "lat": 44.5016416,
+            "lon": 11.3428247,
+            "nome": "INPS SEDE PROVINCIALE BOLOGNA"
+          },
+          {
+            "lat": 44.5024829,
+            "lon": 11.3438669,
+            "nome": "INPS CENTRO MEDICO LEGALE"
+          },
+          {
+            "lat": 44.53541936076936,
+            "lon": 11.276525664143264,
+            "nome": "TAG BOLOGNA SRL"
+          },
+          {
+            "lat": 44.52158744009334,
+            "lon": 11.312213823142997,
+            "nome": "Caserma Varanini"
+          },
+          {
+            "lat": 44.487850742486245,
+            "lon": 11.329102325253192,
+            "nome": "UNIVERSITA' DI BOLOGNA - INGEGNERIA - EDIFICIO PORTINERIA CENTRALE TERZO PIANO"
+          },
+          {
+            "lat": 44.437517,
+            "lon": 11.333418,
+            "nome": "PAD Via Torriane"
+          },
+          {
+            "lat": 44.4974346,
+            "lon": 11.3213186,
+            "nome": "ISTITUTO MAESTRE PIE DELL'ADDOLORATA"
+          },
+          {
+            "lat": 44.4930477,
+            "lon": 11.3061379,
+            "nome": "OPIFISIO MEDICA"
+          },
+          {
+            "lat": 44.4952244,
+            "lon": 11.3001693,
+            "nome": "CHIOSCO IN CONTRI"
+          },
+          {
+            "lat": 44.492209,
+            "lon": 11.3096019,
+            "nome": "Stadio Renato Dall'Ara"
+          },
+          {
+            "lat": 44.4928361,
+            "lon": 11.2653916,
+            "nome": "Bologna FC 1909 spa"
+          },
+          {
+            "lat": 44.493333,
+            "lon": 11.382937,
+            "nome": "FARMACIA SANTA RITA BOLOGNA"
+          },
+          {
+            "lat": 44.49955,
+            "lon": 11.351481,
+            "nome": "ZANICHELLI EDITORE SPA"
+          },
+          {
+            "lat": 44.528484,
+            "lon": 11.35407,
+            "nome": "CORAZZA SPA"
+          },
+          {
+            "lat": 44.494793,
+            "lon": 11.349245,
+            "nome": "UFFICI CITTA' METROPOLITANA DI BOLOGNA"
+          },
+          {
+            "lat": 44.490704,
+            "lon": 11.388467,
+            "nome": "ESSELUNGA BOLOGNA"
+          },
+          {
+            "lat": 44.505863,
+            "lon": 11.30605,
+            "nome": "ESSELUNGA BOLOGNA"
+          },
+          {
+            "lat": 44.490093,
+            "lon": 11.385691,
+            "nome": "ISTITUTO MANFREDI TANARI"
+          },
+          {
+            "lat": 44.528046,
+            "lon": 11.367856,
+            "nome": "BALSAMIQ SRL"
+          },
+          {
+            "lat": 44.491337,
+            "lon": 11.337386,
+            "nome": "LICEO MINGHETTI"
+          },
+          {
+            "lat": 44.507126,
+            "lon": 11.305254,
+            "nome": "CENTRO SOCIALE SANTA VIOLA"
+          },
+          {
+            "lat": 44.52209,
+            "lon": 11.338502,
+            "nome": "C.N.R. AREA DELLA RICERCA DI BOLOGNA"
+          },
+          {
+            "lat": 44.49187,
+            "lon": 11.358527,
+            "nome": "PADIGLIONE 23 PIANO TERRA"
+          },
+          {
+            "lat": 44.498047,
+            "lon": 11.417209,
+            "nome": "EDITORIALE NAZIONALE SRL - IL RESTO DEL CARLINO"
+          },
+          {
+            "lat": 44.5054,
+            "lon": 11.34343,
+            "nome": "PIAZZA MEDAGLIE D'ORO"
+          },
+          {
+            "lat": 44.548035,
+            "lon": 11.366773,
+            "nome": "CORPO DI POLIZIA LOCALE"
+          },
+          {
+            "lat": 44.51586,
+            "lon": 11.404608,
+            "nome": "SIEMENS"
+          },
+          {
+            "lat": 44.486435,
+            "lon": 11.420439,
+            "nome": "JAMPEL SRL"
+          },
+          {
+            "lat": 44.50028,
+            "lon": 11.356908,
+            "nome": "INGV ISTITUTO NAZIONALE DI GEOFISICA E VULCANOLOGIA"
+          },
+          {
+            "lat": 44.51789,
+            "lon": 11.348834,
+            "nome": "ALSTOM FERROVIARIA SPA"
+          },
+          {
+            "lat": 44.512463,
+            "lon": 11.322802,
+            "nome": "TRENITALIA-OMC COMPONENTI BOLOGNA"
+          },
+          {
+            "lat": 44.50233,
+            "lon": 11.334956,
+            "nome": "UNIVERSITA' DI BOLOGNA - DIPARTIMENTO BELLE ARTI"
+          },
+          {
+            "lat": 44.49514,
+            "lon": 11.356081,
+            "nome": "UNIVERSITA' DI BOLOGNA - AULE"
+          },
+          {
+            "lat": 44.496593,
+            "lon": 11.351801,
+            "nome": "UNIVERSITA' DI BOLOGNA"
+          },
+          {
+            "lat": 44.499756,
+            "lon": 11.355175,
+            "nome": "UNIVERSITA' DI BOLOGNA"
+          },
+          {
+            "lat": 44.497807,
+            "lon": 11.355261,
+            "nome": "UNIVERSITA' DI BOLOGNA - MUSEO CAPELLINI"
+          },
+          {
+            "lat": 44.4977,
+            "lon": 11.351854,
+            "nome": "UNIVERSITA' DI BOLOGNA - BIBLIOTECA BIGIAVI"
+          },
+          {
+            "lat": 44.496544,
+            "lon": 11.351259,
+            "nome": "UNIVERSITA' DI BOLOGNA"
+          },
+          {
+            "lat": 44.521793,
+            "lon": 11.336099,
+            "nome": "UNIVERSITA' DI BOLOGNA - NAVILE"
+          },
+          {
+            "lat": 44.488674,
+            "lon": 11.354977,
+            "nome": "UNIVERSITA' DI BOLOGNA - SANTA CRISTINA"
+          },
+          {
+            "lat": 44.495747,
+            "lon": 11.349092,
+            "nome": "UNIVERSITA' DI BOLOGNA - PALAZZO MALVEZZI"
+          },
+          {
+            "lat": 44.49355,
+            "lon": 11.340627,
+            "nome": "QUESTURA UFFICIO DI GABINETTO"
+          },
+          {
+            "lat": 44.503895,
+            "lon": 11.404112,
+            "nome": "UP URBAN CLIMBING"
+          },
+          {
+            "lat": 44.481266,
+            "lon": 11.391138,
+            "nome": "PARROCCHIA CORPUS DOMINI"
+          },
+          {
+            "lat": 44.49637,
+            "lon": 11.327143,
+            "nome": "IPAS ALDROVANDI RUBBIANI - SEDE VIA MURATORI"
+          },
+          {
+            "lat": 44.516468,
+            "lon": 11.269049,
+            "nome": "DUCATI MOTOR HOLDING SPA"
+          },
+          {
+            "lat": 44.49322,
+            "lon": 11.3167925,
+            "nome": "VIRTUS TENNIS ASD"
+          },
+          {
+            "lat": 44.4919671,
+            "lon": 11.398332,
+            "nome": "CIRCOLO TENNIS SIRO"
+          },
+          {
+            "lat": 44.505196,
+            "lon": 11.401867,
+            "nome": "VANTI QUATTRO SRL"
+          },
+          {
+            "lat": 44.496655,
+            "lon": 11.337247,
+            "nome": "ENGINEERING INGEGNERIA INFORMATICA SPA"
+          },
+          {
+            "lat": 44.5153,
+            "lon": 11.403111,
+            "nome": "COCHLEAR ITALIA SRL"
+          },
+          {
+            "lat": 44.474663,
+            "lon": 11.374138,
+            "nome": "POLO MEDICO GENTILE MONTANARI SRL"
+          },
+          {
+            "lat": 44.471424,
+            "lon": 11.3769865,
+            "nome": "SUPERMERCATO EUROSPAR"
+          },
+          {
+            "lat": 44.51414,
+            "lon": 11.421694,
+            "nome": "IZSLER ST BOLOGNA"
+          },
+          {
+            "lat": 44.50878,
+            "lon": 11.340659,
+            "nome": "CASA PRIVATA"
+          },
+          {
+            "lat": 44.496746,
+            "lon": 11.355212,
+            "nome": "UNIVERSITA' DI BOLOGNA - EX ISTITUTO DI IGIENE"
+          },
+          {
+            "lat": 44.488014,
+            "lon": 11.328699,
+            "nome": "UNIVERSITA' DI BOLOGNA - INGEGNERIA - EDIFICIO PRINCIPALE"
+          },
+          {
+            "lat": 44.487247,
+            "lon": 11.329694,
+            "nome": "UNIVERSITA' DI BOLOGNA - INGEGNERIA - PORTINERIA PRIMO PIANO EDIFICIO AULE NUOVE"
+          },
+          {
+            "lat": 44.514706,
+            "lon": 11.407027,
+            "nome": "UNIVERSITA' DI BOLOGNA - EX CAAB"
+          },
+          {
+            "lat": 44.503536,
+            "lon": 11.294256,
+            "nome": "FARMACIA DE PISIS"
+          },
+          {
+            "lat": 44.487602,
+            "lon": 11.352809,
+            "nome": "FARMACIA SANTISSIMA TRINITA'"
+          },
+          {
+            "lat": 44.50557,
+            "lon": 11.365882,
+            "nome": "FARMACIA SAN GIORGIO"
+          },
+          {
+            "lat": 44.500927,
+            "lon": 11.3396015,
+            "nome": "CGIL EMILIA ROMAGNA"
+          },
+          {
+            "lat": 44.511463,
+            "lon": 11.351291,
+            "nome": "FINMATICA SPA"
+          },
+          {
+            "lat": 44.532303,
+            "lon": 11.345047,
+            "nome": "GAIT SRL"
+          },
+          {
+            "lat": 44.515064,
+            "lon": 11.397012,
+            "nome": "DECATHLON BOLOGNA"
+          },
+          {
+            "lat": 44.48998,
+            "lon": 11.311418,
+            "nome": "NUOVA FARMACIA DEL MELONCELLO"
+          },
+          {
+            "lat": 44.487152,
+            "lon": 11.347584,
+            "nome": "ISTITUTO DEI CIECHI FRANCESCO CAVAZZA RESIDENCE PAOLO EMILIO CAVAZZA"
+          },
+          {
+            "lat": 44.491867,
+            "lon": 11.297014,
+            "nome": "CENTRO DI RIABILITAZIONE AXIA"
+          },
+          {
+            "lat": 44.527493,
+            "lon": 11.363865,
+            "nome": "CULLIGAN ITALIANA SPA"
+          },
+          {
+            "lat": 44.473072,
+            "lon": 11.369573,
+            "nome": "IL FORNO DI CALZOLARI SRL"
+          },
+          {
+            "lat": 44.486538,
+            "lon": 11.367875,
+            "nome": "MCFIT"
+          },
+          {
+            "lat": 44.502487,
+            "lon": 11.334645,
+            "nome": "CINEMA LUMIERE - BIBLIOTECA RENZO RENZI"
+          },
+          {
+            "lat": 44.507767,
+            "lon": 11.364884,
+            "nome": "CONDOMINIO FIERA DISTRICT LOTTO 1"
+          },
+          {
+            "lat": 44.49098,
+            "lon": 11.3538065,
+            "nome": "UNIVERSITA' DI BOLOGNA - PALAZZO HERCOLANI"
+          },
+          {
+            "lat": 44.50487,
+            "lon": 11.360357,
+            "nome": "PRONTO SOCCORSO SOCIALE - OPERA DI PADRE MARELLA"
+          },
+          {
+            "lat": 44.48855,
+            "lon": 11.367631,
+            "nome": "UNIVERSITA' DI BOLOGNA - PIANO 5 STANZA 2  C/O MEDICNA DEL LAVORO"
+          },
+          {
+            "lat": 44.487873,
+            "lon": 11.330488,
+            "nome": "UNIVERSITA' DI BOLOGNA - PALAZZINA EX SCHUDERIE"
+          },
+          {
+            "lat": 44.494785,
+            "lon": 11.343676,
+            "nome": "ZARA HOME"
+          },
+          {
+            "lat": 44.4978,
+            "lon": 11.343389,
+            "nome": "PULL AND BEAR BOLOGNA"
+          },
+          {
+            "lat": 44.49552,
+            "lon": 11.342759,
+            "nome": "ZARA BOLOGNA"
+          },
+          {
+            "lat": 44.49506990397738,
+            "lon": 11.392734255641699,
+            "nome": "PENNELLIFICIO OMEGA"
+          },
+          {
+            "lat": 44.507683,
+            "lon": 11.347577,
+            "nome": "ISTITUTO BEATA VERGINE DI SAN LUCA"
+          },
+          {
+            "lat": 44.507435,
+            "lon": 11.347791,
+            "nome": "ISTITUTO SALESIANO DELLA BEATA VERGINE DI SAN LUCA"
+          },
+          {
+            "lat": 44.483143,
+            "lon": 11.37212,
+            "nome": "BCC FELSINEA VIA SIGONIO"
+          },
+          {
+            "lat": 44.530773,
+            "lon": 11.277582,
+            "nome": "MEC ITALIA SPA"
+          },
+          {
+            "lat": 44.5059272,
+            "lon": 11.3119134,
+            "nome": "AUSL Bologna"
+          },
+          {
+            "lat": 44.4935031,
+            "lon": 11.3418358,
+            "nome": "HOTEL OROLOGIO"
+          },
+          {
+            "lat": 44.50624759999999,
+            "lon": 11.3556142,
+            "nome": "BANCA IFIS SPA"
+          },
+          {
+            "lat": 44.4998484,
+            "lon": 11.3737819,
+            "nome": "Parrocchia S. Domenico Savio - Bologna"
+          },
+          {
+            "lat": 44.5010675,
+            "lon": 11.277724,
+            "nome": "PARROCCHIA DEI SANTI GALGANI E BATTISTA"
+          },
+          {
+            "lat": 44.5356381,
+            "lon": 11.3536689,
+            "nome": "Sede ANPAS"
+          },
+          {
+            "lat": 44.4977777,
+            "lon": 11.3317814,
+            "nome": "Farmacia Toschi"
+          },
+          {
+            "lat": 44.49004767526594,
+            "lon": 11.285457420162857,
+            "nome": "IIS BELLUZZI FIORAVANTI"
+          },
+          {
+            "lat": 44.489867741676946,
+            "lon": 11.285924124531448,
+            "nome": "IIS BELLUZZI FIORAVANTI"
+          },
+          {
+            "lat": 44.5049746,
+            "lon": 11.4098471,
+            "nome": "ITALCHIM SRL"
+          },
+          {
+            "lat": 44.5053096,
+            "lon": 11.4254997,
+            "nome": "NORBLAST SRL"
+          },
+          {
+            "lat": 44.505466,
+            "lon": 11.333876,
+            "nome": "POLSTRADA"
+          },
+          {
+            "lat": 44.519867,
+            "lon": 11.264607,
+            "nome": "CENTRO COMMERICIALE CENTROBORGO"
+          },
+          {
+            "lat": 44.48068,
+            "lon": 11.35293,
+            "nome": "CIRCOLO TENNIS BOLOGNA"
+          },
+          {
+            "lat": 44.505775,
+            "lon": 11.343826,
+            "nome": "POLFER"
+          },
+          {
+            "lat": 44.505817,
+            "lon": 11.343628,
+            "nome": "POLFER"
+          },
+          {
+            "lat": 44.518414,
+            "lon": 11.329704,
+            "nome": "ASSOCIAZIONE PICCOLI GRANDI CUORI \"POLO DEI CUORI\""
+          },
+          {
+            "lat": 44.475437,
+            "lon": 11.379736,
+            "nome": "COMMISSARIATO BOLOGNA-PONTEVECCHIO"
+          },
+          {
+            "lat": 44.508595,
+            "lon": 11.307206,
+            "nome": "OPIFICIO GOLINELLI"
+          },
+          {
+            "lat": 44.496655,
+            "lon": 11.34352,
+            "nome": "FONDAZIONE DEL MONTE DI BOLOGNA E RAVENNA"
+          },
+          {
+            "lat": 44.473793,
+            "lon": 11.388807,
+            "nome": "COMUNE DI BOLOGNA QUARTIERE SAVENA"
+          },
+          {
+            "lat": 44.492863,
+            "lon": 11.360186,
+            "nome": "OSPEDALE SANT'ORSOLA PADIGLIONE 19"
+          },
+          {
+            "lat": 44.501347,
+            "lon": 11.344642,
+            "nome": "PT STUDIO WELLNESS SPACE"
+          },
+          {
+            "lat": 44.52993,
+            "lon": 11.354609,
+            "nome": "ITALIAN RESUSCITATION COUNCIL"
+          },
+          {
+            "lat": 44.535667,
+            "lon": 11.366795,
+            "nome": "SEDE CENTRALE VIGILI DEL FUOCO DIREZIONE EMILIA ROMAGNA"
+          },
+          {
+            "lat": 44.531456,
+            "lon": 11.289192,
+            "nome": "CASERMA VIGILI DEL FUOCO AEROPORTO"
+          },
+          {
+            "lat": 44.49917,
+            "lon": 11.34405,
+            "nome": "PAD VIA AUGUSTO RIGHI"
+          },
+          {
+            "lat": 44.53562,
+            "lon": 11.366977,
+            "nome": "SEDE CENTRALE VIGILI DEL FUOCO"
+          },
+          {
+            "lat": 44.51835,
+            "lon": 11.348523,
+            "nome": "ALSTOM FERROVIARIA SPA"
+          },
+          {
+            "lat": 44.497055,
+            "lon": 11.352943,
+            "nome": "UNIVERSITA' DI BOLOGNA - RETTORATO INGRESSO BUB"
+          },
+          {
+            "lat": 44.50046,
+            "lon": 11.356902,
+            "nome": "UNIVERSITA' DI BOLOGNA - ATRIO AULE A B C D E"
+          },
+          {
+            "lat": 44.499012,
+            "lon": 11.354981,
+            "nome": "UNIVERSITA' DI BOLOGNA"
+          },
+          {
+            "lat": 44.48968,
+            "lon": 11.349092,
+            "nome": "UNIVERSITA' DI BOLOGNA - DIPARTIMENTO LINGUE"
+          },
+          {
+            "lat": 44.49728,
+            "lon": 11.352452,
+            "nome": "UNIVERSITA' DI BOLOGNA - ECONOMIA"
+          },
+          {
+            "lat": 44.493073,
+            "lon": 11.286446,
+            "nome": "COMMISSARIATO SANTA VIOLA"
+          },
+          {
+            "lat": 44.49347,
+            "lon": 11.335154,
+            "nome": "POLIZIA DI STATO DIVSIONE PASSAPORTI"
+          },
+          {
+            "lat": 44.50346,
+            "lon": 11.422155,
+            "nome": "TECNESA SRL"
+          },
+          {
+            "lat": 44.516403,
+            "lon": 11.402805,
+            "nome": "CONDOMINIO VIA DEI TRATTATI COMUNITARI 5"
+          },
+          {
+            "lat": 44.483112,
+            "lon": 11.356618,
+            "nome": "ASD LA VILLA 2019"
+          },
+          {
+            "lat": 44.49633,
+            "lon": 11.342472,
+            "nome": "PALAZZO FAVA"
+          },
+          {
+            "lat": 44.497562,
+            "lon": 11.329201,
+            "nome": "CENTRO LM INSTRUCTOR"
+          },
+          {
+            "lat": 44.505432,
+            "lon": 11.400161,
+            "nome": "VANTI QUATTRO SRL"
+          },
+          {
+            "lat": 44.519047,
+            "lon": 11.3276,
+            "nome": "FARMACIA MARCO POLO"
+          },
+          {
+            "lat": 44.523933,
+            "lon": 11.257762,
+            "nome": "HOTEL BOLOGNA AIRPORT"
+          },
+          {
+            "lat": 44.49502,
+            "lon": 11.356661,
+            "nome": "UNIVERSITA' DI BOLOGNA - EX SCUOLE ERCOLANI (SEDE CESIA)"
+          },
+          {
+            "lat": 44.522755,
+            "lon": 11.3347845,
+            "nome": "UNIVERSITA' DI BOLOGNA - UNITA' EDILIZIA 1 (UE1) AULE DIDATTICHE"
+          },
+          {
+            "lat": 44.504467,
+            "lon": 11.340514,
+            "nome": "SCUOLA DI DANZA ROYAL DANCE STUDIO A.S.D."
+          },
+          {
+            "lat": 44.49263,
+            "lon": 11.333133,
+            "nome": "LICEO CLASSICO STATALE MINGHETTI"
+          },
+          {
+            "lat": 44.48785,
+            "lon": 11.362264,
+            "nome": "FARMACIA TRENTO TRIESTE"
+          },
+          {
+            "lat": 44.52698,
+            "lon": 11.362604,
+            "nome": "CORTE DI GIUSTIZIA TRIBUTARIA DI SECONDO GRADO EMILIA ROMAGNA"
+          },
+          {
+            "lat": 44.47511,
+            "lon": 11.3805,
+            "nome": "COMUNE DI BOLOGNA - SEDE QUARTIERE SAVENA"
+          },
+          {
+            "lat": 44.506012,
+            "lon": 11.342944,
+            "nome": "STAZIONE CENTRALE BOLOGNA - BINARIO 1 - SALA PASSEGGERI TRENITALIA"
+          },
+          {
+            "lat": 44.507687,
+            "lon": 11.364198,
+            "nome": "INTESA SANPAOLO"
+          },
+          {
+            "lat": 44.48835,
+            "lon": 11.359338,
+            "nome": "STUDIO COMMERCIALISTI E AVVOCATI AICARDI & PARTNERS SERVIE' SRL"
+          },
+          {
+            "lat": 44.492817,
+            "lon": 11.345117,
+            "nome": "IL FORNO DI CALZOLARI SRL"
+          },
+          {
+            "lat": 44.530964,
+            "lon": 11.289139,
+            "nome": "REPARTO VOLO VIGILI DEL FUOCO"
+          },
+          {
+            "lat": 44.495293,
+            "lon": 11.318259,
+            "nome": "IL FORNO DI CALZOLARI SRL"
+          },
+          {
+            "lat": 44.494244,
+            "lon": 11.343952,
+            "nome": "CINEMA MODERNISSIMO"
+          },
+          {
+            "lat": 44.494522,
+            "lon": 11.299492,
+            "nome": "PALESTRA YOGA GANESH ASD"
+          },
+          {
+            "lat": 44.494152,
+            "lon": 11.345996,
+            "nome": "DECATHLON CITY BOLOGNA CENTRO"
+          },
+          {
+            "lat": 44.536,
+            "lon": 11.34736,
+            "nome": "CLF Costruzioni Linee Ferroviarie S.p.A."
+          },
+          {
+            "lat": 44.49453,
+            "lon": 11.340748,
+            "nome": "STUDIO PIERSANTI SRL"
+          },
+          {
+            "lat": 44.47256,
+            "lon": 11.368024,
+            "nome": "ISTITUTO FARLOTTINE"
+          },
+          {
+            "lat": 44.505116,
+            "lon": 11.334648,
+            "nome": "POLIZIA DI STATO UFFICIO SANITARIO"
+          },
+          {
+            "lat": 44.4949,
+            "lon": 11.340148,
+            "nome": "GRIMALDI STUDIO LEGALE BOLOGNA"
+          },
+          {
+            "lat": 44.49929,
+            "lon": 11.353897,
+            "nome": "UNIVERSITA' DI BOLOGNA DIPARTIMENTO DI FISICA AUGUSTO RIGHI"
+          },
+          {
+            "lat": 44.49437,
+            "lon": 11.349332,
+            "nome": "BCC FELSINEA VIA SAN VITALE"
+          },
+          {
+            "lat": 44.53986279999999,
+            "lon": 11.3516395,
+            "nome": "Ass.ne Cà Bura"
+          },
+          {
+            "lat": 44.5348128,
+            "lon": 11.3490338,
+            "nome": "NIMAX SPA"
+          },
+          {
+            "lat": 44.50179809999999,
+            "lon": 11.326965,
+            "nome": "ALTERNATIVE GROUP SRL"
+          },
+          {
+            "lat": 44.5111595,
+            "lon": 11.3286016,
+            "nome": "CISALFA SPORT BOLOGNA"
+          },
+          {
+            "lat": 44.52157979057947,
+            "lon": 11.312192365470878,
+            "nome": "Caserma Varanini"
+          },
+          {
+            "lat": 44.52161038862867,
+            "lon": 11.312251374069206,
+            "nome": "Caserma L. Varanini"
+          },
+          {
+            "lat": 44.52159126484997,
+            "lon": 11.312219187561027,
+            "nome": "Caserma L. Varanini"
+          },
+          {
+            "lat": 44.4987888,
+            "lon": 11.3377253,
+            "nome": "FONDAZIONE CARD. G. LERCARO"
+          },
+          {
+            "lat": 44.46786360000001,
+            "lon": 11.3466705,
+            "nome": "NEW CAMPUS FONDAZIONE BBS"
+          },
+          {
+            "lat": 44.48964569520618,
+            "lon": 11.28636400680989,
+            "nome": "IIS BELLUZZI FIORAVANTI"
+          },
+          {
+            "lat": 44.4959065,
+            "lon": 11.3273637,
+            "nome": "Prov. Reg. Amm. Penitenziaria"
+          },
+          {
+            "lat": 44.530186716837996,
+            "lon": 11.354893483221533,
+            "nome": "ITALIAN RESUSCITATION COUNCIL"
+          },
+          {
+            "lat": 44.50579,
+            "lon": 11.33389,
+            "nome": "PCS BOLOGNA RFI"
+          }
+        ],
         "per_quartiere": [
           {
             "nome": "Santo Stefano",
@@ -4081,13 +5193,13 @@
     "parcheggi": {
       "dataset_key": "parcheggi",
       "slug": "parcheggi-strutture",
-      "fetched_at": "2026-05-05T18:19:14.172Z",
+      "fetched_at": "2026-05-05T18:15:56.441Z",
       "status": "ok",
       "modified": "2024-06-27T09:00:18.452000+00:00",
       "freshness": {
         "level": "aged",
-        "months": 23,
-        "iso": "2024-06-27T09:00:18.452000+00:00"
+        "months": 22,
+        "iso": "2024-06-27"
       },
       "n_rows": 44,
       "fields_expected": [
@@ -4104,7 +5216,7 @@
       ],
       "fields_present": [
         "nome",
-        "lat",
+        "geo_point",
         "stalli",
         "tariffa_oraria",
         "tipo_parcheggio",
@@ -4112,6 +5224,7 @@
       ],
       "fields_missing": [
         "indirizzo",
+        "lat",
         "lon",
         "posti_disabili",
         "accessibile_h24"
@@ -4214,7 +5327,228 @@
             "n": 1
           }
         ],
-        "parcheggi_geo": null
+        "parcheggi_geo": [
+          {
+            "lat": 44.48059010243871,
+            "lon": 11.382978000137783,
+            "nome": "Bitone"
+          },
+          {
+            "lat": 44.52257000245765,
+            "lon": 11.361042000137502,
+            "nome": "Fiera Manifattura"
+          },
+          {
+            "lat": 44.487820202442634,
+            "lon": 11.357265700136445,
+            "nome": "Carducci"
+          },
+          {
+            "lat": 44.494601402438164,
+            "lon": 11.360169900136938,
+            "nome": "Quick policlinico"
+          },
+          {
+            "lat": 44.50093615636355,
+            "lon": 11.308103034366793,
+            "nome": "Cividali"
+          },
+          {
+            "lat": 44.491991702444004,
+            "lon": 11.331520000135104,
+            "nome": "Foscolo"
+          },
+          {
+            "lat": 44.48651060244141,
+            "lon": 11.378301900137664,
+            "nome": "Vetulonia"
+          },
+          {
+            "lat": 44.507403002450936,
+            "lon": 11.340386200135967,
+            "nome": "Metropark"
+          },
+          {
+            "lat": 44.50078670244755,
+            "lon": 11.296133000133148,
+            "nome": "Battindarno"
+          },
+          {
+            "lat": 44.52222080245814,
+            "lon": 11.326680000135978,
+            "nome": "Vasco de gama"
+          },
+          {
+            "lat": 44.5091345024403,
+            "lon": 11.284168100134355,
+            "nome": "Della Pietra"
+          },
+          {
+            "lat": 44.479059902438706,
+            "lon": 11.37246000013728,
+            "nome": "Lercaro"
+          },
+          {
+            "lat": 44.49987650244753,
+            "lon": 11.332605000135338,
+            "nome": "Azzarita"
+          },
+          {
+            "lat": 44.51252620245325,
+            "lon": 11.330153400135528,
+            "nome": "Marco Polo"
+          },
+          {
+            "lat": 44.49614360244624,
+            "lon": 11.356043800136606,
+            "nome": "Belmeloro"
+          },
+          {
+            "lat": 44.50595350245029,
+            "lon": 11.329112600135243,
+            "nome": "Tanari"
+          },
+          {
+            "lat": 44.515036102454246,
+            "lon": 11.370693200137897,
+            "nome": "Michelino"
+          },
+          {
+            "lat": 44.5176622024557,
+            "lon": 11.277827500132483,
+            "nome": "Stiassi"
+          },
+          {
+            "lat": 44.499863902447466,
+            "lon": 11.34524780013605,
+            "nome": "Piazza otto agosto"
+          },
+          {
+            "lat": 44.524212902458466,
+            "lon": 11.353507900137117,
+            "nome": "Ex Zucca"
+          },
+          {
+            "lat": 44.4976096024466,
+            "lon": 11.310002400133948,
+            "nome": "Certosa Nord"
+          },
+          {
+            "lat": 44.48428170244044,
+            "lon": 11.387253700138091,
+            "nome": "Allende"
+          },
+          {
+            "lat": 44.50129190244819,
+            "lon": 11.336175500135539,
+            "nome": "Riva Reno"
+          },
+          {
+            "lat": 44.493482002446406,
+            "lon": 11.30319670013175,
+            "nome": "Ghisello"
+          },
+          {
+            "lat": 44.501067002448025,
+            "lon": 11.346399800136133,
+            "nome": "Sferisterio"
+          },
+          {
+            "lat": 44.50394450244921,
+            "lon": 11.347735500136306,
+            "nome": "Autostazione"
+          },
+          {
+            "lat": 44.5067706024507,
+            "lon": 11.310522400134182,
+            "nome": "Prati di caprara"
+          },
+          {
+            "lat": 44.462500302437896,
+            "lon": 11.380150700138106,
+            "nome": "Stadio Falchi"
+          },
+          {
+            "lat": 44.488738602442545,
+            "lon": 11.3398914001355,
+            "nome": "D'Azeglio"
+          },
+          {
+            "lat": 44.48533080244101,
+            "lon": 11.344315300135683,
+            "nome": "Staveco"
+          },
+          {
+            "lat": 44.47903970243865,
+            "lon": 11.37590670013745,
+            "nome": "Casanova"
+          },
+          {
+            "lat": 44.508702002452026,
+            "lon": 11.29634230013355,
+            "nome": "Ex Panigal"
+          },
+          {
+            "lat": 44.50891870245159,
+            "lon": 11.339430200135917,
+            "nome": "Nuovo Parcheggio Stazione"
+          },
+          {
+            "lat": 44.51154510245277,
+            "lon": 11.351882000136705,
+            "nome": "Minganti"
+          },
+          {
+            "lat": 44.48431470244042,
+            "lon": 11.375622800137439,
+            "nome": "Ex Fiat"
+          },
+          {
+            "lat": 44.48954340244344,
+            "lon": 11.363178000136855,
+            "nome": "Sant'Orsola"
+          },
+          {
+            "lat": 44.52351240245811,
+            "lon": 11.366898900137837,
+            "nome": "Fiera Parco Nord"
+          },
+          {
+            "lat": 44.49251150244431,
+            "lon": 11.311382400133953,
+            "nome": "Piazza della pace"
+          },
+          {
+            "lat": 44.506133402450445,
+            "lon": 11.304346800133763,
+            "nome": "Santa Viola"
+          },
+          {
+            "lat": 44.51145840245269,
+            "lon": 11.359917300137187,
+            "nome": "Costituzione"
+          },
+          {
+            "lat": 44.50207790244824,
+            "lon": 11.349079600136328,
+            "nome": "Finelli"
+          },
+          {
+            "lat": 44.52644580245939,
+            "lon": 11.365021400137824,
+            "nome": "Fiera Dozza"
+          },
+          {
+            "lat": 44.4936168024448,
+            "lon": 11.307575400133759,
+            "nome": "Antistadio"
+          },
+          {
+            "lat": 44.503684802448774,
+            "lon": 11.352421300136573,
+            "nome": "Borgo masini"
+          }
+        ]
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/parcheggi/exports/json",
       "resource_format": "JSON",
