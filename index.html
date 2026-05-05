@@ -327,7 +327,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.29</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.30</span>
     </div>
   </div>
 </header>
@@ -602,18 +602,24 @@ function renderSociali(canvasId, m) {
 }
 
 function renderIstruzione(canvasId, m) {
-  const top = (m.per_struttura || []).slice(0, 10);
+  const hasIscritti = m.totale_iscritti != null && m.totale_iscritti > 0;
+  // Quando il Comune non pubblica gli iscritti (dati MIM solo anagrafici),
+  // mostro la distribuzione per tipologia di scuola, più informativa
+  // del semplice elenco delle prime 10 strutture per dimensione.
+  const distrib = hasIscritti ? (m.per_struttura || []).slice(0, 10) : (m.per_tipo || []).slice(0, 10);
+  const labelChart = hasIscritti ? 'Top 10 strutture per iscritti' : 'Distribuzione per tipo di scuola';
   const html = `
     <div class="kpi-row">
-      <div class="kpi-big"><div class="value">${fmtNum(m.totale_iscritti)}</div><div class="label">Iscritti</div></div>
-      <div class="kpi-big"><div class="value">${m.per_struttura?m.per_struttura.length:0}</div><div class="label">Strutture</div></div>
+      ${hasIscritti ? `<div class="kpi-big"><div class="value">${fmtNum(m.totale_iscritti)}</div><div class="label">Iscritti</div></div>` : ''}
+      <div class="kpi-big"><div class="value">${m.totale_strutture || 0}</div><div class="label">Strutture</div></div>
+      ${m.per_tipo && m.per_tipo.length ? `<div class="kpi-big"><div class="value">${m.per_tipo.length}</div><div class="label">Tipologie</div></div>` : ''}
     </div>
-    <div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>`;
+    ${distrib.length ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">${labelChart}</div><div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` : ''}`;
   setTimeout(() => {
-    if (!top.length) return;
+    if (!distrib.length) return;
     makeChart(canvasId, {
       type: 'bar',
-      data: { labels: top.map(d => d.nome.length > 28 ? d.nome.slice(0,28)+'…' : d.nome), datasets: [{ data: top.map(d=>d.valore||d.n), backgroundColor: PALETTE[0] }] },
+      data: { labels: distrib.map(d => (d.nome||'?').length > 28 ? d.nome.slice(0,28)+'…' : (d.nome||'?')), datasets: [{ data: distrib.map(d=>d.valore||d.n), backgroundColor: PALETTE[0] }] },
       options: chartBar({ horizontal: true, xCallback: v => fmtNum(v) }),
     });
   }, 0);
@@ -733,10 +739,32 @@ function renderPatrimonio(canvasId, m) {
 
 function renderTributi(canvasId, m) {
   const ptua = m.per_tributo_ultimo_anno || [];
+  const pta = m.per_tributo_aliquota || [];
   const serie = m.serie_anni || [];
-  const hasMultiAnni = serie.length > 1;
-  const hasMultiTrib = ptua.length > 1;
-  // Card KPI: gettito totale ultimo anno + n tributi distinti + anno
+  const hasGettito = m.has_gettito || (m.gettito_totale_ultimo_anno > 0);
+  const hasMultiAnni = serie.length > 1 && hasGettito;
+  const hasMultiTrib = ptua.length > 1 && hasGettito;
+  const hasAliquote = pta.length > 0;
+
+  // Caso A: nessun gettito, ma aliquote presenti (es. Comune Inadempiente
+  // ricostruito da MEF Federalismo Fiscale — solo aliquote, no riscosso)
+  if (!hasGettito && hasAliquote) {
+    const html = `
+      <div class="kpi-row">
+        <div class="kpi-big"><div class="value">${fmtNum(pta.length)}</div><div class="label">Tributi pubblicati</div></div>
+        <div class="kpi-big"><div class="value">${m.anno_ultimo || '-'}</div><div class="label">Anno aliquote</div></div>
+      </div>
+      <div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Aliquote vigenti ${m.anno_ultimo}</div>
+      <div style="background:var(--brand-blue-light);padding:10px 14px;border-radius:6px;font-size:13px;line-height:1.7;">
+        ${pta.map(t => `<div><strong>${escapeHtml(t.nome)}</strong>: ${t.aliquota}${t.nome.includes('IRPEF') ? '%' : (t.nome === 'IMU' || t.nome === 'TARI' ? '%' : '')}${t.descrizione ? ` — <span style="color:var(--ink-soft);">${escapeHtml(t.descrizione)}</span>` : ''}</div>`).join('')}
+      </div>
+      <div style="margin-top:10px;font-size:12px;color:var(--ink-soft);font-style:italic;">
+        Il gettito riscosso effettivo non è disponibile: la fonte nazionale (MEF Federalismo Fiscale) pubblica solo le aliquote deliberate dal Comune, non gli incassi reali.
+      </div>`;
+    return html;
+  }
+
+  // Caso B: gettito disponibile (caso standard)
   const html = `
     <div class="kpi-row">
       <div class="kpi-big"><div class="value">${fmtEuro(m.gettito_totale_ultimo_anno)}</div><div class="label">Gettito ${m.anno_ultimo || '-'}</div></div>
@@ -866,6 +894,7 @@ function renderComuneInfo(c) {
   let inadempienteBanner = '';
   if (c.mode === 'reconstructed_from_national') {
     const dataSnap = c.snapshot_date ? fmtDate(c.snapshot_date) : '';
+    const nRicostruiti = Object.values(datasets).filter(ds => ds.status === 'ok').length;
     inadempienteBanner = `
       <div class="inadempiente-banner">
         <strong>🚨 Comune INADEMPIENTE: ${c.nome} non pubblica OpenData</strong>
@@ -874,7 +903,7 @@ function renderComuneInfo(c) {
           <br><br>
           Per non lasciare un buco nella dashboard, ComuneMetrics ha <strong>ricostruito quanto possibile da fonti nazionali pubbliche</strong>: ISTAT, MIM, ISPRA, ArCo (MiC) e MEF Federalismo Fiscale. Ogni dataset visualizzato qui sotto riporta in alto il <strong>badge della fonte originale con link diretto</strong> per la verifica.
           <br><br>
-          La copertura raggiunta è ${c.n_datasets_pubblicati}/12 dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i 6 dataset mancanti (bilancio, opere pubbliche, pratiche edilizie, servizi sociali, incidenti, delibere) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico.
+          La copertura raggiunta è ${nRicostruiti}/12 dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i ${12 - nRicostruiti} dataset mancanti (bilancio, opere pubbliche, pratiche edilizie, servizi sociali, incidenti, delibere) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico.
           ${dataSnap ? `<br><br><em>Fotografia statica scattata il ${dataSnap}.</em>` : ''}
         </span>
       </div>`;

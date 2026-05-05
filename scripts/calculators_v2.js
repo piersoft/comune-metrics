@@ -178,12 +178,15 @@ export function calc_sociali(rows) {
 
 // ----- 6. Istruzione ---------------------------------------------------------
 export function calc_istruzione(rows) {
+  // Se nessuna riga ha 'iscritti' numerico, fallback a conteggio strutture
+  // (es. dati MIM Anagrafe Scuole — solo anagrafica, no iscritti)
+  const hasIscritti = rows.some(r => toNum(r.iscritti) != null);
   return {
     totale_iscritti: sumBy(rows, 'iscritti'),
     totale_strutture: rows.length,
-    per_struttura: groupSum(rows, 'struttura', 'iscritti'),
-    per_tipo: groupSum(rows, 'tipo_struttura', 'iscritti'),
-    per_quartiere: groupSum(rows, 'quartiere', 'iscritti'),
+    per_struttura: hasIscritti ? groupSum(rows, 'struttura', 'iscritti') : countBy(rows, 'struttura'),
+    per_tipo: hasIscritti ? groupSum(rows, 'tipo_struttura', 'iscritti') : countBy(rows, 'tipo_struttura'),
+    per_quartiere: hasIscritti ? groupSum(rows, 'quartiere', 'iscritti') : countBy(rows, 'quartiere'),
     strutture_geo: geoPoints(rows),
   };
 }
@@ -275,7 +278,7 @@ export function calc_tributi(rows) {
   const annoUltimo = anni.length ? Math.max(...anni) : null;
   const ultime = annoUltimo ? rows.filter(r => parseInt(r.anno) === annoUltimo) : [];
 
-  // Aggregazione per tributo (sommando categorie)
+  // Aggregazione gettito per tributo (sommando categorie)
   const perTributoMap = {};
   for (const r of ultime) {
     const t = (r.tributo || 'ALTRO').toString().toUpperCase();
@@ -284,6 +287,22 @@ export function calc_tributi(rows) {
   const per_tributo_ultimo_anno = Object.entries(perTributoMap)
     .map(([nome, valore]) => ({ nome, valore }))
     .sort((a, b) => b.valore - a.valore);
+
+  // Aliquote per tributo (utile quando il Comune pubblica solo aliquote
+  // senza gettito reale, es. dati MEF Federalismo Fiscale)
+  const perAliquotaMap = {};
+  const perDescrizioneMap = {};
+  for (const r of ultime) {
+    const t = (r.tributo || 'ALTRO').toString().toUpperCase();
+    const al = parseFloat(r.aliquota_base);
+    if (!isNaN(al) && al > 0) {
+      perAliquotaMap[t] = al; // ultima aliquota vince per categoria
+      if (r.descrizione) perDescrizioneMap[t] = r.descrizione;
+    }
+  }
+  const per_tributo_aliquota = Object.entries(perAliquotaMap)
+    .map(([nome, aliquota]) => ({ nome, aliquota, descrizione: perDescrizioneMap[nome] || null }))
+    .sort((a, b) => b.aliquota - a.aliquota);
 
   // Serie storica gettito totale per anno
   const perAnnoMap = {};
@@ -296,11 +315,16 @@ export function calc_tributi(rows) {
     .map(([anno, valore]) => ({ anno: parseInt(anno), valore }))
     .sort((a, b) => a.anno - b.anno);
 
+  const gettito_totale_ultimo_anno = ultime.reduce((s, r) => s + (parseFloat(r.gettito_euro) || 0), 0);
+  const has_gettito = gettito_totale_ultimo_anno > 0;
+
   return {
-    gettito_totale_ultimo_anno: ultime.reduce((s, r) => s + (parseFloat(r.gettito_euro) || 0), 0),
+    gettito_totale_ultimo_anno,
     anno_ultimo: annoUltimo,
     n_tributi_distinti: per_tributo_ultimo_anno.length,
     per_tributo_ultimo_anno,
+    per_tributo_aliquota,
+    has_gettito,
     serie_anni,
     contribuenti_ultimo_anno: ultime.reduce((s, r) => s + (parseInt(r.n_contribuenti) || 0), 0) || null,
   };
