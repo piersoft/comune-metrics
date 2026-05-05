@@ -1,4 +1,4 @@
-struttura,anno,iscritti,tipo_struttura,lat,lon,via
+denominazione,anno,totale_alunni,tipologia,lat,lon,via
 Asilo Nido Arcobaleno,2024,65,Asilo nido,45.4612,9.185,Via Roma 12
 Asilo Nido Girotondo,2024,58,Asilo nido,45.468,9.1942,Via Garibaldi 45
 Asilo Nido Stelle,2024,42,Asilo nido,45.4598,9.1975,Via Manzoni 22

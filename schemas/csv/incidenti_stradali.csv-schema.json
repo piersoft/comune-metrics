@@ -3,16 +3,21 @@
   "dataset": "incidenti_stradali",
   "title": "Incidenti stradali",
   "description": "Una riga per incidente con data, geo, vittime.",
-  "version": "1.0",
+  "version": "2.0",
   "encoding": "UTF-8",
   "delimiter_allowed": [",", ";"],
   "decimal_separator": ".",
+  "rename_aliases": {
+    "morti": "decessi",
+    "zona": "localita"
+  },
   "required_columns": [
     {
       "name": "data",
       "datatype": "date",
       "format": "YYYY-MM-DD",
-      "description": "Data dell'incidente"
+      "description": "Data dell'incidente",
+      "rdf_predicate": "ti:startTime^^xsd:date"
     }
   ],
   "optional_columns": [
@@ -20,37 +25,42 @@
       "name": "lat",
       "datatype": "number",
       "constraints": { "min": -90, "max": 90 },
-      "description": "Latitudine del punto dell'incidente"
+      "description": "Latitudine del punto dell'incidente",
+      "rdf_predicate": "geo:lat"
     },
     {
       "name": "lon",
       "datatype": "number",
       "constraints": { "min": -180, "max": 180 },
-      "description": "Longitudine"
+      "description": "Longitudine",
+      "rdf_predicate": "geo:long"
     },
     {
-      "name": "morti",
+      "name": "decessi",
       "datatype": "integer",
       "constraints": { "min": 0 },
-      "description": "Numero di morti nell'incidente"
+      "description": "Numero di morti nell'incidente (ex 'morti')",
+      "rdf_predicate": "sdmx-measure:obsValue"
     },
     {
       "name": "feriti",
       "datatype": "integer",
       "constraints": { "min": 0 },
-      "description": "Numero di feriti"
+      "description": "Numero di feriti (semantica unica → arricchimento via LLM)"
     },
     {
-      "name": "zona",
+      "name": "localita",
       "datatype": "string",
       "max_length": 200,
-      "description": "Zona, quartiere o nome della strada"
+      "description": "Zona, quartiere o nome della strada (ex 'zona')",
+      "rdf_predicate": "clv:hasSpatialCoverage"
     },
     {
       "name": "tipo",
       "datatype": "string",
       "max_length": 200,
-      "description": "Tipologia (es. 'tamponamento', 'investimento pedone', 'scontro frontale')"
+      "description": "Tipologia (es. 'tamponamento', 'investimento pedone', 'scontro frontale')",
+      "rdf_predicate": "dct:type@it"
     },
     {
       "name": "veicoli_coinvolti",
@@ -59,9 +69,10 @@
       "description": "Numero di veicoli coinvolti"
     }
   ],
-  "example": "data,lat,lon,morti,feriti,zona,tipo\n2024-01-15,40.37924,18.15166,0,2,\"Viale Marche\",\"tamponamento\"\n2024-01-22,40.36422,18.14054,1,0,\"Via Lecce-San Cataldo\",\"investimento pedone\"\n2024-02-03,40.33956,18.17699,0,3,\"Tangenziale Est\",\"scontro frontale\"\n",
+  "example": "data,lat,lon,decessi,feriti,localita,tipo\n2024-01-15,40.37924,18.15166,0,2,\"Viale Marche\",\"tamponamento\"\n2024-01-22,40.36422,18.14054,1,0,\"Via Lecce-San Cataldo\",\"investimento pedone\"\n2024-02-03,40.33956,18.17699,0,3,\"Tangenziale Est\",\"scontro frontale\"\n",
   "notes": [
     "Coordinate gradi decimali, separatore punto. Range plausibile: lat -90/+90, lon -180/+180.",
-    "Se hai feriti=0 e morti=0, lascia 0 (non vuoto) per chiarezza."
+    "Se hai feriti=0 e decessi=0, lascia 0 (non vuoto) per chiarezza.",
+    "v2.0: rinomina 'morti'→'decessi' e 'zona'→'localita' per allineamento al tool CSV-to-RDF (DET_COL_RULES). 'feriti' rimane: semantica unica, va a LLM."
   ]
 }

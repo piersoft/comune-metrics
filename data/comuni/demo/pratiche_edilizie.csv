@@ -1,4 +1,4 @@
-data,tipo,esito,chiusura_data,via,civico
+data,tipo,codice_stato_cup,data_scadenza,via,civico
 2018-02-01,SCIA,Acquisita,2018-03-14,Via Cavour,140
 2018-02-19,CIL,Efficace,2018-05-05,Via Verdi,130
 2018-10-01,CILA,Rigettata,2019-03-15,Via XX Settembre,57

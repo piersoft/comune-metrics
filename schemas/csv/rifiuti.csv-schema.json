@@ -1,68 +1,71 @@
 {
   "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
   "dataset": "rifiuti",
-  "title": "Raccolta rifiuti urbani",
-  "description": "Una riga per (anno, frazione/quartiere) con quantità raccolte e percentuale di differenziata.",
-  "version": "1.0",
+  "title": "Raccolta rifiuti urbani (formato long)",
+  "description": "Una riga per (anno, frazione, localita) con il valore osservato e l'unità di misura. Formato long ('tidy data').",
+  "version": "2.0",
   "encoding": "UTF-8",
   "delimiter_allowed": [",", ";"],
   "decimal_separator": ".",
+  "rename_aliases": {
+    "kg_totali": "FRAZIONE_LONG: una riga con frazione='Totale', unita_misura='kg'",
+    "kg_differenziata": "FRAZIONE_LONG: una riga con frazione='Differenziata', unita_misura='kg'",
+    "kg_indifferenziata": "FRAZIONE_LONG: una riga con frazione='Indifferenziata', unita_misura='kg'",
+    "rd_pct": "FRAZIONE_LONG: una riga con frazione='Differenziata_pct', unita_misura='%'",
+    "quartiere": "localita"
+  },
   "required_columns": [
     {
       "name": "anno",
       "datatype": "integer",
       "constraints": { "min": 1900, "max": 2050 },
-      "description": "Anno di riferimento"
-    }
-  ],
-  "optional_columns": [
-    {
-      "name": "rd_pct",
-      "datatype": "number",
-      "constraints": { "min": 0, "max": 100 },
-      "description": "Percentuale di raccolta differenziata sul totale (0-100)"
-    },
-    {
-      "name": "kg_totali",
-      "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Kg totali di rifiuti raccolti nell'anno"
-    },
-    {
-      "name": "kg_differenziata",
-      "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Kg di rifiuti differenziati"
-    },
-    {
-      "name": "kg_indifferenziata",
-      "datatype": "number",
-      "constraints": { "min": 0 },
-      "description": "Kg di rifiuti indifferenziati"
+      "description": "Anno di riferimento",
+      "rdf_predicate": "sdmx-dimension:refPeriod"
     },
     {
       "name": "frazione",
       "datatype": "string",
       "max_length": 100,
-      "description": "Frazione merceologica (es. 'Carta', 'Plastica', 'Vetro', 'Organico', 'Indifferenziato')"
+      "description": "Frazione merceologica o tipo di osservazione. Valori canonici: 'Totale', 'Differenziata', 'Indifferenziata', 'Differenziata_pct', 'Carta', 'Plastica', 'Vetro', 'Organico', 'Metallo', 'Tessile', 'RAEE'.",
+      "rdf_predicate": "dct:type@it"
+    },
+    {
+      "name": "valore_assoluto",
+      "datatype": "number",
+      "constraints": { "min": 0 },
+      "description": "Valore osservato (kg, %, tonnellate, ecc.). L'unità è specificata in 'unita_misura'.",
+      "rdf_predicate": "sdmx-measure:obsValue"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "unita_misura",
+      "datatype": "string",
+      "max_length": 20,
+      "enum": ["kg", "t", "tonnellate", "%", "kg/abitante", "kg/giorno"],
+      "description": "Unità di misura del valore_assoluto",
+      "rdf_predicate": "mu:hasMeasurementUnit"
+    },
+    {
+      "name": "localita",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Quartiere o zona del Comune (ex 'quartiere')",
+      "rdf_predicate": "clv:hasSpatialCoverage"
     },
     {
       "name": "cer",
       "datatype": "string",
       "max_length": 20,
       "description": "Codice CER (Catalogo Europeo dei Rifiuti)"
-    },
-    {
-      "name": "quartiere",
-      "datatype": "string",
-      "max_length": 200,
-      "description": "Quartiere (se aggregazione territoriale disponibile)"
     }
   ],
-  "example": "anno,rd_pct,kg_totali,kg_differenziata\n2025,72.4,180000000,130320000\n2024,71.8,182000000,130676000\n2023,70.5,184500000,130072500\n",
+  "example": "anno,frazione,valore_assoluto,unita_misura\n2024,Totale,16910000,kg\n2024,Differenziata_pct,73.2,%\n2023,Totale,16980000,kg\n2023,Differenziata_pct,71.5,%\n2024,Carta,3450000,kg\n2024,Plastica,1820000,kg\n2024,Vetro,2100000,kg\n2024,Organico,4520000,kg\n",
   "notes": [
-    "Il dato più importante è 'rd_pct' (percentuale RD) — se non hai altri, fornisci almeno questo.",
-    "rd_pct è in scala 0-100 (non 0-1). 72.4 = 72.4%.",
-    "Se hai dettaglio per frazione merceologica (carta/plastica/vetro), una riga per (anno, frazione)."
+    "v2.0: RISTRUTTURAZIONE in formato long ('tidy data') per allineamento al tool CSV-to-RDF (DET_COL_RULES).",
+    "PRIMA (v1.0, wide): 'anno,kg_totali,kg_differenziata,kg_indifferenziata,rd_pct,frazione,quartiere' — 7 colonne, 2 vanno a LLM.",
+    "DOPO (v2.0, long): 'anno,frazione,valore_assoluto,unita_misura,localita' — 5 colonne, 5/5 deterministiche.",
+    "Convenzioni valori 'frazione': 'Totale' (rifiuti complessivi), 'Differenziata' (kg differenziati), 'Indifferenziata' (kg residui), 'Differenziata_pct' (percentuale RD), e poi nomi merceologici (Carta, Plastica, Vetro, Organico, Metallo, Tessile, RAEE).",
+    "Per backwards-compat, i calcolatori v2 supportano ENTRAMBI i formati: se il CSV ha le colonne wide vecchie le legge, altrimenti aggrega dal formato long."
   ]
 }

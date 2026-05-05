@@ -1,4 +1,4 @@
-anno,categoria,utenti,spesa_euro,interventi
+anno,categoria,numero,totale_costo,interventi
 2020,Anziani,980,1850000,220
 2021,Anziani,1020,1920000,235
 2022,Anziani,1075,2010000,251

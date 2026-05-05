@@ -1,8 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://piersoft.github.io/comune-metrics/schemas/csv/patrimonio.csv-schema.json",
-  "title": "Paniere CSV — patrimonio.csv",
+  "title": "Paniere CSV — patrimonio.csv (v2.0)",
   "description": "Una riga per immobile di proprietà comunale.",
+  "version": "2.0",
+  "rename_aliases": {
+    "valore_euro": "rendita",
+    "vincolo_culturale": "qualita",
+    "uso": "consistenza"
+  },
   "type": "array",
   "minItems": 1,
   "items": {
@@ -10,14 +16,56 @@
     "additionalProperties": false,
     "required": ["denominazione"],
     "properties": {
-      "denominazione": { "type": "string", "minLength": 1, "maxLength": 500 },
-      "tipo": { "type": ["string", "null"], "maxLength": 200, "description": "Es. 'Scuola', 'Ufficio', 'Magazzino', 'Cimitero'" },
-      "indirizzo": { "type": ["string", "null"], "maxLength": 500 },
-      "lat": { "type": ["number", "null"], "minimum": 35, "maximum": 48 },
-      "lon": { "type": ["number", "null"], "minimum": 6, "maximum": 19 },
-      "valore_euro": { "type": ["number", "null"], "minimum": 0 },
-      "vincolo_culturale": { "type": ["boolean", "null"] },
-      "uso": { "type": ["string", "null"], "maxLength": 200, "description": "Es. 'Strumentale', 'Disponibile', 'Storico-artistico'" }
+      "denominazione": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500,
+        "rdf_predicate": "rdfs:label@it"
+      },
+      "tipo": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Es. 'Scuola', 'Ufficio', 'Magazzino', 'Cimitero'",
+        "rdf_predicate": "dct:type@it"
+      },
+      "indirizzo": {
+        "type": ["string", "null"],
+        "maxLength": 500,
+        "description": "Indirizzo (aggregato in clv:Address dal tool)"
+      },
+      "lat": {
+        "type": ["number", "null"],
+        "minimum": 35,
+        "maximum": 48,
+        "rdf_predicate": "geo:lat"
+      },
+      "lon": {
+        "type": ["number", "null"],
+        "minimum": 6,
+        "maximum": 19,
+        "rdf_predicate": "geo:long"
+      },
+      "rendita": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Valore patrimoniale o rendita catastale in euro (ex 'valore_euro')",
+        "rdf_predicate": "sdmx-measure:obsValue"
+      },
+      "qualita": {
+        "type": ["string", "null", "boolean"],
+        "maxLength": 100,
+        "description": "Tipo di vincolo o qualità del bene (es. 'monumentale', 'paesaggistico', 'nessuno') (ex 'vincolo_culturale' boolean)",
+        "rdf_predicate": "dct:type@it"
+      },
+      "consistenza": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Uso/destinazione e consistenza dell'immobile (es. 'Strumentale', 'Disponibile', 'Storico-artistico') (ex 'uso')",
+        "rdf_predicate": "dct:description"
+      }
     }
-  }
+  },
+  "notes": [
+    "v2.0: rinomina 'valore_euro'→'rendita', 'vincolo_culturale'→'qualita', 'uso'→'consistenza' per allineamento al tool CSV-to-RDF (DET_COL_RULES, semantica catastale)."
+  ]
 }

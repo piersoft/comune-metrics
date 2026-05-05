@@ -1,8 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://piersoft.github.io/comune-metrics/schemas/csv/opere_pubbliche.csv-schema.json",
-  "title": "Paniere CSV — opere_pubbliche.csv",
+  "title": "Paniere CSV — opere_pubbliche.csv (v2.0)",
   "description": "Una riga per opera/cantiere con identificativo, importo, geolocalizzazione, fonte di finanziamento.",
+  "version": "2.0",
+  "rename_aliases": {
+    "stato": "codice_stato_cup",
+    "importo_euro": "costo_lavori_previsto",
+    "rup": "nome_completo"
+  },
   "type": "array",
   "minItems": 1,
   "items": {
@@ -10,16 +16,73 @@
     "additionalProperties": false,
     "required": ["nome"],
     "properties": {
-      "nome": { "type": "string", "minLength": 1, "maxLength": 500 },
-      "anno": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2050 },
-      "stato": { "type": ["string", "null"], "maxLength": 100, "description": "Es. 'in corso', 'concluso', 'progettazione', 'gara'" },
-      "importo_euro": { "type": ["number", "null"], "minimum": 0 },
-      "cup": { "type": ["string", "null"], "pattern": "^[A-Z][0-9]{2}[A-Z][0-9]{7}[0-9]{4}$", "description": "Codice Unico di Progetto (15 caratteri)" },
-      "fonte_finanziamento": { "type": ["string", "null"], "maxLength": 200, "description": "Es. 'PNRR', 'Comunale', 'Statale', 'Europeo'" },
-      "lat": { "type": ["number", "null"], "minimum": 35, "maximum": 48, "description": "Latitudine (Italia: 35-48)" },
-      "lon": { "type": ["number", "null"], "minimum": 6, "maximum": 19, "description": "Longitudine (Italia: 6-19)" },
-      "tipo": { "type": ["string", "null"], "maxLength": 200, "description": "Es. 'nuova realizzazione', 'manutenzione ordinaria', 'manutenzione straordinaria'" },
-      "rup": { "type": ["string", "null"], "maxLength": 200, "description": "Responsabile Unico del Procedimento" }
+      "nome": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500,
+        "description": "Denominazione dell'opera",
+        "rdf_predicate": "rdfs:label@it"
+      },
+      "anno": {
+        "type": ["integer", "null"],
+        "minimum": 1900,
+        "maximum": 2050,
+        "rdf_predicate": "sdmx-dimension:refPeriod"
+      },
+      "codice_stato_cup": {
+        "type": ["string", "null"],
+        "maxLength": 100,
+        "description": "Es. 'in corso', 'concluso', 'progettazione', 'gara' (ex 'stato')",
+        "rdf_predicate": "adms:status"
+      },
+      "costo_lavori_previsto": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Costo previsto dei lavori in euro (ex 'importo_euro')",
+        "rdf_predicate": "pc:totalAmount"
+      },
+      "cup": {
+        "type": ["string", "null"],
+        "pattern": "^[A-Z][0-9]{2}[A-Z][0-9]{7}[0-9]{4}$",
+        "description": "Codice Unico di Progetto (15 caratteri)",
+        "rdf_predicate": "dct:identifier"
+      },
+      "fonte_finanziamento": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Es. 'PNRR', 'Comunale', 'Statale', 'Europeo' (semantica unica → arricchimento via LLM)"
+      },
+      "lat": {
+        "type": ["number", "null"],
+        "minimum": 35,
+        "maximum": 48,
+        "description": "Latitudine (Italia: 35-48)",
+        "rdf_predicate": "geo:lat"
+      },
+      "lon": {
+        "type": ["number", "null"],
+        "minimum": 6,
+        "maximum": 19,
+        "description": "Longitudine (Italia: 6-19)",
+        "rdf_predicate": "geo:long"
+      },
+      "tipo": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Es. 'nuova realizzazione', 'manutenzione ordinaria', 'manutenzione straordinaria'",
+        "rdf_predicate": "dct:type@it"
+      },
+      "nome_completo": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Nome completo del Responsabile Unico del Procedimento (RUP) — persona fisica (ex 'rup'). NB: il titolare giuridico (Comune/Regione/Ente) è una cosa diversa, andrebbe in 'descrizione_ente' (foaf:name) se serve.",
+        "rdf_predicate": "cpv:fullName"
+      }
     }
-  }
+  },
+  "notes": [
+    "v2.0: rinomina 'stato'→'codice_stato_cup', 'importo_euro'→'costo_lavori_previsto', 'rup'→'nome_completo' per allineamento al tool CSV-to-RDF (DET_COL_RULES, ontologia PublicContract+CPV).",
+    "Nota semantica: il RUP (Responsabile Unico del Procedimento) è una PERSONA FISICA → mappa a cpv:fullName tramite 'nome_completo'. Il TITOLARE giuridico (Comune/Regione/Ministero) è una entità diversa, va eventualmente in una colonna separata 'descrizione_ente' (predicato foaf:name@it, ontologia COV).",
+    "'fonte_finanziamento' rimane: semantica unica, va a LLM."
+  ]
 }

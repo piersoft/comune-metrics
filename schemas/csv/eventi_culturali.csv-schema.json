@@ -3,58 +3,69 @@
   "dataset": "eventi_culturali",
   "title": "Eventi culturali e sportivi",
   "description": "Una riga per evento o manifestazione, con luogo, data, categoria.",
-  "version": "1.0",
+  "version": "2.0",
   "encoding": "UTF-8",
   "delimiter_allowed": [",", ";"],
   "decimal_separator": ".",
+  "rename_aliases": {
+    "data_inizio": "datainizio",
+    "data_fine": "datafine"
+  },
   "required_columns": [
     {
       "name": "nome",
       "datatype": "string",
       "max_length": 500,
-      "description": "Nome o titolo dell'evento"
+      "description": "Nome o titolo dell'evento",
+      "rdf_predicate": "rdfs:label@it"
     }
   ],
   "optional_columns": [
     {
-      "name": "data_inizio",
+      "name": "datainizio",
       "datatype": "date",
       "format": "YYYY-MM-DD",
-      "description": "Data di inizio evento"
+      "description": "Data di inizio evento (ex 'data_inizio')",
+      "rdf_predicate": "ti:startTime^^xsd:date (CPEV)"
     },
     {
-      "name": "data_fine",
+      "name": "datafine",
       "datatype": "date",
       "format": "YYYY-MM-DD",
-      "description": "Data di fine evento"
+      "description": "Data di fine evento (ex 'data_fine')",
+      "rdf_predicate": "ti:endTime^^xsd:date (CPEV)"
     },
     {
       "name": "categoria",
       "datatype": "string",
       "max_length": 200,
-      "description": "Categoria (es. 'Concerto', 'Mostra', 'Spettacolo teatrale', 'Conferenza', 'Sport')"
+      "description": "Categoria (es. 'Concerto', 'Mostra', 'Spettacolo teatrale', 'Conferenza', 'Sport')",
+      "rdf_predicate": "dct:type@it"
     },
     {
       "name": "luogo",
       "datatype": "string",
       "max_length": 500,
-      "description": "Nome del luogo o sede"
+      "description": "Nome del luogo o sede",
+      "rdf_predicate": "schema:location@it"
     },
     {
       "name": "indirizzo",
       "datatype": "string",
       "max_length": 500,
-      "description": "Indirizzo completo"
+      "description": "Indirizzo completo (aggregato in clv:Address dal tool)"
     },
     {
       "name": "lat",
       "datatype": "number",
-      "constraints": { "min": -90, "max": 90 }
+      "constraints": { "min": -90, "max": 90 },
+      "rdf_predicate": "geo:lat"
     },
     {
       "name": "lon",
       "datatype": "number",
-      "constraints": { "min": -180, "max": 180 }
+      "constraints": { "min": -180, "max": 180 },
+      "rdf_predicate": "geo:long"
     },
     {
       "name": "quartiere",
@@ -65,18 +76,21 @@
       "name": "ingresso",
       "datatype": "string",
       "enum": ["Gratuito", "A pagamento", "Su prenotazione"],
-      "description": "Tipologia di ingresso"
+      "description": "Tipologia di ingresso",
+      "rdf_predicate": "schema:isAccessibleForFree@it"
     },
     {
       "name": "organizzatore",
       "datatype": "string",
       "max_length": 300,
-      "description": "Soggetto organizzatore"
+      "description": "Soggetto organizzatore",
+      "rdf_predicate": "dct:publisher@it"
     }
   ],
-  "example": "nome,data_inizio,categoria,luogo,lat,lon,ingresso\n\"Festival della Letteratura\",2024-09-05,\"Festival\",\"Palazzo Carafa\",40.3528,18.1718,\"Gratuito\"\n\"Concerto Sinfonico\",2024-10-12,\"Concerto\",\"Politeama Greco\",40.3540,18.1690,\"A pagamento\"\n",
+  "example": "nome,datainizio,datafine,categoria,luogo,lat,lon,ingresso\n\"Festival della Letteratura\",2024-09-05,2024-09-08,\"Festival\",\"Palazzo Carafa\",40.3528,18.1718,\"Gratuito\"\n\"Concerto Sinfonico\",2024-10-12,2024-10-12,\"Concerto\",\"Politeama Greco\",40.3540,18.1690,\"A pagamento\"\n",
   "notes": [
     "Le categorie più tipiche sono: Concerto, Spettacolo, Mostra, Conferenza, Festival, Sport, Evento religioso, Manifestazione.",
-    "Se hai lat/lon, gli eventi appaiono sulla mappa."
+    "Se hai lat/lon, gli eventi appaiono sulla mappa.",
+    "v2.0: rinomina colonne 'data_inizio'→'datainizio' e 'data_fine'→'datafine' (senza underscore) per allineamento al tool CSV-to-RDF (DET_COL_RULES → ontologia CPEV)."
   ]
 }

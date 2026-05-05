@@ -18,7 +18,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T11:04:53.863Z",
+      "fetched_at": "2026-05-05T13:38:23.136Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -115,13 +115,13 @@
       "error": null,
       "fields_present": [
         "anno",
-        "residenti",
-        "quartiere"
+        "totale_residenti",
+        "localita"
       ]
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T11:04:53.865Z",
+      "fetched_at": "2026-05-05T13:38:23.139Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -250,14 +250,14 @@
       "error": null,
       "fields_present": [
         "anno",
-        "missione",
-        "importo_euro",
-        "programma"
+        "settore_interv_inv",
+        "totale_uscite",
+        "sottosettore_interv_inv"
       ]
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T11:04:53.866Z",
+      "fetched_at": "2026-05-05T13:38:23.140Z",
       "status": "ok",
       "modified": "2025-04-15",
       "freshness": {
@@ -374,8 +374,8 @@
       "fields_present": [
         "nome",
         "anno",
-        "stato",
-        "importo_euro",
+        "codice_stato_cup",
+        "costo_lavori_previsto",
         "cup",
         "lat",
         "lon",
@@ -385,7 +385,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T11:04:53.867Z",
+      "fetched_at": "2026-05-05T13:38:23.141Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -482,15 +482,15 @@
       "fields_present": [
         "data",
         "tipo",
-        "esito",
-        "chiusura_data",
+        "codice_stato_cup",
+        "data_scadenza",
         "via",
         "civico"
       ]
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T11:04:53.870Z",
+      "fetched_at": "2026-05-05T13:38:23.152Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -565,14 +565,14 @@
       "fields_present": [
         "anno",
         "categoria",
-        "utenti",
-        "spesa_euro",
+        "numero",
+        "totale_costo",
         "interventi"
       ]
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T11:04:53.871Z",
+      "fetched_at": "2026-05-05T13:38:23.154Z",
       "status": "ok",
       "modified": "2024-09-15",
       "freshness": {
@@ -782,10 +782,10 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "struttura",
+        "denominazione",
         "anno",
-        "iscritti",
-        "tipo_struttura",
+        "totale_alunni",
+        "tipologia",
         "lat",
         "lon",
         "via"
@@ -793,7 +793,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T11:04:53.872Z",
+      "fetched_at": "2026-05-05T13:38:23.157Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -886,2373 +886,1899 @@
         "hot_spots": [
           {
             "lat": 45.4705,
-            "lon": 9.20654,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20654
           },
           {
             "lat": 45.46454,
-            "lon": 9.19276,
-            "nome": "Via dei Mille"
+            "lon": 9.19276
           },
           {
             "lat": 45.47262,
-            "lon": 9.20153,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.20153
           },
           {
             "lat": 45.45873,
-            "lon": 9.17855,
-            "nome": "Via Roma"
+            "lon": 9.17855
           },
           {
             "lat": 45.46473,
-            "lon": 9.17571,
-            "nome": "Via XX Settembre"
+            "lon": 9.17571
           },
           {
             "lat": 45.47109,
-            "lon": 9.20436,
-            "nome": "Via Garibaldi"
+            "lon": 9.20436
           },
           {
             "lat": 45.47323,
-            "lon": 9.18165,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18165
           },
           {
             "lat": 45.47378,
-            "lon": 9.19823,
-            "nome": "Via Manzoni"
+            "lon": 9.19823
           },
           {
             "lat": 45.46768,
-            "lon": 9.20345,
-            "nome": "Piazza San Marco"
+            "lon": 9.20345
           },
           {
             "lat": 45.45311,
-            "lon": 9.17209,
-            "nome": "Tangenziale Nord"
+            "lon": 9.17209
           },
           {
             "lat": 45.46941,
-            "lon": 9.18993,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18993
           },
           {
             "lat": 45.45443,
-            "lon": 9.17942,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17942
           },
           {
             "lat": 45.46201,
-            "lon": 9.20082,
-            "nome": "Via dei Mille"
+            "lon": 9.20082
           },
           {
             "lat": 45.47521,
-            "lon": 9.17999,
-            "nome": "Via Manzoni"
+            "lon": 9.17999
           },
           {
             "lat": 45.45367,
-            "lon": 9.17298,
-            "nome": "Centro storico"
+            "lon": 9.17298
           },
           {
             "lat": 45.45852,
-            "lon": 9.17668,
-            "nome": "Piazza San Marco"
+            "lon": 9.17668
           },
           {
             "lat": 45.46217,
-            "lon": 9.18556,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18556
           },
           {
             "lat": 45.45583,
-            "lon": 9.18073,
-            "nome": "Viale Europa"
+            "lon": 9.18073
           },
           {
             "lat": 45.46035,
-            "lon": 9.18352,
-            "nome": "Via Garibaldi"
+            "lon": 9.18352
           },
           {
             "lat": 45.46374,
-            "lon": 9.18799,
-            "nome": "Centro storico"
+            "lon": 9.18799
           },
           {
             "lat": 45.46463,
-            "lon": 9.1927,
-            "nome": "Via XX Settembre"
+            "lon": 9.1927
           },
           {
             "lat": 45.4528,
-            "lon": 9.17589,
-            "nome": "Via dei Mille"
+            "lon": 9.17589
           },
           {
             "lat": 45.46686,
-            "lon": 9.19828,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19828
           },
           {
             "lat": 45.4632,
-            "lon": 9.19698,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19698
           },
           {
             "lat": 45.47597,
-            "lon": 9.18375,
-            "nome": "Via Garibaldi"
+            "lon": 9.18375
           },
           {
             "lat": 45.47208,
-            "lon": 9.18257,
-            "nome": "Viale Europa"
+            "lon": 9.18257
           },
           {
             "lat": 45.45649,
-            "lon": 9.20578,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.20578
           },
           {
             "lat": 45.45667,
-            "lon": 9.18117,
-            "nome": "Centro storico"
+            "lon": 9.18117
           },
           {
             "lat": 45.46266,
-            "lon": 9.19004,
-            "nome": "Centro storico"
+            "lon": 9.19004
           },
           {
             "lat": 45.46274,
-            "lon": 9.18853,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18853
           },
           {
             "lat": 45.45403,
-            "lon": 9.17588,
-            "nome": "Via XX Settembre"
+            "lon": 9.17588
           },
           {
             "lat": 45.47501,
-            "lon": 9.18491,
-            "nome": "Centro storico"
+            "lon": 9.18491
           },
           {
             "lat": 45.46075,
-            "lon": 9.18371,
-            "nome": "Piazza San Marco"
+            "lon": 9.18371
           },
           {
             "lat": 45.46694,
-            "lon": 9.18081,
-            "nome": "Viale Europa"
+            "lon": 9.18081
           },
           {
             "lat": 45.46424,
-            "lon": 9.20268,
-            "nome": "Viale Europa"
+            "lon": 9.20268
           },
           {
             "lat": 45.47119,
-            "lon": 9.19451,
-            "nome": "Via Manzoni"
+            "lon": 9.19451
           },
           {
             "lat": 45.46323,
-            "lon": 9.19326,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19326
           },
           {
             "lat": 45.47388,
-            "lon": 9.17843,
-            "nome": "Tangenziale Nord"
+            "lon": 9.17843
           },
           {
             "lat": 45.45823,
-            "lon": 9.19689,
-            "nome": "Via dei Mille"
+            "lon": 9.19689
           },
           {
             "lat": 45.45466,
-            "lon": 9.1751,
-            "nome": "Tangenziale Nord"
+            "lon": 9.1751
           },
           {
             "lat": 45.45706,
-            "lon": 9.19565,
-            "nome": "Via dei Mille"
+            "lon": 9.19565
           },
           {
             "lat": 45.47345,
-            "lon": 9.18355,
-            "nome": "Piazza San Marco"
+            "lon": 9.18355
           },
           {
             "lat": 45.45245,
-            "lon": 9.17272,
-            "nome": "Centro storico"
+            "lon": 9.17272
           },
           {
             "lat": 45.45957,
-            "lon": 9.1765,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.1765
           },
           {
             "lat": 45.46996,
-            "lon": 9.19152,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19152
           },
           {
             "lat": 45.4737,
-            "lon": 9.18801,
-            "nome": "Piazza San Marco"
+            "lon": 9.18801
           },
           {
             "lat": 45.46197,
-            "lon": 9.20689,
-            "nome": "Centro storico"
+            "lon": 9.20689
           },
           {
             "lat": 45.46978,
-            "lon": 9.19997,
-            "nome": "Via dei Mille"
+            "lon": 9.19997
           },
           {
             "lat": 45.47058,
-            "lon": 9.17808,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17808
           },
           {
             "lat": 45.45238,
-            "lon": 9.20462,
-            "nome": "Piazza San Marco"
+            "lon": 9.20462
           },
           {
             "lat": 45.46927,
-            "lon": 9.17669,
-            "nome": "Viale Europa"
+            "lon": 9.17669
           },
           {
             "lat": 45.47138,
-            "lon": 9.18158,
-            "nome": "Via Roma"
+            "lon": 9.18158
           },
           {
             "lat": 45.46526,
-            "lon": 9.19719,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19719
           },
           {
             "lat": 45.46838,
-            "lon": 9.20154,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20154
           },
           {
             "lat": 45.45904,
-            "lon": 9.18178,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18178
           },
           {
             "lat": 45.47465,
-            "lon": 9.19289,
-            "nome": "Via XX Settembre"
+            "lon": 9.19289
           },
           {
             "lat": 45.47206,
-            "lon": 9.18801,
-            "nome": "Centro storico"
+            "lon": 9.18801
           },
           {
             "lat": 45.46542,
-            "lon": 9.19071,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.19071
           },
           {
             "lat": 45.47465,
-            "lon": 9.20357,
-            "nome": "Viale Europa"
+            "lon": 9.20357
           },
           {
             "lat": 45.46157,
-            "lon": 9.20268,
-            "nome": "Via Roma"
+            "lon": 9.20268
           },
           {
             "lat": 45.46841,
-            "lon": 9.20616,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20616
           },
           {
             "lat": 45.45817,
-            "lon": 9.2008,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.2008
           },
           {
             "lat": 45.47235,
-            "lon": 9.19628,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19628
           },
           {
             "lat": 45.47401,
-            "lon": 9.19405,
-            "nome": "Via dei Mille"
+            "lon": 9.19405
           },
           {
             "lat": 45.46141,
-            "lon": 9.17909,
-            "nome": "Via Garibaldi"
+            "lon": 9.17909
           },
           {
             "lat": 45.45614,
-            "lon": 9.18836,
-            "nome": "Via Garibaldi"
+            "lon": 9.18836
           },
           {
             "lat": 45.46531,
-            "lon": 9.17623,
-            "nome": "Via Manzoni"
+            "lon": 9.17623
           },
           {
             "lat": 45.46748,
-            "lon": 9.18801,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18801
           },
           {
             "lat": 45.47303,
-            "lon": 9.19277,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19277
           },
           {
             "lat": 45.45533,
-            "lon": 9.19127,
-            "nome": "Via Roma"
+            "lon": 9.19127
           },
           {
             "lat": 45.46544,
-            "lon": 9.17206,
-            "nome": "Via XX Settembre"
+            "lon": 9.17206
           },
           {
             "lat": 45.46173,
-            "lon": 9.19001,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19001
           },
           {
             "lat": 45.45804,
-            "lon": 9.18132,
-            "nome": "Viale Europa"
+            "lon": 9.18132
           },
           {
             "lat": 45.4525,
-            "lon": 9.18533,
-            "nome": "Via Roma"
+            "lon": 9.18533
           },
           {
             "lat": 45.45763,
-            "lon": 9.19297,
-            "nome": "Via dei Mille"
+            "lon": 9.19297
           },
           {
             "lat": 45.46035,
-            "lon": 9.19385,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19385
           },
           {
             "lat": 45.46906,
-            "lon": 9.18095,
-            "nome": "Viale Europa"
+            "lon": 9.18095
           },
           {
             "lat": 45.4668,
-            "lon": 9.1732,
-            "nome": "Via XX Settembre"
+            "lon": 9.1732
           },
           {
             "lat": 45.46214,
-            "lon": 9.17904,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17904
           },
           {
             "lat": 45.4564,
-            "lon": 9.18037,
-            "nome": "Via Roma"
+            "lon": 9.18037
           },
           {
             "lat": 45.47029,
-            "lon": 9.20642,
-            "nome": "Via Garibaldi"
+            "lon": 9.20642
           },
           {
             "lat": 45.46126,
-            "lon": 9.1736,
-            "nome": "Piazza San Marco"
+            "lon": 9.1736
           },
           {
             "lat": 45.4678,
-            "lon": 9.18044,
-            "nome": "Via Roma"
+            "lon": 9.18044
           },
           {
             "lat": 45.47547,
-            "lon": 9.20289,
-            "nome": "Via Roma"
+            "lon": 9.20289
           },
           {
             "lat": 45.45482,
-            "lon": 9.18568,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18568
           },
           {
             "lat": 45.47353,
-            "lon": 9.18505,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18505
           },
           {
             "lat": 45.46421,
-            "lon": 9.19885,
-            "nome": "Viale Europa"
+            "lon": 9.19885
           },
           {
             "lat": 45.46953,
-            "lon": 9.19298,
-            "nome": "Viale dei Tigli"
+            "lon": 9.19298
           },
           {
             "lat": 45.45943,
-            "lon": 9.20721,
-            "nome": "Centro storico"
+            "lon": 9.20721
           },
           {
             "lat": 45.46647,
-            "lon": 9.17462,
-            "nome": "Via Garibaldi"
+            "lon": 9.17462
           },
           {
             "lat": 45.47207,
-            "lon": 9.20218,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20218
           },
           {
             "lat": 45.4589,
-            "lon": 9.1794,
-            "nome": "Via Garibaldi"
+            "lon": 9.1794
           },
           {
             "lat": 45.46616,
-            "lon": 9.18736,
-            "nome": "Via Roma"
+            "lon": 9.18736
           },
           {
             "lat": 45.46651,
-            "lon": 9.18566,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18566
           },
           {
             "lat": 45.46488,
-            "lon": 9.18851,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18851
           },
           {
             "lat": 45.45606,
-            "lon": 9.18237,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18237
           },
           {
             "lat": 45.47347,
-            "lon": 9.19128,
-            "nome": "Centro storico"
+            "lon": 9.19128
           },
           {
             "lat": 45.47611,
-            "lon": 9.1844,
-            "nome": "Via XX Settembre"
+            "lon": 9.1844
           },
           {
             "lat": 45.45453,
-            "lon": 9.17661,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17661
           },
           {
             "lat": 45.45296,
-            "lon": 9.19151,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.19151
           },
           {
             "lat": 45.46582,
-            "lon": 9.19558,
-            "nome": "Viale Europa"
+            "lon": 9.19558
           },
           {
             "lat": 45.45532,
-            "lon": 9.19269,
-            "nome": "Via Roma"
+            "lon": 9.19269
           },
           {
             "lat": 45.47233,
-            "lon": 9.19386,
-            "nome": "Via Garibaldi"
+            "lon": 9.19386
           },
           {
             "lat": 45.4734,
-            "lon": 9.1789,
-            "nome": "Viale Europa"
+            "lon": 9.1789
           },
           {
             "lat": 45.45309,
-            "lon": 9.18194,
-            "nome": "Viale Europa"
+            "lon": 9.18194
           },
           {
             "lat": 45.46051,
-            "lon": 9.19957,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19957
           },
           {
             "lat": 45.46982,
-            "lon": 9.18171,
-            "nome": "Centro storico"
+            "lon": 9.18171
           },
           {
             "lat": 45.47239,
-            "lon": 9.20535,
-            "nome": "Via Roma"
+            "lon": 9.20535
           },
           {
             "lat": 45.47497,
-            "lon": 9.18968,
-            "nome": "Via Manzoni"
+            "lon": 9.18968
           },
           {
             "lat": 45.46805,
-            "lon": 9.18533,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18533
           },
           {
             "lat": 45.46658,
-            "lon": 9.1922,
-            "nome": "Viale Europa"
+            "lon": 9.1922
           },
           {
             "lat": 45.46427,
-            "lon": 9.19128,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19128
           },
           {
             "lat": 45.46281,
-            "lon": 9.20359,
-            "nome": "Via XX Settembre"
+            "lon": 9.20359
           },
           {
             "lat": 45.47497,
-            "lon": 9.18333,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18333
           },
           {
             "lat": 45.47509,
-            "lon": 9.18232,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18232
           },
           {
             "lat": 45.47328,
-            "lon": 9.18606,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18606
           },
           {
             "lat": 45.45869,
-            "lon": 9.18297,
-            "nome": "Viale Europa"
+            "lon": 9.18297
           },
           {
             "lat": 45.46944,
-            "lon": 9.19106,
-            "nome": "Via XX Settembre"
+            "lon": 9.19106
           },
           {
             "lat": 45.46011,
-            "lon": 9.17383,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17383
           },
           {
             "lat": 45.45791,
-            "lon": 9.18723,
-            "nome": "Viale dei Tigli"
+            "lon": 9.18723
           },
           {
             "lat": 45.46326,
-            "lon": 9.19435,
-            "nome": "Piazza San Marco"
+            "lon": 9.19435
           },
           {
             "lat": 45.46312,
-            "lon": 9.18976,
-            "nome": "Via Manzoni"
+            "lon": 9.18976
           },
           {
             "lat": 45.46254,
-            "lon": 9.20525,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.20525
           },
           {
             "lat": 45.46128,
-            "lon": 9.17411,
-            "nome": "Via Manzoni"
+            "lon": 9.17411
           },
           {
             "lat": 45.46804,
-            "lon": 9.17856,
-            "nome": "Viale Europa"
+            "lon": 9.17856
           },
           {
             "lat": 45.47012,
-            "lon": 9.19908,
-            "nome": "Via Roma"
+            "lon": 9.19908
           },
           {
             "lat": 45.46488,
-            "lon": 9.17937,
-            "nome": "Via dei Mille"
+            "lon": 9.17937
           },
           {
             "lat": 45.46436,
-            "lon": 9.18633,
-            "nome": "Via Garibaldi"
+            "lon": 9.18633
           },
           {
             "lat": 45.47029,
-            "lon": 9.19383,
-            "nome": "Via XX Settembre"
+            "lon": 9.19383
           },
           {
             "lat": 45.45559,
-            "lon": 9.17428,
-            "nome": "Centro storico"
+            "lon": 9.17428
           },
           {
             "lat": 45.47591,
-            "lon": 9.19625,
-            "nome": "Via Roma"
+            "lon": 9.19625
           },
           {
             "lat": 45.46605,
-            "lon": 9.17472,
-            "nome": "Via Garibaldi"
+            "lon": 9.17472
           },
           {
             "lat": 45.45906,
-            "lon": 9.19913,
-            "nome": "Viale Europa"
+            "lon": 9.19913
           },
           {
             "lat": 45.45676,
-            "lon": 9.19927,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19927
           },
           {
             "lat": 45.46875,
-            "lon": 9.17417,
-            "nome": "Viale Europa"
+            "lon": 9.17417
           },
           {
             "lat": 45.47164,
-            "lon": 9.19317,
-            "nome": "Via dei Mille"
+            "lon": 9.19317
           },
           {
             "lat": 45.46716,
-            "lon": 9.20777,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.20777
           },
           {
             "lat": 45.47358,
-            "lon": 9.19116,
-            "nome": "Via Roma"
+            "lon": 9.19116
           },
           {
             "lat": 45.47596,
-            "lon": 9.19779,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19779
           },
           {
             "lat": 45.45758,
-            "lon": 9.19848,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19848
           },
           {
             "lat": 45.45943,
-            "lon": 9.17256,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.17256
           },
           {
             "lat": 45.45614,
-            "lon": 9.18401,
-            "nome": "Piazza San Marco"
+            "lon": 9.18401
           },
           {
             "lat": 45.46737,
-            "lon": 9.18694,
-            "nome": "Piazza San Marco"
+            "lon": 9.18694
           },
           {
             "lat": 45.45784,
-            "lon": 9.19697,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19697
           },
           {
             "lat": 45.47189,
-            "lon": 9.1758,
-            "nome": "Viale dei Tigli"
+            "lon": 9.1758
           },
           {
             "lat": 45.47125,
-            "lon": 9.18158,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18158
           },
           {
             "lat": 45.45379,
-            "lon": 9.20242,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.20242
           },
           {
             "lat": 45.46621,
-            "lon": 9.18513,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18513
           },
           {
             "lat": 45.45454,
-            "lon": 9.1732,
-            "nome": "Viale Europa"
+            "lon": 9.1732
           },
           {
             "lat": 45.47611,
-            "lon": 9.18558,
-            "nome": "Via Manzoni"
+            "lon": 9.18558
           },
           {
             "lat": 45.45704,
-            "lon": 9.18262,
-            "nome": "Via dei Mille"
+            "lon": 9.18262
           },
           {
             "lat": 45.46853,
-            "lon": 9.18621,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18621
           },
           {
             "lat": 45.46175,
-            "lon": 9.19481,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19481
           },
           {
             "lat": 45.45571,
-            "lon": 9.18354,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18354
           },
           {
             "lat": 45.45911,
-            "lon": 9.17903,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.17903
           },
           {
             "lat": 45.47169,
-            "lon": 9.18201,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18201
           },
           {
             "lat": 45.45754,
-            "lon": 9.17601,
-            "nome": "Via dei Mille"
+            "lon": 9.17601
           },
           {
             "lat": 45.45365,
-            "lon": 9.17848,
-            "nome": "Via Manzoni"
+            "lon": 9.17848
           },
           {
             "lat": 45.46608,
-            "lon": 9.20608,
-            "nome": "Via Roma"
+            "lon": 9.20608
           },
           {
             "lat": 45.46012,
-            "lon": 9.20036,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20036
           },
           {
             "lat": 45.47451,
-            "lon": 9.20508,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20508
           },
           {
             "lat": 45.47187,
-            "lon": 9.18798,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18798
           },
           {
             "lat": 45.46046,
-            "lon": 9.19102,
-            "nome": "Via Roma"
+            "lon": 9.19102
           },
           {
             "lat": 45.4725,
-            "lon": 9.20527,
-            "nome": "Piazza San Marco"
+            "lon": 9.20527
           },
           {
             "lat": 45.46011,
-            "lon": 9.20351,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.20351
           },
           {
             "lat": 45.46102,
-            "lon": 9.19979,
-            "nome": "Via XX Settembre"
+            "lon": 9.19979
           },
           {
             "lat": 45.46674,
-            "lon": 9.1864,
-            "nome": "Via Roma"
+            "lon": 9.1864
           },
           {
             "lat": 45.46571,
-            "lon": 9.17484,
-            "nome": "Centro storico"
+            "lon": 9.17484
           },
           {
             "lat": 45.45564,
-            "lon": 9.1841,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.1841
           },
           {
             "lat": 45.46014,
-            "lon": 9.18109,
-            "nome": "Via XX Settembre"
+            "lon": 9.18109
           },
           {
             "lat": 45.46882,
-            "lon": 9.19544,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.19544
           },
           {
             "lat": 45.468,
-            "lon": 9.2044,
-            "nome": "Via Garibaldi"
+            "lon": 9.2044
           },
           {
             "lat": 45.46229,
-            "lon": 9.17366,
-            "nome": "Centro storico"
+            "lon": 9.17366
           },
           {
             "lat": 45.46633,
-            "lon": 9.18631,
-            "nome": "Centro storico"
+            "lon": 9.18631
           },
           {
             "lat": 45.47321,
-            "lon": 9.18666,
-            "nome": "Viale dei Tigli"
+            "lon": 9.18666
           },
           {
             "lat": 45.45287,
-            "lon": 9.18454,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18454
           },
           {
             "lat": 45.46385,
-            "lon": 9.17269,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.17269
           },
           {
             "lat": 45.4703,
-            "lon": 9.1999,
-            "nome": "Via Roma"
+            "lon": 9.1999
           },
           {
             "lat": 45.45871,
-            "lon": 9.17891,
-            "nome": "Viale Europa"
+            "lon": 9.17891
           },
           {
             "lat": 45.45711,
-            "lon": 9.18495,
-            "nome": "Centro storico"
+            "lon": 9.18495
           },
           {
             "lat": 45.47542,
-            "lon": 9.20076,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.20076
           },
           {
             "lat": 45.45649,
-            "lon": 9.20755,
-            "nome": "Via Garibaldi"
+            "lon": 9.20755
           },
           {
             "lat": 45.45779,
-            "lon": 9.19353,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19353
           },
           {
             "lat": 45.46117,
-            "lon": 9.17838,
-            "nome": "Piazza San Marco"
+            "lon": 9.17838
           },
           {
             "lat": 45.4709,
-            "lon": 9.19259,
-            "nome": "Via XX Settembre"
+            "lon": 9.19259
           },
           {
             "lat": 45.4677,
-            "lon": 9.19264,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.19264
           },
           {
             "lat": 45.46843,
-            "lon": 9.18178,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18178
           },
           {
             "lat": 45.45396,
-            "lon": 9.18069,
-            "nome": "Centro storico"
+            "lon": 9.18069
           },
           {
             "lat": 45.47418,
-            "lon": 9.20605,
-            "nome": "Centro storico"
+            "lon": 9.20605
           },
           {
             "lat": 45.4651,
-            "lon": 9.17959,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17959
           },
           {
             "lat": 45.45964,
-            "lon": 9.18463,
-            "nome": "Viale dei Tigli"
+            "lon": 9.18463
           },
           {
             "lat": 45.47607,
-            "lon": 9.20137,
-            "nome": "Piazza San Marco"
+            "lon": 9.20137
           },
           {
             "lat": 45.47435,
-            "lon": 9.18794,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18794
           },
           {
             "lat": 45.45551,
-            "lon": 9.20755,
-            "nome": "Via Garibaldi"
+            "lon": 9.20755
           },
           {
             "lat": 45.47387,
-            "lon": 9.17205,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.17205
           },
           {
             "lat": 45.4656,
-            "lon": 9.19696,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.19696
           },
           {
             "lat": 45.46377,
-            "lon": 9.18437,
-            "nome": "Via dei Mille"
+            "lon": 9.18437
           },
           {
             "lat": 45.4655,
-            "lon": 9.20246,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.20246
           },
           {
             "lat": 45.47508,
-            "lon": 9.20419,
-            "nome": "Via XX Settembre"
+            "lon": 9.20419
           },
           {
             "lat": 45.45335,
-            "lon": 9.17247,
-            "nome": "Tangenziale Nord"
+            "lon": 9.17247
           },
           {
             "lat": 45.47253,
-            "lon": 9.17758,
-            "nome": "Via XX Settembre"
+            "lon": 9.17758
           },
           {
             "lat": 45.46375,
-            "lon": 9.18206,
-            "nome": "Piazza San Marco"
+            "lon": 9.18206
           },
           {
             "lat": 45.46312,
-            "lon": 9.18491,
-            "nome": "Via Garibaldi"
+            "lon": 9.18491
           },
           {
             "lat": 45.4586,
-            "lon": 9.19972,
-            "nome": "Centro storico"
+            "lon": 9.19972
           },
           {
             "lat": 45.45863,
-            "lon": 9.1788,
-            "nome": "Via Manzoni"
+            "lon": 9.1788
           },
           {
             "lat": 45.47059,
-            "lon": 9.20468,
-            "nome": "Viale Europa"
+            "lon": 9.20468
           },
           {
             "lat": 45.46769,
-            "lon": 9.17739,
-            "nome": "Viale Europa"
+            "lon": 9.17739
           },
           {
             "lat": 45.47156,
-            "lon": 9.18712,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18712
           },
           {
             "lat": 45.46246,
-            "lon": 9.18558,
-            "nome": "Piazza San Marco"
+            "lon": 9.18558
           },
           {
             "lat": 45.47026,
-            "lon": 9.20623,
-            "nome": "Via dei Mille"
+            "lon": 9.20623
           },
           {
             "lat": 45.47244,
-            "lon": 9.17483,
-            "nome": "Via Roma"
+            "lon": 9.17483
           },
           {
             "lat": 45.45351,
-            "lon": 9.18825,
-            "nome": "Via XX Settembre"
+            "lon": 9.18825
           },
           {
             "lat": 45.45778,
-            "lon": 9.17571,
-            "nome": "Via Garibaldi"
+            "lon": 9.17571
           },
           {
             "lat": 45.47436,
-            "lon": 9.20499,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.20499
           },
           {
             "lat": 45.45535,
-            "lon": 9.17538,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17538
           },
           {
             "lat": 45.45639,
-            "lon": 9.20499,
-            "nome": "Centro storico"
+            "lon": 9.20499
           },
           {
             "lat": 45.45838,
-            "lon": 9.19555,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19555
           },
           {
             "lat": 45.47434,
-            "lon": 9.18155,
-            "nome": "Via XX Settembre"
+            "lon": 9.18155
           },
           {
             "lat": 45.46795,
-            "lon": 9.20752,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20752
           },
           {
             "lat": 45.46902,
-            "lon": 9.1891,
-            "nome": "Via dei Mille"
+            "lon": 9.1891
           },
           {
             "lat": 45.46946,
-            "lon": 9.18989,
-            "nome": "Via XX Settembre"
+            "lon": 9.18989
           },
           {
             "lat": 45.45911,
-            "lon": 9.20018,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20018
           },
           {
             "lat": 45.46658,
-            "lon": 9.20562,
-            "nome": "Via Manzoni"
+            "lon": 9.20562
           },
           {
             "lat": 45.45946,
-            "lon": 9.19452,
-            "nome": "Via Manzoni"
+            "lon": 9.19452
           },
           {
             "lat": 45.46291,
-            "lon": 9.17917,
-            "nome": "Via XX Settembre"
+            "lon": 9.17917
           },
           {
             "lat": 45.47003,
-            "lon": 9.20355,
-            "nome": "Centro storico"
+            "lon": 9.20355
           },
           {
             "lat": 45.46531,
-            "lon": 9.19548,
-            "nome": "Via Manzoni"
+            "lon": 9.19548
           },
           {
             "lat": 45.46767,
-            "lon": 9.19705,
-            "nome": "Viale dei Tigli"
+            "lon": 9.19705
           },
           {
             "lat": 45.46434,
-            "lon": 9.18433,
-            "nome": "Via Manzoni"
+            "lon": 9.18433
           },
           {
             "lat": 45.45589,
-            "lon": 9.17839,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.17839
           },
           {
             "lat": 45.45635,
-            "lon": 9.20014,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20014
           },
           {
             "lat": 45.46766,
-            "lon": 9.20792,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.20792
           },
           {
             "lat": 45.47343,
-            "lon": 9.17405,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17405
           },
           {
             "lat": 45.47265,
-            "lon": 9.20663,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.20663
           },
           {
             "lat": 45.45256,
-            "lon": 9.19221,
-            "nome": "Via Roma"
+            "lon": 9.19221
           },
           {
             "lat": 45.4698,
-            "lon": 9.17696,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17696
           },
           {
             "lat": 45.46568,
-            "lon": 9.18446,
-            "nome": "Via XX Settembre"
+            "lon": 9.18446
           },
           {
             "lat": 45.47437,
-            "lon": 9.1941,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.1941
           },
           {
             "lat": 45.47422,
-            "lon": 9.18011,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18011
           },
           {
             "lat": 45.4693,
-            "lon": 9.19458,
-            "nome": "Via XX Settembre"
+            "lon": 9.19458
           },
           {
             "lat": 45.45665,
-            "lon": 9.20241,
-            "nome": "Via XX Settembre"
+            "lon": 9.20241
           },
           {
             "lat": 45.47193,
-            "lon": 9.20789,
-            "nome": "Via Roma"
+            "lon": 9.20789
           },
           {
             "lat": 45.47058,
-            "lon": 9.18669,
-            "nome": "Centro storico"
+            "lon": 9.18669
           },
           {
             "lat": 45.4535,
-            "lon": 9.18958,
-            "nome": "Via Garibaldi"
+            "lon": 9.18958
           },
           {
             "lat": 45.46726,
-            "lon": 9.18652,
-            "nome": "Centro storico"
+            "lon": 9.18652
           },
           {
             "lat": 45.46073,
-            "lon": 9.2072,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.2072
           },
           {
             "lat": 45.45256,
-            "lon": 9.20731,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.20731
           },
           {
             "lat": 45.47284,
-            "lon": 9.20048,
-            "nome": "Via dei Mille"
+            "lon": 9.20048
           },
           {
             "lat": 45.4658,
-            "lon": 9.18606,
-            "nome": "Via Garibaldi"
+            "lon": 9.18606
           },
           {
             "lat": 45.4594,
-            "lon": 9.20454,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20454
           },
           {
             "lat": 45.4675,
-            "lon": 9.18043,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18043
           },
           {
             "lat": 45.46087,
-            "lon": 9.18748,
-            "nome": "Viale dei Tigli"
+            "lon": 9.18748
           },
           {
             "lat": 45.46099,
-            "lon": 9.17273,
-            "nome": "Centro storico"
+            "lon": 9.17273
           },
           {
             "lat": 45.46947,
-            "lon": 9.20082,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20082
           },
           {
             "lat": 45.46205,
-            "lon": 9.18207,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18207
           },
           {
             "lat": 45.45695,
-            "lon": 9.19857,
-            "nome": "Viale Europa"
+            "lon": 9.19857
           },
           {
             "lat": 45.47057,
-            "lon": 9.20739,
-            "nome": "Via Manzoni"
+            "lon": 9.20739
           },
           {
             "lat": 45.45388,
-            "lon": 9.2004,
-            "nome": "Tangenziale Nord"
+            "lon": 9.2004
           },
           {
             "lat": 45.45341,
-            "lon": 9.19676,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19676
           },
           {
             "lat": 45.45531,
-            "lon": 9.1943,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.1943
           },
           {
             "lat": 45.47619,
-            "lon": 9.18398,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18398
           },
           {
             "lat": 45.47073,
-            "lon": 9.18469,
-            "nome": "Via Manzoni"
+            "lon": 9.18469
           },
           {
             "lat": 45.47349,
-            "lon": 9.17546,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17546
           },
           {
             "lat": 45.45363,
-            "lon": 9.18242,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18242
           },
           {
             "lat": 45.47142,
-            "lon": 9.19511,
-            "nome": "Centro storico"
+            "lon": 9.19511
           },
           {
             "lat": 45.46587,
-            "lon": 9.17372,
-            "nome": "Tangenziale Nord"
+            "lon": 9.17372
           },
           {
             "lat": 45.47214,
-            "lon": 9.1777,
-            "nome": "Via dei Mille"
+            "lon": 9.1777
           },
           {
             "lat": 45.46584,
-            "lon": 9.19082,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19082
           },
           {
             "lat": 45.47111,
-            "lon": 9.19843,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19843
           },
           {
             "lat": 45.46115,
-            "lon": 9.19531,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19531
           },
           {
             "lat": 45.45391,
-            "lon": 9.17834,
-            "nome": "Tangenziale Nord"
+            "lon": 9.17834
           },
           {
             "lat": 45.45995,
-            "lon": 9.20618,
-            "nome": "Via Garibaldi"
+            "lon": 9.20618
           },
           {
             "lat": 45.4625,
-            "lon": 9.20418,
-            "nome": "Via XX Settembre"
+            "lon": 9.20418
           },
           {
             "lat": 45.46588,
-            "lon": 9.17788,
-            "nome": "Via dei Mille"
+            "lon": 9.17788
           },
           {
             "lat": 45.4585,
-            "lon": 9.20581,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.20581
           },
           {
             "lat": 45.45525,
-            "lon": 9.19721,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19721
           },
           {
             "lat": 45.45538,
-            "lon": 9.19402,
-            "nome": "Via Manzoni"
+            "lon": 9.19402
           },
           {
             "lat": 45.46631,
-            "lon": 9.19969,
-            "nome": "Via Garibaldi"
+            "lon": 9.19969
           },
           {
             "lat": 45.4536,
-            "lon": 9.19553,
-            "nome": "Viale dei Tigli"
+            "lon": 9.19553
           },
           {
             "lat": 45.45923,
-            "lon": 9.19272,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19272
           },
           {
             "lat": 45.45347,
-            "lon": 9.17597,
-            "nome": "Via Garibaldi"
+            "lon": 9.17597
           },
           {
             "lat": 45.46037,
-            "lon": 9.1993,
-            "nome": "Viale Europa"
+            "lon": 9.1993
           },
           {
             "lat": 45.47163,
-            "lon": 9.17393,
-            "nome": "Centro storico"
+            "lon": 9.17393
           },
           {
             "lat": 45.46104,
-            "lon": 9.20288,
-            "nome": "Via XX Settembre"
+            "lon": 9.20288
           },
           {
             "lat": 45.47497,
-            "lon": 9.19723,
-            "nome": "Centro storico"
+            "lon": 9.19723
           },
           {
             "lat": 45.45249,
-            "lon": 9.17232,
-            "nome": "Via Manzoni"
+            "lon": 9.17232
           },
           {
             "lat": 45.45488,
-            "lon": 9.18972,
-            "nome": "Via dei Mille"
+            "lon": 9.18972
           },
           {
             "lat": 45.45736,
-            "lon": 9.20499,
-            "nome": "Via Manzoni"
+            "lon": 9.20499
           },
           {
             "lat": 45.47321,
-            "lon": 9.20404,
-            "nome": "Viale Europa"
+            "lon": 9.20404
           },
           {
             "lat": 45.4582,
-            "lon": 9.20345,
-            "nome": "Centro storico"
+            "lon": 9.20345
           },
           {
             "lat": 45.45326,
-            "lon": 9.2073,
-            "nome": "Piazza San Marco"
+            "lon": 9.2073
           },
           {
             "lat": 45.47442,
-            "lon": 9.20427,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20427
           },
           {
             "lat": 45.45393,
-            "lon": 9.18874,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18874
           },
           {
             "lat": 45.46354,
-            "lon": 9.19758,
-            "nome": "Centro storico"
+            "lon": 9.19758
           },
           {
             "lat": 45.47109,
-            "lon": 9.19898,
-            "nome": "Via dei Mille"
+            "lon": 9.19898
           },
           {
             "lat": 45.45857,
-            "lon": 9.18139,
-            "nome": "Via Roma"
+            "lon": 9.18139
           },
           {
             "lat": 45.45323,
-            "lon": 9.20559,
-            "nome": "Via Manzoni"
+            "lon": 9.20559
           },
           {
             "lat": 45.45939,
-            "lon": 9.18637,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18637
           },
           {
             "lat": 45.45819,
-            "lon": 9.17788,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17788
           },
           {
             "lat": 45.46521,
-            "lon": 9.20421,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.20421
           },
           {
             "lat": 45.4706,
-            "lon": 9.18488,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18488
           },
           {
             "lat": 45.46594,
-            "lon": 9.17674,
-            "nome": "Via Roma"
+            "lon": 9.17674
           },
           {
             "lat": 45.45238,
-            "lon": 9.17999,
-            "nome": "Via XX Settembre"
+            "lon": 9.17999
           },
           {
             "lat": 45.45803,
-            "lon": 9.19187,
-            "nome": "Centro storico"
+            "lon": 9.19187
           },
           {
             "lat": 45.47457,
-            "lon": 9.18016,
-            "nome": "Centro storico"
+            "lon": 9.18016
           },
           {
             "lat": 45.47533,
-            "lon": 9.19673,
-            "nome": "Via Garibaldi"
+            "lon": 9.19673
           },
           {
             "lat": 45.45241,
-            "lon": 9.20479,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20479
           },
           {
             "lat": 45.46878,
-            "lon": 9.17282,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17282
           },
           {
             "lat": 45.47223,
-            "lon": 9.19599,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19599
           },
           {
             "lat": 45.45962,
-            "lon": 9.17835,
-            "nome": "Piazza San Marco"
+            "lon": 9.17835
           },
           {
             "lat": 45.46987,
-            "lon": 9.18063,
-            "nome": "Via Garibaldi"
+            "lon": 9.18063
           },
           {
             "lat": 45.46345,
-            "lon": 9.17277,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17277
           },
           {
             "lat": 45.46921,
-            "lon": 9.18734,
-            "nome": "Viale Europa"
+            "lon": 9.18734
           },
           {
             "lat": 45.46035,
-            "lon": 9.19222,
-            "nome": "Via Manzoni"
+            "lon": 9.19222
           },
           {
             "lat": 45.47364,
-            "lon": 9.18692,
-            "nome": "Via Garibaldi"
+            "lon": 9.18692
           },
           {
             "lat": 45.47037,
-            "lon": 9.19624,
-            "nome": "Via dei Mille"
+            "lon": 9.19624
           },
           {
             "lat": 45.4525,
-            "lon": 9.19282,
-            "nome": "Viale dei Tigli"
+            "lon": 9.19282
           },
           {
             "lat": 45.4684,
-            "lon": 9.20742,
-            "nome": "Via Garibaldi"
+            "lon": 9.20742
           },
           {
             "lat": 45.46147,
-            "lon": 9.20456,
-            "nome": "Via dei Mille"
+            "lon": 9.20456
           },
           {
             "lat": 45.45831,
-            "lon": 9.1919,
-            "nome": "Via dei Mille"
+            "lon": 9.1919
           },
           {
             "lat": 45.46632,
-            "lon": 9.19984,
-            "nome": "Viale Europa"
+            "lon": 9.19984
           },
           {
             "lat": 45.45318,
-            "lon": 9.20441,
-            "nome": "Via Garibaldi"
+            "lon": 9.20441
           },
           {
             "lat": 45.45309,
-            "lon": 9.19494,
-            "nome": "Via Manzoni"
+            "lon": 9.19494
           },
           {
             "lat": 45.46075,
-            "lon": 9.17634,
-            "nome": "Via Roma"
+            "lon": 9.17634
           },
           {
             "lat": 45.46503,
-            "lon": 9.17571,
-            "nome": "Tangenziale Nord"
+            "lon": 9.17571
           },
           {
             "lat": 45.47113,
-            "lon": 9.19506,
-            "nome": "Via XX Settembre"
+            "lon": 9.19506
           },
           {
             "lat": 45.45889,
-            "lon": 9.17472,
-            "nome": "Centro storico"
+            "lon": 9.17472
           },
           {
             "lat": 45.4583,
-            "lon": 9.19692,
-            "nome": "Via Garibaldi"
+            "lon": 9.19692
           },
           {
             "lat": 45.47402,
-            "lon": 9.17656,
-            "nome": "Via XX Settembre"
+            "lon": 9.17656
           },
           {
             "lat": 45.46992,
-            "lon": 9.17249,
-            "nome": "Via Manzoni"
+            "lon": 9.17249
           },
           {
             "lat": 45.46276,
-            "lon": 9.19622,
-            "nome": "Centro storico"
+            "lon": 9.19622
           },
           {
             "lat": 45.47581,
-            "lon": 9.19684,
-            "nome": "Via Roma"
+            "lon": 9.19684
           },
           {
             "lat": 45.4702,
-            "lon": 9.20323,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.20323
           },
           {
             "lat": 45.47609,
-            "lon": 9.1881,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.1881
           },
           {
             "lat": 45.47412,
-            "lon": 9.19941,
-            "nome": "Centro storico"
+            "lon": 9.19941
           },
           {
             "lat": 45.46898,
-            "lon": 9.18212,
-            "nome": "Via XX Settembre"
+            "lon": 9.18212
           },
           {
             "lat": 45.45324,
-            "lon": 9.17939,
-            "nome": "Centro storico"
+            "lon": 9.17939
           },
           {
             "lat": 45.47206,
-            "lon": 9.19426,
-            "nome": "Viale Europa"
+            "lon": 9.19426
           },
           {
             "lat": 45.46347,
-            "lon": 9.18783,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18783
           },
           {
             "lat": 45.46747,
-            "lon": 9.19338,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19338
           },
           {
             "lat": 45.46876,
-            "lon": 9.19641,
-            "nome": "Via Garibaldi"
+            "lon": 9.19641
           },
           {
             "lat": 45.47362,
-            "lon": 9.18243,
-            "nome": "Viale Europa"
+            "lon": 9.18243
           },
           {
             "lat": 45.46085,
-            "lon": 9.18125,
-            "nome": "Via XX Settembre"
+            "lon": 9.18125
           },
           {
             "lat": 45.46651,
-            "lon": 9.18255,
-            "nome": "Centro storico"
+            "lon": 9.18255
           },
           {
             "lat": 45.45586,
-            "lon": 9.19687,
-            "nome": "Via dei Mille"
+            "lon": 9.19687
           },
           {
             "lat": 45.46851,
-            "lon": 9.19571,
-            "nome": "Via Roma"
+            "lon": 9.19571
           },
           {
             "lat": 45.47399,
-            "lon": 9.2008,
-            "nome": "Piazza San Marco"
+            "lon": 9.2008
           },
           {
             "lat": 45.46803,
-            "lon": 9.18734,
-            "nome": "Piazza San Marco"
+            "lon": 9.18734
           },
           {
             "lat": 45.46016,
-            "lon": 9.17287,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17287
           },
           {
             "lat": 45.45923,
-            "lon": 9.18324,
-            "nome": "Via XX Settembre"
+            "lon": 9.18324
           },
           {
             "lat": 45.46001,
-            "lon": 9.1927,
-            "nome": "Piazza San Marco"
+            "lon": 9.1927
           },
           {
             "lat": 45.4657,
-            "lon": 9.18425,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18425
           },
           {
             "lat": 45.46375,
-            "lon": 9.18953,
-            "nome": "Via XX Settembre"
+            "lon": 9.18953
           },
           {
             "lat": 45.45861,
-            "lon": 9.19306,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19306
           },
           {
             "lat": 45.47309,
-            "lon": 9.1898,
-            "nome": "Via dei Mille"
+            "lon": 9.1898
           },
           {
             "lat": 45.46991,
-            "lon": 9.17758,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17758
           },
           {
             "lat": 45.45383,
-            "lon": 9.17887,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17887
           },
           {
             "lat": 45.45712,
-            "lon": 9.18401,
-            "nome": "Via Manzoni"
+            "lon": 9.18401
           },
           {
             "lat": 45.4564,
-            "lon": 9.17229,
-            "nome": "Via Roma"
+            "lon": 9.17229
           },
           {
             "lat": 45.47157,
-            "lon": 9.17311,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17311
           },
           {
             "lat": 45.4577,
-            "lon": 9.18402,
-            "nome": "Viale Europa"
+            "lon": 9.18402
           },
           {
             "lat": 45.47169,
-            "lon": 9.20439,
-            "nome": "Viale dei Tigli"
+            "lon": 9.20439
           },
           {
             "lat": 45.47223,
-            "lon": 9.18136,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18136
           },
           {
             "lat": 45.45863,
-            "lon": 9.17578,
-            "nome": "Via dei Mille"
+            "lon": 9.17578
           },
           {
             "lat": 45.45802,
-            "lon": 9.18297,
-            "nome": "Piazza San Marco"
+            "lon": 9.18297
           },
           {
             "lat": 45.45542,
-            "lon": 9.18167,
-            "nome": "Piazza San Marco"
+            "lon": 9.18167
           },
           {
             "lat": 45.45473,
-            "lon": 9.18485,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18485
           },
           {
             "lat": 45.45649,
-            "lon": 9.20059,
-            "nome": "Via Manzoni"
+            "lon": 9.20059
           },
           {
             "lat": 45.47136,
-            "lon": 9.17666,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.17666
           },
           {
             "lat": 45.47163,
-            "lon": 9.19903,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19903
           },
           {
             "lat": 45.46176,
-            "lon": 9.20433,
-            "nome": "Via Roma"
+            "lon": 9.20433
           },
           {
             "lat": 45.46756,
-            "lon": 9.17705,
-            "nome": "Centro storico"
+            "lon": 9.17705
           },
           {
             "lat": 45.45677,
-            "lon": 9.18803,
-            "nome": "Via dei Mille"
+            "lon": 9.18803
           },
           {
             "lat": 45.4715,
-            "lon": 9.20558,
-            "nome": "Via dei Mille"
+            "lon": 9.20558
           },
           {
             "lat": 45.47478,
-            "lon": 9.19416,
-            "nome": "Centro storico"
+            "lon": 9.19416
           },
           {
             "lat": 45.47565,
-            "lon": 9.19522,
-            "nome": "Via Roma"
+            "lon": 9.19522
           },
           {
             "lat": 45.4629,
-            "lon": 9.18695,
-            "nome": "Viale Europa"
+            "lon": 9.18695
           },
           {
             "lat": 45.46587,
-            "lon": 9.19215,
-            "nome": "Via Manzoni"
+            "lon": 9.19215
           },
           {
             "lat": 45.46494,
-            "lon": 9.1945,
-            "nome": "Via XX Settembre"
+            "lon": 9.1945
           },
           {
             "lat": 45.47455,
-            "lon": 9.17519,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.17519
           },
           {
             "lat": 45.46383,
-            "lon": 9.19163,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19163
           },
           {
             "lat": 45.46128,
-            "lon": 9.18785,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18785
           },
           {
             "lat": 45.47424,
-            "lon": 9.1775,
-            "nome": "Via Garibaldi"
+            "lon": 9.1775
           },
           {
             "lat": 45.45575,
-            "lon": 9.1848,
-            "nome": "Via Roma"
+            "lon": 9.1848
           },
           {
             "lat": 45.46455,
-            "lon": 9.17284,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17284
           },
           {
             "lat": 45.45492,
-            "lon": 9.18954,
-            "nome": "Centro storico"
+            "lon": 9.18954
           },
           {
             "lat": 45.46522,
-            "lon": 9.19007,
-            "nome": "Via dei Mille"
+            "lon": 9.19007
           },
           {
             "lat": 45.45832,
-            "lon": 9.1916,
-            "nome": "Piazza San Marco"
+            "lon": 9.1916
           },
           {
             "lat": 45.4679,
-            "lon": 9.20186,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.20186
           },
           {
             "lat": 45.46113,
-            "lon": 9.18515,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18515
           },
           {
             "lat": 45.46439,
-            "lon": 9.18463,
-            "nome": "Piazza San Marco"
+            "lon": 9.18463
           },
           {
             "lat": 45.45897,
-            "lon": 9.19855,
-            "nome": "Via Roma"
+            "lon": 9.19855
           },
           {
             "lat": 45.46578,
-            "lon": 9.18289,
-            "nome": "Via dei Mille"
+            "lon": 9.18289
           },
           {
             "lat": 45.46462,
-            "lon": 9.18018,
-            "nome": "Viale Europa"
+            "lon": 9.18018
           },
           {
             "lat": 45.46823,
-            "lon": 9.17281,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.17281
           },
           {
             "lat": 45.46075,
-            "lon": 9.18957,
-            "nome": "Via Garibaldi"
+            "lon": 9.18957
           },
           {
             "lat": 45.45628,
-            "lon": 9.17772,
-            "nome": "Via Garibaldi"
+            "lon": 9.17772
           },
           {
             "lat": 45.47139,
-            "lon": 9.19973,
-            "nome": "Via XX Settembre"
+            "lon": 9.19973
           },
           {
             "lat": 45.45858,
-            "lon": 9.19273,
-            "nome": "Viale Europa"
+            "lon": 9.19273
           },
           {
             "lat": 45.458,
-            "lon": 9.20606,
-            "nome": "Via Manzoni"
+            "lon": 9.20606
           },
           {
             "lat": 45.45225,
-            "lon": 9.19509,
-            "nome": "Via dei Mille"
+            "lon": 9.19509
           },
           {
             "lat": 45.46164,
-            "lon": 9.18876,
-            "nome": "Via XX Settembre"
+            "lon": 9.18876
           },
           {
             "lat": 45.46587,
-            "lon": 9.1739,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.1739
           },
           {
             "lat": 45.47316,
-            "lon": 9.17989,
-            "nome": "Via Manzoni"
+            "lon": 9.17989
           },
           {
             "lat": 45.46992,
-            "lon": 9.17682,
-            "nome": "Via dei Mille"
+            "lon": 9.17682
           },
           {
             "lat": 45.46138,
-            "lon": 9.19597,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19597
           },
           {
             "lat": 45.46613,
-            "lon": 9.20106,
-            "nome": "Piazza San Marco"
+            "lon": 9.20106
           },
           {
             "lat": 45.47397,
-            "lon": 9.19345,
-            "nome": "Via XX Settembre"
+            "lon": 9.19345
           },
           {
             "lat": 45.45822,
-            "lon": 9.17789,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.17789
           },
           {
             "lat": 45.4723,
-            "lon": 9.18743,
-            "nome": "Centro storico"
+            "lon": 9.18743
           },
           {
             "lat": 45.46849,
-            "lon": 9.20255,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20255
           },
           {
             "lat": 45.47469,
-            "lon": 9.19644,
-            "nome": "Via XX Settembre"
+            "lon": 9.19644
           },
           {
             "lat": 45.46668,
-            "lon": 9.18312,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18312
           },
           {
             "lat": 45.46571,
-            "lon": 9.1949,
-            "nome": "Viale dei Tigli"
+            "lon": 9.1949
           },
           {
             "lat": 45.4552,
-            "lon": 9.18158,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18158
           },
           {
             "lat": 45.46947,
-            "lon": 9.20683,
-            "nome": "Via Garibaldi"
+            "lon": 9.20683
           },
           {
             "lat": 45.46158,
-            "lon": 9.19546,
-            "nome": "Viale dei Tigli"
+            "lon": 9.19546
           },
           {
             "lat": 45.46987,
-            "lon": 9.20677,
-            "nome": "Via XX Settembre"
+            "lon": 9.20677
           },
           {
             "lat": 45.46166,
-            "lon": 9.20495,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20495
           },
           {
             "lat": 45.46066,
-            "lon": 9.18491,
-            "nome": "Viale Europa"
+            "lon": 9.18491
           },
           {
             "lat": 45.46289,
-            "lon": 9.18409,
-            "nome": "Piazza San Marco"
+            "lon": 9.18409
           },
           {
             "lat": 45.46407,
-            "lon": 9.2028,
-            "nome": "Via Roma"
+            "lon": 9.2028
           },
           {
             "lat": 45.47188,
-            "lon": 9.1941,
-            "nome": "Via Roma"
+            "lon": 9.1941
           },
           {
             "lat": 45.45786,
-            "lon": 9.18189,
-            "nome": "Via XX Settembre"
+            "lon": 9.18189
           },
           {
             "lat": 45.45411,
-            "lon": 9.19788,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.19788
           },
           {
             "lat": 45.47544,
-            "lon": 9.18185,
-            "nome": "Via Roma"
+            "lon": 9.18185
           },
           {
             "lat": 45.46889,
-            "lon": 9.20432,
-            "nome": "Via XX Settembre"
+            "lon": 9.20432
           },
           {
             "lat": 45.46478,
-            "lon": 9.20388,
-            "nome": "Piazza San Marco"
+            "lon": 9.20388
           },
           {
             "lat": 45.46799,
-            "lon": 9.18343,
-            "nome": "Centro storico"
+            "lon": 9.18343
           },
           {
             "lat": 45.46009,
-            "lon": 9.20452,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.20452
           },
           {
             "lat": 45.46132,
-            "lon": 9.20692,
-            "nome": "Tangenziale Nord"
+            "lon": 9.20692
           },
           {
             "lat": 45.47287,
-            "lon": 9.1968,
-            "nome": "Via Roma"
+            "lon": 9.1968
           },
           {
             "lat": 45.45479,
-            "lon": 9.18913,
-            "nome": "Via XX Settembre"
+            "lon": 9.18913
           },
           {
             "lat": 45.4655,
-            "lon": 9.17319,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.17319
           },
           {
             "lat": 45.45816,
-            "lon": 9.17546,
-            "nome": "Via Manzoni"
+            "lon": 9.17546
           },
           {
             "lat": 45.47125,
-            "lon": 9.17302,
-            "nome": "Viale dei Tigli"
+            "lon": 9.17302
           },
           {
             "lat": 45.46043,
-            "lon": 9.20233,
-            "nome": "Via Garibaldi"
+            "lon": 9.20233
           },
           {
             "lat": 45.47322,
-            "lon": 9.1893,
-            "nome": "Centro storico"
+            "lon": 9.1893
           },
           {
             "lat": 45.46061,
-            "lon": 9.19925,
-            "nome": "Tangenziale Nord"
+            "lon": 9.19925
           },
           {
             "lat": 45.46006,
-            "lon": 9.18642,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18642
           },
           {
             "lat": 45.46933,
-            "lon": 9.19535,
-            "nome": "Viale dei Tigli"
+            "lon": 9.19535
           },
           {
             "lat": 45.45468,
-            "lon": 9.19239,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.19239
           },
           {
             "lat": 45.46824,
-            "lon": 9.2005,
-            "nome": "Viale Europa"
+            "lon": 9.2005
           },
           {
             "lat": 45.46127,
-            "lon": 9.17853,
-            "nome": "Viale Europa"
+            "lon": 9.17853
           },
           {
             "lat": 45.46076,
-            "lon": 9.18082,
-            "nome": "Via Garibaldi"
+            "lon": 9.18082
           },
           {
             "lat": 45.45626,
-            "lon": 9.17317,
-            "nome": "Centro storico"
+            "lon": 9.17317
           },
           {
             "lat": 45.47463,
-            "lon": 9.20469,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.20469
           },
           {
             "lat": 45.46653,
-            "lon": 9.20707,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.20707
           },
           {
             "lat": 45.4691,
-            "lon": 9.20234,
-            "nome": "Via Garibaldi"
+            "lon": 9.20234
           },
           {
             "lat": 45.45343,
-            "lon": 9.18733,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18733
           },
           {
             "lat": 45.46748,
-            "lon": 9.18837,
-            "nome": "Via Garibaldi"
+            "lon": 9.18837
           },
           {
             "lat": 45.45635,
-            "lon": 9.17274,
-            "nome": "Tangenziale Nord"
+            "lon": 9.17274
           },
           {
             "lat": 45.45309,
-            "lon": 9.19072,
-            "nome": "Via dei Mille"
+            "lon": 9.19072
           },
           {
             "lat": 45.46172,
-            "lon": 9.19444,
-            "nome": "Piazza San Marco"
+            "lon": 9.19444
           },
           {
             "lat": 45.4726,
-            "lon": 9.17935,
-            "nome": "Centro storico"
+            "lon": 9.17935
           },
           {
             "lat": 45.45639,
-            "lon": 9.19504,
-            "nome": "Via dei Mille"
+            "lon": 9.19504
           },
           {
             "lat": 45.45402,
-            "lon": 9.18887,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18887
           },
           {
             "lat": 45.46801,
-            "lon": 9.19454,
-            "nome": "Via Garibaldi"
+            "lon": 9.19454
           },
           {
             "lat": 45.47029,
-            "lon": 9.19239,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.19239
           },
           {
             "lat": 45.46211,
-            "lon": 9.18081,
-            "nome": "Via XX Settembre"
+            "lon": 9.18081
           },
           {
             "lat": 45.4607,
-            "lon": 9.18738,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.18738
           },
           {
             "lat": 45.46067,
-            "lon": 9.18353,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.18353
           },
           {
             "lat": 45.47168,
-            "lon": 9.20582,
-            "nome": "Via dei Mille"
+            "lon": 9.20582
           },
           {
             "lat": 45.47379,
-            "lon": 9.17533,
-            "nome": "Centro storico"
+            "lon": 9.17533
           },
           {
             "lat": 45.46495,
-            "lon": 9.18575,
-            "nome": "Tangenziale Nord"
+            "lon": 9.18575
           },
           {
             "lat": 45.45966,
-            "lon": 9.19444,
-            "nome": "Viale Europa"
+            "lon": 9.19444
           },
           {
             "lat": 45.46314,
-            "lon": 9.17259,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.17259
           },
           {
             "lat": 45.46205,
-            "lon": 9.18446,
-            "nome": "Via Garibaldi"
+            "lon": 9.18446
           },
           {
             "lat": 45.46258,
-            "lon": 9.20332,
-            "nome": "Rotatoria Stazione"
+            "lon": 9.20332
           },
           {
             "lat": 45.46963,
-            "lon": 9.18765,
-            "nome": "Via XX Settembre"
+            "lon": 9.18765
           },
           {
             "lat": 45.4533,
-            "lon": 9.19171,
-            "nome": "Via dei Mille"
+            "lon": 9.19171
           },
           {
             "lat": 45.46991,
-            "lon": 9.20669,
-            "nome": "Strada Provinciale 5"
+            "lon": 9.20669
           },
           {
             "lat": 45.46539,
-            "lon": 9.19772,
-            "nome": "Via Manzoni"
+            "lon": 9.19772
           },
           {
             "lat": 45.45973,
-            "lon": 9.18394,
-            "nome": "Incrocio Via Mazzini/Via Verdi"
+            "lon": 9.18394
           }
         ]
       },
@@ -3267,15 +2793,15 @@
         "data",
         "lat",
         "lon",
-        "morti",
+        "decessi",
         "feriti",
-        "zona",
+        "localita",
         "ora"
       ]
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T11:04:53.875Z",
+      "fetched_at": "2026-05-05T13:38:23.166Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3283,7 +2809,7 @@
         "months": 17,
         "iso": "2024-12-31"
       },
-      "n_rows": 15,
+      "n_rows": 30,
       "metrics": {
         "rd_pct_ultimo_anno": {
           "anno": 2024,
@@ -3363,13 +2889,14 @@
       "error": null,
       "fields_present": [
         "anno",
-        "rd_pct",
-        "kg_totali"
+        "frazione",
+        "valore_assoluto",
+        "unita_misura"
       ]
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T11:04:53.875Z",
+      "fetched_at": "2026-05-05T13:38:23.166Z",
       "status": "ok",
       "modified": "2025-01-31",
       "freshness": {
@@ -3853,8 +3380,8 @@
       "error": null,
       "fields_present": [
         "nome",
-        "data_inizio",
-        "data_fine",
+        "datainizio",
+        "datafine",
         "categoria",
         "luogo",
         "lat",
@@ -3864,7 +3391,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T11:04:53.876Z",
+      "fetched_at": "2026-05-05T13:38:23.170Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -3889,7 +3416,60 @@
             "n": 87
           }
         ],
-        "per_ufficio": [],
+        "per_ufficio": [
+          {
+            "nome": "Patrimonio",
+            "n": 54
+          },
+          {
+            "nome": "Personale",
+            "n": 52
+          },
+          {
+            "nome": "Pubblica istruzione",
+            "n": 51
+          },
+          {
+            "nome": "Servizi cimiteriali",
+            "n": 48
+          },
+          {
+            "nome": "Ambiente",
+            "n": 46
+          },
+          {
+            "nome": "Urbanistica",
+            "n": 45
+          },
+          {
+            "nome": "Servizi sociali",
+            "n": 45
+          },
+          {
+            "nome": "Sport",
+            "n": 43
+          },
+          {
+            "nome": "Lavori pubblici",
+            "n": 43
+          },
+          {
+            "nome": "Bilancio e tributi",
+            "n": 43
+          },
+          {
+            "nome": "Polizia locale",
+            "n": 42
+          },
+          {
+            "nome": "Tributi",
+            "n": 41
+          },
+          {
+            "nome": "Cultura",
+            "n": 38
+          }
+        ],
         "serie_anni": [
           {
             "anno": 2022,
@@ -3917,16 +3497,16 @@
       "source_url": null,
       "error": null,
       "fields_present": [
-        "data",
-        "tipo",
-        "numero",
+        "data_atto",
+        "tipo_atto",
+        "numero_atto",
         "oggetto",
-        "settore"
+        "uo_proponente"
       ]
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T11:04:53.879Z",
+      "fetched_at": "2026-05-05T13:38:23.182Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3987,7 +3567,40 @@
             "n": 1
           }
         ],
-        "per_destinazione": [],
+        "per_destinazione": [
+          {
+            "nome": "Scolastico",
+            "n": 10
+          },
+          {
+            "nome": "Disponibile",
+            "n": 8
+          },
+          {
+            "nome": "Storico-artistico",
+            "n": 7
+          },
+          {
+            "nome": "Strumentale",
+            "n": 6
+          },
+          {
+            "nome": "Sportivo",
+            "n": 5
+          },
+          {
+            "nome": "Cimiteriale",
+            "n": 3
+          },
+          {
+            "nome": "In locazione",
+            "n": 2
+          },
+          {
+            "nome": "Amministrativo",
+            "n": 1
+          }
+        ],
         "valore_totale": 98255000,
         "superficie_totale_mq": null,
         "pct_vincolo": 21.4,
@@ -4217,14 +3830,14 @@
         "indirizzo",
         "lat",
         "lon",
-        "valore_euro",
-        "vincolo_culturale",
-        "uso"
+        "rendita",
+        "qualita",
+        "consistenza"
       ]
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T11:04:53.880Z",
+      "fetched_at": "2026-05-05T13:38:23.189Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -4310,10 +3923,10 @@
       "error": null,
       "fields_present": [
         "anno",
-        "tributo",
-        "gettito_euro",
-        "n_contribuenti",
-        "aliquota_base",
+        "tipo_atto",
+        "totale_entrate",
+        "numero",
+        "valore",
         "descrizione",
         "categoria"
       ]

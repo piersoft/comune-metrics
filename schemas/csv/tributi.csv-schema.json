@@ -1,56 +1,83 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://piersoft.github.io/comune-metrics/schemas/csv/tributi.csv-schema.json",
-  "title": "Paniere CSV — tributi.csv",
-  "description": "Una riga per (anno, tributo) con il gettito riscosso. Per TARI può esserci più righe per anno con categoria diversa (utenze domestiche/non domestiche, scaglioni). Tipi standardizzati: IMU, TARI, TASSA_SOGGIORNO, ADDIZIONALE_IRPEF, COSAP, IMPOSTA_PUBBLICITA, CANONE_UNICO.",
+  "title": "Paniere CSV — tributi.csv (v2.0)",
+  "description": "Una riga per (anno, tipo_atto) con il gettito riscosso. Per TARI può esserci più righe per anno con categoria diversa (utenze domestiche/non domestiche, scaglioni). Tipi standardizzati: IMU, TARI, TASSA_SOGGIORNO, ADDIZIONALE_IRPEF, COSAP, IMPOSTA_PUBBLICITA, CANONE_UNICO.",
+  "version": "2.0",
+  "rename_aliases": {
+    "tributo": "tipo_atto",
+    "gettito_euro": "totale_entrate",
+    "n_contribuenti": "numero",
+    "aliquota_base": "valore"
+  },
   "type": "array",
   "minItems": 1,
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["anno", "tributo"],
+    "required": ["anno", "tipo_atto"],
     "properties": {
-      "anno": { "type": "integer", "minimum": 1900, "maximum": 2050 },
-      "tributo": {
+      "anno": {
+        "type": "integer",
+        "minimum": 1900,
+        "maximum": 2050,
+        "rdf_predicate": "sdmx-dimension:refPeriod"
+      },
+      "tipo_atto": {
         "type": "string",
         "minLength": 1,
         "maxLength": 50,
-        "description": "Tipo tributo. Tipi standardizzati: IMU, TARI, TASSA_SOGGIORNO, ADDIZIONALE_IRPEF, COSAP, IMPOSTA_PUBBLICITA, CANONE_UNICO. Liberi tributi minori."
+        "description": "Tipo tributo (ex 'tributo'). Tipi standardizzati: IMU, TARI, TASSA_SOGGIORNO, ADDIZIONALE_IRPEF, COSAP, IMPOSTA_PUBBLICITA, CANONE_UNICO. Liberi tributi minori.",
+        "rdf_predicate": "dct:type@it"
       },
-      "gettito_euro": {
+      "totale_entrate": {
         "type": ["number", "null"],
         "minimum": 0,
-        "description": "Importo riscosso effettivo in euro (NON quello previsto a bilancio). Separatore decimale: punto."
+        "description": "Importo riscosso effettivo in euro (NON quello previsto a bilancio). Separatore decimale: punto. (ex 'gettito_euro')",
+        "rdf_predicate": "sdmx-measure:obsValue"
       },
-      "n_contribuenti": {
+      "numero": {
         "type": ["integer", "null"],
         "minimum": 0,
-        "description": "Numero di contribuenti / utenze attive nell'anno"
+        "description": "Numero di contribuenti / utenze attive nell'anno (ex 'n_contribuenti')",
+        "rdf_predicate": "sdmx-measure:obsValue"
       },
-      "aliquota_base": {
+      "valore": {
         "type": ["number", "null"],
         "minimum": 0,
-        "description": "Aliquota o tariffa base (es. 1.06 per IMU = 10.6 per mille; 2.50 per tassa di soggiorno = €/notte; 0.80 per addizionale IRPEF = 0.80%)"
+        "description": "Aliquota o tariffa base (es. 1.06 per IMU = 10.6 per mille; 2.50 per tassa di soggiorno = €/notte; 0.80 per addizionale IRPEF = 0.80%) (ex 'aliquota_base'). Per definizione necessita di una colonna 'unita_misura' (es. '%', 'permille', '€/notte').",
+        "rdf_predicate": "iot:hasObservationValue"
+      },
+      "unita_misura": {
+        "type": ["string", "null"],
+        "maxLength": 30,
+        "description": "Unità di misura del 'valore' (es. '%', 'permille', '€/notte')",
+        "rdf_predicate": "mu:hasMeasurementUnit"
       },
       "descrizione": {
         "type": ["string", "null"],
         "maxLength": 300,
-        "description": "Descrizione libera della delibera o regolamento di riferimento"
+        "description": "Descrizione libera della delibera o regolamento di riferimento",
+        "rdf_predicate": "dct:description@it"
       },
       "categoria": {
         "type": ["string", "null"],
         "maxLength": 100,
-        "description": "Sotto-categoria (es. 'Utenze domestiche'/'Utenze non domestiche' per TARI; vuoto per IMU/altri)"
+        "description": "Sotto-categoria (es. 'Utenze domestiche'/'Utenze non domestiche' per TARI; vuoto per IMU/altri)",
+        "rdf_predicate": "dct:type@it"
       }
     }
   },
   "examples": [
     [
-      { "anno": 2024, "tributo": "IMU", "gettito_euro": 15800000.00, "n_contribuenti": 32500, "aliquota_base": 1.06, "descrizione": "Aliquota ordinaria 10.6 per mille" },
-      { "anno": 2024, "tributo": "TARI", "gettito_euro": 12300000.00, "n_contribuenti": 38000, "categoria": "Utenze domestiche" },
-      { "anno": 2024, "tributo": "TARI", "gettito_euro": 6200000.00, "n_contribuenti": 4000, "categoria": "Utenze non domestiche" },
-      { "anno": 2024, "tributo": "TASSA_SOGGIORNO", "gettito_euro": 1250000.00, "aliquota_base": 2.50, "descrizione": "Tassa €2.50/notte categoria 4 stelle" },
-      { "anno": 2024, "tributo": "ADDIZIONALE_IRPEF", "gettito_euro": 8900000.00, "aliquota_base": 0.80, "descrizione": "Aliquota 0.80%" }
+      { "anno": 2024, "tipo_atto": "IMU", "totale_entrate": 15800000.00, "numero": 32500, "valore": 1.06, "unita_misura": "%", "descrizione": "Aliquota ordinaria 10.6 per mille" },
+      { "anno": 2024, "tipo_atto": "TARI", "totale_entrate": 12300000.00, "numero": 38000, "categoria": "Utenze domestiche" },
+      { "anno": 2024, "tipo_atto": "TARI", "totale_entrate": 6200000.00, "numero": 4000, "categoria": "Utenze non domestiche" },
+      { "anno": 2024, "tipo_atto": "TASSA_SOGGIORNO", "totale_entrate": 1250000.00, "valore": 2.50, "unita_misura": "€/notte", "descrizione": "Tassa €2.50/notte categoria 4 stelle" },
+      { "anno": 2024, "tipo_atto": "ADDIZIONALE_IRPEF", "totale_entrate": 8900000.00, "valore": 0.80, "unita_misura": "%", "descrizione": "Aliquota 0.80%" }
     ]
+  ],
+  "notes": [
+    "v2.0: rinomina 'tributo'→'tipo_atto', 'gettito_euro'→'totale_entrate', 'n_contribuenti'→'numero', 'aliquota_base'→'valore' per allineamento al tool CSV-to-RDF (DET_COL_RULES). Aggiunto 'unita_misura' opzionale per disambiguare % vs €/notte vs permille."
   ]
 }

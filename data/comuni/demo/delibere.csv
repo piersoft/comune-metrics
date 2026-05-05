@@ -1,4 +1,4 @@
-data,tipo,numero,oggetto,settore
+data_atto,tipo_atto,numero_atto,oggetto,uo_proponente
 2022-07-16,Giunta,156,Nomina commissione giudicatrice servizio mensa scolastica,Polizia locale
 2022-01-04,Giunta,61,Costituzione gruppo di lavoro per manutenzione strade,Urbanistica
 2022-05-26,Determinazione dirigenziale,79,Variazione di bilancio relativa a noleggio fotocopiatrici,Ambiente

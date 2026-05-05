@@ -3,42 +3,54 @@
   "dataset": "delibere",
   "title": "Delibere e atti amministrativi",
   "description": "Una riga per delibera/atto pubblicato all'Albo Pretorio.",
-  "version": "1.0",
+  "version": "2.0",
   "encoding": "UTF-8",
   "delimiter_allowed": [",", ";"],
   "decimal_separator": ".",
+  "rename_aliases": {
+    "data": "data_atto",
+    "tipo": "tipo_atto",
+    "numero": "numero_atto",
+    "ufficio": "uo_proponente",
+    "settore": "uo_proponente"
+  },
   "required_columns": [
     {
-      "name": "data",
+      "name": "data_atto",
       "datatype": "date",
       "format": "YYYY-MM-DD",
-      "description": "Data dell'atto"
+      "description": "Data dell'atto (ex 'data')",
+      "rdf_predicate": "dct:date"
     }
   ],
   "optional_columns": [
     {
-      "name": "tipo",
+      "name": "tipo_atto",
       "datatype": "string",
       "max_length": 100,
-      "description": "Tipologia atto (es. 'Delibera Giunta', 'Delibera Consiglio', 'Determina dirigenziale', 'Ordinanza')"
+      "description": "Tipologia atto (es. 'Delibera Giunta', 'Delibera Consiglio', 'Determina dirigenziale', 'Ordinanza') (ex 'tipo')",
+      "rdf_predicate": "dct:type@it"
     },
     {
-      "name": "numero",
+      "name": "numero_atto",
       "datatype": "string",
       "max_length": 50,
-      "description": "Numero progressivo dell'atto"
+      "description": "Numero progressivo dell'atto (ex 'numero')",
+      "rdf_predicate": "dct:identifier"
     },
     {
       "name": "oggetto",
       "datatype": "string",
       "max_length": 1000,
-      "description": "Oggetto dell'atto"
+      "description": "Oggetto dell'atto",
+      "rdf_predicate": "dct:description@it"
     },
     {
-      "name": "ufficio",
+      "name": "uo_proponente",
       "datatype": "string",
       "max_length": 200,
-      "description": "Ufficio o settore proponente"
+      "description": "Unità organizzativa o settore proponente (ex 'ufficio', 'settore')",
+      "rdf_predicate": "dct:publisher@it"
     },
     {
       "name": "url",
@@ -47,9 +59,10 @@
       "description": "URL del documento integrale"
     }
   ],
-  "example": "data,tipo,numero,oggetto,ufficio\n2024-03-15,\"Delibera Giunta\",87,\"Approvazione bilancio di previsione 2024\",\"Ragioneria\"\n2024-03-16,\"Determina dirigenziale\",234,\"Affidamento servizio mensa scolastica\",\"Pubblica Istruzione\"\n",
+  "example": "data_atto,tipo_atto,numero_atto,oggetto,uo_proponente\n2024-03-15,\"Delibera Giunta\",87,\"Approvazione bilancio di previsione 2024\",\"Ragioneria\"\n2024-03-16,\"Determina dirigenziale\",234,\"Affidamento servizio mensa scolastica\",\"Pubblica Istruzione\"\n",
   "notes": [
     "Per i Comuni che pubblicano l'Albo Pretorio in formato aperto, una riga per atto.",
-    "Le tipologie standard sono: Delibera Giunta, Delibera Consiglio, Determina dirigenziale, Ordinanza, Decreto sindacale."
+    "Le tipologie standard sono: Delibera Giunta, Delibera Consiglio, Determina dirigenziale, Ordinanza, Decreto sindacale.",
+    "v2.0: rinomina colonne per allineamento al tool CSV-to-RDF (DET_COL_RULES). Vecchi nomi: 'data'→'data_atto', 'tipo'→'tipo_atto', 'numero'→'numero_atto', 'ufficio'/'settore'→'uo_proponente'."
   ]
 }
