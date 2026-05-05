@@ -1,11 +1,11 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-05T09:24:38.498Z",
+  "built_at": "2026-05-05T09:30:29.596Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "demo": {
       "key": "demo",
-      "nome": "Comune DEMO",
+      "nome": "Comune IDEALE",
       "ipa": "c_demo01",
       "mode": "manifest",
       "snapshot_date": null,
