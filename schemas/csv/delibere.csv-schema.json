@@ -1,0 +1,55 @@
+{
+  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
+  "dataset": "delibere",
+  "title": "Delibere e atti amministrativi",
+  "description": "Una riga per delibera/atto pubblicato all'Albo Pretorio.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [",", ";"],
+  "decimal_separator": ".",
+  "required_columns": [
+    {
+      "name": "data",
+      "datatype": "date",
+      "format": "YYYY-MM-DD",
+      "description": "Data dell'atto"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "tipo",
+      "datatype": "string",
+      "max_length": 100,
+      "description": "Tipologia atto (es. 'Delibera Giunta', 'Delibera Consiglio', 'Determina dirigenziale', 'Ordinanza')"
+    },
+    {
+      "name": "numero",
+      "datatype": "string",
+      "max_length": 50,
+      "description": "Numero progressivo dell'atto"
+    },
+    {
+      "name": "oggetto",
+      "datatype": "string",
+      "max_length": 1000,
+      "description": "Oggetto dell'atto"
+    },
+    {
+      "name": "ufficio",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Ufficio o settore proponente"
+    },
+    {
+      "name": "url",
+      "datatype": "string",
+      "max_length": 1000,
+      "description": "URL del documento integrale"
+    }
+  ],
+  "example": "data,tipo,numero,oggetto,ufficio\n2024-03-15,\"Delibera Giunta\",87,\"Approvazione bilancio di previsione 2024\",\"Ragioneria\"\n2024-03-16,\"Determina dirigenziale\",234,\"Affidamento servizio mensa scolastica\",\"Pubblica Istruzione\"\n",
+  "notes": [
+    "Per i Comuni che pubblicano l'Albo Pretorio in formato aperto, una riga per atto.",
+    "Le tipologie standard sono: Delibera Giunta, Delibera Consiglio, Determina dirigenziale, Ordinanza, Decreto sindacale."
+  ]
+}

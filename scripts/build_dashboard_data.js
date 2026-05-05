@@ -10,10 +10,12 @@
 // Input:  config/comuni.yml + config/metrics.yml
 // Output: data/dashboard.json + data/comuni/<key>.json
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { CALCULATORS } from "./calculators.js";
+import { CALCULATORS_V2 } from "./calculators_v2.js";
+import { validateCsv, loadSchema } from "./validate_csv.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -692,6 +694,166 @@ async function runPool(tasks, size) {
   return results;
 }
 
+// =============================================================================
+// NUOVO MODELLO (Fase A): Comune con manifest.yml + CSV canonici
+// =============================================================================
+//
+// Una cartella data/comuni/<comune>/ con manifest.yml e (opzionalmente) CSV
+// canonici descritti in schemas/csv/. Per ogni dataset CORE il manifest
+// dichiara source_type:
+//
+//   - "fixture":               CSV statico nel repo, path: <dataset>.csv
+//   - "external_csv":          fetch HTTP di un CSV esterno
+//   - "opendatasoft_aggregate": fetch /records?select=...&group_by=...
+//
+// Tutti i CSV vengono validati contro schemas/csv/<dataset>.csv-schema.json
+// prima del calcolo. CSV invalidi → status: "schema_error".
+//
+// Coesistenza con vecchio modello: il main() prima processa i Comuni con
+// manifest.yml, poi quelli in comuni.yml (Bologna, Lecce). Output identico.
+// =============================================================================
+
+const MANIFEST_FILENAME = "manifest.yml";
+
+function comuniManifestDirs() {
+  if (!existsSync(COMUNI_DIR)) return [];
+  return readdirSync(COMUNI_DIR, { withFileTypes: true })
+    .filter(d => d.isDirectory() && !d.name.startsWith("_"))
+    .map(d => d.name)
+    .filter(name => existsSync(join(COMUNI_DIR, name, MANIFEST_FILENAME)));
+}
+
+async function fetchExternalCsv(url) {
+  const r = await fetchWithTimeout(url, { headers: { "User-Agent": USER_AGENT } });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const text = await r.text();
+  if (text.length === 0) throw new Error("Risposta vuota");
+  if (text.trimStart().startsWith("<")) {
+    throw new Error("Server ha restituito HTML invece di CSV");
+  }
+  if (text.length >= 4 && text.charCodeAt(0) === 0x50 && text.charCodeAt(1) === 0x4B) {
+    throw new Error("Risorsa è un archivio ZIP, non un CSV");
+  }
+  return text;
+}
+
+async function processManifestDataset(comuneKey, dsKey, dsDecl, manifestDir) {
+  const out = {
+    dataset_key: dsKey,
+    fetched_at: new Date().toISOString(),
+    status: "ok",
+    modified: dsDecl.aggiornato || null,
+    freshness: { level: "unknown", months: null, iso: null },
+    n_rows: null,
+    metrics: null,
+    resource_url: dsDecl.url || dsDecl.path || null,
+    resource_format: "CSV",
+    source_type: dsDecl.source_type,
+    error: null,
+  };
+  if (out.modified) out.freshness = freshness(out.modified);
+
+  if (dsDecl.presente === false) {
+    out.status = "not_published";
+    if (dsDecl.motivo) out.error = dsDecl.motivo;
+    return out;
+  }
+
+  let schema;
+  try {
+    schema = loadSchema(dsKey);
+  } catch (e) {
+    out.status = "schema_error";
+    out.error = `Schema CSV canonico non trovato per dataset '${dsKey}'`;
+    return out;
+  }
+
+  let csvText;
+  try {
+    if (dsDecl.source_type === "fixture") {
+      const csvPath = join(manifestDir, dsDecl.path || `${dsKey}.csv`);
+      if (!existsSync(csvPath)) throw new Error(`File non trovato: ${csvPath}`);
+      csvText = readFileSync(csvPath, "utf8");
+    } else if (dsDecl.source_type === "external_csv" || dsDecl.source_type === "opendatasoft_aggregate") {
+      if (!dsDecl.url) throw new Error(`source_type=${dsDecl.source_type} ma 'url' mancante`);
+      csvText = await fetchExternalCsv(dsDecl.url);
+    } else {
+      throw new Error(`source_type sconosciuto: '${dsDecl.source_type}'`);
+    }
+  } catch (e) {
+    out.status = "fetch_error";
+    out.error = e.message;
+    return out;
+  }
+
+  const valid = validateCsv(csvText, schema);
+  if (!valid.ok) {
+    out.status = "schema_error";
+    out.error = `CSV non conforme allo schema canonico (${valid.errors.length} errori). Primi 3: ` +
+      valid.errors.slice(0, 3).join(' | ');
+    out.schema_errors = valid.errors.slice(0, 20);
+    return out;
+  }
+
+  const rows = parseCSV(csvText);
+  out.n_rows = rows.length;
+  out.fields_present = valid.headers;
+
+  const calc = CALCULATORS_V2[dsKey];
+  if (!calc) {
+    out.status = "no_calculator";
+    out.error = `Calculator v2 non trovato per dataset '${dsKey}'`;
+    return out;
+  }
+  try {
+    out.metrics = calc(rows);
+  } catch (e) {
+    out.status = "calc_error";
+    out.error = `Errore calcolo metriche: ${e.message}`;
+    return out;
+  }
+
+  log(`  ✓ [v2] ${dsKey} rows=${rows.length} source=${dsDecl.source_type}`);
+  return out;
+}
+
+async function processManifestComune(comuneKey) {
+  const manifestDir = join(COMUNI_DIR, comuneKey);
+  const manifestPath = join(manifestDir, MANIFEST_FILENAME);
+  const manifest = parseYaml(readFileSync(manifestPath, "utf8"));
+
+  log(`\n=== Comune (manifest): ${comuneKey} (${manifest.nome}) ===`);
+
+  const comuneOut = {
+    key: comuneKey,
+    nome: manifest.nome,
+    ipa: manifest.ipa,
+    istat: manifest.istat,
+    popolazione_attesa: manifest.popolazione_attesa,
+    mandato: manifest.mandato,
+    sindaco: manifest.sindaco,
+    mappa_center: manifest.mappa_center,
+    mappa_zoom: manifest.mappa_zoom,
+    mode: manifest.mode || "manifest",
+    snapshot_date: manifest.snapshot_date || null,
+    snapshot_reason: manifest.snapshot_reason || null,
+    paniere_version: manifest.paniere_version || "csv-v1",
+    datasets: {},
+  };
+
+  const datasets = manifest.datasets || {};
+  for (const [dsKey, dsDecl] of Object.entries(datasets)) {
+    if (!dsDecl || typeof dsDecl !== 'object') continue;
+    comuneOut.datasets[dsKey] = await processManifestDataset(comuneKey, dsKey, dsDecl, manifestDir);
+  }
+
+  const outPath = join(COMUNI_DIR, `${comuneKey}.json`);
+  writeFileSync(outPath, JSON.stringify(comuneOut, null, 2), "utf-8");
+  log(`→ data/comuni/${comuneKey}.json (manifest mode)`);
+
+  return comuneOut;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   log("=== ComuneMetrics builder start ===");
@@ -712,8 +874,49 @@ async function main() {
     comuni: {},
   };
 
+  // -------------------------------------------------------------------
+  // FASE 1: Comuni con manifest.yml (NUOVO MODELLO CSV CANONICO)
+  // -------------------------------------------------------------------
+  // Sono Comuni che hanno data/comuni/<key>/manifest.yml e CSV canonici.
+  // Il modello target a regime: ogni nuovo Comune si aggiunge con una PR
+  // che crea la cartella, niente codice da modificare.
+  const manifestComuni = comuniManifestDirs();
+  if (manifestComuni.length > 0) {
+    log(`\n--- Trovati ${manifestComuni.length} Comuni con manifest.yml: ${manifestComuni.join(', ')} ---`);
+    for (const comuneKey of manifestComuni) {
+      try {
+        const comuneOut = await processManifestComune(comuneKey);
+        dashboard.comuni[comuneKey] = {
+          key: comuneKey,
+          nome: comuneOut.nome,
+          ipa: comuneOut.ipa,
+          mode: comuneOut.mode,
+          snapshot_date: comuneOut.snapshot_date,
+          paniere_version: comuneOut.paniere_version,
+          n_datasets_pubblicati: Object.values(comuneOut.datasets)
+            .filter(d => d.status !== "not_published").length,
+          n_datasets_totali: Object.keys(comuneOut.datasets).length,
+          n_datasets_ok: Object.values(comuneOut.datasets)
+            .filter(d => d.status === "ok").length,
+        };
+      } catch (e) {
+        warn(`Errore manifest ${comuneKey}: ${e.message}`);
+      }
+    }
+  }
+
+  // -------------------------------------------------------------------
+  // FASE 2: Comuni in comuni.yml (VECCHIO MODELLO — Bologna, Lecce)
+  // -------------------------------------------------------------------
+  // Manteniamo il code-path attuale per Bologna (live API Opendatasoft)
+  // e Lecce (mode static_snapshot con fixture in data/fixtures/lecce/).
+  // Skip per Comuni già processati via manifest.
   for (const [comuneKey, comune] of Object.entries(comuniCfg.comuni || {})) {
-    log(`\n=== Comune: ${comuneKey} (${comune.nome}) ===`);
+    if (manifestComuni.includes(comuneKey)) {
+      log(`(${comuneKey} già processato via manifest, skip comuni.yml)`);
+      continue;
+    }
+    log(`\n=== Comune (legacy): ${comuneKey} (${comune.nome}) ===`);
     const comuneOut = {
       key: comuneKey,
       nome: comune.nome,

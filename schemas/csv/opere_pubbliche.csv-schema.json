@@ -1,0 +1,74 @@
+{
+  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
+  "dataset": "opere_pubbliche",
+  "title": "Opere pubbliche e cantieri",
+  "description": "Una riga per opera/cantiere con identificativo, importo, geo, fonte di finanziamento.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [",", ";"],
+  "decimal_separator": ".",
+  "required_columns": [
+    {
+      "name": "nome",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Nome o descrizione sintetica dell'opera"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "constraints": { "min": 1900, "max": 2050 },
+      "description": "Anno di programmazione o avvio"
+    },
+    {
+      "name": "stato",
+      "datatype": "string",
+      "max_length": 100,
+      "description": "Stato di avanzamento (es. 'in corso', 'concluso', 'programmato')"
+    },
+    {
+      "name": "importo_euro",
+      "datatype": "number",
+      "constraints": { "min": 0 },
+      "description": "Importo a quadro economico in euro"
+    },
+    {
+      "name": "cup",
+      "datatype": "string",
+      "pattern": "^[A-Z][0-9]{2}[A-Z][0-9]{7}[0-9]{4}$",
+      "description": "Codice Unico di Progetto (formato CUP a 15 caratteri)"
+    },
+    {
+      "name": "lat",
+      "datatype": "number",
+      "constraints": { "min": -90, "max": 90 },
+      "description": "Latitudine (gradi decimali, separatore punto)"
+    },
+    {
+      "name": "lon",
+      "datatype": "number",
+      "constraints": { "min": -180, "max": 180 },
+      "description": "Longitudine (gradi decimali, separatore punto)"
+    },
+    {
+      "name": "fonte_finanziamento",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Fonte di finanziamento (es. 'PNRR', 'Comunale', 'Regionale', 'Statale', 'UE')"
+    },
+    {
+      "name": "tipo",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Tipologia (es. 'edilizia scolastica', 'manutenzione strade')"
+    }
+  ],
+  "example": "nome,anno,stato,importo_euro,cup,lat,lon,fonte_finanziamento\n\"Riqualificazione Mercato Settelacquare\",2020,\"in corso\",150000.00,C84D19000060002,40.38434,18.10364,\"Europeo\"\n\"Manutenzione straordinaria Tangenziale est\",2020,\"concluso\",1000000.00,C83H19000410001,40.36500,18.18000,\"Statale\"\n",
+  "notes": [
+    "Solo 'nome' è obbligatorio. Più campi opzionali compili, più completa la dashboard.",
+    "Se hai lat/lon, le opere appaiono sulla mappa.",
+    "Il CUP, se presente, deve seguire il formato 15 caratteri standard CIPESS."
+  ]
+}

@@ -1,0 +1,120 @@
+name: Validate Paniere CSV
+
+# Validazione automatica dei CSV del Paniere su ogni PR che tocchi
+# data/comuni/*/manifest.yml o un file CSV in data/comuni/*/.
+#
+# Politica: HARD VALIDATION. Se anche un solo CSV non rispetta lo schema
+# canonico in schemas/csv/, la PR FAIL. CSV non conformi NON vengono mergiati.
+
+on:
+  pull_request:
+    paths:
+      - "data/comuni/**/manifest.yml"
+      - "data/comuni/**/*.csv"
+      - "schemas/csv/**"
+      - "scripts/validate_csv.js"
+
+jobs:
+  validate-csv:
+    runs-on: ubuntu-latest
+    name: Validate CSV against canonical schema
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Find Comuni con manifest.yml
+        id: find-comuni
+        run: |
+          set -eo pipefail
+          comuni=$(find data/comuni -mindepth 1 -maxdepth 1 -type d \
+                   -not -name "_*" \
+                   -exec test -f {}/manifest.yml \; -print | sed 's|.*/||')
+          echo "comuni=$comuni"
+          echo "comuni=$comuni" >> $GITHUB_OUTPUT
+
+      - name: Validate CSV files for each Comune
+        run: |
+          set -eo pipefail
+          fail=0
+          total=0
+          ok=0
+          comuni="${{ steps.find-comuni.outputs.comuni }}"
+          if [ -z "$comuni" ]; then
+            echo "Nessun Comune con manifest.yml trovato. Skip."
+            exit 0
+          fi
+
+          for comune in $comuni; do
+            echo ""
+            echo "=== Comune: $comune ==="
+            for csv in data/comuni/$comune/*.csv; do
+              [ -f "$csv" ] || continue
+              dataset=$(basename "$csv" .csv)
+              total=$((total + 1))
+              if [ ! -f "schemas/csv/${dataset}.csv-schema.json" ]; then
+                echo "  ⚠ Skip $csv: schema non trovato per dataset '$dataset'"
+                continue
+              fi
+              if node scripts/validate_csv.js "$dataset" "$csv"; then
+                ok=$((ok + 1))
+              else
+                fail=$((fail + 1))
+              fi
+            done
+          done
+
+          echo ""
+          echo "=== Riepilogo: $ok/$total CSV validi, $fail falliti ==="
+          if [ $fail -gt 0 ]; then
+            echo "::error::$fail CSV non rispettano lo schema canonico del Paniere. Correggi e ricommit."
+            exit 1
+          fi
+
+      - name: Validate manifest.yml structure
+        run: |
+          set -eo pipefail
+          fail=0
+          comuni="${{ steps.find-comuni.outputs.comuni }}"
+          for comune in $comuni; do
+            manifest="data/comuni/$comune/manifest.yml"
+            [ -f "$manifest" ] || continue
+            echo "=== Manifest: $comune ==="
+            python3 -c "
+          import yaml, sys
+          with open('$manifest') as f:
+              try:
+                  m = yaml.safe_load(f)
+              except yaml.YAMLError as e:
+                  print(f'  ✗ YAML invalid: {e}')
+                  sys.exit(1)
+          required = ['nome', 'ipa', 'istat', 'mappa_center', 'datasets']
+          for r in required:
+              if r not in m:
+                  print(f'  ✗ Campo mancante: {r}')
+                  sys.exit(1)
+          if not isinstance(m.get('mappa_center'), list) or len(m['mappa_center']) != 2:
+              print(f'  ✗ mappa_center deve essere [lat, lon]')
+              sys.exit(1)
+          for ds_key, ds in (m.get('datasets') or {}).items():
+              if not isinstance(ds, dict):
+                  continue
+              if ds.get('presente') is False:
+                  continue
+              source = ds.get('source_type')
+              if source not in ('fixture', 'external_csv', 'opendatasoft_aggregate'):
+                  print(f'  ✗ {ds_key}: source_type sconosciuto: {source}')
+                  sys.exit(1)
+              if source in ('external_csv', 'opendatasoft_aggregate') and not ds.get('url'):
+                  print(f'  ✗ {ds_key}: source_type={source} richiede url')
+                  sys.exit(1)
+          print(f'  ✓ Manifest valido')
+          " || fail=$((fail + 1))
+          done
+          if [ $fail -gt 0 ]; then
+            echo "::error::$fail manifest non validi"
+            exit 1
+          fi

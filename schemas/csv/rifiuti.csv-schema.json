@@ -1,0 +1,68 @@
+{
+  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
+  "dataset": "rifiuti",
+  "title": "Raccolta rifiuti urbani",
+  "description": "Una riga per (anno, frazione/quartiere) con quantità raccolte e percentuale di differenziata.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [",", ";"],
+  "decimal_separator": ".",
+  "required_columns": [
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "constraints": { "min": 1900, "max": 2050 },
+      "description": "Anno di riferimento"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "rd_pct",
+      "datatype": "number",
+      "constraints": { "min": 0, "max": 100 },
+      "description": "Percentuale di raccolta differenziata sul totale (0-100)"
+    },
+    {
+      "name": "kg_totali",
+      "datatype": "number",
+      "constraints": { "min": 0 },
+      "description": "Kg totali di rifiuti raccolti nell'anno"
+    },
+    {
+      "name": "kg_differenziata",
+      "datatype": "number",
+      "constraints": { "min": 0 },
+      "description": "Kg di rifiuti differenziati"
+    },
+    {
+      "name": "kg_indifferenziata",
+      "datatype": "number",
+      "constraints": { "min": 0 },
+      "description": "Kg di rifiuti indifferenziati"
+    },
+    {
+      "name": "frazione",
+      "datatype": "string",
+      "max_length": 100,
+      "description": "Frazione merceologica (es. 'Carta', 'Plastica', 'Vetro', 'Organico', 'Indifferenziato')"
+    },
+    {
+      "name": "cer",
+      "datatype": "string",
+      "max_length": 20,
+      "description": "Codice CER (Catalogo Europeo dei Rifiuti)"
+    },
+    {
+      "name": "quartiere",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Quartiere (se aggregazione territoriale disponibile)"
+    }
+  ],
+  "example": "anno,rd_pct,kg_totali,kg_differenziata\n2025,72.4,180000000,130320000\n2024,71.8,182000000,130676000\n2023,70.5,184500000,130072500\n",
+  "notes": [
+    "Il dato più importante è 'rd_pct' (percentuale RD) — se non hai altri, fornisci almeno questo.",
+    "rd_pct è in scala 0-100 (non 0-1). 72.4 = 72.4%.",
+    "Se hai dettaglio per frazione merceologica (carta/plastica/vetro), una riga per (anno, frazione)."
+  ]
+}

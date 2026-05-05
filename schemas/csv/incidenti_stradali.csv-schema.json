@@ -1,0 +1,67 @@
+{
+  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
+  "dataset": "incidenti_stradali",
+  "title": "Incidenti stradali",
+  "description": "Una riga per incidente con data, geo, vittime.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [",", ";"],
+  "decimal_separator": ".",
+  "required_columns": [
+    {
+      "name": "data",
+      "datatype": "date",
+      "format": "YYYY-MM-DD",
+      "description": "Data dell'incidente"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "lat",
+      "datatype": "number",
+      "constraints": { "min": -90, "max": 90 },
+      "description": "Latitudine del punto dell'incidente"
+    },
+    {
+      "name": "lon",
+      "datatype": "number",
+      "constraints": { "min": -180, "max": 180 },
+      "description": "Longitudine"
+    },
+    {
+      "name": "morti",
+      "datatype": "integer",
+      "constraints": { "min": 0 },
+      "description": "Numero di morti nell'incidente"
+    },
+    {
+      "name": "feriti",
+      "datatype": "integer",
+      "constraints": { "min": 0 },
+      "description": "Numero di feriti"
+    },
+    {
+      "name": "zona",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Zona, quartiere o nome della strada"
+    },
+    {
+      "name": "tipo",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Tipologia (es. 'tamponamento', 'investimento pedone', 'scontro frontale')"
+    },
+    {
+      "name": "veicoli_coinvolti",
+      "datatype": "integer",
+      "constraints": { "min": 0 },
+      "description": "Numero di veicoli coinvolti"
+    }
+  ],
+  "example": "data,lat,lon,morti,feriti,zona,tipo\n2024-01-15,40.37924,18.15166,0,2,\"Viale Marche\",\"tamponamento\"\n2024-01-22,40.36422,18.14054,1,0,\"Via Lecce-San Cataldo\",\"investimento pedone\"\n2024-02-03,40.33956,18.17699,0,3,\"Tangenziale Est\",\"scontro frontale\"\n",
+  "notes": [
+    "Coordinate gradi decimali, separatore punto. Range plausibile: lat -90/+90, lon -180/+180.",
+    "Se hai feriti=0 e morti=0, lascia 0 (non vuoto) per chiarezza."
+  ]
+}

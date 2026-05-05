@@ -1,0 +1,56 @@
+{
+  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
+  "dataset": "bilancio",
+  "title": "Bilancio per missione e programma",
+  "description": "Una riga per (anno, missione, programma) con l'importo in euro.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [",", ";"],
+  "decimal_separator": ".",
+  "required_columns": [
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "constraints": { "min": 1900, "max": 2050 },
+      "description": "Anno di esercizio del bilancio"
+    },
+    {
+      "name": "missione",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Missione di spesa secondo classificazione DLgs 118/2011"
+    },
+    {
+      "name": "importo_euro",
+      "datatype": "number",
+      "constraints": { "min": 0 },
+      "description": "Importo in euro (numero positivo, decimale separato da punto)"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "programma",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Programma di spesa all'interno della missione"
+    },
+    {
+      "name": "tipo",
+      "datatype": "string",
+      "enum": ["previsione", "impegno", "pagamento", "consuntivo"],
+      "description": "Tipo di importo"
+    },
+    {
+      "name": "macroaggregato",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Macroaggregato di spesa"
+    }
+  ],
+  "example": "anno,missione,programma,importo_euro\n2024,\"Servizi istituzionali, generali e di gestione\",\"Organi istituzionali\",1250000.50\n2024,\"Ordine pubblico e sicurezza\",\"Polizia locale e amministrativa\",4500000.00\n2024,\"Istruzione e diritto allo studio\",\"Istruzione prescolastica\",8900000.00\n",
+  "notes": [
+    "L'importo deve essere in euro con punto (.) come separatore decimale, MAI virgola.",
+    "Le missioni dovrebbero seguire la classificazione DLgs 118/2011 (es. 'Servizi istituzionali...').",
+    "Se hai sia previsione che consuntivo, usa la colonna 'tipo' per distinguerli."
+  ]
+}

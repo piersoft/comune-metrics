@@ -1,0 +1,82 @@
+{
+  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
+  "dataset": "eventi_culturali",
+  "title": "Eventi culturali e sportivi",
+  "description": "Una riga per evento o manifestazione, con luogo, data, categoria.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [",", ";"],
+  "decimal_separator": ".",
+  "required_columns": [
+    {
+      "name": "nome",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Nome o titolo dell'evento"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "data_inizio",
+      "datatype": "date",
+      "format": "YYYY-MM-DD",
+      "description": "Data di inizio evento"
+    },
+    {
+      "name": "data_fine",
+      "datatype": "date",
+      "format": "YYYY-MM-DD",
+      "description": "Data di fine evento"
+    },
+    {
+      "name": "categoria",
+      "datatype": "string",
+      "max_length": 200,
+      "description": "Categoria (es. 'Concerto', 'Mostra', 'Spettacolo teatrale', 'Conferenza', 'Sport')"
+    },
+    {
+      "name": "luogo",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Nome del luogo o sede"
+    },
+    {
+      "name": "indirizzo",
+      "datatype": "string",
+      "max_length": 500,
+      "description": "Indirizzo completo"
+    },
+    {
+      "name": "lat",
+      "datatype": "number",
+      "constraints": { "min": -90, "max": 90 }
+    },
+    {
+      "name": "lon",
+      "datatype": "number",
+      "constraints": { "min": -180, "max": 180 }
+    },
+    {
+      "name": "quartiere",
+      "datatype": "string",
+      "max_length": 200
+    },
+    {
+      "name": "ingresso",
+      "datatype": "string",
+      "enum": ["Gratuito", "A pagamento", "Su prenotazione"],
+      "description": "Tipologia di ingresso"
+    },
+    {
+      "name": "organizzatore",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Soggetto organizzatore"
+    }
+  ],
+  "example": "nome,data_inizio,categoria,luogo,lat,lon,ingresso\n\"Festival della Letteratura\",2024-09-05,\"Festival\",\"Palazzo Carafa\",40.3528,18.1718,\"Gratuito\"\n\"Concerto Sinfonico\",2024-10-12,\"Concerto\",\"Politeama Greco\",40.3540,18.1690,\"A pagamento\"\n",
+  "notes": [
+    "Le categorie più tipiche sono: Concerto, Spettacolo, Mostra, Conferenza, Festival, Sport, Evento religioso, Manifestazione.",
+    "Se hai lat/lon, gli eventi appaiono sulla mappa."
+  ]
+}

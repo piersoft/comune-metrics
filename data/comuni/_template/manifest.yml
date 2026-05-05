@@ -1,0 +1,110 @@
+# =============================================================================
+# manifest.yml — Template per aggiungere il tuo Comune al cruscotto
+# =============================================================================
+#
+# Per essere incluso nel cruscotto:
+#   1. Fai il fork del repo piersoft/comune-metrics
+#   2. Crea data/comuni/<chiave-del-tuo-comune>/  (es: data/comuni/parma/)
+#   3. Copia questo file dentro come manifest.yml e compila i campi
+#   4. Per ogni dataset CORE che pubblichi, scegli un source_type:
+#      - "fixture":               metti il CSV in data/comuni/<key>/<dataset>.csv
+#      - "external_csv":          fornisci un URL HTTPS al CSV pubblico
+#      - "opendatasoft_aggregate": (avanzato) URL API Opendatasoft con SELECT/GROUP BY
+#   5. I CSV devono rispettare lo schema canonico documentato in
+#      schemas/csv/<dataset>.csv-schema.json — il tool valida ogni CSV e
+#      rifiuta quelli non conformi (status: schema_error)
+#   6. Apri PR — la GitHub Action validate-paniere.yml verificherà tutto
+#
+# =============================================================================
+
+# --- Identificativi del Comune (obbligatori) ---
+nome: "<Nome del Comune>"             # es. "Parma"
+ipa: "<codice-IPA>"                    # es. "c_g337"
+istat: "<codice-ISTAT>"                # es. "034027"
+popolazione_attesa: 0                  # es. 198292 (un intero, popolazione attuale stimata)
+mandato: "YYYY-YYYY"                   # es. "2022-2027"
+sindaco: "<Nome Cognome>"              # es. "Michele Guerra"
+
+# --- Mappa: centro e zoom della vista Leaflet ---
+mappa_center: [0.0, 0.0]               # es. [44.8015, 10.3279]
+mappa_zoom: 13
+
+# --- Versione paniere (lascia "csv-v1" salvo evoluzioni future) ---
+paniere_version: "csv-v1"
+
+# --- Note opzionali ---
+# mode: "static_snapshot"              # solo se i CSV sono fixture aggiornate manualmente
+# snapshot_date: "2026-05-04"          # data dell'ultimo aggiornamento manuale
+# snapshot_reason: "..."               # motivo per cui non è auto-aggiornato
+
+# =============================================================================
+# DATASET CORE (compila solo quelli che pubblichi)
+# =============================================================================
+#
+# Per ogni dataset, una delle 4 forme:
+#
+#   1) Dataset NON pubblicato:
+#      <nome_dataset>:
+#        presente: false
+#        motivo: "Spiegazione opzionale"
+#
+#   2) source_type FIXTURE (CSV dentro la stessa cartella):
+#      <nome_dataset>:
+#        source_type: fixture
+#        path: "<nome_dataset>.csv"     # opzionale, default = <nome_dataset>.csv
+#        aggiornato: "YYYY-MM-DD"
+#        fonte: "Origine del dato"
+#
+#   3) source_type EXTERNAL_CSV (URL pubblico):
+#      <nome_dataset>:
+#        source_type: external_csv
+#        url: "https://..."             # URL HTTPS che ritorna CSV
+#        aggiornato: "YYYY-MM-DD"
+#        fonte: "Nome dataset originale"
+#
+#   4) source_type OPENDATASOFT_AGGREGATE (avanzato — solo se hai portale ODS):
+#      <nome_dataset>:
+#        source_type: opendatasoft_aggregate
+#        url: "https://opendata.tuocomune.it/api/v2/.../records?select=...&group_by=..."
+#        aggiornato: "YYYY-MM-DD"
+#
+# I CSV devono avere le colonne canoniche (vedi schemas/csv/<dataset>.csv-schema.json).
+# CSV non conformi vengono rifiutati con status="schema_error".
+#
+# =============================================================================
+
+datasets:
+
+  popolazione:
+    presente: false
+    motivo: "Da pubblicare"
+
+  bilancio:
+    presente: false
+
+  opere_pubbliche:
+    presente: false
+
+  pratiche_edilizie:
+    presente: false
+
+  servizi_sociali:
+    presente: false
+
+  istruzione:
+    presente: false
+
+  incidenti_stradali:
+    presente: false
+
+  rifiuti:
+    presente: false
+
+  eventi_culturali:
+    presente: false
+
+  delibere:
+    presente: false
+
+  patrimonio:
+    presente: false

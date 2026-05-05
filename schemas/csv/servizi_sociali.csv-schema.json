@@ -1,0 +1,49 @@
+{
+  "$schema": "https://piersoft.github.io/comune-metrics/schemas/csv/_meta.schema.json",
+  "dataset": "servizi_sociali",
+  "title": "Servizi sociali e welfare",
+  "description": "Una riga per (anno, categoria di intervento) con utenti serviti e spesa.",
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "delimiter_allowed": [",", ";"],
+  "decimal_separator": ".",
+  "required_columns": [
+    {
+      "name": "anno",
+      "datatype": "integer",
+      "constraints": { "min": 1900, "max": 2050 },
+      "description": "Anno di riferimento"
+    },
+    {
+      "name": "categoria",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Categoria di intervento (es. 'Anziani', 'Minori', 'Disabilità', 'Famiglia', 'Povertà', 'Stranieri')"
+    }
+  ],
+  "optional_columns": [
+    {
+      "name": "utenti",
+      "datatype": "integer",
+      "constraints": { "min": 0 },
+      "description": "Numero utenti che hanno ricevuto il servizio"
+    },
+    {
+      "name": "spesa_euro",
+      "datatype": "number",
+      "constraints": { "min": 0 },
+      "description": "Spesa in euro per la categoria"
+    },
+    {
+      "name": "tipo_intervento",
+      "datatype": "string",
+      "max_length": 300,
+      "description": "Tipo specifico (es. 'Assistenza domiciliare', 'Centro diurno', 'Contributo economico')"
+    }
+  ],
+  "example": "anno,categoria,utenti,spesa_euro,tipo_intervento\n2024,Anziani,1245,2400000.00,\"Assistenza domiciliare\"\n2024,Anziani,389,1800000.00,\"Centro diurno\"\n2024,Minori,567,950000.00,\"Affido familiare\"\n2024,\"Disabilità\",234,3200000.00,\"Servizi residenziali\"\n",
+  "notes": [
+    "Almeno utenti O spesa_euro deve essere compilato (idealmente entrambi).",
+    "Le categorie tipiche italiane sono: Anziani, Minori, Disabilità, Famiglia, Povertà, Stranieri/Immigrati, Salute mentale."
+  ]
+}

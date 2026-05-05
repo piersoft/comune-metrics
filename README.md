@@ -66,25 +66,50 @@ EOF
 
 ### Per pubblicare il paniere come Comune
 
-ComuneMetrics è progettato per **non chiedere lavoro extra** ai Comuni: ti basta pubblicare i dati che probabilmente già pubblichi, in CSV o JSON, sul tuo portale CKAN o Opendatasoft. Il cruscotto fa il resto da solo.
+ComuneMetrics adotta un modello **federato e standardizzato**: ogni Comune fornisce i propri dati in **CSV canonici** definiti dal Paniere, e il cruscotto li legge senza richiedere modifiche al codice.
 
-Tre passi pratici:
+**4 passi per essere inclusi**:
 
-**1. Verifica cosa pubblichi già.** Apri il tuo portale OpenData e controlla quali degli 11 [Dataset CORE](#i-11-dataset-core) hai già: popolazione residente, bilancio per missione, opere pubbliche, pratiche edilizie, servizi sociali, asili nido, incidenti stradali, raccolta rifiuti, eventi culturali, delibere, patrimonio immobiliare. Bologna ne ha 9 con tutto live, Lecce 11 cablabili ma in modalità snapshot statico per problemi di accessibilità del server publisher — non serve avere tutti gli 11 per essere visibili.
+**1. Fork del repo** [`piersoft/comune-metrics`](https://github.com/piersoft/comune-metrics).
 
-**2. Pubblica in CSV o JSON.** I formati che il cruscotto sa leggere sono `CSV`, `JSON`, `JSONL`. Formati come PDF, XLSX, ZIP, WMS, RDF non vengono letti automaticamente (anche se restano validi per altri usi). Se hai un dataset solo in PDF, basta esportare in CSV una volta.
+**2. Copia il template del tuo Comune**:
+```bash
+cp -r data/comuni/_template data/comuni/<chiave-comune>
+# es. cp -r data/comuni/_template data/comuni/parma
+```
+Apri `data/comuni/<chiave>/manifest.yml` e compila i campi di identificazione (nome, IPA, ISTAT, sindaco, mappa).
 
-**3. Apri una issue per essere incluso.** Apri una issue su [github.com/piersoft/comune-metrics](https://github.com/piersoft/comune-metrics/issues/new) con: nome del Comune, sindaco, codice IPA, codice ISTAT, e gli slug dei dataset CORE che hai già pubblicato su `dati.gov.it` o sul tuo portale. Nessun lavoro tecnico richiesto da parte tua: il workflow GitHub Actions del cruscotto si aggancia ai tuoi metadata via CKAN MCP.
+**3. Per ogni dataset CORE, scegli una di queste strategie**:
 
-**Cosa rende il tuo dataset "ben pubblicato"** (in ordine di importanza):
-- È in formato CSV o JSON aperto, non PDF/XLSX/ZIP
-- Le colonne hanno nomi parlanti (es. `anno`, `quartiere`, `residenti`, non `cod_a1`)
-- Il campo `modified` su CKAN riflette davvero l'ultima modifica del dato (non solo del metadato)
-- Il server publisher risponde anche a IP non italiani (i runner GitHub Actions sono in cloud Azure US/EU)
+| `source_type` | Quando usarla | Cosa serve |
+|---|---|---|
+| `fixture` | CSV statico nel repo (Comune piccolo, aggiornamento periodico) | Metti `<dataset>.csv` nella stessa cartella del manifest |
+| `external_csv` | URL HTTPS pubblico al tuo CSV (auto-refresh) | Compila `url:` nel manifest |
+| `opendatasoft_aggregate` | Solo se hai portale Opendatasoft con API records (caso avanzato — Bologna) | URL completo `/records?select=...&group_by=...` |
 
-Se vuoi anche l'aggregazione delle metriche (KPI calcolati sul tuo dataset), basta che le colonne abbiano nomi simili a quelli dei comuni già supportati. Il file [`config/metrics.yml`](config/metrics.yml) elenca tutti i sinonimi riconosciuti per ogni campo. Se hai colonne diverse, apri una pull request che aggiunge i tuoi sinonimi: è un cambio di 2-3 righe.
+**I CSV devono rispettare lo schema canonico** documentato in [`schemas/csv/<dataset>.csv-schema.json`](schemas/csv/). Per esempio `popolazione.csv` richiede colonne `anno,residenti` (e opzionali `quartiere`, `sesso`, `fascia_eta`). Niente alias, niente sinonimi: header esatti.
 
-> 💡 **Niente extras CKAN richiesti.** Le versioni precedenti del paniere prevedevano extras come `paniere_comunemetrics: true` e una conversione in RDF/Turtle dei CSV. Sono opzionali: il cruscotto v0.2 lavora direttamente sui metadata standard CKAN (`name`, `format`, `url`, `modified`) e non richiede alcuna modifica al DCAT-AP_IT del Comune.
+**4. Valida i tuoi CSV prima del commit**:
+```bash
+node scripts/validate_csv.js popolazione data/comuni/<chiave>/popolazione.csv
+# ✓ CSV valido (6 righe, 3 colonne)
+```
+Apri PR — la GitHub Action `validate-paniere.yml` valida tutto. CSV non conformi vengono **rifiutati** con `status: schema_error`.
+
+**Vincoli sui CSV (regole del Paniere)**:
+- Encoding UTF-8 obbligatorio
+- Separatore decimale: solo punto `.` (mai virgola)
+- Date in formato `YYYY-MM-DD`
+- Header esatti come da schema (case-sensitive)
+- Colonne sconosciute non ammesse
+
+**Cosa NON serve fare** (a differenza di altri standard):
+- ❌ Convertire i CSV in RDF/Turtle
+- ❌ Aggiungere extras `paniere_*` ai metadata CKAN
+- ❌ Modificare il tuo portale OpenData
+- ❌ Aspettare che gli aggregatori scoprano i tuoi dataset
+
+> 💡 **Bologna come eccezione.** Bologna usa un caso speciale (`opendatasoft_aggregate`) perché ha un portale Opendatasoft con API records. È documentato come "best practice tecnica" ma non è il modello target: la maggior parte dei Comuni userà `fixture` o `external_csv`. Il caso Lecce (modalità `static_snapshot`) mostra come gestire portali con problemi di accessibilità — fixture committate manualmente con disclaimer chiaro.
 
 ## I 11 dataset CORE
 
