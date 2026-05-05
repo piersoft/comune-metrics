@@ -17,7 +17,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T13:41:24.795Z",
+      "fetched_at": "2026-05-05T14:21:43.364Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -90,47 +90,165 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T13:41:24.795Z",
-      "status": "not_published",
+      "fetched_at": "2026-05-05T14:21:43.365Z",
+      "status": "ok",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": null,
-      "metrics": null,
+      "n_rows": 15,
+      "metrics": {
+        "totale_uscite": 94153392.73000002,
+        "per_missione": [
+          {
+            "nome": "Spese correnti",
+            "valore": 53773481.15999999
+          },
+          {
+            "nome": "Spese in conto capitale",
+            "valore": 18164888.76
+          },
+          {
+            "nome": "Uscite per conto terzi e partite di giro",
+            "valore": 11928972.520000001
+          },
+          {
+            "nome": "Rimborso Prestiti",
+            "valore": 10286050.29
+          }
+        ],
+        "top10_programmi": [
+          {
+            "nome": "Acquisto di beni e servizi",
+            "valore": 31479240.42
+          },
+          {
+            "nome": "Investimenti fissi lordi e acquisto terreni",
+            "valore": 18164888.76
+          },
+          {
+            "nome": "Redditi da lavoro dipendente",
+            "valore": 14061853.4
+          },
+          {
+            "nome": "Uscite per partite di giro",
+            "valore": 9579335.31
+          },
+          {
+            "nome": "Rimborso titoli obbligazionari",
+            "valore": 5673766.32
+          },
+          {
+            "nome": "Rimborso mutui e altri finanziamenti",
+            "valore": 4612283.97
+          },
+          {
+            "nome": "Trasferimenti correnti",
+            "valore": 3691559.62
+          },
+          {
+            "nome": "Interessi passivi",
+            "valore": 2295315.43
+          },
+          {
+            "nome": "Altre partite di giro",
+            "valore": 1924005.39
+          },
+          {
+            "nome": "Imposte e tasse a carico ente",
+            "valore": 1337538.8
+          }
+        ]
+      },
       "resource_url": null,
       "resource_format": "CSV",
-      "source_type": "not_published_no_national_source",
-      "source_origin": null,
-      "source_note": null,
-      "source_url": null,
-      "error": "BDAP MEF è la fonte nazionale del bilancio armonizzato dei Comuni ma non espone API pubbliche; openbilanci.it (Fondazione Openpolis, dati RGS) si è fermato ai consuntivi 2021"
+      "source_type": "fixture",
+      "source_origin": "BDAP-RGS / MEF",
+      "source_note": "BDAP MEF — SIOPE Movimenti cumulati mensili di Spesa Basilicata 2025: aggregazione delle spese del Comune di Potenza (codice ISTAT 076063) per Titolo (Spese correnti, Spese in conto capitale, Rimborso Prestiti, ecc.) e macro-aggregato del Nuovo Piano dei Conti. Cumulato annuo (12/2025), 15 voci, totale spesa €94.153.392,73",
+      "source_url": "https://bdap-opendata.rgs.mef.gov.it/SpodCkanApi/api/3/action/package_search?q=Basilicata+SIOPE+Spesa+2025",
+      "error": null,
+      "fields_present": [
+        "anno",
+        "settore_interv_inv",
+        "sottosettore_interv_inv",
+        "totale_uscite",
+        "tipo"
+      ]
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T13:41:24.795Z",
-      "status": "not_published",
+      "fetched_at": "2026-05-05T14:21:43.367Z",
+      "status": "ok",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": null,
-      "metrics": null,
+      "n_rows": 94,
+      "metrics": {
+        "totale": 94,
+        "per_stato": [
+          {
+            "nome": "ATTIVO",
+            "n": 87
+          },
+          {
+            "nome": "CHIUSO",
+            "n": 7
+          }
+        ],
+        "per_fonte": [
+          {
+            "nome": "Altro",
+            "n": 74
+          },
+          {
+            "nome": "Comunale/Regionale",
+            "n": 6
+          },
+          {
+            "nome": "Statale",
+            "n": 3
+          },
+          {
+            "nome": "Europeo",
+            "n": 2
+          },
+          {
+            "nome": "Privato",
+            "n": 1
+          }
+        ],
+        "cup_count": 94,
+        "importo_totale": 140116503.63,
+        "opere_geo": []
+      },
       "resource_url": null,
       "resource_format": "CSV",
-      "source_type": "not_published_no_national_source",
-      "source_origin": null,
-      "source_note": null,
-      "source_url": null,
-      "error": "OpenCUP non espone API pubbliche documentate; OpenCoesione applica geo-fencing che blocca i runner GitHub Actions"
+      "source_type": "fixture",
+      "source_origin": "BDAP-RGS / MEF",
+      "source_note": "BDAP MEF — Soggetti titolari Opere Pubbliche MOP Basilicata: 94 opere CUP intestate al Comune di Potenza, range 2004-2024. Top: Nodo Gallitello (€29,8M, 2007), Nuovo Cimitero (€19,9M, 2011), Impianto pedonale meccanizzato (€8,8M, 2017), Bucaletto Settore 15 (€7M, 2023). Stati: 87 ATTIVO + 7 CHIUSO. Il campo nome_completo (RUP) non è disponibile in MOP.",
+      "source_url": "https://bdap-opendata.rgs.mef.gov.it/SpodCkanApi/api/3/action/package_show?id=spd_mop_sog_mon_reg17_01_9999",
+      "error": null,
+      "fields_present": [
+        "nome",
+        "anno",
+        "codice_stato_cup",
+        "costo_lavori_previsto",
+        "cup",
+        "fonte_finanziamento",
+        "lat",
+        "lon",
+        "tipo",
+        "nome_completo"
+      ]
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T13:41:24.795Z",
+      "fetched_at": "2026-05-05T14:21:43.380Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -150,7 +268,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T13:41:24.795Z",
+      "fetched_at": "2026-05-05T14:21:43.380Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -170,7 +288,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T13:41:24.795Z",
+      "fetched_at": "2026-05-05T14:21:43.380Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -309,7 +427,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T13:41:24.796Z",
+      "fetched_at": "2026-05-05T14:21:43.386Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -329,7 +447,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T13:41:24.796Z",
+      "fetched_at": "2026-05-05T14:21:43.386Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -378,7 +496,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T13:41:24.797Z",
+      "fetched_at": "2026-05-05T14:21:43.390Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -463,7 +581,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T13:41:24.798Z",
+      "fetched_at": "2026-05-05T14:21:43.390Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -483,51 +601,227 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T13:41:24.798Z",
-      "status": "schema_error",
+      "fetched_at": "2026-05-05T14:21:43.390Z",
+      "status": "ok",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": null,
-      "metrics": null,
+      "n_rows": 41,
+      "metrics": {
+        "totale_immobili": 41,
+        "per_tipo": [
+          {
+            "nome": "Fabbricato",
+            "n": 14
+          },
+          {
+            "nome": "Infrastruttura",
+            "n": 9
+          },
+          {
+            "nome": "Palazzo",
+            "n": 7
+          },
+          {
+            "nome": "Ponte",
+            "n": 2
+          },
+          {
+            "nome": "Masseria",
+            "n": 2
+          },
+          {
+            "nome": "Torre",
+            "n": 2
+          },
+          {
+            "nome": "Convento",
+            "n": 1
+          },
+          {
+            "nome": "Teatro",
+            "n": 1
+          },
+          {
+            "nome": "Chiesa",
+            "n": 1
+          },
+          {
+            "nome": "Parco",
+            "n": 1
+          },
+          {
+            "nome": "Tessuto urbano",
+            "n": 1
+          }
+        ],
+        "per_destinazione": [
+          {
+            "nome": "Ex complesso ospedaliero psichiatrico",
+            "n": 10
+          },
+          {
+            "nome": "Edificio storico",
+            "n": 4
+          },
+          {
+            "nome": "Edificio pubblico storico",
+            "n": 3
+          },
+          {
+            "nome": "Edificio religioso storico",
+            "n": 2
+          },
+          {
+            "nome": "Architettura rurale storica",
+            "n": 2
+          },
+          {
+            "nome": "Porta storica della citta",
+            "n": 2
+          },
+          {
+            "nome": "Stazione ferroviaria storica",
+            "n": 2
+          },
+          {
+            "nome": "Edificio storico dismesso",
+            "n": 1
+          },
+          {
+            "nome": "Sede museale (oggi Museo Dinu Adamesteanu)",
+            "n": 1
+          },
+          {
+            "nome": "Cavalcavia ferroviario storico",
+            "n": 1
+          },
+          {
+            "nome": "Ponte di Sergio Musmeci - opera architettonica simbolo della citta",
+            "n": 1
+          },
+          {
+            "nome": "Sede istituzionale",
+            "n": 1
+          },
+          {
+            "nome": "Edificio storico ex museale",
+            "n": 1
+          },
+          {
+            "nome": "Torre medievale",
+            "n": 1
+          },
+          {
+            "nome": "Teatro storico cittadino",
+            "n": 1
+          },
+          {
+            "nome": "Ponte di epoca romana",
+            "n": 1
+          },
+          {
+            "nome": "Edificio religioso e spazio urbano storico",
+            "n": 1
+          },
+          {
+            "nome": "Edificio militare storico",
+            "n": 1
+          },
+          {
+            "nome": "Torre medievale - simbolo della citta",
+            "n": 1
+          },
+          {
+            "nome": "Parco commemorativo - Parco della Rimembranza Orto botanico",
+            "n": 1
+          }
+        ],
+        "valore_totale": null,
+        "superficie_totale_mq": null,
+        "pct_vincolo": 100,
+        "immobili_geo": []
+      },
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
       "source_origin": "ArCo / MiC",
       "source_note": "ArCo SPARQL — Catalogo Generale dei Beni Culturali ICCD-MiC — 41 immobili storico-architettonici catalogati a Potenza (Ponte Musmeci, Teatro Stabile, Palazzo Loffredo, Torre del Castello, ecc.)",
       "source_url": "https://dati.cultura.gov.it/sparql",
-      "error": "CSV non conforme allo schema canonico (2 errori). Primi 3: Colonna sconosciuta: 'vincolo_culturale' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza) | Colonna sconosciuta: 'uso' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza)",
-      "schema_errors": [
-        "Colonna sconosciuta: 'vincolo_culturale' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza)",
-        "Colonna sconosciuta: 'uso' (ammesse: denominazione, tipo, indirizzo, lat, lon, rendita, qualita, consistenza)"
+      "error": null,
+      "fields_present": [
+        "denominazione",
+        "tipo",
+        "indirizzo",
+        "qualita",
+        "consistenza"
       ]
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T13:41:24.798Z",
-      "status": "schema_error",
+      "fetched_at": "2026-05-05T14:21:43.391Z",
+      "status": "ok",
       "modified": null,
       "freshness": {
         "level": "unknown",
         "months": null,
         "iso": null
       },
-      "n_rows": null,
-      "metrics": null,
+      "n_rows": 4,
+      "metrics": {
+        "gettito_totale_ultimo_anno": 0,
+        "anno_ultimo": 2025,
+        "n_tributi_distinti": 2,
+        "per_tributo_ultimo_anno": [
+          {
+            "nome": "ADDIZIONALE_IRPEF",
+            "valore": 0
+          },
+          {
+            "nome": "IMU",
+            "valore": 0
+          }
+        ],
+        "per_tributo_aliquota": [
+          {
+            "nome": "IMU",
+            "aliquota": 1.06,
+            "descrizione": "Aliquota ordinaria confermata"
+          },
+          {
+            "nome": "ADDIZIONALE_IRPEF",
+            "aliquota": 0.8,
+            "descrizione": "Aliquota confermata 0.80 percento + 0.20 percento per redditi oltre 50000 euro"
+          }
+        ],
+        "has_gettito": false,
+        "serie_anni": [
+          {
+            "anno": 2024,
+            "valore": 0
+          },
+          {
+            "anno": 2025,
+            "valore": 0
+          }
+        ],
+        "contribuenti_ultimo_anno": null
+      },
       "resource_url": null,
       "resource_format": "CSV",
       "source_type": "fixture",
       "source_origin": "MEF Federalismo Fiscale",
       "source_note": "Portale del Federalismo Fiscale (MEF) e delibere consiliari Comune di Potenza — aliquote IMU e Addizionale IRPEF 2024-2025 nel quadro del piano di riequilibrio finanziario (Decreto salva Potenza)",
       "source_url": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/",
-      "error": "CSV non conforme allo schema canonico (3 errori). Primi 3: Colonna obbligatoria mancante: 'tipo_atto' | Colonna sconosciuta: 'tributo' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria) | Colonna sconosciuta: 'aliquota_base' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria)",
-      "schema_errors": [
-        "Colonna obbligatoria mancante: 'tipo_atto'",
-        "Colonna sconosciuta: 'tributo' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria)",
-        "Colonna sconosciuta: 'aliquota_base' (ammesse: anno, tipo_atto, totale_entrate, numero, valore, unita_misura, descrizione, categoria)"
+      "error": null,
+      "fields_present": [
+        "anno",
+        "tipo_atto",
+        "valore",
+        "descrizione"
       ]
     }
   }

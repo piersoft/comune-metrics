@@ -6,7 +6,7 @@
 # di questa cartella sono STATI RICOSTRUITI da fonti nazionali pubbliche
 # autorevoli, ognuna citata nel campo `source_note` con relativo URL.
 #
-# COPERTURA: 6/12 dataset CORE — è il massimo onestamente ricostruibile da
+# COPERTURA: 8/12 dataset CORE — è il massimo onestamente ricostruibile da
 # fonti nazionali per un Comune che non pubblica i propri OpenData.
 #
 # I dati sono fotografati nel maggio 2026 e NON vengono aggiornati
@@ -39,20 +39,26 @@ datasets:
     source_url: "https://www.tuttitalia.it/basilicata/71-potenza/statistiche/popolazione-andamento-demografico/"
 
   # ============================================================
-  # 2. BILANCIO — non disponibile da fonte nazionale accessibile
+  # 2. BILANCIO — fonte: BDAP-RGS SIOPE (MEF)
   # ============================================================
   bilancio:
-    presente: false
-    source_type: not_published_no_national_source
-    note: "BDAP MEF è la fonte nazionale del bilancio armonizzato dei Comuni ma non espone API pubbliche; openbilanci.it (Fondazione Openpolis, dati RGS) si è fermato ai consuntivi 2021"
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/bilancio.csv
+    source_origin: "BDAP-RGS / MEF"
+    source_note: "BDAP MEF — SIOPE Movimenti cumulati mensili di Spesa Basilicata 2025: aggregazione delle spese del Comune di Potenza (codice ISTAT 076063) per Titolo (Spese correnti, Spese in conto capitale, Rimborso Prestiti, ecc.) e macro-aggregato del Nuovo Piano dei Conti. Cumulato annuo (12/2025), 15 voci, totale spesa €94.153.392,73"
+    source_url: "https://bdap-opendata.rgs.mef.gov.it/SpodCkanApi/api/3/action/package_search?q=Basilicata+SIOPE+Spesa+2025"
 
   # ============================================================
-  # 3. OPERE PUBBLICHE — non recuperabile in modo affidabile
+  # 3. OPERE PUBBLICHE — fonte: BDAP-RGS MOP (MEF)
   # ============================================================
   opere_pubbliche:
-    presente: false
-    source_type: not_published_no_national_source
-    note: "OpenCUP non espone API pubbliche documentate; OpenCoesione applica geo-fencing che blocca i runner GitHub Actions"
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/opere_pubbliche.csv
+    source_origin: "BDAP-RGS / MEF"
+    source_note: "BDAP MEF — Soggetti titolari Opere Pubbliche MOP Basilicata: 94 opere CUP intestate al Comune di Potenza, range 2004-2024. Top: Nodo Gallitello (€29,8M, 2007), Nuovo Cimitero (€19,9M, 2011), Impianto pedonale meccanizzato (€8,8M, 2017), Bucaletto Settore 15 (€7M, 2023). Stati: 87 ATTIVO + 7 CHIUSO. Il campo nome_completo (RUP) non è disponibile in MOP."
+    source_url: "https://bdap-opendata.rgs.mef.gov.it/SpodCkanApi/api/3/action/package_show?id=spd_mop_sog_mon_reg17_01_9999"
 
   # ============================================================
   # 4. PRATICHE EDILIZIE — non disponibile a livello nazionale

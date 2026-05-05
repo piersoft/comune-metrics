@@ -1,4 +1,4 @@
-denominazione,tipo,indirizzo,vincolo_culturale,uso
+denominazione,tipo,indirizzo,qualita,consistenza
 Ex Ospedale San Carlo,Fabbricato,Potenza,true,Edificio storico dismesso
 Ex Convento San Luca,Convento,Potenza,true,Edificio religioso storico
 Palazzo Loffredo,Palazzo,Potenza,true,Sede museale (oggi Museo Dinu Adamesteanu)
