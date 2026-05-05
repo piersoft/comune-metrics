@@ -2,7 +2,7 @@
 
 Questa cartella contiene i **14 file Turtle (TTL)** di esempio, generati dai CSV del Comune Ideale e validati con `rdflib`.
 
-Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottenere quando converte i propri CSV in RDF: predicati DCAT-AP_IT corretti, classi semantiche ex-OntoPiA, conformità al [Catalogo Nazionale Dati Semantici](https://schema.gov.it/).
+Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottenere quando converte i propri CSV in RDF: predicati DCAT-AP_IT corretti, classi semantiche conformi alle [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets), pubblicate sul [Catalogo Nazionale Dati Semantici](https://schema.gov.it/).
 
 ---
 
@@ -11,7 +11,7 @@ Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottener
 - **Esempio** di output atteso per chi vuole esporre i propri dati come Linked Open Data nel proprio Comune
 - **Validare** che le proprie modifiche ai CSV demo del paniere non rompano la mappatura semantica
 - **Test di regressione**: rigenera i TTL con il proprio strumento di conversione preferito e confronta con questi per scoprire cambiamenti silenziosi
-- **Riferimento canonico** delle classi e ontologie ex-OntoPiA da usare per ciascun dataset CORE
+- **Riferimento canonico** delle classi e [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets) da usare per ciascun dataset CORE
 
 ---
 
@@ -68,7 +68,7 @@ Per la conversione CSV → RDF nel proprio Comune ognuno è libero di usare lo s
 
 Una volta prodotto il TTL, può essere caricato in un endpoint SPARQL Virtuoso, in un catalogo DCAT-AP_IT su [dati.gov.it](https://www.dati.gov.it), o in un harvester piveau.
 
-Lo strumento [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) (open source) è quello che è stato usato per generare i 14 TTL di questa cartella e contiene il motore di matching colonne → ontologie ex-OntoPiA. Il suo README spiega come deployarlo per un uso autonomo, in locale o come servizio interno della propria PA.
+Lo strumento [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) (open source) è quello che è stato usato per generare i 14 TTL di questa cartella e contiene il motore di matching colonne → [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets). Il suo README spiega come deployarlo per un uso autonomo, in locale o come servizio interno della propria PA.
 
 **Nota**: i 14 TTL in questa cartella sono **statici, generati una tantum**. Non vengono rigenerati automaticamente. Se modifichi i CSV in `data/comuni/demo/`, ricordati di rigenerare manualmente i TTL corrispondenti col tuo strumento di conversione e ricommittarli.
 

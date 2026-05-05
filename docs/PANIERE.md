@@ -248,9 +248,9 @@ I metadati DCAT-AP_IT del dataset originale rimangono invariati. Il Comune manti
 
 ## Esposizione come Linked Open Data (RDF)
 
-Una volta che i CSV sono pubblicati nel formato canonico del paniere, possono essere convertiti in RDF/Turtle conforme alle ontologie [DCAT-AP_IT / ex-OntoPiA](https://schema.gov.it/) usando lo strumento di conversione che si preferisce (librerie Python come `rdflib` o `csvw`, Java `Jena`, oppure un convertitore custom basato sui mapping documentati qui sotto).
+Una volta che i CSV sono pubblicati nel formato canonico del paniere, possono essere convertiti in RDF/Turtle conforme alle [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets) usando lo strumento di conversione che si preferisce (librerie Python come `rdflib` o `csvw`, Java `Jena`, oppure un convertitore custom basato sui mapping documentati qui sotto).
 
-Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) sono disponibili i **14 file TTL di esempio** già generati dai CSV del Comune Ideale: rappresentano il riferimento canonico di output corretto e possono essere usati come gold standard per validare la propria pipeline di conversione. Il repo open source [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) è lo strumento che è stato usato per generarli e contiene il motore di matching colonne → ontologie ex-OntoPiA: il suo README spiega come deployarlo in locale o come servizio interno della propria PA.
+Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) sono disponibili i **14 file TTL di esempio** già generati dai CSV del Comune Ideale: rappresentano il riferimento canonico di output corretto e possono essere usati come gold standard per validare la propria pipeline di conversione. Il repo open source [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) è lo strumento che è stato usato per generarli e contiene il motore di matching colonne → [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets): il suo README spiega come deployarlo in locale o come servizio interno della propria PA.
 
 I 14 dataset del paniere mappano su classi semantiche corrette:
 

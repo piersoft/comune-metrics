@@ -297,7 +297,7 @@ Se hai pubblicato in passato CSV con nomi colonna diversi da quelli documentati 
 
 ## Linked Open Data — esposizione semantica DCAT-AP_IT
 
-I CSV del paniere sono progettati per produrre RDF/Turtle conforme alle ontologie [ex-OntoPiA](https://github.com/italia/dati-semantic-assets) (oggi [Catalogo Nazionale Dati Semantici](https://schema.gov.it/)). Quando convertiti, i 14 dataset mappano su classi semantiche corrette del profilo italiano DCAT-AP_IT.
+I CSV del paniere sono progettati per produrre RDF/Turtle conforme alle [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets), pubblicate sul [Catalogo Nazionale Dati Semantici](https://schema.gov.it/). Quando convertiti, i 14 dataset mappano su classi semantiche corrette del profilo italiano DCAT-AP_IT.
 
 ### Mapping canonico
 
@@ -326,4 +326,4 @@ Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) trovi i 14 file `
 
 Per la conversione effettiva ognuno è libero di usare lo strumento che preferisce: librerie Python (`rdflib`, `csvw`), Java (`Jena`), tool open source di mapping CSV → RDF, oppure scriversi un convertitore basato sui mapping della tabella sopra. Una volta prodotto il TTL, può essere caricato in un endpoint SPARQL Virtuoso, in un catalogo DCAT-AP_IT su [dati.gov.it](https://www.dati.gov.it), o in un harvester piveau.
 
-Lo strumento [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) (open source) è quello che è stato usato per generare i TTL di esempio in `tests/expected-ttl/` e contiene il motore di matching colonne → ontologie ex-OntoPiA. Il README del repo spiega come deployarlo per un uso autonomo, in locale o come servizio interno della propria PA.
+Lo strumento [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) (open source) è quello che è stato usato per generare i TTL di esempio in `tests/expected-ttl/` e contiene il motore di matching colonne → [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets). Il README del repo spiega come deployarlo per un uso autonomo, in locale o come servizio interno della propria PA.
