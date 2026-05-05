@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-05T16:41:54.452Z",
+  "built_at": "2026-05-05T16:43:22.185Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "demo": {
@@ -43,7 +43,7 @@
       "snapshot_date": "2026-05-05",
       "n_datasets_pubblicati": 11,
       "n_datasets_totali": 12,
-      "n_datasets_ok": 8
+      "n_datasets_ok": 11
     }
   }
 }
