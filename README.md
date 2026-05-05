@@ -1,236 +1,248 @@
-# ComuneMetrics — Cruscotto Civico Comunale
+# ComuneMetrics
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paniere v2.14](https://img.shields.io/badge/Paniere-v2.14-blue)](docs/PANIERE.md)
-[![DCAT-AP_IT](https://img.shields.io/badge/DCAT--AP__IT-2.1-green)](https://docs.italia.it/AgID/documenti-in-consultazione/lg-cataloghi-opendata-docs/it/bozza/profilo-DCAT-AP_IT.html)
-[![PA italiana](https://img.shields.io/badge/Vocabolari%20e%20ontologie%20PA-compliant-blue)](https://schema.gov.it)
+Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 11 dataset OpenData**. Ogni Comune che adotta il paniere ottiene una dashboard pubblica con grafici, mappa e KPI di mandato.
 
-Piattaforma open source per il **monitoraggio dell'attività amministrativa di un Comune**, alimentata da un paniere standardizzato di OpenData. Strumento di **controllo di gestione** e **rendicontazione politica di mandato**, replicabile in qualunque Comune italiano.
+**Dashboard live**: https://piersoft.github.io/comune-metrics/
 
-> **L'idea**: definire 11 dataset CORE che il Comune deve pubblicare per "accendere" la dashboard. Più dataset pubblica → migliore badge di trasparenza. Killer application per forzare l'apertura dei dati.
+---
 
-## In due righe
+## I 3 Comuni attualmente nel cruscotto
 
-1. **Tu Comune**: pubblichi gli 11 CSV del paniere conformi allo schema → ottieni il badge VERDE/ORO
-2. **Tu cittadino**: apri la dashboard del tuo Comune → vedi i KPI di mandato in tempo reale
+| Comune | Dataset OK | Modalità | Note |
+|---|---|---|---|
+| **Demo** | 11/11 | manifest CSV | Comune sintetico, esempio di adozione completa del paniere |
+| **Bologna** | 8/9 | live API | Caso speciale: portale Opendatasoft con API aggregations |
+| **Lecce** | 8/8 | snapshot statico | Server publisher inaccessibile dai runner GitHub, fixture committate manualmente |
 
-## Componenti del progetto
+**Demo è il modello di riferimento** che ogni Comune può copiare per replicare il cruscotto.
 
-| Componente | Cosa fa | File |
-|---|---|---|
-| **Paniere** | Specifica dei 11 dataset CORE con schema CSV, mapping ai vocabolari e ontologie della PA italiana, esempi Turtle | [`docs/PANIERE.md`](docs/PANIERE.md) |
-| **JSON Schema** | Validatori automatici dei CSV (Draft 2020-12) | [`schemas/*.json`](schemas/) |
-| **Dashboard** | Cruscotto single-file HTML con KPI, grafici Chart.js, mappe Leaflet | [`index.html`](index.html) |
-| **Badge system** | ROSSO (0-3) → GIALLO (4-7) → ARANCIONE (8-10) → VERDE (11) → ORO (11+TTL) | dentro `index.html` |
+---
 
-## I 2 Comuni di riferimento (v0.2)
+## I 11 dataset CORE del paniere
 
-La dashboard MVP carica dati reali estratti dai portali OpenData via workflow GitHub Actions:
+| # | Dataset | Cosa contiene | File CSV |
+|---|---|---|---|
+| 1 | Popolazione | Residenti per anno e quartiere | `popolazione.csv` |
+| 2 | Bilancio | Spesa per missione e programma | `bilancio.csv` |
+| 3 | Opere pubbliche | Cantieri con CUP, importo, geo | `opere_pubbliche.csv` |
+| 4 | Pratiche edilizie | CILA/SCIA/PdC con esito | `pratiche_edilizie.csv` |
+| 5 | Servizi sociali | Utenti e spesa per categoria | `servizi_sociali.csv` |
+| 6 | Istruzione | Scuole, iscritti, geo | `istruzione.csv` |
+| 7 | Incidenti stradali | Sinistri con vittime e geo | `incidenti_stradali.csv` |
+| 8 | Rifiuti | RD% e quantità raccolte | `rifiuti.csv` |
+| 9 | Eventi culturali | Manifestazioni con geo | `eventi_culturali.csv` |
+| 10 | Delibere | Atti dell'albo pretorio | `delibere.csv` |
+| 11 | Patrimonio | Immobili comunali con valore | `patrimonio.csv` |
 
-| Comune | IPA | Cablati / OK | Mode | Note |
-|---|---|---|---|---|
-| **Bologna** | `c_a944` | 9/11 cablati, 8 OK | 🟢 live | Publisher esemplare: dataset ricchi, server stabile, formati aperti. Aggiornamento automatico ad ogni run del workflow. |
-| **Lecce** | `c_e506` | 8/11 cablati, 8 OK | 🟠 snapshot statico 4 mag 2026 | "Lecce paradox": 11/11 dataset cablabili, ma il portale `dati.comune.lecce.it` ha geo-fencing IP che blocca i runner GitHub Actions. 4 dataset live da Google Sheets (popolazione, opere triennali, popolazione scolastica, incidenti) + 4 fixture statiche scaricate manualmente (bilancio, pratiche, eventi, patrimonio). |
+Il Comune **non deve** pubblicarli tutti per essere visibile: i dataset mancanti vengono dichiarati `presente: false` nel manifest.
 
-**Comuni esclusi dopo audit**: Firenze (CSV in realtà ZIP travestiti), Messina, Torino, Bari, Milano, Matera, Genova, Palermo. La lista delle ragioni — server giù, link goo.gl morti dopo il 2025-03-25, formati non parsabili (PDF/XLSX), dataset troppo storici, WAF aggressivi — è la **tesi del progetto**: pubblicare ≠ rendere accessibile. Cronistoria completa in [`docs/PANIERE.md`](docs/PANIERE.md).
+Schemi formali completi in [`schemas/csv/`](schemas/csv/) — specifica leggibile in [`docs/PANIERE_CSV_SCHEMA.md`](docs/PANIERE_CSV_SCHEMA.md).
 
-## Quick start
+---
 
-### Per visualizzare la dashboard
+## Come aggiungere il tuo Comune (procedura passo-passo)
 
+### Passo 1 — Fork del repository
+
+Vai su https://github.com/piersoft/comune-metrics e clicca **Fork**.
+
+Clona il fork in locale:
 ```bash
-git clone https://github.com/<your-org>/comune-metrics
+git clone https://github.com/<tuo-utente>/comune-metrics.git
 cd comune-metrics
-python3 -m http.server 8080
-# apri http://localhost:8080
 ```
 
-Oppure pubblica su GitHub Pages (single-file HTML, zero backend).
+### Passo 2 — Crea la cartella del tuo Comune
 
-### Per validare un CSV del paniere
+Copia la cartella `demo` come modello:
+```bash
+cp -r data/comuni/demo data/comuni/<chiave-comune>
+```
+
+Esempio per Parma:
+```bash
+cp -r data/comuni/demo data/comuni/parma
+```
+
+La chiave deve essere uno **slug** (lettere minuscole, niente spazi, niente accenti).
+
+### Passo 3 — Modifica `manifest.yml`
+
+Apri `data/comuni/<chiave-comune>/manifest.yml` e cambia:
+
+```yaml
+nome: "Parma"                # Nome del Comune
+ipa: "c_g337"                 # Codice IPA (cerca su indicepa.gov.it)
+istat: "034027"               # Codice ISTAT
+popolazione_attesa: 198292    # Residenti attuali
+mandato: "2022-2027"          # Mandato del sindaco
+sindaco: "Michele Guerra"     # Nome sindaco
+
+mappa_center: [44.8015, 10.3279]  # [latitudine, longitudine] del centro
+mappa_zoom: 13
+
+paniere_version: "csv-v1"
+```
+
+Per ogni dataset, scegli **una** delle 3 forme:
+
+**Forma A — CSV nel repo** (per Comuni piccoli, ~MB di dati):
+```yaml
+popolazione:
+  source_type: fixture
+  aggiornato: "2024-12-31"
+  fonte: "Anagrafe comunale"
+```
+Metti il file `popolazione.csv` nella stessa cartella.
+
+**Forma B — URL esterno** (per Comuni grandi, dati che cambiano):
+```yaml
+popolazione:
+  source_type: external_csv
+  url: "https://opendata.comune.parma.it/datasets/popolazione.csv"
+  aggiornato: "2024-12-31"
+  fonte: "Portale OpenData del Comune"
+```
+
+**Forma C — Dataset non pubblicato**:
+```yaml
+patrimonio:
+  presente: false
+  motivo: "In fase di pubblicazione"
+```
+
+### Passo 4 — Prepara i CSV nel formato canonico
+
+Ogni CSV **deve rispettare lo schema** in `schemas/csv/<dataset>.csv-schema.json`.
+
+Regole **obbligatorie** per tutti i CSV:
+- Encoding **UTF-8**
+- Separatore **virgola** `,` (o punto e virgola `;`)
+- Separatore decimale **punto** `.` (mai virgola italiana)
+- Date in formato **YYYY-MM-DD**
+- **Header esatti** come da schema (case-sensitive)
+- Niente colonne extra non previste dallo schema
+
+Esempio `popolazione.csv` minimo:
+```csv
+anno,residenti
+2024,198292
+2023,198000
+2022,197000
+```
+
+Esempio `bilancio.csv` con classificazione DLgs 118/2011:
+```csv
+anno,missione,programma,importo_euro
+2024,"Servizi istituzionali","Organi istituzionali",1250000.50
+2024,"Istruzione e diritto allo studio","Istruzione prescolastica",8900000.00
+```
+
+I CSV del Comune Demo sono il riferimento pratico: vedi [`data/comuni/demo/`](data/comuni/demo/).
+
+### Passo 5 — Valida i CSV in locale
+
+Prima di committare, verifica che ogni CSV sia conforme:
 
 ```bash
-pip install jsonschema
+node scripts/validate_csv.js popolazione data/comuni/parma/popolazione.csv
+# ✓ OK data/comuni/parma/popolazione.csv — 6 righe, 3 colonne
 
-python3 - <<'EOF'
-import json, csv
-from jsonschema import Draft202012Validator
-
-with open('schemas/rifiuti.schema.json') as f: schema = json.load(f)
-with open('data/rifiuti.csv') as f: rows = list(csv.DictReader(f))
-# (convertire i tipi numerici, vedi schemas/README.md)
-errors = list(Draft202012Validator(schema).iter_errors(rows))
-print(f"{'OK' if not errors else 'FAIL'} - {len(errors)} errori")
-EOF
+node scripts/validate_csv.js bilancio data/comuni/parma/bilancio.csv
+node scripts/validate_csv.js opere_pubbliche data/comuni/parma/opere_pubbliche.csv
+# ... uno per ogni dataset
 ```
 
-### Per pubblicare il paniere come Comune
+Se compaiono errori, leggi il messaggio (indica riga e colonna) e correggi il CSV.
 
-ComuneMetrics adotta un modello **federato e standardizzato**: ogni Comune fornisce i propri dati in **CSV canonici** definiti dal Paniere, e il cruscotto li legge senza richiedere modifiche al codice.
+### Passo 6 — Apri pull request
 
-**4 passi per essere inclusi**:
-
-**1. Fork del repo** [`piersoft/comune-metrics`](https://github.com/piersoft/comune-metrics).
-
-**2. Copia il template del tuo Comune**:
 ```bash
-cp -r data/comuni/_template data/comuni/<chiave-comune>
-# es. cp -r data/comuni/_template data/comuni/parma
-```
-Apri `data/comuni/<chiave>/manifest.yml` e compila i campi di identificazione (nome, IPA, ISTAT, sindaco, mappa).
-
-**3. Per ogni dataset CORE, scegli una di queste strategie**:
-
-| `source_type` | Quando usarla | Cosa serve |
-|---|---|---|
-| `fixture` | CSV statico nel repo (Comune piccolo, aggiornamento periodico) | Metti `<dataset>.csv` nella stessa cartella del manifest |
-| `external_csv` | URL HTTPS pubblico al tuo CSV (auto-refresh) | Compila `url:` nel manifest |
-| `opendatasoft_aggregate` | Solo se hai portale Opendatasoft con API records (caso avanzato — Bologna) | URL completo `/records?select=...&group_by=...` |
-
-**I CSV devono rispettare lo schema canonico** documentato in [`schemas/csv/<dataset>.csv-schema.json`](schemas/csv/). Per esempio `popolazione.csv` richiede colonne `anno,residenti` (e opzionali `quartiere`, `sesso`, `fascia_eta`). Niente alias, niente sinonimi: header esatti.
-
-**4. Valida i tuoi CSV prima del commit**:
-```bash
-node scripts/validate_csv.js popolazione data/comuni/<chiave>/popolazione.csv
-# ✓ CSV valido (6 righe, 3 colonne)
-```
-Apri PR — la GitHub Action `validate-paniere.yml` valida tutto. CSV non conformi vengono **rifiutati** con `status: schema_error`.
-
-**Vincoli sui CSV (regole del Paniere)**:
-- Encoding UTF-8 obbligatorio
-- Separatore decimale: solo punto `.` (mai virgola)
-- Date in formato `YYYY-MM-DD`
-- Header esatti come da schema (case-sensitive)
-- Colonne sconosciute non ammesse
-
-**Cosa NON serve fare** (a differenza di altri standard):
-- ❌ Convertire i CSV in RDF/Turtle
-- ❌ Aggiungere extras `paniere_*` ai metadata CKAN
-- ❌ Modificare il tuo portale OpenData
-- ❌ Aspettare che gli aggregatori scoprano i tuoi dataset
-
-> 💡 **Bologna come eccezione.** Bologna usa un caso speciale (`opendatasoft_aggregate`) perché ha un portale Opendatasoft con API records. È documentato come "best practice tecnica" ma non è il modello target: la maggior parte dei Comuni userà `fixture` o `external_csv`. Il caso Lecce (modalità `static_snapshot`) mostra come gestire portali con problemi di accessibilità — fixture committate manualmente con disclaimer chiaro.
-
-## I 11 dataset CORE
-
-| # | Dataset | Tema EU | Frequenza | Ontologie PA italiana |
-|---|---|---|---|---|
-| 1 | popolazione | SOCI | Annuale | QB + SKOS + CLV |
-| 2 | bilancio | ECON | Annuale | QB + SKOS + COV |
-| 3 | opere_pubbliche | ECON | Trimestrale | CPSV-AP + CLV + TI + POI |
-| 4 | pratiche_edilizie | GOVE | Trimestrale | CPSV-AP + TI + CLV + SKOS |
-| 5 | servizi_sociali | SOCI | Annuale | CPSV-AP + QB + SKOS |
-| 6 | istruzione | EDUC | Annuale | Cultural-ON + POI + CLV + TI |
-| 7 | incidenti_stradali | TRAN | Mensile | QB + CLV + TI + SKOS |
-| 8 | rifiuti | ENVI | Mensile | QB + SKOS + CLV |
-| 9 | eventi_culturali | EDUC | Trimestrale | Cultural-ON + POI + CLV + TI |
-| 10 | delibere | GOVE | Mensile | CPSV-AP + TI + COV + RO + ADMS |
-| 11 | patrimonio | GOVE | Annuale | POI + CLV + SKOS |
-
-Per ognuno: schema CSV completo, mapping per-campo a proprietà RDF dei vocabolari e ontologie della PA italiana, esempio Turtle reale, KPI calcolabili. Tutti i dettagli in [`docs/PANIERE.md`](docs/PANIERE.md).
-
-## Architettura
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  COMUNE                                                     │
-│  ┌────────┐  ┌──────────┐  ┌───────────────┐                │
-│  │ Sistemi│→ │ ETL      │→ │ 11 CSV paniere│                │
-│  │ interni│  │ comune   │  │ + 11 TTL      │                │
-│  └────────┘  └──────────┘  └───────┬───────┘                │
-│                                    │                        │
-│                                    ↓                        │
-│                              ┌───────────┐                  │
-│                              │ CKAN locale│                 │
-│                              │ extras:    │                 │
-│                              │ paniere:tru│                 │
-│                              └─────┬─────┘                  │
-└──────────────────────────────────────┼──────────────────────┘
-                                       │ harvest DCAT-AP_IT
-                                       ↓
-┌──────────────────────────────────────────────────────────────┐
-│  dati.gov.it                                                 │
-│  └─ federazione nazionale, MQA scoring, Linked Open Data     │
-└──────────────────────────────────────┬───────────────────────┘
-                                       │ fetch / SPARQL
-                                       ↓
-┌──────────────────────────────────────────────────────────────┐
-│  ComuneMetrics dashboard (single HTML)                       │
-│  ├─ Loader CKAN (legge extras_paniere_comunemetrics:true)    │
-│  ├─ Validator JSON Schema (Draft 2020-12)                    │
-│  ├─ KPI Engine (~60 indicatori calcolati)                    │
-│  ├─ Charts (Chart.js)                                        │
-│  └─ Maps (Leaflet + OpenStreetMap)                           │
-└──────────────────────────────────────────────────────────────┘
+git checkout -b add-comune-parma
+git add data/comuni/parma/
+git commit -m "feat: aggiungo Comune di Parma al paniere"
+git push origin add-comune-parma
 ```
 
-## Perché funziona come "killer application"
+Vai su GitHub e apri la **pull request** verso `piersoft/comune-metrics:main`.
 
-Il meccanismo è **gamification dell'OpenData**:
+### Passo 7 — La GitHub Action valida tutto
 
-- Nessun Comune vuole il badge ROSSO 🔴 sul suo cruscotto pubblico
-- Pubblicare i dataset mancanti per passare a 🟢 VERDE è uno **sforzo limitato** e **misurabile** (15 colonne CSV per dataset)
-- I cittadini diffondono i confronti tra Comuni → **pressione reputazionale**
-- L'ente politico responsabile può rivendicare il badge come **risultato di mandato**
-- I dataset rilasciati restano patrimonio comune → **effetto esternalità positiva** sul resto della PA
+Quando apri la PR, parte automaticamente il workflow [`validate-paniere.yml`](.github/workflows/validate-paniere.yml) che verifica:
+- I CSV rispettano gli schemi canonici
+- Il `manifest.yml` ha tutti i campi obbligatori
+- I `source_type` sono validi
 
-## Standard di riferimento
+Se tutto è verde, la PR può essere mergiata. Dopo il merge, **al massimo 5 minuti** dopo il workflow `build-data.yml` rigenera i dati e la dashboard, e il tuo Comune compare su https://piersoft.github.io/comune-metrics/.
 
-- **DCAT-AP_IT v2.1** — metadati dataset
-- **Vocabolari controllati e ontologie della PA italiana** ([schema.gov.it](https://schema.gov.it)) — 15 ontologie italiane (CLV, COV, CPV, POI, SM, RO, TI, ADMS, ACCO, PARK, GTFS, Cultural-ON, CPSV-AP, QB, SKOS)
-- **W3C WGS84** — coordinate (`geo:lat` / `geo:long`)
-- **JSON Schema Draft 2020-12** — validazione CSV
-- **Codici IPA** — identità Comuni (IndicePA AgID)
-- **DM 18/04/2012** — armonizzazione bilanci EELL
-- **D.Lgs. 36/2023** — codice contratti pubblici (CUP/CIG ANAC)
-- **D.Lgs. 33/2013** — trasparenza
-- **D.Lgs. 42/2004** — vincoli culturali (patrimonio)
+---
 
-## Onestà metodologica (v0.1 → v0.2)
+## Aggiornare i dati nel tempo
 
-ComuneMetrics v0.1 è un **MVP dimostrativo**. È importante distinguere cosa è verificato da cosa è simulato:
+Hai due opzioni:
 
-**Verificato sulle fonti reali:**
-- La **conformità** di ciascun Comune al paniere (badge ROSSO/GIALLO/ARANCIONE/VERDE) si basa sulla **presenza effettiva** dei 11 dataset CORE su `dati.gov.it`, verificata con chiamate API CKAN (`package_show`)
-- Gli **slug** dei dataset cablati nei link footer sono quelli machine-readable persistenti (`name` field)
-- La **freschezza** mostrata dalle card colorate (FRESCO/DATATO/OBSOLETO) è il valore reale di `dcat:modified` letto da `package_show`
+### Opzione 1 — Aggiornamento manuale (Comuni piccoli)
 
-**Simulato (mock data):**
-- I **valori KPI** (totali, percentuali, importi) e i **dati dei grafici** (Chart.js, Leaflet) sono **dati di esempio plausibili**, NON letti dai CSV reali
-- Molti campi attesi nei mock NON esistono nei CSV reali. Esempi:
-  - eventi: nessun dataset comunale espone "spesa patrocini" o "% gratuiti"
-  - lavori in corso Bologna: NON contiene CUP, importo, SAL, fonte di finanziamento (solo descrizione, indirizzo, date)
-  - rifiuti Bologna: solo % differenziata per quartiere, non kg per frazione
-  - asili Bologna: solo numero iscritti, non posti totali né lista d'attesa
+Quando hai dati nuovi, aggiorni il CSV nel tuo fork e apri una nuova PR. Il workflow rigenera automaticamente.
 
-**Cosa farà la v0.2:**
-- Loader CKAN reale via Cloudflare Worker proxy (CORS)
-- Lettura CSV reali e ricostruzione delle sole metriche effettivamente derivabili dai campi disponibili
-- I grafici si semplificheranno: meno KPI ma 100% verificabili
-- Una nuova sezione del paniere ("campi attesi vs campi reali") aiuterà i Comuni a estendere il proprio CSV per coprire le metriche civiche più rilevanti (es. CUP/importo per opere, accolto/respinto per pratiche)
+### Opzione 2 — URL esterno (auto-refresh)
 
-Il banner giallo in cima al sito e il ribbon "DATI DI ESEMPIO" su ogni KPI ricordano costantemente al visitatore questa distinzione.
+Se usi `source_type: external_csv` con un URL pubblico, ComuneMetrics fa fetch del CSV **ad ogni run del workflow** (settimanale, oppure ad ogni push, oppure manuale). Il Comune deve solo mantenere aggiornato il CSV al suo URL.
 
-## Roadmap
+Il workflow gira automaticamente:
+- Ogni domenica alle 3 UTC (cron)
+- Ad ogni push su `main` (modifiche a script o config)
+- Su trigger manuale dalla pagina Actions
 
-- [x] **v0.1** — Paniere v2.14 + 11 JSON Schema + Dashboard MVP single-file
-- [ ] **v0.2** — Loader CKAN reale via proxy CORS (Cloudflare Worker)
-- [ ] **v0.3** — Federazione SPARQL: query cross-Comune via lod.dati.gov.it
-- [ ] **v0.4** — Modulo "rendicontazione di mandato" con confronto inizio/fine consiliatura
-- [ ] **v0.5** — Paniere ESTESO opzionale (GTFS, ACCO, PARK, aria via SOSA/SSN, ITP, FOIA)
-- [ ] **v1.0** — Adozione formale da parte di un primo Comune pilota
+---
 
-## Crediti
+## Validazione: cosa rifiuta il workflow
 
-Progetto ideato e sviluppato da [Piersoft](https://github.com/piersoft).
+Esempi di errori che **bloccano** una PR (messaggi reali del validatore):
 
-Si appoggia agli strumenti già pubblicati:
-- [piersoft/CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) — generatore TTL conforme ai vocabolari/ontologie della PA italiana
-- [piersoft/ckan-opendata-assistant](https://github.com/piersoft/ckan-opendata-assistant) — dashboard dati.gov.it monitoring
-- [piersoft/dae-puglia-rdf](https://github.com/piersoft/dae-puglia-rdf) — pattern per pipeline RDF/Linked Open Data
+| Errore | Messaggio |
+|---|---|
+| Colonna inattesa | `Colonna sconosciuta: 'citta' (ammesse: anno, residenti, quartiere)` |
+| Anno fuori range | `riga 2: campo 'anno' = 1850 < minimum 1900` |
+| Data non ISO | `riga 2: campo 'data' = '15/01/2024' non è una data YYYY-MM-DD` |
+| Pattern violato | `riga 2: campo 'cup' = 'C84D1900060002' non rispetta il pattern` |
+| Tipo sbagliato | `riga 2: campo 'residenti' = 'abc' deve essere intero` |
+| Campo obbligatorio mancante | `riga 2: campo obbligatorio 'anno' mancante` |
+
+**La validazione è hard**: anche un solo errore blocca la PR. È fatta apposta per garantire qualità.
+
+---
+
+## Casi speciali (Bologna, Lecce)
+
+Bologna e Lecce sono nel cruscotto da prima dell'introduzione del modello federato e usano un code-path legacy:
+- **Bologna** usa direttamente l'API Opendatasoft del proprio portale (caso unico in Italia)
+- **Lecce** ha fixture committate a mano perché il portale non risponde dai runner GitHub
+
+Questi due casi sono **mantenuti per ragioni storiche** ma non sono il modello da seguire. **Tutti i nuovi Comuni usano il manifest CSV** descritto sopra.
+
+---
+
+## Tecnologie
+
+- **Builder**: Node.js (>=18) puro, niente dipendenze esterne
+- **Dashboard**: HTML + Chart.js + Leaflet, single-file
+- **Validatore**: JSON Schema Draft 2020-12
+- **CI**: GitHub Actions
+- **Hosting**: GitHub Pages (gratis)
+
+Costo zero per il Comune. Costo zero per il tool.
+
+---
 
 ## Licenza
 
-MIT.
+Codice: MIT.
+Dati: ogni Comune mantiene la licenza originale dei propri dataset (tipicamente CC-BY 4.0).
 
-I dataset prodotti dai Comuni adottanti sono raccomandati in **CC-BY 4.0** o **IODL 2.0**.
+---
+
+## Contatti
+
+Issue tracker: https://github.com/piersoft/comune-metrics/issues
+Maintainer: [@piersoft](https://github.com/piersoft) (Francesco Piero Paolicelli)
