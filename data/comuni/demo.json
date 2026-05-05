@@ -18,7 +18,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T10:57:03.958Z",
+      "fetched_at": "2026-05-05T11:04:53.863Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -121,7 +121,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T10:57:03.960Z",
+      "fetched_at": "2026-05-05T11:04:53.865Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -257,7 +257,7 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T10:57:03.961Z",
+      "fetched_at": "2026-05-05T11:04:53.866Z",
       "status": "ok",
       "modified": "2025-04-15",
       "freshness": {
@@ -385,7 +385,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T10:57:03.962Z",
+      "fetched_at": "2026-05-05T11:04:53.867Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -490,7 +490,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T10:57:03.966Z",
+      "fetched_at": "2026-05-05T11:04:53.870Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -572,7 +572,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T10:57:03.966Z",
+      "fetched_at": "2026-05-05T11:04:53.871Z",
       "status": "ok",
       "modified": "2024-09-15",
       "freshness": {
@@ -793,7 +793,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T10:57:03.967Z",
+      "fetched_at": "2026-05-05T11:04:53.872Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3275,7 +3275,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T10:57:03.970Z",
+      "fetched_at": "2026-05-05T11:04:53.875Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3369,7 +3369,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T10:57:03.970Z",
+      "fetched_at": "2026-05-05T11:04:53.875Z",
       "status": "ok",
       "modified": "2025-01-31",
       "freshness": {
@@ -3864,7 +3864,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T10:57:03.971Z",
+      "fetched_at": "2026-05-05T11:04:53.876Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -3926,7 +3926,7 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T10:57:03.974Z",
+      "fetched_at": "2026-05-05T11:04:53.879Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -4224,7 +4224,7 @@
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T10:57:03.975Z",
+      "fetched_at": "2026-05-05T11:04:53.880Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -4259,6 +4259,24 @@
             "valore": 212400
           }
         ],
+        "per_tributo_aliquota": [
+          {
+            "nome": "TASSA_SOGGIORNO",
+            "aliquota": 2.5,
+            "descrizione": "Tassa €2.50/notte categoria 4 stelle"
+          },
+          {
+            "nome": "IMU",
+            "aliquota": 1.06,
+            "descrizione": "Aliquota ordinaria 10.6 per mille - delibera CC"
+          },
+          {
+            "nome": "ADDIZIONALE_IRPEF",
+            "aliquota": 0.8,
+            "descrizione": "Aliquota addizionale 0.80% - delibera CC"
+          }
+        ],
+        "has_gettito": true,
         "serie_anni": [
           {
             "anno": 2020,

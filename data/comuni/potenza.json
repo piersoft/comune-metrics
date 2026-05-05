@@ -17,7 +17,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "fetched_at": "2026-05-05T11:04:53.885Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -90,7 +90,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "fetched_at": "2026-05-05T11:04:53.885Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -110,7 +110,7 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "fetched_at": "2026-05-05T11:04:53.885Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -130,7 +130,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "fetched_at": "2026-05-05T11:04:53.885Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -150,7 +150,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "fetched_at": "2026-05-05T11:04:53.885Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -170,7 +170,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T10:57:03.979Z",
+      "fetched_at": "2026-05-05T11:04:53.885Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -182,8 +182,114 @@
       "metrics": {
         "totale_iscritti": null,
         "totale_strutture": 69,
-        "per_struttura": [],
-        "per_tipo": [],
+        "per_struttura": [
+          {
+            "nome": "SEDE CARCERARIA POTENZA",
+            "n": 2
+          },
+          {
+            "nome": "L.S. PASOLINI POTENZA",
+            "n": 1
+          },
+          {
+            "nome": "I.C. L. SINISGALLI POTENZA",
+            "n": 1
+          },
+          {
+            "nome": "PIAZZA ADRIATICO-SINISGALLI PZ",
+            "n": 1
+          },
+          {
+            "nome": "MALVACCARO - IC SINISGALLI PZ",
+            "n": 1
+          },
+          {
+            "nome": "I.P.S.E.O.A. DI PASCA CORSO SERALE PZ",
+            "n": 1
+          },
+          {
+            "nome": "I.P. DI PASCA - SEZIONE CARCERARIA PZ",
+            "n": 1
+          },
+          {
+            "nome": "I.P. CORSO SERALE FORTUNATO POTENZA",
+            "n": 1
+          },
+          {
+            "nome": "CASA CIRCONDARIALE MINORILE PZ",
+            "n": 1
+          },
+          {
+            "nome": "I.P.S.A.S.R. G. FORTUNATO POTENZA",
+            "n": 1
+          },
+          {
+            "nome": "I.T.T. EINST.-DE LOR.SEZ.ITG POTENZA",
+            "n": 1
+          },
+          {
+            "nome": "VIA DOMENICO SAVIO-IC SAVIO PZ",
+            "n": 1
+          },
+          {
+            "nome": "I.C. D. SAVIO POTENZA",
+            "n": 1
+          },
+          {
+            "nome": "SAN NICOLA-IC BUSCIOLANO PZ",
+            "n": 1
+          },
+          {
+            "nome": "MILANI- IC DON MILANI PZ",
+            "n": 1
+          },
+          {
+            "nome": "INF. ROSSELLINO - IC MILANI PZ",
+            "n": 1
+          },
+          {
+            "nome": "I.C. BUSCIOLANO POTENZA",
+            "n": 1
+          },
+          {
+            "nome": "PRIMARIA RODARI- LEOPARDI PZ",
+            "n": 1
+          },
+          {
+            "nome": "VIA CALABRIA - IC BUSCIOLANO PZ",
+            "n": 1
+          },
+          {
+            "nome": "I GRADO A.BUSCIOLANO PZ",
+            "n": 1
+          }
+        ],
+        "per_tipo": [
+          {
+            "nome": "Secondaria II",
+            "n": 22
+          },
+          {
+            "nome": "Primaria",
+            "n": 18
+          },
+          {
+            "nome": "Infanzia",
+            "n": 14
+          },
+          {
+            "nome": "Secondaria I",
+            "n": 7
+          },
+          {
+            "nome": "Comprensivo",
+            "n": 5
+          },
+          {
+            "nome": "Altro",
+            "n": 3
+          }
+        ],
         "per_quartiere": [],
         "strutture_geo": []
       },
@@ -203,7 +309,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T10:57:03.980Z",
+      "fetched_at": "2026-05-05T11:04:53.887Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -223,7 +329,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T10:57:03.980Z",
+      "fetched_at": "2026-05-05T11:04:53.887Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -272,7 +378,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T10:57:03.981Z",
+      "fetched_at": "2026-05-05T11:04:53.887Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -357,7 +463,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T10:57:03.981Z",
+      "fetched_at": "2026-05-05T11:04:53.888Z",
       "status": "not_published",
       "modified": null,
       "freshness": {
@@ -377,7 +483,7 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T10:57:03.981Z",
+      "fetched_at": "2026-05-05T11:04:53.888Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -457,7 +563,7 @@
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T10:57:03.983Z",
+      "fetched_at": "2026-05-05T11:04:53.888Z",
       "status": "ok",
       "modified": null,
       "freshness": {
@@ -480,6 +586,19 @@
             "valore": 0
           }
         ],
+        "per_tributo_aliquota": [
+          {
+            "nome": "IMU",
+            "aliquota": 1.06,
+            "descrizione": "Aliquota ordinaria confermata"
+          },
+          {
+            "nome": "ADDIZIONALE_IRPEF",
+            "aliquota": 0.8,
+            "descrizione": "Aliquota confermata 0.80 percento + 0.20 percento per redditi oltre 50000 euro"
+          }
+        ],
+        "has_gettito": false,
         "serie_anni": [
           {
             "anno": 2024,
