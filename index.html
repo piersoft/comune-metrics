@@ -59,6 +59,26 @@
     border-radius: 4px; font-size: 11px; font-weight: 600;
     font-family: 'SFMono-Regular', Consolas, monospace; letter-spacing: 0.4px;
   }
+  .header-actions {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .guida-card {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, #1565C0 100%);
+    color: #fff; padding: 8px 16px; border-radius: 6px;
+    text-decoration: none; font-size: 13px; font-weight: 600;
+    box-shadow: 0 2px 6px rgba(23, 50, 77, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .guida-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(23, 50, 77, 0.3);
+    color: #fff;
+  }
+  .guida-card .guida-icon { font-size: 18px; line-height: 1; }
+  .guida-card .guida-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .guida-card .guida-title { font-size: 14px; font-weight: 700; }
+  .guida-card .guida-sub { font-size: 11px; opacity: 0.9; font-weight: 400; }
   .status-banner {
     background: var(--green-bg); border-left: 4px solid var(--green);
     padding: 12px 24px; margin: 16px auto 0; max-width: 1320px;
@@ -265,7 +285,16 @@
 <header class="site-header">
   <div class="container header-content">
     <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 11 Dataset CORE del Paniere</sub></h1>
-    <span class="version-badge" id="versionBadge">v2026.05.05.22</span>
+    <div class="header-actions">
+      <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE.md" target="_blank" rel="noopener" class="guida-card" title="Guida operativa: come pubblicare i dati che alimentano questa dashboard">
+        <span class="guida-icon">📖</span>
+        <span class="guida-text">
+          <span class="guida-title">Guida</span>
+          <span class="guida-sub">Come alimentare la dashboard</span>
+        </span>
+      </a>
+      <span class="version-badge" id="versionBadge">v2026.05.05.23</span>
+    </div>
   </div>
 </header>
 
@@ -297,6 +326,7 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 const STATE = { dashboard: null, current: null, comuneData: {}, map: null, charts: {} };
@@ -764,20 +794,38 @@ function collectMapLayers(c) {
       if (valid.length) layers.push({ dsKey, label: cfg.label, color: cfg.color, icon: cfg.icon, points: valid });
     }
   }
+  // Virtual layer: heatmap di densità incidenti, generato dagli stessi punti
+  // del dataset incidenti. Default OFF (è un layer aggiuntivo).
+  const incidentiLayer = layers.find(l => l.dsKey === 'incidenti_stradali');
+  if (incidentiLayer && incidentiLayer.points.length >= 20) {
+    layers.push({
+      dsKey: 'incidenti_heatmap',
+      label: 'Densità incidenti',
+      color: '#FF6F00',
+      icon: '🔥',
+      points: incidentiLayer.points,
+      isHeatmap: true,
+      defaultOff: true,
+    });
+  }
   return layers;
 }
 
 function renderMap(c) {
   const layers = collectMapLayers(c);
   if (!layers.length) return '';
-  // Sidebar toggle: una checkbox per layer, default ON
-  const togglesHtml = layers.map(l => `
+  // Sidebar toggle: una checkbox per layer.
+  // Layer "isHeatmap" o "defaultOff" → unchecked all'inizio.
+  const togglesHtml = layers.map(l => {
+    const checked = l.defaultOff ? '' : 'checked';
+    return `
     <label class="layer-toggle" style="border-left: 3px solid ${l.color};">
-      <input type="checkbox" data-layer="${l.dsKey}" checked>
+      <input type="checkbox" data-layer="${l.dsKey}" ${checked}>
       <span class="layer-icon">${l.icon || '📍'}</span>
       <span class="layer-name">${l.label}</span>
       <span class="layer-count">${fmtNum(l.points.length)}</span>
-    </label>`).join('');
+    </label>`;
+  }).join('');
   return `
     <div class="map-section">
       <div class="map-header">
@@ -798,21 +846,38 @@ function initMap(c) {
   if (!layers.length || !document.getElementById('map')) return;
   STATE.map = L.map('map').setView(c.mappa_center, c.mappa_zoom || 12);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap', maxZoom: 19 }).addTo(STATE.map);
-  // Crea un LayerGroup per ogni dataset, così possiamo toggle
+  // Crea un layer per ogni dataset, così possiamo toggle.
+  // Layer "isHeatmap" usa L.heatLayer (plugin leaflet.heat).
+  // Altri layer usano L.layerGroup di circleMarker.
   for (const layer of layers) {
-    const lg = L.layerGroup();
-    layer.points.slice(0, 300).forEach(p => {
-      const marker = L.circleMarker([p.lat, p.lon], {
-        radius: 6,
-        fillColor: layer.color,
-        color: '#fff',
-        weight: 1.5,
-        fillOpacity: 0.85,
+    let lg;
+    if (layer.isHeatmap) {
+      // Heatmap: array di [lat, lon, intensity]. Intensità fissa = 1.
+      const heatData = layer.points.map(p => [p.lat, p.lon, 1]);
+      lg = L.heatLayer(heatData, {
+        radius: 25,
+        blur: 18,
+        maxZoom: 17,
+        max: 1.0,
+        minOpacity: 0.35,
+        gradient: { 0.0: '#FFEB3B', 0.4: '#FF9800', 0.7: '#F44336', 1.0: '#B71C1C' },
       });
-      if (p.nome) marker.bindPopup(`<strong>${escapeHtml(layer.label)}</strong><br>${escapeHtml(p.nome)}`);
-      lg.addLayer(marker);
-    });
-    lg.addTo(STATE.map);
+    } else {
+      lg = L.layerGroup();
+      layer.points.slice(0, 300).forEach(p => {
+        const marker = L.circleMarker([p.lat, p.lon], {
+          radius: 6,
+          fillColor: layer.color,
+          color: '#fff',
+          weight: 1.5,
+          fillOpacity: 0.85,
+        });
+        if (p.nome) marker.bindPopup(`<strong>${escapeHtml(layer.label)}</strong><br>${escapeHtml(p.nome)}`);
+        lg.addLayer(marker);
+      });
+    }
+    // Aggiungi solo se non è defaultOff
+    if (!layer.defaultOff) lg.addTo(STATE.map);
     STATE.mapLayerGroups[layer.dsKey] = lg;
   }
   // Aggancia i toggle

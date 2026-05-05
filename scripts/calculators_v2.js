@@ -199,7 +199,7 @@ export function calc_incidenti(rows) {
     per_zona: countBy(rows, 'zona'),
     per_tipo: countBy(rows, 'tipo'),
     serie_anni: seriesByYear(rows, 'data'),
-    hot_spots: geoPoints(rows, 500),
+    hot_spots: geoPoints(rows, 5000),
   };
 }
 

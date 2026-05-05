@@ -350,7 +350,7 @@ export function calc_incidenti(rows, fieldMap) {
     totale_morti: totMorti,
     totale_feriti: totFeriti,
     per_zona: groupSum(rows, fieldMap, 'zona', 'n_incidenti') || countBy(rows, fieldMap, 'zona'),
-    hot_spots: geoPoints(rows, fieldMap, null, 500),
+    hot_spots: geoPoints(rows, fieldMap, null, 5000),
     vittime_vulnerabili: vittimeVulnerabili,
   };
 }

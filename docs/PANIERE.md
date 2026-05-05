@@ -1,6 +1,6 @@
 # Paniere ComuneMetrics — Guida pratica per Comuni
 
-> Come costruire gli 11 CSV del paniere partendo dai gestionali interni del Comune. Documento operativo per Responsabili Transizione Digitale, IT, e referenti OpenData.
+> Come costruire i 12 CSV del paniere partendo dai gestionali interni del Comune. Documento operativo per Responsabili Transizione Digitale, IT, e referenti OpenData.
 
 **Specifica tecnica del formato CSV**: vedi [`PANIERE_CSV_SCHEMA.md`](PANIERE_CSV_SCHEMA.md) e gli schemi formali in [`../schemas/csv/`](../schemas/csv/).
 
@@ -10,7 +10,7 @@
 
 ## Cosa è il paniere
 
-Il paniere è un insieme di **11 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano:
+Il paniere è un insieme di **12 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano:
 
 | # | Dataset | Cosa contiene |
 |---|---|---|
@@ -25,8 +25,11 @@ Il paniere è un insieme di **11 dataset CORE** che descrivono l'attività ammin
 | 9 | Eventi culturali | Manifestazioni con luogo e data |
 | 10 | Delibere | Atti dell'albo pretorio |
 | 11 | Patrimonio | Immobili comunali con valore catastale |
+| 12 | **Tributi** | **Gettito IMU/TARI/tassa soggiorno per anno** |
 
 Un Comune può adottarne **anche solo alcuni**: i mancanti vengono dichiarati `presente: false` nel manifest.
+
+> **Lecce è un caso scuola interessante**: pubblica 10/12 dataset (quasi tutti fermi al 2015-2019, MA il dataset incidenti è aggiornato al 31 dicembre 2023, 11 anni di serie storica). Dimostra che l'OpenData non è "tutto o niente": un Comune può tenere viva una serie temporale anche se ha lasciato andare le altre.
 
 ---
 
@@ -58,6 +61,7 @@ Il paniere è **dati del Comune sul Comune**.
 | Eventi culturali | CMS comunale / agenda eventi | Sito web istituzionale, sw assessorato cultura |
 | Delibere | Sw atti amministrativi / albo pretorio | Maggioli AdWeb, Halley, Sicraweb, Iter |
 | Patrimonio | Inventario beni immobili | Maggioli Patrimonio, Halley, sw catastali |
+| **Tributi** | **Sw gestione tributi locali / federalismo fiscale** | **Maggioli Tributi, Halley Tributi, Engineering, sw concessionari (Equitalia, Andreani, ICA)** |
 
 Il Comune **già ha** questi dati. Il paniere chiede solo di esportarli in CSV nel formato canonico.
 
@@ -236,6 +240,66 @@ WHERE flag_attivo = 'S'
 ORDER BY tipologia, denominazione_immobile;
 ```
 
+### Dataset 12 — Tributi (da gestionale tributi locali)
+
+Schema canonico: `anno, tributo` (required); `gettito_euro, n_contribuenti, aliquota_base, descrizione, categoria` (optional).
+
+I tipi di tributo standardizzati sono: `IMU`, `TARI`, `TASSA_SOGGIORNO`, `ADDIZIONALE_IRPEF`, `COSAP`, `IMPOSTA_PUBBLICITA`, `CANONE_UNICO`. Categoria libera per disaggregazioni (es. "Utenze domestiche" / "Utenze non domestiche" per TARI).
+
+```sql
+-- Gettito IMU: somma dei versamenti spontanei e accertamenti riscossi
+SELECT
+    EXTRACT(YEAR FROM data_versamento) AS anno,
+    'IMU' AS tributo,
+    SUM(importo_versato) AS gettito_euro,
+    COUNT(DISTINCT codice_fiscale) AS n_contribuenti,
+    1.06 AS aliquota_base,  -- da delibera Consiglio Comunale
+    'Aliquota ordinaria 10.6 per mille' AS descrizione
+FROM versamenti_imu
+WHERE data_versamento >= '2020-01-01'
+GROUP BY EXTRACT(YEAR FROM data_versamento);
+
+-- Gettito TARI: dal ruolo tariffario annuale
+SELECT
+    anno_imposta AS anno,
+    'TARI' AS tributo,
+    SUM(importo_dovuto) AS gettito_euro,
+    COUNT(DISTINCT codice_utente) AS n_contribuenti,
+    NULL AS aliquota_base,  -- TARI ha tariffe per categoria, non aliquota
+    categoria_tarsu AS categoria  -- "Utenze domestiche" / "Utenze non domestiche"
+FROM ruolo_tari
+WHERE anno_imposta >= 2020
+GROUP BY anno_imposta, categoria_tarsu;
+
+-- Tassa di soggiorno
+SELECT
+    EXTRACT(YEAR FROM data_versamento) AS anno,
+    'TASSA_SOGGIORNO' AS tributo,
+    SUM(importo) AS gettito_euro,
+    NULL AS n_contribuenti,  -- versano gli alberghi, non i turisti
+    2.50 AS aliquota_base,
+    'Tassa €2.50/notte categoria 4 stelle' AS descrizione
+FROM versamenti_tassa_soggiorno
+GROUP BY EXTRACT(YEAR FROM data_versamento);
+```
+
+**Esempio di CSV finale (5 tributi per il 2024):**
+
+```csv
+anno,tributo,gettito_euro,n_contribuenti,aliquota_base,descrizione,categoria
+2024,IMU,15800000.00,32500,1.06,Aliquota ordinaria 10.6 per mille,
+2024,TARI,12300000.00,38000,,,Utenze domestiche
+2024,TARI,6200000.00,4000,,,Utenze non domestiche
+2024,TASSA_SOGGIORNO,1250000.00,,2.50,Tassa €2.50/notte,
+2024,ADDIZIONALE_IRPEF,8900000.00,,0.80,Aliquota 0.80%,
+2024,COSAP,420000.00,820,,,Spazi pubblici
+```
+
+Note importanti:
+- `gettito_euro` deve essere il **riscosso effettivo**, non il previsto a bilancio
+- Per TARI è frequente avere più righe per stesso anno con `categoria` diversa (domestiche/non domestiche, scaglioni)
+- L'`aliquota_base` è quella pubblicata sul Portale del Federalismo Fiscale del MEF, link normalmente tra le delibere comunali
+
 ---
 
 ## Cosa NON fare
@@ -249,6 +313,28 @@ ORDER BY tipologia, denominazione_immobile;
 | **Usare nomi colonne in maiuscolo** (`ANNO` invece di `anno`) | Gli header sono case-sensitive. Il validatore rifiuta |
 | **Pubblicare su URL temporanei** (Google Drive privato, OneDrive) | Il workflow non può autenticarsi. Servono URL pubblici stabili |
 | **Aggiornare a mano una volta all'anno** | Il dato recente è oro, quello vecchio rumore. Schedulare l'estrazione |
+
+---
+
+## Sinonimi accettati nei nomi colonna
+
+Il builder ComuneMetrics riconosce **sinonimi** comuni per i nomi delle colonne, in modo che il Comune non sia costretto a rinominare i campi del proprio gestionale. Esempi:
+
+| Campo canonico | Sinonimi accettati |
+|---|---|
+| `data` | `Data`, `data_evento`, `data_incidente`, `Data Evento` |
+| `lat` | `Lat`, `Latitude`, `latitudine`, `y` |
+| `lon` | `Lon`, `Longitude`, `longitudine`, `x` |
+| `morti` | `Morti`, `Decessi`, `n_morti`, `Persone decedute`, `n_decessi` |
+| `feriti` | `Feriti`, `n_feriti`, `Persone ferite`, `Numero feriti` |
+| `categoria` | `Categoria`, `intervento_tipo` |
+| `interventi` | `n_pratiche`, `Numero_pratiche`, `count` |
+| `rd_pct` | `RD %`, `Percentuale differenziata`, `raccolta_differenziata_pct` |
+| `gettito_euro` | `importo_versato`, `Importo`, `riscosso`, `gettito` |
+
+L'elenco completo è in [`config/metrics.yml`](../config/metrics.yml) sezione `expected_fields`. Se il vostro gestionale esporta con un nome non standard, **aprite una PR** per aggiungerlo: di solito è una riga sola.
+
+> **Suggerimento operativo**: NON rinominate manualmente le colonne del CSV se il vostro gestionale usa già nomi tipo `Persone decedute` o `Numero_pratiche`. Lasciate che il builder li riconosca da solo. Manutenzione zero per voi.
 
 ---
 
@@ -270,6 +356,7 @@ I metadati DCAT-AP_IT del dataset originale rimangono invariati. Il Comune manti
 - **DLgs 36/2006** modificato dal **DLgs 102/2015** — Riutilizzo delle informazioni del settore pubblico (PSI Directive)
 - **DLgs 82/2005** (CAD) — art. 50, 52 sull'apertura dei dati
 - **DLgs 118/2011** — Armonizzazione bilanci PA, classificazione missioni/programmi
+- **DLgs 446/1997** — disciplina IMU/TARI; aliquote pubblicate sul [Portale del Federalismo Fiscale MEF](https://www1.finanze.gov.it/finanze/pubblicazioneregolamenti/public/elencoPubblicazioni)
 - **AgID — Linee guida open data** ([docs.italia.it](https://docs.italia.it))
 - **DCAT-AP_IT v2.1** — profilo italiano di DCAT-AP
 
