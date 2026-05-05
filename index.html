@@ -209,7 +209,7 @@
 <header class="site-header">
   <div class="container header-content">
     <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 11 Dataset CORE del Paniere</sub></h1>
-    <span class="version-badge" id="versionBadge">v2026.05.04.19</span>
+    <span class="version-badge" id="versionBadge">v2026.05.05.20</span>
   </div>
 </header>
 
@@ -632,7 +632,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
     const chartHtml = renderer ? renderer(canvasId, ds.metrics || {}) : '<div class="not-pub-msg">Renderer non disponibile</div>';
     body = `
       ${freshLabel ? `<span class="freshness ${freshCls}">${freshLabel}</span>` : ''}
-      ${modTxt ? `<div class="meta-line">${modTxt} · ${fmtNum(ds.n_rows)} righe${ds.truncated?' (max 50k)':''} ${snapshotTag}</div>` : ''}
+      ${modTxt ? `<div class="meta-line">${modTxt} · ${fmtNum(ds.n_rows)} righe${ds.truncated?' (cap 150k)':''} ${snapshotTag}</div>` : ''}
       ${chartHtml}`;
   } else {
     body = `<div class="error-msg"><strong>${statusText(st)}</strong>${ds.error ? `<br><span style="font-size:12px;color:var(--ink-soft);">${escapeHtml(ds.error)}</span>` : ''}</div>`;

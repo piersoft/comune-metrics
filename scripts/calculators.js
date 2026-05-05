@@ -141,8 +141,16 @@ function geoPoints(rows, fieldMap, nameKey = null, max = 200) {
 function parseYear(x) {
   if (x === null || x === undefined || x === '') return null;
   let y = null;
-  if (typeof x === 'number') y = Math.floor(x);
-  else {
+  if (typeof x === 'number') {
+    // Caso speciale: epoch ms (es. Opendatasoft API ritorna anno come timestamp)
+    // 31536000000 ms = ~1 anno; un epoch >1e10 è quasi certamente ms timestamp
+    if (x > 1e10) {
+      const d = new Date(x);
+      if (!isNaN(d)) y = d.getUTCFullYear();
+    } else {
+      y = Math.floor(x);
+    }
+  } else {
     const s = String(x).trim();
     // YYYY-MM-DD
     const ymd = s.match(/^(\d{4})-\d{2}-\d{2}/);
@@ -188,11 +196,19 @@ function seriesByYear(rows, fieldMap, yearKey, valueKey = null) {
 // ─── CORE 1 — Popolazione ─────────────────────────────────────────────────────
 
 export function calc_popolazione(rows, fieldMap) {
-  const totaleResidenti = sumBy(rows, fieldMap, 'residenti');
+  const serieAnni = seriesByYear(rows, fieldMap, 'anno', 'residenti') || seriesByYear(rows, fieldMap, 'anno');
+  // totale_residenti = popolazione dell'ultimo anno (non somma di tutti gli anni)
+  let totaleResidenti = null;
+  if (serieAnni && serieAnni.length > 0) {
+    totaleResidenti = serieAnni[serieAnni.length - 1].valore;
+  } else {
+    // Fallback per dataset senza serie temporale (es. anagrafica per persona)
+    totaleResidenti = sumBy(rows, fieldMap, 'residenti') || rows.length;
+  }
   return {
     totale_residenti: totaleResidenti,
-    serie_anni: seriesByYear(rows, fieldMap, 'anno', 'residenti') || seriesByYear(rows, fieldMap, 'anno'),
-    serie_residenti: null, // alias semantico, usato dalla UI
+    serie_anni: serieAnni,
+    serie_residenti: null,
     per_quartiere: groupSum(rows, fieldMap, 'quartiere', 'residenti') || countBy(rows, fieldMap, 'quartiere'),
   };
 }

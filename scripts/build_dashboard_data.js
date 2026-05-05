@@ -24,7 +24,7 @@ const COMUNI_DIR = join(DATA_DIR, "comuni");
 const USER_AGENT = "ComuneMetrics-Builder/0.1";
 const FETCH_TIMEOUT = process.env.GITHUB_ACTIONS ? 45_000 : 15_000;
 const MAX_BYTES = 30 * 1024 * 1024; // 30 MB (più conservativo, evita lock su file enormi)
-const MAX_ROWS_PROCESSED = 50_000; // cap di sicurezza per il parser
+const MAX_ROWS_PROCESSED = 150_000; // cap di sicurezza per il parser
 const POOL_SIZE = 1; // sequenziale: fetch CSV da portali comunali può essere lento
 const REQUEST_DELAY_MS = 500; // throttle per CSV diretti (Worker MCP non rate-limited)
 const SUPPORTED_FORMATS = new Set(["JSON", "JSONL", "CSV"]);
@@ -332,12 +332,23 @@ function pickBestResource(resources) {
 // `?limit=N` alla URL /exports/{json,csv}. Questo è cruciale per dataset enormi
 // come popolazione Bologna (40+ anni, milioni di righe). 50.000 righe sono più
 // che sufficienti per le metriche aggregate calcolate dai calculator.
-function smartUrl(rawUrl) {
+function smartUrl(rawUrl, dsKey) {
   if (!rawUrl) return rawUrl;
   // Pattern Opendatasoft: /api/v2/catalog/datasets/<slug>/exports/<format>
-  if (!/\/api\/v2\/catalog\/datasets\/[^/]+\/exports\/(json|csv|jsonl)/.test(rawUrl)) {
-    return rawUrl;
+  const odsMatch = rawUrl.match(/\/api\/v2\/catalog\/datasets\/([^/]+)\/exports\/(json|csv|jsonl)/);
+  if (!odsMatch) return rawUrl;
+
+  // CASO SPECIALE: popolazione su Opendatasoft. Il dataset Bologna ha 1M+ righe
+  // disaggregate per età×cittadinanza×quartiere×sesso. Per evitare di processare
+  // un milione di righe e sommarle lato calculator, chiediamo già aggregato per
+  // anno via API records con SELECT/GROUP BY.
+  if (dsKey === 'popolazione') {
+    const slug = odsMatch[1];
+    const base = rawUrl.split('/exports/')[0];
+    return `${base}/records?select=anno,sum(residenti)+AS+residenti&group_by=anno&order_by=anno&limit=200`;
   }
+
+  // Default: aumenta il limite all'export massivo
   const sep = rawUrl.includes("?") ? "&" : "?";
   return `${rawUrl}${sep}limit=${MAX_ROWS_PROCESSED}`;
 }
@@ -392,10 +403,10 @@ function parseCSV(text) {
 function parseJSON(text) {
   try {
     const obj = JSON.parse(text);
-    if (Array.isArray(obj)) return obj;
+    if (Array.isArray(obj)) return flattenOdsRecords(obj);
     if (obj && typeof obj === "object") {
       for (const key of ["records", "results", "data"]) {
-        if (Array.isArray(obj[key])) return obj[key];
+        if (Array.isArray(obj[key])) return flattenOdsRecords(obj[key]);
       }
       return [obj];
     }
@@ -407,8 +418,18 @@ function parseJSON(text) {
     for (const l of lines) {
       try { out.push(JSON.parse(l)); } catch { /* skip */ }
     }
-    return out;
+    return flattenOdsRecords(out);
   }
+}
+
+// Opendatasoft API records ritorna [{ record: { fields: {...} } }]. Appiattiamo
+// per uniformare con CSV/JSONL standard.
+function flattenOdsRecords(arr) {
+  if (!Array.isArray(arr) || arr.length === 0) return arr;
+  if (arr[0] && typeof arr[0] === "object" && arr[0].record && arr[0].record.fields) {
+    return arr.map(r => r.record.fields);
+  }
+  return arr;
 }
 
 // ── Field mapping ─────────────────────────────────────────────────────────────
@@ -550,7 +571,7 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
   }
 
   // Applica smartUrl: per portali Opendatasoft aggiunge ?limit=N
-  const fetchUrl = smartUrl(res.url);
+  const fetchUrl = smartUrl(res.url, dsKey);
   if (fetchUrl !== res.url) {
     out.resource_url_fetched = fetchUrl;
   }
@@ -581,7 +602,14 @@ async function processDataset(comuneKey, dsKey, slug, metricCfg, ckanServer) {
   }
 
   // Parse
-  const fmt = (res.format || "").toUpperCase();
+  let fmt = (res.format || "").toUpperCase();
+  // Se smartUrl ha riscritto l'URL verso /records (API Opendatasoft con
+  // aggregazione server-side), il body è JSON anche se la risorsa era
+  // dichiarata CSV. Detection: testo inizia con "{" o "[".
+  const trimmed = text.trimStart();
+  if ((trimmed.startsWith('{') || trimmed.startsWith('[')) && fmt === 'CSV') {
+    fmt = 'JSON';
+  }
   let rows = [];
   try {
     if (fmt === "JSON" || fmt === "JSONL") rows = parseJSON(text);
