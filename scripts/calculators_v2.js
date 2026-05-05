@@ -112,10 +112,21 @@ export function calc_popolazione(rows) {
   // Calcola serie per anno; "totale_residenti" = ULTIMO anno (non somma)
   const serie = seriesByYear(rows, 'anno', 'residenti');
   const totale = serie.length > 0 ? serie[serie.length - 1].valore : null;
+  // Per quartiere: solo l'ultimo anno (altrimenti somma 15 anni di residenti)
+  const ultimoAnno = serie.length > 0 ? serie[serie.length - 1].anno : null;
+  let perQuartiere = null;
+  if (ultimoAnno !== null) {
+    const rowsUltimoAnno = rows.filter(r => {
+      const y = typeof r.anno === 'string' ? parseInt(r.anno, 10) : r.anno;
+      return y === ultimoAnno;
+    });
+    perQuartiere = groupSum(rowsUltimoAnno, 'quartiere', 'residenti');
+    if (!perQuartiere || perQuartiere.length === 0) perQuartiere = null;
+  }
   return {
     totale_residenti: totale,
     serie_anni: serie,
-    per_quartiere: groupSum(rows, 'quartiere', 'residenti'),
+    per_quartiere: perQuartiere,
   };
 }
 
@@ -144,7 +155,7 @@ export function calc_opere(rows) {
 
 // ----- 4. Pratiche edilizie --------------------------------------------------
 export function calc_pratiche(rows) {
-  const conChiusura = rows.filter(r => r.data_chiusura && String(r.data_chiusura).trim() !== '').length;
+  const conChiusura = rows.filter(r => r.chiusura_data && String(r.chiusura_data).trim() !== '').length;
   const tasso_chiusura = rows.length > 0 ? (conChiusura / rows.length) * 100 : null;
   return {
     totale: rows.length,
@@ -169,6 +180,7 @@ export function calc_sociali(rows) {
 export function calc_istruzione(rows) {
   return {
     totale_iscritti: sumBy(rows, 'iscritti'),
+    totale_strutture: rows.length,
     per_struttura: groupSum(rows, 'struttura', 'iscritti'),
     per_tipo: groupSum(rows, 'tipo_struttura', 'iscritti'),
     per_quartiere: groupSum(rows, 'quartiere', 'iscritti'),
@@ -243,7 +255,7 @@ export function calc_delibere(rows) {
 
 // ----- 11. Patrimonio --------------------------------------------------------
 export function calc_patrimonio(rows) {
-  const conVincolo = rows.filter(r => r.vincolo_culturale === 'Sì').length;
+  const conVincolo = rows.filter(r => r.vincolo_culturale === true || r.vincolo_culturale === 'true' || r.vincolo_culturale === 'Sì' || r.vincolo_culturale === 'si' || r.vincolo_culturale === 'Si').length;
   const pct_vincolo = rows.length > 0 ? Math.round((conVincolo / rows.length) * 1000) / 10 : null;
   return {
     totale_immobili: rows.length,

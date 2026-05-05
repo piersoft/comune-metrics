@@ -2,14 +2,13 @@
 # Comune DEMO — esempio di adozione del Paniere CSV federato v0.2
 # =============================================================================
 # Questo NON è un Comune reale. È un esempio sintetico per dimostrare il flusso
-# end-to-end di adozione del paniere ComuneMetrics da parte di un Comune nuovo:
-#   1. Crea data/comuni/<key>/manifest.yml
-#   2. Per ogni dataset CORE che pubblichi, scegli source_type
-#   3. Se source_type=fixture, metti il CSV nella stessa cartella
-#   4. Apri PR — la GitHub Action validate-paniere.yml verifica gli schemi
+# end-to-end di adozione del paniere ComuneMetrics da parte di un Comune nuovo.
 #
-# I CSV qui presenti sono dati sintetici plausibili di un Comune medio italiano
-# (~36.000 abitanti, capoluogo di provincia). Servono solo come test del tool.
+# COPERTURA: 11/11 dataset CORE — copertura completa del paniere come prova
+# del fuoco che il modello federato regge per un Comune medio italiano.
+#
+# I dati sono sintetici plausibili (Comune ~36.620 abitanti, capoluogo di
+# provincia in Lombardia). Servono solo come test del tool.
 # =============================================================================
 
 nome: "Comune DEMO"
@@ -26,7 +25,6 @@ paniere_version: "csv-v1"
 
 datasets:
 
-  # Dataset attivi (source_type=fixture: CSV nella stessa cartella)
   popolazione:
     source_type: fixture
     aggiornato: "2024-12-31"
@@ -42,33 +40,42 @@ datasets:
     aggiornato: "2025-04-15"
     fonte: "Programma Triennale OO.PP. 2024-2026 (sintetico)"
 
+  pratiche_edilizie:
+    source_type: fixture
+    aggiornato: "2025-12-31"
+    fonte: "SUE - Sportello Unico Edilizia (sintetici 2018-2025)"
+
+  servizi_sociali:
+    source_type: fixture
+    aggiornato: "2024-12-31"
+    fonte: "Settore Welfare - rendicontazione annuale (sintetici)"
+
+  istruzione:
+    source_type: fixture
+    aggiornato: "2024-09-15"
+    fonte: "Anagrafe scolastica a.s. 2024-2025 (sintetici)"
+
+  incidenti_stradali:
+    source_type: fixture
+    aggiornato: "2024-12-31"
+    fonte: "Polizia Locale - report incidenti 2020-2024 (sintetici)"
+
   rifiuti:
     source_type: fixture
     aggiornato: "2024-12-31"
     fonte: "Servizio Igiene Urbana (dati sintetici)"
 
-  # Dataset non pubblicati: dichiarati esplicitamente per onestà
-  pratiche_edilizie:
-    presente: false
-    motivo: "Non ancora esposto in formato OD aperto"
-
-  servizi_sociali:
-    presente: false
-    motivo: "In fase di pubblicazione"
-
-  istruzione:
-    presente: false
-
-  incidenti_stradali:
-    presente: false
-    motivo: "Solo report annuale PDF, non in CSV strutturato"
-
   eventi_culturali:
-    presente: false
+    source_type: fixture
+    aggiornato: "2025-01-31"
+    fonte: "Assessorato Cultura - calendario eventi 2024-2025 (sintetici)"
 
   delibere:
-    presente: false
-    motivo: "Pubblicate solo come PDF in albo pretorio"
+    source_type: fixture
+    aggiornato: "2025-12-31"
+    fonte: "Albo Pretorio online 2022-2025 (sintetici)"
 
   patrimonio:
-    presente: false
+    source_type: fixture
+    aggiornato: "2024-12-31"
+    fonte: "Inventario beni immobili comunali (sintetici)"
