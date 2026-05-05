@@ -13,57 +13,8 @@
   "mappa_zoom": 13,
   "mode": "static_snapshot",
   "snapshot_date": "2026-05-04",
-  "snapshot_reason": "Pubblicava 11/11 dataset CORE fino al 2024 (caso virtuoso). Il 25 marzo 2025 Google ha chiuso goo.gl: i 3 dataset linkati con shortener sono diventati irrecuperabili (servizi sociali, rifiuti, delibere). Inoltre il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV restanti sono salvati come fixture statiche.",
+  "snapshot_reason": "Pubblicava 11/11 dataset CORE come Comune virtuoso. Il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV originali sono salvati come fixture statiche scaricate manualmente nel 2026. I dati sono fermi al 2015-2019: il portale OpenData del Comune non è più aggiornato dal 2018. L'unico dataset non recuperabile per statistiche è 'delibere': l'Albo Pretorio è esposto come feed RSS live ma non ha storico.",
   "datasets": {
-    "servizi_sociali": {
-      "dataset_key": "servizi_sociali",
-      "slug": null,
-      "status": "not_published",
-      "fields_expected": [
-        "target",
-        "categoria",
-        "intervento",
-        "contributo",
-        "isee",
-        "identificativo",
-        "data_inizio",
-        "utenti",
-        "anno_periodo"
-      ],
-      "metrics": {
-        "utenti_totali": null,
-        "per_target": null,
-        "per_categoria": null,
-        "spesa_totale": null,
-        "spesa_media": null
-      }
-    },
-    "rifiuti": {
-      "dataset_key": "rifiuti",
-      "slug": null,
-      "status": "not_published",
-      "fields_expected": [
-        "anno",
-        "mese",
-        "rd_pct",
-        "rd_centro",
-        "rd_savena",
-        "rd_navile",
-        "rd_borgo",
-        "rd_porto",
-        "rd_santo",
-        "rd_sandonato",
-        "frazione",
-        "kg",
-        "zona"
-      ],
-      "metrics": {
-        "rd_pct_ultimo_anno": null,
-        "serie_anni": null,
-        "per_quartiere": null,
-        "trend_pct": null
-      }
-    },
     "delibere": {
       "dataset_key": "delibere",
       "slug": null,
@@ -83,7 +34,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T08:16:09.638Z",
+      "fetched_at": "2026-05-05T08:31:20.701Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -128,7 +79,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T08:16:11.697Z",
+      "fetched_at": "2026-05-05T08:31:24.547Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -262,7 +213,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T08:16:11.701Z",
+      "fetched_at": "2026-05-05T08:31:24.552Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -420,7 +371,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T08:16:13.604Z",
+      "fetched_at": "2026-05-05T08:31:26.767Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -680,10 +631,79 @@
       "error": null,
       "is_static_snapshot": true
     },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "slug": "__fixture__:servizi_sociali",
+      "fetched_at": "2026-05-05T08:31:26.868Z",
+      "status": "ok",
+      "modified": "2026-05-04",
+      "freshness": {
+        "level": "fresh",
+        "months": 0,
+        "iso": "2026-05-04"
+      },
+      "n_rows": 5,
+      "fields_expected": [
+        "target",
+        "categoria",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio",
+        "utenti",
+        "anno_periodo"
+      ],
+      "fields_present": [
+        "categoria",
+        "utenti"
+      ],
+      "fields_missing": [
+        "target",
+        "intervento",
+        "contributo",
+        "isee",
+        "identificativo",
+        "data_inizio",
+        "anno_periodo"
+      ],
+      "metrics": {
+        "utenti_totali": 6102,
+        "per_target": null,
+        "per_categoria": [
+          {
+            "nome": "Sostegno alla cultura dell'accoglienza",
+            "valore": 4212
+          },
+          {
+            "nome": "Promozione e integrazione socio-sanitaria e presa in carico non autosufficienze _anziani e disabili_",
+            "valore": 1550
+          },
+          {
+            "nome": "Ufficio Asili nido",
+            "valore": 240
+          },
+          {
+            "nome": "Sostegno alla genitorialità e tutela dei diritti dei minori",
+            "valore": 65
+          },
+          {
+            "nome": "Ufficio Politiche sociali ed Ufficio di Piano – Area amministrativa",
+            "valore": 35
+          }
+        ],
+        "spesa_totale": null,
+        "spesa_media": null
+      },
+      "resource_url": "data/fixtures/lecce/servizi_sociali.csv",
+      "resource_format": "CSV",
+      "error": null,
+      "is_static_snapshot": true
+    },
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T08:16:13.697Z",
+      "fetched_at": "2026-05-05T08:31:26.869Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -855,7 +875,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-sinistri-dal-2018-lecce",
-      "fetched_at": "2026-05-05T08:16:15.442Z",
+      "fetched_at": "2026-05-05T08:31:28.736Z",
       "status": "ok",
       "modified": "2021-02-03",
       "freshness": {
@@ -2913,10 +2933,73 @@
       "resource_format": "CSV",
       "error": null
     },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "slug": "__fixture__:rifiuti",
+      "fetched_at": "2026-05-05T08:31:29.823Z",
+      "status": "ok",
+      "modified": "2026-05-04",
+      "freshness": {
+        "level": "fresh",
+        "months": 0,
+        "iso": "2026-05-04"
+      },
+      "n_rows": 1,
+      "fields_expected": [
+        "anno",
+        "mese",
+        "rd_pct",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "fields_present": [
+        "anno",
+        "rd_pct"
+      ],
+      "fields_missing": [
+        "mese",
+        "rd_centro",
+        "rd_savena",
+        "rd_navile",
+        "rd_borgo",
+        "rd_porto",
+        "rd_santo",
+        "rd_sandonato",
+        "frazione",
+        "kg",
+        "zona"
+      ],
+      "metrics": {
+        "rd_pct_ultimo_anno": {
+          "anno": 2015,
+          "valore": 22.27
+        },
+        "serie_anni": [
+          {
+            "anno": 2015,
+            "valore": 22.27
+          }
+        ],
+        "per_quartiere": null,
+        "trend_pct": null
+      },
+      "resource_url": "data/fixtures/lecce/rifiuti.csv",
+      "resource_format": "CSV",
+      "error": null,
+      "is_static_snapshot": true
+    },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T08:16:16.901Z",
+      "fetched_at": "2026-05-05T08:31:29.824Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -3031,7 +3114,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T08:16:16.902Z",
+      "fetched_at": "2026-05-05T08:31:29.825Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
