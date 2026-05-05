@@ -81,7 +81,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T06:05:33.141Z",
+      "fetched_at": "2026-05-05T06:27:51.819Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -126,7 +126,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T06:05:37.173Z",
+      "fetched_at": "2026-05-05T06:27:53.081Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -260,7 +260,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T06:05:37.178Z",
+      "fetched_at": "2026-05-05T06:27:53.087Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -418,7 +418,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T06:05:39.206Z",
+      "fetched_at": "2026-05-05T06:27:54.079Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -681,7 +681,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T06:05:39.274Z",
+      "fetched_at": "2026-05-05T06:27:54.156Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -853,7 +853,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-sinistri-dal-2018-lecce",
-      "fetched_at": "2026-05-05T06:05:41.070Z",
+      "fetched_at": "2026-05-05T06:27:55.529Z",
       "status": "ok",
       "modified": "2021-02-03",
       "freshness": {
@@ -2914,7 +2914,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T06:05:43.294Z",
+      "fetched_at": "2026-05-05T06:27:56.407Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -3029,7 +3029,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T06:05:43.295Z",
+      "fetched_at": "2026-05-05T06:27:56.415Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
