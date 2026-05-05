@@ -26,7 +26,9 @@
         "contributo",
         "isee",
         "identificativo",
-        "data_inizio"
+        "data_inizio",
+        "utenti",
+        "anno_periodo"
       ],
       "metrics": {
         "utenti_totali": null,
@@ -81,7 +83,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T06:58:44.570Z",
+      "fetched_at": "2026-05-05T08:01:37.470Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -126,7 +128,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T06:58:47.053Z",
+      "fetched_at": "2026-05-05T08:01:40.587Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -260,7 +262,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T06:58:47.057Z",
+      "fetched_at": "2026-05-05T08:01:40.592Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -418,7 +420,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T06:58:49.041Z",
+      "fetched_at": "2026-05-05T08:01:42.578Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -681,7 +683,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T06:58:49.109Z",
+      "fetched_at": "2026-05-05T08:01:42.645Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -853,7 +855,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-sinistri-dal-2018-lecce",
-      "fetched_at": "2026-05-05T06:58:51.290Z",
+      "fetched_at": "2026-05-05T08:01:44.423Z",
       "status": "ok",
       "modified": "2021-02-03",
       "freshness": {
@@ -2914,7 +2916,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T06:58:52.994Z",
+      "fetched_at": "2026-05-05T08:01:46.299Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -3029,7 +3031,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T06:58:52.995Z",
+      "fetched_at": "2026-05-05T08:01:46.299Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {

@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-05T06:57:15.753Z",
+  "built_at": "2026-05-05T08:00:50.828Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "demo": {
@@ -22,7 +22,7 @@
       "snapshot_date": null,
       "n_datasets_pubblicati": 9,
       "n_datasets_totali": 11,
-      "n_datasets_ok": 8
+      "n_datasets_ok": 9
     },
     "lecce": {
       "key": "lecce",
