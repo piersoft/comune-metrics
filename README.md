@@ -196,9 +196,24 @@ Quando apri la PR, parte automaticamente il workflow [`validate-paniere.yml`](.g
 - Il `manifest.yml` ha tutti i campi obbligatori
 - I `source_type` sono validi
 
-Se tutto è verde, il maintainer del repo `piersoft/comune-metrics` revisiona e mergia la PR. Dopo il merge, entro pochi minuti il workflow `build-data.yml` rigenera i dati e la dashboard, e il tuo Comune compare su https://piersoft.github.io/comune-metrics/.
-
 Se la GitHub Action fallisce, leggi i log (tab "Checks" della PR), correggi i CSV in locale, fai un nuovo `git commit` e `git push` (sullo stesso branch da cui hai aperto la PR) — la PR si aggiorna automaticamente e il workflow rigira.
+
+Quando i check sono verdi, hai due strade indipendenti:
+
+**Strada A — Dashboard sul tuo fork** (consigliata se vuoi una pagina pubblica del tuo Comune sotto il tuo controllo)
+
+Non c'è bisogno di aspettare il merge. Sul tuo fork:
+1. Vai su `Settings → Pages` e abilita GitHub Pages dal branch `main`, cartella `/` (root)
+2. Vai su `Actions → Build dashboard data → Run workflow` per rigenerare i dati
+3. Dopo qualche minuto la dashboard è online su `https://<tuo-utente>.github.io/comune-metrics/`
+
+In questo scenario il fork è **completamente autonomo**: workflow, dati e pagina pubblica vivono tutti nel tuo repository. La PR verso `piersoft/comune-metrics` è opzionale (la apri se vuoi che il tuo Comune compaia anche nella dashboard "vetrina" centrale).
+
+**Strada B — Inclusione nella dashboard centrale**
+
+Se vuoi che il tuo Comune compaia anche su `https://piersoft.github.io/comune-metrics/` (la dashboard "vetrina" multi-Comune mantenuta dall'autore del progetto), aspetta che il maintainer riveda e mergi la PR. Dopo il merge, il workflow `build-data.yml` viene lanciato manualmente sul repo centrale e rigenera la pagina pubblica.
+
+Le due strade non si escludono: puoi avere la tua dashboard sul fork **e** essere incluso nella vetrina centrale.
 
 ---
 
@@ -208,16 +223,15 @@ Hai due opzioni:
 
 ### Opzione 1 — Aggiornamento manuale (Comuni piccoli)
 
-Quando hai dati nuovi, aggiorni il CSV nel tuo fork e apri una nuova PR. Il workflow rigenera automaticamente.
+Quando hai dati nuovi, aggiorni i CSV sul tuo fork. Poi:
+- **se la tua dashboard è sul fork** (Strada A del Passo 7): vai su `Actions → Build dashboard data → Run workflow` per rigenerare. Niente PR necessaria.
+- **se vuoi anche aggiornare la vetrina centrale** (Strada B): apri una nuova PR verso `piersoft/comune-metrics`. Dopo il merge, il workflow del repo centrale viene rilanciato manualmente.
 
 ### Opzione 2 — URL esterno (auto-refresh)
 
-Se usi `source_type: external_csv` con un URL pubblico, ComuneMetrics fa fetch del CSV **ad ogni run del workflow** (settimanale, oppure ad ogni push, oppure manuale). Il Comune deve solo mantenere aggiornato il CSV al suo URL.
+Se usi `source_type: external_csv` con un URL pubblico, il builder fa fetch del CSV ad ogni esecuzione del workflow. Il Comune deve solo mantenere aggiornato il CSV al suo URL: la dashboard si rigenera con i dati nuovi al successivo run.
 
-Il workflow gira automaticamente:
-- Ogni domenica alle 3 UTC (cron)
-- Ad ogni push su `main` (modifiche a script o config)
-- Su trigger manuale dalla pagina Actions
+> ⚙️ **Nota sui trigger del workflow `build-data.yml`**: nel repository centrale il workflow è impostato in modalità **solo manuale** (`workflow_dispatch`). I trigger automatici (cron settimanale, push su `main`) sono disabilitati per evitare build a vuoto. Sul tuo fork puoi riabilitare gli automatismi modificando `.github/workflows/build-data.yml` (le sezioni `schedule` e `push` sono commentate ma documentate nel file).
 
 ---
 
