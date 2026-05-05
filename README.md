@@ -111,9 +111,9 @@ Metti il file `popolazione.csv` nella stessa cartella.
 ```yaml
 popolazione:
   source_type: external_csv
-  url: "https://opendata.comune.parma.it/datasets/popolazione.csv"
-  aggiornato: "2024-12-31"
-  fonte: "Portale OpenData del Comune"
+  url: "https://opendata.comune.parma.it/dataset/popolazione-residente-al-1-gennaio-2025/resource/ac707546-bd05-4ddb-9de7-0c2357ef7aca"
+  aggiornato: "2025-05-26"
+  fonte: "Portale OpenData del Comune di Parma"
 ```
 
 **Forma C — Dataset non pubblicato**:
