@@ -4,7 +4,7 @@
 # Questo NON è un Comune reale. È un esempio sintetico per dimostrare il flusso
 # end-to-end di adozione del paniere ComuneMetrics da parte di un Comune nuovo.
 #
-# COPERTURA: 11/11 dataset CORE — copertura completa del paniere come prova
+# COPERTURA: 12/12 dataset CORE — copertura completa del paniere come prova
 # del fuoco che il modello federato regge per un Comune medio italiano.
 #
 # I dati sono sintetici plausibili (Comune ~36.620 abitanti, capoluogo di
@@ -79,3 +79,8 @@ datasets:
     source_type: fixture
     aggiornato: "2024-12-31"
     fonte: "Inventario beni immobili comunali (sintetici)"
+
+  tributi:
+    source_type: fixture
+    aggiornato: "2024-12-31"
+    fonte: "Settore Tributi - gettito IMU/TARI/tassa soggiorno 2020-2024 (sintetici)"

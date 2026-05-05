@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ComuneMetrics — Cruscotto Civico Italiano</title>
-<meta name="description" content="Cruscotto civico open source basato su un paniere standardizzato di 11 dataset OpenData. Confronta come i Comuni italiani pubblicano i dati che contano per i cittadini.">
+<meta name="description" content="Cruscotto civico open source basato su un paniere standardizzato di 12 dataset OpenData. Confronta come i Comuni italiani pubblicano i dati che contano per i cittadini.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root {
@@ -284,7 +284,7 @@
 
 <header class="site-header">
   <div class="container header-content">
-    <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 11 Dataset CORE del Paniere</sub></h1>
+    <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 12 Dataset CORE del Paniere</sub></h1>
     <div class="header-actions">
       <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE.md" target="_blank" rel="noopener" class="guida-card" title="Guida operativa: come pubblicare i dati che alimentano questa dashboard">
         <span class="guida-icon">📖</span>
@@ -293,7 +293,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.24</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.25</span>
     </div>
   </div>
 </header>
@@ -346,6 +346,7 @@ const DATASET_LABELS = {
   eventi_culturali:   { titolo: "Eventi culturali",              icona: "🎭" },
   delibere:           { titolo: "Delibere e atti",               icona: "📜" },
   patrimonio:         { titolo: "Patrimonio immobiliare",        icona: "🏛️" },
+  tributi:            { titolo: "Tributi locali",                icona: "💶" },
 };
 
 // Layer mappa: colori NETTAMENTE distinti (no due blu insieme).
@@ -696,11 +697,52 @@ function renderPatrimonio(canvasId, m) {
   return html;
 }
 
+function renderTributi(canvasId, m) {
+  const ptua = m.per_tributo_ultimo_anno || [];
+  const serie = m.serie_anni || [];
+  const hasMultiAnni = serie.length > 1;
+  const hasMultiTrib = ptua.length > 1;
+  // Card KPI: gettito totale ultimo anno + n tributi distinti + anno
+  const html = `
+    <div class="kpi-row">
+      <div class="kpi-big"><div class="value">${fmtEuro(m.gettito_totale_ultimo_anno)}</div><div class="label">Gettito ${m.anno_ultimo || '-'}</div></div>
+      <div class="kpi-big"><div class="value">${fmtNum(m.n_tributi_distinti || 0)}</div><div class="label">Tributi distinti</div></div>
+      ${m.contribuenti_ultimo_anno ? `<div class="kpi-big"><div class="value">${fmtNum(m.contribuenti_ultimo_anno)}</div><div class="label">Contribuenti</div></div>` : ''}
+    </div>
+    ${hasMultiTrib ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Composizione gettito ${m.anno_ultimo}</div><div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` :
+      ptua[0] ? `<div style="background:var(--brand-blue-light);padding:16px;border-radius:6px;font-size:13px;color:var(--ink);line-height:1.55;"><strong>Tributo unico pubblicato</strong>: ${escapeHtml(ptua[0].nome)}<br><span style="color:var(--ink-soft);font-size:12px;">Il Comune pubblica un solo tipo di tributo nell'anno ${m.anno_ultimo}. Per una vista completa servono più tributi (IMU, TARI, addizionale IRPEF, tassa soggiorno).</span></div>` : ''}
+    ${hasMultiAnni ? `<div style="font-size:11px;color:var(--ink-soft);margin:14px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Serie storica gettito totale</div><div class="chart-wrap"><canvas id="${canvasId}_serie"></canvas></div>` : ''}
+  `;
+  setTimeout(() => {
+    if (hasMultiTrib) {
+      makeChart(canvasId, {
+        type: 'bar',
+        data: {
+          labels: ptua.map(d => (d.nome||'?').length > 22 ? d.nome.slice(0,22)+'…' : d.nome),
+          datasets: [{ data: ptua.map(d => d.valore), backgroundColor: PALETTE[0] }]
+        },
+        options: chartBar({ horizontal: true, xCallback: v => fmtEuro(v) }),
+      });
+    }
+    if (hasMultiAnni) {
+      makeChart(canvasId + '_serie', {
+        type: 'line',
+        data: {
+          labels: serie.map(d => d.anno),
+          datasets: [{ label: 'Gettito €', data: serie.map(d => d.valore), borderColor: PALETTE_STATUS.fresh, backgroundColor: 'rgba(46,125,50,0.08)', fill: true, tension: 0.3, borderWidth: 2, pointRadius: 4, pointHoverRadius: 7 }]
+        },
+        options: chartLine({ yCallback: v => fmtEuro(v) }),
+      });
+    }
+  }, 0);
+  return html;
+}
+
 const CHART_RENDERERS = {
   popolazione: renderPopolazione, bilancio: renderBilancio, opere_pubbliche: renderOpere,
   pratiche_edilizie: renderPratiche, servizi_sociali: renderSociali, istruzione: renderIstruzione,
   incidenti_stradali: renderIncidenti, rifiuti: renderRifiuti, eventi_culturali: renderEventi,
-  delibere: renderDelibere, patrimonio: renderPatrimonio,
+  delibere: renderDelibere, patrimonio: renderPatrimonio, tributi: renderTributi,
 };
 
 function renderDatasetCard(comuneKey, dsKey, ds) {
@@ -742,7 +784,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
 
 function renderComuneInfo(c) {
   const datasets = c.datasets || {};
-  const totalCore = 11;
+  const totalCore = 12;
   const cablati = Object.values(datasets).filter(ds => ds.status !== 'not_published').length;
   const ok = Object.values(datasets).filter(ds => ds.status === 'ok').length;
   const fresh = Object.values(datasets).filter(ds => ds.freshness && ds.freshness.level === 'fresh').length;
@@ -912,9 +954,9 @@ function renderComuneSelector(d) {
   let html = '<span class="label">Comune:</span>';
   for (const [key, c] of Object.entries(d.comuni)) {
     const cls = key === STATE.current ? 'active' : '';
-    const okText = `${c.n_datasets_pubblicati || 0}/11`;
+    const okText = `${c.n_datasets_pubblicati || 0}/12`;
     const modeTag = c.mode === 'static_snapshot' ? ' · snapshot' : '';
-    html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su 11 del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
+    html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su 12 del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
   }
   sel.innerHTML = html;
   sel.querySelectorAll('.comune-btn').forEach(btn => btn.addEventListener('click', () => switchComune(btn.dataset.comune)));
@@ -931,7 +973,7 @@ function renderStatusBanner(d) {
   for (const c of Object.values(d.comuni)) {
     totalPub += c.n_datasets_pubblicati || 0;
   }
-  const totalMax = Object.keys(d.comuni).length * 11;
+  const totalMax = Object.keys(d.comuni).length * 12;
   document.getElementById('statusBanner').innerHTML = `<strong>📊 Dati aggiornati ${agoTxt}</strong> · Snapshot del ${built.toLocaleDateString('it-IT', { day:'numeric', month:'long', year:'numeric' })} alle ${built.toLocaleTimeString('it-IT', { hour:'2-digit', minute:'2-digit' })} · ${totalPub}/${totalMax} dataset del paniere CORE pubblicati dai ${Object.keys(d.comuni).length} Comuni`;
 }
 

@@ -221,3 +221,19 @@ datasets:
       - per_tipo
       - immobili_geo
       - pct_vincolo
+
+  tributi:
+    titolo_paniere: "Tributi locali"
+    calculator: calc_tributi
+    expected_fields:
+      anno: ["anno", "Anno", "ANNO", "anno_imposta", "anno_riferimento"]
+      tributo: ["tributo", "Tributo", "tipo_tributo", "tipologia_tributo", "tipo"]
+      gettito_euro: ["gettito_euro", "gettito", "Gettito", "importo_versato", "Importo", "importo", "riscosso", "ammontare", "totale_riscosso"]
+      n_contribuenti: ["n_contribuenti", "contribuenti", "n_utenze", "utenze_attive", "n_utenti"]
+      aliquota_base: ["aliquota_base", "aliquota", "Aliquota", "tariffa_base", "tariffa"]
+      descrizione: ["descrizione", "Descrizione", "note", "Note"]
+      categoria: ["categoria", "Categoria", "tipologia", "Tipologia"]
+    kpi:
+      - gettito_totale_ultimo_anno
+      - per_tributo_ultimo_anno
+      - serie_anni

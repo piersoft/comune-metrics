@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://piersoft.github.io/comune-metrics/schemas/csv/tributi.csv-schema.json",
+  "title": "Paniere CSV — tributi.csv",
+  "description": "Una riga per (anno, tributo) con il gettito riscosso. Per TARI può esserci più righe per anno con categoria diversa (utenze domestiche/non domestiche, scaglioni). Tipi standardizzati: IMU, TARI, TASSA_SOGGIORNO, ADDIZIONALE_IRPEF, COSAP, IMPOSTA_PUBBLICITA, CANONE_UNICO.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["anno", "tributo"],
+    "properties": {
+      "anno": { "type": "integer", "minimum": 1900, "maximum": 2050 },
+      "tributo": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 50,
+        "description": "Tipo tributo. Tipi standardizzati: IMU, TARI, TASSA_SOGGIORNO, ADDIZIONALE_IRPEF, COSAP, IMPOSTA_PUBBLICITA, CANONE_UNICO. Liberi tributi minori."
+      },
+      "gettito_euro": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Importo riscosso effettivo in euro (NON quello previsto a bilancio). Separatore decimale: punto."
+      },
+      "n_contribuenti": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Numero di contribuenti / utenze attive nell'anno"
+      },
+      "aliquota_base": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Aliquota o tariffa base (es. 1.06 per IMU = 10.6 per mille; 2.50 per tassa di soggiorno = €/notte; 0.80 per addizionale IRPEF = 0.80%)"
+      },
+      "descrizione": {
+        "type": ["string", "null"],
+        "maxLength": 300,
+        "description": "Descrizione libera della delibera o regolamento di riferimento"
+      },
+      "categoria": {
+        "type": ["string", "null"],
+        "maxLength": 100,
+        "description": "Sotto-categoria (es. 'Utenze domestiche'/'Utenze non domestiche' per TARI; vuoto per IMU/altri)"
+      }
+    }
+  },
+  "examples": [
+    [
+      { "anno": 2024, "tributo": "IMU", "gettito_euro": 15800000.00, "n_contribuenti": 32500, "aliquota_base": 1.06, "descrizione": "Aliquota ordinaria 10.6 per mille" },
+      { "anno": 2024, "tributo": "TARI", "gettito_euro": 12300000.00, "n_contribuenti": 38000, "categoria": "Utenze domestiche" },
+      { "anno": 2024, "tributo": "TARI", "gettito_euro": 6200000.00, "n_contribuenti": 4000, "categoria": "Utenze non domestiche" },
+      { "anno": 2024, "tributo": "TASSA_SOGGIORNO", "gettito_euro": 1250000.00, "aliquota_base": 2.50, "descrizione": "Tassa €2.50/notte categoria 4 stelle" },
+      { "anno": 2024, "tributo": "ADDIZIONALE_IRPEF", "gettito_euro": 8900000.00, "aliquota_base": 0.80, "descrizione": "Aliquota 0.80%" }
+    ]
+  ]
+}

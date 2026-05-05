@@ -485,9 +485,62 @@ export function calc_patrimonio(rows, fieldMap) {
   };
 }
 
+// ─── CORE 12 — Tributi ────────────────────────────────────────────────────────
+
+export function calc_tributi(rows, fieldMap) {
+  // Estraggo anno di ogni riga
+  const annoCol = fieldMap.anno;
+  const tributoCol = fieldMap.tributo;
+  const gettitoCol = fieldMap.gettito_euro;
+  const contribCol = fieldMap.n_contribuenti;
+
+  const num = (v) => {
+    if (v == null || v === '') return 0;
+    if (typeof v === 'number') return v;
+    const s = String(v).replace(/[€\s]/g, '').replace(',', '.');
+    const f = parseFloat(s);
+    return isNaN(f) ? 0 : f;
+  };
+
+  const anni = [...new Set(rows.map(r => parseInt(annoCol ? r[annoCol] : 0) || 0).filter(a => a > 1900))];
+  const annoUltimo = anni.length ? Math.max(...anni) : null;
+  const ultime = annoUltimo && annoCol ? rows.filter(r => parseInt(r[annoCol]) === annoUltimo) : [];
+
+  // Aggregazione per tributo
+  const perTributoMap = {};
+  for (const r of ultime) {
+    const t = ((tributoCol ? r[tributoCol] : 'ALTRO') || 'ALTRO').toString().toUpperCase();
+    perTributoMap[t] = (perTributoMap[t] || 0) + (gettitoCol ? num(r[gettitoCol]) : 0);
+  }
+  const per_tributo_ultimo_anno = Object.entries(perTributoMap)
+    .map(([nome, valore]) => ({ nome, valore }))
+    .sort((a, b) => b.valore - a.valore);
+
+  // Serie storica
+  const perAnnoMap = {};
+  for (const r of rows) {
+    if (!annoCol) continue;
+    const a = parseInt(r[annoCol]);
+    if (!a) continue;
+    perAnnoMap[a] = (perAnnoMap[a] || 0) + (gettitoCol ? num(r[gettitoCol]) : 0);
+  }
+  const serie_anni = Object.entries(perAnnoMap)
+    .map(([anno, valore]) => ({ anno: parseInt(anno), valore }))
+    .sort((a, b) => a.anno - b.anno);
+
+  return {
+    gettito_totale_ultimo_anno: ultime.reduce((s, r) => s + (gettitoCol ? num(r[gettitoCol]) : 0), 0),
+    anno_ultimo: annoUltimo,
+    n_tributi_distinti: per_tributo_ultimo_anno.length,
+    per_tributo_ultimo_anno,
+    serie_anni,
+    contribuenti_ultimo_anno: ultime.reduce((s, r) => s + (contribCol ? (parseInt(r[contribCol]) || 0) : 0), 0) || null,
+  };
+}
+
 // Lookup table esposta al builder
 export const CALCULATORS = {
   calc_popolazione, calc_bilancio, calc_opere, calc_pratiche,
   calc_sociali, calc_istruzione, calc_incidenti, calc_rifiuti,
-  calc_eventi, calc_delibere, calc_patrimonio,
+  calc_eventi, calc_delibere, calc_patrimonio, calc_tributi,
 };

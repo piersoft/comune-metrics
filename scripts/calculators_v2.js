@@ -268,6 +268,44 @@ export function calc_patrimonio(rows) {
   };
 }
 
+// ----- 12. Tributi -----------------------------------------------------------
+export function calc_tributi(rows) {
+  // Anno più recente disponibile
+  const anni = [...new Set(rows.map(r => parseInt(r.anno) || 0).filter(a => a > 1900))];
+  const annoUltimo = anni.length ? Math.max(...anni) : null;
+  const ultime = annoUltimo ? rows.filter(r => parseInt(r.anno) === annoUltimo) : [];
+
+  // Aggregazione per tributo (sommando categorie)
+  const perTributoMap = {};
+  for (const r of ultime) {
+    const t = (r.tributo || 'ALTRO').toString().toUpperCase();
+    perTributoMap[t] = (perTributoMap[t] || 0) + (parseFloat(r.gettito_euro) || 0);
+  }
+  const per_tributo_ultimo_anno = Object.entries(perTributoMap)
+    .map(([nome, valore]) => ({ nome, valore }))
+    .sort((a, b) => b.valore - a.valore);
+
+  // Serie storica gettito totale per anno
+  const perAnnoMap = {};
+  for (const r of rows) {
+    const a = parseInt(r.anno);
+    if (!a) continue;
+    perAnnoMap[a] = (perAnnoMap[a] || 0) + (parseFloat(r.gettito_euro) || 0);
+  }
+  const serie_anni = Object.entries(perAnnoMap)
+    .map(([anno, valore]) => ({ anno: parseInt(anno), valore }))
+    .sort((a, b) => a.anno - b.anno);
+
+  return {
+    gettito_totale_ultimo_anno: ultime.reduce((s, r) => s + (parseFloat(r.gettito_euro) || 0), 0),
+    anno_ultimo: annoUltimo,
+    n_tributi_distinti: per_tributo_ultimo_anno.length,
+    per_tributo_ultimo_anno,
+    serie_anni,
+    contribuenti_ultimo_anno: ultime.reduce((s, r) => s + (parseInt(r.n_contribuenti) || 0), 0) || null,
+  };
+}
+
 // ----- Registry -------------------------------------------------------------
 export const CALCULATORS_V2 = {
   popolazione:        calc_popolazione,
@@ -281,4 +319,5 @@ export const CALCULATORS_V2 = {
   eventi_culturali:   calc_eventi,
   delibere:           calc_delibere,
   patrimonio:         calc_patrimonio,
+  tributi:            calc_tributi,
 };
