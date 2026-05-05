@@ -1,44 +1,46 @@
 # ComuneMetrics
 
-Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 11 dataset OpenData**. Ogni Comune che adotta il paniere ottiene una dashboard pubblica con grafici, mappa e KPI di mandato.
+Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 12 dataset OpenData**. Ogni Comune che adotta il paniere ottiene una dashboard pubblica con grafici, mappa e KPI di mandato.
 
 **Dashboard live**: https://piersoft.github.io/comune-metrics/
 
 ---
 
-## I 3 Comuni attualmente nel cruscotto
+## I 4 Comuni attualmente nel cruscotto
 
 | Comune | Dataset OK | Modalità | Note |
 |---|---|---|---|
 | **Comune IDEALE** | 12/12 | manifest CSV | Riferimento canonico: struttura CSV perfettamente allineata agli schemi del paniere |
 | **Bologna** | 9/12 | live API | Portale Opendatasoft con API aggregations |
 | **Lecce** | 11/12 | snapshot statico | Comune in passato virtuoso, ora portale con limiti tecnici (HTTP, geo-fencing) |
+| **Potenza** | 8/12 | ricostruzione da fonti nazionali | Il Comune non pubblica OpenData propri: i dati visibili sono ricostruiti da banche dati ministeriali (ISTAT, MEF/BDAP, MIM, ISPRA, MiC) |
 
 **Il Comune IDEALE è il modello di riferimento** che ogni Comune deve seguire alla lettera per allineare struttura CSV e nomi colonna agli schemi canonici. Replicando la sua impostazione, un Comune nuovo arriva senza fatica al 12/12.
 
 ---
 
-## I 11 dataset CORE del paniere
+## I 12 dataset CORE del paniere
 
 | # | Dataset | Cosa contiene | File CSV |
 |---|---|---|---|
 | 1 | Popolazione | Residenti per anno e quartiere | `popolazione.csv` |
-| 2 | Bilancio | Spesa per missione e programma | `bilancio.csv` |
+| 2 | Bilancio | Spesa per Titolo e macro-aggregato | `bilancio.csv` |
 | 3 | Opere pubbliche | Cantieri con CUP, importo, geo | `opere_pubbliche.csv` |
 | 4 | Pratiche edilizie | CILA/SCIA/PdC con esito | `pratiche_edilizie.csv` |
 | 5 | Servizi sociali | Utenti e spesa per categoria | `servizi_sociali.csv` |
 | 6 | Istruzione | Scuole, iscritti, geo | `istruzione.csv` |
 | 7 | Incidenti stradali | Sinistri con vittime e geo | `incidenti_stradali.csv` |
-| 8 | Rifiuti | RD% e quantità raccolte | `rifiuti.csv` |
+| 8 | Rifiuti | RD% e quantità raccolte per frazione | `rifiuti.csv` |
 | 9 | Eventi culturali | Manifestazioni con geo | `eventi_culturali.csv` |
 | 10 | Delibere | Atti dell'albo pretorio | `delibere.csv` |
 | 11 | Patrimonio | Immobili comunali con valore | `patrimonio.csv` |
+| 12 | Tributi | Gettito e aliquote IMU/TARI/tassa soggiorno/addizionale IRPEF | `tributi.csv` |
 
 Il Comune **non deve** pubblicarli tutti per essere visibile: i dataset mancanti vengono dichiarati `presente: false` nel manifest.
 
 Schemi formali completi in [`schemas/csv/`](schemas/csv/) — specifica leggibile in [`docs/PANIERE_CSV_SCHEMA.md`](docs/PANIERE_CSV_SCHEMA.md).
 
-**Per i Comuni**: la [guida pratica `docs/PANIERE.md`](docs/PANIERE.md) spiega come ricavare i CSV partendo dai gestionali interni (anagrafe, finanziaria, SUE, polizia locale, ecc.) con esempi di query SQL.
+**Per i Comuni**: la [guida pratica `docs/PANIERE.md`](docs/PANIERE.md) spiega come ricavare i CSV partendo dai gestionali interni (anagrafe, finanziaria, SUE, polizia locale, ecc.) e a quale ufficio rivolgersi per ciascun dataset.
 
 ---
 
@@ -227,13 +229,14 @@ Esempi di errori che **bloccano** una PR (messaggi reali del validatore):
 
 ---
 
-## Casi speciali (Bologna, Lecce)
+## Casi speciali (Bologna, Lecce, Potenza)
 
-Bologna e Lecce sono nel cruscotto da prima dell'introduzione del modello federato e usano un code-path legacy:
+Tre Comuni sono nel cruscotto con un code-path diverso dal manifest CSV standard:
 - **Bologna** usa direttamente l'API Opendatasoft del proprio portale (caso unico in Italia)
 - **Lecce** ha fixture committate a mano perché il portale non risponde dai runner GitHub
+- **Potenza** non pubblica OpenData propri: i dati sono ricostruiti da banche dati nazionali (`mode: reconstructed_from_national`) e il banner rosso lo segnala in dashboard
 
-Questi due casi sono **mantenuti per ragioni storiche** ma non sono il modello da seguire. **Tutti i nuovi Comuni usano il manifest CSV** descritto sopra.
+Questi tre casi sono mantenuti per **rendere visibili anche i Comuni non virtuosi** o tecnicamente bloccati. **Tutti i nuovi Comuni che pubblicano OpenData usano il manifest CSV** descritto sopra.
 
 ---
 
