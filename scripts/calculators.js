@@ -263,22 +263,60 @@ export function calc_pratiche(rows, fieldMap) {
 
 export function calc_sociali(rows, fieldMap) {
   const spesaTot = sumBy(rows, fieldMap, 'contributo');
-  // Utenti unici se disponibile identificativo, altrimenti righe
-  let utentiTotali = rows.length;
-  if (fieldMap.identificativo) {
+
+  // CASO welfare aggregato server-side: il dataset ha SNAPSHOT periodici
+  // (es. "2019 dicembre", "2024 marzo") — sommare tutti i periodi gonfia
+  // il dato. Prendiamo SOLO l'ultimo snapshot disponibile.
+  let workRows = rows;
+  if (fieldMap.utenti && fieldMap.anno_periodo) {
+    const annoCol = fieldMap.anno_periodo;
+    // Estraggo l'anno (4 cifre) dalla stringa periodo
+    const periodOfRow = (r) => {
+      const v = String(r[annoCol] || '');
+      const m = v.match(/(\d{4})/);
+      return m ? parseInt(m[1], 10) * 100 + (
+        // mese da nome italiano
+        ({ gennaio:1,febbraio:2,marzo:3,aprile:4,maggio:5,giugno:6,luglio:7,agosto:8,settembre:9,ottobre:10,novembre:11,dicembre:12 })[
+          v.toLowerCase().split(/\s+/).find(w => /^[a-z]+$/.test(w)) || ''
+        ] || 99
+      ) : 0;
+    };
+    const periods = rows.map(r => periodOfRow(r));
+    const maxP = Math.max(...periods);
+    if (maxP > 0) {
+      workRows = rows.filter((r, i) => periods[i] === maxP);
+    }
+  }
+
+  // utenti_totali: se aggregato (campo utenti presente), somma; altrimenti count distinct
+  let utentiTotali;
+  if (fieldMap.utenti) {
+    utentiTotali = sumBy(workRows, fieldMap, 'utenti') || workRows.length;
+  } else if (fieldMap.identificativo) {
     const ids = new Set();
-    for (const r of rows) {
+    for (const r of workRows) {
       const id = r[fieldMap.identificativo];
       if (id) ids.add(String(id));
     }
-    if (ids.size > 0) utentiTotali = ids.size;
+    utentiTotali = ids.size > 0 ? ids.size : workRows.length;
+  } else {
+    utentiTotali = workRows.length;
   }
+
+  // per_categoria
+  let perCategoria;
+  if (fieldMap.categoria && fieldMap.utenti) {
+    perCategoria = groupSum(workRows, fieldMap, 'categoria', 'utenti');
+  } else {
+    perCategoria = countBy(workRows, fieldMap, 'categoria');
+  }
+
   return {
     utenti_totali: utentiTotali,
-    per_target: countBy(rows, fieldMap, 'target'),
-    per_categoria: countBy(rows, fieldMap, 'categoria'),
+    per_target: countBy(workRows, fieldMap, 'target'),
+    per_categoria: perCategoria,
     spesa_totale: spesaTot,
-    spesa_media: spesaTot !== null && rows.length > 0 ? spesaTot / rows.length : null,
+    spesa_media: spesaTot !== null && workRows.length > 0 ? spesaTot / workRows.length : null,
   };
 }
 

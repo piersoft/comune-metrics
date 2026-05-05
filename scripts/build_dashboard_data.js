@@ -339,15 +339,23 @@ function smartUrl(rawUrl, dsKey) {
   // Pattern Opendatasoft: /api/v2/catalog/datasets/<slug>/exports/<format>
   const odsMatch = rawUrl.match(/\/api\/v2\/catalog\/datasets\/([^/]+)\/exports\/(json|csv|jsonl)/);
   if (!odsMatch) return rawUrl;
+  const slug = odsMatch[1];
+  const base = rawUrl.split('/exports/')[0];
 
   // CASO SPECIALE: popolazione su Opendatasoft. Il dataset Bologna ha 1M+ righe
   // disaggregate per età×cittadinanza×quartiere×sesso. Per evitare di processare
   // un milione di righe e sommarle lato calculator, chiediamo già aggregato per
   // anno via API records con SELECT/GROUP BY.
   if (dsKey === 'popolazione') {
-    const slug = odsMatch[1];
-    const base = rawUrl.split('/exports/')[0];
     return `${base}/records?select=anno,sum(residenti)+AS+residenti&group_by=anno&order_by=anno&limit=200`;
+  }
+
+  // CASO SPECIALE: welfare-interventi Bologna (servizi_sociali). Dataset di 75k+
+  // record disaggregato per (categoria × intervento × cittadinanza × utente).
+  // Aggreghiamo lato server per (yyyymm × categoria) → ~120 righe.
+  // yyyymm è in formato "2024 marzo" (ITA), il calcolatore estrae l'anno.
+  if (dsKey === 'servizi_sociali' && /welfare|c_a9447d4f8a46/.test(slug)) {
+    return `${base}/records?select=yyyymm,categoria,count(id_cartella)+AS+utenti,sum(euro_contributi_economici)+AS+spesa_euro&group_by=yyyymm,categoria&limit=500`;
   }
 
   // Default: aumenta il limite all'export massivo

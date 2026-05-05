@@ -89,10 +89,12 @@ datasets:
       target: ["target_utenza", "Target utenza", "Target", "categoria_utente"]
       categoria: ["categoria", "Categoria", "intervento_tipo"]
       intervento: ["intervento", "Intervento", "tipo_intervento", "servizio"]
-      contributo: ["contributo_erogato", "Contributo erogato", "Contributo", "Importo erogato"]
+      contributo: ["contributo_erogato", "Contributo erogato", "Contributo", "Importo erogato", "spesa_euro", "spesa", "euro_contributi_economici"]
       isee: ["isee", "ISEE", "Valore ISEE"]
-      identificativo: ["identificativo", "Identificativo", "id_utente", "id"]
+      identificativo: ["identificativo", "Identificativo", "id_utente", "id", "id_cartella"]
       data_inizio: ["data_inizio_autorizzazione", "Data Inizio autorizzazione", "Data inizio", "data_avvio"]
+      utenti: ["utenti", "n_utenti", "count"]
+      anno_periodo: ["yyyymm", "anno_e_mese_di_estrazione_dei_dati", "Anno e mese di estrazione dei dati"]
     kpi:
       - utenti_totali
       - per_target
