@@ -67,16 +67,16 @@ comuni:
     # il builder fa comunque fetch normale.
     mode: static_snapshot
     snapshot_date: "2026-05-04"
-    snapshot_reason: "Pubblicava 11/11 dataset CORE fino al 2024 (caso virtuoso). Il 25 marzo 2025 Google ha chiuso goo.gl: i 3 dataset linkati con shortener sono diventati irrecuperabili (servizi sociali, rifiuti, delibere). Inoltre il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV restanti sono salvati come fixture statiche."
+    snapshot_reason: "Pubblicava 11/11 dataset CORE come Comune virtuoso. Il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV originali sono salvati come fixture statiche scaricate manualmente nel 2026. I dati sono fermi al 2015-2019: il portale OpenData del Comune non è più aggiornato dal 2018. L'unico dataset non recuperabile per statistiche è 'delibere': l'Albo Pretorio è esposto come feed RSS live ma non ha storico."
     datasets:
       popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019  # Google Sheets, fetch live
       bilancio: __fixture__:bilancio                                                # consuntivo 2019
       opere_pubbliche: programma-triennale-oo-pp-2020-2022                          # Google Sheets CSV LIVE, 168 opere
       pratiche_edilizie: __fixture__:pratiche_edilizie                              # SUE 8.673 pratiche
-      servizi_sociali: null  # Solo 2 risorse goo.gl morte, irrecuperabile
+      servizi_sociali: __fixture__:servizi_sociali                                   # 2016: 6.102 pratiche evase, 5 uffici (recuperato via goo.gl funzionante)
       istruzione: popolazione-scolastica-a-s-2021-2022                              # Google Sheets CSV LIVE, 93 scuole geo
       incidenti_stradali: localizzazione-sinistri-dal-2018-lecce                    # Google Sheets, fetch live
-      rifiuti: null  # Tutte 4 risorse goo.gl morte, irrecuperabile
+      rifiuti: __fixture__:rifiuti                                                   # 2015: 56.704 t RSU, 22.27% RD (12 mesi aggregati)
       eventi_culturali: __fixture__:eventi_culturali                                # 25 iniziative ricorrenti
-      delibere: null  # Unica risorsa goo.gl/Fsdyxq morta, irrecuperabile
+      delibere: null  # Solo feed RSS in tempo reale, senza storico per statistiche
       patrimonio: __fixture__:patrimonio                                            # 170 fabbricati NAC 2023

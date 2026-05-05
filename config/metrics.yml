@@ -93,7 +93,7 @@ datasets:
       isee: ["isee", "ISEE", "Valore ISEE"]
       identificativo: ["identificativo", "Identificativo", "id_utente", "id", "id_cartella"]
       data_inizio: ["data_inizio_autorizzazione", "Data Inizio autorizzazione", "Data inizio", "data_avvio"]
-      utenti: ["utenti", "n_utenti", "count"]
+      utenti: ["utenti", "n_utenti", "count", "interventi", "Numero_pratiche", "n_pratiche"]
       anno_periodo: ["yyyymm", "anno_e_mese_di_estrazione_dei_dati", "Anno e mese di estrazione dei dati"]
     kpi:
       - utenti_totali
@@ -152,7 +152,7 @@ datasets:
     expected_fields:
       anno: ["anno", "Anno", "ANNO"]
       mese: ["mese", "Mese", "MESE"]
-      rd_pct: ["raccolta_differenziata_incidenza_sulla_produzione_totale_rsu", "Raccolta differenziata: incidenza sulla produzione totale RSU", "RD %", "raccolta_differenziata_pct", "% RD"]
+      rd_pct: ["raccolta_differenziata_incidenza_sulla_produzione_totale_rsu", "Raccolta differenziata: incidenza sulla produzione totale RSU", "RD %", "raccolta_differenziata_pct", "% RD", "rd_pct"]
       rd_centro: ["raccolta_differenziata_centro_storico"]
       rd_savena: ["raccolta_differenziata_savena"]
       rd_navile: ["raccolta_differenziata_navile"]
