@@ -167,7 +167,7 @@ node scripts/validate_csv.js opere_pubbliche data/comuni/parma/opere_pubbliche.c
 
 Se compaiono errori, leggi il messaggio (indica riga e colonna) e correggi il CSV.
 
-### Passo 6 — Apri pull request
+### Passo 6 — Committa e pubblica sul tuo fork
 
 Aggiungi i file e committa sul tuo fork:
 
@@ -177,43 +177,24 @@ git commit -m "feat: aggiungo Comune di Parma al paniere"
 git push origin main
 ```
 
-`origin` punta al tuo fork (impostato dal `git clone` del Passo 1), quindi `git push` carica il commit nel **tuo repository**, non nel repo originale.
+`origin` punta al tuo fork (impostato dal `git clone` del Passo 1), quindi `git push` carica il commit nel **tuo repository**.
 
-Vai su `https://github.com/<tuo-utente>/comune-metrics` — GitHub mostra un avviso giallo "Compare & pull request". Clicca quel pulsante.
+### Passo 7 — Valida e attiva la tua dashboard pubblica
 
-Nella schermata di apertura della PR, verifica che:
-- **base repository**: `piersoft/comune-metrics` — branch `main`
-- **head repository**: `<tuo-utente>/comune-metrics` — branch `main`
-
-Inserisci una breve descrizione (es. "Aggiungo il Comune di Parma con 7 dataset CORE pubblicati") e clicca **Create pull request**.
-
-> 💡 **Variante consigliata se prevedi di contribuire ancora in futuro**: invece di lavorare direttamente sul `main` del tuo fork, crea un branch dedicato (`git checkout -b add-comune-parma` prima del commit, poi `git push origin add-comune-parma`). Così il `main` del tuo fork resta allineato all'upstream `piersoft/comune-metrics` e puoi aprire più PR contemporaneamente. Per una sola contribuzione una tantum, lavorare su `main` è perfettamente OK.
-
-### Passo 7 — La GitHub Action valida tutto
-
-Quando apri la PR, parte automaticamente il workflow [`validate-paniere.yml`](.github/workflows/validate-paniere.yml) che verifica:
+Sul tuo fork, vai su `Actions` e parte automaticamente il workflow [`validate-paniere.yml`](.github/workflows/validate-paniere.yml) che verifica:
 - I CSV rispettano gli schemi canonici
 - Il `manifest.yml` ha tutti i campi obbligatori
 - I `source_type` sono validi
 
-Se la GitHub Action fallisce, leggi i log (tab "Checks" della PR), correggi i CSV in locale, fai un nuovo `git commit` e `git push` (sullo stesso branch da cui hai aperto la PR) — la PR si aggiorna automaticamente e il workflow rigira.
+Se la validazione fallisce, leggi i log (tab `Actions → validate-paniere`), correggi i CSV in locale, fai un nuovo `git commit` e `git push` — il workflow rigira automaticamente.
 
-Quando i check sono verdi, hai due strade indipendenti:
+Quando i check sono verdi, **attiva la tua dashboard**:
 
-**Strada A — Dashboard sul tuo fork** (consigliata se vuoi una pagina pubblica del tuo Comune sotto il tuo controllo)
+1. Su `Settings → Pages`: abilita GitHub Pages selezionando il branch `main` e cartella `/` (root)
+2. Su `Actions → Build dashboard data → Run workflow`: lancia la rigenerazione dei dati
+3. Dopo qualche minuto la tua dashboard è online su `https://<tuo-utente>.github.io/comune-metrics/`
 
-Non c'è bisogno di aspettare il merge. Sul tuo fork:
-1. Vai su `Settings → Pages` e abilita GitHub Pages dal branch `main`, cartella `/` (root)
-2. Vai su `Actions → Build dashboard data → Run workflow` per rigenerare i dati
-3. Dopo qualche minuto la dashboard è online su `https://<tuo-utente>.github.io/comune-metrics/`
-
-In questo scenario il fork è **completamente autonomo**: workflow, dati e pagina pubblica vivono tutti nel tuo repository. La PR verso `piersoft/comune-metrics` è opzionale (la apri se vuoi che il tuo Comune compaia anche nella dashboard "vetrina" centrale).
-
-**Strada B — Inclusione nella dashboard centrale**
-
-Se vuoi che il tuo Comune compaia anche su `https://piersoft.github.io/comune-metrics/` (la dashboard "vetrina" multi-Comune mantenuta dall'autore del progetto), aspetta che il maintainer riveda e mergi la PR. Dopo il merge, il workflow `build-data.yml` viene lanciato manualmente sul repo centrale e rigenera la pagina pubblica.
-
-Le due strade non si escludono: puoi avere la tua dashboard sul fork **e** essere incluso nella vetrina centrale.
+Il fork è **completamente autonomo**: workflow, dati e pagina pubblica vivono tutti nel tuo repository, sotto il tuo controllo. Niente passaggi intermedi, niente attese, niente dipendenze da terzi.
 
 ---
 
@@ -223,21 +204,19 @@ Hai due opzioni:
 
 ### Opzione 1 — Aggiornamento manuale (Comuni piccoli)
 
-Quando hai dati nuovi, aggiorni i CSV sul tuo fork. Poi:
-- **se la tua dashboard è sul fork** (Strada A del Passo 7): vai su `Actions → Build dashboard data → Run workflow` per rigenerare. Niente PR necessaria.
-- **se vuoi anche aggiornare la vetrina centrale** (Strada B): apri una nuova PR verso `piersoft/comune-metrics`. Dopo il merge, il workflow del repo centrale viene rilanciato manualmente.
+Quando hai dati nuovi, aggiorni i CSV nel tuo fork (`git add`, `git commit`, `git push origin main`). Poi vai su `Actions → Build dashboard data → Run workflow` per rigenerare la dashboard. Dopo qualche minuto la tua pagina pubblica riflette i nuovi dati.
 
 ### Opzione 2 — URL esterno (auto-refresh)
 
-Se usi `source_type: external_csv` con un URL pubblico, il builder fa fetch del CSV ad ogni esecuzione del workflow. Il Comune deve solo mantenere aggiornato il CSV al suo URL: la dashboard si rigenera con i dati nuovi al successivo run.
+Se usi `source_type: external_csv` con un URL pubblico, il builder fa fetch del CSV ad ogni esecuzione del workflow. Il Comune deve solo mantenere aggiornato il CSV al suo URL: la dashboard si rigenera con i dati nuovi al successivo run del workflow.
 
-> ⚙️ **Nota sui trigger del workflow `build-data.yml`**: nel repository centrale il workflow è impostato in modalità **solo manuale** (`workflow_dispatch`). I trigger automatici (cron settimanale, push su `main`) sono disabilitati per evitare build a vuoto. Sul tuo fork puoi riabilitare gli automatismi modificando `.github/workflows/build-data.yml` (le sezioni `schedule` e `push` sono commentate ma documentate nel file).
+> ⚙️ **Nota sui trigger del workflow `build-data.yml`**: di default il workflow è in modalità **solo manuale** (`workflow_dispatch`). I trigger automatici (cron settimanale, push su `main`) sono commentati nel file ma documentati e riattivabili modificando `.github/workflows/build-data.yml` sul tuo fork.
 
 ---
 
 ## Validazione: cosa rifiuta il workflow
 
-Esempi di errori che **bloccano** una PR (messaggi reali del validatore):
+Esempi di errori che **bloccano** il build (messaggi reali del validatore):
 
 | Errore | Messaggio |
 |---|---|
@@ -248,7 +227,7 @@ Esempi di errori che **bloccano** una PR (messaggi reali del validatore):
 | Tipo sbagliato | `riga 2: campo 'residenti' = 'abc' deve essere intero` |
 | Campo obbligatorio mancante | `riga 2: campo obbligatorio 'anno' mancante` |
 
-**La validazione è hard**: anche un solo errore blocca la PR. È fatta apposta per garantire qualità.
+**La validazione è hard**: anche un solo errore blocca il build. È fatta apposta per garantire qualità.
 
 ---
 
