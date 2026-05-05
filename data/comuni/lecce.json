@@ -81,7 +81,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-04T21:43:46.439Z",
+      "fetched_at": "2026-05-05T05:51:16.432Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -126,7 +126,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-04T21:43:50.245Z",
+      "fetched_at": "2026-05-05T05:51:18.628Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -260,7 +260,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-04T21:43:50.251Z",
+      "fetched_at": "2026-05-05T05:51:18.634Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -418,7 +418,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-04T21:43:52.610Z",
+      "fetched_at": "2026-05-05T05:51:20.252Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -588,1764 +588,88 @@
         "tasso_chiusura": 92.36367837338263,
         "serie_anni": [
           {
-            "anno": 1017,
-            "valore": 1
-          },
-          {
-            "anno": 1030,
-            "valore": 1
-          },
-          {
-            "anno": 1035,
-            "valore": 1
-          },
-          {
-            "anno": 1152,
-            "valore": 1
-          },
-          {
-            "anno": 1187,
-            "valore": 1
-          },
-          {
-            "anno": 1188,
-            "valore": 1
-          },
-          {
-            "anno": 1224,
-            "valore": 1
-          },
-          {
-            "anno": 1230,
-            "valore": 1
-          },
-          {
-            "anno": 1269,
-            "valore": 1
-          },
-          {
-            "anno": 1272,
-            "valore": 1
-          },
-          {
-            "anno": 1278,
-            "valore": 1
-          },
-          {
-            "anno": 1312,
-            "valore": 1
-          },
-          {
-            "anno": 1313,
-            "valore": 1
-          },
-          {
-            "anno": 1315,
-            "valore": 1
-          },
-          {
-            "anno": 1322,
-            "valore": 1
-          },
-          {
-            "anno": 1326,
-            "valore": 1
-          },
-          {
-            "anno": 1340,
-            "valore": 1
-          },
-          {
-            "anno": 1348,
-            "valore": 1
-          },
-          {
-            "anno": 1353,
-            "valore": 1
-          },
-          {
-            "anno": 1356,
-            "valore": 1
-          },
-          {
-            "anno": 1379,
-            "valore": 1
-          },
-          {
-            "anno": 1384,
-            "valore": 1
-          },
-          {
-            "anno": 1386,
-            "valore": 1
-          },
-          {
-            "anno": 1389,
-            "valore": 1
-          },
-          {
-            "anno": 1397,
-            "valore": 1
-          },
-          {
-            "anno": 1398,
-            "valore": 1
-          },
-          {
-            "anno": 1433,
-            "valore": 1
-          },
-          {
-            "anno": 1445,
-            "valore": 1
-          },
-          {
-            "anno": 1490,
+            "anno": 2002,
             "valore": 2
           },
           {
-            "anno": 1495,
-            "valore": 1
+            "anno": 2003,
+            "valore": 2
           },
           {
-            "anno": 1496,
-            "valore": 1
+            "anno": 2005,
+            "valore": 513
           },
           {
-            "anno": 1506,
-            "valore": 1
+            "anno": 2006,
+            "valore": 503
           },
           {
-            "anno": 1658,
-            "valore": 1
+            "anno": 2007,
+            "valore": 487
           },
           {
-            "anno": 1674,
-            "valore": 1
+            "anno": 2008,
+            "valore": 523
           },
           {
-            "anno": 1699,
-            "valore": 1
+            "anno": 2009,
+            "valore": 521
           },
           {
-            "anno": 1715,
-            "valore": 1
+            "anno": 2010,
+            "valore": 573
           },
           {
-            "anno": 1777,
-            "valore": 1
+            "anno": 2011,
+            "valore": 539
           },
           {
-            "anno": 1815,
-            "valore": 1
+            "anno": 2012,
+            "valore": 482
           },
           {
-            "anno": 1843,
-            "valore": 1
-          },
-          {
-            "anno": 1873,
-            "valore": 1
-          },
-          {
-            "anno": 1880,
-            "valore": 1
-          },
-          {
-            "anno": 1916,
-            "valore": 1
-          },
-          {
-            "anno": 1995,
-            "valore": 1
-          },
-          {
-            "anno": 2002,
-            "valore": 1
+            "anno": 2013,
+            "valore": 476
           },
           {
             "anno": 2014,
-            "valore": 1
+            "valore": 459
+          },
+          {
+            "anno": 2015,
+            "valore": 444
+          },
+          {
+            "anno": 2016,
+            "valore": 500
+          },
+          {
+            "anno": 2017,
+            "valore": 406
+          },
+          {
+            "anno": 2018,
+            "valore": 364
           },
           {
             "anno": 2019,
-            "valore": 1
+            "valore": 358
+          },
+          {
+            "anno": 2020,
+            "valore": 364
           },
           {
             "anno": 2021,
-            "valore": 1
+            "valore": 590
           },
           {
-            "anno": 2032,
-            "valore": 1
+            "anno": 2022,
+            "valore": 535
           },
           {
-            "anno": 2040,
-            "valore": 1
-          },
-          {
-            "anno": 2051,
-            "valore": 1
-          },
-          {
-            "anno": 2066,
-            "valore": 1
-          },
-          {
-            "anno": 2119,
-            "valore": 1
-          },
-          {
-            "anno": 2120,
-            "valore": 1
-          },
-          {
-            "anno": 2123,
-            "valore": 1
-          },
-          {
-            "anno": 2128,
-            "valore": 1
-          },
-          {
-            "anno": 2154,
-            "valore": 1
-          },
-          {
-            "anno": 2169,
-            "valore": 1
-          },
-          {
-            "anno": 2175,
-            "valore": 1
-          },
-          {
-            "anno": 2183,
-            "valore": 1
-          },
-          {
-            "anno": 2201,
-            "valore": 1
-          },
-          {
-            "anno": 2259,
-            "valore": 1
-          },
-          {
-            "anno": 2300,
-            "valore": 1
-          },
-          {
-            "anno": 2306,
-            "valore": 1
-          },
-          {
-            "anno": 2316,
-            "valore": 1
-          },
-          {
-            "anno": 2327,
-            "valore": 1
-          },
-          {
-            "anno": 2329,
-            "valore": 1
-          },
-          {
-            "anno": 2330,
-            "valore": 1
-          },
-          {
-            "anno": 2332,
-            "valore": 1
-          },
-          {
-            "anno": 2354,
-            "valore": 1
-          },
-          {
-            "anno": 2394,
-            "valore": 1
-          },
-          {
-            "anno": 2423,
-            "valore": 1
-          },
-          {
-            "anno": 2432,
-            "valore": 1
-          },
-          {
-            "anno": 2451,
-            "valore": 1
-          },
-          {
-            "anno": 2479,
-            "valore": 1
-          },
-          {
-            "anno": 2491,
-            "valore": 1
-          },
-          {
-            "anno": 2500,
-            "valore": 1
-          },
-          {
-            "anno": 2513,
-            "valore": 1
-          },
-          {
-            "anno": 2535,
-            "valore": 1
-          },
-          {
-            "anno": 2609,
-            "valore": 1
-          },
-          {
-            "anno": 2615,
-            "valore": 1
-          },
-          {
-            "anno": 2669,
-            "valore": 1
-          },
-          {
-            "anno": 2693,
-            "valore": 1
-          },
-          {
-            "anno": 2715,
-            "valore": 1
-          },
-          {
-            "anno": 2716,
-            "valore": 1
-          },
-          {
-            "anno": 2733,
-            "valore": 1
-          },
-          {
-            "anno": 2782,
-            "valore": 1
-          },
-          {
-            "anno": 2783,
-            "valore": 1
-          },
-          {
-            "anno": 2784,
-            "valore": 1
-          },
-          {
-            "anno": 2787,
-            "valore": 1
-          },
-          {
-            "anno": 2810,
-            "valore": 1
-          },
-          {
-            "anno": 2829,
-            "valore": 1
-          },
-          {
-            "anno": 2831,
-            "valore": 1
-          },
-          {
-            "anno": 2842,
-            "valore": 1
-          },
-          {
-            "anno": 2850,
-            "valore": 1
-          },
-          {
-            "anno": 2861,
-            "valore": 1
-          },
-          {
-            "anno": 2883,
-            "valore": 1
-          },
-          {
-            "anno": 2891,
-            "valore": 1
-          },
-          {
-            "anno": 2893,
-            "valore": 1
-          },
-          {
-            "anno": 2909,
-            "valore": 1
-          },
-          {
-            "anno": 2912,
-            "valore": 1
-          },
-          {
-            "anno": 2920,
-            "valore": 1
-          },
-          {
-            "anno": 2931,
-            "valore": 1
-          },
-          {
-            "anno": 2933,
-            "valore": 1
-          },
-          {
-            "anno": 2936,
-            "valore": 1
-          },
-          {
-            "anno": 2968,
-            "valore": 1
-          },
-          {
-            "anno": 2977,
-            "valore": 1
-          },
-          {
-            "anno": 3000,
-            "valore": 1
-          },
-          {
-            "anno": 3003,
-            "valore": 1
-          },
-          {
-            "anno": 3010,
-            "valore": 1
-          },
-          {
-            "anno": 3031,
-            "valore": 1
-          },
-          {
-            "anno": 3255,
-            "valore": 1
-          },
-          {
-            "anno": 3264,
-            "valore": 1
-          },
-          {
-            "anno": 3301,
-            "valore": 1
-          },
-          {
-            "anno": 3303,
-            "valore": 1
-          },
-          {
-            "anno": 3335,
-            "valore": 1
-          },
-          {
-            "anno": 3369,
-            "valore": 1
-          },
-          {
-            "anno": 3377,
-            "valore": 1
-          },
-          {
-            "anno": 3389,
-            "valore": 1
-          },
-          {
-            "anno": 3420,
-            "valore": 1
-          },
-          {
-            "anno": 3434,
-            "valore": 1
-          },
-          {
-            "anno": 3463,
-            "valore": 1
-          },
-          {
-            "anno": 3481,
-            "valore": 1
-          },
-          {
-            "anno": 3489,
-            "valore": 1
-          },
-          {
-            "anno": 3502,
-            "valore": 1
-          },
-          {
-            "anno": 3509,
-            "valore": 1
-          },
-          {
-            "anno": 3512,
-            "valore": 1
-          },
-          {
-            "anno": 3523,
-            "valore": 1
-          },
-          {
-            "anno": 3592,
-            "valore": 1
-          },
-          {
-            "anno": 3605,
-            "valore": 1
-          },
-          {
-            "anno": 3606,
-            "valore": 1
-          },
-          {
-            "anno": 3607,
-            "valore": 1
-          },
-          {
-            "anno": 3608,
-            "valore": 1
-          },
-          {
-            "anno": 3613,
-            "valore": 1
-          },
-          {
-            "anno": 3614,
-            "valore": 2
-          },
-          {
-            "anno": 3633,
-            "valore": 1
-          },
-          {
-            "anno": 3634,
-            "valore": 1
-          },
-          {
-            "anno": 3654,
-            "valore": 1
-          },
-          {
-            "anno": 3657,
-            "valore": 1
-          },
-          {
-            "anno": 3676,
-            "valore": 1
-          },
-          {
-            "anno": 3687,
-            "valore": 1
-          },
-          {
-            "anno": 3732,
-            "valore": 1
-          },
-          {
-            "anno": 3739,
-            "valore": 1
-          },
-          {
-            "anno": 3756,
-            "valore": 1
-          },
-          {
-            "anno": 3767,
-            "valore": 1
-          },
-          {
-            "anno": 3772,
-            "valore": 1
-          },
-          {
-            "anno": 3780,
-            "valore": 1
-          },
-          {
-            "anno": 3785,
-            "valore": 1
-          },
-          {
-            "anno": 3794,
-            "valore": 1
-          },
-          {
-            "anno": 3798,
-            "valore": 1
-          },
-          {
-            "anno": 3828,
-            "valore": 1
-          },
-          {
-            "anno": 3830,
-            "valore": 1
-          },
-          {
-            "anno": 3922,
-            "valore": 1
-          },
-          {
-            "anno": 3940,
-            "valore": 2
-          },
-          {
-            "anno": 4031,
-            "valore": 1
-          },
-          {
-            "anno": 4037,
-            "valore": 1
-          },
-          {
-            "anno": 4045,
-            "valore": 1
-          },
-          {
-            "anno": 4057,
-            "valore": 1
-          },
-          {
-            "anno": 4059,
-            "valore": 1
-          },
-          {
-            "anno": 4065,
-            "valore": 1
-          },
-          {
-            "anno": 4071,
-            "valore": 1
-          },
-          {
-            "anno": 4096,
-            "valore": 1
-          },
-          {
-            "anno": 4107,
-            "valore": 1
-          },
-          {
-            "anno": 4120,
-            "valore": 1
-          },
-          {
-            "anno": 4182,
-            "valore": 1
-          },
-          {
-            "anno": 4191,
-            "valore": 1
-          },
-          {
-            "anno": 4200,
-            "valore": 1
-          },
-          {
-            "anno": 4228,
-            "valore": 1
-          },
-          {
-            "anno": 4236,
-            "valore": 1
-          },
-          {
-            "anno": 4251,
-            "valore": 1
-          },
-          {
-            "anno": 4253,
-            "valore": 1
-          },
-          {
-            "anno": 4280,
-            "valore": 1
-          },
-          {
-            "anno": 4297,
-            "valore": 1
-          },
-          {
-            "anno": 4313,
-            "valore": 1
-          },
-          {
-            "anno": 4318,
-            "valore": 1
-          },
-          {
-            "anno": 4320,
-            "valore": 1
-          },
-          {
-            "anno": 4343,
-            "valore": 1
-          },
-          {
-            "anno": 4350,
-            "valore": 1
-          },
-          {
-            "anno": 4369,
-            "valore": 1
-          },
-          {
-            "anno": 4484,
-            "valore": 1
-          },
-          {
-            "anno": 4544,
-            "valore": 2
-          },
-          {
-            "anno": 4548,
-            "valore": 1
-          },
-          {
-            "anno": 4563,
-            "valore": 1
-          },
-          {
-            "anno": 4572,
-            "valore": 1
-          },
-          {
-            "anno": 4605,
-            "valore": 1
-          },
-          {
-            "anno": 4608,
-            "valore": 1
-          },
-          {
-            "anno": 4637,
-            "valore": 1
-          },
-          {
-            "anno": 4663,
-            "valore": 1
-          },
-          {
-            "anno": 4666,
-            "valore": 1
-          },
-          {
-            "anno": 4674,
-            "valore": 1
-          },
-          {
-            "anno": 4684,
-            "valore": 1
-          },
-          {
-            "anno": 4686,
-            "valore": 1
-          },
-          {
-            "anno": 4721,
-            "valore": 1
-          },
-          {
-            "anno": 4728,
-            "valore": 1
-          },
-          {
-            "anno": 4737,
-            "valore": 1
-          },
-          {
-            "anno": 4740,
-            "valore": 1
-          },
-          {
-            "anno": 4762,
-            "valore": 1
-          },
-          {
-            "anno": 4766,
-            "valore": 1
-          },
-          {
-            "anno": 4807,
-            "valore": 1
-          },
-          {
-            "anno": 4821,
-            "valore": 1
-          },
-          {
-            "anno": 4828,
-            "valore": 1
-          },
-          {
-            "anno": 4831,
-            "valore": 1
-          },
-          {
-            "anno": 4839,
-            "valore": 1
-          },
-          {
-            "anno": 4841,
-            "valore": 1
-          },
-          {
-            "anno": 4849,
-            "valore": 1
-          },
-          {
-            "anno": 4850,
-            "valore": 1
-          },
-          {
-            "anno": 4871,
-            "valore": 1
-          },
-          {
-            "anno": 4875,
-            "valore": 1
-          },
-          {
-            "anno": 4883,
-            "valore": 1
-          },
-          {
-            "anno": 4951,
-            "valore": 1
-          },
-          {
-            "anno": 5005,
-            "valore": 1
-          },
-          {
-            "anno": 5033,
-            "valore": 1
-          },
-          {
-            "anno": 5127,
-            "valore": 1
-          },
-          {
-            "anno": 5134,
-            "valore": 1
-          },
-          {
-            "anno": 5167,
-            "valore": 1
-          },
-          {
-            "anno": 5179,
-            "valore": 1
-          },
-          {
-            "anno": 5215,
-            "valore": 1
-          },
-          {
-            "anno": 5224,
-            "valore": 1
-          },
-          {
-            "anno": 5241,
-            "valore": 1
-          },
-          {
-            "anno": 5287,
-            "valore": 1
-          },
-          {
-            "anno": 5290,
-            "valore": 1
-          },
-          {
-            "anno": 5320,
-            "valore": 1
-          },
-          {
-            "anno": 5329,
-            "valore": 1
-          },
-          {
-            "anno": 5349,
-            "valore": 1
-          },
-          {
-            "anno": 5350,
-            "valore": 1
-          },
-          {
-            "anno": 5351,
-            "valore": 1
-          },
-          {
-            "anno": 5367,
-            "valore": 1
-          },
-          {
-            "anno": 5456,
-            "valore": 1
-          },
-          {
-            "anno": 5463,
-            "valore": 1
-          },
-          {
-            "anno": 5471,
-            "valore": 1
-          },
-          {
-            "anno": 5487,
-            "valore": 1
-          },
-          {
-            "anno": 5523,
-            "valore": 1
-          },
-          {
-            "anno": 5532,
-            "valore": 1
-          },
-          {
-            "anno": 5545,
-            "valore": 1
-          },
-          {
-            "anno": 5550,
-            "valore": 1
-          },
-          {
-            "anno": 5552,
-            "valore": 1
-          },
-          {
-            "anno": 5558,
-            "valore": 1
-          },
-          {
-            "anno": 5570,
-            "valore": 1
-          },
-          {
-            "anno": 5576,
-            "valore": 1
-          },
-          {
-            "anno": 5583,
-            "valore": 1
-          },
-          {
-            "anno": 5591,
-            "valore": 1
-          },
-          {
-            "anno": 5605,
-            "valore": 1
-          },
-          {
-            "anno": 5607,
-            "valore": 1
-          },
-          {
-            "anno": 5614,
-            "valore": 1
-          },
-          {
-            "anno": 5633,
-            "valore": 1
-          },
-          {
-            "anno": 5649,
-            "valore": 1
-          },
-          {
-            "anno": 5676,
-            "valore": 1
-          },
-          {
-            "anno": 5726,
-            "valore": 1
-          },
-          {
-            "anno": 5745,
-            "valore": 1
-          },
-          {
-            "anno": 5758,
-            "valore": 1
-          },
-          {
-            "anno": 5760,
-            "valore": 1
-          },
-          {
-            "anno": 5813,
-            "valore": 2
-          },
-          {
-            "anno": 5817,
-            "valore": 1
-          },
-          {
-            "anno": 5818,
-            "valore": 1
-          },
-          {
-            "anno": 5833,
-            "valore": 1
-          },
-          {
-            "anno": 5843,
-            "valore": 1
-          },
-          {
-            "anno": 5872,
-            "valore": 1
-          },
-          {
-            "anno": 5931,
-            "valore": 1
-          },
-          {
-            "anno": 6005,
-            "valore": 1
-          },
-          {
-            "anno": 6093,
-            "valore": 1
-          },
-          {
-            "anno": 6101,
-            "valore": 1
-          },
-          {
-            "anno": 6118,
-            "valore": 1
-          },
-          {
-            "anno": 6122,
-            "valore": 1
-          },
-          {
-            "anno": 6146,
-            "valore": 1
-          },
-          {
-            "anno": 6153,
-            "valore": 1
-          },
-          {
-            "anno": 6190,
-            "valore": 1
-          },
-          {
-            "anno": 6225,
-            "valore": 1
-          },
-          {
-            "anno": 6235,
-            "valore": 1
-          },
-          {
-            "anno": 6254,
-            "valore": 1
-          },
-          {
-            "anno": 6259,
-            "valore": 1
-          },
-          {
-            "anno": 6263,
-            "valore": 1
-          },
-          {
-            "anno": 6270,
-            "valore": 1
-          },
-          {
-            "anno": 6275,
-            "valore": 1
-          },
-          {
-            "anno": 6278,
-            "valore": 1
-          },
-          {
-            "anno": 6291,
-            "valore": 1
-          },
-          {
-            "anno": 6328,
-            "valore": 1
-          },
-          {
-            "anno": 6342,
-            "valore": 1
-          },
-          {
-            "anno": 6350,
-            "valore": 1
-          },
-          {
-            "anno": 6354,
-            "valore": 1
-          },
-          {
-            "anno": 6361,
-            "valore": 1
-          },
-          {
-            "anno": 6364,
-            "valore": 1
-          },
-          {
-            "anno": 6442,
-            "valore": 1
-          },
-          {
-            "anno": 6453,
-            "valore": 1
-          },
-          {
-            "anno": 6463,
-            "valore": 1
-          },
-          {
-            "anno": 6474,
-            "valore": 1
-          },
-          {
-            "anno": 6486,
-            "valore": 1
-          },
-          {
-            "anno": 6499,
-            "valore": 1
-          },
-          {
-            "anno": 6508,
-            "valore": 1
-          },
-          {
-            "anno": 6521,
-            "valore": 1
-          },
-          {
-            "anno": 6524,
-            "valore": 1
-          },
-          {
-            "anno": 6530,
-            "valore": 1
-          },
-          {
-            "anno": 6533,
-            "valore": 1
-          },
-          {
-            "anno": 6547,
-            "valore": 1
-          },
-          {
-            "anno": 6551,
-            "valore": 1
-          },
-          {
-            "anno": 6563,
-            "valore": 1
-          },
-          {
-            "anno": 6591,
-            "valore": 1
-          },
-          {
-            "anno": 6677,
-            "valore": 1
-          },
-          {
-            "anno": 6693,
-            "valore": 1
-          },
-          {
-            "anno": 6736,
-            "valore": 1
-          },
-          {
-            "anno": 6766,
-            "valore": 1
-          },
-          {
-            "anno": 6807,
-            "valore": 1
-          },
-          {
-            "anno": 6822,
-            "valore": 1
-          },
-          {
-            "anno": 6843,
-            "valore": 1
-          },
-          {
-            "anno": 6903,
-            "valore": 1
-          },
-          {
-            "anno": 6928,
-            "valore": 1
-          },
-          {
-            "anno": 6956,
-            "valore": 1
-          },
-          {
-            "anno": 6980,
-            "valore": 1
-          },
-          {
-            "anno": 7046,
-            "valore": 1
-          },
-          {
-            "anno": 7049,
-            "valore": 1
-          },
-          {
-            "anno": 7093,
-            "valore": 1
-          },
-          {
-            "anno": 7103,
-            "valore": 1
-          },
-          {
-            "anno": 7108,
-            "valore": 1
-          },
-          {
-            "anno": 7109,
-            "valore": 1
-          },
-          {
-            "anno": 7119,
-            "valore": 1
-          },
-          {
-            "anno": 7155,
-            "valore": 1
-          },
-          {
-            "anno": 7164,
-            "valore": 1
-          },
-          {
-            "anno": 7167,
-            "valore": 1
-          },
-          {
-            "anno": 7172,
-            "valore": 1
-          },
-          {
-            "anno": 7176,
-            "valore": 1
-          },
-          {
-            "anno": 7196,
-            "valore": 2
-          },
-          {
-            "anno": 7230,
-            "valore": 1
-          },
-          {
-            "anno": 7235,
-            "valore": 1
-          },
-          {
-            "anno": 7240,
-            "valore": 1
-          },
-          {
-            "anno": 7246,
-            "valore": 1
-          },
-          {
-            "anno": 7250,
-            "valore": 1
-          },
-          {
-            "anno": 7311,
-            "valore": 1
-          },
-          {
-            "anno": 7314,
-            "valore": 1
-          },
-          {
-            "anno": 7321,
-            "valore": 1
-          },
-          {
-            "anno": 7329,
-            "valore": 1
-          },
-          {
-            "anno": 7340,
-            "valore": 1
-          },
-          {
-            "anno": 7352,
-            "valore": 1
-          },
-          {
-            "anno": 7357,
-            "valore": 1
-          },
-          {
-            "anno": 7369,
-            "valore": 1
-          },
-          {
-            "anno": 7377,
-            "valore": 1
-          },
-          {
-            "anno": 7389,
-            "valore": 1
-          },
-          {
-            "anno": 7526,
-            "valore": 1
-          },
-          {
-            "anno": 7538,
-            "valore": 1
-          },
-          {
-            "anno": 7551,
-            "valore": 1
-          },
-          {
-            "anno": 7651,
-            "valore": 1
-          },
-          {
-            "anno": 7711,
-            "valore": 1
-          },
-          {
-            "anno": 7713,
-            "valore": 1
-          },
-          {
-            "anno": 7722,
-            "valore": 2
-          },
-          {
-            "anno": 7745,
-            "valore": 1
-          },
-          {
-            "anno": 7771,
-            "valore": 1
-          },
-          {
-            "anno": 7772,
-            "valore": 1
-          },
-          {
-            "anno": 7778,
-            "valore": 1
-          },
-          {
-            "anno": 7779,
-            "valore": 3
-          },
-          {
-            "anno": 7783,
-            "valore": 1
-          },
-          {
-            "anno": 7790,
-            "valore": 1
-          },
-          {
-            "anno": 7809,
-            "valore": 1
-          },
-          {
-            "anno": 7820,
-            "valore": 1
-          },
-          {
-            "anno": 7837,
-            "valore": 1
-          },
-          {
-            "anno": 7927,
-            "valore": 1
-          },
-          {
-            "anno": 7945,
-            "valore": 1
-          },
-          {
-            "anno": 7948,
-            "valore": 1
-          },
-          {
-            "anno": 7970,
-            "valore": 1
-          },
-          {
-            "anno": 7973,
-            "valore": 1
-          },
-          {
-            "anno": 7977,
-            "valore": 1
-          },
-          {
-            "anno": 8085,
-            "valore": 1
-          },
-          {
-            "anno": 8119,
-            "valore": 1
-          },
-          {
-            "anno": 8149,
-            "valore": 1
-          },
-          {
-            "anno": 8180,
-            "valore": 1
-          },
-          {
-            "anno": 8189,
-            "valore": 1
-          },
-          {
-            "anno": 8223,
-            "valore": 1
-          },
-          {
-            "anno": 8236,
-            "valore": 1
-          },
-          {
-            "anno": 8386,
-            "valore": 1
-          },
-          {
-            "anno": 8407,
-            "valore": 1
-          },
-          {
-            "anno": 8428,
-            "valore": 1
-          },
-          {
-            "anno": 8470,
-            "valore": 1
-          },
-          {
-            "anno": 8497,
-            "valore": 1
-          },
-          {
-            "anno": 8516,
-            "valore": 1
-          },
-          {
-            "anno": 8519,
-            "valore": 1
-          },
-          {
-            "anno": 8530,
-            "valore": 1
-          },
-          {
-            "anno": 8547,
-            "valore": 1
-          },
-          {
-            "anno": 8549,
-            "valore": 1
-          },
-          {
-            "anno": 8550,
-            "valore": 2
-          },
-          {
-            "anno": 8556,
-            "valore": 1
-          },
-          {
-            "anno": 8581,
-            "valore": 1
-          },
-          {
-            "anno": 8583,
-            "valore": 1
-          },
-          {
-            "anno": 8589,
-            "valore": 1
-          },
-          {
-            "anno": 8615,
-            "valore": 1
-          },
-          {
-            "anno": 8618,
-            "valore": 1
-          },
-          {
-            "anno": 8647,
-            "valore": 1
-          },
-          {
-            "anno": 8680,
-            "valore": 1
-          },
-          {
-            "anno": 8681,
-            "valore": 1
-          },
-          {
-            "anno": 8704,
-            "valore": 1
-          },
-          {
-            "anno": 8708,
-            "valore": 1
-          },
-          {
-            "anno": 8731,
-            "valore": 1
-          },
-          {
-            "anno": 8760,
-            "valore": 1
-          },
-          {
-            "anno": 8769,
-            "valore": 1
-          },
-          {
-            "anno": 8859,
-            "valore": 1
-          },
-          {
-            "anno": 8880,
-            "valore": 1
-          },
-          {
-            "anno": 8893,
-            "valore": 1
-          },
-          {
-            "anno": 8905,
-            "valore": 1
-          },
-          {
-            "anno": 8960,
-            "valore": 1
-          },
-          {
-            "anno": 8978,
-            "valore": 1
-          },
-          {
-            "anno": 8986,
-            "valore": 1
-          },
-          {
-            "anno": 8988,
-            "valore": 1
-          },
-          {
-            "anno": 8998,
-            "valore": 1
-          },
-          {
-            "anno": 9023,
-            "valore": 1
-          },
-          {
-            "anno": 9029,
-            "valore": 1
-          },
-          {
-            "anno": 9031,
-            "valore": 1
-          },
-          {
-            "anno": 9045,
-            "valore": 1
-          },
-          {
-            "anno": 9047,
-            "valore": 1
-          },
-          {
-            "anno": 9049,
-            "valore": 1
-          },
-          {
-            "anno": 9051,
-            "valore": 1
-          },
-          {
-            "anno": 9071,
-            "valore": 1
-          },
-          {
-            "anno": 9073,
-            "valore": 1
-          },
-          {
-            "anno": 9086,
-            "valore": 1
-          },
-          {
-            "anno": 9146,
-            "valore": 1
-          },
-          {
-            "anno": 9183,
-            "valore": 1
-          },
-          {
-            "anno": 9212,
-            "valore": 1
-          },
-          {
-            "anno": 9263,
-            "valore": 1
-          },
-          {
-            "anno": 9309,
-            "valore": 1
-          },
-          {
-            "anno": 9310,
-            "valore": 1
-          },
-          {
-            "anno": 9322,
-            "valore": 1
-          },
-          {
-            "anno": 9323,
-            "valore": 2
-          },
-          {
-            "anno": 9338,
-            "valore": 1
-          },
-          {
-            "anno": 9358,
-            "valore": 1
-          },
-          {
-            "anno": 9397,
-            "valore": 1
-          },
-          {
-            "anno": 9410,
-            "valore": 1
-          },
-          {
-            "anno": 9411,
-            "valore": 2
-          },
-          {
-            "anno": 9415,
-            "valore": 1
-          },
-          {
-            "anno": 9426,
-            "valore": 1
-          },
-          {
-            "anno": 9435,
-            "valore": 1
-          },
-          {
-            "anno": 9440,
-            "valore": 1
-          },
-          {
-            "anno": 9450,
-            "valore": 1
-          },
-          {
-            "anno": 9455,
-            "valore": 1
-          },
-          {
-            "anno": 9467,
-            "valore": 1
-          },
-          {
-            "anno": 9493,
-            "valore": 1
-          },
-          {
-            "anno": 9635,
-            "valore": 1
-          },
-          {
-            "anno": 9704,
-            "valore": 1
-          },
-          {
-            "anno": 9742,
-            "valore": 1
-          },
-          {
-            "anno": 9753,
-            "valore": 1
-          },
-          {
-            "anno": 9763,
-            "valore": 1
-          },
-          {
-            "anno": 9828,
-            "valore": 1
-          },
-          {
-            "anno": 9860,
-            "valore": 1
-          },
-          {
-            "anno": 9902,
-            "valore": 1
-          },
-          {
-            "anno": 9910,
-            "valore": 1
-          },
-          {
-            "anno": 9945,
-            "valore": 1
-          },
-          {
-            "anno": 9983,
-            "valore": 1
+            "anno": 2023,
+            "valore": 15
           }
         ]
       },
@@ -2357,7 +681,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-04T21:43:52.683Z",
+      "fetched_at": "2026-05-05T05:51:20.320Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -2529,7 +853,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-sinistri-dal-2018-lecce",
-      "fetched_at": "2026-05-04T21:43:54.766Z",
+      "fetched_at": "2026-05-05T05:51:52.611Z",
       "status": "ok",
       "modified": "2021-02-03",
       "freshness": {
@@ -2581,2004 +905,2004 @@
         "per_zona": null,
         "hot_spots": [
           {
-            "lat": 4037924,
-            "lon": 1815166
+            "lat": 40.37924,
+            "lon": 18.15166
           },
           {
-            "lat": 4033956,
-            "lon": 1817699
+            "lat": 40.33956,
+            "lon": 18.17699
           },
           {
-            "lat": 4036422,
-            "lon": 1814054
+            "lat": 40.36422,
+            "lon": 18.14054
           },
           {
-            "lat": 4034984,
-            "lon": 1817214
+            "lat": 40.34984,
+            "lon": 18.17214
           },
           {
-            "lat": 4035274,
-            "lon": 1819076
+            "lat": 40.35274,
+            "lon": 18.19076
           },
           {
-            "lat": 4034265,
-            "lon": 1817568
+            "lat": 40.34265,
+            "lon": 18.17568
           },
           {
-            "lat": 4035664,
-            "lon": 1818429
+            "lat": 40.35664,
+            "lon": 18.18429
           },
           {
-            "lat": 4035719,
-            "lon": 1816764
+            "lat": 40.35719,
+            "lon": 18.16764
           },
           {
-            "lat": 4035187,
-            "lon": 1817864
+            "lat": 40.35187,
+            "lon": 18.17864
           },
           {
-            "lat": 4034895,
-            "lon": 1815903
+            "lat": 40.34895,
+            "lon": 18.15903
           },
           {
-            "lat": 4036032,
-            "lon": 1819207
+            "lat": 40.36032,
+            "lon": 18.19207
           },
           {
-            "lat": 4035128,
-            "lon": 181841
+            "lat": 40.35128,
+            "lon": 18.1841
           },
           {
-            "lat": 4035982,
-            "lon": 1817206
+            "lat": 40.35982,
+            "lon": 18.17206
           },
           {
-            "lat": 4036287,
-            "lon": 1816734
+            "lat": 40.36287,
+            "lon": 18.16734
           },
           {
-            "lat": 4035378,
-            "lon": 1817904
+            "lat": 40.35378,
+            "lon": 18.17904
           },
           {
-            "lat": 4035156,
-            "lon": 1817483
+            "lat": 40.35156,
+            "lon": 18.17483
           },
           {
-            "lat": 4035912,
-            "lon": 1819265
+            "lat": 40.35912,
+            "lon": 18.19265
           },
           {
-            "lat": 4035635,
-            "lon": 1819884
+            "lat": 40.35635,
+            "lon": 18.19884
           },
           {
-            "lat": 4037409,
-            "lon": 1820707
+            "lat": 40.37409,
+            "lon": 18.20707
           },
           {
-            "lat": 403265,
-            "lon": 1815573
+            "lat": 40.3265,
+            "lon": 18.15573
           },
           {
-            "lat": 4035292,
-            "lon": 1818592
+            "lat": 40.35292,
+            "lon": 18.18592
           },
           {
-            "lat": 4035017,
-            "lon": 1815208
+            "lat": 40.35017,
+            "lon": 18.15208
           },
           {
-            "lat": 4034809,
-            "lon": 1818533
+            "lat": 40.34809,
+            "lon": 18.18533
           },
           {
-            "lat": 4033913,
-            "lon": 1817728
+            "lat": 40.33913,
+            "lon": 18.17728
           },
           {
-            "lat": 4036235,
-            "lon": 1817663
+            "lat": 40.36235,
+            "lon": 18.17663
           },
           {
-            "lat": 4038775,
-            "lon": 1816698
+            "lat": 40.38775,
+            "lon": 18.16698
           },
           {
-            "lat": 4035106,
-            "lon": 1817663
+            "lat": 40.35106,
+            "lon": 18.17663
           },
           {
-            "lat": 4033894,
-            "lon": 1815701
+            "lat": 40.33894,
+            "lon": 18.15701
           },
           {
-            "lat": 4034839,
-            "lon": 1816114
+            "lat": 40.34839,
+            "lon": 18.16114
           },
           {
-            "lat": 4036061,
-            "lon": 1818118
+            "lat": 40.36061,
+            "lon": 18.18118
           },
           {
-            "lat": 4035203,
-            "lon": 181767
+            "lat": 40.35203,
+            "lon": 18.1767
           },
           {
-            "lat": 403564,
-            "lon": 1817615
+            "lat": 40.3564,
+            "lon": 18.17615
           },
           {
-            "lat": 4035594,
-            "lon": 18174
+            "lat": 40.35594,
+            "lon": 18.174
           },
           {
-            "lat": 4035455,
-            "lon": 1817655
+            "lat": 40.35455,
+            "lon": 18.17655
           },
           {
-            "lat": 4035199,
-            "lon": 1819436
+            "lat": 40.35199,
+            "lon": 18.19436
           },
           {
-            "lat": 4035288,
-            "lon": 1818579
+            "lat": 40.35288,
+            "lon": 18.18579
           },
           {
-            "lat": 4035713,
-            "lon": 1818606
+            "lat": 40.35713,
+            "lon": 18.18606
           },
           {
-            "lat": 4035326,
-            "lon": 1816107
+            "lat": 40.35326,
+            "lon": 18.16107
           },
           {
-            "lat": 4034758,
-            "lon": 181734
+            "lat": 40.34758,
+            "lon": 18.1734
           },
           {
-            "lat": 4034691,
-            "lon": 1814517
+            "lat": 40.34691,
+            "lon": 18.14517
           },
           {
-            "lat": 4035184,
-            "lon": 1817841
+            "lat": 40.35184,
+            "lon": 18.17841
           },
           {
-            "lat": 403513,
-            "lon": 1817583
+            "lat": 40.3513,
+            "lon": 18.17583
           },
           {
-            "lat": 4036052,
-            "lon": 1818104
+            "lat": 40.36052,
+            "lon": 18.18104
           },
           {
-            "lat": 4035337,
-            "lon": 1815049
+            "lat": 40.35337,
+            "lon": 18.15049
           },
           {
-            "lat": 403445,
-            "lon": 1818076
+            "lat": 40.3445,
+            "lon": 18.18076
           },
           {
-            "lat": 4037132,
-            "lon": 1820288
+            "lat": 40.37132,
+            "lon": 18.20288
           },
           {
-            "lat": 4036063,
-            "lon": 181807
+            "lat": 40.36063,
+            "lon": 18.1807
           },
           {
-            "lat": 4034753,
-            "lon": 1818663
+            "lat": 40.34753,
+            "lon": 18.18663
           },
           {
-            "lat": 4035267,
-            "lon": 1821014
+            "lat": 40.35267,
+            "lon": 18.21014
           },
           {
-            "lat": 4036579,
-            "lon": 1814232
+            "lat": 40.36579,
+            "lon": 18.14232
           },
           {
-            "lat": 4038785,
-            "lon": 1809101
+            "lat": 40.38785,
+            "lon": 18.09101
           },
           {
-            "lat": 4035763,
-            "lon": 1818776
+            "lat": 40.35763,
+            "lon": 18.18776
           },
           {
-            "lat": 4036233,
-            "lon": 1817223
+            "lat": 40.36233,
+            "lon": 18.17223
           },
           {
-            "lat": 4035378,
-            "lon": 1817905
+            "lat": 40.35378,
+            "lon": 18.17905
           },
           {
-            "lat": 4034729,
-            "lon": 1816522
+            "lat": 40.34729,
+            "lon": 18.16522
           },
           {
-            "lat": 403585,
-            "lon": 1819348
+            "lat": 40.3585,
+            "lon": 18.19348
           },
           {
-            "lat": 4034553,
-            "lon": 1818363
+            "lat": 40.34553,
+            "lon": 18.18363
           },
           {
-            "lat": 4035431,
-            "lon": 1816562
+            "lat": 40.35431,
+            "lon": 18.16562
           },
           {
-            "lat": 4034912,
-            "lon": 1817287
+            "lat": 40.34912,
+            "lon": 18.17287
           },
           {
-            "lat": 4035152,
-            "lon": 1818584
+            "lat": 40.35152,
+            "lon": 18.18584
           },
           {
-            "lat": 4034531,
-            "lon": 1817038
+            "lat": 40.34531,
+            "lon": 18.17038
           },
           {
-            "lat": 4035678,
-            "lon": 1818482
+            "lat": 40.35678,
+            "lon": 18.18482
           },
           {
-            "lat": 40344,
-            "lon": 1820666
+            "lat": 40.344,
+            "lon": 18.20666
           },
           {
-            "lat": 4034869,
-            "lon": 1816228
+            "lat": 40.34869,
+            "lon": 18.16228
           },
           {
-            "lat": 4036527,
-            "lon": 1818845
+            "lat": 40.36527,
+            "lon": 18.18845
           },
           {
-            "lat": 4036531,
-            "lon": 1822047
+            "lat": 40.36531,
+            "lon": 18.22047
           },
           {
-            "lat": 40358,
-            "lon": 1818335
+            "lat": 40.358,
+            "lon": 18.18335
           },
           {
-            "lat": 4036155,
-            "lon": 1818669
+            "lat": 40.36155,
+            "lon": 18.18669
           },
           {
-            "lat": 4034719,
-            "lon": 1817957
+            "lat": 40.34719,
+            "lon": 18.17957
           },
           {
-            "lat": 4034174,
-            "lon": 1815843
+            "lat": 40.34174,
+            "lon": 18.15843
           },
           {
-            "lat": 4034514,
-            "lon": 1817711
+            "lat": 40.34514,
+            "lon": 18.17711
           },
           {
-            "lat": 4036235,
-            "lon": 1816965
+            "lat": 40.36235,
+            "lon": 18.16965
           },
           {
-            "lat": 4035124,
-            "lon": 1818063
+            "lat": 40.35124,
+            "lon": 18.18063
           },
           {
-            "lat": 4035569,
-            "lon": 1818996
+            "lat": 40.35569,
+            "lon": 18.18996
           },
           {
-            "lat": 4035971,
-            "lon": 181722
+            "lat": 40.35971,
+            "lon": 18.1722
           },
           {
-            "lat": 4041259,
-            "lon": 1820246
+            "lat": 40.41259,
+            "lon": 18.20246
           },
           {
-            "lat": 4040117,
-            "lon": 1810054
+            "lat": 40.40117,
+            "lon": 18.10054
           },
           {
-            "lat": 4034748,
-            "lon": 1817149
+            "lat": 40.34748,
+            "lon": 18.17149
           },
           {
-            "lat": 40363,
-            "lon": 1816783
+            "lat": 40.363,
+            "lon": 18.16783
           },
           {
-            "lat": 4033833,
-            "lon": 1815658
+            "lat": 40.33833,
+            "lon": 18.15658
           },
           {
-            "lat": 4036446,
-            "lon": 1822055
+            "lat": 40.36446,
+            "lon": 18.22055
           },
           {
-            "lat": 4036217,
-            "lon": 1817204
+            "lat": 40.36217,
+            "lon": 18.17204
           },
           {
-            "lat": 4035541,
-            "lon": 1817818
+            "lat": 40.35541,
+            "lon": 18.17818
           },
           {
-            "lat": 4034993,
-            "lon": 1817543
+            "lat": 40.34993,
+            "lon": 18.17543
           },
           {
-            "lat": 4034911,
-            "lon": 1817287
+            "lat": 40.34911,
+            "lon": 18.17287
           },
           {
-            "lat": 4035153,
-            "lon": 1817487
+            "lat": 40.35153,
+            "lon": 18.17487
           },
           {
-            "lat": 403463,
-            "lon": 1818403
+            "lat": 40.3463,
+            "lon": 18.18403
           },
           {
-            "lat": 4038721,
-            "lon": 1817766
+            "lat": 40.38721,
+            "lon": 18.17766
           },
           {
-            "lat": 4035843,
-            "lon": 1819333
+            "lat": 40.35843,
+            "lon": 18.19333
           },
           {
-            "lat": 4035908,
-            "lon": 1816121
+            "lat": 40.35908,
+            "lon": 18.16121
           },
           {
-            "lat": 4035769,
-            "lon": 181737
+            "lat": 40.35769,
+            "lon": 18.1737
           },
           {
-            "lat": 4035276,
-            "lon": 1818581
+            "lat": 40.35276,
+            "lon": 18.18581
           },
           {
-            "lat": 4036061,
-            "lon": 1818118
+            "lat": 40.36061,
+            "lon": 18.18118
           },
           {
-            "lat": 4036105,
-            "lon": 1817974
+            "lat": 40.36105,
+            "lon": 18.17974
           },
           {
-            "lat": 4036421,
-            "lon": 1817938
+            "lat": 40.36421,
+            "lon": 18.17938
           },
           {
-            "lat": 4036076,
-            "lon": 1818068
+            "lat": 40.36076,
+            "lon": 18.18068
           },
           {
-            "lat": 4035154,
-            "lon": 1816346
+            "lat": 40.35154,
+            "lon": 18.16346
           },
           {
-            "lat": 4038248,
-            "lon": 1820045
+            "lat": 40.38248,
+            "lon": 18.20045
           },
           {
-            "lat": 4034051,
-            "lon": 1816359
+            "lat": 40.34051,
+            "lon": 18.16359
           },
           {
-            "lat": 4035388,
-            "lon": 1818551
+            "lat": 40.35388,
+            "lon": 18.18551
           },
           {
-            "lat": 4035912,
-            "lon": 1817794
+            "lat": 40.35912,
+            "lon": 18.17794
           },
           {
-            "lat": 4036606,
-            "lon": 181871
+            "lat": 40.36606,
+            "lon": 18.1871
           },
           {
-            "lat": 4040151,
-            "lon": 1810398
+            "lat": 40.40151,
+            "lon": 18.10398
           },
           {
-            "lat": 4034438,
-            "lon": 1820347
+            "lat": 40.34438,
+            "lon": 18.20347
           },
           {
-            "lat": 4035536,
-            "lon": 1817759
+            "lat": 40.35536,
+            "lon": 18.17759
           },
           {
-            "lat": 4035713,
-            "lon": 1819537
+            "lat": 40.35713,
+            "lon": 18.19537
           },
           {
-            "lat": 4035292,
-            "lon": 1818913
+            "lat": 40.35292,
+            "lon": 18.18913
           },
           {
-            "lat": 4036133,
-            "lon": 1817624
+            "lat": 40.36133,
+            "lon": 18.17624
           },
           {
-            "lat": 4035134,
-            "lon": 1820403
+            "lat": 40.35134,
+            "lon": 18.20403
           },
           {
-            "lat": 4040912,
-            "lon": 1820662
+            "lat": 40.40912,
+            "lon": 18.20662
           },
           {
-            "lat": 403607,
-            "lon": 1816977
+            "lat": 40.3607,
+            "lon": 18.16977
           },
           {
-            "lat": 4035677,
-            "lon": 1818399
+            "lat": 40.35677,
+            "lon": 18.18399
           },
           {
-            "lat": 4037163,
-            "lon": 1817755
+            "lat": 40.37163,
+            "lon": 18.17755
           },
           {
-            "lat": 4035612,
-            "lon": 1816685
+            "lat": 40.35612,
+            "lon": 18.16685
           },
           {
-            "lat": 4034786,
-            "lon": 181776
+            "lat": 40.34786,
+            "lon": 18.1776
           },
           {
-            "lat": 4035903,
-            "lon": 181927
+            "lat": 40.35903,
+            "lon": 18.1927
           },
           {
-            "lat": 403521,
-            "lon": 1817667
+            "lat": 40.3521,
+            "lon": 18.17667
           },
           {
-            "lat": 4035581,
-            "lon": 181847
+            "lat": 40.35581,
+            "lon": 18.1847
           },
           {
-            "lat": 4034788,
-            "lon": 1817762
+            "lat": 40.34788,
+            "lon": 18.17762
           },
           {
-            "lat": 4035675,
-            "lon": 1816673
+            "lat": 40.35675,
+            "lon": 18.16673
           },
           {
-            "lat": 4034468,
-            "lon": 1817192
+            "lat": 40.34468,
+            "lon": 18.17192
           },
           {
-            "lat": 4036047,
-            "lon": 1815856
+            "lat": 40.36047,
+            "lon": 18.15856
           },
           {
-            "lat": 4035586,
-            "lon": 1819813
+            "lat": 40.35586,
+            "lon": 18.19813
           },
           {
-            "lat": 4036853,
-            "lon": 1822108
+            "lat": 40.36853,
+            "lon": 18.22108
           },
           {
-            "lat": 4035192,
-            "lon": 1817988
+            "lat": 40.35192,
+            "lon": 18.17988
           },
           {
-            "lat": 4034624,
-            "lon": 1817065
+            "lat": 40.34624,
+            "lon": 18.17065
           },
           {
-            "lat": 4034457,
-            "lon": 1817202
+            "lat": 40.34457,
+            "lon": 18.17202
           },
           {
-            "lat": 4036566,
-            "lon": 1819974
+            "lat": 40.36566,
+            "lon": 18.19974
           },
           {
-            "lat": 4036398,
-            "lon": 1817646
+            "lat": 40.36398,
+            "lon": 18.17646
           },
           {
-            "lat": 4035851,
-            "lon": 181162
+            "lat": 40.35851,
+            "lon": 18.1162
           },
           {
-            "lat": 4035623,
-            "lon": 1818301
+            "lat": 40.35623,
+            "lon": 18.18301
           },
           {
-            "lat": 403487,
-            "lon": 1816454
+            "lat": 40.3487,
+            "lon": 18.16454
           },
           {
-            "lat": 4035287,
-            "lon": 1818579
+            "lat": 40.35287,
+            "lon": 18.18579
           },
           {
-            "lat": 4035839,
-            "lon": 1817877
+            "lat": 40.35839,
+            "lon": 18.17877
           },
           {
-            "lat": 4035198,
-            "lon": 1816253
+            "lat": 40.35198,
+            "lon": 18.16253
           },
           {
-            "lat": 403622,
-            "lon": 1817196
+            "lat": 40.3622,
+            "lon": 18.17196
           },
           {
-            "lat": 4035666,
-            "lon": 1816728
+            "lat": 40.35666,
+            "lon": 18.16728
           },
           {
-            "lat": 4035378,
-            "lon": 1818572
+            "lat": 40.35378,
+            "lon": 18.18572
           },
           {
-            "lat": 4034144,
-            "lon": 1818228
+            "lat": 40.34144,
+            "lon": 18.18228
           },
           {
-            "lat": 4035985,
-            "lon": 1818183
+            "lat": 40.35985,
+            "lon": 18.18183
           },
           {
-            "lat": 4036605,
-            "lon": 1816799
+            "lat": 40.36605,
+            "lon": 18.16799
           },
           {
-            "lat": 4037763,
-            "lon": 1812356
+            "lat": 40.37763,
+            "lon": 18.12356
           },
           {
-            "lat": 4034291,
-            "lon": 181697
+            "lat": 40.34291,
+            "lon": 18.1697
           },
           {
-            "lat": 4037092,
-            "lon": 1815111
+            "lat": 40.37092,
+            "lon": 18.15111
           },
           {
-            "lat": 403481,
-            "lon": 1816787
+            "lat": 40.3481,
+            "lon": 18.16787
           },
           {
-            "lat": 403611,
-            "lon": 1815549
+            "lat": 40.3611,
+            "lon": 18.15549
           },
           {
-            "lat": 403537,
-            "lon": 1817638
+            "lat": 40.3537,
+            "lon": 18.17638
           },
           {
-            "lat": 4035725,
-            "lon": 1819965
+            "lat": 40.35725,
+            "lon": 18.19965
           },
           {
-            "lat": 4034107,
-            "lon": 1817458
+            "lat": 40.34107,
+            "lon": 18.17458
           },
           {
-            "lat": 4034741,
-            "lon": 1818268
+            "lat": 40.34741,
+            "lon": 18.18268
           },
           {
-            "lat": 4036238,
-            "lon": 181716
+            "lat": 40.36238,
+            "lon": 18.1716
           },
           {
-            "lat": 4036657,
-            "lon": 1821081
+            "lat": 40.36657,
+            "lon": 18.21081
           },
           {
-            "lat": 4035214,
-            "lon": 1818225
+            "lat": 40.35214,
+            "lon": 18.18225
           },
           {
-            "lat": 4034604,
-            "lon": 1818292
+            "lat": 40.34604,
+            "lon": 18.18292
           },
           {
-            "lat": 4035287,
-            "lon": 1818935
+            "lat": 40.35287,
+            "lon": 18.18935
           },
           {
-            "lat": 4036281,
-            "lon": 1817528
+            "lat": 40.36281,
+            "lon": 18.17528
           },
           {
-            "lat": 403439,
-            "lon": 1814408
+            "lat": 40.3439,
+            "lon": 18.14408
           },
           {
-            "lat": 4034752,
-            "lon": 181606
+            "lat": 40.34752,
+            "lon": 18.1606
           },
           {
-            "lat": 4034807,
-            "lon": 1816788
+            "lat": 40.34807,
+            "lon": 18.16788
           },
           {
-            "lat": 4033965,
-            "lon": 1817872
+            "lat": 40.33965,
+            "lon": 18.17872
           },
           {
-            "lat": 4036818,
-            "lon": 1818342
+            "lat": 40.36818,
+            "lon": 18.18342
           },
           {
-            "lat": 4035017,
-            "lon": 1815212
+            "lat": 40.35017,
+            "lon": 18.15212
           },
           {
-            "lat": 4036,
-            "lon": 1819343
+            "lat": 40.36,
+            "lon": 18.19343
           },
           {
-            "lat": 4034787,
-            "lon": 1818486
+            "lat": 40.34787,
+            "lon": 18.18486
           },
           {
-            "lat": 4035195,
-            "lon": 181799
+            "lat": 40.35195,
+            "lon": 18.1799
           },
           {
-            "lat": 4035065,
-            "lon": 1816352
+            "lat": 40.35065,
+            "lon": 18.16352
           },
           {
-            "lat": 4036291,
-            "lon": 1816801
+            "lat": 40.36291,
+            "lon": 18.16801
           },
           {
-            "lat": 4036036,
-            "lon": 1815753
+            "lat": 40.36036,
+            "lon": 18.15753
           },
           {
-            "lat": 4034941,
-            "lon": 181731
+            "lat": 40.34941,
+            "lon": 18.1731
           },
           {
-            "lat": 4035722,
-            "lon": 1816756
+            "lat": 40.35722,
+            "lon": 18.16756
           },
           {
-            "lat": 4036009,
-            "lon": 1816825
+            "lat": 40.36009,
+            "lon": 18.16825
           },
           {
-            "lat": 4036236,
-            "lon": 1816965
+            "lat": 40.36236,
+            "lon": 18.16965
           },
           {
-            "lat": 4035203,
-            "lon": 1818011
+            "lat": 40.35203,
+            "lon": 18.18011
           },
           {
-            "lat": 4035693,
-            "lon": 1818613
+            "lat": 40.35693,
+            "lon": 18.18613
           },
           {
-            "lat": 4035688,
-            "lon": 1818614
+            "lat": 40.35688,
+            "lon": 18.18614
           },
           {
-            "lat": 4034311,
-            "lon": 1817779
+            "lat": 40.34311,
+            "lon": 18.17779
           },
           {
-            "lat": 4035722,
-            "lon": 1818631
+            "lat": 40.35722,
+            "lon": 18.18631
           },
           {
-            "lat": 4036128,
-            "lon": 1817295
+            "lat": 40.36128,
+            "lon": 18.17295
           },
           {
-            "lat": 4035298,
-            "lon": 1817666
+            "lat": 40.35298,
+            "lon": 18.17666
           },
           {
-            "lat": 4034631,
-            "lon": 1817347
+            "lat": 40.34631,
+            "lon": 18.17347
           },
           {
-            "lat": 4036263,
-            "lon": 1816872
+            "lat": 40.36263,
+            "lon": 18.16872
           },
           {
-            "lat": 4036149,
-            "lon": 1817101
+            "lat": 40.36149,
+            "lon": 18.17101
           },
           {
-            "lat": 4034423,
-            "lon": 1817555
+            "lat": 40.34423,
+            "lon": 18.17555
           },
           {
-            "lat": 4035355,
-            "lon": 1816536
+            "lat": 40.35355,
+            "lon": 18.16536
           },
           {
-            "lat": 4035171,
-            "lon": 1817678
+            "lat": 40.35171,
+            "lon": 18.17678
           },
           {
-            "lat": 4034788,
-            "lon": 1817763
+            "lat": 40.34788,
+            "lon": 18.17763
           },
           {
-            "lat": 4035581,
-            "lon": 1818136
+            "lat": 40.35581,
+            "lon": 18.18136
           },
           {
-            "lat": 4033797,
-            "lon": 1811905
+            "lat": 40.33797,
+            "lon": 18.11905
           },
           {
-            "lat": 4036424,
-            "lon": 1820435
+            "lat": 40.36424,
+            "lon": 18.20435
           },
           {
-            "lat": 4035672,
-            "lon": 1817933
+            "lat": 40.35672,
+            "lon": 18.17933
           },
           {
-            "lat": 403979,
-            "lon": 1816819
+            "lat": 40.3979,
+            "lon": 18.16819
           },
           {
-            "lat": 403458,
-            "lon": 181714
+            "lat": 40.3458,
+            "lon": 18.1714
           },
           {
-            "lat": 403444,
-            "lon": 1818042
+            "lat": 40.3444,
+            "lon": 18.18042
           },
           {
-            "lat": 4034787,
-            "lon": 181847
+            "lat": 40.34787,
+            "lon": 18.1847
           },
           {
-            "lat": 4035238,
-            "lon": 1818582
+            "lat": 40.35238,
+            "lon": 18.18582
           },
           {
-            "lat": 4039041,
-            "lon": 1816339
+            "lat": 40.39041,
+            "lon": 18.16339
           },
           {
-            "lat": 4035167,
-            "lon": 1816308
+            "lat": 40.35167,
+            "lon": 18.16308
           },
           {
-            "lat": 4036111,
-            "lon": 1818007
+            "lat": 40.36111,
+            "lon": 18.18007
           },
           {
-            "lat": 403491,
-            "lon": 1818177
+            "lat": 40.3491,
+            "lon": 18.18177
           },
           {
-            "lat": 4037506,
-            "lon": 1817395
+            "lat": 40.37506,
+            "lon": 18.17395
           },
           {
-            "lat": 4034734,
-            "lon": 181726
+            "lat": 40.34734,
+            "lon": 18.1726
           },
           {
-            "lat": 403466,
-            "lon": 1816652
+            "lat": 40.3466,
+            "lon": 18.16652
           },
           {
-            "lat": 4035086,
-            "lon": 1818589
+            "lat": 40.35086,
+            "lon": 18.18589
           },
           {
-            "lat": 403529,
-            "lon": 1818594
+            "lat": 40.3529,
+            "lon": 18.18594
           },
           {
-            "lat": 4034382,
-            "lon": 1816991
+            "lat": 40.34382,
+            "lon": 18.16991
           },
           {
-            "lat": 4036317,
-            "lon": 1819634
+            "lat": 40.36317,
+            "lon": 18.19634
           },
           {
-            "lat": 4036506,
-            "lon": 181645
+            "lat": 40.36506,
+            "lon": 18.1645
           },
           {
-            "lat": 4035766,
-            "lon": 1816781
+            "lat": 40.35766,
+            "lon": 18.16781
           },
           {
-            "lat": 4035318,
-            "lon": 1817846
+            "lat": 40.35318,
+            "lon": 18.17846
           },
           {
-            "lat": 4036032,
-            "lon": 1819208
+            "lat": 40.36032,
+            "lon": 18.19208
           },
           {
-            "lat": 4035059,
-            "lon": 1816194
+            "lat": 40.35059,
+            "lon": 18.16194
           },
           {
-            "lat": 4035322,
-            "lon": 1818574
+            "lat": 40.35322,
+            "lon": 18.18574
           },
           {
-            "lat": 4036452,
-            "lon": 1822049
+            "lat": 40.36452,
+            "lon": 18.22049
           },
           {
-            "lat": 4037471,
-            "lon": 1813946
+            "lat": 40.37471,
+            "lon": 18.13946
           },
           {
-            "lat": 4038876,
-            "lon": 1816977
+            "lat": 40.38876,
+            "lon": 18.16977
           },
           {
-            "lat": 4034664,
-            "lon": 18152
+            "lat": 40.34664,
+            "lon": 18.152
           },
           {
-            "lat": 4034622,
-            "lon": 1819006
+            "lat": 40.34622,
+            "lon": 18.19006
           },
           {
-            "lat": 4035487,
-            "lon": 1815171
+            "lat": 40.35487,
+            "lon": 18.15171
           },
           {
-            "lat": 4036316,
-            "lon": 1819621
+            "lat": 40.36316,
+            "lon": 18.19621
           },
           {
-            "lat": 4035484,
-            "lon": 1815168
+            "lat": 40.35484,
+            "lon": 18.15168
           },
           {
-            "lat": 4034737,
-            "lon": 1817924
+            "lat": 40.34737,
+            "lon": 18.17924
           },
           {
-            "lat": 4034768,
-            "lon": 1816855
+            "lat": 40.34768,
+            "lon": 18.16855
           },
           {
-            "lat": 4034672,
-            "lon": 1818129
+            "lat": 40.34672,
+            "lon": 18.18129
           },
           {
-            "lat": 4035751,
-            "lon": 1817144
+            "lat": 40.35751,
+            "lon": 18.17144
           },
           {
-            "lat": 4034098,
-            "lon": 1817637
+            "lat": 40.34098,
+            "lon": 18.17637
           },
           {
-            "lat": 4034231,
-            "lon": 1817706
+            "lat": 40.34231,
+            "lon": 18.17706
           },
           {
-            "lat": 4032868,
-            "lon": 1819355
+            "lat": 40.32868,
+            "lon": 18.19355
           },
           {
-            "lat": 4034733,
-            "lon": 1818672
+            "lat": 40.34733,
+            "lon": 18.18672
           },
           {
-            "lat": 4034107,
-            "lon": 1817459
+            "lat": 40.34107,
+            "lon": 18.17459
           },
           {
-            "lat": 4034899,
-            "lon": 1816181
+            "lat": 40.34899,
+            "lon": 18.16181
           },
           {
-            "lat": 4034566,
-            "lon": 1818295
+            "lat": 40.34566,
+            "lon": 18.18295
           },
           {
-            "lat": 4032403,
-            "lon": 1818729
+            "lat": 40.32403,
+            "lon": 18.18729
           },
           {
-            "lat": 4034845,
-            "lon": 1817337
+            "lat": 40.34845,
+            "lon": 18.17337
           },
           {
-            "lat": 4036499,
-            "lon": 1816459
+            "lat": 40.36499,
+            "lon": 18.16459
           },
           {
-            "lat": 4038535,
-            "lon": 1810658
+            "lat": 40.38535,
+            "lon": 18.10658
           },
           {
-            "lat": 4036102,
-            "lon": 1816977
+            "lat": 40.36102,
+            "lon": 18.16977
           },
           {
-            "lat": 4037813,
-            "lon": 1812275
+            "lat": 40.37813,
+            "lon": 18.12275
           },
           {
-            "lat": 4035561,
-            "lon": 1817974
+            "lat": 40.35561,
+            "lon": 18.17974
           },
           {
-            "lat": 4034912,
-            "lon": 1817287
+            "lat": 40.34912,
+            "lon": 18.17287
           },
           {
-            "lat": 4034543,
-            "lon": 1818271
+            "lat": 40.34543,
+            "lon": 18.18271
           },
           {
-            "lat": 4036015,
-            "lon": 181693
+            "lat": 40.36015,
+            "lon": 18.1693
           },
           {
-            "lat": 4034821,
-            "lon": 181887
+            "lat": 40.34821,
+            "lon": 18.1887
           },
           {
-            "lat": 403475,
-            "lon": 1817149
+            "lat": 40.3475,
+            "lon": 18.17149
           },
           {
-            "lat": 403431,
-            "lon": 1815929
+            "lat": 40.3431,
+            "lon": 18.15929
           },
           {
-            "lat": 4035465,
-            "lon": 1817829
+            "lat": 40.35465,
+            "lon": 18.17829
           },
           {
-            "lat": 4035561,
-            "lon": 181609
+            "lat": 40.35561,
+            "lon": 18.1609
           },
           {
-            "lat": 4036689,
-            "lon": 1822023
+            "lat": 40.36689,
+            "lon": 18.22023
           },
           {
-            "lat": 4035303,
-            "lon": 1816433
+            "lat": 40.35303,
+            "lon": 18.16433
           },
           {
-            "lat": 4035018,
-            "lon": 18152
+            "lat": 40.35018,
+            "lon": 18.152
           },
           {
-            "lat": 4039681,
-            "lon": 1818879
+            "lat": 40.39681,
+            "lon": 18.18879
           },
           {
-            "lat": 4034213,
-            "lon": 1816931
+            "lat": 40.34213,
+            "lon": 18.16931
           },
           {
-            "lat": 4034725,
-            "lon": 1815117
+            "lat": 40.34725,
+            "lon": 18.15117
           },
           {
-            "lat": 4033053,
-            "lon": 1819911
+            "lat": 40.33053,
+            "lon": 18.19911
           },
           {
-            "lat": 4036233,
-            "lon": 1817702
+            "lat": 40.36233,
+            "lon": 18.17702
           },
           {
-            "lat": 4034426,
-            "lon": 1820361
+            "lat": 40.34426,
+            "lon": 18.20361
           },
           {
-            "lat": 4036565,
-            "lon": 1816346
+            "lat": 40.36565,
+            "lon": 18.16346
           },
           {
-            "lat": 4034582,
-            "lon": 1818345
+            "lat": 40.34582,
+            "lon": 18.18345
           },
           {
-            "lat": 403557,
-            "lon": 1819306
+            "lat": 40.3557,
+            "lon": 18.19306
           },
           {
-            "lat": 4034774,
-            "lon": 1816017
+            "lat": 40.34774,
+            "lon": 18.16017
           },
           {
-            "lat": 4034396,
-            "lon": 1818539
+            "lat": 40.34396,
+            "lon": 18.18539
           },
           {
-            "lat": 4035257,
-            "lon": 181772
+            "lat": 40.35257,
+            "lon": 18.1772
           },
           {
-            "lat": 4034409,
-            "lon": 1817514
+            "lat": 40.34409,
+            "lon": 18.17514
           },
           {
-            "lat": 4036224,
-            "lon": 1817704
+            "lat": 40.36224,
+            "lon": 18.17704
           },
           {
-            "lat": 4035037,
-            "lon": 1817581
+            "lat": 40.35037,
+            "lon": 18.17581
           },
           {
-            "lat": 4035596,
-            "lon": 1818202
+            "lat": 40.35596,
+            "lon": 18.18202
           },
           {
-            "lat": 403301,
-            "lon": 1816255
+            "lat": 40.3301,
+            "lon": 18.16255
           },
           {
-            "lat": 4036642,
-            "lon": 1818168
+            "lat": 40.36642,
+            "lon": 18.18168
           },
           {
-            "lat": 4035678,
-            "lon": 1816743
+            "lat": 40.35678,
+            "lon": 18.16743
           },
           {
-            "lat": 4037092,
-            "lon": 1815111
+            "lat": 40.37092,
+            "lon": 18.15111
           },
           {
-            "lat": 4048857,
-            "lon": 1812298
+            "lat": 40.48857,
+            "lon": 18.12298
           },
           {
-            "lat": 4035594,
-            "lon": 181761
+            "lat": 40.35594,
+            "lon": 18.1761
           },
           {
-            "lat": 4036813,
-            "lon": 1816958
+            "lat": 40.36813,
+            "lon": 18.16958
           },
           {
-            "lat": 4034764,
-            "lon": 1816012
+            "lat": 40.34764,
+            "lon": 18.16012
           },
           {
-            "lat": 4035418,
-            "lon": 1817852
+            "lat": 40.35418,
+            "lon": 18.17852
           },
           {
-            "lat": 403668,
-            "lon": 1816897
+            "lat": 40.3668,
+            "lon": 18.16897
           },
           {
-            "lat": 4034027,
-            "lon": 181768
+            "lat": 40.34027,
+            "lon": 18.1768
           },
           {
-            "lat": 4035223,
-            "lon": 1820024
+            "lat": 40.35223,
+            "lon": 18.20024
           },
           {
-            "lat": 4034719,
-            "lon": 181538
+            "lat": 40.34719,
+            "lon": 18.1538
           },
           {
-            "lat": 4034868,
-            "lon": 1816229
+            "lat": 40.34868,
+            "lon": 18.16229
           },
           {
-            "lat": 4033806,
-            "lon": 1812037
+            "lat": 40.33806,
+            "lon": 18.12037
           },
           {
-            "lat": 4035623,
-            "lon": 1817454
+            "lat": 40.35623,
+            "lon": 18.17454
           },
           {
-            "lat": 4035507,
-            "lon": 1818502
+            "lat": 40.35507,
+            "lon": 18.18502
           },
           {
-            "lat": 4034407,
-            "lon": 1814209
+            "lat": 40.34407,
+            "lon": 18.14209
           },
           {
-            "lat": 4035086,
-            "lon": 1818577
+            "lat": 40.35086,
+            "lon": 18.18577
           },
           {
-            "lat": 4035289,
-            "lon": 1818915
+            "lat": 40.35289,
+            "lon": 18.18915
           },
           {
-            "lat": 4033965,
-            "lon": 1817872
+            "lat": 40.33965,
+            "lon": 18.17872
           },
           {
-            "lat": 4038545,
-            "lon": 1830445
+            "lat": 40.38545,
+            "lon": 18.30445
           },
           {
-            "lat": 4038583,
-            "lon": 1810344
+            "lat": 40.38583,
+            "lon": 18.10344
           },
           {
-            "lat": 4034763,
-            "lon": 1816014
+            "lat": 40.34763,
+            "lon": 18.16014
           },
           {
-            "lat": 4036165,
-            "lon": 1818523
+            "lat": 40.36165,
+            "lon": 18.18523
           },
           {
-            "lat": 40349,
-            "lon": 1817425
+            "lat": 40.349,
+            "lon": 18.17425
           },
           {
-            "lat": 4035669,
-            "lon": 181743
+            "lat": 40.35669,
+            "lon": 18.1743
           },
           {
-            "lat": 4034622,
-            "lon": 1819007
+            "lat": 40.34622,
+            "lon": 18.19007
           },
           {
-            "lat": 4035191,
-            "lon": 1817967
+            "lat": 40.35191,
+            "lon": 18.17967
           },
           {
-            "lat": 403475,
-            "lon": 1817151
+            "lat": 40.3475,
+            "lon": 18.17151
           },
           {
-            "lat": 4034909,
-            "lon": 1815933
+            "lat": 40.34909,
+            "lon": 18.15933
           },
           {
-            "lat": 4032657,
-            "lon": 1814702
+            "lat": 40.32657,
+            "lon": 18.14702
           },
           {
-            "lat": 4034904,
-            "lon": 1813354
+            "lat": 40.34904,
+            "lon": 18.13354
           },
           {
-            "lat": 4035091,
-            "lon": 1818588
+            "lat": 40.35091,
+            "lon": 18.18588
           },
           {
-            "lat": 4036009,
-            "lon": 1818585
+            "lat": 40.36009,
+            "lon": 18.18585
           },
           {
-            "lat": 403483,
-            "lon": 181732
+            "lat": 40.3483,
+            "lon": 18.1732
           },
           {
-            "lat": 403364,
-            "lon": 1815555
+            "lat": 40.3364,
+            "lon": 18.15555
           },
           {
-            "lat": 4035439,
-            "lon": 181763
+            "lat": 40.35439,
+            "lon": 18.1763
           },
           {
-            "lat": 4038075,
-            "lon": 181966
+            "lat": 40.38075,
+            "lon": 18.1966
           },
           {
-            "lat": 4036582,
-            "lon": 1814233
+            "lat": 40.36582,
+            "lon": 18.14233
           },
           {
-            "lat": 4034318,
-            "lon": 1815919
+            "lat": 40.34318,
+            "lon": 18.15919
           },
           {
-            "lat": 4039096,
-            "lon": 183056
+            "lat": 40.39096,
+            "lon": 18.3056
           },
           {
-            "lat": 4035533,
-            "lon": 1815211
+            "lat": 40.35533,
+            "lon": 18.15211
           },
           {
-            "lat": 4036084,
-            "lon": 1818076
+            "lat": 40.36084,
+            "lon": 18.18076
           },
           {
-            "lat": 4035272,
-            "lon": 1817981
+            "lat": 40.35272,
+            "lon": 18.17981
           },
           {
-            "lat": 4035658,
-            "lon": 1818773
+            "lat": 40.35658,
+            "lon": 18.18773
           },
           {
-            "lat": 4034826,
-            "lon": 1817389
+            "lat": 40.34826,
+            "lon": 18.17389
           },
           {
-            "lat": 4034482,
-            "lon": 1815845
+            "lat": 40.34482,
+            "lon": 18.15845
           },
           {
-            "lat": 4034477,
-            "lon": 1815744
+            "lat": 40.34477,
+            "lon": 18.15744
           },
           {
-            "lat": 4035297,
-            "lon": 181831
+            "lat": 40.35297,
+            "lon": 18.1831
           },
           {
-            "lat": 4036133,
-            "lon": 1817624
+            "lat": 40.36133,
+            "lon": 18.17624
           },
           {
-            "lat": 403577,
-            "lon": 1819134
+            "lat": 40.3577,
+            "lon": 18.19134
           },
           {
-            "lat": 4034824,
-            "lon": 1818873
+            "lat": 40.34824,
+            "lon": 18.18873
           },
           {
-            "lat": 4034622,
-            "lon": 1817081
+            "lat": 40.34622,
+            "lon": 18.17081
           },
           {
-            "lat": 4034538,
-            "lon": 1820216
+            "lat": 40.34538,
+            "lon": 18.20216
           },
           {
-            "lat": 4036526,
-            "lon": 1817686
+            "lat": 40.36526,
+            "lon": 18.17686
           },
           {
-            "lat": 4034774,
-            "lon": 1816017
+            "lat": 40.34774,
+            "lon": 18.16017
           },
           {
-            "lat": 4035596,
-            "lon": 1817807
+            "lat": 40.35596,
+            "lon": 18.17807
           },
           {
-            "lat": 4033986,
-            "lon": 1815525
+            "lat": 40.33986,
+            "lon": 18.15525
           },
           {
-            "lat": 4042481,
-            "lon": 1823929
+            "lat": 40.42481,
+            "lon": 18.23929
           },
           {
-            "lat": 403593,
-            "lon": 1816062
+            "lat": 40.3593,
+            "lon": 18.16062
           },
           {
-            "lat": 403482,
-            "lon": 1816539
+            "lat": 40.3482,
+            "lon": 18.16539
           },
           {
-            "lat": 4034633,
-            "lon": 1817335
+            "lat": 40.34633,
+            "lon": 18.17335
           },
           {
-            "lat": 4035382,
-            "lon": 1817965
+            "lat": 40.35382,
+            "lon": 18.17965
           },
           {
-            "lat": 403421,
-            "lon": 1816086
+            "lat": 40.3421,
+            "lon": 18.16086
           },
           {
-            "lat": 403517,
-            "lon": 1817684
+            "lat": 40.3517,
+            "lon": 18.17684
           },
           {
-            "lat": 403596,
-            "lon": 1818454
+            "lat": 40.3596,
+            "lon": 18.18454
           },
           {
-            "lat": 4036276,
-            "lon": 1817524
+            "lat": 40.36276,
+            "lon": 18.17524
           },
           {
-            "lat": 4048029,
-            "lon": 1815696
+            "lat": 40.48029,
+            "lon": 18.15696
           },
           {
-            "lat": 403479,
-            "lon": 1818476
+            "lat": 40.3479,
+            "lon": 18.18476
           },
           {
-            "lat": 4036246,
-            "lon": 1817655
+            "lat": 40.36246,
+            "lon": 18.17655
           },
           {
-            "lat": 4048035,
-            "lon": 1815798
+            "lat": 40.48035,
+            "lon": 18.15798
           },
           {
-            "lat": 4035186,
-            "lon": 1817864
+            "lat": 40.35186,
+            "lon": 18.17864
           },
           {
-            "lat": 4033152,
-            "lon": 1816629
+            "lat": 40.33152,
+            "lon": 18.16629
           },
           {
-            "lat": 4036244,
-            "lon": 1817658
+            "lat": 40.36244,
+            "lon": 18.17658
           },
           {
-            "lat": 4035186,
-            "lon": 1820789
+            "lat": 40.35186,
+            "lon": 18.20789
           },
           {
-            "lat": 4036753,
-            "lon": 1816283
+            "lat": 40.36753,
+            "lon": 18.16283
           },
           {
-            "lat": 4036388,
-            "lon": 1816591
+            "lat": 40.36388,
+            "lon": 18.16591
           },
           {
-            "lat": 403367,
-            "lon": 181678
+            "lat": 40.3367,
+            "lon": 18.1678
           },
           {
-            "lat": 4034398,
-            "lon": 1815787
+            "lat": 40.34398,
+            "lon": 18.15787
           },
           {
-            "lat": 4035388,
-            "lon": 1818551
+            "lat": 40.35388,
+            "lon": 18.18551
           },
           {
-            "lat": 4033965,
-            "lon": 1817872
+            "lat": 40.33965,
+            "lon": 18.17872
           },
           {
-            "lat": 4035892,
-            "lon": 1816865
+            "lat": 40.35892,
+            "lon": 18.16865
           },
           {
-            "lat": 4035219,
-            "lon": 1817147
+            "lat": 40.35219,
+            "lon": 18.17147
           },
           {
-            "lat": 4033894,
-            "lon": 1815701
+            "lat": 40.33894,
+            "lon": 18.15701
           },
           {
-            "lat": 4035563,
-            "lon": 1817823
+            "lat": 40.35563,
+            "lon": 18.17823
           },
           {
-            "lat": 4035297,
-            "lon": 181831
+            "lat": 40.35297,
+            "lon": 18.1831
           },
           {
-            "lat": 4035285,
-            "lon": 1818112
+            "lat": 40.35285,
+            "lon": 18.18112
           },
           {
-            "lat": 4036457,
-            "lon": 1818983
+            "lat": 40.36457,
+            "lon": 18.18983
           },
           {
-            "lat": 4034259,
-            "lon": 1817566
+            "lat": 40.34259,
+            "lon": 18.17566
           },
           {
-            "lat": 4034867,
-            "lon": 1816227
+            "lat": 40.34867,
+            "lon": 18.16227
           },
           {
-            "lat": 4034505,
-            "lon": 1814736
+            "lat": 40.34505,
+            "lon": 18.14736
           },
           {
-            "lat": 4035063,
-            "lon": 1816352
+            "lat": 40.35063,
+            "lon": 18.16352
           },
           {
-            "lat": 4035298,
-            "lon": 1817171
+            "lat": 40.35298,
+            "lon": 18.17171
           },
           {
-            "lat": 4033656,
-            "lon": 1816782
+            "lat": 40.33656,
+            "lon": 18.16782
           },
           {
-            "lat": 4042263,
-            "lon": 1824266
+            "lat": 40.42263,
+            "lon": 18.24266
           },
           {
-            "lat": 4045418,
-            "lon": 181123
+            "lat": 40.45418,
+            "lon": 18.1123
           },
           {
-            "lat": 4035678,
-            "lon": 1816732
+            "lat": 40.35678,
+            "lon": 18.16732
           },
           {
-            "lat": 4034728,
-            "lon": 181718
+            "lat": 40.34728,
+            "lon": 18.1718
           },
           {
-            "lat": 403855,
-            "lon": 1810846
+            "lat": 40.3855,
+            "lon": 18.10846
           },
           {
-            "lat": 4041265,
-            "lon": 1820243
+            "lat": 40.41265,
+            "lon": 18.20243
           },
           {
-            "lat": 4035778,
-            "lon": 1819124
+            "lat": 40.35778,
+            "lon": 18.19124
           },
           {
-            "lat": 4035924,
-            "lon": 1816875
+            "lat": 40.35924,
+            "lon": 18.16875
           },
           {
-            "lat": 4040166,
-            "lon": 1819724
+            "lat": 40.40166,
+            "lon": 18.19724
           },
           {
-            "lat": 4035388,
-            "lon": 1818551
+            "lat": 40.35388,
+            "lon": 18.18551
           },
           {
-            "lat": 4035278,
-            "lon": 1819079
+            "lat": 40.35278,
+            "lon": 18.19079
           },
           {
-            "lat": 4033875,
-            "lon": 1812509
+            "lat": 40.33875,
+            "lon": 18.12509
           },
           {
-            "lat": 4034833,
-            "lon": 1816101
+            "lat": 40.34833,
+            "lon": 18.16101
           },
           {
-            "lat": 4035994,
-            "lon": 1815657
+            "lat": 40.35994,
+            "lon": 18.15657
           },
           {
-            "lat": 4036065,
-            "lon": 1815686
+            "lat": 40.36065,
+            "lon": 18.15686
           },
           {
-            "lat": 4036133,
-            "lon": 1817624
+            "lat": 40.36133,
+            "lon": 18.17624
           },
           {
-            "lat": 4035028,
-            "lon": 1817181
+            "lat": 40.35028,
+            "lon": 18.17181
           },
           {
-            "lat": 4034986,
-            "lon": 1816193
+            "lat": 40.34986,
+            "lon": 18.16193
           },
           {
-            "lat": 4035568,
-            "lon": 1817949
+            "lat": 40.35568,
+            "lon": 18.17949
           },
           {
-            "lat": 4032759,
-            "lon": 1815088
+            "lat": 40.32759,
+            "lon": 18.15088
           },
           {
-            "lat": 4036377,
-            "lon": 1818608
+            "lat": 40.36377,
+            "lon": 18.18608
           },
           {
-            "lat": 4034704,
-            "lon": 1818694
+            "lat": 40.34704,
+            "lon": 18.18694
           },
           {
-            "lat": 4036251,
-            "lon": 1817181
+            "lat": 40.36251,
+            "lon": 18.17181
           },
           {
-            "lat": 4034891,
-            "lon": 1817533
+            "lat": 40.34891,
+            "lon": 18.17533
           },
           {
-            "lat": 4034098,
-            "lon": 1817635
+            "lat": 40.34098,
+            "lon": 18.17635
           },
           {
-            "lat": 4036245,
-            "lon": 1815795
+            "lat": 40.36245,
+            "lon": 18.15795
           },
           {
-            "lat": 4046546,
-            "lon": 1819217
+            "lat": 40.46546,
+            "lon": 18.19217
           },
           {
-            "lat": 4034398,
-            "lon": 1815787
+            "lat": 40.34398,
+            "lon": 18.15787
           },
           {
-            "lat": 403585,
-            "lon": 1819348
+            "lat": 40.3585,
+            "lon": 18.19348
           },
           {
-            "lat": 4034993,
-            "lon": 1818573
+            "lat": 40.34993,
+            "lon": 18.18573
           },
           {
-            "lat": 4035179,
-            "lon": 1817233
+            "lat": 40.35179,
+            "lon": 18.17233
           },
           {
-            "lat": 4035476,
-            "lon": 1818192
+            "lat": 40.35476,
+            "lon": 18.18192
           },
           {
-            "lat": 4034789,
-            "lon": 1817764
+            "lat": 40.34789,
+            "lon": 18.17764
           },
           {
-            "lat": 4038829,
-            "lon": 1829906
+            "lat": 40.38829,
+            "lon": 18.29906
           },
           {
-            "lat": 4034465,
-            "lon": 1817482
+            "lat": 40.34465,
+            "lon": 18.17482
           },
           {
-            "lat": 4034585,
-            "lon": 1818347
+            "lat": 40.34585,
+            "lon": 18.18347
           },
           {
-            "lat": 4035744,
-            "lon": 1819008
+            "lat": 40.35744,
+            "lon": 18.19008
           },
           {
-            "lat": 4034451,
-            "lon": 1815715
+            "lat": 40.34451,
+            "lon": 18.15715
           },
           {
-            "lat": 403579,
-            "lon": 1818931
+            "lat": 40.3579,
+            "lon": 18.18931
           },
           {
-            "lat": 4035581,
-            "lon": 1819463
+            "lat": 40.35581,
+            "lon": 18.19463
           },
           {
-            "lat": 4035287,
-            "lon": 181858
+            "lat": 40.35287,
+            "lon": 18.1858
           },
           {
-            "lat": 4037402,
-            "lon": 1819632
+            "lat": 40.37402,
+            "lon": 18.19632
           },
           {
-            "lat": 4036244,
-            "lon": 1817661
+            "lat": 40.36244,
+            "lon": 18.17661
           },
           {
-            "lat": 4035573,
-            "lon": 1819144
+            "lat": 40.35573,
+            "lon": 18.19144
           },
           {
-            "lat": 4035465,
-            "lon": 1817827
+            "lat": 40.35465,
+            "lon": 18.17827
           },
           {
-            "lat": 403557,
-            "lon": 1819307
+            "lat": 40.3557,
+            "lon": 18.19307
           },
           {
-            "lat": 4036329,
-            "lon": 1816815
+            "lat": 40.36329,
+            "lon": 18.16815
           },
           {
-            "lat": 4035725,
-            "lon": 1817389
+            "lat": 40.35725,
+            "lon": 18.17389
           },
           {
-            "lat": 4034872,
-            "lon": 181623
+            "lat": 40.34872,
+            "lon": 18.1623
           },
           {
-            "lat": 4035238,
-            "lon": 1818585
+            "lat": 40.35238,
+            "lon": 18.18585
           },
           {
-            "lat": 4034871,
-            "lon": 181752
+            "lat": 40.34871,
+            "lon": 18.1752
           },
           {
-            "lat": 4036741,
-            "lon": 1814465
+            "lat": 40.36741,
+            "lon": 18.14465
           },
           {
-            "lat": 4036021,
-            "lon": 1817152
+            "lat": 40.36021,
+            "lon": 18.17152
           },
           {
-            "lat": 4033275,
-            "lon": 181349
+            "lat": 40.33275,
+            "lon": 18.1349
           },
           {
-            "lat": 4036445,
-            "lon": 1807562
+            "lat": 40.36445,
+            "lon": 18.07562
           },
           {
-            "lat": 4038588,
-            "lon": 181719
+            "lat": 40.38588,
+            "lon": 18.1719
           },
           {
-            "lat": 4037731,
-            "lon": 1819227
+            "lat": 40.37731,
+            "lon": 18.19227
           },
           {
-            "lat": 4034666,
-            "lon": 1816647
+            "lat": 40.34666,
+            "lon": 18.16647
           },
           {
-            "lat": 404481,
-            "lon": 1810735
+            "lat": 40.4481,
+            "lon": 18.10735
           },
           {
-            "lat": 4034691,
-            "lon": 181739
+            "lat": 40.34691,
+            "lon": 18.1739
           },
           {
-            "lat": 4044417,
-            "lon": 1816409
+            "lat": 40.44417,
+            "lon": 18.16409
           },
           {
-            "lat": 4034856,
-            "lon": 1817239
+            "lat": 40.34856,
+            "lon": 18.17239
           },
           {
-            "lat": 4034783,
-            "lon": 1818483
+            "lat": 40.34783,
+            "lon": 18.18483
           },
           {
-            "lat": 4034653,
-            "lon": 1817075
+            "lat": 40.34653,
+            "lon": 18.17075
           },
           {
-            "lat": 4036201,
-            "lon": 181782
+            "lat": 40.36201,
+            "lon": 18.1782
           },
           {
-            "lat": 4034638,
-            "lon": 1817058
+            "lat": 40.34638,
+            "lon": 18.17058
           },
           {
-            "lat": 40351,
-            "lon": 1817447
+            "lat": 40.351,
+            "lon": 18.17447
           },
           {
-            "lat": 4034245,
-            "lon": 1817815
+            "lat": 40.34245,
+            "lon": 18.17815
           },
           {
-            "lat": 4035444,
-            "lon": 1817625
+            "lat": 40.35444,
+            "lon": 18.17625
           },
           {
-            "lat": 4036252,
-            "lon": 181763
+            "lat": 40.36252,
+            "lon": 18.1763
           },
           {
-            "lat": 4034318,
-            "lon": 181778
+            "lat": 40.34318,
+            "lon": 18.1778
           },
           {
-            "lat": 4034824,
-            "lon": 1818298
+            "lat": 40.34824,
+            "lon": 18.18298
           },
           {
-            "lat": 4036142,
-            "lon": 1816963
+            "lat": 40.36142,
+            "lon": 18.16963
           },
           {
-            "lat": 403653,
-            "lon": 1818844
+            "lat": 40.3653,
+            "lon": 18.18844
           },
           {
-            "lat": 4034817,
-            "lon": 1817686
+            "lat": 40.34817,
+            "lon": 18.17686
           },
           {
-            "lat": 4036244,
-            "lon": 1815799
+            "lat": 40.36244,
+            "lon": 18.15799
           },
           {
-            "lat": 4035811,
-            "lon": 1817998
+            "lat": 40.35811,
+            "lon": 18.17998
           },
           {
-            "lat": 4034881,
-            "lon": 1818535
+            "lat": 40.34881,
+            "lon": 18.18535
           },
           {
-            "lat": 4041916,
-            "lon": 1822025
+            "lat": 40.41916,
+            "lon": 18.22025
           },
           {
-            "lat": 4034987,
-            "lon": 1820787
+            "lat": 40.34987,
+            "lon": 18.20787
           },
           {
-            "lat": 4034606,
-            "lon": 1818294
+            "lat": 40.34606,
+            "lon": 18.18294
           },
           {
-            "lat": 4035584,
-            "lon": 1819492
+            "lat": 40.35584,
+            "lon": 18.19492
           },
           {
-            "lat": 4032971,
-            "lon": 1816356
+            "lat": 40.32971,
+            "lon": 18.16356
           },
           {
-            "lat": 4035507,
-            "lon": 1817666
+            "lat": 40.35507,
+            "lon": 18.17666
           },
           {
-            "lat": 4036267,
-            "lon": 1817548
+            "lat": 40.36267,
+            "lon": 18.17548
           },
           {
-            "lat": 4036504,
-            "lon": 1821253
+            "lat": 40.36504,
+            "lon": 18.21253
           },
           {
-            "lat": 4034376,
-            "lon": 1814486
+            "lat": 40.34376,
+            "lon": 18.14486
           },
           {
-            "lat": 4036326,
-            "lon": 1818691
+            "lat": 40.36326,
+            "lon": 18.18691
           },
           {
-            "lat": 4037121,
-            "lon": 1817823
+            "lat": 40.37121,
+            "lon": 18.17823
           },
           {
-            "lat": 4035173,
-            "lon": 1827766
+            "lat": 40.35173,
+            "lon": 18.27766
           },
           {
-            "lat": 4034164,
-            "lon": 1817856
+            "lat": 40.34164,
+            "lon": 18.17856
           },
           {
-            "lat": 4035411,
-            "lon": 1817316
+            "lat": 40.35411,
+            "lon": 18.17316
           },
           {
-            "lat": 4034826,
-            "lon": 1816094
+            "lat": 40.34826,
+            "lon": 18.16094
           },
           {
-            "lat": 4034824,
-            "lon": 1818298
+            "lat": 40.34824,
+            "lon": 18.18298
           },
           {
-            "lat": 4036333,
-            "lon": 1819102
+            "lat": 40.36333,
+            "lon": 18.19102
           },
           {
-            "lat": 4036586,
-            "lon": 1820004
+            "lat": 40.36586,
+            "lon": 18.20004
           },
           {
-            "lat": 4035938,
-            "lon": 1816199
+            "lat": 40.35938,
+            "lon": 18.16199
           },
           {
-            "lat": 4034629,
-            "lon": 181898
+            "lat": 40.34629,
+            "lon": 18.1898
           },
           {
-            "lat": 4034827,
-            "lon": 1816092
+            "lat": 40.34827,
+            "lon": 18.16092
           },
           {
-            "lat": 4035972,
-            "lon": 1815946
+            "lat": 40.35972,
+            "lon": 18.15946
           },
           {
-            "lat": 4034392,
-            "lon": 1820676
+            "lat": 40.34392,
+            "lon": 18.20676
           },
           {
-            "lat": 4034332,
-            "lon": 1819714
+            "lat": 40.34332,
+            "lon": 18.19714
           },
           {
-            "lat": 4033317,
-            "lon": 181668
+            "lat": 40.33317,
+            "lon": 18.1668
           },
           {
-            "lat": 4035634,
-            "lon": 181864
+            "lat": 40.35634,
+            "lon": 18.1864
           },
           {
-            "lat": 4035683,
-            "lon": 1816487
+            "lat": 40.35683,
+            "lon": 18.16487
           },
           {
-            "lat": 4032693,
-            "lon": 1815345
+            "lat": 40.32693,
+            "lon": 18.15345
           },
           {
-            "lat": 4033991,
-            "lon": 1817685
+            "lat": 40.33991,
+            "lon": 18.17685
           },
           {
-            "lat": 4035404,
-            "lon": 1818202
+            "lat": 40.35404,
+            "lon": 18.18202
           },
           {
-            "lat": 4033578,
-            "lon": 1819208
+            "lat": 40.33578,
+            "lon": 18.19208
           },
           {
-            "lat": 4036081,
-            "lon": 1817026
+            "lat": 40.36081,
+            "lon": 18.17026
           },
           {
-            "lat": 4035101,
-            "lon": 1817446
+            "lat": 40.35101,
+            "lon": 18.17446
           },
           {
-            "lat": 4035641,
-            "lon": 1818352
+            "lat": 40.35641,
+            "lon": 18.18352
           },
           {
-            "lat": 4034257,
-            "lon": 1814072
+            "lat": 40.34257,
+            "lon": 18.14072
           },
           {
-            "lat": 4037161,
-            "lon": 1817755
+            "lat": 40.37161,
+            "lon": 18.17755
           },
           {
-            "lat": 4032534,
-            "lon": 1819086
+            "lat": 40.32534,
+            "lon": 18.19086
           },
           {
-            "lat": 4033698,
-            "lon": 1818993
+            "lat": 40.33698,
+            "lon": 18.18993
           },
           {
-            "lat": 4036887,
-            "lon": 1822744
+            "lat": 40.36887,
+            "lon": 18.22744
           },
           {
-            "lat": 403562,
-            "lon": 1817806
+            "lat": 40.3562,
+            "lon": 18.17806
           },
           {
-            "lat": 4036446,
-            "lon": 1814642
+            "lat": 40.36446,
+            "lon": 18.14642
           },
           {
-            "lat": 4035224,
-            "lon": 1817293
+            "lat": 40.35224,
+            "lon": 18.17293
           },
           {
-            "lat": 4036353,
-            "lon": 1820828
+            "lat": 40.36353,
+            "lon": 18.20828
           },
           {
-            "lat": 403491,
-            "lon": 1818179
+            "lat": 40.3491,
+            "lon": 18.18179
           },
           {
-            "lat": 4034955,
-            "lon": 1818562
+            "lat": 40.34955,
+            "lon": 18.18562
           },
           {
-            "lat": 4036293,
-            "lon": 18086
+            "lat": 40.36293,
+            "lon": 18.086
           },
           {
-            "lat": 4034904,
-            "lon": 1816628
+            "lat": 40.34904,
+            "lon": 18.16628
           },
           {
-            "lat": 4035666,
-            "lon": 1818064
+            "lat": 40.35666,
+            "lon": 18.18064
           },
           {
-            "lat": 4035403,
-            "lon": 1818369
+            "lat": 40.35403,
+            "lon": 18.18369
           },
           {
-            "lat": 403599,
-            "lon": 181856
+            "lat": 40.3599,
+            "lon": 18.1856
           },
           {
-            "lat": 403755,
-            "lon": 1818077
+            "lat": 40.3755,
+            "lon": 18.18077
           },
           {
-            "lat": 4035062,
-            "lon": 1816352
+            "lat": 40.35062,
+            "lon": 18.16352
           },
           {
-            "lat": 4035968,
-            "lon": 1817215
+            "lat": 40.35968,
+            "lon": 18.17215
           },
           {
-            "lat": 4034624,
-            "lon": 1818998
+            "lat": 40.34624,
+            "lon": 18.18998
           },
           {
-            "lat": 4033285,
-            "lon": 1813255
+            "lat": 40.33285,
+            "lon": 18.13255
           },
           {
-            "lat": 4035458,
-            "lon": 1817961
+            "lat": 40.35458,
+            "lon": 18.17961
           },
           {
-            "lat": 403608,
-            "lon": 1817029
+            "lat": 40.3608,
+            "lon": 18.17029
           },
           {
-            "lat": 4034128,
-            "lon": 1817751
+            "lat": 40.34128,
+            "lon": 18.17751
           },
           {
-            "lat": 4035886,
-            "lon": 1816685
+            "lat": 40.35886,
+            "lon": 18.16685
           },
           {
-            "lat": 4034128,
-            "lon": 1817755
+            "lat": 40.34128,
+            "lon": 18.17755
           },
           {
-            "lat": 403624,
-            "lon": 1817634
+            "lat": 40.3624,
+            "lon": 18.17634
           },
           {
-            "lat": 4035592,
-            "lon": 1819569
+            "lat": 40.35592,
+            "lon": 18.19569
           }
         ],
         "vittime_vulnerabili": null
@@ -4590,7 +2914,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-04T21:43:56.188Z",
+      "fetched_at": "2026-05-05T05:51:54.174Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -4705,7 +3029,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-04T21:43:56.189Z",
+      "fetched_at": "2026-05-05T05:51:54.175Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {

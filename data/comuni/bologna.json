@@ -54,7 +54,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      "fetched_at": "2026-05-04T21:42:56.738Z",
+      "fetched_at": "2026-05-05T05:49:34.930Z",
       "status": "ok",
       "modified": "2024-12-31T09:12:53+00:00",
       "freshness": {
@@ -281,7 +281,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "bilancio-di-previsione-previsione-uscite",
-      "fetched_at": "2026-05-04T21:43:09.516Z",
+      "fetched_at": "2026-05-05T05:49:47.176Z",
       "status": "ok",
       "modified": "2025-12-31T12:00:00+00:00",
       "freshness": {
@@ -442,7 +442,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "lavori-in-corso-in-citta",
-      "fetched_at": "2026-05-04T21:43:11.156Z",
+      "fetched_at": "2026-05-05T05:49:51.904Z",
       "status": "ok",
       "modified": "2026-03-21T06:00:03.144000+00:00",
       "freshness": {
@@ -744,7 +744,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "cila-comunicazioni-inizio-lavori",
-      "fetched_at": "2026-05-04T21:43:12.706Z",
+      "fetched_at": "2026-05-05T05:49:52.911Z",
       "status": "ok",
       "modified": "2025-12-31T09:03:43+00:00",
       "freshness": {
@@ -979,7 +979,7 @@
           },
           {
             "anno": 2019,
-            "valore": 3723
+            "valore": 3722
           },
           {
             "anno": 2020,
@@ -987,15 +987,15 @@
           },
           {
             "anno": 2021,
-            "valore": 4306
+            "valore": 4305
           },
           {
             "anno": 2022,
-            "valore": 5176
+            "valore": 5179
           },
           {
             "anno": 2023,
-            "valore": 3867
+            "valore": 3866
           },
           {
             "anno": 2024,
@@ -1015,7 +1015,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "welfare-interventi",
-      "fetched_at": "2026-05-04T21:43:19.871Z",
+      "fetched_at": "2026-05-05T05:50:50.487Z",
       "status": "fetch_error",
       "modified": "2025-05-08T12:47:30.798000+00:00",
       "freshness": {
@@ -1050,7 +1050,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      "fetched_at": "2026-05-04T21:43:36.392Z",
+      "fetched_at": "2026-05-05T05:51:00.138Z",
       "status": "ok",
       "modified": "2025-09-24T14:54:00+00:00",
       "freshness": {
@@ -1296,7 +1296,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "incidenti-stradali2",
-      "fetched_at": "2026-05-04T21:43:38.149Z",
+      "fetched_at": "2026-05-05T05:51:06.015Z",
       "status": "ok",
       "modified": "2024-12-31T11:04:38+00:00",
       "freshness": {
@@ -2139,7 +2139,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "indicatori-raccolta-differenziata",
-      "fetched_at": "2026-05-04T21:43:40.032Z",
+      "fetched_at": "2026-05-05T05:51:08.970Z",
       "status": "ok",
       "modified": "2025-04-07T08:28:00+00:00",
       "freshness": {
@@ -2311,7 +2311,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-bologna-agenda-cultura",
-      "fetched_at": "2026-05-04T21:43:41.008Z",
+      "fetched_at": "2026-05-05T05:51:09.983Z",
       "status": "ok",
       "modified": "2026-03-21T02:15:09.258000+00:00",
       "freshness": {
