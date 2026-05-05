@@ -97,145 +97,171 @@ Schemi formali in [`schemas/csv/`](../schemas/csv/). Riepilogo allineato agli sc
 
 ### 1. `popolazione.csv`
 
-**Required**: `anno` (1900-2050), `residenti` (intero ≥0)
-**Optional**: `quartiere` (stringa)
+**Required**: `anno` (1900-2050), `totale_residenti` (intero ≥0)
+**Optional**: `localita` (stringa, quartiere o zona)
 
 ```csv
-anno,residenti,quartiere
+anno,totale_residenti,localita
 2024,55421,Navile
 2024,42183,Borgo Panigale
 2024,389127,
 ```
 
+> v2.0: `residenti`→`totale_residenti` (semantica unica → fallback LLM nel tool RDF), `quartiere`→`localita` (clv:hasSpatialCoverage).
+
 ### 2. `bilancio.csv`
 
-**Required**: `anno`, `missione` (stringa, es. "Servizi istituzionali"), `importo_euro` (numero ≥0)
-**Optional**: `programma` (stringa), `tipo` (`previsione` | `impegno` | `pagamento` | `consuntivo`)
+**Required**: `anno`, `settore_interv_inv` (stringa, es. "Spese correnti"), `totale_uscite` (numero ≥0)
+**Optional**: `sottosettore_interv_inv` (stringa, dettaglio macro-aggregato es. "Acquisto di beni e servizi"), `tipo` (`previsione` | `impegno` | `pagamento` | `consuntivo`)
 
 ```csv
-anno,missione,programma,importo_euro,tipo
-2024,"Servizi istituzionali","Organi istituzionali",1250000.50,impegno
-2024,"Istruzione e diritto allo studio","Istruzione prescolastica",3450000.00,pagamento
+anno,settore_interv_inv,sottosettore_interv_inv,totale_uscite,tipo
+2025,"Spese correnti","Acquisto di beni e servizi",31479240.42,pagamento
+2025,"Spese in conto capitale","Investimenti fissi lordi e acquisto terreni",18164888.76,pagamento
 ```
+
+> **Fallback BDAP**: se il Comune non pubblica, ricostruire da SIOPE Spese annuale via API CKAN BDAP-RGS — vedi [PANIERE.md § Comuni che non pubblicano](PANIERE.md#comuni-che-non-pubblicano-il-fallback-nazionale).
 
 ### 3. `opere_pubbliche.csv`
 
 **Required**: `nome` (stringa)
-**Optional**: `anno`, `stato` (stringa libera, tipicamente "Programmata"/"In corso"/"Conclusa"), `importo_euro`, `cup` (15 caratteri standard CIPESS), `fonte_finanziamento`, `lat`, `lon`, `tipo`, `rup`
+**Optional**: `anno`, `codice_stato_cup` (stringa, es. "ATTIVO"/"CHIUSO"/"In corso"/"Conclusa"), `costo_lavori_previsto` (numero), `cup` (15 caratteri standard CIPESS), `fonte_finanziamento`, `lat`, `lon`, `tipo` (Natura Intervento), `nome_completo` (RUP — persona fisica → `cpv:fullName`)
 
 ```csv
-nome,anno,stato,importo_euro,cup,lat,lon
-"Riqualificazione Piazza Garibaldi",2024,"In corso",2400000.00,B33D24001230002,40.3520,18.1700
+nome,anno,codice_stato_cup,costo_lavori_previsto,cup,fonte_finanziamento,lat,lon,tipo,nome_completo
+"NODO COMPLESSO DEL GALLITELLO",2007,ATTIVO,29884600.00,B31B05000260007,Statale,40.6406,15.8059,"NUOVA REALIZZAZIONE","Mario Rossi"
 ```
+
+> **Fallback BDAP**: il dataset MOP Soggetti titolari per regione contiene tutte queste colonne (incluso CUP, Settore Interv Inv, Costo Lavori Previsto). Filtrare su `Descrizione Titolare="COMUNE DI <nome>"`. Vedi [PANIERE.md § Comuni che non pubblicano](PANIERE.md#comuni-che-non-pubblicano-il-fallback-nazionale).
 
 ### 4. `pratiche_edilizie.csv`
 
 **Required**: `data` (data presentazione, YYYY-MM-DD)
-**Optional**: `tipo` (CILA, SCIA, PdC, ...), `esito` (Approvata, Respinta, ...), `chiusura_data` (vuota = ancora aperta), `via`, `civico`
+**Optional**: `tipo` (CILA, SCIA, PdC, ...), `codice_stato_cup` (Approvata, Respinta, ecc.), `data_scadenza` (vuota = ancora aperta), `via`, `civico`
 
 ```csv
-data,tipo,esito,chiusura_data,via,civico
+data,tipo,codice_stato_cup,data_scadenza,via,civico
 2024-03-15,CILA,Approvata,2024-04-22,Via Roma,42
 2024-04-02,SCIA,,,Via Garibaldi,15
 ```
 
-> Nota: il campo è `chiusura_data` (non `data_chiusura`).
+> v2.0: `esito`→`codice_stato_cup` (riusa la stessa colonna ADMS:status di opere_pubbliche), `chiusura_data`→`data_scadenza` (semantica CPSV).
 
 ### 5. `servizi_sociali.csv`
 
 **Required**: `anno`, `categoria` (es. "Sostegno alla genitorialità", "Anziani non autosufficienti")
-**Optional**: `utenti` (intero), `spesa_euro` (numero), `interventi` (intero, es. n. pratiche evase)
+**Optional**: `numero` (intero, n. utenti serviti), `totale_costo` (numero, spesa €), `interventi` (intero, es. n. pratiche evase)
 
 ```csv
-anno,categoria,utenti,spesa_euro,interventi
+anno,categoria,numero,totale_costo,interventi
 2024,"Anziani non autosufficienti",1240,2850000.00,1240
 2024,"Sostegno alla genitorialità",,,420
 ```
 
+> v2.0: `utenti`→`numero`, `spesa_euro`→`totale_costo`. `interventi` resta (semantica unica → LLM nel tool RDF).
+
 ### 6. `istruzione.csv`
 
-**Required**: `struttura` (denominazione)
-**Optional**: `anno` (anno solare di riferimento), `iscritti` (intero), `tipo_struttura` (Asilo nido / Infanzia / Primaria / Secondaria I / Secondaria II), `lat`, `lon`, `via`
+**Required**: `denominazione` (nome struttura)
+**Optional**: `anno` (anno solare di riferimento), `totale_alunni` (intero), `tipologia` (Asilo nido / Infanzia / Primaria / Secondaria I / Secondaria II), `lat`, `lon`, `via`
 
 ```csv
-struttura,anno,iscritti,tipo_struttura,lat,lon,via
+denominazione,anno,totale_alunni,tipologia,lat,lon,via
 "Scuola dell'Infanzia Aquilone",2024,82,Infanzia,45.4642,9.1900,"Via dei Fiori 12"
 "Asilo Nido Il Cerbiatto",2024,45,Asilo nido,45.4651,9.1885,"Via Verdi 3"
 ```
 
+> v2.0: `struttura`→`denominazione` (rdfs:label@it), `iscritti`→`totale_alunni`, `tipo_struttura`→`tipologia`.
+
 ### 7. `incidenti_stradali.csv`
 
 **Required**: `data` (YYYY-MM-DD)
-**Optional**: `lat`, `lon`, `morti` (intero ≥0), `feriti` (intero ≥0), `zona` (quartiere/via), `ora` (HH:MM, formato 24h)
+**Optional**: `lat`, `lon`, `decessi` (intero ≥0), `feriti` (intero ≥0), `localita` (quartiere/via), `ora` (HH:MM, formato 24h)
 
 ```csv
-data,lat,lon,morti,feriti,zona,ora
+data,lat,lon,decessi,feriti,localita,ora
 2024-01-15,40.3520,18.1700,,2,LECCE,17:30
 2024-02-03,40.3611,18.1853,1,3,LECCE,22:45
 ```
 
+> v2.0: `morti`→`decessi`, `zona`→`localita` (clv:hasSpatialCoverage). `feriti` resta (semantica unica).
+
 ### 8. `rifiuti.csv`
 
-**Required**: `anno`
-**Optional**: `kg_totali`, `kg_differenziata`, `kg_indifferenziata`, `rd_pct` (0-100, percentuale RD), `frazione` (es. "Carta", "Plastica"), `quartiere`
+**Required**: `anno`, `frazione` (categoria osservazione), `valore_assoluto` (numero ≥0)
+**Optional**: `unita_misura` (`kg` / `t` / `%` / `kg/abitante`), `localita` (quartiere), `cer` (codice CER)
+
+Formato **long** (tidy data): una riga per (anno, frazione). Frazioni canoniche: `Totale`, `Differenziata`, `Indifferenziata`, `Differenziata_pct`, e poi merceologiche (`Carta`, `Plastica`, `Vetro`, `Organico`, ...).
 
 ```csv
-anno,kg_totali,kg_differenziata,kg_indifferenziata,rd_pct
-2024,56704380,41512250,15192130,73.21
-2023,55320120,40150780,15169340,72.58
+anno,frazione,valore_assoluto,unita_misura,localita
+2024,Totale,16910000,kg,
+2024,Differenziata_pct,73.2,%,
+2024,Carta,3450000,kg,
+2024,Plastica,1820000,kg,
+2023,Totale,16980000,kg,
+2023,Differenziata_pct,71.5,%,
 ```
+
+> v2.0: ristrutturato da formato wide (`kg_totali`, `rd_pct`, `kg_differenziata`, ecc.) a long. Il calcolatore supporta entrambi via auto-detect dell'header.
 
 ### 9. `eventi_culturali.csv`
 
 **Required**: `nome`
-**Optional**: `data_inizio`, `data_fine`, `categoria` (Mostra, Concerto, Festival, ...), `luogo` (denominazione del luogo), `lat`, `lon`, `organizzatore`
+**Optional**: `datainizio`, `datafine`, `categoria` (Mostra, Concerto, Festival, ...), `luogo` (denominazione del luogo), `lat`, `lon`, `organizzatore`
 
 ```csv
-nome,data_inizio,data_fine,categoria,luogo,lat,lon,organizzatore
+nome,datainizio,datafine,categoria,luogo,lat,lon,organizzatore
 "Notte Bianca della Cultura",2024-09-21,2024-09-21,Festival,"Centro storico",45.4642,9.1900,"Comune"
 "Mostra del Tintoretto",2024-10-15,2025-01-31,Mostra,"Palazzo dei Diamanti",45.4675,9.1895,"Galleria d'Arte"
 ```
 
+> v2.0: `data_inizio`→`datainizio` e `data_fine`→`datafine` (senza underscore, allineato a CPEV ti:startTime/ti:endTime).
+
 ### 10. `delibere.csv`
 
-**Required**: `data` (YYYY-MM-DD)
-**Optional**: `tipo` (Delibera Giunta, Delibera Consiglio, Determina dirigenziale, Ordinanza, Decreto sindacale), `numero` (numero atto), `oggetto`, `settore` (settore/assessorato proponente)
+**Required**: `data_atto` (YYYY-MM-DD)
+**Optional**: `tipo_atto` (Delibera Giunta, Delibera Consiglio, Determina dirigenziale, Ordinanza, Decreto sindacale), `numero_atto` (numero atto), `oggetto`, `uo_proponente` (settore/assessorato proponente)
 
 ```csv
-data,tipo,numero,oggetto,settore
+data_atto,tipo_atto,numero_atto,oggetto,uo_proponente
 2024-03-15,"Delibera Giunta",78,"Approvazione bilancio consuntivo 2023","Ragioneria"
 2024-03-22,"Determina dirigenziale",442,"Affidamento servizio manutenzione verde","Lavori Pubblici"
 ```
 
+> v2.0: `data`→`data_atto`, `tipo`→`tipo_atto`, `numero`→`numero_atto`, `settore`/`ufficio`→`uo_proponente` (allineato a Atti DCAT-AP_IT).
+
 ### 11. `patrimonio.csv`
 
 **Required**: `denominazione`
-**Optional**: `tipo` (Fabbricato, Terreno, Infrastruttura, ...), `indirizzo`, `lat`, `lon`, `valore_euro`, `vincolo_culturale` (boolean: `true`/`false`), `uso` (destinazione d'uso libera)
+**Optional**: `tipo` (Fabbricato, Terreno, Infrastruttura, ...), `indirizzo`, `lat`, `lon`, `rendita` (numero, valore patrimoniale o rendita catastale €), `qualita` (es. "monumentale", "paesaggistico", "nessuno"), `consistenza` (destinazione d'uso, es. "Strumentale"/"Disponibile"/"Storico-artistico")
 
 ```csv
-denominazione,tipo,indirizzo,lat,lon,valore_euro,vincolo_culturale,uso
-"Palazzo Comunale",Fabbricato,"Piazza Garibaldi 1",45.4642,9.1900,12500000.00,true,"Sede istituzionale"
-"Stadio Comunale",Fabbricato,"Via dello Sport 5",45.4651,9.1750,8200000.00,false,"Impianto sportivo"
+denominazione,tipo,indirizzo,lat,lon,rendita,qualita,consistenza
+"Palazzo Comunale",Fabbricato,"Piazza Garibaldi 1",45.4642,9.1900,12500000.00,monumentale,"Sede istituzionale"
+"Stadio Comunale",Fabbricato,"Via dello Sport 5",45.4651,9.1750,8200000.00,nessuno,"Impianto sportivo"
 ```
 
-### 12. `tributi.csv` ⭐ NUOVO
+> v2.0: `valore_euro`→`rendita`, `vincolo_culturale` (boolean)→`qualita` (string libera con tipo vincolo), `uso`→`consistenza`.
 
-**Required**: `anno`, `tributo`
-**Optional**: `gettito_euro` (riscosso effettivo, NON quello previsto a bilancio), `n_contribuenti` (intero), `aliquota_base` (numero), `descrizione` (testo libero), `categoria` (sotto-categoria, es. "Utenze domestiche" per TARI)
+### 12. `tributi.csv`
 
-**Tipi `tributo` standardizzati** (categoria libera permessa per tributi minori):
+**Required**: `anno`, `tipo_atto` (es. IMU, TARI, ecc.)
+**Optional**: `totale_entrate` (riscosso effettivo, NON quello previsto a bilancio), `numero` (intero, n. contribuenti/utenze), `valore` (numero, aliquota o tariffa), `unita_misura` (`%` / `permille` / `€/notte`), `descrizione` (testo libero), `categoria` (sotto-categoria, es. "Utenze domestiche" per TARI)
+
+**Tipi `tipo_atto` standardizzati** (categoria libera permessa per tributi minori):
 `IMU`, `TARI`, `TASSA_SOGGIORNO`, `ADDIZIONALE_IRPEF`, `COSAP`, `IMPOSTA_PUBBLICITA`, `CANONE_UNICO`
 
 ```csv
-anno,tributo,gettito_euro,n_contribuenti,aliquota_base,descrizione,categoria
-2024,IMU,15800000.00,32500,1.06,"Aliquota ordinaria 10.6 per mille",
-2024,TARI,12300000.00,38000,,,Utenze domestiche
-2024,TARI,6200000.00,4000,,,Utenze non domestiche
-2024,TASSA_SOGGIORNO,1250000.00,,2.50,"€2.50/notte categoria 4 stelle",
-2024,ADDIZIONALE_IRPEF,8900000.00,,0.80,"Aliquota 0.80%",
+anno,tipo_atto,totale_entrate,numero,valore,unita_misura,descrizione,categoria
+2024,IMU,15800000.00,32500,1.06,permille,"Aliquota ordinaria 10.6 per mille",
+2024,TARI,12300000.00,38000,,,,"Utenze domestiche"
+2024,TARI,6200000.00,4000,,,,"Utenze non domestiche"
+2024,TASSA_SOGGIORNO,1250000.00,,2.50,€/notte,"€2.50/notte categoria 4 stelle",
+2024,ADDIZIONALE_IRPEF,8900000.00,,0.80,%,"Aliquota 0.80%",
 ```
 
-> **Nota**: per TARI è frequente avere più righe per stesso anno con `categoria` diversa (domestiche/non domestiche, scaglioni). L'`aliquota_base` segue la convenzione del Portale del Federalismo Fiscale MEF: IMU in `‰`, addizionale IRPEF in `%`, tassa di soggiorno in €/notte.
+> v2.0: `tributo`→`tipo_atto`, `gettito_euro`→`totale_entrate`, `n_contribuenti`→`numero`, `aliquota_base`→`valore` (con `unita_misura` esplicita).
 
 ## Validazione
 
@@ -298,12 +324,16 @@ R: Sì, viene comunque accettato. La dashboard mostra un flag freshness: `🟢 r
 
 ## Versionamento
 
-Versione corrente: **csv-v1**.
+Versione corrente: **csv-v2** (rilasciata 2026-05-05).
 
-Eventuali modifiche allo schema saranno versionate (`csv-v2`, `csv-v3`, ...) con periodo di deprecazione e fallback. Il manifest dichiara `paniere_version: "csv-v1"` per tracciare la compatibilità.
+Lo schema viene versionato (`csv-v1`, `csv-v2`, …) con periodo di deprecazione e retrocompatibilità. Il manifest dichiara `paniere_version` per tracciare la compatibilità.
 
 ### Storia
 
-- **csv-v1** (corrente, 2026-05): 12 dataset CORE (popolazione, bilancio, opere_pubbliche, pratiche_edilizie, servizi_sociali, istruzione, incidenti_stradali, rifiuti, eventi_culturali, delibere, patrimonio, tributi)
+- **csv-v2** (corrente, 2026-05-05): rinomina nomi colonne per allineamento al tool [CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) (variabile `DET_COL_RULES`). Coverage 73/78 colonne = **93% deterministico** (5 colonne residue → fallback LLM del tool).
+  - Cambi principali: `missione`→`settore_interv_inv`, `importo_euro`→`totale_uscite`/`costo_lavori_previsto`, `stato`→`codice_stato_cup`, `rup`→`nome_completo` (cpv:fullName, persona fisica), `valore_euro`→`rendita`, `tributo`→`tipo_atto`, `gettito_euro`→`totale_entrate`, ecc.
+  - `rifiuti.csv` ristrutturato da formato wide a long: `(anno, frazione, valore_assoluto, unita_misura, localita)`.
+  - Retrocompat trasparente via `withAliases()` in `scripts/calculators_v2.js`: i CSV con nomi v1 continuano a funzionare.
+- **csv-v1** (2026-05-04): 12 dataset CORE iniziali.
   - 2026-05-05: aggiunto **dataset 12 — `tributi`** (gettito IMU/TARI/tassa soggiorno/addizionale IRPEF/COSAP per anno)
   - 2026-05-04: schema iniziale 11 dataset
