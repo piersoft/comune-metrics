@@ -1,0 +1,581 @@
+{
+  "key": "demo",
+  "nome": "Comune DEMO",
+  "ipa": "c_demo01",
+  "istat": "999001",
+  "popolazione_attesa": 36620,
+  "mandato": "2024-2029",
+  "sindaco": "Mario Rossi",
+  "mappa_center": [
+    45.4642,
+    9.19
+  ],
+  "mappa_zoom": 14,
+  "mode": "manifest",
+  "snapshot_date": null,
+  "snapshot_reason": null,
+  "paniere_version": "csv-v1",
+  "datasets": {
+    "popolazione": {
+      "dataset_key": "popolazione",
+      "fetched_at": "2026-05-05T06:44:13.996Z",
+      "status": "ok",
+      "modified": "2024-12-31",
+      "freshness": {
+        "level": "aged",
+        "months": 17,
+        "iso": "2024-12-31"
+      },
+      "n_rows": 45,
+      "metrics": {
+        "totale_residenti": 36620,
+        "serie_anni": [
+          {
+            "anno": 2010,
+            "valore": 37200
+          },
+          {
+            "anno": 2011,
+            "valore": 37185
+          },
+          {
+            "anno": 2012,
+            "valore": 37165
+          },
+          {
+            "anno": 2013,
+            "valore": 37115
+          },
+          {
+            "anno": 2014,
+            "valore": 37060
+          },
+          {
+            "anno": 2015,
+            "valore": 37045
+          },
+          {
+            "anno": 2016,
+            "valore": 36980
+          },
+          {
+            "anno": 2017,
+            "valore": 36940
+          },
+          {
+            "anno": 2018,
+            "valore": 36905
+          },
+          {
+            "anno": 2019,
+            "valore": 36850
+          },
+          {
+            "anno": 2020,
+            "valore": 36800
+          },
+          {
+            "anno": 2021,
+            "valore": 36750
+          },
+          {
+            "anno": 2022,
+            "valore": 36700
+          },
+          {
+            "anno": 2023,
+            "valore": 36650
+          },
+          {
+            "anno": 2024,
+            "valore": 36620
+          }
+        ],
+        "per_quartiere": [
+          {
+            "nome": "Periferia Nord",
+            "valore": 249875
+          },
+          {
+            "nome": "Centro",
+            "valore": 174310
+          },
+          {
+            "nome": "Periferia Sud",
+            "valore": 129780
+          }
+        ]
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "error": null,
+      "fields_present": [
+        "anno",
+        "residenti",
+        "quartiere"
+      ]
+    },
+    "bilancio": {
+      "dataset_key": "bilancio",
+      "fetched_at": "2026-05-05T06:44:13.998Z",
+      "status": "ok",
+      "modified": "2024-12-31",
+      "freshness": {
+        "level": "aged",
+        "months": 17,
+        "iso": "2024-12-31"
+      },
+      "n_rows": 23,
+      "metrics": {
+        "totale_uscite": 37870000,
+        "per_missione": [
+          {
+            "nome": "Servizi istituzionali, generali e di gestione",
+            "valore": 6430000
+          },
+          {
+            "nome": "Anticipazioni finanziarie",
+            "valore": 5800000
+          },
+          {
+            "nome": "Diritti sociali, politiche sociali e famiglia",
+            "valore": 4520000
+          },
+          {
+            "nome": "Istruzione e diritto allo studio",
+            "valore": 3420000
+          },
+          {
+            "nome": "Sviluppo sostenibile e tutela del territorio e dell'ambiente",
+            "valore": 2980000
+          },
+          {
+            "nome": "Debito pubblico",
+            "valore": 2400000
+          },
+          {
+            "nome": "Trasporti e diritto alla mobilità",
+            "valore": 2150000
+          },
+          {
+            "nome": "Assetto del territorio ed edilizia abitativa",
+            "valore": 1840000
+          },
+          {
+            "nome": "Servizi per conto terzi",
+            "valore": 1450000
+          },
+          {
+            "nome": "Tutela e valorizzazione dei beni e attività culturali",
+            "valore": 1180000
+          },
+          {
+            "nome": "Ordine pubblico e sicurezza",
+            "valore": 890000
+          },
+          {
+            "nome": "Fondi e accantonamenti",
+            "valore": 890000
+          },
+          {
+            "nome": "Politiche giovanili, sport e tempo libero",
+            "valore": 760000
+          },
+          {
+            "nome": "Sviluppo economico e competitività",
+            "valore": 680000
+          },
+          {
+            "nome": "Tutela della salute",
+            "valore": 520000
+          },
+          {
+            "nome": "Turismo",
+            "valore": 420000
+          },
+          {
+            "nome": "Giustizia",
+            "valore": 380000
+          },
+          {
+            "nome": "Soccorso civile",
+            "valore": 340000
+          },
+          {
+            "nome": "Politiche per il lavoro e la formazione professionale",
+            "valore": 290000
+          },
+          {
+            "nome": "Energia e diversificazione delle fonti energetiche",
+            "valore": 240000
+          }
+        ],
+        "top10_programmi": [
+          {
+            "nome": "Interventi per le famiglie",
+            "valore": 4520000
+          },
+          {
+            "nome": "Organi istituzionali",
+            "valore": 4280000
+          },
+          {
+            "nome": "Istruzione prescolastica",
+            "valore": 3420000
+          },
+          {
+            "nome": "Rifiuti",
+            "valore": 2980000
+          },
+          {
+            "nome": "Segreteria generale",
+            "valore": 2150000
+          },
+          {
+            "nome": "Polizia locale",
+            "valore": 890000
+          }
+        ]
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "error": null,
+      "fields_present": [
+        "anno",
+        "missione",
+        "importo_euro",
+        "programma"
+      ]
+    },
+    "opere_pubbliche": {
+      "dataset_key": "opere_pubbliche",
+      "fetched_at": "2026-05-05T06:44:13.999Z",
+      "status": "ok",
+      "modified": "2025-04-15",
+      "freshness": {
+        "level": "aged",
+        "months": 13,
+        "iso": "2025-04-15"
+      },
+      "n_rows": 12,
+      "metrics": {
+        "totale": 12,
+        "per_stato": [
+          {
+            "nome": "in corso",
+            "n": 5
+          },
+          {
+            "nome": "completato",
+            "n": 4
+          },
+          {
+            "nome": "pianificato",
+            "n": 3
+          }
+        ],
+        "per_fonte": [
+          {
+            "nome": "Comunale",
+            "n": 5
+          },
+          {
+            "nome": "PNRR",
+            "n": 3
+          },
+          {
+            "nome": "Regione",
+            "n": 2
+          },
+          {
+            "nome": "Statale",
+            "n": 1
+          },
+          {
+            "nome": "Conto Termico",
+            "n": 1
+          }
+        ],
+        "cup_count": 10,
+        "importo_totale": 4153000,
+        "opere_geo": [
+          {
+            "lat": 45.4642,
+            "lon": 9.19,
+            "nome": "Riqualificazione Piazza Centrale"
+          },
+          {
+            "lat": 45.4655,
+            "lon": 9.1905,
+            "nome": "Nuova pista ciclabile via Roma"
+          },
+          {
+            "lat": 45.463,
+            "lon": 9.188,
+            "nome": "Ampliamento scuola primaria centro"
+          },
+          {
+            "lat": 45.464,
+            "lon": 9.1895,
+            "nome": "Restauro fontana storica"
+          },
+          {
+            "lat": 45.467,
+            "lon": 9.192,
+            "nome": "Asfaltatura via XX Settembre"
+          },
+          {
+            "lat": 45.4625,
+            "lon": 9.1885,
+            "nome": "Nuovo parcheggio scolastico"
+          },
+          {
+            "lat": 45.4685,
+            "lon": 9.1925,
+            "nome": "Efficientamento energetico palazzetto"
+          },
+          {
+            "lat": 45.466,
+            "lon": 9.185,
+            "nome": "Riqualificazione parco urbano"
+          },
+          {
+            "lat": 45.4595,
+            "lon": 9.1855,
+            "nome": "Manutenzione marciapiedi quartiere Sud"
+          },
+          {
+            "lat": 45.471,
+            "lon": 9.181,
+            "nome": "Nuovi loculi cimitero comunale"
+          },
+          {
+            "lat": 45.472,
+            "lon": 9.195,
+            "nome": "Nuova rotatoria SS Provinciale"
+          }
+        ]
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "error": null,
+      "fields_present": [
+        "nome",
+        "anno",
+        "stato",
+        "importo_euro",
+        "cup",
+        "lat",
+        "lon",
+        "fonte_finanziamento",
+        "tipo"
+      ]
+    },
+    "rifiuti": {
+      "dataset_key": "rifiuti",
+      "fetched_at": "2026-05-05T06:44:14.001Z",
+      "status": "ok",
+      "modified": "2024-12-31",
+      "freshness": {
+        "level": "aged",
+        "months": 17,
+        "iso": "2024-12-31"
+      },
+      "n_rows": 15,
+      "metrics": {
+        "rd_pct_ultimo_anno": {
+          "anno": 2024,
+          "valore": 73.2
+        },
+        "trend_pct": 125.2,
+        "serie_anni": [
+          {
+            "anno": 2010,
+            "valore": 32.5
+          },
+          {
+            "anno": 2011,
+            "valore": 38.1
+          },
+          {
+            "anno": 2012,
+            "valore": 42.8
+          },
+          {
+            "anno": 2013,
+            "valore": 46.2
+          },
+          {
+            "anno": 2014,
+            "valore": 49.5
+          },
+          {
+            "anno": 2015,
+            "valore": 52.3
+          },
+          {
+            "anno": 2016,
+            "valore": 55.8
+          },
+          {
+            "anno": 2017,
+            "valore": 58.4
+          },
+          {
+            "anno": 2018,
+            "valore": 61.2
+          },
+          {
+            "anno": 2019,
+            "valore": 63.5
+          },
+          {
+            "anno": 2020,
+            "valore": 65.1
+          },
+          {
+            "anno": 2021,
+            "valore": 67.4
+          },
+          {
+            "anno": 2022,
+            "valore": 69.8
+          },
+          {
+            "anno": 2023,
+            "valore": 71.5
+          },
+          {
+            "anno": 2024,
+            "valore": 73.2
+          }
+        ],
+        "per_frazione": []
+      },
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "fixture",
+      "error": null,
+      "fields_present": [
+        "anno",
+        "rd_pct",
+        "kg_totali"
+      ]
+    },
+    "pratiche_edilizie": {
+      "dataset_key": "pratiche_edilizie",
+      "fetched_at": "2026-05-05T06:44:14.002Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "error": "Non ancora esposto in formato OD aperto"
+    },
+    "servizi_sociali": {
+      "dataset_key": "servizi_sociali",
+      "fetched_at": "2026-05-05T06:44:14.002Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "error": "In fase di pubblicazione"
+    },
+    "istruzione": {
+      "dataset_key": "istruzione",
+      "fetched_at": "2026-05-05T06:44:14.002Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "error": null
+    },
+    "incidenti_stradali": {
+      "dataset_key": "incidenti_stradali",
+      "fetched_at": "2026-05-05T06:44:14.002Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "error": "Solo report annuale PDF, non in CSV strutturato"
+    },
+    "eventi_culturali": {
+      "dataset_key": "eventi_culturali",
+      "fetched_at": "2026-05-05T06:44:14.002Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "error": null
+    },
+    "delibere": {
+      "dataset_key": "delibere",
+      "fetched_at": "2026-05-05T06:44:14.002Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "error": "Pubblicate solo come PDF in albo pretorio"
+    },
+    "patrimonio": {
+      "dataset_key": "patrimonio",
+      "fetched_at": "2026-05-05T06:44:14.002Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "error": null
+    }
+  }
+}
