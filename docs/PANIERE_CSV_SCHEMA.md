@@ -4,7 +4,7 @@
 
 ## Cosa è cambiato in v2.0
 
-Dal 5 maggio 2026 alcuni nomi di colonna del paniere sono stati allineati al **vocabolario standard** usato per la conversione automatica dei CSV in formato Linked Open Data (DCAT-AP_IT, OntoPiA). Risultato: chi pubblica seguendo questa specifica ottiene una traduzione RDF corretta senza intervento manuale.
+Dal 5 maggio 2026 alcuni nomi di colonna del paniere sono stati allineati al **vocabolario standard** usato per la conversione automatica dei CSV in formato Linked Open Data, secondo le ontologie e i vocabolari controllati pubblicati su [schema.gov.it](https://schema.gov.it/) (Catalogo Nazionale Dati). Risultato: chi pubblica seguendo questa specifica ottiene una traduzione RDF corretta senza intervento manuale.
 
 **Cosa significa in pratica per chi pubblica**:
 
