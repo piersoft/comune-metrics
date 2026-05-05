@@ -132,6 +132,33 @@
     font-size: 14px;
   }
   .ideale-callout strong { color: #2E7D32; font-size: 15px; }
+  .inadempiente-banner {
+    background: linear-gradient(135deg, #FFEBEE 0%, #FFE5E0 100%);
+    border-left: 4px solid #C62828;
+    padding: 16px 20px; margin-bottom: 20px; border-radius: 6px;
+    font-size: 14px;
+  }
+  .inadempiente-banner strong:first-child { color: #C62828; font-size: 15px; }
+  .inadempiente-banner code {
+    background: rgba(198,40,40,0.08);
+    padding: 1px 5px; border-radius: 3px;
+    font-size: 12px; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .inadempiente-banner a { color: #C62828; text-decoration: underline; }
+  .source-badge {
+    display: inline-block;
+    background: #FFF3E0;
+    border: 1px solid #FFB74D;
+    color: #E65100;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .source-badge a { color: #E65100; text-decoration: none; }
+  .source-badge a:hover { text-decoration: underline; }
   .dataset-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
     gap: 20px; margin-bottom: 28px;
@@ -300,7 +327,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.28</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.29</span>
     </div>
   </div>
 </header>
@@ -782,6 +809,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
     <div class="dataset-card">
       <div class="card-header">
         <span class="card-title"><span class="icon">${lbl.icona}</span>${lbl.titolo}</span>
+        ${ds.source_origin ? `<span class="source-badge" title="${escapeHtml(ds.source_note || '')}">🔍 Fonte: ${ds.source_url ? `<a href="${escapeHtml(ds.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(ds.source_origin)}</a>` : escapeHtml(ds.source_origin)}</span>` : ''}
         <span class="status-icon status-${st}" title="${statusText(st)}">${statusIcon(st)}</span>
       </div>
       <div class="card-body">${body}</div>
@@ -831,9 +859,31 @@ function renderComuneInfo(c) {
       </div>`;
   }
 
+  // Banner per il Comune INADEMPIENTE (mode=reconstructed_from_national):
+  // tono divulgativo che spiega perché alcuni Comuni non pubblicano OpenData
+  // e come ComuneMetrics riesce comunque a mostrarne un quadro parziale
+  // attingendo a fonti nazionali pubbliche.
+  let inadempienteBanner = '';
+  if (c.mode === 'reconstructed_from_national') {
+    const dataSnap = c.snapshot_date ? fmtDate(c.snapshot_date) : '';
+    inadempienteBanner = `
+      <div class="inadempiente-banner">
+        <strong>🚨 Comune INADEMPIENTE: ${c.nome} non pubblica OpenData</strong>
+        <span style="display:block;font-size:13px;line-height:1.6;margin-top:8px;color:var(--ink);">
+          Il <strong>Comune di ${c.nome}</strong> non risulta tra i publisher attivi su <a href="https://www.dati.gov.it/" target="_blank" rel="noopener noreferrer">dati.gov.it</a>: zero dataset registrati come <code>holder_name="${c.nome}"</code>. Non c'è quindi alcun OpenData pubblicato direttamente dal Comune.
+          <br><br>
+          Per non lasciare un buco nella dashboard, ComuneMetrics ha <strong>ricostruito quanto possibile da fonti nazionali pubbliche</strong>: ISTAT, MIM, ISPRA, ArCo (MiC) e MEF Federalismo Fiscale. Ogni dataset visualizzato qui sotto riporta in alto il <strong>badge della fonte originale con link diretto</strong> per la verifica.
+          <br><br>
+          La copertura raggiunta è ${c.n_datasets_pubblicati}/12 dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i 6 dataset mancanti (bilancio, opere pubbliche, pratiche edilizie, servizi sociali, incidenti, delibere) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico.
+          ${dataSnap ? `<br><br><em>Fotografia statica scattata il ${dataSnap}.</em>` : ''}
+        </span>
+      </div>`;
+  }
+
   return `
     ${snapshotBanner}
     ${idealeCallout}
+    ${inadempienteBanner}
     <div class="comune-info">
       <h2>${c.nome}</h2>
       <div class="meta">
@@ -985,7 +1035,7 @@ function renderComuneSelector(d) {
   for (const [key, c] of Object.entries(d.comuni)) {
     const cls = key === STATE.current ? 'active' : '';
     const okText = `${c.n_datasets_pubblicati || 0}/12`;
-    const modeTag = c.mode === 'static_snapshot' ? ' · snapshot' : '';
+    const modeTag = c.mode === 'static_snapshot' ? ' · snapshot' : (c.mode === 'reconstructed_from_national' ? ' · ricostruito' : '');
     html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su 12 del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
   }
   sel.innerHTML = html;

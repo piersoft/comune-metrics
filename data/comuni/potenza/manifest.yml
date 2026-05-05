@@ -1,0 +1,142 @@
+# =============================================================================
+# Comune di POTENZA — Comune INADEMPIENTE
+# =============================================================================
+# Il Comune di Potenza non pubblica OpenData: nessun dataset registrato come
+# holder_name="Comune di Potenza" su dati.gov.it. Per questo motivo i dataset
+# di questa cartella sono STATI RICOSTRUITI da fonti nazionali pubbliche
+# autorevoli, ognuna citata nel campo `source_note` con relativo URL.
+#
+# COPERTURA: 6/12 dataset CORE — è il massimo onestamente ricostruibile da
+# fonti nazionali per un Comune che non pubblica i propri OpenData.
+#
+# I dati sono fotografati nel maggio 2026 e NON vengono aggiornati
+# automaticamente. Per aggiornare la fotografia ri-eseguire le query e
+# sostituire i CSV in questa cartella.
+# =============================================================================
+
+nome: "Comune di Potenza"
+ipa: "c_g942"
+istat: "076063"
+mode: "reconstructed_from_national"
+snapshot_date: "2026-05-05"
+sindaco: "Vincenzo Telesca"
+mandato: "2024-2029"
+popolazione_attesa: 63864
+mappa_center: [40.6406, 15.8059]
+paniere_version: "csv-v1"
+
+datasets:
+
+  # ============================================================
+  # 1. POPOLAZIONE — fonte: ISTAT
+  # ============================================================
+  popolazione:
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/popolazione.csv
+    source_origin: "ISTAT"
+    source_note: "ISTAT — popolazione residente comunale al 31 dicembre, serie storica 2014-2024"
+    source_url: "https://www.tuttitalia.it/basilicata/71-potenza/statistiche/popolazione-andamento-demografico/"
+
+  # ============================================================
+  # 2. BILANCIO — non disponibile da fonte nazionale accessibile
+  # ============================================================
+  bilancio:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "BDAP MEF è la fonte nazionale del bilancio armonizzato dei Comuni ma non espone API pubbliche; openbilanci.it (Fondazione Openpolis, dati RGS) si è fermato ai consuntivi 2021"
+
+  # ============================================================
+  # 3. OPERE PUBBLICHE — non recuperabile in modo affidabile
+  # ============================================================
+  opere_pubbliche:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "OpenCUP non espone API pubbliche documentate; OpenCoesione applica geo-fencing che blocca i runner GitHub Actions"
+
+  # ============================================================
+  # 4. PRATICHE EDILIZIE — non disponibile a livello nazionale
+  # ============================================================
+  pratiche_edilizie:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "Non esiste una fonte nazionale aperta dei permessi di costruire / SCIA / CILA a livello comunale"
+
+  # ============================================================
+  # 5. SERVIZI SOCIALI — non disponibile a livello comunale
+  # ============================================================
+  servizi_sociali:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "I dati del Ministero del Lavoro sui servizi sociali sono regionali, non comunali"
+
+  # ============================================================
+  # 6. ISTRUZIONE — fonte: MIM Anagrafe Scuole
+  # ============================================================
+  istruzione:
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/istruzione.csv
+    source_origin: "MIM"
+    source_note: "Ministero dell'Istruzione e del Merito — anagrafe scuole statali a.s. 2025/26 (69 scuole con sede a Potenza)"
+    source_url: "https://dati.istruzione.it/opendata/opendata/catalogo/elements1/?area=Scuole"
+
+  # ============================================================
+  # 7. INCIDENTI STRADALI — solo a livello provinciale
+  # ============================================================
+  incidenti_stradali:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "ISTAT pubblica i dati incidenti stradali a livello provinciale e per comuni capoluogo (Tavola 1.11) ma le tabelle sono in formato XLSX e richiedono accesso diretto al sito ISTAT"
+
+  # ============================================================
+  # 8. RIFIUTI — fonte: ISPRA Catasto Rifiuti
+  # ============================================================
+  rifiuti:
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/rifiuti.csv
+    source_origin: "ISPRA"
+    source_note: "ISPRA Catasto Rifiuti + dichiarazioni Legambiente Comuni Ricicloni — percentuale di raccolta differenziata 2017-2023"
+    source_url: "https://www.catasto-rifiuti.isprambiente.it/index.php?pg=comune&aa=2023&regid=17&prid=PZ&comid=063"
+
+  # ============================================================
+  # 9. EVENTI CULTURALI — fonte: ArCo SPARQL (MiC)
+  # ============================================================
+  eventi_culturali:
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/eventi_culturali.csv
+    source_origin: "ArCo / MiC"
+    source_note: "ArCo SPARQL — DB Unico Luoghi della Cultura del Ministero della Cultura — eventi culturali ospitati nelle sedi MiC di Potenza (Museo Adamesteanu, Biblioteca Nazionale, Archivio di Stato, Soprintendenza)"
+    source_url: "https://dati.cultura.gov.it/sparql"
+
+  # ============================================================
+  # 10. DELIBERE — non disponibile a livello nazionale
+  # ============================================================
+  delibere:
+    presente: false
+    source_type: not_published_no_national_source
+    note: "Le delibere comunali non sono raccolte in alcuna banca dati nazionale aperta; ogni Comune le pubblica solo sul proprio Albo Pretorio"
+
+  # ============================================================
+  # 11. PATRIMONIO — fonte: ArCo SPARQL (MiC)
+  # ============================================================
+  patrimonio:
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/patrimonio.csv
+    source_origin: "ArCo / MiC"
+    source_note: "ArCo SPARQL — Catalogo Generale dei Beni Culturali ICCD-MiC — 41 immobili storico-architettonici catalogati a Potenza (Ponte Musmeci, Teatro Stabile, Palazzo Loffredo, Torre del Castello, ecc.)"
+    source_url: "https://dati.cultura.gov.it/sparql"
+
+  # ============================================================
+  # 12. TRIBUTI — fonte: MEF + Comune Potenza
+  # ============================================================
+  tributi:
+    presente: true
+    source_type: fixture
+    fixture: data/comuni/potenza/tributi.csv
+    source_origin: "MEF Federalismo Fiscale"
+    source_note: "Portale del Federalismo Fiscale (MEF) e delibere consiliari Comune di Potenza — aliquote IMU e Addizionale IRPEF 2024-2025 nel quadro del piano di riequilibrio finanziario (Decreto salva Potenza)"
+    source_url: "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/"

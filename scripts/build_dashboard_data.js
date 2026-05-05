@@ -757,13 +757,16 @@ async function processManifestDataset(comuneKey, dsKey, dsDecl, manifestDir) {
     resource_url: dsDecl.url || dsDecl.path || null,
     resource_format: "CSV",
     source_type: dsDecl.source_type,
+    source_origin: dsDecl.source_origin || null,
+    source_note: dsDecl.source_note || null,
+    source_url: dsDecl.source_url || null,
     error: null,
   };
   if (out.modified) out.freshness = freshness(out.modified);
 
-  if (dsDecl.presente === false) {
+  if (dsDecl.presente === false || dsDecl.source_type === "not_published_no_national_source") {
     out.status = "not_published";
-    if (dsDecl.motivo) out.error = dsDecl.motivo;
+    if (dsDecl.note || dsDecl.motivo) out.error = dsDecl.note || dsDecl.motivo;
     return out;
   }
 
@@ -779,7 +782,14 @@ async function processManifestDataset(comuneKey, dsKey, dsDecl, manifestDir) {
   let csvText;
   try {
     if (dsDecl.source_type === "fixture") {
-      const csvPath = join(manifestDir, dsDecl.path || `${dsKey}.csv`);
+      // Supporta sia 'path' (relativo a manifest dir) sia 'fixture' (relativo
+      // alla repo root, comodo per Comuni che attingono a fixture comuni).
+      let csvPath;
+      if (dsDecl.fixture) {
+        csvPath = join(ROOT, dsDecl.fixture);
+      } else {
+        csvPath = join(manifestDir, dsDecl.path || `${dsKey}.csv`);
+      }
       if (!existsSync(csvPath)) throw new Error(`File non trovato: ${csvPath}`);
       csvText = readFileSync(csvPath, "utf8");
     } else if (dsDecl.source_type === "external_csv" || dsDecl.source_type === "opendatasoft_aggregate") {
