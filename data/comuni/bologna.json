@@ -54,7 +54,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-per-eta-sesso-cittadinanza-quartiere-e-zona-popolazione-residente-a-bolog",
-      "fetched_at": "2026-05-05T05:49:34.930Z",
+      "fetched_at": "2026-05-05T06:04:23.299Z",
       "status": "ok",
       "modified": "2024-12-31T09:12:53+00:00",
       "freshness": {
@@ -62,7 +62,7 @@
         "months": 17,
         "iso": "2024-12-31T09:12:53+00:00"
       },
-      "n_rows": 50000,
+      "n_rows": 39,
       "fields_expected": [
         "anno",
         "eta",
@@ -73,215 +73,186 @@
       ],
       "fields_present": [
         "anno",
-        "sesso",
-        "cittadinanza",
-        "quartiere",
         "residenti"
       ],
       "fields_missing": [
-        "eta"
+        "eta",
+        "sesso",
+        "cittadinanza",
+        "quartiere"
       ],
       "metrics": {
-        "totale_residenti": 3163825,
+        "totale_residenti": 392791,
         "serie_anni": [
           {
             "anno": 1986,
-            "valore": 52018
+            "valore": 432406
           },
           {
             "anno": 1987,
-            "valore": 76108
+            "valore": 427240
           },
           {
             "anno": 1988,
-            "valore": 76034
+            "valore": 422204
           },
           {
             "anno": 1989,
-            "valore": 97762
+            "valore": 417410
           },
           {
             "anno": 1990,
-            "valore": 100451
+            "valore": 411803
           },
           {
             "anno": 1991,
-            "valore": 59517
+            "valore": 406291
           },
           {
             "anno": 1992,
-            "valore": 105065
+            "valore": 400858
           },
           {
             "anno": 1993,
-            "valore": 64736
+            "valore": 394969
           },
           {
             "anno": 1994,
-            "valore": 50649
+            "valore": 390434
           },
           {
             "anno": 1995,
-            "valore": 70909
+            "valore": 386491
           },
           {
             "anno": 1996,
-            "valore": 53649
+            "valore": 385136
           },
           {
             "anno": 1997,
-            "valore": 91576
+            "valore": 383761
           },
           {
             "anno": 1998,
-            "valore": 94354
+            "valore": 382006
           },
           {
             "anno": 1999,
-            "valore": 95889
+            "valore": 381161
           },
           {
             "anno": 2000,
-            "valore": 94816
+            "valore": 379964
           },
           {
             "anno": 2001,
-            "valore": 101989
+            "valore": 378356
           },
           {
             "anno": 2002,
-            "valore": 88492
+            "valore": 373592
           },
           {
             "anno": 2003,
-            "valore": 98187
+            "valore": 373539
           },
           {
             "anno": 2004,
-            "valore": 89381
+            "valore": 374425
           },
           {
             "anno": 2005,
-            "valore": 86050
+            "valore": 373743
           },
           {
             "anno": 2006,
-            "valore": 97564
+            "valore": 373026
           },
           {
             "anno": 2007,
-            "valore": 92221
+            "valore": 372256
           },
           {
             "anno": 2008,
-            "valore": 55990
+            "valore": 374944
           },
           {
             "anno": 2009,
-            "valore": 101235
+            "valore": 377220
           },
           {
             "anno": 2010,
-            "valore": 87415
+            "valore": 380181
           },
           {
             "anno": 2011,
-            "valore": 82095
+            "valore": 382784
           },
           {
             "anno": 2012,
-            "valore": 67783
+            "valore": 385329
           },
           {
             "anno": 2013,
-            "valore": 71781
+            "valore": 384202
           },
           {
             "anno": 2014,
-            "valore": 83808
+            "valore": 386181
           },
           {
             "anno": 2015,
-            "valore": 66247
+            "valore": 386663
           },
           {
             "anno": 2016,
-            "valore": 64205
+            "valore": 388367
           },
           {
             "anno": 2017,
-            "valore": 67978
+            "valore": 389261
           },
           {
             "anno": 2018,
-            "valore": 77903
+            "valore": 390636
           },
           {
             "anno": 2019,
-            "valore": 93263
+            "valore": 391984
           },
           {
             "anno": 2020,
-            "valore": 76328
+            "valore": 391412
           },
           {
             "anno": 2021,
-            "valore": 60698
+            "valore": 392690
           },
           {
             "anno": 2022,
-            "valore": 67361
+            "valore": 390554
           },
           {
             "anno": 2023,
-            "valore": 110487
+            "valore": 392017
           },
           {
             "anno": 2024,
-            "valore": 91831
+            "valore": 392791
           }
         ],
         "serie_residenti": null,
-        "per_quartiere": [
-          {
-            "nome": "Porto - Saragozza",
-            "valore": 570363
-          },
-          {
-            "nome": "Navile",
-            "valore": 542823
-          },
-          {
-            "nome": "Santo Stefano",
-            "valore": 532210
-          },
-          {
-            "nome": "San Donato - San Vitale",
-            "valore": 531403
-          },
-          {
-            "nome": "Savena",
-            "valore": 505574
-          },
-          {
-            "nome": "Borgo Panigale - Reno",
-            "valore": 479415
-          },
-          {
-            "nome": "Senza fissa dimora",
-            "valore": 2037
-          }
-        ]
+        "per_quartiere": null
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/annuale_popolazione_residente_eta_quart_zonadal1986/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/annuale_popolazione_residente_eta_quart_zonadal1986/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/annuale_popolazione_residente_eta_quart_zonadal1986/records?select=anno,sum(residenti)+AS+residenti&group_by=anno&order_by=anno&limit=200"
     },
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "bilancio-di-previsione-previsione-uscite",
-      "fetched_at": "2026-05-05T05:49:47.176Z",
+      "fetched_at": "2026-05-05T06:04:26.448Z",
       "status": "ok",
       "modified": "2025-12-31T12:00:00+00:00",
       "freshness": {
@@ -437,12 +408,12 @@
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/bilancio-di-previsione-previsione-uscite/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/bilancio-di-previsione-previsione-uscite/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/bilancio-di-previsione-previsione-uscite/exports/json?limit=150000"
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "lavori-in-corso-in-citta",
-      "fetched_at": "2026-05-05T05:49:51.904Z",
+      "fetched_at": "2026-05-05T06:04:28.173Z",
       "status": "ok",
       "modified": "2026-03-21T06:00:03.144000+00:00",
       "freshness": {
@@ -739,12 +710,12 @@
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/lavori-pubblici/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/lavori-pubblici/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/lavori-pubblici/exports/json?limit=150000"
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "cila-comunicazioni-inizio-lavori",
-      "fetched_at": "2026-05-05T05:49:52.911Z",
+      "fetched_at": "2026-05-05T06:04:29.758Z",
       "status": "ok",
       "modified": "2025-12-31T09:03:43+00:00",
       "freshness": {
@@ -752,7 +723,7 @@
         "months": 5,
         "iso": "2025-12-31T09:03:43+00:00"
       },
-      "n_rows": 50000,
+      "n_rows": 75148,
       "fields_expected": [
         "tipo",
         "data",
@@ -774,248 +745,248 @@
         "via"
       ],
       "metrics": {
-        "totale": 50000,
+        "totale": 75148,
         "per_tipo": [
           {
             "nome": "CILA ORDINARIA",
-            "n": 11494
+            "n": 17362
           },
           {
             "nome": "COMUNICAZIONE INIZIO LAVORI LR 15/2013",
-            "n": 9293
+            "n": 13959
           },
           {
             "nome": "COMUNICAZIONE DI INIZIO LAVORI LEGGE 73/2010",
-            "n": 8771
+            "n": 13199
           },
           {
             "nome": "CILA A SANATORIA",
-            "n": 7787
+            "n": 11602
           },
           {
             "nome": "CILA CON INIZIO LAVORI DIFFERITO",
-            "n": 4242
+            "n": 6401
           },
           {
             "nome": "COMUNICAZIONE DI INIZIO LAVORI LR 15/2013",
-            "n": 1855
+            "n": 2756
           },
           {
             "nome": "CILA-SUPERBONUS ORDINARIA ANCHE CON ALTRE COMUNICAZIONI O SCIA",
-            "n": 1598
+            "n": 2393
           },
           {
             "nome": "CILA ORDINARIA - NON RESIDENZIALE",
-            "n": 1510
+            "n": 2271
           },
           {
             "nome": "COMUNICAZIONE INIZIO LAVORI A SANATORIA LR 15/2013",
-            "n": 803
+            "n": 1188
           },
           {
             "nome": "CILA CON INIZIO LAVORI DIFFERITO - NON RESIDENZIALE",
-            "n": 692
+            "n": 1016
           },
           {
             "nome": "CILA A SANATORIA CON OPERE",
-            "n": 524
+            "n": 791
           },
           {
             "nome": "CILA CONDIZIONATA",
-            "n": 450
+            "n": 706
           },
           {
             "nome": "CILA-SUPERBONUS DIFFERITA CON RICHIESTA CONTESTUALE DI ATTI PRESUPPOSTI",
-            "n": 348
+            "n": 520
           },
           {
             "nome": "CILA A SANATORIA CON OPERE - NON RESIDENZIALE",
-            "n": 212
+            "n": 353
           },
           {
             "nome": "CILA PRESENTATA DOPO L'INIZIO LAVORI",
-            "n": 147
+            "n": 235
           },
           {
             "nome": "COMUNICAZIONE INIZIO LAVORI PRESENTATA IN CORSO D'OPERA LR 15/2013",
-            "n": 116
+            "n": 166
           },
           {
             "nome": "CILA PRESENTATA DOPO L'INIZIO LAVORI - NON RESIDENZIALE",
-            "n": 79
+            "n": 109
           },
           {
             "nome": "CILA A SANATORIA CON OPERE CONDIZIONATA",
-            "n": 33
+            "n": 52
           },
           {
             "nome": "URB - CILA ORDINARIA",
-            "n": 8
+            "n": 14
           },
           {
-            "nome": "URB - CILA ORDINARIA - NON RESIDENZIALE",
-            "n": 8
+            "nome": "CILA-SUPERBONUS ORDINARIA ANCHE CON ALTRE COMUNICAZIONI O SCIA - NON RESIDENZIALE",
+            "n": 14
           }
         ],
         "per_esito": [
           {
             "nome": "ACQUISITA IN INGRESSO",
-            "n": 40555
+            "n": 60962
           },
           {
             "nome": "EFFICACE",
-            "n": 6047
+            "n": 9111
           },
           {
             "nome": "INEFFICACE",
-            "n": 391
+            "n": 573
           },
           {
             "nome": "RINUNCIATA SU ISTANZA DI PARTE",
-            "n": 263
+            "n": 383
           },
           {
             "nome": "CONCLUSO   ESITO POSITIVO",
-            "n": 238
+            "n": 375
           },
           {
             "nome": "CAMPIONATA CONCLUSO ESITO POSITIVO",
-            "n": 190
+            "n": 294
           },
           {
             "nome": "RILASCIATA",
-            "n": 168
+            "n": 246
           },
           {
             "nome": "RINUNCIATA",
-            "n": 115
+            "n": 178
           },
           {
             "nome": "ARCHIVIATA",
-            "n": 68
+            "n": 92
           },
           {
             "nome": "CONCLUSO",
-            "n": 42
-          },
-          {
-            "nome": "VERBALE CONCLUSO   SANZIONE PECUNIARIA",
-            "n": 36
+            "n": 73
           },
           {
             "nome": "IN CORSO",
-            "n": 33
+            "n": 61
           },
           {
-            "nome": "CAMPIONATA CONCLUSO ESITO NEGATIVO",
-            "n": 29
-          },
-          {
-            "nome": "CONCLUSO   ESITO NEGATIVO",
-            "n": 28
-          },
-          {
-            "nome": "ARCHIVIO DIGITALE",
-            "n": 27
+            "nome": "VERBALE CONCLUSO   SANZIONE PECUNIARIA",
+            "n": 55
           },
           {
             "nome": "ANNULLATA SU ISTANZA DI PARTE",
-            "n": 25
+            "n": 49
+          },
+          {
+            "nome": "ARCHIVIO DIGITALE",
+            "n": 40
+          },
+          {
+            "nome": "CAMPIONATA CONCLUSO ESITO NEGATIVO",
+            "n": 38
+          },
+          {
+            "nome": "CONCLUSO   ESITO NEGATIVO",
+            "n": 35
           },
           {
             "nome": "CILA NON CONFORME",
-            "n": 21
+            "n": 32
           },
           {
             "nome": "EFFICACIA DEL 06/03/2025",
-            "n": 11
-          },
-          {
-            "nome": "EFFICACIA DEL 13/03/2025",
-            "n": 10
+            "n": 16
           },
           {
             "nome": "EFFICACIA DEL 20/03/2025",
-            "n": 9
+            "n": 15
+          },
+          {
+            "nome": "DECADUTA",
+            "n": 13
           }
         ],
-        "tasso_chiusura": 97.28999999999999,
+        "tasso_chiusura": 97.3359237770799,
         "serie_anni": [
           {
             "anno": 2010,
-            "valore": 1364
+            "valore": 2010
           },
           {
             "anno": 2011,
-            "valore": 2604
+            "valore": 3927
           },
           {
             "anno": 2012,
-            "valore": 2576
+            "valore": 3928
           },
           {
             "anno": 2013,
-            "valore": 2895
+            "valore": 4335
           },
           {
             "anno": 2014,
-            "valore": 2950
+            "valore": 4348
           },
           {
             "anno": 2015,
-            "valore": 2864
+            "valore": 4298
           },
           {
             "anno": 2016,
-            "valore": 3053
+            "valore": 4613
           },
           {
             "anno": 2017,
-            "valore": 2932
+            "valore": 4422
           },
           {
             "anno": 2018,
-            "valore": 2992
+            "valore": 4532
           },
           {
             "anno": 2019,
-            "valore": 3722
+            "valore": 5593
           },
           {
             "anno": 2020,
-            "valore": 3539
+            "valore": 5319
           },
           {
             "anno": 2021,
-            "valore": 4305
+            "valore": 6489
           },
           {
             "anno": 2022,
-            "valore": 5179
+            "valore": 7793
           },
           {
             "anno": 2023,
-            "valore": 3866
+            "valore": 5709
           },
           {
             "anno": 2024,
-            "valore": 3773
+            "valore": 5739
           },
           {
             "anno": 2025,
-            "valore": 1386
+            "valore": 2093
           }
         ]
       },
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/cila-comunicazioni-inizio-lavori/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/cila-comunicazioni-inizio-lavori/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/cila-comunicazioni-inizio-lavori/exports/json?limit=150000"
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "welfare-interventi",
-      "fetched_at": "2026-05-05T05:50:50.487Z",
+      "fetched_at": "2026-05-05T06:04:43.802Z",
       "status": "fetch_error",
       "modified": "2025-05-08T12:47:30.798000+00:00",
       "freshness": {
@@ -1045,12 +1016,12 @@
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/c_a9447d4f8a46-d276-11ea-87d0-0242ac130003/exports/json",
       "resource_format": "JSON",
       "error": "Download fallito (JSON)",
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/c_a9447d4f8a46-d276-11ea-87d0-0242ac130003/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/c_a9447d4f8a46-d276-11ea-87d0-0242ac130003/exports/json?limit=150000"
     },
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "numero-iscritti-ai-servizi-integrativi-scolastici-della-scuola-dellinfanzia-pubblica",
-      "fetched_at": "2026-05-05T05:51:00.138Z",
+      "fetched_at": "2026-05-05T06:05:19.191Z",
       "status": "ok",
       "modified": "2025-09-24T14:54:00+00:00",
       "freshness": {
@@ -1291,12 +1262,12 @@
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/numero-iscritti-ai-servizi-integrativi-scuola-infanzia-pubblica/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/numero-iscritti-ai-servizi-integrativi-scuola-infanzia-pubblica/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/numero-iscritti-ai-servizi-integrativi-scuola-infanzia-pubblica/exports/json?limit=150000"
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "incidenti-stradali2",
-      "fetched_at": "2026-05-05T05:51:06.015Z",
+      "fetched_at": "2026-05-05T06:05:21.985Z",
       "status": "ok",
       "modified": "2024-12-31T11:04:38+00:00",
       "freshness": {
@@ -2134,12 +2105,12 @@
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/incidenti_new/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/incidenti_new/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/incidenti_new/exports/json?limit=150000"
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "indicatori-raccolta-differenziata",
-      "fetched_at": "2026-05-05T05:51:08.970Z",
+      "fetched_at": "2026-05-05T06:05:24.133Z",
       "status": "ok",
       "modified": "2025-04-07T08:28:00+00:00",
       "freshness": {
@@ -2306,12 +2277,12 @@
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/indicatori-raccolta-differenziata/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/indicatori-raccolta-differenziata/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/indicatori-raccolta-differenziata/exports/json?limit=150000"
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "eventi-bologna-agenda-cultura",
-      "fetched_at": "2026-05-05T05:51:09.983Z",
+      "fetched_at": "2026-05-05T06:05:25.437Z",
       "status": "ok",
       "modified": "2026-03-21T02:15:09.258000+00:00",
       "freshness": {
@@ -3951,7 +3922,7 @@
       "resource_url": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/eventi-bologna-agenda-cultura/exports/json",
       "resource_format": "JSON",
       "error": null,
-      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/eventi-bologna-agenda-cultura/exports/json?limit=50000"
+      "resource_url_fetched": "https://opendata.comune.bologna.it/api/v2/catalog/datasets/eventi-bologna-agenda-cultura/exports/json?limit=150000"
     }
   }
 }
