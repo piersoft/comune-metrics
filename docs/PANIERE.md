@@ -90,7 +90,7 @@ Il Responsabile della Transizione Digitale convoca un tavolo con:
 
 Per ogni dataset si verifica:
 1. **Esiste un gestionale che contiene questi dati?** (di solito sì)
-2. **È possibile estrarre un CSV?** (export nativo, query SQL, custom report)
+2. **È possibile estrarne un CSV?** (export nativo, report custom, estrazione su richiesta del fornitore)
 3. **Chi è il referente che esegue l'estrazione?**
 4. **Con quale cadenza il dato è aggiornato?** (real-time, mensile, annuale)
 
@@ -98,11 +98,11 @@ Output del tavolo: tabella `dataset → gestionale → referente → cadenza →
 
 ### Fase 2 — Estrazione (1-3 giornate per dataset)
 
-Per ogni dataset, il referente IT scrive **una query SQL** o **un export filtro** che produca il CSV nel formato canonico (vedi schemi in `schemas/csv/`).
+Per ogni dataset, il referente IT (o il fornitore del gestionale) prepara un'**estrazione automatizzata** che produca il CSV nel formato canonico (vedi schemi in `schemas/csv/`).
 
-Le query vanno **standardizzate e schedulate**: meglio un cron notturno che produce il CSV automaticamente, piuttosto che un export manuale che si dimentica di fare.
+L'estrazione va **standardizzata e schedulata**: meglio un job notturno che genera il CSV automaticamente, piuttosto che un export manuale che si dimentica di fare.
 
-Vedi più sotto [esempi di query SQL](#esempi-di-query-sql-su-gestionali-tipici) per i gestionali più diffusi.
+Vedi [§ A chi chiedere cosa dentro il Comune](#a-chi-chiedere-cosa-dentro-il-comune) per la mappa ufficio→gestionale di ciascun dataset.
 
 ### Fase 3 — Pubblicazione (mezza giornata)
 
@@ -126,183 +126,37 @@ Il Responsabile crea il manifest seguendo il [README](../README.md) e apre la pu
 
 ---
 
-## Esempi di query SQL su gestionali tipici
+## A chi chiedere cosa dentro il Comune
 
-Le query seguenti sono **template di partenza** da adattare al proprio gestionale. I nomi delle tabelle/colonne variano per vendor.
+Il paniere è dati del Comune sul Comune: nessun dato del paniere è in mano al RTD da solo. Per popolare ciascun dataset bisogna **chiedere un'estrazione all'ufficio responsabile** o al fornitore del relativo gestionale. Sotto, la mappa operativa.
 
-### Dataset 1 — Popolazione (da Anagrafe APR)
+> Per ogni dataset, il **formato di output desiderato** è la scheda corrispondente in [`PANIERE_CSV_SCHEMA.md`](PANIERE_CSV_SCHEMA.md): nome colonne, tipi, esempi. Allegare la scheda alla richiesta evita malintesi.
 
-```sql
--- PostgreSQL/Oracle, schema tipico ANPR/APR
-SELECT
-    EXTRACT(YEAR FROM data_riferimento)::int AS anno,
-    quartiere,
-    COUNT(*) AS residenti
-FROM anagrafe_residenti
-WHERE stato_civile_attuale != 'CESSATO'
-  AND data_cancellazione IS NULL
-  AND data_riferimento BETWEEN '2010-01-01' AND CURRENT_DATE
-GROUP BY EXTRACT(YEAR FROM data_riferimento), quartiere
-ORDER BY anno, quartiere;
-```
+| Dataset | Ufficio interno responsabile | Tipo di gestionale di partenza | Cosa chiedere all'IT o al fornitore |
+|---|---|---|---|
+| 1. Popolazione | Servizi Demografici / Anagrafe | APR-ANPR | Estrazione annua dei residenti per anno e quartiere/zona, dal 2010 a oggi |
+| 2. Bilancio | Ragioneria | Gestionale finanziario armonizzato (DLgs 118/2011) | Estrazione annua delle spese consuntivate per Titolo e macro-aggregato del Piano dei Conti |
+| 3. Opere pubbliche | Lavori Pubblici / OO.PP. | Gestionale OO.PP. integrato con SIMOG-ANAC | Elenco opere CUP con stato, costo previsto, fonte di finanziamento, geolocalizzazione |
+| 4. Pratiche edilizie | SUE — Sportello Unico Edilizia | Gestionale SUE / protocollo edilizio | Elenco CILA/SCIA/Permessi con data di presentazione, tipo, esito, data di chiusura |
+| 5. Servizi sociali | Servizi Sociali / Welfare | Cartella sociale informatizzata | Numero utenti e spesa per categoria di intervento (anziani, minori, disabilità, ecc.) |
+| 6. Istruzione | Servizi Educativi (per asili nido, infanzia comunali) + Anagrafe Scuole MIM | Gestionale iscrizioni nidi/infanzia | Elenco strutture con denominazione, tipologia, alunni iscritti, geolocalizzazione |
+| 7. Incidenti stradali | Polizia Locale | Software di rilevazione incidenti | Elenco sinistri con data, ora, geolocalizzazione, decessi, feriti |
+| 8. Rifiuti | Ambiente / Igiene Urbana | Gestionale igiene urbana o report del gestore (es. AMA, AMIU, ecc.) | Quantitativi annui per frazione (totale, differenziata, indifferenziata) e percentuale RD |
+| 9. Eventi culturali | Cultura / Turismo | Gestionale eventi o calendario sito istituzionale | Calendario manifestazioni con data inizio/fine, luogo, organizzatore |
+| 10. Delibere | Segreteria Generale | Gestionale atti / Albo Pretorio online | Elenco atti con data, tipo, numero, oggetto, ufficio proponente |
+| 11. Patrimonio | Patrimonio | Inventario beni immobili | Elenco immobili con denominazione, indirizzo, rendita catastale, vincolo, destinazione |
+| 12. Tributi | Tributi | Gestionale tributi locali | Gettito riscosso annuo per tipo (IMU, TARI, tassa soggiorno, addizionale IRPEF, ecc.) e relative aliquote |
 
-### Dataset 2 — Bilancio (da gestionale finanziario)
+### Modello di richiesta
 
-```sql
--- Spesa consuntiva per missione/programma DLgs 118/2011
-SELECT
-    anno_esercizio AS anno,
-    missione_descrizione AS missione,
-    programma_descrizione AS programma,
-    SUM(importo_pagato) AS importo_euro
-FROM movimenti_finanziari
-WHERE tipo_movimento = 'PAGAMENTO'
-  AND anno_esercizio BETWEEN 2018 AND EXTRACT(YEAR FROM CURRENT_DATE)
-GROUP BY anno_esercizio, missione_descrizione, programma_descrizione
-ORDER BY anno_esercizio, missione_descrizione;
-```
+Una richiesta efficace contiene quattro elementi:
 
-### Dataset 3 — Opere pubbliche (da gestionale LL.PP.)
+1. **Lo scopo**: «pubblicare il dataset `<nome>` su `dati.gov.it` come previsto dal piano triennale RTD»
+2. **Il formato richiesto**: link alla scheda dataset in [`PANIERE_CSV_SCHEMA.md`](PANIERE_CSV_SCHEMA.md)
+3. **La frequenza**: estrazione annuale, mensile o trimestrale a seconda del dataset
+4. **La destinazione**: URL stabile che il Comune o il fornitore espone, da censire poi nel manifest (vedi sezione successiva)
 
-```sql
-SELECT
-    descrizione_opera AS nome,
-    anno_inserimento AS anno,
-    stato_avanzamento AS stato,
-    importo_quadro_economico AS importo_euro,
-    codice_cup AS cup,
-    fonte_finanziamento,
-    latitudine AS lat,
-    longitudine AS lon,
-    rup_nominativo AS rup
-FROM opere_pubbliche
-WHERE data_cancellazione IS NULL
-ORDER BY anno DESC;
-```
-
-### Dataset 4 — Pratiche edilizie (da SUE)
-
-```sql
-SELECT
-    data_protocollo AS data,
-    tipo_pratica AS tipo,
-    esito_pratica AS esito,
-    data_chiusura AS chiusura_data,
-    via_intervento AS via,
-    civico_intervento AS civico
-FROM pratiche_sue
-WHERE data_protocollo >= '2018-01-01'
-ORDER BY data_protocollo DESC;
-```
-
-### Dataset 5 — Servizi sociali (da cartella sociale)
-
-```sql
-SELECT
-    EXTRACT(YEAR FROM data_apertura)::int AS anno,
-    tipo_intervento AS categoria,
-    COUNT(DISTINCT codice_fiscale_utente) AS utenti,
-    SUM(importo_erogato) AS spesa_euro,
-    COUNT(*) AS interventi
-FROM interventi_sociali
-WHERE data_apertura BETWEEN '2020-01-01' AND CURRENT_DATE
-GROUP BY EXTRACT(YEAR FROM data_apertura), tipo_intervento
-ORDER BY anno, categoria;
-```
-
-### Dataset 7 — Incidenti stradali (da sw Polizia Locale)
-
-```sql
-SELECT
-    data_evento AS data,
-    latitudine AS lat,
-    longitudine AS lon,
-    n_morti_30gg AS morti,
-    n_feriti AS feriti,
-    via_toponomastica AS zona,
-    natura_evento AS tipo,
-    TO_CHAR(data_evento, 'HH24:MI') AS ora
-FROM incidenti_stradali
-WHERE data_evento >= '2020-01-01'
-ORDER BY data_evento DESC;
-```
-
-### Dataset 11 — Patrimonio (da inventario)
-
-```sql
-SELECT
-    denominazione_immobile AS denominazione,
-    tipologia AS tipo,
-    indirizzo,
-    latitudine AS lat,
-    longitudine AS lon,
-    valore_iscritto_bilancio AS valore_euro,
-    CASE WHEN flag_vincolo_culturale = 'S' THEN true ELSE false END AS vincolo_culturale,
-    destinazione_uso AS uso
-FROM patrimonio_immobiliare
-WHERE flag_attivo = 'S'
-ORDER BY tipologia, denominazione_immobile;
-```
-
-### Dataset 12 — Tributi (da gestionale tributi locali)
-
-Schema canonico: `anno, tributo` (required); `gettito_euro, n_contribuenti, aliquota_base, descrizione, categoria` (optional).
-
-I tipi di tributo standardizzati sono: `IMU`, `TARI`, `TASSA_SOGGIORNO`, `ADDIZIONALE_IRPEF`, `COSAP`, `IMPOSTA_PUBBLICITA`, `CANONE_UNICO`. Categoria libera per disaggregazioni (es. "Utenze domestiche" / "Utenze non domestiche" per TARI).
-
-```sql
--- Gettito IMU: somma dei versamenti spontanei e accertamenti riscossi
-SELECT
-    EXTRACT(YEAR FROM data_versamento) AS anno,
-    'IMU' AS tributo,
-    SUM(importo_versato) AS gettito_euro,
-    COUNT(DISTINCT codice_fiscale) AS n_contribuenti,
-    1.06 AS aliquota_base,  -- da delibera Consiglio Comunale
-    'Aliquota ordinaria 10.6 per mille' AS descrizione
-FROM versamenti_imu
-WHERE data_versamento >= '2020-01-01'
-GROUP BY EXTRACT(YEAR FROM data_versamento);
-
--- Gettito TARI: dal ruolo tariffario annuale
-SELECT
-    anno_imposta AS anno,
-    'TARI' AS tributo,
-    SUM(importo_dovuto) AS gettito_euro,
-    COUNT(DISTINCT codice_utente) AS n_contribuenti,
-    NULL AS aliquota_base,  -- TARI ha tariffe per categoria, non aliquota
-    categoria_tarsu AS categoria  -- "Utenze domestiche" / "Utenze non domestiche"
-FROM ruolo_tari
-WHERE anno_imposta >= 2020
-GROUP BY anno_imposta, categoria_tarsu;
-
--- Tassa di soggiorno
-SELECT
-    EXTRACT(YEAR FROM data_versamento) AS anno,
-    'TASSA_SOGGIORNO' AS tributo,
-    SUM(importo) AS gettito_euro,
-    NULL AS n_contribuenti,  -- versano gli alberghi, non i turisti
-    2.50 AS aliquota_base,
-    'Tassa €2.50/notte categoria 4 stelle' AS descrizione
-FROM versamenti_tassa_soggiorno
-GROUP BY EXTRACT(YEAR FROM data_versamento);
-```
-
-**Esempio di CSV finale (5 tributi per il 2024):**
-
-```csv
-anno,tributo,gettito_euro,n_contribuenti,aliquota_base,descrizione,categoria
-2024,IMU,15800000.00,32500,1.06,Aliquota ordinaria 10.6 per mille,
-2024,TARI,12300000.00,38000,,,Utenze domestiche
-2024,TARI,6200000.00,4000,,,Utenze non domestiche
-2024,TASSA_SOGGIORNO,1250000.00,,2.50,Tassa €2.50/notte,
-2024,ADDIZIONALE_IRPEF,8900000.00,,0.80,Aliquota 0.80%,
-2024,COSAP,420000.00,820,,,Spazi pubblici
-```
-
-Note importanti:
-- `gettito_euro` deve essere il **riscosso effettivo**, non il previsto a bilancio
-- Per TARI è frequente avere più righe per stesso anno con `categoria` diversa (domestiche/non domestiche, scaglioni)
-- L'`aliquota_base` è quella pubblicata sul Portale del Federalismo Fiscale del MEF, link normalmente tra le delibere comunali
+> **Suggerimento operativo**: per i Comuni che esternalizzano l'IT, conviene inserire la pubblicazione del paniere come **clausola contrattuale** alla prossima gara: 12 estrazioni schedulate verso un endpoint pubblico stabile costano poco se chiesto al fornitore in fase di gara, costano molto se chiesto come variazione in corso d'opera.
 
 ---
 
@@ -405,4 +259,3 @@ I metadati DCAT-AP_IT del dataset originale rimangono invariati. Il Comune manti
 ## Licenza
 
 Documento rilasciato sotto **CC-BY 4.0**.
-Le query SQL di esempio sono di pubblico dominio (CC0).
