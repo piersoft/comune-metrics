@@ -1,0 +1,13 @@
+nome,anno,stato,importo_euro,cup,lat,lon,fonte_finanziamento,tipo
+"Riqualificazione Piazza Centrale",2024,"in corso",420000,"D14E22000150006",45.4642,9.1900,"PNRR","manutenzione straordinaria"
+"Nuova pista ciclabile via Roma",2024,"in corso",180000,"D14E22000160006",45.4655,9.1905,"Comunale","nuova realizzazione"
+"Ampliamento scuola primaria centro",2023,"completato",890000,"D14E21000080006",45.4630,9.1880,"Statale","ampliamento"
+"Restauro fontana storica",2024,"in corso",95000,"D14E22000170006",45.4640,9.1895,"Regione","restauro"
+"Asfaltatura via XX Settembre",2024,"completato",65000,,45.4670,9.1920,"Comunale","manutenzione ordinaria"
+"Nuovo parcheggio scolastico",2025,"pianificato",240000,"D14E25000010006",45.4625,9.1885,"PNRR","nuova realizzazione"
+"Efficientamento energetico palazzetto",2024,"in corso",380000,"D14E22000180006",45.4685,9.1925,"Conto Termico","efficientamento"
+"Riqualificazione parco urbano",2025,"pianificato",520000,"D14E25000020006",45.4660,9.1850,"PNRR","riqualificazione"
+"Manutenzione marciapiedi quartiere Sud",2024,"completato",78000,,45.4595,9.1855,"Comunale","manutenzione ordinaria"
+"Nuovi loculi cimitero comunale",2023,"completato",185000,"D14E21000090006",45.4710,9.1810,"Comunale","ampliamento"
+"Rifacimento illuminazione pubblica",2024,"in corso",420000,"D14E22000190006",,,"Comunale","efficientamento"
+"Nuova rotatoria SS Provinciale",2025,"pianificato",680000,"D14E25000030006",45.4720,9.1950,"Regione","nuova realizzazione"
