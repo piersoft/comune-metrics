@@ -34,7 +34,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T08:56:55.712Z",
+      "fetched_at": "2026-05-05T09:15:22.858Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -79,7 +79,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T08:56:56.921Z",
+      "fetched_at": "2026-05-05T09:15:24.468Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -213,7 +213,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T08:56:56.924Z",
+      "fetched_at": "2026-05-05T09:15:24.472Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -371,7 +371,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T08:56:58.277Z",
+      "fetched_at": "2026-05-05T09:15:29.930Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -634,7 +634,7 @@
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
       "slug": "__fixture__:servizi_sociali",
-      "fetched_at": "2026-05-05T08:56:58.350Z",
+      "fetched_at": "2026-05-05T09:15:30.011Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -703,7 +703,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T08:56:58.358Z",
+      "fetched_at": "2026-05-05T09:15:30.019Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -875,7 +875,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "__fixture__:incidenti_stradali",
-      "fetched_at": "2026-05-05T08:56:59.719Z",
+      "fetched_at": "2026-05-05T09:15:32.798Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -20937,7 +20937,7 @@
     "rifiuti": {
       "dataset_key": "rifiuti",
       "slug": "__fixture__:rifiuti",
-      "fetched_at": "2026-05-05T08:56:59.737Z",
+      "fetched_at": "2026-05-05T09:15:32.814Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21000,7 +21000,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T08:56:59.737Z",
+      "fetched_at": "2026-05-05T09:15:32.815Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21115,7 +21115,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T08:56:59.738Z",
+      "fetched_at": "2026-05-05T09:15:32.816Z",
       "status": "ok",
       "modified": "2026-05-05",
       "freshness": {
@@ -21156,6 +21156,68 @@
         "pct_vincolo": 100
       },
       "resource_url": "data/fixtures/lecce/patrimonio.csv",
+      "resource_format": "CSV",
+      "error": null,
+      "is_static_snapshot": true
+    },
+    "tributi": {
+      "dataset_key": "tributi",
+      "slug": "__fixture__:tributi",
+      "fetched_at": "2026-05-05T09:15:32.819Z",
+      "status": "ok",
+      "modified": "2026-05-05",
+      "freshness": {
+        "level": "fresh",
+        "months": 0,
+        "iso": "2026-05-05"
+      },
+      "n_rows": 6,
+      "fields_expected": [
+        "anno",
+        "tributo",
+        "gettito_euro",
+        "n_contribuenti",
+        "aliquota_base",
+        "descrizione",
+        "categoria"
+      ],
+      "fields_present": [
+        "anno",
+        "tributo",
+        "gettito_euro",
+        "n_contribuenti",
+        "aliquota_base",
+        "descrizione",
+        "categoria"
+      ],
+      "fields_missing": [],
+      "metrics": {
+        "gettito_totale_ultimo_anno": 34038829.300000004,
+        "anno_ultimo": 2017,
+        "n_tributi_distinti": 1,
+        "per_tributo_ultimo_anno": [
+          {
+            "nome": "IMU",
+            "valore": 34038829.300000004
+          }
+        ],
+        "serie_anni": [
+          {
+            "anno": 2015,
+            "valore": 37735966.23
+          },
+          {
+            "anno": 2016,
+            "valore": 35893950
+          },
+          {
+            "anno": 2017,
+            "valore": 34038829.300000004
+          }
+        ],
+        "contribuenti_ultimo_anno": null
+      },
+      "resource_url": "data/fixtures/lecce/tributi.csv",
       "resource_format": "CSV",
       "error": null,
       "is_static_snapshot": true

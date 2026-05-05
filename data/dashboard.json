@@ -1,6 +1,6 @@
 {
   "version": "0.2.0-alpha",
-  "built_at": "2026-05-05T08:56:30.610Z",
+  "built_at": "2026-05-05T09:14:30.949Z",
   "ckan_server": "https://www.dati.gov.it/opendata",
   "comuni": {
     "demo": {
@@ -10,9 +10,9 @@
       "mode": "manifest",
       "snapshot_date": null,
       "paniere_version": "csv-v1",
-      "n_datasets_pubblicati": 11,
-      "n_datasets_totali": 11,
-      "n_datasets_ok": 11
+      "n_datasets_pubblicati": 12,
+      "n_datasets_totali": 12,
+      "n_datasets_ok": 12
     },
     "bologna": {
       "key": "bologna",
@@ -21,7 +21,7 @@
       "mode": "live",
       "snapshot_date": null,
       "n_datasets_pubblicati": 9,
-      "n_datasets_totali": 11,
+      "n_datasets_totali": 12,
       "n_datasets_ok": 9
     },
     "lecce": {
@@ -30,9 +30,9 @@
       "ipa": "c_e506",
       "mode": "static_snapshot",
       "snapshot_date": "2026-05-05",
-      "n_datasets_pubblicati": 10,
-      "n_datasets_totali": 11,
-      "n_datasets_ok": 10
+      "n_datasets_pubblicati": 11,
+      "n_datasets_totali": 12,
+      "n_datasets_ok": 11
     }
   }
 }
