@@ -13,7 +13,7 @@
   "mappa_zoom": 13,
   "mode": "static_snapshot",
   "snapshot_date": "2026-05-04",
-  "snapshot_reason": "Geo-fencing su dati.comune.lecce.it: 503 dai runner GitHub Actions",
+  "snapshot_reason": "Pubblicava 11/11 dataset CORE fino al 2024 (caso virtuoso). Il 25 marzo 2025 Google ha chiuso goo.gl: i 3 dataset linkati con shortener sono diventati irrecuperabili (servizi sociali, rifiuti, delibere). Inoltre il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV restanti sono salvati come fixture statiche.",
   "datasets": {
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
@@ -83,7 +83,7 @@
     "popolazione": {
       "dataset_key": "popolazione",
       "slug": "popolazione-residente-e-bilancio-demografico-mensile-anno-2019",
-      "fetched_at": "2026-05-05T08:01:37.470Z",
+      "fetched_at": "2026-05-05T08:16:09.638Z",
       "status": "ok",
       "modified": "2019-02-12",
       "freshness": {
@@ -128,7 +128,7 @@
     "bilancio": {
       "dataset_key": "bilancio",
       "slug": "__fixture__:bilancio",
-      "fetched_at": "2026-05-05T08:01:40.587Z",
+      "fetched_at": "2026-05-05T08:16:11.697Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -262,7 +262,7 @@
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
       "slug": "programma-triennale-oo-pp-2020-2022",
-      "fetched_at": "2026-05-05T08:01:40.592Z",
+      "fetched_at": "2026-05-05T08:16:11.701Z",
       "status": "ok",
       "modified": "2020-11-13",
       "freshness": {
@@ -420,7 +420,7 @@
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
       "slug": "__fixture__:pratiche_edilizie",
-      "fetched_at": "2026-05-05T08:01:42.578Z",
+      "fetched_at": "2026-05-05T08:16:13.604Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -683,7 +683,7 @@
     "istruzione": {
       "dataset_key": "istruzione",
       "slug": "popolazione-scolastica-a-s-2021-2022",
-      "fetched_at": "2026-05-05T08:01:42.645Z",
+      "fetched_at": "2026-05-05T08:16:13.697Z",
       "status": "ok",
       "modified": "2022-01-21",
       "freshness": {
@@ -855,7 +855,7 @@
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
       "slug": "localizzazione-sinistri-dal-2018-lecce",
-      "fetched_at": "2026-05-05T08:01:44.423Z",
+      "fetched_at": "2026-05-05T08:16:15.442Z",
       "status": "ok",
       "modified": "2021-02-03",
       "freshness": {
@@ -2916,7 +2916,7 @@
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
       "slug": "__fixture__:eventi_culturali",
-      "fetched_at": "2026-05-05T08:01:46.299Z",
+      "fetched_at": "2026-05-05T08:16:16.901Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
@@ -3031,7 +3031,7 @@
     "patrimonio": {
       "dataset_key": "patrimonio",
       "slug": "__fixture__:patrimonio",
-      "fetched_at": "2026-05-05T08:01:46.299Z",
+      "fetched_at": "2026-05-05T08:16:16.902Z",
       "status": "ok",
       "modified": "2026-05-04",
       "freshness": {
