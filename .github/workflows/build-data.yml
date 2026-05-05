@@ -10,6 +10,9 @@ on:
       - 'config/comuni.yml'
       - 'config/metrics.yml'
       - 'scripts/**'
+      - 'data/comuni/**/manifest.yml'
+      - 'data/comuni/**/*.csv'
+      - 'schemas/csv/**'
 
 permissions:
   contents: write
