@@ -244,6 +244,39 @@ I metadati DCAT-AP_IT del dataset originale rimangono invariati. Il Comune manti
 
 ---
 
+## Esposizione come Linked Open Data (RDF)
+
+Una volta che i CSV sono pubblicati nel formato canonico del paniere, possono essere convertiti in RDF/Turtle conforme alle ontologie [DCAT-AP_IT / ex-OntoPiA](https://schema.gov.it/) **senza alcuno sforzo aggiuntivo** da parte del Comune. Il servizio pubblico [CSV-to-RDF](https://csv2rdf.datigovit.workers.dev/) fa la conversione al volo passando l'URL del CSV.
+
+Esempio per la popolazione del Comune Ideale:
+
+```
+https://csv2rdf.datigovit.workers.dev/?url=<url_csv>&ipa=<ipa>&pa=<nome_ente>&onto=QB,CLV,L0
+```
+
+I 12 dataset del paniere mappano su classi semantiche corrette:
+
+| Dataset | Classe principale RDF | A cosa serve in Linked Data |
+|---|---|---|
+| Popolazione | `qb:Observation` | Cubi statistici interrogabili per anno/quartiere |
+| Bilancio | `cpsv:PublicService` | Servizi pubblici con costo associato |
+| Opere pubbliche | `pc:Contract` | Affidamenti con CIG, CUP, CPV codice |
+| Pratiche edilizie | `cpsv:PublicService` | Servizi del SUE con canale online/sportello |
+| Servizi sociali | `acco:Accommodation` | Strutture ricettive sociali (RSA, centri diurni) |
+| Istruzione | `smapit:School` | Scuole con codice meccanografico, indirizzo, alunni |
+| Incidenti stradali | `poi:PointOfInterest` | Punti georeferenziati con istante temporale |
+| Rifiuti | `qb:Observation` | Quantità raccolte per frazione e anno |
+| Eventi culturali | `cpev:PublicEvent` | Eventi pubblici con orario, luogo, organizzatore |
+| Delibere | `tr:TransparencyObligation` | Atti dell'albo pretorio come obblighi DLgs 33/2013 |
+| Patrimonio | `ch:CulturalHeritage` | Beni culturali con vincolo, tutela, datazione |
+| Tributi | `indicator:Indicator` | Indicatori finanziari con baseline, target, fonte |
+
+Tabella completa con link diretti per generare ciascun TTL: [PANIERE_CSV_SCHEMA.md — sezione Linked Open Data](PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit).
+
+**Per il Comune significa**: i CSV pubblicati nel formato del paniere sono già pronti per popolare un endpoint SPARQL Virtuoso, un catalogo DCAT-AP_IT su [dati.gov.it](https://www.dati.gov.it), o un harvester piveau. L'investimento di adottare il paniere si ripaga anche sul fronte Linked Open Data, oltre che sulla dashboard.
+
+---
+
 ## Riferimenti normativi
 
 - **DLgs 33/2013** — Riordino della disciplina riguardante il diritto di accesso civico (FOIA)

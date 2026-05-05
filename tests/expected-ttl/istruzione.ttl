@@ -1,0 +1,325 @@
+# CSV→RDF — 2026-05-05T17:02:37.634Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/istruzione.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: SMAPIT, CLV, SM
+# Righe: 18
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix smapit: <https://w3id.org/italia/onto/SMAPIT/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/school/MI187244>
+    a smapit:School ;
+    dct:identifier "MI187244"^^xsd:string ;
+    rdfs:label "Asilo Nido Arcobaleno"@it ;
+    dct:type "Asilo nido"@it ;
+    sm:hasTelephone "025878104"^^xsd:string ;
+    sm:hasEmail <mailto:mi187244@istruzione.it> ;
+    rdfs:comment "numero_alunni: 65"@it ;
+    rdfs:comment "numero_classi: 3"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI187244> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI187244> a clv:Address ;
+    clv:fullAddress "Via Roma 12"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4612"^^xsd:decimal ;
+    geo:long "9.185"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI670084>
+    a smapit:School ;
+    dct:identifier "MI670084"^^xsd:string ;
+    rdfs:label "Asilo Nido Girotondo"@it ;
+    dct:type "Asilo nido"@it ;
+    sm:hasTelephone "024115934"^^xsd:string ;
+    sm:hasEmail <mailto:mi670084@istruzione.it> ;
+    rdfs:comment "numero_alunni: 58"@it ;
+    rdfs:comment "numero_classi: 2"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI670084> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI670084> a clv:Address ;
+    clv:fullAddress "Via Garibaldi 45"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.468"^^xsd:decimal ;
+    geo:long "9.1942"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI704729>
+    a smapit:School ;
+    dct:identifier "MI704729"^^xsd:string ;
+    rdfs:label "Asilo Nido Stelle"@it ;
+    dct:type "Asilo nido"@it ;
+    sm:hasTelephone "024868131"^^xsd:string ;
+    sm:hasEmail <mailto:mi704729@istruzione.it> ;
+    rdfs:comment "numero_alunni: 42"@it ;
+    rdfs:comment "numero_classi: 2"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI704729> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI704729> a clv:Address ;
+    clv:fullAddress "Via Manzoni 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4598"^^xsd:decimal ;
+    geo:long "9.1975"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI900593>
+    a smapit:School ;
+    dct:identifier "MI900593"^^xsd:string ;
+    rdfs:label "Scuola Materna San Giuseppe"@it ;
+    dct:type "Materna"@it ;
+    sm:hasTelephone "023468933"^^xsd:string ;
+    sm:hasEmail <mailto:mi900593@istruzione.it> ;
+    rdfs:comment "numero_alunni: 145"@it ;
+    rdfs:comment "numero_classi: 7"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI900593> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI900593> a clv:Address ;
+    clv:fullAddress "Via Mazzini 8"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI240244>
+    a smapit:School ;
+    dct:identifier "MI240244"^^xsd:string ;
+    rdfs:label "Scuola Materna G. Rodari"@it ;
+    dct:type "Materna"@it ;
+    sm:hasTelephone "024143616"^^xsd:string ;
+    sm:hasEmail <mailto:mi240244@istruzione.it> ;
+    rdfs:comment "numero_alunni: 132"@it ;
+    rdfs:comment "numero_classi: 6"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI240244> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI240244> a clv:Address ;
+    clv:fullAddress "Via Verdi 18"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI222420>
+    a smapit:School ;
+    dct:identifier "MI222420"^^xsd:string ;
+    rdfs:label "Scuola Materna Don Bosco"@it ;
+    dct:type "Materna"@it ;
+    sm:hasTelephone "022188277"^^xsd:string ;
+    sm:hasEmail <mailto:mi222420@istruzione.it> ;
+    rdfs:comment "numero_alunni: 98"@it ;
+    rdfs:comment "numero_classi: 4"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI222420> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI222420> a clv:Address ;
+    clv:fullAddress "Via Don Bosco 5"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4602"^^xsd:decimal ;
+    geo:long "9.193"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI856198>
+    a smapit:School ;
+    dct:identifier "MI856198"^^xsd:string ;
+    rdfs:label "Scuola Primaria E. De Amicis"@it ;
+    dct:type "Elementare"@it ;
+    sm:hasTelephone "024588772"^^xsd:string ;
+    sm:hasEmail <mailto:mi856198@istruzione.it> ;
+    rdfs:comment "numero_alunni: 320"@it ;
+    rdfs:comment "numero_classi: 16"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI856198> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI856198> a clv:Address ;
+    clv:fullAddress "Piazza Marconi 3"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4634"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI137794>
+    a smapit:School ;
+    dct:identifier "MI137794"^^xsd:string ;
+    rdfs:label "Scuola Primaria G. Carducci"@it ;
+    dct:type "Elementare"@it ;
+    sm:hasTelephone "025943520"^^xsd:string ;
+    sm:hasEmail <mailto:mi137794@istruzione.it> ;
+    rdfs:comment "numero_alunni: 285"@it ;
+    rdfs:comment "numero_classi: 14"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI137794> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI137794> a clv:Address ;
+    clv:fullAddress "Via Carducci 14"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4668"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI863588>
+    a smapit:School ;
+    dct:identifier "MI863588"^^xsd:string ;
+    rdfs:label "Scuola Primaria A. Manzoni"@it ;
+    dct:type "Elementare"@it ;
+    sm:hasTelephone "028240716"^^xsd:string ;
+    sm:hasEmail <mailto:mi863588@istruzione.it> ;
+    rdfs:comment "numero_alunni: 244"@it ;
+    rdfs:comment "numero_classi: 12"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI863588> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI863588> a clv:Address ;
+    clv:fullAddress "Viale Europa 10"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4605"^^xsd:decimal ;
+    geo:long "9.1958"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI550274>
+    a smapit:School ;
+    dct:identifier "MI550274"^^xsd:string ;
+    rdfs:label "Scuola Media G. Pascoli"@it ;
+    dct:type "Media"@it ;
+    sm:hasTelephone "021242135"^^xsd:string ;
+    sm:hasEmail <mailto:mi550274@istruzione.it> ;
+    rdfs:comment "numero_alunni: 412"@it ;
+    rdfs:comment "numero_classi: 20"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI550274> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI550274> a clv:Address ;
+    clv:fullAddress "Via Pascoli 7"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1915"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI157634>
+    a smapit:School ;
+    dct:identifier "MI157634"^^xsd:string ;
+    rdfs:label "Scuola Media L. Da Vinci"@it ;
+    dct:type "Media"@it ;
+    sm:hasTelephone "023461390"^^xsd:string ;
+    sm:hasEmail <mailto:mi157634@istruzione.it> ;
+    rdfs:comment "numero_alunni: 388"@it ;
+    rdfs:comment "numero_classi: 19"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI157634> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI157634> a clv:Address ;
+    clv:fullAddress "Via Leonardo 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI575340>
+    a smapit:School ;
+    dct:identifier "MI575340"^^xsd:string ;
+    rdfs:label "Liceo Scientifico G. Galilei"@it ;
+    dct:type "Superiore"@it ;
+    sm:hasTelephone "025403186"^^xsd:string ;
+    sm:hasEmail <mailto:mi575340@istruzione.it> ;
+    rdfs:comment "numero_alunni: 685"@it ;
+    rdfs:comment "numero_classi: 34"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI575340> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI575340> a clv:Address ;
+    clv:fullAddress "Via Galilei 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4655"^^xsd:decimal ;
+    geo:long "9.186"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI079531>
+    a smapit:School ;
+    dct:identifier "MI079531"^^xsd:string ;
+    rdfs:label "Liceo Classico G. Carducci"@it ;
+    dct:type "Superiore"@it ;
+    sm:hasTelephone "028567629"^^xsd:string ;
+    sm:hasEmail <mailto:mi079531@istruzione.it> ;
+    rdfs:comment "numero_alunni: 425"@it ;
+    rdfs:comment "numero_classi: 21"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI079531> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI079531> a clv:Address ;
+    clv:fullAddress "Via Carducci 50"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI597582>
+    a smapit:School ;
+    dct:identifier "MI597582"^^xsd:string ;
+    rdfs:label "Liceo Linguistico A. Manzoni"@it ;
+    dct:type "Superiore"@it ;
+    sm:hasTelephone "028327703"^^xsd:string ;
+    sm:hasEmail <mailto:mi597582@istruzione.it> ;
+    rdfs:comment "numero_alunni: 510"@it ;
+    rdfs:comment "numero_classi: 25"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI597582> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI597582> a clv:Address ;
+    clv:fullAddress "Via Manzoni 80"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4612"^^xsd:decimal ;
+    geo:long "9.1948"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI595425>
+    a smapit:School ;
+    dct:identifier "MI595425"^^xsd:string ;
+    rdfs:label "ITIS A. Volta"@it ;
+    dct:type "Superiore"@it ;
+    sm:hasTelephone "025306845"^^xsd:string ;
+    sm:hasEmail <mailto:mi595425@istruzione.it> ;
+    rdfs:comment "numero_alunni: 745"@it ;
+    rdfs:comment "numero_classi: 37"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI595425> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI595425> a clv:Address ;
+    clv:fullAddress "Via Volta 15"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.182"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI907887>
+    a smapit:School ;
+    dct:identifier "MI907887"^^xsd:string ;
+    rdfs:label "IPSIA Don Milani"@it ;
+    dct:type "Superiore"@it ;
+    sm:hasTelephone "024926335"^^xsd:string ;
+    sm:hasEmail <mailto:mi907887@istruzione.it> ;
+    rdfs:comment "numero_alunni: 380"@it ;
+    rdfs:comment "numero_classi: 19"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI907887> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI907887> a clv:Address ;
+    clv:fullAddress "Via Don Milani 3"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4595"^^xsd:decimal ;
+    geo:long "9.1985"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI855408>
+    a smapit:School ;
+    dct:identifier "MI855408"^^xsd:string ;
+    rdfs:label "Istituto Tecnico Commerciale E. Mattei"@it ;
+    dct:type "Superiore"@it ;
+    sm:hasTelephone "028207116"^^xsd:string ;
+    sm:hasEmail <mailto:mi855408@istruzione.it> ;
+    rdfs:comment "numero_alunni: 540"@it ;
+    rdfs:comment "numero_classi: 27"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI855408> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI855408> a clv:Address ;
+    clv:fullAddress "Via Mattei 12"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.193"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/school/MI515433>
+    a smapit:School ;
+    dct:identifier "MI515433"^^xsd:string ;
+    rdfs:label "IPSAR L. Da Vinci"@it ;
+    dct:type "Superiore"@it ;
+    sm:hasTelephone "027110306"^^xsd:string ;
+    sm:hasEmail <mailto:mi515433@istruzione.it> ;
+    rdfs:comment "numero_alunni: 295"@it ;
+    rdfs:comment "numero_classi: 14"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/MI515433> .
+
+<https://w3id.org/italia/data/c_ideal/address/MI515433> a clv:Address ;
+    clv:fullAddress "Via Da Vinci 88"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.186"^^xsd:decimal .

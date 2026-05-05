@@ -251,3 +251,46 @@ R: Sì, viene comunque accettato. La dashboard mostra un flag freshness: `🟢 r
 ---
 
 Se hai pubblicato in passato CSV con nomi colonna diversi da quelli documentati qui (`missione`, `importo_euro`, `gettito_euro`, ecc.), continuano a essere accettati: il sistema riconosce automaticamente i nomi precedenti.
+
+---
+
+## Linked Open Data — esposizione semantica DCAT-AP_IT
+
+Ogni CSV del paniere è progettato per essere convertito in RDF/Turtle conforme alle ontologie [ex-OntoPiA](https://github.com/italia/dati-semantic-assets) (oggi [Catalogo Nazionale Dati Semantici](https://schema.gov.it/)). La conversione è automatica tramite il Worker pubblico [`csv2rdf.datigovit.workers.dev`](https://github.com/piersoft/CSV-to-RDF), che riconosce gli header del paniere e produce TTL con classi e predicati corretti.
+
+### Mapping canonico
+
+| Dataset CORE | Ontologia DCAT-AP_IT | Classe principale | Genera TTL |
+|---|---|---|---|
+| Popolazione | QB + CLV | `qb:Observation` | [popolazione.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fpopolazione.csv&ipa=c_ideal&pa=Comune+Ideale&onto=QB%2CCLV%2CL0) |
+| Bilancio | QB + CPSV-AP + COV | `cpsv:PublicService` | [bilancio.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fbilancio.csv&ipa=c_ideal&pa=Comune+Ideale&onto=QB%2CCPSV-AP%2CCOV%2CL0) |
+| Opere pubbliche | PublicContract + CPV + COV + TI + QB | `pc:Contract` | [opere_pubbliche.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fopere_pubbliche.csv&ipa=c_ideal&pa=Comune+Ideale&onto=PublicContract%2CCPV%2CCOV%2CTI%2CQB) |
+| Pratiche edilizie | CPSV-AP + COV | `cpsv:PublicService` | [pratiche_edilizie.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fpratiche_edilizie.csv&ipa=c_ideal&pa=Comune+Ideale&onto=CPSV-AP%2CCOV) |
+| Servizi sociali | COV + CLV + POI + SM + ACCO | `acco:Accommodation` | [servizi_sociali.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fservizi_sociali.csv&ipa=c_ideal&pa=Comune+Ideale&onto=COV%2CCLV%2CPOI%2CSM%2CACCO) |
+| Istruzione | SMAPIT + CLV + SM | `smapit:School` | [istruzione.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fistruzione.csv&ipa=c_ideal&pa=Comune+Ideale&onto=SMAPIT%2CCLV%2CSM) |
+| Incidenti stradali | POI + CLV + TI | `poi:PointOfInterest` | [incidenti_stradali.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fincidenti_stradali.csv&ipa=c_ideal&pa=Comune+Ideale&onto=POI%2CCLV%2CTI) |
+| Rifiuti | QB + CLV | `qb:Observation` | [rifiuti.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Frifiuti.csv&ipa=c_ideal&pa=Comune+Ideale&onto=QB%2CCLV) |
+| Eventi culturali | CPEV + TI + POI + CLV | `cpev:PublicEvent` | [eventi_culturali.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Feventi_culturali.csv&ipa=c_ideal&pa=Comune+Ideale&onto=CPEV%2CTI%2CPOI%2CCLV) |
+| Delibere | Transparency + COV | `tr:TransparencyObligation` | [delibere.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fdelibere.csv&ipa=c_ideal&pa=Comune+Ideale&onto=Transparency%2CCOV) |
+| Patrimonio | CulturalHeritage + CLV | `ch:CulturalHeritage` | [patrimonio.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Fpatrimonio.csv&ipa=c_ideal&pa=Comune+Ideale&onto=CulturalHeritage%2CCLV) |
+| Tributi | Indicator + QB + COV | `indicator:Indicator` | [tributi.ttl](https://csv2rdf.datigovit.workers.dev/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2Ftributi.csv&ipa=c_ideal&pa=Comune+Ideale&onto=Indicator%2CQB%2CCOV) |
+
+I 12 TTL pre-generati sono disponibili in [`tests/expected-ttl/`](../tests/expected-ttl/) come ground-truth per validazione e regressione.
+
+### Per il proprio Comune
+
+Sostituire nei link sopra:
+- `https%3A%2F%2Fraw.githubusercontent.com%2Fpiersoft%2Fcomune-metrics%2Fmain%2Fdata%2Fcomuni%2Fdemo%2F<dataset>.csv` con l'URL pubblico HTTPS del proprio CSV
+- `ipa=c_ideal` con il proprio codice IPA (es. `c_a662` per Comune di Bari)
+- `pa=Comune+Ideale` con il nome del proprio ente
+
+Il TTL prodotto è subito utilizzabile per popolare un endpoint SPARQL Virtuoso, un catalogo DCAT-AP_IT, o un piveau.
+
+### Formati di output del Worker
+
+Aggiungere `&fmt=` all'URL per cambiare formato:
+- `&fmt=ttl` (default) — Turtle
+- `&fmt=rdf` o `&fmt=rdfxml` — RDF/XML W3C
+- `&fmt=json` — JSON con metadati + TTL incapsulato
+
+Documentazione API completa: [README-API.md su CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF/blob/main/README-API.md).

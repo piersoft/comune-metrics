@@ -18,7 +18,7 @@
   "datasets": {
     "popolazione": {
       "dataset_key": "popolazione",
-      "fetched_at": "2026-05-05T16:54:34.364Z",
+      "fetched_at": "2026-05-05T17:05:09.500Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -113,7 +113,7 @@
     },
     "bilancio": {
       "dataset_key": "bilancio",
-      "fetched_at": "2026-05-05T16:54:34.366Z",
+      "fetched_at": "2026-05-05T17:05:09.510Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -274,7 +274,7 @@
     },
     "opere_pubbliche": {
       "dataset_key": "opere_pubbliche",
-      "fetched_at": "2026-05-05T16:54:34.368Z",
+      "fetched_at": "2026-05-05T17:05:09.521Z",
       "status": "ok",
       "modified": "2025-04-15",
       "freshness": {
@@ -319,7 +319,7 @@
     },
     "pratiche_edilizie": {
       "dataset_key": "pratiche_edilizie",
-      "fetched_at": "2026-05-05T16:54:34.370Z",
+      "fetched_at": "2026-05-05T17:05:09.527Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -376,7 +376,7 @@
     },
     "servizi_sociali": {
       "dataset_key": "servizi_sociali",
-      "fetched_at": "2026-05-05T16:54:34.376Z",
+      "fetched_at": "2026-05-05T17:05:09.572Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -439,7 +439,7 @@
     },
     "istruzione": {
       "dataset_key": "istruzione",
-      "fetched_at": "2026-05-05T16:54:34.381Z",
+      "fetched_at": "2026-05-05T17:05:09.579Z",
       "status": "ok",
       "modified": "2024-09-15",
       "freshness": {
@@ -664,7 +664,7 @@
     },
     "incidenti_stradali": {
       "dataset_key": "incidenti_stradali",
-      "fetched_at": "2026-05-05T16:54:34.382Z",
+      "fetched_at": "2026-05-05T17:05:09.581Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -2697,7 +2697,7 @@
     },
     "rifiuti": {
       "dataset_key": "rifiuti",
-      "fetched_at": "2026-05-05T16:54:34.388Z",
+      "fetched_at": "2026-05-05T17:05:09.611Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -2795,7 +2795,7 @@
     },
     "eventi_culturali": {
       "dataset_key": "eventi_culturali",
-      "fetched_at": "2026-05-05T16:54:34.390Z",
+      "fetched_at": "2026-05-05T17:05:09.615Z",
       "status": "ok",
       "modified": "2025-01-31",
       "freshness": {
@@ -3294,7 +3294,7 @@
     },
     "delibere": {
       "dataset_key": "delibere",
-      "fetched_at": "2026-05-05T16:54:34.391Z",
+      "fetched_at": "2026-05-05T17:05:09.635Z",
       "status": "ok",
       "modified": "2025-12-31",
       "freshness": {
@@ -3358,7 +3358,7 @@
     },
     "patrimonio": {
       "dataset_key": "patrimonio",
-      "fetched_at": "2026-05-05T16:54:34.401Z",
+      "fetched_at": "2026-05-05T17:05:09.700Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {
@@ -3662,7 +3662,7 @@
     },
     "tributi": {
       "dataset_key": "tributi",
-      "fetched_at": "2026-05-05T16:54:34.403Z",
+      "fetched_at": "2026-05-05T17:05:09.703Z",
       "status": "ok",
       "modified": "2024-12-31",
       "freshness": {

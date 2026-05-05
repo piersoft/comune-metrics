@@ -1,0 +1,769 @@
+# CSV→RDF — 2026-05-05T17:02:36.108Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/bilancio.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: QB, CPSV-AP, COV, L0
+# Righe: 23
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix cpsv: <http://purl.org/vocab/cpsv#> .
+@prefix cov: <https://w3id.org/italia/onto/COV/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> a qb:DataSet ;
+    rdfs:label "Dataset Comune Ideale"@it ;
+    dct:publisher <https://w3id.org/italia/data/c_ideal/ds> .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-1-Servizi-istituzionali--generali-e-di-gestione-1-Organi-istituzionali-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-101-Centro-Costo-Generico-11-1-1-Organi-istituzionali-81-Area-Bilancio-4066000-4194400-4280000-4280000-4280000-4280000-DIR01-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 1"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Servizi istituzionali, generali e di gestione"@it ;
+    rdfs:comment "PDC-Programma: 1"@it ;
+    rdfs:comment "PDC-Descrizione Programma: Organi istituzionali"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 101"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 11"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "1"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Organi istituzionali"@it ;
+    rdfs:comment "Centro di Responsabilità: 81"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 4066000"@it ;
+    rdfs:comment "Rendiconto 2024: 4194400"@it ;
+    rdfs:comment "Stanziamento 2025: 4280000"@it ;
+    rdfs:comment "Stanziamento 2026: 4280000"@it ;
+    rdfs:comment "Stanziamento 2027: 4280000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 4280000"@it ;
+    rdfs:comment "Codice Direzione: DIR01"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-1-Servizi-istituzionali--generali-e-di-gestione-2-Segreteria-generale-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-102-Centro-Costo-Generico-12-1-2-Segreteria-generale-82-Area-Bilancio-2042500-2107000-2150000-2150000-2150000-2150000-DIR02-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 1"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Servizi istituzionali, generali e di gestione"@it ;
+    rdfs:comment "PDC-Programma: 2"@it ;
+    rdfs:comment "PDC-Descrizione Programma: Segreteria generale"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 102"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 12"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "2"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Segreteria generale"@it ;
+    rdfs:comment "Centro di Responsabilità: 82"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 2042500"@it ;
+    rdfs:comment "Rendiconto 2024: 2107000"@it ;
+    rdfs:comment "Stanziamento 2025: 2150000"@it ;
+    rdfs:comment "Stanziamento 2026: 2150000"@it ;
+    rdfs:comment "Stanziamento 2027: 2150000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 2150000"@it ;
+    rdfs:comment "Codice Direzione: DIR02"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-2-Giustizia-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-103-Centro-Costo-Generico-13-1-3-Capitolo-generico-83-Area-Bilancio-361000-372400-380000-380000-380000-380000-DIR03-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 2"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Giustizia"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 103"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 13"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "3"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 83"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 361000"@it ;
+    rdfs:comment "Rendiconto 2024: 372400"@it ;
+    rdfs:comment "Stanziamento 2025: 380000"@it ;
+    rdfs:comment "Stanziamento 2026: 380000"@it ;
+    rdfs:comment "Stanziamento 2027: 380000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 380000"@it ;
+    rdfs:comment "Codice Direzione: DIR03"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-3-Ordine-pubblico-e-sicurezza-4-Polizia-locale-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-104-Centro-Costo-Generico-14-1-4-Polizia-locale-84-Area-Bilancio-845500-872200-890000-890000-890000-890000-DIR04-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 3"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Ordine pubblico e sicurezza"@it ;
+    rdfs:comment "PDC-Programma: 4"@it ;
+    rdfs:comment "PDC-Descrizione Programma: Polizia locale"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 104"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 14"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "4"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Polizia locale"@it ;
+    rdfs:comment "Centro di Responsabilità: 84"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 845500"@it ;
+    rdfs:comment "Rendiconto 2024: 872200"@it ;
+    rdfs:comment "Stanziamento 2025: 890000"@it ;
+    rdfs:comment "Stanziamento 2026: 890000"@it ;
+    rdfs:comment "Stanziamento 2027: 890000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 890000"@it ;
+    rdfs:comment "Codice Direzione: DIR04"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-4-Istruzione-e-diritto-allo-studio-5-Istruzione-prescolastica-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-105-Centro-Costo-Generico-15-1-5-Istruzione-prescolastica-85-Area-Bilancio-3249000-3351600-3420000-3420000-3420000-3420000-DIR05-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 4"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Istruzione e diritto allo studio"@it ;
+    rdfs:comment "PDC-Programma: 5"@it ;
+    rdfs:comment "PDC-Descrizione Programma: Istruzione prescolastica"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 105"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 15"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "5"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Istruzione prescolastica"@it ;
+    rdfs:comment "Centro di Responsabilità: 85"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 3249000"@it ;
+    rdfs:comment "Rendiconto 2024: 3351600"@it ;
+    rdfs:comment "Stanziamento 2025: 3420000"@it ;
+    rdfs:comment "Stanziamento 2026: 3420000"@it ;
+    rdfs:comment "Stanziamento 2027: 3420000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 3420000"@it ;
+    rdfs:comment "Codice Direzione: DIR05"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-5-Tutela-e-valorizzazione-dei-beni-e-attivit--culturali-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-106-Centro-Costo-Generico-16-1-6-Capitolo-generico-86-Area-Bilancio-1121000-1156400-1180000-1180000-1180000-1180000-DIR06-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 5"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Tutela e valorizzazione dei beni e attività culturali"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 106"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 16"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "6"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 86"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 1121000"@it ;
+    rdfs:comment "Rendiconto 2024: 1156400"@it ;
+    rdfs:comment "Stanziamento 2025: 1180000"@it ;
+    rdfs:comment "Stanziamento 2026: 1180000"@it ;
+    rdfs:comment "Stanziamento 2027: 1180000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 1180000"@it ;
+    rdfs:comment "Codice Direzione: DIR06"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-6-Politiche-giovanili--sport-e-tempo-libero-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-107-Centro-Costo-Generico-17-1-7-Capitolo-generico-87-Area-Bilancio-722000-744800-760000-760000-760000-760000-DIR07-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 6"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Politiche giovanili, sport e tempo libero"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 107"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 17"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "7"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 87"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 722000"@it ;
+    rdfs:comment "Rendiconto 2024: 744800"@it ;
+    rdfs:comment "Stanziamento 2025: 760000"@it ;
+    rdfs:comment "Stanziamento 2026: 760000"@it ;
+    rdfs:comment "Stanziamento 2027: 760000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 760000"@it ;
+    rdfs:comment "Codice Direzione: DIR07"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-7-Turismo-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-108-Centro-Costo-Generico-18-1-8-Capitolo-generico-88-Area-Bilancio-399000-411600-420000-420000-420000-420000-DIR08-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 7"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Turismo"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 108"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 18"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "8"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 88"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 399000"@it ;
+    rdfs:comment "Rendiconto 2024: 411600"@it ;
+    rdfs:comment "Stanziamento 2025: 420000"@it ;
+    rdfs:comment "Stanziamento 2026: 420000"@it ;
+    rdfs:comment "Stanziamento 2027: 420000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 420000"@it ;
+    rdfs:comment "Codice Direzione: DIR08"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-8-Assetto-del-territorio-ed-edilizia-abitativa-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-109-Centro-Costo-Generico-19-1-9-Capitolo-generico-89-Area-Bilancio-1748000-1803200-1840000-1840000-1840000-1840000-DIR09-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 8"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Assetto del territorio ed edilizia abitativa"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 109"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 19"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "9"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 89"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 1748000"@it ;
+    rdfs:comment "Rendiconto 2024: 1803200"@it ;
+    rdfs:comment "Stanziamento 2025: 1840000"@it ;
+    rdfs:comment "Stanziamento 2026: 1840000"@it ;
+    rdfs:comment "Stanziamento 2027: 1840000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 1840000"@it ;
+    rdfs:comment "Codice Direzione: DIR09"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-9-Sviluppo-sostenibile-e-tutela-del-territorio-e-dell-ambiente-6-Rifiuti-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-110-Centro-Costo-Generico-20-1-10-Rifiuti-90-Area-Bilancio-2831000-2920400-2980000-2980000-2980000-2980000-DIR10-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 9"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Sviluppo sostenibile e tutela del territorio e dell'ambiente"@it ;
+    rdfs:comment "PDC-Programma: 6"@it ;
+    rdfs:comment "PDC-Descrizione Programma: Rifiuti"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 110"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 20"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "10"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Rifiuti"@it ;
+    rdfs:comment "Centro di Responsabilità: 90"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 2831000"@it ;
+    rdfs:comment "Rendiconto 2024: 2920400"@it ;
+    rdfs:comment "Stanziamento 2025: 2980000"@it ;
+    rdfs:comment "Stanziamento 2026: 2980000"@it ;
+    rdfs:comment "Stanziamento 2027: 2980000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 2980000"@it ;
+    rdfs:comment "Codice Direzione: DIR10"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-10-Trasporti-e-diritto-alla-mobilit--3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-111-Centro-Costo-Generico-21-1-11-Capitolo-generico-91-Area-Bilancio-2042500-2107000-2150000-2150000-2150000-2150000-DIR11-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 10"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Trasporti e diritto alla mobilità"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 111"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 21"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "11"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 91"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 2042500"@it ;
+    rdfs:comment "Rendiconto 2024: 2107000"@it ;
+    rdfs:comment "Stanziamento 2025: 2150000"@it ;
+    rdfs:comment "Stanziamento 2026: 2150000"@it ;
+    rdfs:comment "Stanziamento 2027: 2150000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 2150000"@it ;
+    rdfs:comment "Codice Direzione: DIR11"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-11-Soccorso-civile-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-112-Centro-Costo-Generico-22-1-12-Capitolo-generico-92-Area-Bilancio-323000-333200-340000-340000-340000-340000-DIR12-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 11"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Soccorso civile"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 112"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 22"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "12"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 92"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 323000"@it ;
+    rdfs:comment "Rendiconto 2024: 333200"@it ;
+    rdfs:comment "Stanziamento 2025: 340000"@it ;
+    rdfs:comment "Stanziamento 2026: 340000"@it ;
+    rdfs:comment "Stanziamento 2027: 340000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 340000"@it ;
+    rdfs:comment "Codice Direzione: DIR12"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-12-Diritti-sociali--politiche-sociali-e-famiglia-7-Interventi-per-le-famiglie-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-113-Centro-Costo-Generico-23-1-13-Interventi-per-le-famiglie-93-Area-Bilancio-4294000-4429600-4520000-4520000-4520000-4520000-DIR13-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 12"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Diritti sociali, politiche sociali e famiglia"@it ;
+    rdfs:comment "PDC-Programma: 7"@it ;
+    rdfs:comment "PDC-Descrizione Programma: Interventi per le famiglie"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 113"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 23"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "13"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Interventi per le famiglie"@it ;
+    rdfs:comment "Centro di Responsabilità: 93"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 4294000"@it ;
+    rdfs:comment "Rendiconto 2024: 4429600"@it ;
+    rdfs:comment "Stanziamento 2025: 4520000"@it ;
+    rdfs:comment "Stanziamento 2026: 4520000"@it ;
+    rdfs:comment "Stanziamento 2027: 4520000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 4520000"@it ;
+    rdfs:comment "Codice Direzione: DIR13"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-13-Tutela-della-salute-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-114-Centro-Costo-Generico-24-1-14-Capitolo-generico-94-Area-Bilancio-494000-509600-520000-520000-520000-520000-DIR14-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 13"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Tutela della salute"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 114"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 24"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "14"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 94"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 494000"@it ;
+    rdfs:comment "Rendiconto 2024: 509600"@it ;
+    rdfs:comment "Stanziamento 2025: 520000"@it ;
+    rdfs:comment "Stanziamento 2026: 520000"@it ;
+    rdfs:comment "Stanziamento 2027: 520000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 520000"@it ;
+    rdfs:comment "Codice Direzione: DIR14"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-14-Sviluppo-economico-e-competitivit--3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-115-Centro-Costo-Generico-25-1-15-Capitolo-generico-95-Area-Bilancio-646000-666400-680000-680000-680000-680000-DIR15-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 14"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Sviluppo economico e competitività"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 115"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 25"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "15"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 95"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 646000"@it ;
+    rdfs:comment "Rendiconto 2024: 666400"@it ;
+    rdfs:comment "Stanziamento 2025: 680000"@it ;
+    rdfs:comment "Stanziamento 2026: 680000"@it ;
+    rdfs:comment "Stanziamento 2027: 680000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 680000"@it ;
+    rdfs:comment "Codice Direzione: DIR15"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-15-Politiche-per-il-lavoro-e-la-formazione-professionale-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-116-Centro-Costo-Generico-26-1-16-Capitolo-generico-96-Area-Bilancio-275500-284200-290000-290000-290000-290000-DIR16-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 15"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Politiche per il lavoro e la formazione professionale"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 116"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 26"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "16"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 96"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 275500"@it ;
+    rdfs:comment "Rendiconto 2024: 284200"@it ;
+    rdfs:comment "Stanziamento 2025: 290000"@it ;
+    rdfs:comment "Stanziamento 2026: 290000"@it ;
+    rdfs:comment "Stanziamento 2027: 290000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 290000"@it ;
+    rdfs:comment "Codice Direzione: DIR16"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-16-Agricoltura--politiche-agroalimentari-e-pesca-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-117-Centro-Costo-Generico-27-1-17-Capitolo-generico-97-Area-Bilancio-171000-176400-180000-180000-180000-180000-DIR17-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 16"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Agricoltura, politiche agroalimentari e pesca"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 117"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 27"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "17"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 97"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 171000"@it ;
+    rdfs:comment "Rendiconto 2024: 176400"@it ;
+    rdfs:comment "Stanziamento 2025: 180000"@it ;
+    rdfs:comment "Stanziamento 2026: 180000"@it ;
+    rdfs:comment "Stanziamento 2027: 180000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 180000"@it ;
+    rdfs:comment "Codice Direzione: DIR17"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-17-Energia-e-diversificazione-delle-fonti-energetiche-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-118-Centro-Costo-Generico-28-1-18-Capitolo-generico-98-Area-Bilancio-228000-235200-240000-240000-240000-240000-DIR18-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 17"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Energia e diversificazione delle fonti energetiche"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 118"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 28"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "18"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 98"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 228000"@it ;
+    rdfs:comment "Rendiconto 2024: 235200"@it ;
+    rdfs:comment "Stanziamento 2025: 240000"@it ;
+    rdfs:comment "Stanziamento 2026: 240000"@it ;
+    rdfs:comment "Stanziamento 2027: 240000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 240000"@it ;
+    rdfs:comment "Codice Direzione: DIR18"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-18-Relazioni-con-le-altre-autonomie-territoriali-e-locali-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-119-Centro-Costo-Generico-29-1-19-Capitolo-generico-99-Area-Bilancio-104500-107800-110000-110000-110000-110000-DIR19-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 18"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Relazioni con le altre autonomie territoriali e locali"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 119"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 29"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "19"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 99"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 104500"@it ;
+    rdfs:comment "Rendiconto 2024: 107800"@it ;
+    rdfs:comment "Stanziamento 2025: 110000"@it ;
+    rdfs:comment "Stanziamento 2026: 110000"@it ;
+    rdfs:comment "Stanziamento 2027: 110000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 110000"@it ;
+    rdfs:comment "Codice Direzione: DIR19"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-19-Fondi-e-accantonamenti-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-120-Centro-Costo-Generico-30-1-20-Capitolo-generico-100-Area-Bilancio-845500-872200-890000-890000-890000-890000-DIR20-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 19"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Fondi e accantonamenti"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 120"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 30"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "20"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 100"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 845500"@it ;
+    rdfs:comment "Rendiconto 2024: 872200"@it ;
+    rdfs:comment "Stanziamento 2025: 890000"@it ;
+    rdfs:comment "Stanziamento 2026: 890000"@it ;
+    rdfs:comment "Stanziamento 2027: 890000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 890000"@it ;
+    rdfs:comment "Codice Direzione: DIR20"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-20-Debito-pubblico-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-121-Centro-Costo-Generico-31-1-21-Capitolo-generico-101-Area-Bilancio-2280000-2352000-2400000-2400000-2400000-2400000-DIR21-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 20"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Debito pubblico"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 121"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 31"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "21"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 101"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 2280000"@it ;
+    rdfs:comment "Rendiconto 2024: 2352000"@it ;
+    rdfs:comment "Stanziamento 2025: 2400000"@it ;
+    rdfs:comment "Stanziamento 2026: 2400000"@it ;
+    rdfs:comment "Stanziamento 2027: 2400000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 2400000"@it ;
+    rdfs:comment "Codice Direzione: DIR21"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-21-Anticipazioni-finanziarie-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-122-Centro-Costo-Generico-32-1-22-Capitolo-generico-102-Area-Bilancio-5510000-5684000-5800000-5800000-5800000-5800000-DIR22-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 21"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Anticipazioni finanziarie"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 122"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 32"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "22"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 102"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 5510000"@it ;
+    rdfs:comment "Rendiconto 2024: 5684000"@it ;
+    rdfs:comment "Stanziamento 2025: 5800000"@it ;
+    rdfs:comment "Stanziamento 2026: 5800000"@it ;
+    rdfs:comment "Stanziamento 2027: 5800000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 5800000"@it ;
+    rdfs:comment "Codice Direzione: DIR22"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .
+
+<https://w3id.org/italia/data/c_ideal/resource/USCITE-22-Servizi-per-conto-terzi-3-1-SPESE-CORRENTI-1-REDDITI-DA-LAVORO-DIPENDENTE-1-RETRIBUZIONI-LORDE-1-RETRIBUZIONI-IN-DENARO-123-Centro-Costo-Generico-33-1-23-Capitolo-generico-103-Area-Bilancio-1377500-1421000-1450000-1450000-1450000-1450000-DIR23-DIREZIONE-GENERICA>
+    a cpsv:PublicService ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    dct:type "USCITE"@it ;
+    rdfs:comment "PDC-Missione: 22"@it ;
+    rdfs:comment "PDC-Descrizione Missione: Servizi per conto terzi"@it ;
+    rdfs:comment "PDC-Programma: 3"@it ;
+    rdfs:comment "PDC-Livello1: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello1: SPESE CORRENTI"@it ;
+    rdfs:comment "PDC-Livello2: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello2: REDDITI DA LAVORO DIPENDENTE"@it ;
+    rdfs:comment "PDC-Livello3: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello3: RETRIBUZIONI LORDE"@it ;
+    rdfs:comment "PDC-Livello4: 1"@it ;
+    rdfs:comment "PDC-Descrizione Livello4: RETRIBUZIONI IN DENARO"@it ;
+    rdfs:comment "Centro di Costo: 123"@it ;
+    rdfs:comment "Descrizione Centro di Costo: Centro Costo Generico"@it ;
+    rdfs:comment "Capitolo: 33"@it ;
+    rdfs:comment "Articolo: 1"@it ;
+    sdmx-measure:obsValue "23"^^xsd:decimal ;
+    rdfs:comment "Descrizione capitolo: Capitolo generico"@it ;
+    rdfs:comment "Centro di Responsabilità: 103"@it ;
+    rdfs:comment "Descrizione Centro di Responsabilità: Area Bilancio"@it ;
+    rdfs:comment "Rendiconto 2023: 1377500"@it ;
+    rdfs:comment "Rendiconto 2024: 1421000"@it ;
+    rdfs:comment "Stanziamento 2025: 1450000"@it ;
+    rdfs:comment "Stanziamento 2026: 1450000"@it ;
+    rdfs:comment "Stanziamento 2027: 1450000"@it ;
+    rdfs:comment "Stanziamento di cassa 2025: 1450000"@it ;
+    rdfs:comment "Codice Direzione: DIR23"@it ;
+    rdfs:comment "Descrizione Direzione: DIREZIONE GENERICA"@it .

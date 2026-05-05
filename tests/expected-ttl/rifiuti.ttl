@@ -1,0 +1,536 @@
+# CSV→RDF — 2026-05-05T17:02:38.347Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/rifiuti.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: QB, CLV
+# Righe: 30
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> a qb:DataSet ;
+    rdfs:label "Dataset Comune Ideale"@it ;
+    dct:publisher <https://w3id.org/italia/data/c_ideal/ds> .
+
+<https://w3id.org/italia/data/c_ideal/observation/2010-Lombardia-MI-Totale-18420000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2010"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 18420000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2010-Lombardia-MI-Totale-18420000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2010-Lombardia-MI-Totale-18420000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2010-Lombardia-MI-Differenziata_pct-32-5---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2010"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 32.5"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2010-Lombardia-MI-Differenziata_pct-32-5---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2010-Lombardia-MI-Differenziata_pct-32-5---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2011-Lombardia-MI-Totale-18280000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2011"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 18280000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2011-Lombardia-MI-Totale-18280000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2011-Lombardia-MI-Totale-18280000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2011-Lombardia-MI-Differenziata_pct-38-1---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2011"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 38.1"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2011-Lombardia-MI-Differenziata_pct-38-1---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2011-Lombardia-MI-Differenziata_pct-38-1---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2012-Lombardia-MI-Totale-18150000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2012"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 18150000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2012-Lombardia-MI-Totale-18150000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2012-Lombardia-MI-Totale-18150000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2012-Lombardia-MI-Differenziata_pct-42-8---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2012"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 42.8"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2012-Lombardia-MI-Differenziata_pct-42-8---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2012-Lombardia-MI-Differenziata_pct-42-8---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2013-Lombardia-MI-Totale-18020000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2013"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 18020000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2013-Lombardia-MI-Totale-18020000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2013-Lombardia-MI-Totale-18020000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2013-Lombardia-MI-Differenziata_pct-46-2---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2013"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 46.2"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2013-Lombardia-MI-Differenziata_pct-46-2---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2013-Lombardia-MI-Differenziata_pct-46-2---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2014-Lombardia-MI-Totale-17890000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2014"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17890000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2014-Lombardia-MI-Totale-17890000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2014-Lombardia-MI-Totale-17890000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2014-Lombardia-MI-Differenziata_pct-49-5---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2014"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 49.5"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2014-Lombardia-MI-Differenziata_pct-49-5---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2014-Lombardia-MI-Differenziata_pct-49-5---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2015-Lombardia-MI-Totale-17760000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2015"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17760000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2015-Lombardia-MI-Totale-17760000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2015-Lombardia-MI-Totale-17760000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2015-Lombardia-MI-Differenziata_pct-52-3---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2015"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 52.3"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2015-Lombardia-MI-Differenziata_pct-52-3---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2015-Lombardia-MI-Differenziata_pct-52-3---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2016-Lombardia-MI-Totale-17640000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2016"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17640000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2016-Lombardia-MI-Totale-17640000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2016-Lombardia-MI-Totale-17640000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2016-Lombardia-MI-Differenziata_pct-55-8---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2016"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 55.8"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2016-Lombardia-MI-Differenziata_pct-55-8---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2016-Lombardia-MI-Differenziata_pct-55-8---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2017-Lombardia-MI-Totale-17520000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2017"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17520000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2017-Lombardia-MI-Totale-17520000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2017-Lombardia-MI-Totale-17520000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2017-Lombardia-MI-Differenziata_pct-58-4---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2017"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 58.4"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2017-Lombardia-MI-Differenziata_pct-58-4---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2017-Lombardia-MI-Differenziata_pct-58-4---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2018-Lombardia-MI-Totale-17410000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2018"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17410000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2018-Lombardia-MI-Totale-17410000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2018-Lombardia-MI-Totale-17410000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2018-Lombardia-MI-Differenziata_pct-61-2---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2018"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 61.2"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2018-Lombardia-MI-Differenziata_pct-61-2---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2018-Lombardia-MI-Differenziata_pct-61-2---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2019-Lombardia-MI-Totale-17310000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2019"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17310000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2019-Lombardia-MI-Totale-17310000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2019-Lombardia-MI-Totale-17310000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2019-Lombardia-MI-Differenziata_pct-63-5---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2019"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 63.5"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2019-Lombardia-MI-Differenziata_pct-63-5---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2019-Lombardia-MI-Differenziata_pct-63-5---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2020-Lombardia-MI-Totale-16920000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 16920000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2020-Lombardia-MI-Totale-16920000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2020-Lombardia-MI-Totale-16920000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2020-Lombardia-MI-Differenziata_pct-65-1---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 65.1"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2020-Lombardia-MI-Differenziata_pct-65-1---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2020-Lombardia-MI-Differenziata_pct-65-1---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2021-Lombardia-MI-Totale-17120000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17120000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2021-Lombardia-MI-Totale-17120000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2021-Lombardia-MI-Totale-17120000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2021-Lombardia-MI-Differenziata_pct-67-4---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 67.4"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2021-Lombardia-MI-Differenziata_pct-67-4---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2021-Lombardia-MI-Differenziata_pct-67-4---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2022-Lombardia-MI-Totale-17050000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 17050000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2022-Lombardia-MI-Totale-17050000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2022-Lombardia-MI-Totale-17050000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2022-Lombardia-MI-Differenziata_pct-69-8---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 69.8"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2022-Lombardia-MI-Differenziata_pct-69-8---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2022-Lombardia-MI-Differenziata_pct-69-8---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2023-Lombardia-MI-Totale-16980000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 16980000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2023-Lombardia-MI-Totale-16980000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2023-Lombardia-MI-Totale-16980000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2023-Lombardia-MI-Differenziata_pct-71-5---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 71.5"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2023-Lombardia-MI-Differenziata_pct-71-5---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2023-Lombardia-MI-Differenziata_pct-71-5---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2024-Lombardia-MI-Totale-16910000-kg-Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Totale"@it ;
+    rdfs:comment "quantita: 16910000"@it ;
+    rdfs:comment "unita_misura: kg"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2024-Lombardia-MI-Totale-16910000-kg-Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2024-Lombardia-MI-Totale-16910000-kg-Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .
+
+<https://w3id.org/italia/data/c_ideal/observation/2024-Lombardia-MI-Differenziata_pct-73-2---Comune-Ideale>
+    a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-dimension:refArea "Lombardia"@it ;
+    sdmx-dimension:refArea "MI"@it ;
+    rdfs:comment "tipo_frazione: Differenziata_pct"@it ;
+    rdfs:comment "quantita: 73.2"@it ;
+    rdfs:comment "unita_misura: %"@it ;
+    sdmx-dimension:refArea "Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2024-Lombardia-MI-Differenziata_pct-73-2---Comune-Ideale> .
+
+<https://w3id.org/italia/data/c_ideal/address/2024-Lombardia-MI-Differenziata_pct-73-2---Comune-Ideale> a clv:Address ;
+    clv:hasProvince "MI"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasRegion "Lombardia"@it .

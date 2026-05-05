@@ -1,0 +1,2283 @@
+# CSV→RDF — 2026-05-05T17:02:38.725Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/eventi_culturali.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: CPEV, TI, POI, CLV
+# Righe: 85
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix cpev: <https://w3id.org/italia/onto/CPEV/> .
+@prefix ti: <https://w3id.org/italia/onto/TI/> .
+@prefix schema: <https://schema.org/> .
+@prefix poi: <https://w3id.org/italia/onto/POI/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix iot: <https://w3id.org/italia/onto/IoT/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/public-event/1>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival per la Pace"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-03-13T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/1> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/1> .
+
+<https://w3id.org/italia/data/c_ideal/address/1> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/1> a ti:TimeInstant ;
+    ti:startTime "2024-03-13T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/1> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/1> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/1> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/2>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto dei Giovani"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-02-06T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-02-09T23:00:00"^^xsd:dateTime ;
+    schema:location "Centro Sportivo"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/2> .
+
+<https://w3id.org/italia/data/c_ideal/address/2> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/2> a ti:TimeInstant ;
+    ti:startTime "2024-02-06T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/2> a poi:PointOfInterest ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/2> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/2> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/3>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione Internazionale"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-02-11T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-02-14T23:00:00"^^xsd:dateTime ;
+    schema:location "Villa Comunale"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/3> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/3> .
+
+<https://w3id.org/italia/data/c_ideal/address/3> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/3> a ti:TimeInstant ;
+    ti:startTime "2024-02-11T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/3> a poi:PointOfInterest ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/3> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/3> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/4>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto per la Pace"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-10-04T20:00:00"^^xsd:dateTime ;
+    schema:location "Palazzo Comunale"@it ;
+    dct:publisher "Comune (Assessorato Sport)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/4> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/4> .
+
+<https://w3id.org/italia/data/c_ideal/address/4> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/4> a ti:TimeInstant ;
+    ti:startTime "2024-10-04T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/4> a poi:PointOfInterest ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/4> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/4> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/5>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto Internazionale"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2025-02-16T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-02-17T23:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/5> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/5> .
+
+<https://w3id.org/italia/data/c_ideal/address/5> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/5> a ti:TimeInstant ;
+    ti:startTime "2025-02-16T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/5> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/5> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/5> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/6>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra Natalizio"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2024-01-22T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-01-25T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/6> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/6> .
+
+<https://w3id.org/italia/data/c_ideal/address/6> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/6> a ti:TimeInstant ;
+    ti:startTime "2024-01-22T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/6> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/6> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/6> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/7>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra di Beneficenza"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2025-10-26T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-10-27T23:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/7> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/7> .
+
+<https://w3id.org/italia/data/c_ideal/address/7> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/7> a ti:TimeInstant ;
+    ti:startTime "2025-10-26T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/7> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/7> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/7> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/8>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival Internazionale"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2024-05-06T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/8> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/8> .
+
+<https://w3id.org/italia/data/c_ideal/address/8> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/8> a ti:TimeInstant ;
+    ti:startTime "2024-05-06T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/8> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/8> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/8> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/9>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna della Tradizione"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-10-07T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-10-08T23:00:00"^^xsd:dateTime ;
+    schema:location "Teatro Sociale"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/9> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/9> .
+
+<https://w3id.org/italia/data/c_ideal/address/9> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/9> a ti:TimeInstant ;
+    ti:startTime "2024-10-07T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/9> a poi:PointOfInterest ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/9> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/9> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/10>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto Natalizio"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2024-07-25T20:00:00"^^xsd:dateTime ;
+    schema:location "Palazzo Comunale"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/10> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/10> .
+
+<https://w3id.org/italia/data/c_ideal/address/10> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/10> a ti:TimeInstant ;
+    ti:startTime "2024-07-25T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/10> a poi:PointOfInterest ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/10> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/10> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/11>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo di Primavera"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-11-03T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/11> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/11> .
+
+<https://w3id.org/italia/data/c_ideal/address/11> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/11> a ti:TimeInstant ;
+    ti:startTime "2024-11-03T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/11> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/11> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/11> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/12>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra Autunnale"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-01-09T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-01-10T23:00:00"^^xsd:dateTime ;
+    schema:location "Palazzo Comunale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/12> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/12> .
+
+<https://w3id.org/italia/data/c_ideal/address/12> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/12> a ti:TimeInstant ;
+    ti:startTime "2024-01-09T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/12> a poi:PointOfInterest ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/12> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/12> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/13>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna Internazionale"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2025-02-10T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-02-11T23:00:00"^^xsd:dateTime ;
+    schema:location "Centro Sportivo"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/13> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/13> .
+
+<https://w3id.org/italia/data/c_ideal/address/13> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/13> a ti:TimeInstant ;
+    ti:startTime "2025-02-10T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/13> a poi:PointOfInterest ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/13> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/13> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/14>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra per la Pace"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2025-02-11T20:00:00"^^xsd:dateTime ;
+    schema:location "Piazza San Marco"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/14> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/14> .
+
+<https://w3id.org/italia/data/c_ideal/address/14> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/14> a ti:TimeInstant ;
+    ti:startTime "2025-02-11T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/14> a poi:PointOfInterest ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/14> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/14> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/15>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto di Beneficenza"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2025-11-12T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-11-13T23:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/15> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/15> .
+
+<https://w3id.org/italia/data/c_ideal/address/15> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/15> a ti:TimeInstant ;
+    ti:startTime "2025-11-12T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/15> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/15> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/15> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/16>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra per la Pace"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2024-04-02T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-04-04T23:00:00"^^xsd:dateTime ;
+    schema:location "Chiesa San Francesco"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/16> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/16> .
+
+<https://w3id.org/italia/data/c_ideal/address/16> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/16> a ti:TimeInstant ;
+    ti:startTime "2024-04-02T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/16> a poi:PointOfInterest ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/16> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/16> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/17>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto per la Pace"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2024-07-23T20:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/17> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/17> .
+
+<https://w3id.org/italia/data/c_ideal/address/17> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/17> a ti:TimeInstant ;
+    ti:startTime "2024-07-23T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/17> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/17> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/17> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/18>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo dei Giovani"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-09-04T20:00:00"^^xsd:dateTime ;
+    schema:location "Museo Civico"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/18> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/18> .
+
+<https://w3id.org/italia/data/c_ideal/address/18> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/18> a ti:TimeInstant ;
+    ti:startTime "2024-09-04T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/18> a poi:PointOfInterest ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/18> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/18> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/19>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto d'Estate"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2025-11-22T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-11-24T23:00:00"^^xsd:dateTime ;
+    schema:location "Centro Sportivo"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/19> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/19> .
+
+<https://w3id.org/italia/data/c_ideal/address/19> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/19> a ti:TimeInstant ;
+    ti:startTime "2025-11-22T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/19> a poi:PointOfInterest ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/19> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/19> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/20>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival Natalizio"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2024-03-23T20:00:00"^^xsd:dateTime ;
+    schema:location "Teatro Sociale"@it ;
+    dct:publisher "Comune (Assessorato Sport)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/20> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/20> .
+
+<https://w3id.org/italia/data/c_ideal/address/20> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/20> a ti:TimeInstant ;
+    ti:startTime "2024-03-23T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/20> a poi:PointOfInterest ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/20> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/20> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/21>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto per la Pace"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2024-10-05T20:00:00"^^xsd:dateTime ;
+    schema:location "Chiesa San Francesco"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/21> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/21> .
+
+<https://w3id.org/italia/data/c_ideal/address/21> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/21> a ti:TimeInstant ;
+    ti:startTime "2024-10-05T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/21> a poi:PointOfInterest ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/21> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/21> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/22>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto d'Estate"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2024-07-18T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-07-19T23:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/22> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/22> .
+
+<https://w3id.org/italia/data/c_ideal/address/22> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/22> a ti:TimeInstant ;
+    ti:startTime "2024-07-18T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/22> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/22> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/22> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/23>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo della Tradizione"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-11-20T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-11-22T23:00:00"^^xsd:dateTime ;
+    schema:location "Teatro Sociale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/23> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/23> .
+
+<https://w3id.org/italia/data/c_ideal/address/23> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/23> a ti:TimeInstant ;
+    ti:startTime "2024-11-20T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/23> a poi:PointOfInterest ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/23> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/23> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/24>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna Internazionale"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2024-01-02T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-01-05T23:00:00"^^xsd:dateTime ;
+    schema:location "Palazzo Comunale"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/24> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/24> .
+
+<https://w3id.org/italia/data/c_ideal/address/24> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/24> a ti:TimeInstant ;
+    ti:startTime "2024-01-02T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/24> a poi:PointOfInterest ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/24> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/24> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/25>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto Autunnale"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2024-03-18T20:00:00"^^xsd:dateTime ;
+    schema:location "Centro Sportivo"@it ;
+    dct:publisher "Comune (Assessorato Sport)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/25> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/25> .
+
+<https://w3id.org/italia/data/c_ideal/address/25> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/25> a ti:TimeInstant ;
+    ti:startTime "2024-03-18T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/25> a poi:PointOfInterest ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/25> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/25> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/26>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival Internazionale"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-10-09T20:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/26> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/26> .
+
+<https://w3id.org/italia/data/c_ideal/address/26> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/26> a ti:TimeInstant ;
+    ti:startTime "2024-10-09T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/26> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/26> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/26> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/27>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo Autunnale"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2025-03-10T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-03-11T23:00:00"^^xsd:dateTime ;
+    schema:location "Museo Civico"@it ;
+    dct:publisher "Comune (Assessorato Sport)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/27> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/27> .
+
+<https://w3id.org/italia/data/c_ideal/address/27> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/27> a ti:TimeInstant ;
+    ti:startTime "2025-03-10T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/27> a poi:PointOfInterest ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/27> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/27> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/28>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra dei Giovani"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2025-08-13T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-08-14T23:00:00"^^xsd:dateTime ;
+    schema:location "Palazzo Comunale"@it ;
+    dct:publisher "Comune (Assessorato Sport)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/28> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/28> .
+
+<https://w3id.org/italia/data/c_ideal/address/28> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/28> a ti:TimeInstant ;
+    ti:startTime "2025-08-13T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/28> a poi:PointOfInterest ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/28> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/28> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/29>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna Natalizio"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2024-04-16T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-04-18T23:00:00"^^xsd:dateTime ;
+    schema:location "Teatro Sociale"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/29> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/29> .
+
+<https://w3id.org/italia/data/c_ideal/address/29> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/29> a ti:TimeInstant ;
+    ti:startTime "2024-04-16T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/29> a poi:PointOfInterest ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/29> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/29> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/30>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra Natalizio"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2025-07-10T20:00:00"^^xsd:dateTime ;
+    schema:location "Chiesa San Francesco"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/30> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/30> .
+
+<https://w3id.org/italia/data/c_ideal/address/30> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/30> a ti:TimeInstant ;
+    ti:startTime "2025-07-10T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/30> a poi:PointOfInterest ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/30> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/30> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/31>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto di Primavera"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2024-09-10T20:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/31> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/31> .
+
+<https://w3id.org/italia/data/c_ideal/address/31> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/31> a ti:TimeInstant ;
+    ti:startTime "2024-09-10T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/31> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/31> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/31> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/32>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione Internazionale"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2025-08-01T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-08-02T23:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/32> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/32> .
+
+<https://w3id.org/italia/data/c_ideal/address/32> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/32> a ti:TimeInstant ;
+    ti:startTime "2025-08-01T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/32> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/32> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/32> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/33>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione Natalizio"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2024-11-01T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/33> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/33> .
+
+<https://w3id.org/italia/data/c_ideal/address/33> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/33> a ti:TimeInstant ;
+    ti:startTime "2024-11-01T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/33> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/33> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/33> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/34>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto d'Estate"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2024-07-04T20:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/34> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/34> .
+
+<https://w3id.org/italia/data/c_ideal/address/34> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/34> a ti:TimeInstant ;
+    ti:startTime "2024-07-04T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/34> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/34> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/34> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/35>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo per la Pace"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2024-06-03T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-06-06T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/35> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/35> .
+
+<https://w3id.org/italia/data/c_ideal/address/35> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/35> a ti:TimeInstant ;
+    ti:startTime "2024-06-03T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/35> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/35> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/35> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/36>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna per la Pace"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-11-16T20:00:00"^^xsd:dateTime ;
+    schema:location "Museo Civico"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/36> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/36> .
+
+<https://w3id.org/italia/data/c_ideal/address/36> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/36> a ti:TimeInstant ;
+    ti:startTime "2024-11-16T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/36> a poi:PointOfInterest ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/36> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/36> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/37>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione per la Pace"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2025-01-02T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/37> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/37> .
+
+<https://w3id.org/italia/data/c_ideal/address/37> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/37> a ti:TimeInstant ;
+    ti:startTime "2025-01-02T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/37> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/37> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/37> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/38>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione d'Estate"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2024-10-25T20:00:00"^^xsd:dateTime ;
+    schema:location "Chiesa San Francesco"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/38> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/38> .
+
+<https://w3id.org/italia/data/c_ideal/address/38> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/38> a ti:TimeInstant ;
+    ti:startTime "2024-10-25T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/38> a poi:PointOfInterest ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/38> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/38> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/39>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival di Beneficenza"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-02-18T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-02-19T23:00:00"^^xsd:dateTime ;
+    schema:location "Chiesa San Francesco"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/39> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/39> .
+
+<https://w3id.org/italia/data/c_ideal/address/39> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/39> a ti:TimeInstant ;
+    ti:startTime "2024-02-18T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/39> a poi:PointOfInterest ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/39> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/39> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/40>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo d'Estate"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-05-09T20:00:00"^^xsd:dateTime ;
+    schema:location "Palazzo Comunale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/40> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/40> .
+
+<https://w3id.org/italia/data/c_ideal/address/40> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/40> a ti:TimeInstant ;
+    ti:startTime "2024-05-09T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/40> a poi:PointOfInterest ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/40> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/40> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/41>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival per la Pace"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2024-06-07T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-06-08T23:00:00"^^xsd:dateTime ;
+    schema:location "Museo Civico"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/41> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/41> .
+
+<https://w3id.org/italia/data/c_ideal/address/41> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/41> a ti:TimeInstant ;
+    ti:startTime "2024-06-07T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/41> a poi:PointOfInterest ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/41> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/41> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/42>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo di Primavera"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2025-04-07T20:00:00"^^xsd:dateTime ;
+    schema:location "Centro Sportivo"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/42> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/42> .
+
+<https://w3id.org/italia/data/c_ideal/address/42> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/42> a ti:TimeInstant ;
+    ti:startTime "2025-04-07T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/42> a poi:PointOfInterest ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/42> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/42> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/43>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival Internazionale"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-07-11T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-07-12T23:00:00"^^xsd:dateTime ;
+    schema:location "Villa Comunale"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/43> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/43> .
+
+<https://w3id.org/italia/data/c_ideal/address/43> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/43> a ti:TimeInstant ;
+    ti:startTime "2024-07-11T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/43> a poi:PointOfInterest ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/43> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/43> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/44>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo di Primavera"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2025-08-23T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-08-24T23:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Comune (Assessorato Sport)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/44> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/44> .
+
+<https://w3id.org/italia/data/c_ideal/address/44> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/44> a ti:TimeInstant ;
+    ti:startTime "2025-08-23T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/44> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/44> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/44> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/45>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo della Tradizione"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-08-01T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-08-02T23:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/45> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/45> .
+
+<https://w3id.org/italia/data/c_ideal/address/45> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/45> a ti:TimeInstant ;
+    ti:startTime "2024-08-01T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/45> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/45> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/45> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/46>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra Natalizio"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2024-06-06T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/46> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/46> .
+
+<https://w3id.org/italia/data/c_ideal/address/46> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/46> a ti:TimeInstant ;
+    ti:startTime "2024-06-06T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/46> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/46> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/46> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/47>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto d'Arte Moderna"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2025-09-25T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-09-26T23:00:00"^^xsd:dateTime ;
+    schema:location "Villa Comunale"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/47> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/47> .
+
+<https://w3id.org/italia/data/c_ideal/address/47> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/47> a ti:TimeInstant ;
+    ti:startTime "2025-09-25T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/47> a poi:PointOfInterest ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/47> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/47> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/48>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione per la Pace"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-08-10T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-08-11T23:00:00"^^xsd:dateTime ;
+    schema:location "Piazza San Marco"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/48> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/48> .
+
+<https://w3id.org/italia/data/c_ideal/address/48> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/48> a ti:TimeInstant ;
+    ti:startTime "2024-08-10T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/48> a poi:PointOfInterest ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/48> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/48> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/49>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra per la Pace"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2025-06-17T20:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Pro Loco"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/49> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/49> .
+
+<https://w3id.org/italia/data/c_ideal/address/49> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/49> a ti:TimeInstant ;
+    ti:startTime "2025-06-17T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/49> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/49> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/49> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/50>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto d'Estate"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2024-09-01T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-09-04T23:00:00"^^xsd:dateTime ;
+    schema:location "Chiesa San Francesco"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/50> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/50> .
+
+<https://w3id.org/italia/data/c_ideal/address/50> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/50> a ti:TimeInstant ;
+    ti:startTime "2024-09-01T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/50> a poi:PointOfInterest ;
+    geo:lat "45.4615"^^xsd:decimal ;
+    geo:long "9.1955"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/50> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/50> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/51>
+    a cpev:PublicEvent ;
+    rdfs:label "Mostra Autunnale"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2024-03-09T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-03-10T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Comune (Assessorato Sport)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/51> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/51> .
+
+<https://w3id.org/italia/data/c_ideal/address/51> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/51> a ti:TimeInstant ;
+    ti:startTime "2024-03-09T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/51> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/51> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/51> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/52>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna d'Estate"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-06-13T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-06-15T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/52> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/52> .
+
+<https://w3id.org/italia/data/c_ideal/address/52> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/52> a ti:TimeInstant ;
+    ti:startTime "2024-06-13T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/52> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/52> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/52> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/53>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto di Beneficenza"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2024-04-10T20:00:00"^^xsd:dateTime ;
+    schema:location "Piazza San Marco"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/53> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/53> .
+
+<https://w3id.org/italia/data/c_ideal/address/53> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/53> a ti:TimeInstant ;
+    ti:startTime "2024-04-10T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/53> a poi:PointOfInterest ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/53> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/53> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/54>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival d'Arte Moderna"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-07-17T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/54> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/54> .
+
+<https://w3id.org/italia/data/c_ideal/address/54> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/54> a ti:TimeInstant ;
+    ti:startTime "2024-07-17T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/54> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/54> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/54> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/55>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo d'Estate"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2025-07-15T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-07-18T23:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/55> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/55> .
+
+<https://w3id.org/italia/data/c_ideal/address/55> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/55> a ti:TimeInstant ;
+    ti:startTime "2025-07-15T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/55> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/55> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/55> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/56>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione Internazionale"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2025-01-05T20:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/56> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/56> .
+
+<https://w3id.org/italia/data/c_ideal/address/56> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/56> a ti:TimeInstant ;
+    ti:startTime "2025-01-05T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/56> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/56> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/56> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/57>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival di Primavera"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-10-28T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-11-01T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/57> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/57> .
+
+<https://w3id.org/italia/data/c_ideal/address/57> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/57> a ti:TimeInstant ;
+    ti:startTime "2024-10-28T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/57> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/57> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/57> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/58>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival d'Estate"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-03-20T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-03-21T23:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Pro Loco"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/58> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/58> .
+
+<https://w3id.org/italia/data/c_ideal/address/58> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/58> a ti:TimeInstant ;
+    ti:startTime "2024-03-20T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/58> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/58> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/58> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/59>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna di Primavera"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-10-03T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Associazione Culturale Insieme"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/59> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/59> .
+
+<https://w3id.org/italia/data/c_ideal/address/59> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/59> a ti:TimeInstant ;
+    ti:startTime "2024-10-03T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/59> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/59> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/59> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/60>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo Autunnale"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-11-01T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-11-02T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/60> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/60> .
+
+<https://w3id.org/italia/data/c_ideal/address/60> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/60> a ti:TimeInstant ;
+    ti:startTime "2024-11-01T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/60> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/60> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/60> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/61>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna dei Giovani"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2024-12-18T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/61> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/61> .
+
+<https://w3id.org/italia/data/c_ideal/address/61> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/61> a ti:TimeInstant ;
+    ti:startTime "2024-12-18T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/61> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/61> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/61> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/62>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo d'Estate"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2025-06-15T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-06-18T23:00:00"^^xsd:dateTime ;
+    schema:location "Teatro Sociale"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/62> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/62> .
+
+<https://w3id.org/italia/data/c_ideal/address/62> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/62> a ti:TimeInstant ;
+    ti:startTime "2025-06-15T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/62> a poi:PointOfInterest ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/62> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/62> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/63>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo d'Estate"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2025-01-02T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-01-03T23:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/63> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/63> .
+
+<https://w3id.org/italia/data/c_ideal/address/63> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/63> a ti:TimeInstant ;
+    ti:startTime "2025-01-02T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/63> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/63> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/63> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/64>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival Internazionale"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2025-12-27T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-12-28T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/64> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/64> .
+
+<https://w3id.org/italia/data/c_ideal/address/64> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/64> a ti:TimeInstant ;
+    ti:startTime "2025-12-27T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/64> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/64> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/64> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/65>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo Internazionale"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-06-05T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/65> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/65> .
+
+<https://w3id.org/italia/data/c_ideal/address/65> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/65> a ti:TimeInstant ;
+    ti:startTime "2024-06-05T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/65> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/65> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/65> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/66>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto per la Pace"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-11-27T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-11-28T23:00:00"^^xsd:dateTime ;
+    schema:location "Villa Comunale"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/66> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/66> .
+
+<https://w3id.org/italia/data/c_ideal/address/66> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/66> a ti:TimeInstant ;
+    ti:startTime "2024-11-27T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/66> a poi:PointOfInterest ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/66> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/66> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/67>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival di Primavera"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2025-03-24T20:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/67> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/67> .
+
+<https://w3id.org/italia/data/c_ideal/address/67> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/67> a ti:TimeInstant ;
+    ti:startTime "2025-03-24T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/67> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/67> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/67> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/68>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna d'Estate"@it ;
+    dct:type "Musica"@it ;
+    ti:startTime "2024-04-12T20:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/68> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/68> .
+
+<https://w3id.org/italia/data/c_ideal/address/68> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/68> a ti:TimeInstant ;
+    ti:startTime "2024-04-12T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/68> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/68> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/68> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/69>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione d'Arte Moderna"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-10-23T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-10-25T23:00:00"^^xsd:dateTime ;
+    schema:location "Biblioteca Civica"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/69> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/69> .
+
+<https://w3id.org/italia/data/c_ideal/address/69> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/69> a ti:TimeInstant ;
+    ti:startTime "2024-10-23T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/69> a poi:PointOfInterest ;
+    geo:lat "45.465"^^xsd:decimal ;
+    geo:long "9.1875"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/69> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/69> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/70>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo Autunnale"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-11-14T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-11-15T23:00:00"^^xsd:dateTime ;
+    schema:location "Piazza San Marco"@it ;
+    dct:publisher "Pro Loco"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/70> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/70> .
+
+<https://w3id.org/italia/data/c_ideal/address/70> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/70> a ti:TimeInstant ;
+    ti:startTime "2024-11-14T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/70> a poi:PointOfInterest ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/70> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/70> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/71>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione della Tradizione"@it ;
+    dct:type "Mostra"@it ;
+    ti:startTime "2024-12-03T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-12-06T23:00:00"^^xsd:dateTime ;
+    schema:location "Piazza San Marco"@it ;
+    dct:publisher "Pro Loco"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/71> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/71> .
+
+<https://w3id.org/italia/data/c_ideal/address/71> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/71> a ti:TimeInstant ;
+    ti:startTime "2024-12-03T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/71> a poi:PointOfInterest ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/71> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/71> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/72>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna d'Arte Moderna"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2024-07-04T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-07-06T23:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/72> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/72> .
+
+<https://w3id.org/italia/data/c_ideal/address/72> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/72> a ti:TimeInstant ;
+    ti:startTime "2024-07-04T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/72> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/72> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/72> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/73>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione Natalizio"@it ;
+    dct:type "Cinema"@it ;
+    ti:startTime "2024-05-13T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-05-15T23:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/73> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/73> .
+
+<https://w3id.org/italia/data/c_ideal/address/73> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/73> a ti:TimeInstant ;
+    ti:startTime "2024-05-13T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/73> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/73> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/73> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/74>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo Internazionale"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2024-12-09T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-12-11T23:00:00"^^xsd:dateTime ;
+    schema:location "Centro Sportivo"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/74> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/74> .
+
+<https://w3id.org/italia/data/c_ideal/address/74> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/74> a ti:TimeInstant ;
+    ti:startTime "2024-12-09T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/74> a poi:PointOfInterest ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/74> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/74> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/75>
+    a cpev:PublicEvent ;
+    rdfs:label "Esibizione di Beneficenza"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-10-11T20:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Comune (Assessorato Cultura)"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/75> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/75> .
+
+<https://w3id.org/italia/data/c_ideal/address/75> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/75> a ti:TimeInstant ;
+    ti:startTime "2024-10-11T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/75> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/75> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/75> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/76>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna di Primavera"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2024-10-12T20:00:00"^^xsd:dateTime ;
+    schema:location "Centro Sportivo"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/76> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/76> .
+
+<https://w3id.org/italia/data/c_ideal/address/76> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/76> a ti:TimeInstant ;
+    ti:startTime "2024-10-12T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/76> a poi:PointOfInterest ;
+    geo:lat "45.4685"^^xsd:decimal ;
+    geo:long "9.183"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/76> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/76> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/77>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna d'Arte Moderna"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2025-09-20T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-09-21T23:00:00"^^xsd:dateTime ;
+    schema:location "Teatro Sociale"@it ;
+    dct:publisher "CONI Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/77> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/77> .
+
+<https://w3id.org/italia/data/c_ideal/address/77> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/77> a ti:TimeInstant ;
+    ti:startTime "2025-09-20T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/77> a poi:PointOfInterest ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/77> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/77> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/78>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival di Primavera"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2025-01-27T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-01-28T23:00:00"^^xsd:dateTime ;
+    schema:location "Museo Civico"@it ;
+    dct:publisher "Banda Musicale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/78> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/78> .
+
+<https://w3id.org/italia/data/c_ideal/address/78> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/78> a ti:TimeInstant ;
+    ti:startTime "2025-01-27T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/78> a poi:PointOfInterest ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/78> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/78> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/79>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival d'Arte Moderna"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2025-04-24T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-04-26T23:00:00"^^xsd:dateTime ;
+    schema:location "Piazza San Marco"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/79> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/79> .
+
+<https://w3id.org/italia/data/c_ideal/address/79> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/79> a ti:TimeInstant ;
+    ti:startTime "2025-04-24T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/79> a poi:PointOfInterest ;
+    geo:lat "45.4625"^^xsd:decimal ;
+    geo:long "9.188"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/79> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/79> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/80>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto Natalizio"@it ;
+    dct:type "Religioso"@it ;
+    ti:startTime "2024-03-05T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-03-06T23:00:00"^^xsd:dateTime ;
+    schema:location "Palazzo Comunale"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/80> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/80> .
+
+<https://w3id.org/italia/data/c_ideal/address/80> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/80> a ti:TimeInstant ;
+    ti:startTime "2024-03-05T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/80> a poi:PointOfInterest ;
+    geo:lat "45.4642"^^xsd:decimal ;
+    geo:long "9.19"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/80> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/80> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/81>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto dei Giovani"@it ;
+    dct:type "Conferenza"@it ;
+    ti:startTime "2024-10-16T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-10-19T23:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/81> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/81> .
+
+<https://w3id.org/italia/data/c_ideal/address/81> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/81> a ti:TimeInstant ;
+    ti:startTime "2024-10-16T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/81> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/81> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/81> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/82>
+    a cpev:PublicEvent ;
+    rdfs:label "Rassegna Natalizio"@it ;
+    dct:type "Sport"@it ;
+    ti:startTime "2024-11-02T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2024-11-04T23:00:00"^^xsd:dateTime ;
+    schema:location "Villa Comunale"@it ;
+    dct:publisher "Coro Civico"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/82> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/82> .
+
+<https://w3id.org/italia/data/c_ideal/address/82> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/82> a ti:TimeInstant ;
+    ti:startTime "2024-11-02T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/82> a poi:PointOfInterest ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.194"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/82> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/82> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/83>
+    a cpev:PublicEvent ;
+    rdfs:label "Festival Autunnale"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-03-16T20:00:00"^^xsd:dateTime ;
+    schema:location "Auditorium Comunale"@it ;
+    dct:publisher "Pro Loco"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/83> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/83> .
+
+<https://w3id.org/italia/data/c_ideal/address/83> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/83> a ti:TimeInstant ;
+    ti:startTime "2024-03-16T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/83> a poi:PointOfInterest ;
+    geo:lat "45.464"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/83> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/83> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/84>
+    a cpev:PublicEvent ;
+    rdfs:label "Spettacolo della Tradizione"@it ;
+    dct:type "Festival"@it ;
+    ti:startTime "2025-10-18T20:00:00"^^xsd:dateTime ;
+    ti:endTime "2025-10-19T23:00:00"^^xsd:dateTime ;
+    schema:location "Parco Civico"@it ;
+    dct:publisher "Diocesi"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/84> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/84> .
+
+<https://w3id.org/italia/data/c_ideal/address/84> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/84> a ti:TimeInstant ;
+    ti:startTime "2025-10-18T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/84> a poi:PointOfInterest ;
+    geo:lat "45.467"^^xsd:decimal ;
+    geo:long "9.192"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/84> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/84> .
+
+<https://w3id.org/italia/data/c_ideal/public-event/85>
+    a cpev:PublicEvent ;
+    rdfs:label "Concerto Internazionale"@it ;
+    dct:type "Teatro"@it ;
+    ti:startTime "2024-07-14T20:00:00"^^xsd:dateTime ;
+    schema:location "Museo Civico"@it ;
+    dct:publisher "Gruppo Teatrale Locale"@it ;
+    rdfs:comment "pubblico_target: tutti"@it ;
+    rdfs:comment "format_evento: fisico"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/85> ;
+    ti:atTime <https://w3id.org/italia/data/c_ideal/time/85> .
+
+<https://w3id.org/italia/data/c_ideal/address/85> a clv:Address ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/time/85> a ti:TimeInstant ;
+    ti:startTime "2024-07-14T20:00:00"^^xsd:dateTime .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/85> a poi:PointOfInterest ;
+    geo:lat "45.4628"^^xsd:decimal ;
+    geo:long "9.1888"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/public-event/85> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/85> .

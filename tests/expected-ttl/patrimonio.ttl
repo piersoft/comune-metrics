@@ -1,0 +1,817 @@
+# CSV→RDF — 2026-05-05T17:02:39.654Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/patrimonio.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: CulturalHeritage, CLV
+# Righe: 42
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix ch: <https://w3id.org/italia/onto/CulturalHeritage/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/1>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0001"@it ;
+    rdfs:comment "denominazione_bene: Scuola Primaria E. De Amicis"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/1> .
+
+<https://w3id.org/italia/data/c_ideal/address/1> a clv:Address ;
+    clv:fullAddress "Piazza Marconi 3"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47585"^^xsd:decimal ;
+    geo:long "9.186"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/2>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0002"@it ;
+    rdfs:comment "denominazione_bene: Scuola Primaria G. Carducci"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2> .
+
+<https://w3id.org/italia/data/c_ideal/address/2> a clv:Address ;
+    clv:fullAddress "Via Carducci 14"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46686"^^xsd:decimal ;
+    geo:long "9.20439"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/3>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0003"@it ;
+    rdfs:comment "denominazione_bene: Scuola Primaria A. Manzoni"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/3> .
+
+<https://w3id.org/italia/data/c_ideal/address/3> a clv:Address ;
+    clv:fullAddress "Viale Europa 10"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45606"^^xsd:decimal ;
+    geo:long "9.19063"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/4>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0004"@it ;
+    rdfs:comment "denominazione_bene: Scuola Materna San Giuseppe"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/4> .
+
+<https://w3id.org/italia/data/c_ideal/address/4> a clv:Address ;
+    clv:fullAddress "Via Mazzini 8"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46671"^^xsd:decimal ;
+    geo:long "9.20789"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/5>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0005"@it ;
+    rdfs:comment "denominazione_bene: Scuola Materna G. Rodari"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/5> .
+
+<https://w3id.org/italia/data/c_ideal/address/5> a clv:Address ;
+    clv:fullAddress "Via Verdi 18"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45017"^^xsd:decimal ;
+    geo:long "9.17276"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/6>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0006"@it ;
+    rdfs:comment "denominazione_bene: Scuola Media G. Pascoli"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/6> .
+
+<https://w3id.org/italia/data/c_ideal/address/6> a clv:Address ;
+    clv:fullAddress "Via Pascoli 7"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4588"^^xsd:decimal ;
+    geo:long "9.203"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/7>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0007"@it ;
+    rdfs:comment "denominazione_bene: Scuola Media L. Da Vinci"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/7> .
+
+<https://w3id.org/italia/data/c_ideal/address/7> a clv:Address ;
+    clv:fullAddress "Via Leonardo 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47449"^^xsd:decimal ;
+    geo:long "9.17542"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/8>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0008"@it ;
+    rdfs:comment "denominazione_bene: Asilo Nido Arcobaleno"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/8> .
+
+<https://w3id.org/italia/data/c_ideal/address/8> a clv:Address ;
+    clv:fullAddress "Via Roma 12"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47679"^^xsd:decimal ;
+    geo:long "9.19111"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/9>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0009"@it ;
+    rdfs:comment "denominazione_bene: Asilo Nido Girotondo"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/9> .
+
+<https://w3id.org/italia/data/c_ideal/address/9> a clv:Address ;
+    clv:fullAddress "Via Garibaldi 45"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47824"^^xsd:decimal ;
+    geo:long "9.20738"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/10>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0010"@it ;
+    rdfs:comment "denominazione_bene: Asilo Nido Stelle"@it ;
+    dct:type "Scuola"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/10> .
+
+<https://w3id.org/italia/data/c_ideal/address/10> a clv:Address ;
+    clv:fullAddress "Via Manzoni 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45199"^^xsd:decimal ;
+    geo:long "9.20897"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/11>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0011"@it ;
+    rdfs:comment "denominazione_bene: Palazzo Comunale - Sede principale"@it ;
+    dct:type "Casa comunale"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/11> .
+
+<https://w3id.org/italia/data/c_ideal/address/11> a clv:Address ;
+    clv:fullAddress "Piazza San Marco 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46356"^^xsd:decimal ;
+    geo:long "9.17624"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/12>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0012"@it ;
+    rdfs:comment "denominazione_bene: Sede Polizia Locale"@it ;
+    dct:type "Ufficio"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/12> .
+
+<https://w3id.org/italia/data/c_ideal/address/12> a clv:Address ;
+    clv:fullAddress "Via Cavour 5"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46317"^^xsd:decimal ;
+    geo:long "9.17297"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/13>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0013"@it ;
+    rdfs:comment "denominazione_bene: Ufficio Anagrafe distaccato"@it ;
+    dct:type "Ufficio"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/13> .
+
+<https://w3id.org/italia/data/c_ideal/address/13> a clv:Address ;
+    clv:fullAddress "Via XX Settembre 12"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47167"^^xsd:decimal ;
+    geo:long "9.19178"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/14>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0014"@it ;
+    rdfs:comment "denominazione_bene: Magazzino Comunale Lavori Pubblici"@it ;
+    dct:type "Magazzino"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/14> .
+
+<https://w3id.org/italia/data/c_ideal/address/14> a clv:Address ;
+    clv:fullAddress "Strada Provinciale 5 km 3"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45248"^^xsd:decimal ;
+    geo:long "9.17905"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/15>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0015"@it ;
+    rdfs:comment "denominazione_bene: Centro Operativo Protezione Civile"@it ;
+    dct:type "Edificio polifunzionale"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/15> .
+
+<https://w3id.org/italia/data/c_ideal/address/15> a clv:Address ;
+    clv:fullAddress "Via dell'Industria 8"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4644"^^xsd:decimal ;
+    geo:long "9.20114"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/16>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0016"@it ;
+    rdfs:comment "denominazione_bene: Biblioteca Civica"@it ;
+    dct:type "Biblioteca"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/16> .
+
+<https://w3id.org/italia/data/c_ideal/address/16> a clv:Address ;
+    clv:fullAddress "Via dei Tigli 4"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45745"^^xsd:decimal ;
+    geo:long "9.17427"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/17>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0017"@it ;
+    rdfs:comment "denominazione_bene: Museo Civico Archeologico"@it ;
+    dct:type "Museo"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/17> .
+
+<https://w3id.org/italia/data/c_ideal/address/17> a clv:Address ;
+    clv:fullAddress "Piazza San Marco 8"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45984"^^xsd:decimal ;
+    geo:long "9.17276"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/18>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0018"@it ;
+    rdfs:comment "denominazione_bene: Teatro Sociale"@it ;
+    dct:type "Edificio storico"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/18> .
+
+<https://w3id.org/italia/data/c_ideal/address/18> a clv:Address ;
+    clv:fullAddress "Via Roma 25"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45927"^^xsd:decimal ;
+    geo:long "9.20487"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/19>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0019"@it ;
+    rdfs:comment "denominazione_bene: Auditorium Comunale"@it ;
+    dct:type "Edificio polifunzionale"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/19> .
+
+<https://w3id.org/italia/data/c_ideal/address/19> a clv:Address ;
+    clv:fullAddress "Via Mazzini 30"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45471"^^xsd:decimal ;
+    geo:long "9.18207"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/20>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0020"@it ;
+    rdfs:comment "denominazione_bene: Villa Comunale (sede mostre)"@it ;
+    dct:type "Edificio storico"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/20> .
+
+<https://w3id.org/italia/data/c_ideal/address/20> a clv:Address ;
+    clv:fullAddress "Viale dei Tigli 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4724"^^xsd:decimal ;
+    geo:long "9.17815"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/21>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0021"@it ;
+    rdfs:comment "denominazione_bene: Centro Sportivo Comunale"@it ;
+    dct:type "Impianto sportivo"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/21> .
+
+<https://w3id.org/italia/data/c_ideal/address/21> a clv:Address ;
+    clv:fullAddress "Via dello Sport 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45265"^^xsd:decimal ;
+    geo:long "9.17993"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/22>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0022"@it ;
+    rdfs:comment "denominazione_bene: Palazzetto dello Sport"@it ;
+    dct:type "Impianto sportivo"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/22> .
+
+<https://w3id.org/italia/data/c_ideal/address/22> a clv:Address ;
+    clv:fullAddress "Via Volta 30"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46751"^^xsd:decimal ;
+    geo:long "9.19847"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/23>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0023"@it ;
+    rdfs:comment "denominazione_bene: Piscina Comunale"@it ;
+    dct:type "Impianto sportivo"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/23> .
+
+<https://w3id.org/italia/data/c_ideal/address/23> a clv:Address ;
+    clv:fullAddress "Viale Europa 50"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4695"^^xsd:decimal ;
+    geo:long "9.17258"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/24>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0024"@it ;
+    rdfs:comment "denominazione_bene: Campo da Calcio \"Stadio Comunale\""@it ;
+    dct:type "Impianto sportivo"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/24> .
+
+<https://w3id.org/italia/data/c_ideal/address/24> a clv:Address ;
+    clv:fullAddress "Via dello Stadio 2"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45772"^^xsd:decimal ;
+    geo:long "9.17463"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/25>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0025"@it ;
+    rdfs:comment "denominazione_bene: Palestra ITIS Volta"@it ;
+    dct:type "Impianto sportivo"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/25> .
+
+<https://w3id.org/italia/data/c_ideal/address/25> a clv:Address ;
+    clv:fullAddress "Via Volta 15"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.466"^^xsd:decimal ;
+    geo:long "9.18463"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/26>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0026"@it ;
+    rdfs:comment "denominazione_bene: Cimitero Comunale Capoluogo"@it ;
+    dct:type "Cimitero"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/26> .
+
+<https://w3id.org/italia/data/c_ideal/address/26> a clv:Address ;
+    clv:fullAddress "Via del Cimitero 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47174"^^xsd:decimal ;
+    geo:long "9.19274"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/27>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0027"@it ;
+    rdfs:comment "denominazione_bene: Cimitero Frazione Nord"@it ;
+    dct:type "Cimitero"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/27> .
+
+<https://w3id.org/italia/data/c_ideal/address/27> a clv:Address ;
+    clv:fullAddress "Via Cimitero Nord"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46667"^^xsd:decimal ;
+    geo:long "9.17686"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/28>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0028"@it ;
+    rdfs:comment "denominazione_bene: Cimitero Frazione Sud"@it ;
+    dct:type "Cimitero"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/28> .
+
+<https://w3id.org/italia/data/c_ideal/address/28> a clv:Address ;
+    clv:fullAddress "Via Cimitero Sud"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46548"^^xsd:decimal ;
+    geo:long "9.17263"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/29>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0029"@it ;
+    rdfs:comment "denominazione_bene: Torre Civica medievale"@it ;
+    dct:type "Edificio storico"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/29> .
+
+<https://w3id.org/italia/data/c_ideal/address/29> a clv:Address ;
+    clv:fullAddress "Piazza Vecchia 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45222"^^xsd:decimal ;
+    geo:long "9.20433"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/30>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0030"@it ;
+    rdfs:comment "denominazione_bene: Casa Natale del poeta Tal dei Tali"@it ;
+    dct:type "Edificio storico"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/30> .
+
+<https://w3id.org/italia/data/c_ideal/address/30> a clv:Address ;
+    clv:fullAddress "Via del Poeta 15"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45443"^^xsd:decimal ;
+    geo:long "9.17004"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/31>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0031"@it ;
+    rdfs:comment "denominazione_bene: Palazzo dei Notari"@it ;
+    dct:type "Edificio storico"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/31> .
+
+<https://w3id.org/italia/data/c_ideal/address/31> a clv:Address ;
+    clv:fullAddress "Piazza San Marco 5"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47068"^^xsd:decimal ;
+    geo:long "9.17742"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/32>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0032"@it ;
+    rdfs:comment "denominazione_bene: Chiostro di San Francesco"@it ;
+    dct:type "Edificio storico"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: monumentale"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/32> .
+
+<https://w3id.org/italia/data/c_ideal/address/32> a clv:Address ;
+    clv:fullAddress "Via San Francesco 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45823"^^xsd:decimal ;
+    geo:long "9.19299"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/33>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0033"@it ;
+    rdfs:comment "denominazione_bene: Ex Macello Comunale"@it ;
+    dct:type "Edificio polifunzionale"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/33> .
+
+<https://w3id.org/italia/data/c_ideal/address/33> a clv:Address ;
+    clv:fullAddress "Via dei Mille 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.4774"^^xsd:decimal ;
+    geo:long "9.17093"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/34>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0034"@it ;
+    rdfs:comment "denominazione_bene: Casa colonica San Lorenzo"@it ;
+    dct:type "Edificio storico"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/34> .
+
+<https://w3id.org/italia/data/c_ideal/address/34> a clv:Address ;
+    clv:fullAddress "Loc. San Lorenzo"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46868"^^xsd:decimal ;
+    geo:long "9.1714"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/35>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0035"@it ;
+    rdfs:comment "denominazione_bene: Box auto Piazza Mercato n.1-4"@it ;
+    dct:type "Box auto"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/35> .
+
+<https://w3id.org/italia/data/c_ideal/address/35> a clv:Address ;
+    clv:fullAddress "Piazza Mercato"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47245"^^xsd:decimal ;
+    geo:long "9.18462"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/36>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0036"@it ;
+    rdfs:comment "denominazione_bene: Box auto Piazza Mercato n.5-8"@it ;
+    dct:type "Box auto"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/36> .
+
+<https://w3id.org/italia/data/c_ideal/address/36> a clv:Address ;
+    clv:fullAddress "Piazza Mercato"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45177"^^xsd:decimal ;
+    geo:long "9.18568"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/37>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0037"@it ;
+    rdfs:comment "denominazione_bene: Negozio sfitto Via Cavour 18"@it ;
+    dct:type "Ufficio"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/37> .
+
+<https://w3id.org/italia/data/c_ideal/address/37> a clv:Address ;
+    clv:fullAddress "Via Cavour 18"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46872"^^xsd:decimal ;
+    geo:long "9.17543"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/38>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0038"@it ;
+    rdfs:comment "denominazione_bene: Appartamento ex custode scuola"@it ;
+    dct:type "Edificio polifunzionale"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/38> .
+
+<https://w3id.org/italia/data/c_ideal/address/38> a clv:Address ;
+    clv:fullAddress "Via Verdi 18"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46063"^^xsd:decimal ;
+    geo:long "9.20122"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/39>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0039"@it ;
+    rdfs:comment "denominazione_bene: Area verde Parco Civico"@it ;
+    dct:type "Terreno"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/39> .
+
+<https://w3id.org/italia/data/c_ideal/address/39> a clv:Address ;
+    clv:fullAddress "Via del Parco"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.47379"^^xsd:decimal ;
+    geo:long "9.19911"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/40>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0040"@it ;
+    rdfs:comment "denominazione_bene: Terreno agricolo Loc. Cascine"@it ;
+    dct:type "Terreno"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/40> .
+
+<https://w3id.org/italia/data/c_ideal/address/40> a clv:Address ;
+    clv:fullAddress "Loc. Cascine"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.46333"^^xsd:decimal ;
+    geo:long "9.1982"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/41>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0041"@it ;
+    rdfs:comment "denominazione_bene: Area edificabile zona PEEP"@it ;
+    dct:type "Terreno"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/41> .
+
+<https://w3id.org/italia/data/c_ideal/address/41> a clv:Address ;
+    clv:fullAddress "Via PEEP 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45367"^^xsd:decimal ;
+    geo:long "9.18534"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/cultural-heritage/42>
+    a ch:CulturalHeritage ;
+    rdfs:comment "codice_bene: CH-0042"@it ;
+    rdfs:comment "denominazione_bene: Terreno boschivo Monte Sole"@it ;
+    dct:type "Terreno"@it ;
+    rdfs:comment "tutela: comunale"@it ;
+    rdfs:comment "vincolo: non vincolato"@it ;
+    rdfs:comment "epoca: sec. XX"@it ;
+    rdfs:comment "materiale: misto"@it ;
+    rdfs:comment "stato_conservazione: buono"@it ;
+    rdfs:comment "ente_tutela: Comune Ideale"@it ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/42> .
+
+<https://w3id.org/italia/data/c_ideal/address/42> a clv:Address ;
+    clv:fullAddress "Loc. Monte Sole"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    geo:lat "45.45855"^^xsd:decimal ;
+    geo:long "9.17528"^^xsd:decimal .

@@ -1,0 +1,217 @@
+# CSV→RDF — 2026-05-05T17:02:36.418Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/opere_pubbliche.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: PublicContract, CPV, COV, TI, QB
+# Righe: 12
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix pc: <https://w3id.org/italia/onto/PublicContract/> .
+@prefix cov: <https://w3id.org/italia/onto/COV/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cpv: <https://w3id.org/italia/onto/CPV/> .
+@prefix ti: <https://w3id.org/italia/onto/TI/> .
+@prefix schema: <https://schema.org/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> a qb:DataSet ;
+    rdfs:label "Dataset Comune Ideale"@it ;
+    dct:publisher <https://w3id.org/italia/data/c_ideal/ds> .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/1-XAJI0Y6DPB-D14E22000150006-Lavori-per--Riqualificazione-Piazza-Centrale-420000-Comune-c_ideal-Impresa-Costruzioni-B-45233141-9-2024-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "XAJI0Y6DPB"^^xsd:string ;
+    dct:identifier "D14E22000150006"^^xsd:string ;
+    dct:description "Lavori per: Riqualificazione Piazza Centrale"@it ;
+    sdmx-measure:obsValue "420000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni B"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2024-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/organization/c_ideal> a cov:PublicOrganization ;
+    rdfs:label "Comune"@it ;
+    cov:IPAcode "c_ideal" ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/organization/supplier-impresa-costruzioni-b> a cov:Organization ;
+    rdfs:label "Impresa Costruzioni B"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/2-HSAHXTHV3A-D14E22000160006-Lavori-per--Nuova-pista-ciclabile-via-Roma-180000-Comune-c_ideal-Impresa-Costruzioni-C-45233141-9-2024-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "HSAHXTHV3A"^^xsd:string ;
+    dct:identifier "D14E22000160006"^^xsd:string ;
+    dct:description "Lavori per: Nuova pista ciclabile via Roma"@it ;
+    sdmx-measure:obsValue "180000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni C"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2024-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/organization/supplier-impresa-costruzioni-c> a cov:Organization ;
+    rdfs:label "Impresa Costruzioni C"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/3-3ZMF8MDD4V-D14E21000080006-Lavori-per--Ampliamento-scuola-primaria-centro-890000-Comune-c_ideal-Impresa-Costruzioni-D-45233141-9-2023-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "3ZMF8MDD4V"^^xsd:string ;
+    dct:identifier "D14E21000080006"^^xsd:string ;
+    dct:description "Lavori per: Ampliamento scuola primaria centro"@it ;
+    sdmx-measure:obsValue "890000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni D"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2023-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/organization/supplier-impresa-costruzioni-d> a cov:Organization ;
+    rdfs:label "Impresa Costruzioni D"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/4-30T9NT3W5U-D14E22000170006-Lavori-per--Restauro-fontana-storica-95000-Comune-c_ideal-Impresa-Costruzioni-E-45233141-9-2024-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "30T9NT3W5U"^^xsd:string ;
+    dct:identifier "D14E22000170006"^^xsd:string ;
+    dct:description "Lavori per: Restauro fontana storica"@it ;
+    sdmx-measure:obsValue "95000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni E"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2024-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/organization/supplier-impresa-costruzioni-e> a cov:Organization ;
+    rdfs:label "Impresa Costruzioni E"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/5-ZBIKCIDKWN-Lavori-per--Asfaltatura-via-XX-Settembre-65000-Comune-c_ideal-Impresa-Costruzioni-A-45233141-9-2024-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "ZBIKCIDKWN"^^xsd:string ;
+    dct:description "Lavori per: Asfaltatura via XX Settembre"@it ;
+    sdmx-measure:obsValue "65000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni A"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2024-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/organization/supplier-impresa-costruzioni-a> a cov:Organization ;
+    rdfs:label "Impresa Costruzioni A"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/6-NHJ7XVG0FN-D14E25000010006-Lavori-per--Nuovo-parcheggio-scolastico-240000-Comune-c_ideal-Impresa-Costruzioni-B-45233141-9-2025-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "NHJ7XVG0FN"^^xsd:string ;
+    dct:identifier "D14E25000010006"^^xsd:string ;
+    dct:description "Lavori per: Nuovo parcheggio scolastico"@it ;
+    sdmx-measure:obsValue "240000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni B"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2025-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/7-9XUY41IBLJ-D14E22000180006-Lavori-per--Efficientamento-energetico-palazzetto-380000-Comune-c_ideal-Impresa-Costruzioni-C-45233141-9-2024-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "9XUY41IBLJ"^^xsd:string ;
+    dct:identifier "D14E22000180006"^^xsd:string ;
+    dct:description "Lavori per: Efficientamento energetico palazzetto"@it ;
+    sdmx-measure:obsValue "380000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni C"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2024-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/8-H75LXO6QJI-D14E25000020006-Lavori-per--Riqualificazione-parco-urbano-520000-Comune-c_ideal-Impresa-Costruzioni-D-45233141-9-2025-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "H75LXO6QJI"^^xsd:string ;
+    dct:identifier "D14E25000020006"^^xsd:string ;
+    dct:description "Lavori per: Riqualificazione parco urbano"@it ;
+    sdmx-measure:obsValue "520000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni D"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2025-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/9-UJV6OH9SDB-Lavori-per--Manutenzione-marciapiedi-quartiere-Sud-78000-Comune-c_ideal-Impresa-Costruzioni-E-45233141-9-2024-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "UJV6OH9SDB"^^xsd:string ;
+    dct:description "Lavori per: Manutenzione marciapiedi quartiere Sud"@it ;
+    sdmx-measure:obsValue "78000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni E"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2024-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/10-DW2PCN9T84-D14E21000090006-Lavori-per--Nuovi-loculi-cimitero-comunale-185000-Comune-c_ideal-Impresa-Costruzioni-A-45233141-9-2023-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "DW2PCN9T84"^^xsd:string ;
+    dct:identifier "D14E21000090006"^^xsd:string ;
+    dct:description "Lavori per: Nuovi loculi cimitero comunale"@it ;
+    sdmx-measure:obsValue "185000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni A"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2023-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/11-AZYTJXEPQ8-D14E22000190006-Lavori-per--Rifacimento-illuminazione-pubblica-420000-Comune-c_ideal-Impresa-Costruzioni-B-45233141-9-2024-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "AZYTJXEPQ8"^^xsd:string ;
+    dct:identifier "D14E22000190006"^^xsd:string ;
+    dct:description "Lavori per: Rifacimento illuminazione pubblica"@it ;
+    sdmx-measure:obsValue "420000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni B"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2024-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .
+
+<https://w3id.org/italia/data/c_ideal/public-contract/12-5JSG65KXVF-D14E25000030006-Lavori-per--Nuova-rotatoria-SS-Provinciale-680000-Comune-c_ideal-Impresa-Costruzioni-C-45233141-9-2025-06-15-Procedura-aperta>
+    a pc:Contract ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    pc:CIG "5JSG65KXVF"^^xsd:string ;
+    dct:identifier "D14E25000030006"^^xsd:string ;
+    dct:description "Lavori per: Nuova rotatoria SS Provinciale"@it ;
+    sdmx-measure:obsValue "680000"^^xsd:decimal ;
+    pc:hasProcuringEntity "Comune"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string ;
+    dct:publisher "Impresa Costruzioni C"@it ;
+    pc:hasCPV "45233141-9"^^xsd:string ;
+    dct:date "2025-06-15"^^xsd:date ;
+    pc:hasProcedureType "Procedura aperta"@it .

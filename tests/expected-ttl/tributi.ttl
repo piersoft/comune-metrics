@@ -1,0 +1,497 @@
+# CSV→RDF — 2026-05-05T17:02:39.960Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/tributi.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: Indicator, QB, COV
+# Righe: 30
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sm: <https://w3id.org/italia/onto/SM/> .
+@prefix indicator: <https://w3id.org/italia/onto/Indicator/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix cov: <https://w3id.org/italia/onto/COV/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> a qb:DataSet ;
+    rdfs:label "Dataset Comune Ideale"@it ;
+    dct:publisher <https://w3id.org/italia/data/c_ideal/ds> .
+
+<https://w3id.org/italia/data/c_ideal/indicator/1-IMU-Finanziario-2020-5225042-07-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "IMU"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-measure:obsValue "5225042.07"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota ordinaria 10.6 per mille - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/1-IMU-Finanziario-2020-5225042-07-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "5225042.07"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/2-TARI-Finanziario-2020-3324905-86-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-measure:obsValue "3324905.86"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/2-TARI-Finanziario-2020-3324905-86-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "3324905.86"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/3-TARI-Finanziario-2020-1684905-23-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-measure:obsValue "1684905.23"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/3-TARI-Finanziario-2020-1684905-23-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "1684905.23"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/4-TASSA_SOGGIORNO-Finanziario-2020-27000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TASSA_SOGGIORNO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-measure:obsValue "27000"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Tassa €2.50/notte categoria 4 stelle"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/4-TASSA_SOGGIORNO-Finanziario-2020-27000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "27000"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/5-ADDIZIONALE_IRPEF-Finanziario-2020-2075083-51-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "ADDIZIONALE_IRPEF"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-measure:obsValue "2075083.51"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota addizionale 0.80% - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/5-ADDIZIONALE_IRPEF-Finanziario-2020-2075083-51-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "2075083.51"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/6-CANONE_UNICO-Finanziario-2020-297182-35-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "CANONE_UNICO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2020"^^xsd:string ;
+    sdmx-measure:obsValue "297182.35"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/6-CANONE_UNICO-Finanziario-2020-297182-35-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "297182.35"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/7-IMU-Finanziario-2021-5117755-29-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "IMU"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-measure:obsValue "5117755.29"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota ordinaria 10.6 per mille - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/7-IMU-Finanziario-2021-5117755-29-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "5117755.29"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/8-TARI-Finanziario-2021-3514388-09-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-measure:obsValue "3514388.09"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/8-TARI-Finanziario-2021-3514388-09-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "3514388.09"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/9-TARI-Finanziario-2021-1623827-78-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-measure:obsValue "1623827.78"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/9-TARI-Finanziario-2021-1623827-78-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "1623827.78"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/10-TASSA_SOGGIORNO-Finanziario-2021-81000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TASSA_SOGGIORNO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-measure:obsValue "81000"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Tassa €2.50/notte categoria 4 stelle"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/10-TASSA_SOGGIORNO-Finanziario-2021-81000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "81000"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/11-ADDIZIONALE_IRPEF-Finanziario-2021-2204985-42-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "ADDIZIONALE_IRPEF"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-measure:obsValue "2204985.42"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota addizionale 0.80% - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/11-ADDIZIONALE_IRPEF-Finanziario-2021-2204985-42-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "2204985.42"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/12-CANONE_UNICO-Finanziario-2021-303063-89-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "CANONE_UNICO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2021"^^xsd:string ;
+    sdmx-measure:obsValue "303063.89"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/12-CANONE_UNICO-Finanziario-2021-303063-89-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "303063.89"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/13-IMU-Finanziario-2022-5149630-49-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "IMU"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-measure:obsValue "5149630.49"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota ordinaria 10.6 per mille - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/13-IMU-Finanziario-2022-5149630-49-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "5149630.49"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/14-TARI-Finanziario-2022-3551535-64-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-measure:obsValue "3551535.64"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/14-TARI-Finanziario-2022-3551535-64-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "3551535.64"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/15-TARI-Finanziario-2022-1661786-44-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-measure:obsValue "1661786.44"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/15-TARI-Finanziario-2022-1661786-44-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "1661786.44"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/16-TASSA_SOGGIORNO-Finanziario-2022-153000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TASSA_SOGGIORNO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-measure:obsValue "153000"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Tassa €2.50/notte categoria 4 stelle"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/16-TASSA_SOGGIORNO-Finanziario-2022-153000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "153000"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/17-ADDIZIONALE_IRPEF-Finanziario-2022-2191524-29-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "ADDIZIONALE_IRPEF"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-measure:obsValue "2191524.29"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota addizionale 0.80% - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/17-ADDIZIONALE_IRPEF-Finanziario-2022-2191524-29-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "2191524.29"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/18-CANONE_UNICO-Finanziario-2022-310516-86-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "CANONE_UNICO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2022"^^xsd:string ;
+    sdmx-measure:obsValue "310516.86"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/18-CANONE_UNICO-Finanziario-2022-310516-86-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "310516.86"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/19-IMU-Finanziario-2023-5252274-08-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "IMU"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-measure:obsValue "5252274.08"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota ordinaria 10.6 per mille - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/19-IMU-Finanziario-2023-5252274-08-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "5252274.08"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/20-TARI-Finanziario-2023-3519234-05-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-measure:obsValue "3519234.05"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/20-TARI-Finanziario-2023-3519234-05-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "3519234.05"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/21-TARI-Finanziario-2023-1665757-41-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-measure:obsValue "1665757.41"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/21-TARI-Finanziario-2023-1665757-41-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "1665757.41"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/22-TASSA_SOGGIORNO-Finanziario-2023-189000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TASSA_SOGGIORNO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-measure:obsValue "189000"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Tassa €2.50/notte categoria 4 stelle"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/22-TASSA_SOGGIORNO-Finanziario-2023-189000-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "189000"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/23-ADDIZIONALE_IRPEF-Finanziario-2023-2176466-04-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "ADDIZIONALE_IRPEF"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-measure:obsValue "2176466.04"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota addizionale 0.80% - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/23-ADDIZIONALE_IRPEF-Finanziario-2023-2176466-04-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "2176466.04"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/24-CANONE_UNICO-Finanziario-2023-303952-59-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "CANONE_UNICO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2023"^^xsd:string ;
+    sdmx-measure:obsValue "303952.59"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/24-CANONE_UNICO-Finanziario-2023-303952-59-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "303952.59"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/25-IMU-Finanziario-2024-5333995-18-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "IMU"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-measure:obsValue "5333995.18"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota ordinaria 10.6 per mille - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/25-IMU-Finanziario-2024-5333995-18-euro-Aliquota-ordinaria-10-6-per-mille---delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "5333995.18"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/26-TARI-Finanziario-2024-3558938-22-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-measure:obsValue "3558938.22"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/26-TARI-Finanziario-2024-3558938-22-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "3558938.22"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/27-TARI-Finanziario-2024-1805071-68-euro-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TARI"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-measure:obsValue "1805071.68"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/27-TARI-Finanziario-2024-1805071-68-euro-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "1805071.68"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/28-TASSA_SOGGIORNO-Finanziario-2024-212400-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "TASSA_SOGGIORNO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-measure:obsValue "212400"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Tassa €2.50/notte categoria 4 stelle"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/28-TASSA_SOGGIORNO-Finanziario-2024-212400-0-euro-Tassa--2-50-notte-categoria-4-stelle-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "212400"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/29-ADDIZIONALE_IRPEF-Finanziario-2024-2251511-75-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "ADDIZIONALE_IRPEF"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-measure:obsValue "2251511.75"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Aliquota addizionale 0.80% - delibera CC"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/29-ADDIZIONALE_IRPEF-Finanziario-2024-2251511-75-euro-Aliquota-addizionale-0-80----delibera-CC-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "2251511.75"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/indicator/30-CANONE_UNICO-Finanziario-2024-304971-35-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal>
+    a indicator:Indicator ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    cov:legalName "CANONE_UNICO"@it ;
+    indicator:hasIndicatorType "Finanziario"@it ;
+    sdmx-dimension:refPeriod "2024"^^xsd:string ;
+    sdmx-measure:obsValue "304971.35"^^xsd:decimal ;
+    rdfs:comment "unita_misura: euro"@it ;
+    dct:source "Canone unico patrimoniale (ex COSAP/ICP) - L. 160/2019"@it ;
+    rdfs:comment "ente: Comune Ideale"@it ;
+    cov:IPAcode "c_ideal"^^xsd:string .
+
+<https://w3id.org/italia/data/c_ideal/observation/30-CANONE_UNICO-Finanziario-2024-304971-35-euro-Canone-unico-patrimoniale--ex-COSAP-ICP----L--160-2019-Comune-Ideale-c_ideal> a qb:Observation ;
+    qb:dataSet <https://w3id.org/italia/data/c_ideal/dataset/ds-c_ideal> ;
+    sdmx-measure:obsValue "304971.35"^^xsd:decimal .
