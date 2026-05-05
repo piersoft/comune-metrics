@@ -322,36 +322,35 @@ Note importanti:
 
 ## Comuni che non pubblicano: il fallback nazionale
 
-Quando un Comune **non pubblica i propri OpenData** (zero dataset registrati su `dati.gov.it` con `holder_name` corrispondente), ComuneMetrics non lo nasconde dalla dashboard ma lo etichetta esplicitamente come **`mode: reconstructed_from_national`** e ricostruisce quanto possibile da fonti nazionali pubbliche autorevoli. È il caso del Comune di Potenza, dove **8 dei 12 dataset CORE** sono stati ricostruiti.
+Se un Comune non pubblica i propri OpenData, ComuneMetrics non lo nasconde dalla dashboard. Mostra un **banner rosso** con la scritta «`<Comune>` non pubblica OpenData» e ricostruisce — dove possibile — i dataset del paniere a partire da **banche dati nazionali pubbliche**. Sulla dashboard questi Comuni sono marcati come `mode: reconstructed_from_national`.
 
-Questo NON è un sostituto del paniere proprio: è un fallback divulgativo che rende visibile l'inadempienza. Il banner rosso `🚨 <Comune> non pubblica OpenData` resta sempre visibile.
+È il caso del Comune di Potenza, dove 8 dei 12 dataset CORE sono stati ricostruiti.
 
-### Mappa fonti nazionali utilizzate per il fallback
+**Importante**: la ricostruzione da fonti nazionali NON sostituisce la pubblicazione vera. È un fallback divulgativo che evidenzia la mancata pubblicazione e mostra il dato che il cittadino *avrebbe avuto* se il Comune avesse fatto il suo lavoro.
 
-| Dataset paniere | Fonte nazionale | Endpoint API | Note |
-|---|---|---|---|
-| popolazione | ISTAT (Demo) | `https://demo.istat.it/` (HTML) o `tuttitalia.it` come mirror | Serie storica residenti per Comune |
-| **bilancio** | **BDAP-RGS / MEF** | `https://bdap-opendata.rgs.mef.gov.it/SpodCkanApi/api/3/action/package_search?q=<Regione>+SIOPE+Spesa+<anno>` | SIOPE Spese mensili Enti Locali per regione, filtrare per `Codice istat provincia + Codice istat comune + Codice Tipologia Ente=CO`. Cumulato annuo (mese 12) |
-| **opere_pubbliche** | **BDAP-RGS / MEF (MOP)** | `https://bdap-opendata.rgs.mef.gov.it/SpodCkanApi/api/3/action/package_show?id=spd_mop_sog_mon_reg<NN>_01_9999` | Soggetti titolari MOP per regione (`reg17`=Basilicata, `reg16`=Puglia, ecc.). Filtrare per `Descrizione Titolare="COMUNE DI <NOME>"` |
-| istruzione | MIM Anagrafe Scuole | `https://dati.istruzione.it/opendata/opendata/catalogo/elements1/?area=Scuole` | CSV scuole statali per Comune via codice ISTAT |
-| rifiuti | ISPRA Catasto Rifiuti | `https://www.catasto-rifiuti.isprambiente.it/index.php?pg=comune&aa=<anno>&regid=<RR>&prid=<PR>&comid=<CCC>` | Solo HTML scraping; % RD per Comune |
-| eventi_culturali | ArCo (MiC) | `https://dati.cultura.gov.it/sparql` | SPARQL su DB Unico Luoghi della Cultura |
-| patrimonio | ArCo (MiC) | `https://dati.cultura.gov.it/sparql` | SPARQL su Catalogo Generale Beni Culturali (ICCD) |
-| tributi | MEF Federalismo Fiscale | `https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/` | Aliquote IMU/Addizionale IRPEF (no gettito reale) |
+### Quali fonti vengono usate
 
-### Codici ISTAT necessari per filtrare BDAP
+| Dataset paniere | Fonte nazionale | Cosa fornisce |
+|---|---|---|
+| popolazione | ISTAT — Demografia | residenti per Comune e per anno |
+| bilancio | MEF — banca dati BDAP-RGS | spese del Comune classificate per Titolo (correnti, in conto capitale, rimborso prestiti) |
+| opere pubbliche | MEF — Monitoraggio Opere Pubbliche (MOP) | elenco delle opere CUP intestate al Comune |
+| istruzione | MIM — Anagrafe Scuole Statali | scuole presenti sul territorio comunale |
+| rifiuti | ISPRA — Catasto Rifiuti | percentuale di raccolta differenziata |
+| eventi culturali | MiC — ArCo (Catalogo Generale Beni Culturali) | luoghi della cultura del Comune |
+| patrimonio | MiC — ArCo (Catalogo Generale Beni Culturali) | beni culturali e immobili vincolati |
+| tributi | MEF — Portale Federalismo Fiscale | aliquote IMU e addizionale IRPEF (non il gettito reale) |
 
-- **Codice provincia** (3 cifre, es. `076`=Potenza, `075`=Lecce, `037`=Bologna)
-- **Codice comune** (3 cifre dentro la provincia, es. `063`=Comune di Potenza, `075`=Comune di Lecce, `006`=Comune di Bologna)
-- **Codice Tipologia Ente** = `CO` per Comune (escludendo aziende sanitarie, consorzi, ecc.)
-- **Codice regione** per i pattern dataset MOP: `reg01`=Piemonte, `reg03`=Lombardia, `reg08`=Emilia-Romagna, `reg11`=Marche, `reg13`=Abruzzo, `reg15`=Campania, `reg16`=Puglia, `reg17`=Basilicata, `reg19`=Sicilia, `reg20`=Sardegna
+### Quali dataset NON sono ricostruibili
 
-### Cosa BDAP NON copre (mancano per Potenza)
+Quattro dataset del paniere **non hanno una fonte nazionale a livello comunale**:
 
-- **pratiche edilizie**: nessuna fonte nazionale aggrega CILA/SCIA/PdC per Comune (i SUE sono comunali e non centralizzati)
-- **servizi sociali**: i dati Ministero Lavoro sono a livello regionale, non comunale
-- **incidenti stradali**: ISTAT pubblica a livello provinciale (Tavola 1.11) e per soli capoluoghi di provincia in formato XLSX, non come dataset comunale puntuale
-- **delibere**: nessun aggregatore nazionale; ogni Comune le pubblica solo sul proprio Albo Pretorio
+- **Pratiche edilizie**: ogni SUE è gestito autonomamente dal Comune, non esiste un aggregatore nazionale.
+- **Servizi sociali**: i dati ministeriali sono aggregati a livello regionale.
+- **Incidenti stradali**: la rilevazione ISTAT è provinciale; i dati ACI escludono le strade urbane dei centri abitati >10.000 abitanti.
+- **Delibere**: ogni Comune le pubblica solo sul proprio Albo Pretorio, non esiste un catalogo nazionale.
+
+Per questi 4 dataset, l'unica strada è che il Comune li pubblichi direttamente.
 
 ---
 

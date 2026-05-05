@@ -2,59 +2,34 @@
 
 > Specifica del formato CSV richiesto per la pubblicazione dei dataset CORE nel cruscotto ComuneMetrics.
 
-## Changelog v2.0 (allineamento al tool CSV-to-RDF)
+## Cosa è cambiato in v2.0
 
-In v2.0 i nomi delle colonne sono stati allineati al **dizionario `DET_COL_RULES`** del tool [CSV-to-RDF di Piersoft](https://github.com/piersoft/CSV-to-RDF) per massimizzare la coverage del mapper deterministico zero-token.
+Dal 5 maggio 2026 alcuni nomi di colonna del paniere sono stati allineati al **vocabolario standard** usato per la conversione automatica dei CSV in formato Linked Open Data (DCAT-AP_IT, OntoPiA). Risultato: chi pubblica seguendo questa specifica ottiene una traduzione RDF corretta senza intervento manuale.
 
-**Coverage raggiunta**: 73 colonne su 78 totali del paniere → **93% deterministico** (le 5 restanti hanno semantica unica e vanno via fallback LLM).
+**Cosa significa in pratica per chi pubblica**:
 
-### Tabella rinomine (riassunto)
+- I **nuovi CSV** vanno scritti con i nomi di colonna v2.0 documentati nelle schede dei 12 dataset più sotto.
+- I **CSV già pubblicati** con i vecchi nomi continuano a funzionare: il sistema li riconosce automaticamente. Non serve aggiornare retroattivamente.
+- Il caso del dataset `rifiuti` è particolare (cambio di struttura, non solo di nome): vedi la scheda specifica.
 
-| Dataset | Vecchio nome | Nuovo nome v2.0 | Predicato RDF |
-|---|---|---|---|
-| bilancio | `missione` | `settore_interv_inv` | `dct:subject@it` |
-| bilancio | `importo_euro` | `totale_uscite` | `sdmx-measure:obsValue` |
-| bilancio | `programma` | `sottosettore_interv_inv` | `dct:subject@it` |
-| delibere | `data` | `data_atto` | `dct:date` |
-| delibere | `tipo` | `tipo_atto` | `dct:type@it` |
-| delibere | `numero` | `numero_atto` | `dct:identifier` |
-| delibere | `ufficio`/`settore` | `uo_proponente` | `dct:publisher@it` |
-| eventi_culturali | `data_inizio` | `datainizio` (CPEV) | `ti:startTime^^xsd:date` |
-| eventi_culturali | `data_fine` | `datafine` (CPEV) | `ti:endTime^^xsd:date` |
-| incidenti_stradali | `morti` | `decessi` | `sdmx-measure:obsValue` |
-| incidenti_stradali | `zona` | `localita` | `clv:hasSpatialCoverage` |
-| incidenti_stradali | `feriti` | (resta — semantica unica) | LLM |
-| istruzione | `struttura` | `denominazione` | `rdfs:label@it` |
-| istruzione | `iscritti` | `totale_alunni` | `sdmx-measure:obsValue` |
-| istruzione | `tipo_struttura` | `tipologia` | `dct:type@it` |
-| opere_pubbliche | `stato` | `codice_stato_cup` | `adms:status` |
-| opere_pubbliche | `importo_euro` | `costo_lavori_previsto` | `pc:totalAmount` |
-| opere_pubbliche | `rup` | `nome_completo` (persona) | `cpv:fullName` |
-| opere_pubbliche | `fonte_finanziamento` | (resta — semantica unica) | LLM |
-| patrimonio | `valore_euro` | `rendita` | `sdmx-measure:obsValue` |
-| patrimonio | `vincolo_culturale` | `qualita` | `dct:type@it` |
-| patrimonio | `uso` | `consistenza` | `dct:description` |
-| popolazione | `residenti` | `totale_residenti` | LLM (semantica unica) |
-| popolazione | `quartiere` | `localita` | `clv:hasSpatialCoverage` |
-| pratiche_edilizie | `esito` | `codice_stato_cup` | `adms:status` |
-| pratiche_edilizie | `data_chiusura` | `data_scadenza` | `ti:endTime^^xsd:date` |
-| rifiuti | `(wide: anno,kg_totali,kg_diff,kg_indiff,rd_pct,frazione,quartiere)` | **RISTRUTTURATO LONG: `(anno, frazione, valore_assoluto, unita_misura, localita)`** | `sdmx-measure:obsValue` + `mu:hasMeasurementUnit` + `dct:type@it` |
-| servizi_sociali | `utenti` | `numero` | `sdmx-measure:obsValue` |
-| servizi_sociali | `spesa_euro` | `totale_costo` | `sdmx-measure:obsValue` |
-| tributi | `tributo` | `tipo_atto` | `dct:type@it` |
-| tributi | `gettito_euro` | `totale_entrate` | `sdmx-measure:obsValue` |
-| tributi | `n_contribuenti` | `numero` | `sdmx-measure:obsValue` |
-| tributi | `aliquota_base` | `valore` (+ `unita_misura`) | `iot:hasObservationValue` |
+I nomi di colonna sono cambiati così:
 
-### Nota semantica importante: persone vs enti
+| Dataset | Prima (v1) | Adesso (v2) |
+|---|---|---|
+| bilancio | `missione`, `programma`, `importo_euro` | `settore_interv_inv`, `sottosettore_interv_inv`, `totale_uscite` |
+| delibere | `data`, `tipo`, `numero`, `settore` | `data_atto`, `tipo_atto`, `numero_atto`, `uo_proponente` |
+| eventi_culturali | `data_inizio`, `data_fine` | `datainizio`, `datafine` |
+| incidenti_stradali | `morti`, `zona` | `decessi`, `localita` |
+| istruzione | `struttura`, `iscritti`, `tipo_struttura` | `denominazione`, `totale_alunni`, `tipologia` |
+| opere_pubbliche | `stato`, `importo_euro`, `rup` | `codice_stato_cup`, `costo_lavori_previsto`, `nome_completo` |
+| patrimonio | `valore_euro`, `vincolo_culturale`, `uso` | `rendita`, `qualita`, `consistenza` |
+| popolazione | `residenti`, `quartiere` | `totale_residenti`, `localita` |
+| pratiche_edilizie | `esito`, `chiusura_data` | `codice_stato_cup`, `data_scadenza` |
+| rifiuti | formato a righe-anno con colonne `kg_totali`, `rd_pct`, ecc. | formato a righe-osservazione: `anno`, `frazione`, `valore_assoluto`, `unita_misura` |
+| servizi_sociali | `utenti`, `spesa_euro` | `numero`, `totale_costo` |
+| tributi | `tributo`, `gettito_euro`, `n_contribuenti`, `aliquota_base` | `tipo_atto`, `totale_entrate`, `numero`, `valore` (+ `unita_misura`) |
 
-Per `opere_pubbliche.nome_completo` (ex `rup`): il **RUP è una persona fisica** (`cpv:Person` → `cpv:fullName`), non un'organizzazione. Il **titolare giuridico** (Comune/Regione/Ministero) è una entità diversa, vive in una colonna separata `descrizione_ente` (`foaf:name@it`, ontologia COV) opzionale.
-
-### Retrocompatibilità
-
-I calcolatori (`scripts/calculators_v2.js`) supportano **entrambi i formati** tramite la funzione helper `withAliases(row, {vecchio: 'nuovo'})`. I CSV con i vecchi nomi (Bologna, Lecce, Potenza) continuano a funzionare senza modifiche.
-
-Il caso speciale di `rifiuti` (formato wide → long) è gestito da auto-detect dell'header: se sono presenti le colonne wide (`kg_totali`, `rd_pct`) il calcolatore usa il path legacy; se sono presenti le colonne long (`frazione`, `valore_assoluto`, `unita_misura`) il calcolatore fa pivot e calcola.
+> Nota su `opere_pubbliche.nome_completo`: questa colonna è il **nome del RUP**, cioè la persona fisica responsabile del procedimento. Non confonderla con il titolare giuridico dell'opera (Comune, Regione, Ministero), che è cosa diversa.
 
 ---
 
@@ -107,8 +82,6 @@ anno,totale_residenti,localita
 2024,389127,
 ```
 
-> v2.0: `residenti`→`totale_residenti` (semantica unica → fallback LLM nel tool RDF), `quartiere`→`localita` (clv:hasSpatialCoverage).
-
 ### 2. `bilancio.csv`
 
 **Required**: `anno`, `settore_interv_inv` (stringa, es. "Spese correnti"), `totale_uscite` (numero ≥0)
@@ -120,19 +93,19 @@ anno,settore_interv_inv,sottosettore_interv_inv,totale_uscite,tipo
 2025,"Spese in conto capitale","Investimenti fissi lordi e acquisto terreni",18164888.76,pagamento
 ```
 
-> **Fallback BDAP**: se il Comune non pubblica, ricostruire da SIOPE Spese annuale via API CKAN BDAP-RGS — vedi [PANIERE.md § Comuni che non pubblicano](PANIERE.md#comuni-che-non-pubblicano-il-fallback-nazionale).
+> **Comuni che non pubblicano il bilancio**: i dati di spesa sono comunque ricostruibili dalle banche dati nazionali del MEF. Vedi [`PANIERE.md` § Comuni che non pubblicano](PANIERE.md#comuni-che-non-pubblicano-il-fallback-nazionale).
 
 ### 3. `opere_pubbliche.csv`
 
 **Required**: `nome` (stringa)
-**Optional**: `anno`, `codice_stato_cup` (stringa, es. "ATTIVO"/"CHIUSO"/"In corso"/"Conclusa"), `costo_lavori_previsto` (numero), `cup` (15 caratteri standard CIPESS), `fonte_finanziamento`, `lat`, `lon`, `tipo` (Natura Intervento), `nome_completo` (RUP — persona fisica → `cpv:fullName`)
+**Optional**: `anno`, `codice_stato_cup` (stringa, es. "ATTIVO"/"CHIUSO"/"In corso"/"Conclusa"), `costo_lavori_previsto` (numero), `cup` (15 caratteri standard CIPESS), `fonte_finanziamento`, `lat`, `lon`, `tipo` (Natura Intervento), `nome_completo` (nome del RUP, persona fisica)
 
 ```csv
 nome,anno,codice_stato_cup,costo_lavori_previsto,cup,fonte_finanziamento,lat,lon,tipo,nome_completo
 "NODO COMPLESSO DEL GALLITELLO",2007,ATTIVO,29884600.00,B31B05000260007,Statale,40.6406,15.8059,"NUOVA REALIZZAZIONE","Mario Rossi"
 ```
 
-> **Fallback BDAP**: il dataset MOP Soggetti titolari per regione contiene tutte queste colonne (incluso CUP, Settore Interv Inv, Costo Lavori Previsto). Filtrare su `Descrizione Titolare="COMUNE DI <nome>"`. Vedi [PANIERE.md § Comuni che non pubblicano](PANIERE.md#comuni-che-non-pubblicano-il-fallback-nazionale).
+> **Comuni che non pubblicano le opere pubbliche**: l'elenco delle opere CUP intestate al Comune è ricostruibile dalle banche dati nazionali del MEF. Vedi [`PANIERE.md` § Comuni che non pubblicano](PANIERE.md#comuni-che-non-pubblicano-il-fallback-nazionale).
 
 ### 4. `pratiche_edilizie.csv`
 
@@ -145,8 +118,6 @@ data,tipo,codice_stato_cup,data_scadenza,via,civico
 2024-04-02,SCIA,,,Via Garibaldi,15
 ```
 
-> v2.0: `esito`→`codice_stato_cup` (riusa la stessa colonna ADMS:status di opere_pubbliche), `chiusura_data`→`data_scadenza` (semantica CPSV).
-
 ### 5. `servizi_sociali.csv`
 
 **Required**: `anno`, `categoria` (es. "Sostegno alla genitorialità", "Anziani non autosufficienti")
@@ -157,8 +128,6 @@ anno,categoria,numero,totale_costo,interventi
 2024,"Anziani non autosufficienti",1240,2850000.00,1240
 2024,"Sostegno alla genitorialità",,,420
 ```
-
-> v2.0: `utenti`→`numero`, `spesa_euro`→`totale_costo`. `interventi` resta (semantica unica → LLM nel tool RDF).
 
 ### 6. `istruzione.csv`
 
@@ -171,8 +140,6 @@ denominazione,anno,totale_alunni,tipologia,lat,lon,via
 "Asilo Nido Il Cerbiatto",2024,45,Asilo nido,45.4651,9.1885,"Via Verdi 3"
 ```
 
-> v2.0: `struttura`→`denominazione` (rdfs:label@it), `iscritti`→`totale_alunni`, `tipo_struttura`→`tipologia`.
-
 ### 7. `incidenti_stradali.csv`
 
 **Required**: `data` (YYYY-MM-DD)
@@ -183,8 +150,6 @@ data,lat,lon,decessi,feriti,localita,ora
 2024-01-15,40.3520,18.1700,,2,LECCE,17:30
 2024-02-03,40.3611,18.1853,1,3,LECCE,22:45
 ```
-
-> v2.0: `morti`→`decessi`, `zona`→`localita` (clv:hasSpatialCoverage). `feriti` resta (semantica unica).
 
 ### 8. `rifiuti.csv`
 
@@ -203,8 +168,6 @@ anno,frazione,valore_assoluto,unita_misura,localita
 2023,Differenziata_pct,71.5,%,
 ```
 
-> v2.0: ristrutturato da formato wide (`kg_totali`, `rd_pct`, `kg_differenziata`, ecc.) a long. Il calcolatore supporta entrambi via auto-detect dell'header.
-
 ### 9. `eventi_culturali.csv`
 
 **Required**: `nome`
@@ -215,8 +178,6 @@ nome,datainizio,datafine,categoria,luogo,lat,lon,organizzatore
 "Notte Bianca della Cultura",2024-09-21,2024-09-21,Festival,"Centro storico",45.4642,9.1900,"Comune"
 "Mostra del Tintoretto",2024-10-15,2025-01-31,Mostra,"Palazzo dei Diamanti",45.4675,9.1895,"Galleria d'Arte"
 ```
-
-> v2.0: `data_inizio`→`datainizio` e `data_fine`→`datafine` (senza underscore, allineato a CPEV ti:startTime/ti:endTime).
 
 ### 10. `delibere.csv`
 
@@ -229,8 +190,6 @@ data_atto,tipo_atto,numero_atto,oggetto,uo_proponente
 2024-03-22,"Determina dirigenziale",442,"Affidamento servizio manutenzione verde","Lavori Pubblici"
 ```
 
-> v2.0: `data`→`data_atto`, `tipo`→`tipo_atto`, `numero`→`numero_atto`, `settore`/`ufficio`→`uo_proponente` (allineato a Atti DCAT-AP_IT).
-
 ### 11. `patrimonio.csv`
 
 **Required**: `denominazione`
@@ -241,8 +200,6 @@ denominazione,tipo,indirizzo,lat,lon,rendita,qualita,consistenza
 "Palazzo Comunale",Fabbricato,"Piazza Garibaldi 1",45.4642,9.1900,12500000.00,monumentale,"Sede istituzionale"
 "Stadio Comunale",Fabbricato,"Via dello Sport 5",45.4651,9.1750,8200000.00,nessuno,"Impianto sportivo"
 ```
-
-> v2.0: `valore_euro`→`rendita`, `vincolo_culturale` (boolean)→`qualita` (string libera con tipo vincolo), `uso`→`consistenza`.
 
 ### 12. `tributi.csv`
 
@@ -260,8 +217,6 @@ anno,tipo_atto,totale_entrate,numero,valore,unita_misura,descrizione,categoria
 2024,TASSA_SOGGIORNO,1250000.00,,2.50,€/notte,"€2.50/notte categoria 4 stelle",
 2024,ADDIZIONALE_IRPEF,8900000.00,,0.80,%,"Aliquota 0.80%",
 ```
-
-> v2.0: `tributo`→`tipo_atto`, `gettito_euro`→`totale_entrate`, `n_contribuenti`→`numero`, `aliquota_base`→`valore` (con `unita_misura` esplicita).
 
 ## Validazione
 
@@ -324,16 +279,12 @@ R: Sì, viene comunque accettato. La dashboard mostra un flag freshness: `🟢 r
 
 ## Versionamento
 
-Versione corrente: **csv-v2** (rilasciata 2026-05-05).
+Versione corrente: **csv-v2** (5 maggio 2026).
 
-Lo schema viene versionato (`csv-v1`, `csv-v2`, …) con periodo di deprecazione e retrocompatibilità. Il manifest dichiara `paniere_version` per tracciare la compatibilità.
+Lo schema è versionato. I CSV già pubblicati con la versione precedente continuano ad essere accettati: il sistema riconosce automaticamente sia i vecchi che i nuovi nomi di colonna.
 
 ### Storia
 
-- **csv-v2** (corrente, 2026-05-05): rinomina nomi colonne per allineamento al tool [CSV-to-RDF](https://github.com/piersoft/CSV-to-RDF) (variabile `DET_COL_RULES`). Coverage 73/78 colonne = **93% deterministico** (5 colonne residue → fallback LLM del tool).
-  - Cambi principali: `missione`→`settore_interv_inv`, `importo_euro`→`totale_uscite`/`costo_lavori_previsto`, `stato`→`codice_stato_cup`, `rup`→`nome_completo` (cpv:fullName, persona fisica), `valore_euro`→`rendita`, `tributo`→`tipo_atto`, `gettito_euro`→`totale_entrate`, ecc.
-  - `rifiuti.csv` ristrutturato da formato wide a long: `(anno, frazione, valore_assoluto, unita_misura, localita)`.
-  - Retrocompat trasparente via `withAliases()` in `scripts/calculators_v2.js`: i CSV con nomi v1 continuano a funzionare.
-- **csv-v1** (2026-05-04): 12 dataset CORE iniziali.
-  - 2026-05-05: aggiunto **dataset 12 — `tributi`** (gettito IMU/TARI/tassa soggiorno/addizionale IRPEF/COSAP per anno)
-  - 2026-05-04: schema iniziale 11 dataset
+- **csv-v2** (5 maggio 2026): allineamento dei nomi di colonna al vocabolario standard per la conversione automatica in Linked Open Data. Cambia anche la struttura del CSV `rifiuti` (formato a righe-osservazione invece di una sola riga per anno con molte colonne). I CSV v1 restano validi.
+- **csv-v1** (4 maggio 2026): schema iniziale con 11 dataset CORE.
+  - 5 maggio 2026: aggiunto il 12° dataset, `tributi` (gettito IMU, TARI, tassa di soggiorno, addizionale IRPEF, ecc.).
