@@ -169,24 +169,25 @@ Se compaiono errori, leggi il messaggio (indica riga e colonna) e correggi il CS
 
 ### Passo 6 — Apri pull request
 
-Crea un branch dedicato sul tuo fork, committa, e pushalo:
+Aggiungi i file e committa sul tuo fork:
 
 ```bash
-git checkout -b add-comune-parma
 git add data/comuni/parma/
 git commit -m "feat: aggiungo Comune di Parma al paniere"
-git push origin add-comune-parma
+git push origin main
 ```
 
-`origin` punta al tuo fork (impostato dal `git clone` del Passo 1), quindi `git push` carica il branch nel **tuo repository**, non nel repo originale.
+`origin` punta al tuo fork (impostato dal `git clone` del Passo 1), quindi `git push` carica il commit nel **tuo repository**, non nel repo originale.
 
 Vai su `https://github.com/<tuo-utente>/comune-metrics` — GitHub mostra un avviso giallo "Compare & pull request". Clicca quel pulsante.
 
 Nella schermata di apertura della PR, verifica che:
 - **base repository**: `piersoft/comune-metrics` — branch `main`
-- **head repository**: `<tuo-utente>/comune-metrics` — branch `add-comune-parma`
+- **head repository**: `<tuo-utente>/comune-metrics` — branch `main`
 
 Inserisci una breve descrizione (es. "Aggiungo il Comune di Parma con 7 dataset CORE pubblicati") e clicca **Create pull request**.
+
+> 💡 **Variante consigliata se prevedi di contribuire ancora in futuro**: invece di lavorare direttamente sul `main` del tuo fork, crea un branch dedicato (`git checkout -b add-comune-parma` prima del commit, poi `git push origin add-comune-parma`). Così il `main` del tuo fork resta allineato all'upstream `piersoft/comune-metrics` e puoi aprire più PR contemporaneamente. Per una sola contribuzione una tantum, lavorare su `main` è perfettamente OK.
 
 ### Passo 7 — La GitHub Action valida tutto
 
@@ -197,7 +198,7 @@ Quando apri la PR, parte automaticamente il workflow [`validate-paniere.yml`](.g
 
 Se tutto è verde, il maintainer del repo `piersoft/comune-metrics` revisiona e mergia la PR. Dopo il merge, entro pochi minuti il workflow `build-data.yml` rigenera i dati e la dashboard, e il tuo Comune compare su https://piersoft.github.io/comune-metrics/.
 
-Se la GitHub Action fallisce, leggi i log (tab "Checks" della PR), correggi i CSV nel tuo branch locale, fai un nuovo `git commit` e `git push origin add-comune-parma` — la PR si aggiorna automaticamente e il workflow rigira.
+Se la GitHub Action fallisce, leggi i log (tab "Checks" della PR), correggi i CSV in locale, fai un nuovo `git commit` e `git push` (sullo stesso branch da cui hai aperto la PR) — la PR si aggiorna automaticamente e il workflow rigira.
 
 ---
 
