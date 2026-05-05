@@ -327,7 +327,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.31</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.32</span>
     </div>
   </div>
 </header>
@@ -897,7 +897,7 @@ function renderComuneInfo(c) {
     const nRicostruiti = Object.values(datasets).filter(ds => ds.status === 'ok').length;
     inadempienteBanner = `
       <div class="inadempiente-banner">
-        <strong>🚨 Comune INADEMPIENTE: ${c.nome} non pubblica OpenData</strong>
+        <strong>🚨 ${c.nome} non pubblica OpenData</strong>
         <span style="display:block;font-size:13px;line-height:1.6;margin-top:8px;color:var(--ink);">
           Il <strong>Comune di ${c.nome}</strong> non risulta tra i publisher attivi su <a href="https://www.dati.gov.it/" target="_blank" rel="noopener noreferrer">dati.gov.it</a>: zero dataset registrati come <code>holder_name="${c.nome}"</code>. Non c'è quindi alcun OpenData pubblicato direttamente dal Comune.
           <br><br>
