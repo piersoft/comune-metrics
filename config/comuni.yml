@@ -66,8 +66,8 @@ comuni:
     # Per i 4 dataset Google Drive accessibili (popolazione, opere, incidenti)
     # il builder fa comunque fetch normale.
     mode: static_snapshot
-    snapshot_date: "2026-05-04"
-    snapshot_reason: "Pubblicava 11/11 dataset CORE come Comune virtuoso. Il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV originali sono salvati come fixture statiche scaricate manualmente nel 2026. I dati sono fermi al 2015-2019: il portale OpenData del Comune non è più aggiornato dal 2018. L'unico dataset non recuperabile per statistiche è 'delibere': l'Albo Pretorio è esposto come feed RSS live ma non ha storico."
+    snapshot_date: "2026-05-05"
+    snapshot_reason: "Pubblicava 11/11 dataset CORE come Comune virtuoso. Il server dati.comune.lecce.it ha geo-fencing che blocca i runner GitHub Actions, quindi i CSV originali sono salvati come fixture statiche scaricate manualmente. La maggior parte dei dataset si ferma al 2015-2019: il portale OpenData del Comune non è più aggiornato per quasi tutti i settori (popolazione, bilancio, opere pubbliche, servizi sociali, rifiuti, patrimonio). Fa eccezione il dataset incidenti stradali, aggiornato al 31 dicembre 2023 (7.444 sinistri, 11 anni di serie storica). L'unico dataset CORE non recuperabile per statistiche è 'delibere': l'Albo Pretorio è esposto come feed RSS live ma senza storico."
     datasets:
       popolazione: popolazione-residente-e-bilancio-demografico-mensile-anno-2019  # Google Sheets, fetch live
       bilancio: __fixture__:bilancio                                                # consuntivo 2019
@@ -75,7 +75,7 @@ comuni:
       pratiche_edilizie: __fixture__:pratiche_edilizie                              # SUE 8.673 pratiche
       servizi_sociali: __fixture__:servizi_sociali                                   # 2016: 6.102 pratiche evase, 5 uffici (recuperato via goo.gl funzionante)
       istruzione: popolazione-scolastica-a-s-2021-2022                              # Google Sheets CSV LIVE, 93 scuole geo
-      incidenti_stradali: localizzazione-sinistri-dal-2018-lecce                    # Google Sheets, fetch live
+      incidenti_stradali: __fixture__:incidenti_stradali                            # Cumulativo 2013-2023, 7.444 incidenti, 42 morti, 6.679 feriti
       rifiuti: __fixture__:rifiuti                                                   # 2015: 56.704 t RSU, 22.27% RD (12 mesi aggregati)
       eventi_culturali: __fixture__:eventi_culturali                                # 25 iniziative ricorrenti
       delibere: null  # Solo feed RSS in tempo reale, senza storico per statistiche
