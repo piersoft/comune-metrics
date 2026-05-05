@@ -178,6 +178,49 @@
     display: inline-block; width: 10px; height: 10px; border-radius: 50%;
     margin-right: 5px; vertical-align: middle; border: 1px solid #fff;
   }
+  .map-body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 480px;
+  }
+  .map-toggles {
+    background: var(--bg);
+    border-right: 1px solid var(--border-light);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+  }
+  .layer-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--card);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--ink);
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .layer-toggle:hover { background: #f3f6fa; }
+  .layer-toggle input[type=checkbox] {
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--brand-blue);
+  }
+  .layer-toggle .layer-icon { font-size: 16px; line-height: 1; }
+  .layer-toggle .layer-name { flex: 1; font-weight: 500; }
+  .layer-toggle .layer-count {
+    font-size: 11px;
+    color: var(--ink-soft);
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-variant-numeric: tabular-nums;
+  }
   #map { height: 480px; }
   .site-footer {
     background: var(--ink); color: #C6D1DC; padding: 32px 0;
@@ -201,6 +244,19 @@
     .comune-info { padding: 20px; }
     .comune-info h2 { font-size: 26px; }
     .kpi-big .value { font-size: 22px; }
+    .map-body {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .map-toggles {
+      flex-direction: row;
+      flex-wrap: wrap;
+      border-right: none;
+      border-bottom: 1px solid var(--border-light);
+      padding: 10px;
+    }
+    .layer-toggle { flex: 1 1 calc(50% - 4px); min-width: 0; }
+    .layer-toggle .layer-name { font-size: 12px; }
   }
 </style>
 </head>
@@ -209,7 +265,7 @@
 <header class="site-header">
   <div class="container header-content">
     <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 11 Dataset CORE del Paniere</sub></h1>
-    <span class="version-badge" id="versionBadge">v2026.05.05.20</span>
+    <span class="version-badge" id="versionBadge">v2026.05.05.21</span>
   </div>
 </header>
 
@@ -262,11 +318,14 @@ const DATASET_LABELS = {
   patrimonio:         { titolo: "Patrimonio immobiliare",        icona: "🏛️" },
 };
 
+// Layer mappa: colori NETTAMENTE distinti (no due blu insieme).
+// Palette ordinata per max contrast su fondo OSM grigio chiaro.
 const MAP_LAYERS = {
-  eventi_culturali:   { label: 'Eventi culturali',    color: '#3385D6', source: 'eventi_geo' },
-  opere_pubbliche:    { label: 'Cantieri',            color: '#0066CC', source: 'opere_geo' },
-  incidenti_stradali: { label: 'Incidenti stradali',  color: '#B71C1C', source: 'hot_spots' },
-  patrimonio:         { label: 'Patrimonio',          color: '#5C6F82', source: 'immobili_geo' },
+  incidenti_stradali: { label: 'Incidenti stradali',  color: '#D32F2F', source: 'hot_spots',     icon: '🚗' },  // rosso
+  opere_pubbliche:    { label: 'Cantieri',            color: '#F57C00', source: 'opere_geo',    icon: '🚧' },  // arancione
+  istruzione:         { label: 'Scuole',              color: '#1976D2', source: 'strutture_geo',icon: '🎓' },  // blu
+  eventi_culturali:   { label: 'Eventi culturali',    color: '#7B1FA2', source: 'eventi_geo',   icon: '🎭' },  // viola
+  patrimonio:         { label: 'Patrimonio',          color: '#388E3C', source: 'immobili_geo', icon: '🏛️' }, // verde
 };
 
 function fmtNum(n) { if (n==null) return "—"; return new Intl.NumberFormat('it-IT').format(n); }
@@ -653,7 +712,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
 
 function renderComuneInfo(c) {
   const datasets = c.datasets || {};
-  const n = Object.keys(datasets).length;
+  const totalCore = 11;
   const cablati = Object.values(datasets).filter(ds => ds.status !== 'not_published').length;
   const ok = Object.values(datasets).filter(ds => ds.status === 'ok').length;
   const fresh = Object.values(datasets).filter(ds => ds.freshness && ds.freshness.level === 'fresh').length;
@@ -679,9 +738,9 @@ function renderComuneInfo(c) {
         Sindaco ${c.sindaco} · mandato ${c.mandato} · IPA ${c.ipa} · ISTAT ${c.istat} · popolazione attesa ${fmtNum(c.popolazione_attesa)}
       </div>
       <div class="copertura-bar">
-        <span class="stat-pill"><strong>${cablati}</strong> / ${n} dataset cablati</span>
-        <span class="stat-pill"><strong>${ok}</strong> aggregati con successo</span>
-        <span class="stat-pill"><strong>${fresh}</strong> con dato fresco</span>
+        <span class="stat-pill" title="Dataset del paniere CORE pubblicati dal Comune"><strong>${cablati}</strong> / ${totalCore} dataset del paniere pubblicati</span>
+        <span class="stat-pill" title="Dataset elaborati correttamente dal builder"><strong>${ok}</strong> processati con successo</span>
+        <span class="stat-pill" title="Dataset aggiornati negli ultimi 12 mesi"><strong>${fresh}</strong> con dato fresco</span>
       </div>
     </div>`;
 }
@@ -702,7 +761,7 @@ function collectMapLayers(c) {
     const points = m[cfg.source];
     if (Array.isArray(points) && points.length) {
       const valid = points.filter(p => p && typeof p.lat === 'number' && typeof p.lon === 'number' && p.lat > -90 && p.lat < 90 && p.lon > -180 && p.lon < 180);
-      if (valid.length) layers.push({ dsKey, label: cfg.label, color: cfg.color, points: valid });
+      if (valid.length) layers.push({ dsKey, label: cfg.label, color: cfg.color, icon: cfg.icon, points: valid });
     }
   }
   return layers;
@@ -711,26 +770,61 @@ function collectMapLayers(c) {
 function renderMap(c) {
   const layers = collectMapLayers(c);
   if (!layers.length) return '';
-  const legendHtml = layers.map(l => `<span><span class="legend-dot" style="background:${l.color};"></span>${l.label} (${fmtNum(l.points.length)})</span>`).join('');
+  // Sidebar toggle: una checkbox per layer, default ON
+  const togglesHtml = layers.map(l => `
+    <label class="layer-toggle" style="border-left: 3px solid ${l.color};">
+      <input type="checkbox" data-layer="${l.dsKey}" checked>
+      <span class="layer-icon">${l.icon || '📍'}</span>
+      <span class="layer-name">${l.label}</span>
+      <span class="layer-count">${fmtNum(l.points.length)}</span>
+    </label>`).join('');
   return `
     <div class="map-section">
-      <div class="map-header"><h3>📍 Visualizzazione geografica</h3><div class="map-legend">${legendHtml}</div></div>
-      <div id="map"></div>
+      <div class="map-header">
+        <h3>📍 Visualizzazione geografica</h3>
+        <span style="font-size: 12px; color: var(--ink-soft);">Spunta i layer da mostrare</span>
+      </div>
+      <div class="map-body">
+        <div class="map-toggles" id="mapToggles">${togglesHtml}</div>
+        <div id="map"></div>
+      </div>
     </div>`;
 }
 
 function initMap(c) {
   if (STATE.map) { STATE.map.remove(); STATE.map = null; }
+  STATE.mapLayerGroups = {};
   const layers = collectMapLayers(c);
   if (!layers.length || !document.getElementById('map')) return;
   STATE.map = L.map('map').setView(c.mappa_center, c.mappa_zoom || 12);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap', maxZoom: 19 }).addTo(STATE.map);
+  // Crea un LayerGroup per ogni dataset, così possiamo toggle
   for (const layer of layers) {
+    const lg = L.layerGroup();
     layer.points.slice(0, 300).forEach(p => {
-      const marker = L.circleMarker([p.lat, p.lon], { radius: 5, fillColor: layer.color, color: '#fff', weight: 1.2, fillOpacity: 0.75 }).addTo(STATE.map);
+      const marker = L.circleMarker([p.lat, p.lon], {
+        radius: 6,
+        fillColor: layer.color,
+        color: '#fff',
+        weight: 1.5,
+        fillOpacity: 0.85,
+      });
       if (p.nome) marker.bindPopup(`<strong>${escapeHtml(layer.label)}</strong><br>${escapeHtml(p.nome)}`);
+      lg.addLayer(marker);
     });
+    lg.addTo(STATE.map);
+    STATE.mapLayerGroups[layer.dsKey] = lg;
   }
+  // Aggancia i toggle
+  document.querySelectorAll('#mapToggles input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', (e) => {
+      const ds = e.target.dataset.layer;
+      const lg = STATE.mapLayerGroups[ds];
+      if (!lg) return;
+      if (e.target.checked) lg.addTo(STATE.map);
+      else STATE.map.removeLayer(lg);
+    });
+  });
 }
 
 async function switchComune(key) {
@@ -753,9 +847,9 @@ function renderComuneSelector(d) {
   let html = '<span class="label">Comune:</span>';
   for (const [key, c] of Object.entries(d.comuni)) {
     const cls = key === STATE.current ? 'active' : '';
-    const okText = (c.n_datasets_ok || 0) + '/' + (c.n_datasets_pubblicati || 0);
+    const okText = `${c.n_datasets_pubblicati || 0}/11`;
     const modeTag = c.mode === 'static_snapshot' ? ' · snapshot' : '';
-    html += `<button class="comune-btn ${cls}" data-comune="${key}">${c.nome}<span class="meta">${okText} OK${modeTag}</span></button>`;
+    html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su 11 del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
   }
   sel.innerHTML = html;
   sel.querySelectorAll('.comune-btn').forEach(btn => btn.addEventListener('click', () => switchComune(btn.dataset.comune)));
@@ -768,12 +862,12 @@ function renderStatusBanner(d) {
   if (ago < 1) agoTxt = "meno di un'ora fa";
   else if (ago < 24) agoTxt = ago + ' ore fa';
   else agoTxt = Math.round(ago/24) + ' giorni fa';
-  let totalOk = 0, totalPub = 0;
+  let totalPub = 0;
   for (const c of Object.values(d.comuni)) {
-    totalOk += c.n_datasets_ok || 0;
     totalPub += c.n_datasets_pubblicati || 0;
   }
-  document.getElementById('statusBanner').innerHTML = `<strong>📊 Dati aggiornati ${agoTxt}</strong> · Snapshot del ${built.toLocaleDateString('it-IT', { day:'numeric', month:'long', year:'numeric' })} alle ${built.toLocaleTimeString('it-IT', { hour:'2-digit', minute:'2-digit' })} · ${totalOk}/${totalPub} dataset processati con successo dai portali OpenData dei ${Object.keys(d.comuni).length} Comuni`;
+  const totalMax = Object.keys(d.comuni).length * 11;
+  document.getElementById('statusBanner').innerHTML = `<strong>📊 Dati aggiornati ${agoTxt}</strong> · Snapshot del ${built.toLocaleDateString('it-IT', { day:'numeric', month:'long', year:'numeric' })} alle ${built.toLocaleTimeString('it-IT', { hour:'2-digit', minute:'2-digit' })} · ${totalPub}/${totalMax} dataset del paniere CORE pubblicati dai ${Object.keys(d.comuni).length} Comuni`;
 }
 
 (async function init() {
