@@ -293,7 +293,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.23</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.24</span>
     </div>
   </div>
 </header>
@@ -755,8 +755,8 @@ function renderComuneInfo(c) {
       <div class="snapshot-banner">
         <strong>⚠ Snapshot statico del ${dataSnap}</strong> · ${reason}.<br>
         I CSV sono stati scaricati manualmente dal browser (IP italiano) e committati nel repo come fixture.
-        Se il portale fosse accessibile, queste metriche sarebbero in tempo reale come per Bologna.
-        I dataset segnati <em>snapshot statico</em> derivano da fixture; gli altri vengono fetchati live da Google Drive.
+        Se il portale fosse accessibile, il builder ricaricherebbe i CSV ad ogni run (settimanale) come fa per Bologna, riflettendo immediatamente gli aggiornamenti pubblicati dal Comune.
+        I dataset segnati <em>snapshot statico</em> derivano da fixture; gli altri vengono fetchati al build da Google Drive.
       </div>`;
   }
 
