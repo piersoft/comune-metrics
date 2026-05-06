@@ -327,7 +327,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.48</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.49</span>
     </div>
   </div>
 </header>
@@ -994,7 +994,7 @@ function renderComuneInfo(c) {
         <span style="display:block;font-size:13px;line-height:1.6;margin-top:8px;color:var(--ink);">
           Il <strong>Comune di ${c.nome}</strong> non risulta tra i publisher attivi su <a href="https://www.dati.gov.it/" target="_blank" rel="noopener noreferrer">dati.gov.it</a>: zero dataset registrati come <code>holder_name="${c.nome}"</code>. Non c'è quindi alcun OpenData pubblicato direttamente dal Comune.
           <br><br>
-          Per non lasciare un buco nella dashboard, ComuneMetrics ha <strong>ricostruito quanto possibile da fonti nazionali pubbliche</strong>: ISTAT, MIM, ISPRA, ArCo (MiC) e MEF Federalismo Fiscale. Ogni dataset visualizzato qui sotto riporta in alto il <strong>badge della fonte originale con link diretto</strong> per la verifica.
+          ComuneMetrics ha <strong>ricostruito quanto possibile da fonti nazionali pubbliche</strong>: ISTAT, MIM, ISPRA, ArCo (MiC) e MEF Federalismo Fiscale. Ogni dataset visualizzato qui sotto riporta in alto il <strong>badge della fonte originale con link diretto</strong> per la verifica.
           <br><br>
           La copertura raggiunta è ${nRicostruiti}/14 dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i ${14 - nRicostruiti} dataset mancanti (pratiche edilizie, servizi sociali, incidenti, delibere) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico. <em>Bilancio e opere pubbliche sono stati ricostruiti da <a href="https://bdap-opendata.rgs.mef.gov.it/" target="_blank" rel="noopener noreferrer">BDAP-RGS (MEF)</a>: SIOPE Spese 2025 e MOP Soggetti Titolari Basilicata.</em>
           ${dataSnap ? `<br><br><em>Fotografia statica scattata il ${dataSnap}.</em>` : ''}

@@ -252,12 +252,29 @@ export function calc_pratiche(rows, fieldMap) {
     const conChiusura = rows.filter(r => r[fieldMap.chiusura]).length;
     if (conData > 0) tassoChiusura = (conChiusura / conData) * 100;
   }
+
+  // Serie temporale: scarto l'ultimo anno se è palesemente parziale.
+  // Caso reale Bologna: il dataset è fermo a fine 2025, ma siamo nel 2026 →
+  // il 2025 risulta apparentemente "ultimo anno" e crollerebbe il grafico se
+  // contasse solo 2093 record vs media ~5000/anno. Scartiamo l'ultimo anno
+  // se ha meno della metà della media degli ultimi 3 anni precedenti.
+  let serieAnni = seriesByYear(rows, fieldMap, 'data') || seriesByYear(rows, fieldMap, 'anno_prot');
+  if (serieAnni && serieAnni.length >= 4) {
+    const last = serieAnni[serieAnni.length - 1];
+    const prev3 = serieAnni.slice(-4, -1);
+    const media = prev3.reduce((s, x) => s + (x.valore || 0), 0) / prev3.length;
+    if (media > 0 && last.valore < media * 0.5) {
+      // Ultimo anno parziale, lo tronco
+      serieAnni = serieAnni.slice(0, -1);
+    }
+  }
+
   return {
     totale: rows.length,
     per_tipo: countBy(rows, fieldMap, 'tipo'),
     per_esito: countBy(rows, fieldMap, 'esito'),
     tasso_chiusura: tassoChiusura,
-    serie_anni: seriesByYear(rows, fieldMap, 'data') || seriesByYear(rows, fieldMap, 'anno_prot'),
+    serie_anni: serieAnni,
   };
 }
 
