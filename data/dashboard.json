@@ -14,17 +14,6 @@
       "n_datasets_totali": 14,
       "n_datasets_ok": 14
     },
-    "potenza": {
-      "key": "potenza",
-      "nome": "Comune di Potenza",
-      "ipa": "c_g942",
-      "mode": "reconstructed_from_national",
-      "snapshot_date": "2026-05-05",
-      "paniere_version": "csv-v1",
-      "n_datasets_pubblicati": 8,
-      "n_datasets_totali": 14,
-      "n_datasets_ok": 8
-    },
     "bologna": {
       "key": "bologna",
       "nome": "Comune di Bologna",
@@ -44,6 +33,17 @@
       "n_datasets_pubblicati": 12,
       "n_datasets_totali": 14,
       "n_datasets_ok": 12
+    },
+    "potenza": {
+      "key": "potenza",
+      "nome": "Comune di Potenza",
+      "ipa": "c_g942",
+      "mode": "reconstructed_from_national",
+      "snapshot_date": "2026-05-05",
+      "paniere_version": "csv-v1",
+      "n_datasets_pubblicati": 8,
+      "n_datasets_totali": 14,
+      "n_datasets_ok": 8
     }
   }
 }

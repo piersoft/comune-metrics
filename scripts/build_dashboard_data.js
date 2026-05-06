@@ -988,6 +988,28 @@ async function main() {
     };
   }
 
+  // -------------------------------------------------------------------
+  // Ordinamento canonico dei comuni nella dashboard
+  // -------------------------------------------------------------------
+  // Ordine voluto: Comune Ideale → Comune di Bologna → Comune di Lecce →
+  // Comune di Potenza, e poi (in futuro) gli altri Comuni in ordine alfabetico.
+  // Il browser itera Object.values() rispettando l'ordine di inserimento
+  // delle chiavi, quindi qui ricostruiamo l'oggetto comuni con l'ordine
+  // desiderato.
+  const COMUNI_ORDER = ["demo", "bologna", "lecce", "potenza"];
+  const orderedComuni = {};
+  for (const key of COMUNI_ORDER) {
+    if (dashboard.comuni[key]) orderedComuni[key] = dashboard.comuni[key];
+  }
+  // Eventuali altri Comuni (futuri) in ordine alfabetico
+  const others = Object.keys(dashboard.comuni)
+    .filter(k => !COMUNI_ORDER.includes(k))
+    .sort();
+  for (const key of others) {
+    orderedComuni[key] = dashboard.comuni[key];
+  }
+  dashboard.comuni = orderedComuni;
+
   writeFileSync(join(DATA_DIR, "dashboard.json"), JSON.stringify(dashboard, null, 2), "utf-8");
   log("\n=== ✓ Build completata → data/dashboard.json ===");
 }
