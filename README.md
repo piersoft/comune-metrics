@@ -52,6 +52,19 @@ Tabella completa con link diretti per generare ogni TTL: [docs/PANIERE_CSV_SCHEM
 
 ---
 
+## Documentazione
+
+Il progetto ha quattro documenti, ciascuno con uno scopo distinto:
+
+- **[README.md](README.md)** *(questo file)* — pitch del progetto, elenco dei Comuni nel cruscotto, lista dei 14 dataset CORE e procedura passo-passo per aggiungere il proprio Comune.
+- **[docs/PANIERE.md](docs/PANIERE.md)** — il manifesto del paniere: cosa contiene ognuno dei 14 dataset CORE, perché è stato scelto, fonti dati tipiche per un Comune italiano, esposizione come Linked Open Data 5 stelle.
+- **[docs/PANIERE_CSV_SCHEMA.md](docs/PANIERE_CSV_SCHEMA.md)** — riferimento tecnico per il publisher: schema canonico colonna-per-colonna di ogni CSV, validazione, esempi pronti da copiare, tabella completa di mapping CSV → ontologie semantiche.
+- **[tests/expected-ttl/README.md](tests/expected-ttl/README.md)** — i 14 file TTL ground-truth: esempi pre-generati di output Linked Open Data corretto, da usare come gold standard per validare la propria pipeline di conversione CSV → RDF.
+
+In sintesi: parti dal **README** per capire cos'è e come aderire, leggi **PANIERE.md** per capire il *cosa* e il *perché*, consulta **PANIERE_CSV_SCHEMA.md** quando devi preparare i tuoi CSV, usa **expected-ttl** come gold standard se vuoi anche il livello Linked Open Data.
+
+---
+
 ## Come aggiungere il tuo Comune (procedura passo-passo)
 
 ### Passo 1 — Fork del repository
