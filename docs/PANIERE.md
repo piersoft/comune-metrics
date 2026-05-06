@@ -273,7 +273,7 @@ I 14 dataset del paniere mappano su classi semantiche corrette:
 
 Tabella completa con link diretti per generare ciascun TTL: [PANIERE_CSV_SCHEMA.md — sezione Linked Open Data](PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit).
 
-**Per il Comune significa**: i CSV pubblicati nel formato del paniere sono già pronti per popolare un endpoint SPARQL Virtuoso, un catalogo DCAT-AP_IT su [dati.gov.it](https://www.dati.gov.it), o un harvester piveau. L'investimento di adottare il paniere si ripaga anche sul fronte Linked Open Data, oltre che sulla dashboard.
+**Per il Comune significa**: i CSV pubblicati nel formato del paniere sono già pronti per essere arricchiti semanticamente e diventare 5 stelle Linked Open Data nella scala [5stardata.info](https://5stardata.info/en/).
 
 ---
 
