@@ -281,7 +281,31 @@ Tabella completa con link diretti per generare ciascun TTL: [PANIERE_CSV_SCHEMA.
 
 Il paniere CORE attuale (14 dataset) è quello di partenza, scelto su criteri di **disponibilità reale** nei portali OpenData italiani e **valore civico immediato**. Per le versioni future stiamo valutando l'aggiunta di nuovi dataset CORE. Le candidature in roadmap, in ordine di priorità:
 
-### 🚌 CORE 15 — Trasporti Pubblici Locali (GTFS)
+### 🛣️ CORE 15 — Stradario e numeri civici (ANNCSU)
+
+**Cosa**: l'**ANNCSU** (Anagrafe Nazionale Numeri Civici e Strade Urbane) è la base dati ufficiale degli indirizzi italiani, istituita dall'**art. 4 del DPCM 12 maggio 2016** "Censimento della popolazione e archivio nazionale dei numeri civici e delle strade urbane". Per ciascun Comune contiene: stradario (denominazione, codice ISTAT, tipo di toponimo, frazione/quartiere) e indirizzario (numeri civici georeferenziati associati alle strade). Il formato canonico è CSV.
+
+**Perché è il candidato CORE prioritario**:
+- **Competenza comunale al 100%**: la numerazione civica è di esclusiva responsabilità comunale (art. 41 RD 1228/1929 e successive). Il Comune *deve* mantenerla aggiornata
+- **Copertura italiana ottima**: 63 Comuni la pubblicano già direttamente sui portali aperti, ed esiste un **fallback nazionale completo** via [Agenzia delle Entrate](https://anncsu.open.agenziaentrate.gov.it) che espone stradario e indirizzario di **TUTTI i 7.901 Comuni italiani**, una risorsa CSV per Regione + un nazionale aggregato
+- **High Value Dataset (HVD) europeo**: classificato dall'UE come dataset ad alto valore (categoria *Geospatial*, [Reg. UE 2023/138](http://data.europa.eu/eli/reg_impl/2023/138/oj)). Pubblicarlo è un obbligo prioritario per le PA italiane
+- **Aggiornamento mensile**: la base dati centrale ha frequenza `MONTHLY`
+- **Schema standardizzato**: stradario e indirizzario hanno schema CSV definito dall'Agenzia delle Entrate, replicabile in ogni Comune
+- **Mappabile**: gli indirizzari hanno coordinate WGS84 → layer mappa diretto; lo stradario è la base per geocoding, navigatori, soccorsi 112/118, anagrafica edilizia
+- **Valore civico altissimo**: stradario aggiornato = base per *qualunque* altro servizio digitale del Comune (geocoding pratiche, recapiti elettorali, percorsi rifiuti, fascicolo del cittadino)
+
+**Modello operativo previsto**:
+- Comuni virtuosi → pubblicano il proprio stradario CSV al formato ANNCSU sul portale comunale
+- Comuni che non pubblicano → fallback automatico via API ARES (Agenzia delle Entrate), filtrando il CSV regionale per `cod_istat` del Comune. Stesso pattern del CORE 12 *Tributi* per Potenza, che usa il MEF come fonte alternativa
+
+**Coperture potenziali per i 4 Comuni del cruscotto**:
+- ✅ Bologna, Lecce: probabile presenza diretta + fallback ARES garantito
+- ✅ Comune Ideale: clonabile dal demo Worker
+- ✅ Potenza: garantito via fallback ARES (presente nel dataset Basilicata)
+
+**Stato roadmap**: candidato prioritario. Soddisfa tutti i 6 criteri formali. Il prerequisito per la promozione a CORE operativo è solo l'analisi dello schema CSV ARES e l'integrazione del flusso di fallback regionale nel builder.
+
+### 🚌 CORE 16 — Trasporti Pubblici Locali (GTFS)
 
 **Cosa**: il GTFS (General Transit Feed Specification) è uno standard internazionale, originariamente sviluppato da Google, oggi adottato da quasi tutti i servizi di trasporto pubblico al mondo. È uno zip che contiene 8 file CSV strutturati: `agency.txt`, `stops.txt` (fermate georeferenziate), `routes.txt` (linee), `trips.txt` (corse), `stop_times.txt` (orari), `calendar.txt`, `calendar_dates.txt`, `shapes.txt` (geometrie dei percorsi).
 
@@ -312,10 +336,19 @@ Per trasparenza sui criteri di scelta, ecco i dataset valutati ma non inseriti n
 
 | Dataset | Esito | Motivo |
 |---|---|---|
+| **Aree verdi e parchi** | 🕒 In valutazione | Competenza comunale piena (manutenzione verde pubblico), valore civico chiaro, mappabile. Copertura italiana di 36 Comuni — sopra la soglia minima di 25 ma sotto quella di ANNCSU (63) e GTFS (100+). Da rivalutare per CORE 17 dopo ANNCSU/GTFS, o come primo dataset EXTENDED |
+| **OMI / Compravendite immobiliari** | ❌ Scartato | Dato dell'Agenzia delle Entrate (Osservatorio Mercato Immobiliare), non comunale. Pur con copertura ampia (37 Comuni harvest-er sui portali), il produttore reale è statale: viola il criterio 2 "competenza comunale diretta" |
+| **Qualità aria / inquinamento** | ❌ Scartato | Centraline gestite da ARPA regionali, non dai Comuni. Comuni grandi (Milano, Roma) hanno reti proprie ma sono eccezioni |
+| **Geologia / frane / vincoli idrogeologici** | ❌ Scartato | Competenza ISPRA + Autorità di Bacino + Regione. Il Comune recepisce e applica i vincoli ma non produce il dato |
+| **Elezioni e voto** | ❌ Scartato | Competenza condivisa tra Comune (sezioni elettorali, scrutini) e Stato/Regione. Non è un *flusso continuo* ma un *evento periodico*: non si presta al modello dashboard di stato comunale aggiornato |
+| **Turismo / arrivi e presenze** | ❌ Scartato | Il Comune raccoglie l'imposta di soggiorno ma il dato di arrivi/presenze viene da ISTAT regionale o dalle strutture ricettive private. Già coperto parzialmente dal CORE 11 *Patrimonio* (strutture ricettive) e dal CORE 9 *Eventi culturali* |
+| **Strutture sportive / impianti** | ❌ Scartato | Competenza comunale piena ma copertura italiana bassa (13 Comuni). Sotto soglia per essere CORE; possibile candidato EXTENDED |
+| **Cimiteri e operazioni cimiteriali** | ❌ Scartato | Competenza comunale al 100% ma copertura italiana molto bassa (6 Comuni). Sotto soglia |
+| **Wi-Fi pubblico / digitale** | ❌ Scartato | Competenza comunale ma dato volatile (cambia spesso) e copertura italiana bassa (19 Comuni, sotto soglia) |
 | **Barriere architettoniche / PEBA** | ❌ Scartato | Pochissimi Comuni italiani pubblicano un dataset PEBA strutturato. Pur essendo obbligo di legge (L. 41/1986), nei portali aperti italiani la copertura è marginale. Rischio di CORE vuoto per il 99% dei Comuni |
-| **Verde urbano / Alberature** | ❌ Scartato | Solo 15 dataset comunali totali su dati.gov.it. Tema importante ma copertura italiana ancora troppo bassa per giustificare un CORE |
+| **Verde urbano / Alberature** *(distinto da "aree verdi" come perimetro)* | ❌ Scartato | Solo 15 dataset comunali totali su dati.gov.it. Tema importante ma copertura italiana ancora troppo bassa per giustificare un CORE |
 | **Consumo di suolo (ISPRA)** | ❌ Scartato | Dato regionale/nazionale, non comunale. Non rientra nel modello "ogni Comune pubblica i suoi" |
-| **Aree di sosta tariffaria** | 🔄 Già coperto | Mappato nel CORE 14 "Parcheggi pubblici" (con `tariffa_oraria` e `posti_disabili`) |
+| **Aree di sosta tariffaria / ZTL** | 🔄 Già coperto | Mappato nel CORE 14 "Parcheggi pubblici" (con `tariffa_oraria` e `posti_disabili`). ZTL come sotto-tema futuro dello stesso CORE |
 
 ### Criteri per ammettere un nuovo CORE
 
