@@ -327,7 +327,7 @@
           <span class="guida-sub">Come alimentare la dashboard</span>
         </span>
       </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.47</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.48</span>
     </div>
   </div>
 </header>
@@ -808,13 +808,41 @@ function renderDefibrillatori(canvasId, m) {
   const totale = m.totale || 0;
   const h24 = m.h24_count || 0;
   const h24pct = m.h24_pct;
+  const perQuartiere = m.per_quartiere || [];
+  const orariLimitati = totale - h24;
+
+  // Grafico: se ho per_quartiere uso doughnut top 6 quartieri (caso Bologna)
+  // Altrimenti uso barchart h24 vs orari limitati (caso Lecce, Comune Ideale)
+  const showQuartieri = perQuartiere.length >= 2;
+  const showAccessibilita = !showQuartieri && totale > 0;
+
   const html = `
     <div class="kpi-row">
       <div class="kpi-big"><div class="value">${fmtNum(totale)}</div><div class="label">DAE</div></div>
-      <div class="kpi-big"><div class="value">${fmtNum(h24)}</div><div class="label">Accessibili h24</div></div>
+      <div class="kpi-big"><div class="value" style="color:var(--green);">${fmtNum(h24)}</div><div class="label">Accessibili h24</div></div>
       ${h24pct != null ? `<div class="kpi-big"><div class="value">${fmtPct(h24pct)}</div><div class="label">% h24</div></div>` : ''}
     </div>
-    ${totale > 0 ? `<div style="background:var(--brand-blue-light);padding:14px 18px;border-radius:6px;font-size:13px;color:var(--ink);line-height:1.55;">I DAE accessibili h24 sono raggiungibili anche fuori dagli orari di apertura della struttura ospitante (es. esterni a farmacie, supermercati, box stradali). Una percentuale h24 alta indica una rete capillare di defibrillatori realmente disponibili in caso di emergenza.</div>` : ''}`;
+    ${showQuartieri ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Top 6 quartieri</div><div class="chart-wrap" style="height:200px;"><canvas id="${canvasId}"></canvas></div>` : ''}
+    ${showAccessibilita ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Accessibilità</div><div class="chart-wrap" style="height:140px;"><canvas id="${canvasId}"></canvas></div>` : ''}`;
+  setTimeout(() => {
+    if (showQuartieri) {
+      const top = perQuartiere.slice(0, 6);
+      makeChart(canvasId, {
+        type: 'doughnut',
+        data: { labels: top.map(d => (d.nome||'?').length > 22 ? d.nome.slice(0,22)+'…' : d.nome), datasets: [{ data: top.map(d=>d.n), backgroundColor: PALETTE.slice(0, top.length), borderColor: '#fff', borderWidth: 2 }] },
+        options: chartDoughnut(),
+      });
+    } else if (showAccessibilita) {
+      makeChart(canvasId, {
+        type: 'bar',
+        data: {
+          labels: ['Accessibili h24', 'Orari limitati'],
+          datasets: [{ data: [h24, orariLimitati], backgroundColor: ['#2E7D32', '#FFA726'] }],
+        },
+        options: chartBar({ horizontal: true, xCallback: v => fmtNum(v) }),
+      });
+    }
+  }, 0);
   return html;
 }
 
@@ -824,22 +852,39 @@ function renderParcheggi(canvasId, m) {
   const disabili = m.totale_disabili || 0;
   const tariffaMedia = m.tariffa_media;
   const pctGratuiti = m.pct_gratuiti;
-  const pctDisabili = stalli > 0 ? Math.round((disabili / stalli) * 1000) / 10 : null;
-  const hasMultiTipi = m.per_tipo && m.per_tipo.length > 1;
+  const perTipo = m.per_tipo || [];
+  const perQuartiere = m.per_quartiere || [];
+
+  // Doughnut per tipologia se ho >= 2 tipi
+  // Altrimenti barchart top quartieri se disponibili
+  const showTipi = perTipo.length >= 2;
+  const showQuartieri = !showTipi && perQuartiere.length >= 2;
+
   const html = `
     <div class="kpi-row">
       <div class="kpi-big"><div class="value">${fmtNum(totale)}</div><div class="label">Strutture</div></div>
-      <div class="kpi-big"><div class="value">${fmtNum(stalli)}</div><div class="label">Stalli totali</div></div>
-      ${disabili > 0 ? `<div class="kpi-big"><div class="value">${fmtNum(disabili)}</div><div class="label">Posti disabili</div></div>` : ''}
+      <div class="kpi-big"><div class="value">${fmtNum(stalli)}</div><div class="label">Stalli</div></div>
+      ${disabili > 0 ? `<div class="kpi-big"><div class="value">${fmtNum(disabili)}</div><div class="label">Disabili</div></div>` : ''}
       ${tariffaMedia != null ? `<div class="kpi-big"><div class="value">${fmtEuro(tariffaMedia)}/h</div><div class="label">Tariffa media</div></div>` : ''}
-      ${pctGratuiti != null ? `<div class="kpi-big"><div class="value">${fmtPct(pctGratuiti)}</div><div class="label">% gratuiti</div></div>` : ''}
+      ${pctGratuiti != null && pctGratuiti > 0 ? `<div class="kpi-big"><div class="value" style="color:var(--green);">${fmtPct(pctGratuiti)}</div><div class="label">Gratuiti</div></div>` : ''}
     </div>
-    ${hasMultiTipi ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Per tipologia</div><div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` : ''}`;
+    ${showTipi ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Per tipologia</div><div class="chart-wrap" style="height:200px;"><canvas id="${canvasId}"></canvas></div>` : ''}
+    ${showQuartieri ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Top 8 zone</div><div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` : ''}`;
   setTimeout(() => {
-    if (hasMultiTipi) {
+    if (showTipi) {
+      const top = perTipo.slice(0, 6);
+      // Capitalizzo le label (Bologna le ha minuscole: "struttura", "raso")
+      const label = (s) => (s || '?').replace(/^./, c => c.toUpperCase());
+      makeChart(canvasId, {
+        type: 'doughnut',
+        data: { labels: top.map(d => label(d.nome)), datasets: [{ data: top.map(d=>d.n), backgroundColor: PALETTE.slice(0, top.length), borderColor: '#fff', borderWidth: 2 }] },
+        options: chartDoughnut(),
+      });
+    } else if (showQuartieri) {
+      const top = perQuartiere.slice(0, 8);
       makeChart(canvasId, {
         type: 'bar',
-        data: { labels: m.per_tipo.map(d => d.nome), datasets: [{ data: m.per_tipo.map(d=>d.n), backgroundColor: PALETTE[0] }] },
+        data: { labels: top.map(d => (d.nome||'?').length > 22 ? d.nome.slice(0,22)+'…' : d.nome), datasets: [{ data: top.map(d=>d.n), backgroundColor: PALETTE[2] }] },
         options: chartBar({ horizontal: true, xCallback: v => fmtNum(v) }),
       });
     }
