@@ -79,6 +79,47 @@
   .guida-card .guida-text { display: flex; flex-direction: column; line-height: 1.2; }
   .guida-card .guida-title { font-size: 14px; font-weight: 700; }
   .guida-card .guida-sub { font-size: 11px; opacity: 0.9; font-weight: 400; }
+  /* Dropdown documentazione */
+  .docs-dropdown { position: relative; display: inline-block; }
+  .docs-dropdown summary {
+    list-style: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, #1565C0 100%);
+    color: #fff; padding: 8px 16px; border-radius: 6px;
+    font-size: 13px; font-weight: 600;
+    box-shadow: 0 2px 6px rgba(23, 50, 77, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .docs-dropdown summary::-webkit-details-marker { display: none; }
+  .docs-dropdown summary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(23, 50, 77, 0.3);
+  }
+  .docs-dropdown summary .caret { font-size: 10px; opacity: 0.7; margin-left: 2px; transition: transform 0.2s; }
+  .docs-dropdown[open] summary .caret { transform: rotate(180deg); }
+  .docs-menu {
+    position: absolute; top: calc(100% + 6px); right: 0; z-index: 100;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(23, 50, 77, 0.18), 0 2px 6px rgba(23, 50, 77, 0.08);
+    min-width: 380px; max-width: 440px; padding: 8px; overflow: hidden;
+  }
+  .docs-menu-header {
+    font-size: 11px; color: var(--ink-soft); text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 8px 12px 6px;
+  }
+  .docs-menu a {
+    display: block; padding: 10px 12px; border-radius: 6px;
+    text-decoration: none; color: var(--ink); transition: background 0.12s;
+  }
+  .docs-menu a:hover { background: var(--brand-blue-light); }
+  .docs-menu .docs-link-title {
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 600; font-size: 13px; color: var(--brand-blue); margin-bottom: 3px;
+  }
+  .docs-menu .docs-link-title .docs-icon { font-size: 15px; }
+  .docs-menu .docs-link-desc {
+    font-size: 12px; color: var(--ink-soft); line-height: 1.4;
+  }
   .status-banner {
     background: var(--green-bg); border-left: 4px solid var(--green);
     padding: 12px 24px; margin: 16px auto 0; max-width: 1320px;
@@ -320,14 +361,36 @@
   <div class="container header-content">
     <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 14 Dataset CORE del Paniere</sub></h1>
     <div class="header-actions">
-      <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE.md" target="_blank" rel="noopener" class="guida-card" title="Guida operativa: come pubblicare i dati che alimentano questa dashboard">
-        <span class="guida-icon">📖</span>
-        <span class="guida-text">
-          <span class="guida-title">Guida</span>
-          <span class="guida-sub">Come alimentare la dashboard</span>
-        </span>
-      </a>
-      <span class="version-badge" id="versionBadge">v2026.05.05.51</span>
+      <details class="docs-dropdown">
+        <summary>
+          <span class="guida-icon">📖</span>
+          <span class="guida-text">
+            <span class="guida-title">Documentazione</span>
+            <span class="guida-sub">Guide e schemi del paniere</span>
+          </span>
+          <span class="caret">▼</span>
+        </summary>
+        <div class="docs-menu">
+          <div class="docs-menu-header">I 4 documenti del progetto</div>
+          <a href="https://github.com/piersoft/comune-metrics/blob/main/README.md" target="_blank" rel="noopener">
+            <div class="docs-link-title"><span class="docs-icon">🏠</span>README</div>
+            <div class="docs-link-desc">Pitch del progetto, elenco Comuni nel cruscotto e procedura passo-passo per aggiungere il proprio Comune.</div>
+          </a>
+          <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE.md" target="_blank" rel="noopener">
+            <div class="docs-link-title"><span class="docs-icon">📘</span>PANIERE.md</div>
+            <div class="docs-link-desc">Il manifesto del paniere: cosa contiene ognuno dei 14 dataset CORE, perché è stato scelto, fonti dati tipiche, esposizione come Linked Open Data 5 stelle.</div>
+          </a>
+          <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE_CSV_SCHEMA.md" target="_blank" rel="noopener">
+            <div class="docs-link-title"><span class="docs-icon">📐</span>PANIERE_CSV_SCHEMA.md</div>
+            <div class="docs-link-desc">Riferimento tecnico per il publisher: schema canonico colonna-per-colonna di ogni CSV, validazione, esempi e mapping verso ontologie semantiche.</div>
+          </a>
+          <a href="https://github.com/piersoft/comune-metrics/tree/main/tests/expected-ttl" target="_blank" rel="noopener">
+            <div class="docs-link-title"><span class="docs-icon">⭐</span>expected-ttl/</div>
+            <div class="docs-link-desc">I 14 file TTL ground-truth: esempi pre-generati di output Linked Open Data corretto, da usare come gold standard.</div>
+          </a>
+        </div>
+      </details>
+      <span class="version-badge" id="versionBadge">v2026.05.05.52</span>
     </div>
   </div>
 </header>
@@ -1180,6 +1243,14 @@ function renderStatusBanner(d) {
 }
 
 (async function init() {
+  // Chiudi il dropdown documentazione al click fuori
+  document.addEventListener('click', (e) => {
+    const dropdown = document.querySelector('.docs-dropdown');
+    if (dropdown && dropdown.open && !dropdown.contains(e.target)) {
+      dropdown.open = false;
+    }
+  });
+
   try {
     Chart.defaults.font = FONT;
     Chart.defaults.color = '#5C6F82';
