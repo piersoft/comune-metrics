@@ -277,6 +277,54 @@ Tabella completa con link diretti per generare ciascun TTL: [PANIERE_CSV_SCHEMA.
 
 ---
 
+## Roadmap v2 — possibili dataset CORE futuri
+
+Il paniere CORE attuale (14 dataset) è quello di partenza, scelto su criteri di **disponibilità reale** nei portali OpenData italiani e **valore civico immediato**. Per le versioni future stiamo valutando l'aggiunta di nuovi dataset CORE. Le candidature in roadmap, in ordine di priorità:
+
+### 🚌 CORE 15 — Trasporti Pubblici Locali (GTFS)
+
+**Cosa**: il GTFS (General Transit Feed Specification) è uno standard internazionale, originariamente sviluppato da Google, oggi adottato da quasi tutti i servizi di trasporto pubblico al mondo. È uno zip che contiene 8 file CSV strutturati: `agency.txt`, `stops.txt` (fermate georeferenziate), `routes.txt` (linee), `trips.txt` (corse), `stop_times.txt` (orari), `calendar.txt`, `calendar_dates.txt`, `shapes.txt` (geometrie dei percorsi).
+
+**Perché è un buon candidato CORE**:
+- **Standard internazionale consolidato**: è il formato che alimenta Google Maps, Citymapper, Moovit, OpenTripPlanner — la pubblicazione del GTFS rende immediatamente i mezzi del Comune visibili in tutte le app di mobilità
+- **Buona copertura italiana**: su [dati.gov.it](https://www.dati.gov.it) ci sono 144+ dataset GTFS, con Comuni capofila come Palermo (105 risorse), Roma, Genova, Messina, Bari, Matera, Lecce, e Regioni come Lombardia, Liguria, Piemonte, Calabria
+- **Alto valore civico**: trasporto pubblico = accesso a lavoro, scuola, sanità. La pubblicazione GTFS è anche un obbligo previsto dal Regolamento UE 1926/2017 per il National Access Point
+- **Mappabile**: le `stops.txt` diventano un layer mappa naturale (icona 🚌); le `routes.txt` un grafico per tipologia (bus/tram/metro/treno)
+
+**KPI candidati**:
+- N° fermate georeferenziate (visibili sulla mappa)
+- N° linee, N° corse/giorno medie
+- N° gestori TPL operanti sul territorio
+- Tipologia mezzi (bus/tram/metro/filobus/treno regionale)
+
+**Coperture potenziali al momento della valutazione (maggio 2026)**:
+- ✅ Bologna, Lecce, Matera, Roma, Palermo, Genova, Messina, Torino e altri 100+ Comuni
+- ❌ Potenza (in linea con gli altri 7 dataset non pubblicati)
+
+### Dataset valutati e scartati
+
+Per trasparenza sui criteri di scelta, ecco i dataset valutati ma non inseriti nel paniere CORE:
+
+| Dataset | Esito | Motivo |
+|---|---|---|
+| **Barriere architettoniche / PEBA** | ❌ Scartato | Pochissimi Comuni italiani pubblicano un dataset PEBA strutturato. Pur essendo obbligo di legge (L. 41/1986), nei portali aperti italiani la copertura è marginale. Rischio di CORE vuoto per il 99% dei Comuni |
+| **Verde urbano / Alberature** | ❌ Scartato | Solo 15 dataset comunali totali su dati.gov.it. Tema importante ma copertura italiana ancora troppo bassa per giustificare un CORE |
+| **Consumo di suolo (ISPRA)** | ❌ Scartato | Dato regionale/nazionale, non comunale. Non rientra nel modello "ogni Comune pubblica i suoi" |
+| **Aree di sosta tariffaria** | 🔄 Già coperto | Mappato nel CORE 14 "Parcheggi pubblici" (con `tariffa_oraria` e `posti_disabili`) |
+
+### Criteri per ammettere un nuovo CORE
+
+Un dataset entra nel paniere CORE se soddisfa **tutti** i criteri:
+1. **Valore civico chiaro**: utilità diretta per il cittadino (mobilità, sanità, sicurezza, trasparenza)
+2. **Copertura italiana ampia**: almeno 50+ Comuni hanno già pubblicato qualcosa di analogo (anche con schemi diversi)
+3. **Schema standardizzabile**: è possibile definire un CSV canonico con colonne obbligatorie e opzionali
+4. **Mappabile su ontologie semantiche**: esiste una classe DCAT-AP_IT / W3C / settoriale appropriata
+5. **Non ridondante**: non è già coperto da un CORE esistente
+
+I dataset che non superano tutti i criteri possono comunque essere candidati per un futuro paniere **EXTENDED** (in valutazione separata).
+
+---
+
 ## Riferimenti normativi
 
 - **DLgs 33/2013** — Riordino della disciplina riguardante il diritto di accesso civico (FOIA)
