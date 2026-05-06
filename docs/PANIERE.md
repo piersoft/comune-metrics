@@ -285,21 +285,26 @@ Il paniere CORE attuale (14 dataset) è quello di partenza, scelto su criteri di
 
 **Cosa**: il GTFS (General Transit Feed Specification) è uno standard internazionale, originariamente sviluppato da Google, oggi adottato da quasi tutti i servizi di trasporto pubblico al mondo. È uno zip che contiene 8 file CSV strutturati: `agency.txt`, `stops.txt` (fermate georeferenziate), `routes.txt` (linee), `trips.txt` (corse), `stop_times.txt` (orari), `calendar.txt`, `calendar_dates.txt`, `shapes.txt` (geometrie dei percorsi).
 
-**Perché è un buon candidato CORE**:
+**Perché è interessante**:
 - **Standard internazionale consolidato**: è il formato che alimenta Google Maps, Citymapper, Moovit, OpenTripPlanner — la pubblicazione del GTFS rende immediatamente i mezzi del Comune visibili in tutte le app di mobilità
-- **Buona copertura italiana**: su [dati.gov.it](https://www.dati.gov.it) ci sono 144+ dataset GTFS, con Comuni capofila come Palermo (105 risorse), Roma, Genova, Messina, Bari, Matera, Lecce, e Regioni come Lombardia, Liguria, Piemonte, Calabria
+- **Buona copertura sui Comuni grandi**: su [dati.gov.it](https://www.dati.gov.it) ci sono 144+ dataset GTFS, con Comuni capofila come Palermo (105 risorse), Roma, Genova, Messina, Bari, Matera, Lecce, e Regioni come Lombardia, Liguria, Piemonte, Calabria
 - **Alto valore civico**: trasporto pubblico = accesso a lavoro, scuola, sanità. La pubblicazione GTFS è anche un obbligo previsto dal Regolamento UE 1926/2017 per il National Access Point
 - **Mappabile**: le `stops.txt` diventano un layer mappa naturale (icona 🚌); le `routes.txt` un grafico per tipologia (bus/tram/metro/treno)
 
-**KPI candidati**:
-- N° fermate georeferenziate (visibili sulla mappa)
-- N° linee, N° corse/giorno medie
-- N° gestori TPL operanti sul territorio
-- Tipologia mezzi (bus/tram/metro/filobus/treno regionale)
+**Perché è in roadmap e non già nel CORE — il problema della scala comunale**:
 
-**Coperture potenziali al momento della valutazione (maggio 2026)**:
-- ✅ Bologna, Lecce, Matera, Roma, Palermo, Genova, Messina, Torino e altri 100+ Comuni
-- ❌ Potenza (in linea con gli altri 7 dataset non pubblicati)
+I Comuni italiani che hanno un servizio **TPL urbano proprio** (con contratto di servizio, gestore dedicato, GTFS pubblicato) sono una minoranza: tipicamente i capoluoghi e i Comuni medio-grandi. La maggior parte dei Comuni italiani — soprattutto quelli sotto i 30.000 abitanti — **non ha TPL urbano**: è attraversata da linee extraurbane regionali che fanno qualche fermata, ma il dato è di competenza della Regione o dell'agenzia regionale di mobilità, non del Comune. Pretendere che ogni Comune pubblichi un proprio GTFS sarebbe scollegato dalla realtà amministrativa italiana.
+
+Per questo il GTFS resta in roadmap, in attesa di una formula che ne sancisca la posizione corretta:
+- forse come **dataset CORE condizionato**, presente solo per i Comuni che effettivamente gestiscono un TPL urbano
+- forse come **primo dataset EXTENDED** (paniere opzionale per Comuni di rango superiore)
+- forse con un **mode `regional_transit`** analogo al `reconstructed_from_national` di Potenza, che mostra il TPL extraurbano regionale che attraversa il territorio comunale come dato non comunale ma comunque visibile
+
+La decisione su quale di questi tre approcci adottare è il prerequisito per promuovere GTFS da roadmap a CORE/EXTENDED operativo.
+
+**Coperture potenziali se diventasse CORE oggi**:
+- ✅ Bologna, Lecce, Matera, Roma, Palermo, Genova, Messina, Torino e altri 100+ Comuni grandi
+- ❌ Potenza e la stragrande maggioranza dei Comuni italiani sotto i 30.000 abitanti
 
 ### Dataset valutati e scartati
 
@@ -316,12 +321,13 @@ Per trasparenza sui criteri di scelta, ecco i dataset valutati ma non inseriti n
 
 Un dataset entra nel paniere CORE se soddisfa **tutti** i criteri:
 1. **Valore civico chiaro**: utilità diretta per il cittadino (mobilità, sanità, sicurezza, trasparenza)
-2. **Copertura italiana ampia**: almeno 50+ Comuni hanno già pubblicato qualcosa di analogo (anche con schemi diversi)
-3. **Schema standardizzabile**: è possibile definire un CSV canonico con colonne obbligatorie e opzionali
-4. **Mappabile su ontologie semantiche**: esiste una classe DCAT-AP_IT / W3C / settoriale appropriata
-5. **Non ridondante**: non è già coperto da un CORE esistente
+2. **Competenza comunale diretta**: il dato deve essere prodotto e gestito dal Comune nell'esercizio delle sue funzioni, non dalla Regione/Provincia/Stato. Un dataset di "competenza condivisa con altri livelli amministrativi" non è candidato CORE perché molti Comuni piccoli non lo gestiscono direttamente (esempio: il TPL urbano è comunale solo nei Comuni medio-grandi; nei piccoli è regionale e quindi fuori scope CORE)
+3. **Copertura italiana ampia**: almeno 50+ Comuni hanno già pubblicato qualcosa di analogo (anche con schemi diversi)
+4. **Schema standardizzabile**: è possibile definire un CSV canonico con colonne obbligatorie e opzionali
+5. **Mappabile su ontologie semantiche**: esiste una classe DCAT-AP_IT / W3C / settoriale appropriata
+6. **Non ridondante**: non è già coperto da un CORE esistente
 
-I dataset che non superano tutti i criteri possono comunque essere candidati per un futuro paniere **EXTENDED** (in valutazione separata).
+I dataset che non superano tutti i criteri possono comunque essere candidati per un futuro paniere **EXTENDED** (in valutazione separata), eventualmente con visibilità condizionata alla dimensione/tipologia del Comune.
 
 ---
 
