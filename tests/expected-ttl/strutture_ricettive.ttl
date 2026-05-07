@@ -1,0 +1,650 @@
+# CSV→RDF — 2026-05-07T11:45:04.341Z
+# Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/strutture_ricettive.csv
+# Ente: Comune Ideale (c_ideal)
+# Ontologie: ACCO, POI, CLV
+# Righe: 25
+# https://piersoft.github.io/CSV-to-RDF/
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix acco: <https://w3id.org/italia/onto/ACCO/> .
+@prefix poi: <https://w3id.org/italia/onto/POI/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix typ: <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/> .
+@prefix star: <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/> .
+
+<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
+    foaf:name "Comune Ideale"@it ;
+    dct:identifier "c_ideal" .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/1>
+    a acco:Accommodation ;
+    rdfs:label "Hotel Centrale Stazione"@it ;
+    acco:accommodationCode "1"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/hotel> ;
+    acco:hasAccommodationClassification <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/four-stars> ;
+    acco:totalNumberOfBeds "180"^^xsd:integer ;
+    acco:totalNumberOfRooms "90"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2010-03-15"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/1> .
+
+<https://w3id.org/italia/data/c_ideal/address/1> a clv:Address ;
+    clv:fullAddress "Via Stazione 12"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Centro"@it ;
+    geo:lat "45.4860"^^xsd:decimal ;
+    geo:long "9.2050"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/1> a poi:PointOfInterest ;
+    rdfs:label "Hotel Centrale Stazione"@it ;
+    geo:lat "45.4860"^^xsd:decimal ;
+    geo:long "9.2050"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/2>
+    a acco:Accommodation ;
+    rdfs:label "Grand Hotel Duomo"@it ;
+    acco:accommodationCode "2"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/hotel> ;
+    acco:hasAccommodationClassification <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/five-stars> ;
+    acco:totalNumberOfBeds "220"^^xsd:integer ;
+    acco:totalNumberOfRooms "110"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2005-06-01"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/2> .
+
+<https://w3id.org/italia/data/c_ideal/address/2> a clv:Address ;
+    clv:fullAddress "Piazza Duomo 5"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Centro"@it ;
+    geo:lat "45.4641"^^xsd:decimal ;
+    geo:long "9.1900"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/2> a poi:PointOfInterest ;
+    rdfs:label "Grand Hotel Duomo"@it ;
+    geo:lat "45.4641"^^xsd:decimal ;
+    geo:long "9.1900"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/3>
+    a acco:Accommodation ;
+    rdfs:label "Hotel Stelle del Parco"@it ;
+    acco:accommodationCode "3"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/hotel> ;
+    acco:hasAccommodationClassification <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/three-stars> ;
+    acco:totalNumberOfBeds "60"^^xsd:integer ;
+    acco:totalNumberOfRooms "30"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2012-09-10"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/3> .
+
+<https://w3id.org/italia/data/c_ideal/address/3> a clv:Address ;
+    clv:fullAddress "Via Sempione 88"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Parco"@it ;
+    geo:lat "45.4724"^^xsd:decimal ;
+    geo:long "9.1781"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/3> a poi:PointOfInterest ;
+    rdfs:label "Hotel Stelle del Parco"@it ;
+    geo:lat "45.4724"^^xsd:decimal ;
+    geo:long "9.1781"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/4>
+    a acco:Accommodation ;
+    rdfs:label "Albergo Vetra"@it ;
+    acco:accommodationCode "4"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/hotel> ;
+    acco:hasAccommodationClassification <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/two-stars> ;
+    acco:totalNumberOfBeds "28"^^xsd:integer ;
+    acco:totalNumberOfRooms "14"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2008-11-20"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/4> .
+
+<https://w3id.org/italia/data/c_ideal/address/4> a clv:Address ;
+    clv:fullAddress "Piazza Vetra 7"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Vetra"@it ;
+    geo:lat "45.4598"^^xsd:decimal ;
+    geo:long "9.1832"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/4> a poi:PointOfInterest ;
+    rdfs:label "Albergo Vetra"@it ;
+    geo:lat "45.4598"^^xsd:decimal ;
+    geo:long "9.1832"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/5>
+    a acco:Accommodation ;
+    rdfs:label "Hotel Universitario"@it ;
+    acco:accommodationCode "5"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/hotel> ;
+    acco:hasAccommodationClassification <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/three-stars> ;
+    acco:totalNumberOfBeds "72"^^xsd:integer ;
+    acco:totalNumberOfRooms "36"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2015-04-01"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/5> .
+
+<https://w3id.org/italia/data/c_ideal/address/5> a clv:Address ;
+    clv:fullAddress "Via Bassini 15"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Università"@it ;
+    geo:lat "45.4789"^^xsd:decimal ;
+    geo:long "9.2333"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/5> a poi:PointOfInterest ;
+    rdfs:label "Hotel Universitario"@it ;
+    geo:lat "45.4789"^^xsd:decimal ;
+    geo:long "9.2333"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/6>
+    a acco:Accommodation ;
+    rdfs:label "B&B Il Glicine"@it ;
+    acco:accommodationCode "6"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> ;
+    acco:totalNumberOfBeds "8"^^xsd:integer ;
+    acco:totalNumberOfRooms "3"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2018-05-10"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/6> .
+
+<https://w3id.org/italia/data/c_ideal/address/6> a clv:Address ;
+    clv:fullAddress "Via Glicini 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Centro"@it ;
+    geo:lat "45.4660"^^xsd:decimal ;
+    geo:long "9.1880"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/6> a poi:PointOfInterest ;
+    rdfs:label "B&B Il Glicine"@it ;
+    geo:lat "45.4660"^^xsd:decimal ;
+    geo:long "9.1880"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/7>
+    a acco:Accommodation ;
+    rdfs:label "B&B La Loggia"@it ;
+    acco:accommodationCode "7"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> ;
+    acco:totalNumberOfBeds "6"^^xsd:integer ;
+    acco:totalNumberOfRooms "3"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2019-02-14"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/7> .
+
+<https://w3id.org/italia/data/c_ideal/address/7> a clv:Address ;
+    clv:fullAddress "Via Torino 145"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "San Vittore"@it ;
+    geo:lat "45.4612"^^xsd:decimal ;
+    geo:long "9.1755"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/7> a poi:PointOfInterest ;
+    rdfs:label "B&B La Loggia"@it ;
+    geo:lat "45.4612"^^xsd:decimal ;
+    geo:long "9.1755"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/8>
+    a acco:Accommodation ;
+    rdfs:label "B&B Casa Verdi"@it ;
+    acco:accommodationCode "8"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> ;
+    acco:totalNumberOfBeds "6"^^xsd:integer ;
+    acco:totalNumberOfRooms "3"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2017-06-22"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/8> .
+
+<https://w3id.org/italia/data/c_ideal/address/8> a clv:Address ;
+    clv:fullAddress "Via Verdi 8"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Brera"@it ;
+    geo:lat "45.4715"^^xsd:decimal ;
+    geo:long "9.1880"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/8> a poi:PointOfInterest ;
+    rdfs:label "B&B Casa Verdi"@it ;
+    geo:lat "45.4715"^^xsd:decimal ;
+    geo:long "9.1880"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/9>
+    a acco:Accommodation ;
+    rdfs:label "B&B Stella Polare"@it ;
+    acco:accommodationCode "9"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> ;
+    acco:totalNumberOfBeds "4"^^xsd:integer ;
+    acco:totalNumberOfRooms "2"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2020-09-01"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/9> .
+
+<https://w3id.org/italia/data/c_ideal/address/9> a clv:Address ;
+    clv:fullAddress "Via Solferino 33"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Brera"@it ;
+    geo:lat "45.4730"^^xsd:decimal ;
+    geo:long "9.1860"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/9> a poi:PointOfInterest ;
+    rdfs:label "B&B Stella Polare"@it ;
+    geo:lat "45.4730"^^xsd:decimal ;
+    geo:long "9.1860"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/10>
+    a acco:Accommodation ;
+    rdfs:label "B&B Tre Camini"@it ;
+    acco:accommodationCode "10"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> ;
+    acco:totalNumberOfBeds "8"^^xsd:integer ;
+    acco:totalNumberOfRooms "4"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2016-11-15"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/10> .
+
+<https://w3id.org/italia/data/c_ideal/address/10> a clv:Address ;
+    clv:fullAddress "Via Padova 78"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Padova"@it ;
+    geo:lat "45.4910"^^xsd:decimal ;
+    geo:long "9.2200"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/10> a poi:PointOfInterest ;
+    rdfs:label "B&B Tre Camini"@it ;
+    geo:lat "45.4910"^^xsd:decimal ;
+    geo:long "9.2200"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/11>
+    a acco:Accommodation ;
+    rdfs:label "B&B Vico del Sole"@it ;
+    acco:accommodationCode "11"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> ;
+    acco:totalNumberOfBeds "4"^^xsd:integer ;
+    acco:totalNumberOfRooms "2"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2021-03-08"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/11> .
+
+<https://w3id.org/italia/data/c_ideal/address/11> a clv:Address ;
+    clv:fullAddress "Vicolo del Sole 4"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Centro"@it ;
+    geo:lat "45.4655"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/11> a poi:PointOfInterest ;
+    rdfs:label "B&B Vico del Sole"@it ;
+    geo:lat "45.4655"^^xsd:decimal ;
+    geo:long "9.1895"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/12>
+    a acco:Accommodation ;
+    rdfs:label "B&B La Magnolia"@it ;
+    acco:accommodationCode "12"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> ;
+    acco:totalNumberOfBeds "6"^^xsd:integer ;
+    acco:totalNumberOfRooms "3"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2022-01-12"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/12> .
+
+<https://w3id.org/italia/data/c_ideal/address/12> a clv:Address ;
+    clv:fullAddress "Via Ripamonti 10"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Ripamonti"@it ;
+    geo:lat "45.4520"^^xsd:decimal ;
+    geo:long "9.2010"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/12> a poi:PointOfInterest ;
+    rdfs:label "B&B La Magnolia"@it ;
+    geo:lat "45.4520"^^xsd:decimal ;
+    geo:long "9.2010"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/13>
+    a acco:Accommodation ;
+    rdfs:label "Casa Vacanze Navigli"@it ;
+    acco:accommodationCode "13"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/holiday-house> ;
+    acco:totalNumberOfBeds "8"^^xsd:integer ;
+    acco:totalNumberOfRooms "3"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2014-07-20"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/13> .
+
+<https://w3id.org/italia/data/c_ideal/address/13> a clv:Address ;
+    clv:fullAddress "Naviglio Grande 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Navigli"@it ;
+    geo:lat "45.4530"^^xsd:decimal ;
+    geo:long "9.1690"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/13> a poi:PointOfInterest ;
+    rdfs:label "Casa Vacanze Navigli"@it ;
+    geo:lat "45.4530"^^xsd:decimal ;
+    geo:long "9.1690"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/14>
+    a acco:Accommodation ;
+    rdfs:label "Casa Vacanze Garibaldi"@it ;
+    acco:accommodationCode "14"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/holiday-house> ;
+    acco:totalNumberOfBeds "6"^^xsd:integer ;
+    acco:totalNumberOfRooms "2"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2017-10-05"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/14> .
+
+<https://w3id.org/italia/data/c_ideal/address/14> a clv:Address ;
+    clv:fullAddress "Corso Garibaldi 65"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Brera"@it ;
+    geo:lat "45.4750"^^xsd:decimal ;
+    geo:long "9.1843"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/14> a poi:PointOfInterest ;
+    rdfs:label "Casa Vacanze Garibaldi"@it ;
+    geo:lat "45.4750"^^xsd:decimal ;
+    geo:long "9.1843"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/15>
+    a acco:Accommodation ;
+    rdfs:label "Casa Vacanze Porta Romana"@it ;
+    acco:accommodationCode "15"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/holiday-house> ;
+    acco:totalNumberOfBeds "4"^^xsd:integer ;
+    acco:totalNumberOfRooms "2"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2019-05-18"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/15> .
+
+<https://w3id.org/italia/data/c_ideal/address/15> a clv:Address ;
+    clv:fullAddress "Viale Romana 20"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Porta Romana"@it ;
+    geo:lat "45.4530"^^xsd:decimal ;
+    geo:long "9.2030"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/15> a poi:PointOfInterest ;
+    rdfs:label "Casa Vacanze Porta Romana"@it ;
+    geo:lat "45.4530"^^xsd:decimal ;
+    geo:long "9.2030"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/16>
+    a acco:Accommodation ;
+    rdfs:label "Casa Vacanze Isola"@it ;
+    acco:accommodationCode "16"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/holiday-house> ;
+    acco:totalNumberOfBeds "5"^^xsd:integer ;
+    acco:totalNumberOfRooms "2"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2020-08-30"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/16> .
+
+<https://w3id.org/italia/data/c_ideal/address/16> a clv:Address ;
+    clv:fullAddress "Via Isola 14"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Isola"@it ;
+    geo:lat "45.4870"^^xsd:decimal ;
+    geo:long "9.1900"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/16> a poi:PointOfInterest ;
+    rdfs:label "Casa Vacanze Isola"@it ;
+    geo:lat "45.4870"^^xsd:decimal ;
+    geo:long "9.1900"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/17>
+    a acco:Accommodation ;
+    rdfs:label "Affittacamere Stazione"@it ;
+    acco:accommodationCode "17"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/rooms-for-rent> ;
+    acco:totalNumberOfBeds "12"^^xsd:integer ;
+    acco:totalNumberOfRooms "6"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2011-04-12"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/17> .
+
+<https://w3id.org/italia/data/c_ideal/address/17> a clv:Address ;
+    clv:fullAddress "Via Vittor Pisani 3"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Centro"@it ;
+    geo:lat "45.4828"^^xsd:decimal ;
+    geo:long "9.2030"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/17> a poi:PointOfInterest ;
+    rdfs:label "Affittacamere Stazione"@it ;
+    geo:lat "45.4828"^^xsd:decimal ;
+    geo:long "9.2030"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/18>
+    a acco:Accommodation ;
+    rdfs:label "Affittacamere Lambrate"@it ;
+    acco:accommodationCode "18"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/rooms-for-rent> ;
+    acco:totalNumberOfBeds "10"^^xsd:integer ;
+    acco:totalNumberOfRooms "5"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2018-07-01"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/18> .
+
+<https://w3id.org/italia/data/c_ideal/address/18> a clv:Address ;
+    clv:fullAddress "Via Conte Rosso 19"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Lambrate"@it ;
+    geo:lat "45.4870"^^xsd:decimal ;
+    geo:long "9.2400"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/18> a poi:PointOfInterest ;
+    rdfs:label "Affittacamere Lambrate"@it ;
+    geo:lat "45.4870"^^xsd:decimal ;
+    geo:long "9.2400"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/19>
+    a acco:Accommodation ;
+    rdfs:label "Affittacamere Bocconi"@it ;
+    acco:accommodationCode "19"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/rooms-for-rent> ;
+    acco:totalNumberOfBeds "8"^^xsd:integer ;
+    acco:totalNumberOfRooms "4"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2016-09-25"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/19> .
+
+<https://w3id.org/italia/data/c_ideal/address/19> a clv:Address ;
+    clv:fullAddress "Via Bligny 22"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Bocconi"@it ;
+    geo:lat "45.4490"^^xsd:decimal ;
+    geo:long "9.1860"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/19> a poi:PointOfInterest ;
+    rdfs:label "Affittacamere Bocconi"@it ;
+    geo:lat "45.4490"^^xsd:decimal ;
+    geo:long "9.1860"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/20>
+    a acco:Accommodation ;
+    rdfs:label "Agriturismo Cascina Verde"@it ;
+    acco:accommodationCode "20"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/farmhouse> ;
+    acco:totalNumberOfBeds "16"^^xsd:integer ;
+    acco:totalNumberOfRooms "8"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2009-05-15"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/20> .
+
+<https://w3id.org/italia/data/c_ideal/address/20> a clv:Address ;
+    clv:fullAddress "Via Cascina Verde 1"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Quartiere Verde"@it ;
+    geo:lat "45.4380"^^xsd:decimal ;
+    geo:long "9.1500"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/20> a poi:PointOfInterest ;
+    rdfs:label "Agriturismo Cascina Verde"@it ;
+    geo:lat "45.4380"^^xsd:decimal ;
+    geo:long "9.1500"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/21>
+    a acco:Accommodation ;
+    rdfs:label "Agriturismo Il Ruscello"@it ;
+    acco:accommodationCode "21"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/farmhouse> ;
+    acco:totalNumberOfBeds "12"^^xsd:integer ;
+    acco:totalNumberOfRooms "6"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2013-03-22"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/21> .
+
+<https://w3id.org/italia/data/c_ideal/address/21> a clv:Address ;
+    clv:fullAddress "Via dei Campi 45"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Quartiere Verde"@it ;
+    geo:lat "45.4360"^^xsd:decimal ;
+    geo:long "9.1480"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/21> a poi:PointOfInterest ;
+    rdfs:label "Agriturismo Il Ruscello"@it ;
+    geo:lat "45.4360"^^xsd:decimal ;
+    geo:long "9.1480"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/22>
+    a acco:Accommodation ;
+    rdfs:label "Ostello della Gioventù"@it ;
+    acco:accommodationCode "22"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/youth-hostel> ;
+    acco:totalNumberOfBeds "80"^^xsd:integer ;
+    acco:totalNumberOfRooms "20"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2007-08-01"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/22> .
+
+<https://w3id.org/italia/data/c_ideal/address/22> a clv:Address ;
+    clv:fullAddress "Via Salmoiraghi 2"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Ostello"@it ;
+    geo:lat "45.5020"^^xsd:decimal ;
+    geo:long "9.1340"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/22> a poi:PointOfInterest ;
+    rdfs:label "Ostello della Gioventù"@it ;
+    geo:lat "45.5020"^^xsd:decimal ;
+    geo:long "9.1340"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/23>
+    a acco:Accommodation ;
+    rdfs:label "Ostello Garibaldi"@it ;
+    acco:accommodationCode "23"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/youth-hostel> ;
+    acco:totalNumberOfBeds "60"^^xsd:integer ;
+    acco:totalNumberOfRooms "15"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2014-10-10"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/23> .
+
+<https://w3id.org/italia/data/c_ideal/address/23> a clv:Address ;
+    clv:fullAddress "Via Tortona 4"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Tortona"@it ;
+    geo:lat "45.4540"^^xsd:decimal ;
+    geo:long "9.1700"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/23> a poi:PointOfInterest ;
+    rdfs:label "Ostello Garibaldi"@it ;
+    geo:lat "45.4540"^^xsd:decimal ;
+    geo:long "9.1700"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/24>
+    a acco:Accommodation ;
+    rdfs:label "Residence Porta Nuova"@it ;
+    acco:accommodationCode "24"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/residence> ;
+    acco:hasAccommodationClassification <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/four-stars> ;
+    acco:totalNumberOfBeds "40"^^xsd:integer ;
+    acco:totalNumberOfRooms "20"^^xsd:integer ;
+    dct:description "ATTIVO"^^xsd:string ;
+    dct:issued "2016-12-01"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/24> .
+
+<https://w3id.org/italia/data/c_ideal/address/24> a clv:Address ;
+    clv:fullAddress "Via Melchiorre Gioia 80"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Porta Nuova"@it ;
+    geo:lat "45.4860"^^xsd:decimal ;
+    geo:long "9.1990"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/24> a poi:PointOfInterest ;
+    rdfs:label "Residence Porta Nuova"@it ;
+    geo:lat "45.4860"^^xsd:decimal ;
+    geo:long "9.1990"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/accommodation/25>
+    a acco:Accommodation ;
+    rdfs:label "Hotel Vecchio Borgo"@it ;
+    acco:accommodationCode "25"^^xsd:string ;
+    acco:hasAccommodationTypology <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/hotel> ;
+    acco:hasAccommodationClassification <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/three-stars> ;
+    acco:totalNumberOfBeds "40"^^xsd:integer ;
+    acco:totalNumberOfRooms "20"^^xsd:integer ;
+    dct:description "CESSATO"^^xsd:string ;
+    dct:issued "2003-04-10"^^xsd:date ;
+    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/25> .
+
+<https://w3id.org/italia/data/c_ideal/address/25> a clv:Address ;
+    clv:fullAddress "Via Borgo 30"@it ;
+    clv:hasCity "Comune Ideale"@it ;
+    clv:hasUrbanisticSubdivision "Centro"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1820"^^xsd:decimal .
+
+<https://w3id.org/italia/data/c_ideal/point-of-interest/25> a poi:PointOfInterest ;
+    rdfs:label "Hotel Vecchio Borgo"@it ;
+    geo:lat "45.4632"^^xsd:decimal ;
+    geo:long "9.1820"^^xsd:decimal .
+
+# Vocabolario controllato: tipologie strutture ricettive utilizzate
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/bed-and-breakfast> a skos:Concept ;
+    skos:prefLabel "Bed and Breakfast"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/farmhouse> a skos:Concept ;
+    skos:prefLabel "Agriturismo"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/holiday-house> a skos:Concept ;
+    skos:prefLabel "Casa per Vacanze"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/hotel> a skos:Concept ;
+    skos:prefLabel "Albergo"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/residence> a skos:Concept ;
+    skos:prefLabel "Residence"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/rooms-for-rent> a skos:Concept ;
+    skos:prefLabel "Affittacamere"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology/youth-hostel> a skos:Concept ;
+    skos:prefLabel "Ostello della Gioventù"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-typology> .
+
+# Vocabolario controllato: classificazione a stelle utilizzate
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/five-stars> a skos:Concept ;
+    skos:prefLabel "5 stelle"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/four-stars> a skos:Concept ;
+    skos:prefLabel "4 stelle"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/three-stars> a skos:Concept ;
+    skos:prefLabel "3 stelle"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating> .
+
+<https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating/two-stars> a skos:Concept ;
+    skos:prefLabel "2 stelle"@it ;
+    skos:inScheme <https://w3id.org/italia/controlled-vocabulary/classifications-for-accommodation-facilities/accommodation-star-rating> .
