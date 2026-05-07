@@ -11,11 +11,12 @@ datasets:
     calculator: calc_popolazione
     expected_fields:
       anno: ["anno", "Anno", "ANNO", "year", "anno_di_riferimento"]
+      mese: ["mese", "Mese", "MESE", "month"]
       eta: ["eta", "Età", "ETA", "Classe Età", "Classe di Età", "classe_eta", "fascia_eta"]
       sesso: ["sesso", "Sesso", "SESSO", "Genere", "genere"]
       cittadinanza: ["cittadinanza", "Cittadinanza", "CITTADINANZA"]
       quartiere: ["quartiere", "Quartiere", "QUARTIERE", "Zona", "Municipio", "quartiere_struttura"]
-      residenti: ["residenti", "Residenti", "Numero residenti", "POP", "Totale", "n_residenti", "popolazione"]
+      residenti: ["residenti", "Residenti", "Numero residenti", "POP", "Totale", "n_residenti", "popolazione", "Popolazione fine periodo", "popolazione_fine_periodo"]
     kpi:
       - totale_residenti
       - serie_anni

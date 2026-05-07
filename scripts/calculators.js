@@ -198,7 +198,47 @@ function seriesByYear(rows, fieldMap, yearKey, valueKey = null) {
 // ─── CORE 1 — Popolazione ─────────────────────────────────────────────────────
 
 export function calc_popolazione(rows, fieldMap) {
-  const serieAnni = seriesByYear(rows, fieldMap, 'anno', 'residenti') || seriesByYear(rows, fieldMap, 'anno');
+  // Caso speciale: bilancio demografico MENSILE (es. Lecce 2019 - 12 righe).
+  // Se c'è anche la colonna 'mese', non possiamo sommare i valori per anno
+  // (95181 + 95270 + ... = numero falso). Per ogni anno prendiamo l'ULTIMO
+  // mese disponibile come "popolazione di fine anno", che è il dato di stock
+  // semanticamente corretto.
+  let serieAnni;
+  const meseCol = fieldMap.mese;
+  const annoCol = fieldMap.anno;
+  const resCol = fieldMap.residenti;
+  if (meseCol && annoCol && resCol) {
+    // Mappa anno → {ultimoMese, valore}
+    const MESI_ORD = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+    const meseOrd = (v) => {
+      if (v == null) return -1;
+      const s = String(v).toLowerCase().trim();
+      const idx = MESI_ORD.indexOf(s);
+      if (idx >= 0) return idx;
+      const n = parseInt(s, 10);
+      if (!isNaN(n) && n >= 1 && n <= 12) return n - 1;
+      return -1;
+    };
+    const map = new Map();
+    for (const r of rows) {
+      const y = parseYear(r[annoCol]);
+      if (y === null) continue;
+      const m = meseOrd(r[meseCol]);
+      if (m < 0) continue;
+      const v = num(r[resCol]);
+      if (v === null) continue;
+      const cur = map.get(y);
+      if (!cur || m > cur.mese) map.set(y, { mese: m, valore: v });
+    }
+    if (map.size > 0) {
+      const years = [...map.keys()].sort((a, b) => a - b);
+      serieAnni = years.map(y => ({ anno: y, valore: map.get(y).valore }));
+    }
+  }
+  // Caso normale: una riga per anno, somma per anno (vecchio comportamento)
+  if (!serieAnni) {
+    serieAnni = seriesByYear(rows, fieldMap, 'anno', 'residenti') || seriesByYear(rows, fieldMap, 'anno');
+  }
   // totale_residenti = popolazione dell'ultimo anno (non somma di tutti gli anni)
   let totaleResidenti = null;
   if (serieAnni && serieAnni.length > 0) {

@@ -77,21 +77,22 @@
         "residenti"
       ],
       "fields_present": [
-        "anno"
+        "anno",
+        "mese",
+        "residenti"
       ],
       "fields_missing": [
         "eta",
         "sesso",
         "cittadinanza",
-        "quartiere",
-        "residenti"
+        "quartiere"
       ],
       "metrics": {
-        "totale_residenti": 11,
+        "totale_residenti": 95253,
         "serie_anni": [
           {
             "anno": 2019,
-            "valore": 11
+            "valore": 95253
           }
         ],
         "serie_residenti": null,
@@ -360,7 +361,7 @@
             "n": 2
           },
           {
-            "nome": "Statale Programma Operativo Naionale Legalit\u00e0",
+            "nome": "Statale Programma Operativo Naionale Legalità",
             "n": 1
           },
           {
@@ -453,19 +454,19 @@
             "n": 4
           },
           {
-            "nome": "recinzione lotto di terreno in localit\u00e0 Canuta",
+            "nome": "recinzione lotto di terreno in località Canuta",
             "n": 4
           },
           {
-            "nome": "recinzione terreno in localit\u00e0 Casalabate",
+            "nome": "recinzione terreno in località Casalabate",
             "n": 4
           },
           {
-            "nome": "costruzione fabbricato in localit\u00e0 Villa Convento",
+            "nome": "costruzione fabbricato in località Villa Convento",
             "n": 4
           },
           {
-            "nome": "recinzione lotto di terreno in localit\u00e0 Casalabate",
+            "nome": "recinzione lotto di terreno in località Casalabate",
             "n": 4
           },
           {
@@ -505,7 +506,7 @@
             "n": 3
           },
           {
-            "nome": "sopraelevazione fabbricato al viale della Libert\u00e0",
+            "nome": "sopraelevazione fabbricato al viale della Libertà",
             "n": 3
           }
         ],
@@ -709,11 +710,11 @@
             "valore": 240
           },
           {
-            "nome": "Sostegno alla genitorialit\u00e0 e tutela dei diritti dei minori",
+            "nome": "Sostegno alla genitorialità e tutela dei diritti dei minori",
             "valore": 65
           },
           {
-            "nome": "Ufficio Politiche sociali ed Ufficio di Piano \u2013 Area amministrativa",
+            "nome": "Ufficio Politiche sociali ed Ufficio di Piano – Area amministrativa",
             "valore": 35
           }
         ],
@@ -21096,7 +21097,7 @@
             "n": 1
           },
           {
-            "nome": "la \"pasquetta\" dei leccesi con animazione  musica  attivit\ufffd ludiche  gastronomia",
+            "nome": "la \"pasquetta\" dei leccesi con animazione  musica  attivit� ludiche  gastronomia",
             "n": 1
           },
           {
@@ -21108,7 +21109,7 @@
             "n": 1
           },
           {
-            "nome": "apertura dei cortili dei palazzi storici della citt\ufffd con mostre  spettacoli  visite guidate",
+            "nome": "apertura dei cortili dei palazzi storici della citt� con mostre  spettacoli  visite guidate",
             "n": 1
           },
           {
@@ -21452,7 +21453,7 @@
           {
             "lat": 40.34752,
             "lon": 18.15433,
-            "nome": "CASERMA S. ZAPPALA\u2019 COMANDO SCUOLA DI CAVALLERIA"
+            "nome": "CASERMA S. ZAPPALA’ COMANDO SCUOLA DI CAVALLERIA"
           },
           {
             "lat": 40.34515,
