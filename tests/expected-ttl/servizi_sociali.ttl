@@ -1,6 +1,6 @@
-# CSV→RDF — 2026-05-05T17:02:37.377Z
+# CSV→RDF — 2026-05-07T12:07:04.721Z
 # Sorgente: https://raw.githubusercontent.com/piersoft/comune-metrics/main/data/comuni/demo/servizi_sociali.csv
-# Ente: Comune Ideale (c_ideal)
+# Ente: Comune IDEALE (c_demo01)
 # Ontologie: COV, CLV, POI, SM, ACCO
 # Righe: 6
 # https://piersoft.github.io/CSV-to-RDF/
@@ -17,11 +17,11 @@
 @prefix acco: <https://w3id.org/italia/onto/ACCO/> .
 @prefix iot: <https://w3id.org/italia/onto/IoT/> .
 
-<https://w3id.org/italia/data/c_ideal/ds> a foaf:Agent ;
-    foaf:name "Comune Ideale"@it ;
-    dct:identifier "c_ideal" .
+<https://w3id.org/italia/data/c_demo01/ds> a foaf:Agent ;
+    foaf:name "Comune IDEALE"@it ;
+    dct:identifier "c_demo01" .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS001>
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS001>
     a acco:Accommodation ;
     acco:accommodationCode "IS001"^^xsd:string ;
     rdfs:label "Struttura Anziani"@it ;
@@ -30,22 +30,25 @@
     sm:hasEmail <mailto:anziani@comuneideale.it> ;
     acco:totalBed "1077"^^xsd:integer ;
     dct:description "si"^^xsd:string ;
-    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/IS001> .
+    clv:hasAddress <https://w3id.org/italia/data/c_demo01/address/IS001> .
 
-<https://w3id.org/italia/data/c_ideal/address/IS001> a clv:Address ;
+<https://w3id.org/italia/data/c_demo01/address/IS001> a clv:Address ;
     clv:fullAddress "Via Anziani 1"@it ;
-    clv:hasCity "Comune Ideale"@it ;
+    clv:hasCity <https://w3id.org/italia/data/c_demo01/city/comune-ideale> ;
     geo:lat "45.465"^^xsd:decimal ;
     geo:long "9.191"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/point-of-interest/IS001> a poi:PointOfInterest ;
+<https://w3id.org/italia/data/c_demo01/city/comune-ideale> a clv:City ;
+    rdfs:label "Comune Ideale"@it .
+
+<https://w3id.org/italia/data/c_demo01/point-of-interest/IS001> a poi:PointOfInterest ;
     rdfs:label "Struttura Anziani"@it ;
     geo:lat "45.465"^^xsd:decimal ;
     geo:long "9.191"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS001> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/IS001> .
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS001> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_demo01/point-of-interest/IS001> .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS002>
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS002>
     a acco:Accommodation ;
     acco:accommodationCode "IS002"^^xsd:string ;
     rdfs:label "Struttura Disabilità"@it ;
@@ -54,22 +57,25 @@
     sm:hasEmail <mailto:disabilità@comuneideale.it> ;
     acco:totalBed "242"^^xsd:integer ;
     dct:description "si"^^xsd:string ;
-    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/IS002> .
+    clv:hasAddress <https://w3id.org/italia/data/c_demo01/address/IS002> .
 
-<https://w3id.org/italia/data/c_ideal/address/IS002> a clv:Address ;
+<https://w3id.org/italia/data/c_demo01/address/IS002> a clv:Address ;
     clv:fullAddress "Via Disabilità 2"@it ;
-    clv:hasCity "Comune Ideale"@it ;
+    clv:hasCity <https://w3id.org/italia/data/c_demo01/city/comune-ideale> ;
     geo:lat "45.466"^^xsd:decimal ;
     geo:long "9.192"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/point-of-interest/IS002> a poi:PointOfInterest ;
+<https://w3id.org/italia/data/c_demo01/city/comune-ideale> a clv:City ;
+    rdfs:label "Comune Ideale"@it .
+
+<https://w3id.org/italia/data/c_demo01/point-of-interest/IS002> a poi:PointOfInterest ;
     rdfs:label "Struttura Disabilità"@it ;
     geo:lat "45.466"^^xsd:decimal ;
     geo:long "9.192"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS002> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/IS002> .
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS002> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_demo01/point-of-interest/IS002> .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS003>
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS003>
     a acco:Accommodation ;
     acco:accommodationCode "IS003"^^xsd:string ;
     rdfs:label "Struttura Immigrazione"@it ;
@@ -78,22 +84,25 @@
     sm:hasEmail <mailto:immigrazione@comuneideale.it> ;
     acco:totalBed "194"^^xsd:integer ;
     dct:description "si"^^xsd:string ;
-    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/IS003> .
+    clv:hasAddress <https://w3id.org/italia/data/c_demo01/address/IS003> .
 
-<https://w3id.org/italia/data/c_ideal/address/IS003> a clv:Address ;
+<https://w3id.org/italia/data/c_demo01/address/IS003> a clv:Address ;
     clv:fullAddress "Via Immigrazione 3"@it ;
-    clv:hasCity "Comune Ideale"@it ;
+    clv:hasCity <https://w3id.org/italia/data/c_demo01/city/comune-ideale> ;
     geo:lat "45.467"^^xsd:decimal ;
     geo:long "9.193"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/point-of-interest/IS003> a poi:PointOfInterest ;
+<https://w3id.org/italia/data/c_demo01/city/comune-ideale> a clv:City ;
+    rdfs:label "Comune Ideale"@it .
+
+<https://w3id.org/italia/data/c_demo01/point-of-interest/IS003> a poi:PointOfInterest ;
     rdfs:label "Struttura Immigrazione"@it ;
     geo:lat "45.467"^^xsd:decimal ;
     geo:long "9.193"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS003> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/IS003> .
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS003> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_demo01/point-of-interest/IS003> .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS004>
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS004>
     a acco:Accommodation ;
     acco:accommodationCode "IS004"^^xsd:string ;
     rdfs:label "Struttura Minori"@it ;
@@ -102,22 +111,25 @@
     sm:hasEmail <mailto:minori@comuneideale.it> ;
     acco:totalBed "465"^^xsd:integer ;
     dct:description "si"^^xsd:string ;
-    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/IS004> .
+    clv:hasAddress <https://w3id.org/italia/data/c_demo01/address/IS004> .
 
-<https://w3id.org/italia/data/c_ideal/address/IS004> a clv:Address ;
+<https://w3id.org/italia/data/c_demo01/address/IS004> a clv:Address ;
     clv:fullAddress "Via Minori 4"@it ;
-    clv:hasCity "Comune Ideale"@it ;
+    clv:hasCity <https://w3id.org/italia/data/c_demo01/city/comune-ideale> ;
     geo:lat "45.468"^^xsd:decimal ;
     geo:long "9.194"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/point-of-interest/IS004> a poi:PointOfInterest ;
+<https://w3id.org/italia/data/c_demo01/city/comune-ideale> a clv:City ;
+    rdfs:label "Comune Ideale"@it .
+
+<https://w3id.org/italia/data/c_demo01/point-of-interest/IS004> a poi:PointOfInterest ;
     rdfs:label "Struttura Minori"@it ;
     geo:lat "45.468"^^xsd:decimal ;
     geo:long "9.194"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS004> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/IS004> .
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS004> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_demo01/point-of-interest/IS004> .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS005>
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS005>
     a acco:Accommodation ;
     acco:accommodationCode "IS005"^^xsd:string ;
     rdfs:label "Struttura Povertà"@it ;
@@ -126,22 +138,25 @@
     sm:hasEmail <mailto:povertà@comuneideale.it> ;
     acco:totalBed "434"^^xsd:integer ;
     dct:description "si"^^xsd:string ;
-    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/IS005> .
+    clv:hasAddress <https://w3id.org/italia/data/c_demo01/address/IS005> .
 
-<https://w3id.org/italia/data/c_ideal/address/IS005> a clv:Address ;
+<https://w3id.org/italia/data/c_demo01/address/IS005> a clv:Address ;
     clv:fullAddress "Via Povertà 5"@it ;
-    clv:hasCity "Comune Ideale"@it ;
+    clv:hasCity <https://w3id.org/italia/data/c_demo01/city/comune-ideale> ;
     geo:lat "45.469"^^xsd:decimal ;
     geo:long "9.195"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/point-of-interest/IS005> a poi:PointOfInterest ;
+<https://w3id.org/italia/data/c_demo01/city/comune-ideale> a clv:City ;
+    rdfs:label "Comune Ideale"@it .
+
+<https://w3id.org/italia/data/c_demo01/point-of-interest/IS005> a poi:PointOfInterest ;
     rdfs:label "Struttura Povertà"@it ;
     geo:lat "45.469"^^xsd:decimal ;
     geo:long "9.195"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS005> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/IS005> .
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS005> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_demo01/point-of-interest/IS005> .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS006>
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS006>
     a acco:Accommodation ;
     acco:accommodationCode "IS006"^^xsd:string ;
     rdfs:label "Struttura Salute mentale"@it ;
@@ -150,17 +165,20 @@
     sm:hasEmail <mailto:salutementale@comuneideale.it> ;
     acco:totalBed "109"^^xsd:integer ;
     dct:description "si"^^xsd:string ;
-    clv:hasAddress <https://w3id.org/italia/data/c_ideal/address/IS006> .
+    clv:hasAddress <https://w3id.org/italia/data/c_demo01/address/IS006> .
 
-<https://w3id.org/italia/data/c_ideal/address/IS006> a clv:Address ;
+<https://w3id.org/italia/data/c_demo01/address/IS006> a clv:Address ;
     clv:fullAddress "Via Salute mentale 6"@it ;
-    clv:hasCity "Comune Ideale"@it ;
+    clv:hasCity <https://w3id.org/italia/data/c_demo01/city/comune-ideale> ;
     geo:lat "45.47"^^xsd:decimal ;
     geo:long "9.196"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/point-of-interest/IS006> a poi:PointOfInterest ;
+<https://w3id.org/italia/data/c_demo01/city/comune-ideale> a clv:City ;
+    rdfs:label "Comune Ideale"@it .
+
+<https://w3id.org/italia/data/c_demo01/point-of-interest/IS006> a poi:PointOfInterest ;
     rdfs:label "Struttura Salute mentale"@it ;
     geo:lat "45.47"^^xsd:decimal ;
     geo:long "9.196"^^xsd:decimal .
 
-<https://w3id.org/italia/data/c_ideal/accommodation-facility/IS006> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_ideal/point-of-interest/IS006> .
+<https://w3id.org/italia/data/c_demo01/accommodation-facility/IS006> iot:hasFeatureOfInterest <https://w3id.org/italia/data/c_demo01/point-of-interest/IS006> .
