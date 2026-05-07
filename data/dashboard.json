@@ -10,9 +10,9 @@
       "mode": "manifest",
       "snapshot_date": null,
       "paniere_version": "csv-v1",
-      "n_datasets_pubblicati": 14,
-      "n_datasets_totali": 14,
-      "n_datasets_ok": 14
+      "n_datasets_pubblicati": 15,
+      "n_datasets_totali": 15,
+      "n_datasets_ok": 15
     },
     "bologna": {
       "key": "bologna",
@@ -20,9 +20,9 @@
       "ipa": "c_a944",
       "mode": "live",
       "snapshot_date": null,
-      "n_datasets_pubblicati": 11,
-      "n_datasets_totali": 14,
-      "n_datasets_ok": 11
+      "n_datasets_pubblicati": 12,
+      "n_datasets_totali": 15,
+      "n_datasets_ok": 12
     },
     "lecce": {
       "key": "lecce",
@@ -30,9 +30,9 @@
       "ipa": "c_e506",
       "mode": "static_snapshot",
       "snapshot_date": "2026-05-05",
-      "n_datasets_pubblicati": 12,
-      "n_datasets_totali": 14,
-      "n_datasets_ok": 12
+      "n_datasets_pubblicati": 13,
+      "n_datasets_totali": 15,
+      "n_datasets_ok": 13
     },
     "potenza": {
       "key": "potenza",
@@ -42,7 +42,7 @@
       "snapshot_date": "2026-05-05",
       "paniere_version": "csv-v1",
       "n_datasets_pubblicati": 8,
-      "n_datasets_totali": 14,
+      "n_datasets_totali": 15,
       "n_datasets_ok": 8
     }
   }

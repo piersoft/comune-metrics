@@ -305,5 +305,5 @@ datasets:
       - per_tipologia
       - per_quartiere
       - tariffa_media_min
-      - strutture_geo
+      - ricettive_geo
 

@@ -359,7 +359,7 @@
 
 <header class="site-header">
   <div class="container header-content">
-    <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 14 Dataset CORE del Paniere</sub></h1>
+    <h1><span class="logo-mark">Comune</span>Metrics<sub>Cruscotto Civico Italiano · 15 Dataset CORE del Paniere</sub></h1>
     <div class="header-actions">
       <details class="docs-dropdown">
         <summary>
@@ -390,7 +390,7 @@
           </a>
         </div>
       </details>
-      <span class="version-badge" id="versionBadge">v2026.05.05.52</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.53</span>
     </div>
   </div>
 </header>
@@ -446,6 +446,7 @@ const DATASET_LABELS = {
   tributi:            { titolo: "Tributi locali",                icona: "💶" },
   defibrillatori:     { titolo: "Defibrillatori (DAE)",          icona: "❤️" },
   parcheggi:          { titolo: "Parcheggi pubblici",            icona: "🅿️" },
+  strutture_ricettive:{ titolo: "Strutture ricettive",           icona: "🏨" },
 };
 
 // Layer mappa: colori NETTAMENTE distinti (no due blu insieme).
@@ -458,6 +459,7 @@ const MAP_LAYERS = {
   patrimonio:         { label: 'Patrimonio',          color: '#388E3C', source: 'immobili_geo', icon: '🏛️' }, // verde
   defibrillatori:     { label: 'Defibrillatori',      color: '#C2185B', source: 'dae_geo',       icon: '❤️' },  // rosa scuro/sangue
   parcheggi:          { label: 'Parcheggi',           color: '#0288D1', source: 'parcheggi_geo', icon: '🅿️' },  // azzurro
+  strutture_ricettive:{ label: 'Strutture ricettive', color: '#00838F', source: 'ricettive_geo', icon: '🏨' },  // teal/ospitalità
 };
 
 function fmtNum(n) { if (n==null) return "—"; return new Intl.NumberFormat('it-IT').format(n); }
@@ -955,12 +957,72 @@ function renderParcheggi(canvasId, m) {
   return html;
 }
 
+function renderStrutture(canvasId, m) {
+  const totale = m.totale || 0;
+  const attive = m.totale_attive || 0;
+  const posti = m.totale_posti_letto || 0;
+  const tariffaMedia = m.tariffa_media_min;
+  const perTipologia = m.per_tipologia || [];
+  const perQuartiere = m.per_quartiere || [];
+
+  // Mappa tipologie canoniche → label leggibili
+  const TIP_LABELS = {
+    bed_and_breakfast: 'B&B',
+    albergo: 'Alberghi',
+    casa_vacanza: 'Case vacanza',
+    affittacamere: 'Affittacamere',
+    agriturismo: 'Agriturismi',
+    ostello: 'Ostelli',
+    residence: 'Residence',
+    campeggio: 'Campeggi',
+    casa_per_ferie: 'Case per ferie',
+    villaggio_turistico: 'Villaggi turistici',
+    'altre tipologie ricettive': 'Altre tipologie',
+    'strutture ricettive extralberghiere': 'Extralberghiere',
+    "strutture ricettive all'aria aperta": 'All\'aria aperta',
+    'non definita': 'Non definita',
+  };
+  const niceLabel = (k) => TIP_LABELS[k] || (k || '?').replace(/_/g, ' ').replace(/^./, c => c.toUpperCase());
+
+  const showTipologie = perTipologia.length >= 2;
+  const showQuartieri = !showTipologie && perQuartiere.length >= 2;
+
+  const html = `
+    <div class="kpi-row">
+      <div class="kpi-big"><div class="value">${fmtNum(totale)}</div><div class="label">Strutture</div></div>
+      ${attive !== totale ? `<div class="kpi-big"><div class="value" style="color:var(--green);">${fmtNum(attive)}</div><div class="label">Attive</div></div>` : ''}
+      ${posti > 0 ? `<div class="kpi-big"><div class="value">${fmtNum(posti)}</div><div class="label">Posti letto</div></div>` : ''}
+      ${tariffaMedia != null ? `<div class="kpi-big"><div class="value">${fmtEuro(tariffaMedia)}</div><div class="label">Tariffa media min</div></div>` : ''}
+    </div>
+    ${showTipologie ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Per tipologia</div><div class="chart-wrap" style="height:220px;"><canvas id="${canvasId}"></canvas></div>` : ''}
+    ${showQuartieri ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Top 8 quartieri</div><div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` : ''}`;
+  setTimeout(() => {
+    if (showTipologie) {
+      const top = perTipologia.slice(0, 8);
+      makeChart(canvasId, {
+        type: 'doughnut',
+        data: { labels: top.map(d => niceLabel(d.nome)), datasets: [{ data: top.map(d => d.n), backgroundColor: PALETTE.slice(0, top.length), borderColor: '#fff', borderWidth: 2 }] },
+        options: chartDoughnut(),
+      });
+    } else if (showQuartieri) {
+      const top = perQuartiere.slice(0, 8);
+      makeChart(canvasId, {
+        type: 'bar',
+        data: { labels: top.map(d => (d.nome||'?').length > 22 ? d.nome.slice(0,22)+'…' : d.nome), datasets: [{ data: top.map(d => d.n), backgroundColor: '#00838F' }] },
+        options: chartBar({ horizontal: true, xCallback: v => fmtNum(v) }),
+      });
+    }
+  }, 0);
+  return html;
+}
+
 const CHART_RENDERERS = {
   popolazione: renderPopolazione, bilancio: renderBilancio, opere_pubbliche: renderOpere,
   pratiche_edilizie: renderPratiche, servizi_sociali: renderSociali, istruzione: renderIstruzione,
   incidenti_stradali: renderIncidenti, rifiuti: renderRifiuti, eventi_culturali: renderEventi,
   delibere: renderDelibere, patrimonio: renderPatrimonio, tributi: renderTributi,
   defibrillatori: renderDefibrillatori, parcheggi: renderParcheggi,
+  strutture_ricettive: renderStrutture,
 };
 
 function renderDatasetCard(comuneKey, dsKey, ds) {
@@ -1003,7 +1065,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
 
 function renderComuneInfo(c) {
   const datasets = c.datasets || {};
-  const totalCore = 14;
+  const totalCore = 15;
   const cablati = Object.values(datasets).filter(ds => ds.status !== 'not_published').length;
   const ok = Object.values(datasets).filter(ds => ds.status === 'ok').length;
   const fresh = Object.values(datasets).filter(ds => ds.freshness && ds.freshness.level === 'fresh').length;

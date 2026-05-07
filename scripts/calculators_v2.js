@@ -717,7 +717,7 @@ export function calc_strutture_ricettive(rows) {
     tariffa_media_min,
     per_tipologia,
     per_quartiere: countBy(attive, 'quartiere'),
-    strutture_geo: geoPoints(attive, 500),
+    ricettive_geo: geoPoints(attive, 500),
   };
 }
 
