@@ -4063,6 +4063,259 @@
         "tipo_parcheggio",
         "accessibile_h24"
       ]
+    },
+    "strutture_ricettive": {
+      "status": "ok",
+      "source": "data/comuni/demo/strutture_ricettive.csv",
+      "source_type": "fixture",
+      "fonte": "SUAP - Sportello Unico Attività Produttive (sintetici, 25 strutture)",
+      "aggiornato": "2025-06-30",
+      "fetched_at": "2026-05-07T07:04:11.859Z",
+      "n_rows": 25,
+      "fields_present": [
+        "denominazione",
+        "tipologia",
+        "indirizzo",
+        "quartiere",
+        "classificazione",
+        "posti_letto",
+        "camere",
+        "stato",
+        "tariffa_min",
+        "tariffa_max",
+        "lat",
+        "lon",
+        "data_inizio_attivita"
+      ],
+      "fields_missing": [],
+      "metrics": {
+        "totale": 25,
+        "totale_attive": 24,
+        "totale_posti_letto": 863,
+        "tariffa_media_min": 63.46,
+        "per_tipologia": [
+          {
+            "nome": "bed_and_breakfast",
+            "n": 7
+          },
+          {
+            "nome": "albergo",
+            "n": 5
+          },
+          {
+            "nome": "casa_vacanza",
+            "n": 4
+          },
+          {
+            "nome": "affittacamere",
+            "n": 3
+          },
+          {
+            "nome": "agriturismo",
+            "n": 2
+          },
+          {
+            "nome": "ostello",
+            "n": 2
+          },
+          {
+            "nome": "residence",
+            "n": 1
+          }
+        ],
+        "per_quartiere": [
+          {
+            "nome": "Centro",
+            "n": 5
+          },
+          {
+            "nome": "Brera",
+            "n": 3
+          },
+          {
+            "nome": "Quartiere Verde",
+            "n": 2
+          },
+          {
+            "nome": "Parco",
+            "n": 1
+          },
+          {
+            "nome": "Vetra",
+            "n": 1
+          },
+          {
+            "nome": "Università",
+            "n": 1
+          },
+          {
+            "nome": "San Vittore",
+            "n": 1
+          },
+          {
+            "nome": "Padova",
+            "n": 1
+          },
+          {
+            "nome": "Ripamonti",
+            "n": 1
+          },
+          {
+            "nome": "Navigli",
+            "n": 1
+          },
+          {
+            "nome": "Porta Romana",
+            "n": 1
+          },
+          {
+            "nome": "Isola",
+            "n": 1
+          },
+          {
+            "nome": "Lambrate",
+            "n": 1
+          },
+          {
+            "nome": "Bocconi",
+            "n": 1
+          },
+          {
+            "nome": "Ostello",
+            "n": 1
+          },
+          {
+            "nome": "Tortona",
+            "n": 1
+          },
+          {
+            "nome": "Porta Nuova",
+            "n": 1
+          }
+        ],
+        "strutture_geo": [
+          {
+            "lat": 45.486,
+            "lon": 9.205,
+            "nome": "Hotel Centrale Stazione"
+          },
+          {
+            "lat": 45.4641,
+            "lon": 9.19,
+            "nome": "Grand Hotel Duomo"
+          },
+          {
+            "lat": 45.4724,
+            "lon": 9.1781,
+            "nome": "Hotel Stelle del Parco"
+          },
+          {
+            "lat": 45.4598,
+            "lon": 9.1832,
+            "nome": "Albergo Vetra"
+          },
+          {
+            "lat": 45.4789,
+            "lon": 9.2333,
+            "nome": "Hotel Universitario"
+          },
+          {
+            "lat": 45.466,
+            "lon": 9.188,
+            "nome": "B&B Il Glicine"
+          },
+          {
+            "lat": 45.4612,
+            "lon": 9.1755,
+            "nome": "B&B La Loggia"
+          },
+          {
+            "lat": 45.4715,
+            "lon": 9.188,
+            "nome": "B&B Casa Verdi"
+          },
+          {
+            "lat": 45.473,
+            "lon": 9.186,
+            "nome": "B&B Stella Polare"
+          },
+          {
+            "lat": 45.491,
+            "lon": 9.22,
+            "nome": "B&B Tre Camini"
+          },
+          {
+            "lat": 45.4655,
+            "lon": 9.1895,
+            "nome": "B&B Vico del Sole"
+          },
+          {
+            "lat": 45.452,
+            "lon": 9.201,
+            "nome": "B&B La Magnolia"
+          },
+          {
+            "lat": 45.453,
+            "lon": 9.169,
+            "nome": "Casa Vacanze Navigli"
+          },
+          {
+            "lat": 45.475,
+            "lon": 9.1843,
+            "nome": "Casa Vacanze Garibaldi"
+          },
+          {
+            "lat": 45.453,
+            "lon": 9.203,
+            "nome": "Casa Vacanze Porta Romana"
+          },
+          {
+            "lat": 45.487,
+            "lon": 9.19,
+            "nome": "Casa Vacanze Isola"
+          },
+          {
+            "lat": 45.4828,
+            "lon": 9.203,
+            "nome": "Affittacamere Stazione"
+          },
+          {
+            "lat": 45.487,
+            "lon": 9.24,
+            "nome": "Affittacamere Lambrate"
+          },
+          {
+            "lat": 45.449,
+            "lon": 9.186,
+            "nome": "Affittacamere Bocconi"
+          },
+          {
+            "lat": 45.438,
+            "lon": 9.15,
+            "nome": "Agriturismo Cascina Verde"
+          },
+          {
+            "lat": 45.436,
+            "lon": 9.148,
+            "nome": "Agriturismo Il Ruscello"
+          },
+          {
+            "lat": 45.502,
+            "lon": 9.134,
+            "nome": "Ostello della Gioventù"
+          },
+          {
+            "lat": 45.454,
+            "lon": 9.17,
+            "nome": "Ostello Garibaldi"
+          },
+          {
+            "lat": 45.486,
+            "lon": 9.199,
+            "nome": "Residence Porta Nuova"
+          }
+        ]
+      }
     }
   }
 }

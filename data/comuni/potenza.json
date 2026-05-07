@@ -863,6 +863,26 @@
       "source_note": null,
       "source_url": null,
       "error": "Il Comune di Potenza non pubblica un dataset dei parcheggi pubblici come open data; le informazioni sono disponibili solo sul portale TPL e sulle pagine istituzionali in formato non strutturato"
+    },
+    "strutture_ricettive": {
+      "dataset_key": "strutture_ricettive",
+      "fetched_at": "2026-05-07T07:00:00.000Z",
+      "status": "not_published",
+      "modified": null,
+      "freshness": {
+        "level": "unknown",
+        "months": null,
+        "iso": null
+      },
+      "n_rows": null,
+      "metrics": null,
+      "resource_url": null,
+      "resource_format": "CSV",
+      "source_type": "not_published_no_national_source",
+      "source_origin": null,
+      "source_note": null,
+      "source_url": null,
+      "error": "Il Comune di Potenza non pubblica un dataset delle strutture ricettive (alberghi, B&B, case vacanza, agriturismi). La SCIA SUAP per avvio attività ricettiva è dato comunale, ma il Comune non lo espone come open data. La Regione Basilicata pubblica un registro turistico aggregato per la sola Matera, non Potenza."
     }
   }
 }
