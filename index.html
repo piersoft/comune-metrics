@@ -390,7 +390,7 @@
           </a>
         </div>
       </details>
-      <span class="version-badge" id="versionBadge">v2026.05.05.53</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.54</span>
     </div>
   </div>
 </header>
@@ -964,6 +964,7 @@ function renderStrutture(canvasId, m) {
   const tariffaMedia = m.tariffa_media_min;
   const perTipologia = m.per_tipologia || [];
   const perQuartiere = m.per_quartiere || [];
+  const geo = m.ricettive_geo || [];
 
   // Mappa tipologie canoniche → label leggibili
   const TIP_LABELS = {
@@ -984,8 +985,20 @@ function renderStrutture(canvasId, m) {
   };
   const niceLabel = (k) => TIP_LABELS[k] || (k || '?').replace(/_/g, ' ').replace(/^./, c => c.toUpperCase());
 
+  // Logica display:
+  // - Se ho punti georeferenziati: la mappa già mostra dove sono → mostro UN solo grafico
+  //   (la doughnut tipologia, più informativa). Comportamento storico.
+  // - Se NON ho punti georeferenziati (caso Lecce): la mappa è muta su questo dataset
+  //   → mostro DUE grafici, uno per tipologia + uno per quartiere, così la card
+  //   resta ricca anche senza visualizzazione geografica.
+  const hasGeo = geo.length > 0;
   const showTipologie = perTipologia.length >= 2;
-  const showQuartieri = !showTipologie && perQuartiere.length >= 2;
+  const showQuartieriOnly = !showTipologie && perQuartiere.length >= 2;
+  const showQuartieriExtra = !hasGeo && showTipologie && perQuartiere.length >= 2;
+
+  // ID canvas separati per non sovrapporli
+  const canvasIdTip = canvasId;
+  const canvasIdQ = canvasId + '-q';
 
   const html = `
     <div class="kpi-row">
@@ -994,19 +1007,28 @@ function renderStrutture(canvasId, m) {
       ${posti > 0 ? `<div class="kpi-big"><div class="value">${fmtNum(posti)}</div><div class="label">Posti letto</div></div>` : ''}
       ${tariffaMedia != null ? `<div class="kpi-big"><div class="value">${fmtEuro(tariffaMedia)}</div><div class="label">Tariffa media min</div></div>` : ''}
     </div>
-    ${showTipologie ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Per tipologia</div><div class="chart-wrap" style="height:220px;"><canvas id="${canvasId}"></canvas></div>` : ''}
-    ${showQuartieri ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Top 8 quartieri</div><div class="chart-wrap"><canvas id="${canvasId}"></canvas></div>` : ''}`;
+    ${showTipologie ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Per tipologia</div><div class="chart-wrap" style="height:220px;"><canvas id="${canvasIdTip}"></canvas></div>` : ''}
+    ${showQuartieriOnly ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Top 8 quartieri</div><div class="chart-wrap"><canvas id="${canvasIdTip}"></canvas></div>` : ''}
+    ${showQuartieriExtra ? `<div style="font-size:11px;color:var(--ink-soft);margin:14px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Distribuzione per quartiere</div><div class="chart-wrap"><canvas id="${canvasIdQ}"></canvas></div>` : ''}`;
   setTimeout(() => {
     if (showTipologie) {
       const top = perTipologia.slice(0, 8);
-      makeChart(canvasId, {
+      makeChart(canvasIdTip, {
         type: 'doughnut',
         data: { labels: top.map(d => niceLabel(d.nome)), datasets: [{ data: top.map(d => d.n), backgroundColor: PALETTE.slice(0, top.length), borderColor: '#fff', borderWidth: 2 }] },
         options: chartDoughnut(),
       });
-    } else if (showQuartieri) {
+    } else if (showQuartieriOnly) {
       const top = perQuartiere.slice(0, 8);
-      makeChart(canvasId, {
+      makeChart(canvasIdTip, {
+        type: 'bar',
+        data: { labels: top.map(d => (d.nome||'?').length > 22 ? d.nome.slice(0,22)+'…' : d.nome), datasets: [{ data: top.map(d => d.n), backgroundColor: '#00838F' }] },
+        options: chartBar({ horizontal: true, xCallback: v => fmtNum(v) }),
+      });
+    }
+    if (showQuartieriExtra) {
+      const top = perQuartiere.slice(0, 8);
+      makeChart(canvasIdQ, {
         type: 'bar',
         data: { labels: top.map(d => (d.nome||'?').length > 22 ? d.nome.slice(0,22)+'…' : d.nome), datasets: [{ data: top.map(d => d.n), backgroundColor: '#00838F' }] },
         options: chartBar({ horizontal: true, xCallback: v => fmtNum(v) }),

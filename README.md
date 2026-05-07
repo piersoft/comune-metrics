@@ -1,6 +1,6 @@
 # ComuneMetrics
 
-Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 14 dataset OpenData**. Ogni Comune che adotta il paniere ottiene una dashboard pubblica con grafici, mappa e KPI di mandato.
+Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 15 dataset OpenData**. Ogni Comune che adotta il paniere ottiene una dashboard pubblica con grafici, mappa e KPI di mandato.
 
 **Dashboard live**: https://piersoft.github.io/comune-metrics/
 
@@ -10,16 +10,16 @@ Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 14
 
 | Comune | Dataset OK | Modalità | Note |
 |---|---|---|---|
-| **Comune IDEALE** | 14/14 | manifest CSV | Riferimento canonico: struttura CSV perfettamente allineata agli schemi del paniere |
-| **Bologna** | 11/14 | live API | Portale Opendatasoft con API aggregations |
-| **Lecce** | 12/14 | snapshot statico | Comune in passato virtuoso, ora portale con limiti tecnici (HTTP, geo-fencing) |
-| **Potenza** | 8/14 | ricostruzione da fonti nazionali | Il Comune non pubblica OpenData propri: i dati visibili sono ricostruiti da banche dati ministeriali (ISTAT, MEF/BDAP, MIM, ISPRA, MiC) |
+| **Comune IDEALE** | 15/15 | manifest CSV | Riferimento canonico: struttura CSV perfettamente allineata agli schemi del paniere |
+| **Bologna** | 12/15 | live API | Portale Opendatasoft con API aggregations |
+| **Lecce** | 13/15 | snapshot statico | Comune in passato virtuoso, ora portale con limiti tecnici (HTTP, geo-fencing) |
+| **Potenza** | 8/15 | ricostruzione da fonti nazionali | Il Comune non pubblica OpenData propri: i dati visibili sono ricostruiti da banche dati ministeriali (ISTAT, MEF/BDAP, MIM, ISPRA, MiC) |
 
-**Il Comune IDEALE è il modello di riferimento** che ogni Comune deve seguire alla lettera per allineare struttura CSV e nomi colonna agli schemi canonici. Replicando la sua impostazione, un Comune nuovo arriva senza fatica al 14/14.
+**Il Comune IDEALE è il modello di riferimento** che ogni Comune deve seguire alla lettera per allineare struttura CSV e nomi colonna agli schemi canonici. Replicando la sua impostazione, un Comune nuovo arriva senza fatica al 15/15.
 
 ---
 
-## I 14 dataset CORE del paniere
+## I 15 dataset CORE del paniere
 
 | # | Dataset | Cosa contiene | File CSV |
 |---|---|---|---|
@@ -35,6 +35,9 @@ Cruscotto civico per Comuni italiani basato su un **paniere standardizzato di 14
 | 10 | Delibere | Atti dell'albo pretorio | `delibere.csv` |
 | 11 | Patrimonio | Immobili comunali con valore | `patrimonio.csv` |
 | 12 | Tributi | Gettito e aliquote IMU/TARI/tassa soggiorno/addizionale IRPEF | `tributi.csv` |
+| 13 | Defibrillatori (DAE) | Postazioni accessibili con orari di disponibilità | `defibrillatori.csv` |
+| 14 | Parcheggi pubblici | Strutture con stalli, posti disabili, tariffa | `parcheggi.csv` |
+| 15 | Strutture ricettive | Alberghi, B&B, case vacanza, agriturismi via SCIA SUAP | `strutture_ricettive.csv` |
 
 Il Comune **non deve** pubblicarli tutti per essere visibile: i dataset mancanti vengono dichiarati `presente: false` nel manifest.
 
@@ -46,9 +49,9 @@ Schemi formali completi in [`schemas/csv/`](schemas/csv/) — specifica leggibil
 
 ## Linked Open Data — pubblica i tuoi dati come RDF
 
-I 14 dataset del Comune Ideale producono TTL semanticamente corretti su classi come `qb:Observation` (popolazione, rifiuti), `pc:Contract` (opere pubbliche), `cpsv:PublicService` (pratiche edilizie, bilancio), `cpev:PublicEvent` (eventi culturali), `tr:TransparencyObligation` (delibere), `smapit:School` (istruzione), `ch:CulturalHeritage` (patrimonio), `indicator:Indicator` (tributi), `poi:PointOfInterest` (defibrillatori), `park:CarPark` (parcheggi).
+I 15 dataset del Comune Ideale producono TTL semanticamente corretti su classi come `qb:Observation` (popolazione, rifiuti), `pc:Contract` (opere pubbliche), `cpsv:PublicService` (pratiche edilizie, bilancio), `cpev:PublicEvent` (eventi culturali), `tr:TransparencyObligation` (delibere), `smapit:School` (istruzione), `ch:CulturalHeritage` (patrimonio), `indicator:Indicator` (tributi), `poi:PointOfInterest` (defibrillatori), `park:CarPark` (parcheggi), `acco:Accommodation` (strutture ricettive).
 
-Tabella completa con link diretti per generare ogni TTL: [docs/PANIERE_CSV_SCHEMA.md](docs/PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit). I 14 TTL pre-generati come ground-truth: [tests/expected-ttl/](tests/expected-ttl/).
+Tabella completa con link diretti per generare ogni TTL: [docs/PANIERE_CSV_SCHEMA.md](docs/PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit). I 15 TTL pre-generati come ground-truth: [tests/expected-ttl/](tests/expected-ttl/).
 
 ---
 
@@ -56,10 +59,10 @@ Tabella completa con link diretti per generare ogni TTL: [docs/PANIERE_CSV_SCHEM
 
 Il progetto ha quattro documenti, ciascuno con uno scopo distinto:
 
-- **[README.md](README.md)** *(questo file)* — pitch del progetto, elenco dei Comuni nel cruscotto, lista dei 14 dataset CORE e procedura passo-passo per aggiungere il proprio Comune.
-- **[docs/PANIERE.md](docs/PANIERE.md)** — il manifesto del paniere: cosa contiene ognuno dei 14 dataset CORE, perché è stato scelto, fonti dati tipiche per un Comune italiano, esposizione come Linked Open Data 5 stelle.
+- **[README.md](README.md)** *(questo file)* — pitch del progetto, elenco dei Comuni nel cruscotto, lista dei 15 dataset CORE e procedura passo-passo per aggiungere il proprio Comune.
+- **[docs/PANIERE.md](docs/PANIERE.md)** — il manifesto del paniere: cosa contiene ognuno dei 15 dataset CORE, perché è stato scelto, fonti dati tipiche per un Comune italiano, esposizione come Linked Open Data 5 stelle.
 - **[docs/PANIERE_CSV_SCHEMA.md](docs/PANIERE_CSV_SCHEMA.md)** — riferimento tecnico per il publisher: schema canonico colonna-per-colonna di ogni CSV, validazione, esempi pronti da copiare, tabella completa di mapping CSV → ontologie semantiche.
-- **[tests/expected-ttl/README.md](tests/expected-ttl/README.md)** — i 14 file TTL ground-truth: esempi pre-generati di output Linked Open Data corretto, da usare come gold standard per validare la propria pipeline di conversione CSV → RDF.
+- **[tests/expected-ttl/README.md](tests/expected-ttl/README.md)** — i 15 file TTL ground-truth: esempi pre-generati di output Linked Open Data corretto, da usare come gold standard per validare la propria pipeline di conversione CSV → RDF.
 
 In sintesi: parti dal **README** per capire cos'è e come aderire, leggi **PANIERE.md** per capire il *cosa* e il *perché*, consulta **PANIERE_CSV_SCHEMA.md** quando devi preparare i tuoi CSV, usa **expected-ttl** come gold standard se vuoi anche il livello Linked Open Data.
 

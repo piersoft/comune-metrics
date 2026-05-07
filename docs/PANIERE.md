@@ -10,11 +10,11 @@
 
 ## Cosa è il paniere
 
-Il paniere è un insieme di **14 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano.
+Il paniere è un insieme di **15 dataset CORE** che descrivono l'attività amministrativa di un Comune italiano.
 
 > **Riferimento canonico**: il **Comune IDEALE** (visibile nella dashboard live) è costruito con CSV/JSON perfettamente allineati agli schemi del paniere. Per allinearsi velocemente, un Comune nuovo replica alla lettera la sua struttura (nomi colonne, formati, tipi). I CSV del Comune Ideale sono in [`data/comuni/demo/`](../data/comuni/demo/).
 
-I 14 dataset CORE sono:
+I 15 dataset CORE sono:
 
 | # | Dataset | Cosa contiene |
 |---|---|---|
@@ -36,7 +36,7 @@ I 14 dataset CORE sono:
 
 Un Comune può adottarne **anche solo alcuni**: i mancanti vengono dichiarati `presente: false` nel manifest.
 
-> **Lecce è un caso scuola interessante**: pubblica 12/14 dataset (quasi tutti fermi al 2015-2019, MA il dataset incidenti è aggiornato al 31 dicembre 2023, 11 anni di serie storica). Dimostra che l'OpenData non è "tutto o niente": un Comune può tenere viva una serie temporale anche se ha lasciato andare le altre.
+> **Lecce è un caso scuola interessante**: pubblica 13/15 dataset (quasi tutti fermi al 2015-2019, MA il dataset incidenti è aggiornato al 31 dicembre 2023, 11 anni di serie storica, e il dataset strutture ricettive copre 556 strutture turistiche dal SUAP comunale). Dimostra che l'OpenData non è "tutto o niente": un Comune può tenere viva una serie temporale anche se ha lasciato andare le altre.
 
 ---
 
@@ -181,7 +181,7 @@ Una richiesta efficace contiene quattro elementi:
 
 Se un Comune non pubblica i propri OpenData, ComuneMetrics non lo nasconde dalla dashboard. Mostra un **banner rosso** con la scritta «`<Comune>` non pubblica OpenData» e ricostruisce — dove possibile — i dataset del paniere a partire da **banche dati nazionali pubbliche**. Sulla dashboard questi Comuni sono marcati come `mode: reconstructed_from_national`.
 
-È il caso del Comune di Potenza, dove 8 dei 14 dataset CORE sono stati ricostruiti.
+È il caso del Comune di Potenza, dove 8 dei 15 dataset CORE sono stati ricostruiti.
 
 **Importante**: la ricostruzione da fonti nazionali NON sostituisce la pubblicazione vera. È un fallback divulgativo che evidenzia la mancata pubblicazione e mostra il dato che il cittadino *avrebbe avuto* se il Comune avesse fatto il suo lavoro.
 
