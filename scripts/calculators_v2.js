@@ -600,6 +600,123 @@ export function calc_parcheggi(rows) {
   };
 }
 
+// ─── CORE 15 — Strutture ricettive ────────────────────────────────────────────
+
+/**
+ * Normalizza la "tipologia" verso un set canonico stabile.
+ * Vedi calculators.js (versione v1) per la lista completa di sinonimi
+ * supportati. Mantenere allineate le due implementazioni.
+ */
+function normalizeTipologiaRicettiva(raw) {
+  if (raw == null) return null;
+  const s = String(raw).toLowerCase().trim();
+  if (!s) return null;
+  if (s.includes('b&b') || s.includes('b & b') || (s.includes('bed') && s.includes('breakfast'))) return 'bed_and_breakfast';
+  if (s.includes('alberg') || s.includes('hotel')) return 'albergo';
+  if (s.includes('casa vacanz') || s.includes('case vacanz') || s.includes('appartament') || s.includes('locazion')) return 'casa_vacanza';
+  if (s.includes('affittacamer')) return 'affittacamere';
+  if (s.includes('agritur') || s.includes('fattoria')) return 'agriturismo';
+  if (s.includes('ostell')) return 'ostello';
+  if (s.includes('residenc') || s.includes('residenz')) return 'residence';
+  if (s.includes('campegg') || s.includes('campsit') || s.includes('camping')) return 'campeggio';
+  return s;
+}
+
+export function calc_strutture_ricettive(rows) {
+  // Bologna ODS usa chiavi lowercase (esercizio_via, area, sottoarea, esito_pratica),
+  // Lecce SUAP usa chiavi MAIUSCOLE con spazi (DENOMINAZIONE, UBICAZIONE, POSTI LETTO,
+  // TARIFFA MINIMA, ...). Lo schema canonico del Comune Ideale usa lowercase.
+  // Per gestire tutti e tre i formati con UN SOLO calcolatore, normalizzo
+  // prima di tutto le chiavi della riga al lowercase: "POSTI LETTO" → "posti letto",
+  // "DENOMINAZIONE" → "denominazione". Poi withAliases mappa i nomi diversi
+  // sul nome canonico.
+  const rowsLower = rows.map(r => {
+    const out = {};
+    for (const [k, v] of Object.entries(r)) {
+      out[String(k).trim().toLowerCase()] = v;
+    }
+    return out;
+  });
+  const aliased = rowsLower.map(r => withAliases(r, {
+    name: 'denominazione',
+    nome: 'denominazione',
+    'denominazione struttura': 'denominazione',
+    denominazione_struttura: 'denominazione',
+    esercizio_via: 'indirizzo',
+    ubicazione: 'indirizzo',
+    via: 'indirizzo',
+    sottoarea: 'tipologia',
+    area: 'tipologia',
+    tipo: 'tipologia',
+    categoria: 'tipologia',
+    classe: 'classificazione',
+    stelle: 'classificazione',
+    posti: 'posti_letto',
+    'posti letto': 'posti_letto',
+    n_posti_letto: 'posti_letto',
+    numero_camere: 'camere',
+    n_camere: 'camere',
+    esito_pratica: 'stato',
+    stato_attivita: 'stato',
+    'tariffa minima': 'tariffa_min',
+    prezzo_min: 'tariffa_min',
+    'tariffa massima': 'tariffa_max',
+    prezzo_max: 'tariffa_max',
+    latitudine: 'lat',
+    longitudine: 'lon',
+    geopoint: 'geo_point',
+    geo_point_2d: 'geo_point',
+    zona: 'quartiere',
+    "localita'": 'quartiere',
+    localita: 'quartiere',
+    data_richiesta: 'data_inizio_attivita',
+    data_avvio: 'data_inizio_attivita',
+  }));
+
+  const isAttiva = (r) => {
+    const v = r.stato;
+    if (v == null || v === '') return true;
+    const s = String(v).toLowerCase().trim();
+    if (s.includes('cessat') || s.includes('revocat') || s.includes('chius')
+        || s.includes('irricevibil') || s.includes('rifiut') || s.includes('annull')) return false;
+    return true;
+  };
+
+  const totale = aliased.length;
+  const attive = aliased.filter(isAttiva);
+  const totale_attive = attive.length;
+  const totale_posti_letto = sumBy(attive, 'posti_letto') || 0;
+
+  // Tariffa media min sulle attive con tariffa > 0
+  const tariffe = attive
+    .map(r => parseFloat(r.tariffa_min))
+    .filter(v => !isNaN(v) && v > 0);
+  const tariffa_media_min = tariffe.length > 0
+    ? Math.round((tariffe.reduce((a, b) => a + b, 0) / tariffe.length) * 100) / 100
+    : null;
+
+  // Per tipologia: aggregazione con normalizzazione
+  const counts = new Map();
+  for (const r of attive) {
+    const norm = normalizeTipologiaRicettiva(r.tipologia);
+    if (!norm) continue;
+    counts.set(norm, (counts.get(norm) || 0) + 1);
+  }
+  const per_tipologia = [...counts.entries()]
+    .map(([nome, n]) => ({ nome, n }))
+    .sort((a, b) => b.n - a.n);
+
+  return {
+    totale,
+    totale_attive,
+    totale_posti_letto,
+    tariffa_media_min,
+    per_tipologia,
+    per_quartiere: countBy(attive, 'quartiere'),
+    strutture_geo: geoPoints(attive, 500),
+  };
+}
+
 // ----- Registry -------------------------------------------------------------
 export const CALCULATORS_V2 = {
   popolazione:        calc_popolazione,
@@ -616,4 +733,5 @@ export const CALCULATORS_V2 = {
   tributi:            calc_tributi,
   defibrillatori:     calc_defibrillatori,
   parcheggi:          calc_parcheggi,
+  strutture_ricettive: calc_strutture_ricettive,
 };

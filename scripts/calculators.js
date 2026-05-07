@@ -706,10 +706,115 @@ export function calc_parcheggi(rows, fieldMap) {
   };
 }
 
+// ─── CORE 15 — Strutture ricettive ────────────────────────────────────────────
+
+/**
+ * Normalizza il valore "tipologia" verso un set canonico stabile, indipendente
+ * da come ciascun Comune scrive la categoria nei suoi dati grezzi (Bologna usa
+ * "Strutture alberghiere"/"Altre tipologie ricettive"/"Agriturismi", Lecce usa
+ * "ALBERGO"/"CASE E APPARTAMENTI PER VACANZA"/"B&B" o stringhe miste).
+ * Se non riconosce il valore lo restituisce in lowercase grezzo (verrà
+ * mostrato così com'è nel grafico per tipologia).
+ */
+function normalizeTipologiaRicettiva(raw) {
+  if (raw == null) return null;
+  const s = String(raw).toLowerCase().trim();
+  if (!s) return null;
+  // B&B, Bed and Breakfast, Bed-Breakfast
+  if (s.includes('b&b') || s.includes('b & b') || (s.includes('bed') && s.includes('breakfast'))) return 'bed_and_breakfast';
+  // Albergo / Hotel / Strutture alberghiere
+  if (s.includes('alberg') || s.includes('hotel')) return 'albergo';
+  // Casa vacanza / Case appartamenti per vacanza / Locazione turistica
+  if (s.includes('casa vacanz') || s.includes('case vacanz') || s.includes('appartament') || s.includes('locazion')) return 'casa_vacanza';
+  // Affittacamere
+  if (s.includes('affittacamer')) return 'affittacamere';
+  // Agriturismo / Fattoria didattica
+  if (s.includes('agritur') || s.includes('fattoria')) return 'agriturismo';
+  // Ostello
+  if (s.includes('ostell')) return 'ostello';
+  // Residence / Residenza turistica
+  if (s.includes('residenc') || s.includes('residenz')) return 'residence';
+  // Campeggio
+  if (s.includes('campegg') || s.includes('campsit') || s.includes('camping')) return 'campeggio';
+  return s;
+}
+
+export function calc_strutture_ricettive(rows, fieldMap) {
+  const stato = fieldMap.stato;
+  const tipologia = fieldMap.tipologia;
+  const postiCol = fieldMap.posti_letto;
+  const tariffaMinCol = fieldMap.tariffa_min;
+
+  const numLocal = (v) => {
+    if (v == null || v === '') return 0;
+    if (typeof v === 'number') return v;
+    const s = String(v).replace(/[€\s]/g, '').replace(',', '.');
+    const f = parseFloat(s);
+    return isNaN(f) ? 0 : f;
+  };
+
+  // Una struttura è "attiva" se manca lo stato (default: assumiamo attiva)
+  // o se lo stato è esplicitamente ATTIVO/ACTIVE/AVVIO (esito SUAP positivo).
+  // Esclusi: CESSATO, REVOCATO, CHIUSO, IRRICEVIBILE, RIFIUTATO.
+  const isAttiva = (r) => {
+    if (!stato) return true;
+    const v = r[stato];
+    if (v == null || v === '') return true;
+    const s = String(v).toLowerCase().trim();
+    if (s.includes('cessat') || s.includes('revocat') || s.includes('chius')
+        || s.includes('irricevibil') || s.includes('rifiut') || s.includes('annull')) return false;
+    return true;
+  };
+
+  const totale = rows.length;
+  const attive = rows.filter(isAttiva);
+  const totaleAttive = attive.length;
+
+  // Posti letto: somma sulle sole strutture attive
+  const totalePostiLetto = postiCol
+    ? attive.reduce((s, r) => s + numLocal(r[postiCol]), 0)
+    : 0;
+
+  // Tariffa media min sulle strutture attive che hanno tariffa > 0
+  let tariffaMediaMin = null;
+  if (tariffaMinCol) {
+    const tariffe = attive
+      .map(r => numLocal(r[tariffaMinCol]))
+      .filter(v => v > 0);
+    if (tariffe.length > 0) {
+      tariffaMediaMin = Math.round((tariffe.reduce((a, b) => a + b, 0) / tariffe.length) * 100) / 100;
+    }
+  }
+
+  // Aggregazione per tipologia normalizzata (solo strutture attive)
+  let perTipologia = null;
+  if (tipologia) {
+    const counts = new Map();
+    for (const r of attive) {
+      const norm = normalizeTipologiaRicettiva(r[tipologia]);
+      if (!norm) continue;
+      counts.set(norm, (counts.get(norm) || 0) + 1);
+    }
+    perTipologia = [...counts.entries()]
+      .map(([nome, n]) => ({ nome, n }))
+      .sort((a, b) => b.n - a.n);
+  }
+
+  return {
+    totale,
+    totale_attive: totaleAttive,
+    totale_posti_letto: totalePostiLetto,
+    tariffa_media_min: tariffaMediaMin,
+    per_tipologia: perTipologia,
+    per_quartiere: countBy(attive, fieldMap, 'quartiere'),
+    strutture_geo: geoPoints(attive, fieldMap, 'denominazione', 500),
+  };
+}
+
 // Lookup table esposta al builder
 export const CALCULATORS = {
   calc_popolazione, calc_bilancio, calc_opere, calc_pratiche,
   calc_sociali, calc_istruzione, calc_incidenti, calc_rifiuti,
   calc_eventi, calc_delibere, calc_patrimonio, calc_tributi,
-  calc_defibrillatori, calc_parcheggi,
+  calc_defibrillatori, calc_parcheggi, calc_strutture_ricettive,
 };

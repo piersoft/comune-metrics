@@ -32,6 +32,7 @@ I 14 dataset CORE sono:
 | 12 | Tributi | Gettito IMU/TARI/tassa soggiorno per anno |
 | 13 | **Defibrillatori (DAE)** | **Postazioni dei defibrillatori semiautomatici esterni con accessibilità h24** |
 | 14 | **Parcheggi pubblici** | **Strutture di parcheggio con stalli, posti disabili, tariffa oraria** |
+| 15 | **Strutture ricettive** | **Alberghi, B&B, case vacanza, agriturismi, ostelli e affittacamere via SCIA SUAP** |
 
 Un Comune può adottarne **anche solo alcuni**: i mancanti vengono dichiarati `presente: false` nel manifest.
 

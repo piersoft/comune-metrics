@@ -7,7 +7,7 @@
 # guarda come il Comune Ideale formatta i suoi 14 dataset e replica la
 # stessa struttura per avvicinarti al 14/14.
 #
-# COPERTURA: 14/14 dataset CORE — copertura completa del paniere come prova
+# COPERTURA: 15/15 dataset CORE — copertura completa del paniere come prova
 # del fuoco che il modello federato regge per un Comune medio italiano.
 #
 # I dati sono sintetici plausibili (Comune ~36.620 abitanti, capoluogo di
@@ -98,3 +98,8 @@ datasets:
     source_type: fixture
     aggiornato: "2025-01-15"
     fonte: "Settore Mobilità (sintetici, 20 strutture di parcheggio)"
+
+  strutture_ricettive:
+    source_type: fixture
+    aggiornato: "2025-06-30"
+    fonte: "SUAP - Sportello Unico Attività Produttive (sintetici, 25 strutture: alberghi, B&B, case vacanza, affittacamere, agriturismi, ostelli, residence)"

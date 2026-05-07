@@ -1,0 +1,26 @@
+id,denominazione,tipologia,indirizzo,quartiere,classificazione,posti_letto,camere,stato,tariffa_min,tariffa_max,lat,lon,data_inizio_attivita,comune
+1,Hotel Centrale Stazione,albergo,Via Stazione 12,Centro,4,180,90,ATTIVO,90,180,45.4860,9.2050,2010-03-15,Comune Ideale
+2,Grand Hotel Duomo,albergo,Piazza Duomo 5,Centro,5,220,110,ATTIVO,180,420,45.4641,9.1900,2005-06-01,Comune Ideale
+3,Hotel Stelle del Parco,albergo,Via Sempione 88,Parco,3,60,30,ATTIVO,70,140,45.4724,9.1781,2012-09-10,Comune Ideale
+4,Albergo Vetra,albergo,Piazza Vetra 7,Vetra,2,28,14,ATTIVO,55,95,45.4598,9.1832,2008-11-20,Comune Ideale
+5,Hotel Universitario,albergo,Via Bassini 15,Università,3,72,36,ATTIVO,75,130,45.4789,9.2333,2015-04-01,Comune Ideale
+6,B&B Il Glicine,bed_and_breakfast,Via Glicini 22,Centro,,8,3,ATTIVO,50,90,45.4660,9.1880,2018-05-10,Comune Ideale
+7,B&B La Loggia,bed_and_breakfast,Via Torino 145,San Vittore,,6,3,ATTIVO,45,80,45.4612,9.1755,2019-02-14,Comune Ideale
+8,B&B Casa Verdi,bed_and_breakfast,Via Verdi 8,Brera,,6,3,ATTIVO,60,110,45.4715,9.1880,2017-06-22,Comune Ideale
+9,B&B Stella Polare,bed_and_breakfast,Via Solferino 33,Brera,,4,2,ATTIVO,55,95,45.4730,9.1860,2020-09-01,Comune Ideale
+10,B&B Tre Camini,bed_and_breakfast,Via Padova 78,Padova,,8,4,ATTIVO,50,85,45.4910,9.2200,2016-11-15,Comune Ideale
+11,B&B Vico del Sole,bed_and_breakfast,Vicolo del Sole 4,Centro,,4,2,ATTIVO,45,90,45.4655,9.1895,2021-03-08,Comune Ideale
+12,B&B La Magnolia,bed_and_breakfast,Via Ripamonti 10,Ripamonti,,6,3,ATTIVO,40,80,45.4520,9.2010,2022-01-12,Comune Ideale
+13,Casa Vacanze Navigli,casa_vacanza,Naviglio Grande 22,Navigli,,8,3,ATTIVO,80,150,45.4530,9.1690,2014-07-20,Comune Ideale
+14,Casa Vacanze Garibaldi,casa_vacanza,Corso Garibaldi 65,Brera,,6,2,ATTIVO,90,170,45.4750,9.1843,2017-10-05,Comune Ideale
+15,Casa Vacanze Porta Romana,casa_vacanza,Viale Romana 20,Porta Romana,,4,2,ATTIVO,70,130,45.4530,9.2030,2019-05-18,Comune Ideale
+16,Casa Vacanze Isola,casa_vacanza,Via Isola 14,Isola,,5,2,ATTIVO,75,140,45.4870,9.1900,2020-08-30,Comune Ideale
+17,Affittacamere Stazione,affittacamere,Via Vittor Pisani 3,Centro,,12,6,ATTIVO,40,75,45.4828,9.2030,2011-04-12,Comune Ideale
+18,Affittacamere Lambrate,affittacamere,Via Conte Rosso 19,Lambrate,,10,5,ATTIVO,35,65,45.4870,9.2400,2018-07-01,Comune Ideale
+19,Affittacamere Bocconi,affittacamere,Via Bligny 22,Bocconi,,8,4,ATTIVO,45,80,45.4490,9.1860,2016-09-25,Comune Ideale
+20,Agriturismo Cascina Verde,agriturismo,Via Cascina Verde 1,Quartiere Verde,,16,8,ATTIVO,60,110,45.4380,9.1500,2009-05-15,Comune Ideale
+21,Agriturismo Il Ruscello,agriturismo,Via dei Campi 45,Quartiere Verde,,12,6,ATTIVO,55,95,45.4360,9.1480,2013-03-22,Comune Ideale
+22,Ostello della Gioventù,ostello,Via Salmoiraghi 2,Ostello,,80,20,ATTIVO,28,45,45.5020,9.1340,2007-08-01,Comune Ideale
+23,Ostello Garibaldi,ostello,Via Tortona 4,Tortona,,60,15,ATTIVO,30,50,45.4540,9.1700,2014-10-10,Comune Ideale
+24,Residence Porta Nuova,residence,Via Melchiorre Gioia 80,Porta Nuova,4,40,20,ATTIVO,100,180,45.4860,9.1990,2016-12-01,Comune Ideale
+25,Hotel Vecchio Borgo,albergo,Via Borgo 30,Centro,3,40,20,CESSATO,,,45.4632,9.1820,2003-04-10,Comune Ideale

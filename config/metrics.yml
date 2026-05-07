@@ -279,3 +279,31 @@ datasets:
       - tariffa_media
       - pct_gratuiti
       - parcheggi_geo
+
+  strutture_ricettive:
+    titolo_paniere: "Strutture ricettive"
+    calculator: calc_strutture_ricettive
+    expected_fields:
+      denominazione: ["denominazione", "DENOMINAZIONE", "DENOMINAZIONE STRUTTURA", "nome", "name", "Denominazione"]
+      tipologia: ["tipologia", "TIPOLOGIA", "tipo", "TIPO", "categoria", "Categoria", "tipo_struttura", "area", "sottoarea"]
+      indirizzo: ["indirizzo", "INDIRIZZO", "UBICAZIONE", "via", "esercizio_via", "Indirizzo"]
+      classificazione: ["classificazione", "CLASSIFICAZIONE", "stelle", "Stelle", "categoria_stelle"]
+      posti_letto: ["posti_letto", "POSTI LETTO", "posti", "n_posti_letto", "Posti letto"]
+      camere: ["camere", "CAMERE", "n_camere", "numero_camere", "Camere"]
+      stato: ["stato", "STATO", "stato_attivita", "esito_pratica", "Stato"]
+      tariffa_min: ["tariffa_min", "TARIFFA MINIMA", "prezzo_min", "min_price"]
+      tariffa_max: ["tariffa_max", "TARIFFA MASSIMA", "prezzo_max", "max_price"]
+      lat: ["lat", "Lat", "Latitudine", "latitudine", "LATITUDINE"]
+      lon: ["lon", "Lon", "Longitudine", "longitudine", "LONGITUDINE"]
+      geo_point: ["geo_point", "geo_point_2d", "geopoint", "coordinates"]
+      quartiere: ["quartiere", "QUARTIERE", "zona", "ZONA", "località", "LOCALITA'", "LOCALITA"]
+      data_inizio_attivita: ["data_inizio_attivita", "DATA IN. ATTIVITA'", "data_inizio", "data_avvio", "data_richiesta"]
+    kpi:
+      - totale
+      - totale_attive
+      - totale_posti_letto
+      - per_tipologia
+      - per_quartiere
+      - tariffa_media_min
+      - strutture_geo
+
