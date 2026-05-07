@@ -1,6 +1,6 @@
 # Paniere ComuneMetrics — Guida pratica per Comuni
 
-> Come costruire i 14 CSV del paniere partendo dai gestionali interni del Comune. Documento operativo per Responsabili Transizione Digitale, IT, e referenti OpenData.
+> Come costruire i 15 CSV del paniere partendo dai gestionali interni del Comune. Documento operativo per Responsabili Transizione Digitale, IT, e referenti OpenData.
 
 **Specifica tecnica del formato CSV**: vedi [`PANIERE_CSV_SCHEMA.md`](PANIERE_CSV_SCHEMA.md) e gli schemi formali in [`../schemas/csv/`](../schemas/csv/).
 
@@ -251,9 +251,9 @@ I metadati DCAT-AP_IT del dataset originale rimangono invariati. Il Comune manti
 
 Una volta che i CSV sono pubblicati nel formato canonico del paniere, possono essere convertiti in RDF/Turtle conforme alle [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets) usando lo strumento di conversione che si preferisce (librerie Python come `rdflib` o `csvw`, Java `Jena`, oppure un convertitore custom basato sui mapping documentati qui sotto).
 
-Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) sono disponibili i **14 file TTL di esempio** già generati dai CSV del Comune Ideale: rappresentano il riferimento canonico di output corretto e possono essere usati come gold standard per validare la propria pipeline di conversione. Il repo open source [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) è lo strumento che è stato usato per generarli e contiene il motore di matching colonne → [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets): il suo README spiega come deployarlo in locale o come servizio interno della propria PA.
+Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) sono disponibili i **15 file TTL di esempio** già generati dai CSV del Comune Ideale: rappresentano il riferimento canonico di output corretto e possono essere usati come gold standard per validare la propria pipeline di conversione. Il repo open source [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) è lo strumento che è stato usato per generarli e contiene il motore di matching colonne → [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets): il suo README spiega come deployarlo in locale o come servizio interno della propria PA.
 
-I 14 dataset del paniere mappano su classi semantiche corrette:
+I 15 dataset del paniere mappano su classi semantiche corrette:
 
 | Dataset | Classe principale RDF | A cosa serve in Linked Data |
 |---|---|---|
@@ -280,9 +280,9 @@ Tabella completa con link diretti per generare ciascun TTL: [PANIERE_CSV_SCHEMA.
 
 ## Roadmap v2 — possibili dataset CORE futuri
 
-Il paniere CORE attuale (14 dataset) è quello di partenza, scelto su criteri di **disponibilità reale** nei portali OpenData italiani e **valore civico immediato**. Per le versioni future stiamo valutando l'aggiunta di nuovi dataset CORE. Le candidature in roadmap, in ordine di priorità:
+Il paniere CORE attuale (15 dataset) è quello di partenza, scelto su criteri di **disponibilità reale** nei portali OpenData italiani e **valore civico immediato**. Per le versioni future stiamo valutando l'aggiunta di nuovi dataset CORE. Le candidature in roadmap, in ordine di priorità:
 
-### 🛣️ CORE 15 — Stradario e numeri civici (ANNCSU)
+### 🛣️ CORE 16 — Stradario e numeri civici (ANNCSU)
 
 **Cosa**: l'**ANNCSU** (Anagrafe Nazionale Numeri Civici e Strade Urbane) è la base dati ufficiale degli indirizzi italiani, istituita dall'**art. 4 del DPCM 12 maggio 2016** "Censimento della popolazione e archivio nazionale dei numeri civici e delle strade urbane". Per ciascun Comune contiene: stradario (denominazione, codice ISTAT, tipo di toponimo, frazione/quartiere) e indirizzario (numeri civici georeferenziati associati alle strade). Il formato canonico è CSV.
 
@@ -306,7 +306,7 @@ Il paniere CORE attuale (14 dataset) è quello di partenza, scelto su criteri di
 
 **Stato roadmap**: candidato prioritario. Soddisfa tutti i 6 criteri formali. Il prerequisito per la promozione a CORE operativo è solo l'analisi dello schema CSV ARES e l'integrazione del flusso di fallback regionale nel builder.
 
-### 🚌 CORE 16 — Trasporti Pubblici Locali (GTFS)
+### 🚌 CORE 17 — Trasporti Pubblici Locali (GTFS)
 
 **Cosa**: il GTFS (General Transit Feed Specification) è uno standard internazionale, originariamente sviluppato da Google, oggi adottato da quasi tutti i servizi di trasporto pubblico al mondo. È uno zip che contiene 8 file CSV strutturati: `agency.txt`, `stops.txt` (fermate georeferenziate), `routes.txt` (linee), `trips.txt` (corse), `stop_times.txt` (orari), `calendar.txt`, `calendar_dates.txt`, `shapes.txt` (geometrie dei percorsi).
 
@@ -337,12 +337,12 @@ Per trasparenza sui criteri di scelta, ecco i dataset valutati ma non inseriti n
 
 | Dataset | Esito | Motivo |
 |---|---|---|
-| **Aree verdi e parchi** | 🕒 In valutazione | Competenza comunale piena (manutenzione verde pubblico), valore civico chiaro, mappabile. Copertura italiana di 36 Comuni — sopra la soglia minima di 25 ma sotto quella di ANNCSU (63) e GTFS (100+). Da rivalutare per CORE 17 dopo ANNCSU/GTFS, o come primo dataset EXTENDED |
+| **Aree verdi e parchi** | 🕒 In valutazione | Competenza comunale piena (manutenzione verde pubblico), valore civico chiaro, mappabile. Copertura italiana di 36 Comuni — sopra la soglia minima di 25 ma sotto quella di ANNCSU (63) e GTFS (100+). Da rivalutare per CORE 18 dopo ANNCSU/GTFS, o come primo dataset EXTENDED |
 | **OMI / Compravendite immobiliari** | ❌ Scartato | Dato dell'Agenzia delle Entrate (Osservatorio Mercato Immobiliare), non comunale. Pur con copertura ampia (37 Comuni harvest-er sui portali), il produttore reale è statale: viola il criterio 2 "competenza comunale diretta" |
 | **Qualità aria / inquinamento** | ❌ Scartato | Centraline gestite da ARPA regionali, non dai Comuni. Comuni grandi (Milano, Roma) hanno reti proprie ma sono eccezioni |
 | **Geologia / frane / vincoli idrogeologici** | ❌ Scartato | Competenza ISPRA + Autorità di Bacino + Regione. Il Comune recepisce e applica i vincoli ma non produce il dato |
 | **Elezioni e voto** | ❌ Scartato | Competenza condivisa tra Comune (sezioni elettorali, scrutini) e Stato/Regione. Non è un *flusso continuo* ma un *evento periodico*: non si presta al modello dashboard di stato comunale aggiornato |
-| **Turismo / arrivi e presenze** | ❌ Scartato | Il Comune raccoglie l'imposta di soggiorno ma il dato di arrivi/presenze viene da ISTAT regionale o dalle strutture ricettive private. Già coperto parzialmente dal CORE 11 *Patrimonio* (strutture ricettive) e dal CORE 9 *Eventi culturali* |
+| **Turismo / arrivi e presenze** | ❌ Scartato | Il Comune raccoglie l'imposta di soggiorno ma il dato di arrivi/presenze viene da ISTAT regionale o dalle strutture ricettive private. La parte anagrafica delle strutture ricettive è già coperta dal **CORE 15 Strutture ricettive** (alberghi, B&B, case vacanza dal SUAP comunale); arrivi e presenze restano fuori scope perché non sono dato comunale |
 | **Strutture sportive / impianti** | ❌ Scartato | Competenza comunale piena ma copertura italiana bassa (13 Comuni). Sotto soglia per essere CORE; possibile candidato EXTENDED |
 | **Cimiteri e operazioni cimiteriali** | ❌ Scartato | Competenza comunale al 100% ma copertura italiana molto bassa (6 Comuni). Sotto soglia |
 | **Wi-Fi pubblico / digitale** | ❌ Scartato | Competenza comunale ma dato volatile (cambia spesso) e copertura italiana bassa (19 Comuni, sotto soglia) |

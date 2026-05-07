@@ -35,7 +35,7 @@ Questo permette al tool di funzionare per **N Comuni senza modifiche al codice**
 | Coordinate | lat 35-48, lon 6-19 (territorio italiano + isole) |
 | Anno | 1900-2050 |
 
-## I 14 dataset CORE
+## I 15 dataset CORE
 
 Schemi formali in [`schemas/csv/`](../schemas/csv/). Riepilogo allineato agli schemi JSON reali:
 
@@ -274,8 +274,8 @@ R: No, vengono rifiutate (`additionalProperties: false` negli schemi JSON Schema
 **D: La virgola decimale italiana (`12,5`) viene accettata?**
 R: No, solo il punto. Sostituisci `12,5` → `12.5` prima dell'export.
 
-**D: Devo avere tutti i 14 dataset?**
-R: No. Dichiara `presente: false` (oppure ometti il dataset dal manifest) per quelli che non pubblichi. La dashboard mostra "Non pubblicato dal Comune" per i mancanti. Il rapporto X/14 nel selettore Comuni indica quanti sono coperti.
+**D: Devo avere tutti i 15 dataset?**
+R: No. Dichiara `presente: false` (oppure ometti il dataset dal manifest) per quelli che non pubblichi. La dashboard mostra "Non pubblicato dal Comune" per i mancanti. Il rapporto X/15 nel selettore Comuni indica quanti sono coperti.
 
 **D: Posso usare un URL HTTPS pubblico invece di committare il CSV?**
 R: Sì, usa `source_type: external_csv` con `url:` nel manifest. Il builder fa fetch ad ogni run del workflow.
@@ -321,7 +321,7 @@ I CSV del paniere sono progettati per produrre RDF/Turtle conforme alle [ontolog
 
 ### Esempi pre-generati
 
-Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) trovi i 14 file `.ttl` di esempio, generati dai CSV del Comune Ideale e validati con `rdflib`. Sono il riferimento canonico del *cosa ci si aspetta* quando un CSV del paniere viene convertito in RDF.
+Nella cartella [`tests/expected-ttl/`](../tests/expected-ttl/) trovi i 15 file `.ttl` di esempio, generati dai CSV del Comune Ideale e validati con `rdflib`. Sono il riferimento canonico del *cosa ci si aspetta* quando un CSV del paniere viene convertito in RDF.
 
 ### Conversione CSV → RDF nel proprio Comune
 

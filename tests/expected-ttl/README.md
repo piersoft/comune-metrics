@@ -1,6 +1,6 @@
 # TTL ground-truth — Linked Open Data del Comune Ideale
 
-Questa cartella contiene i **14 file Turtle (TTL)** di esempio, generati dai CSV del Comune Ideale e validati con `rdflib`.
+Questa cartella contiene i **15 file Turtle (TTL)** di esempio, generati dai CSV del Comune Ideale e validati con `rdflib`.
 
 Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottenere quando converte i propri CSV in RDF: predicati DCAT-AP_IT corretti, classi semantiche conformi alle [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets), pubblicate sul [Catalogo Nazionale Dati Semantici](https://schema.gov.it/).
 
@@ -39,7 +39,7 @@ Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottener
 
 ## Validazione
 
-I 14 TTL sono parsabili da [rdflib](https://rdflib.readthedocs.io/) (Python) senza errori:
+I 15 TTL sono parsabili da [rdflib](https://rdflib.readthedocs.io/) (Python) senza errori:
 
 ```python
 import rdflib
@@ -48,7 +48,7 @@ g.parse('popolazione.ttl', format='turtle')
 print(f'Triple: {len(g)}')
 ```
 
-Per validare tutti e 14 in batch:
+Per validare tutti e 15 in batch:
 
 ```bash
 for ttl in tests/expected-ttl/*.ttl; do
@@ -69,9 +69,9 @@ Per la conversione CSV → RDF nel proprio Comune ognuno è libero di usare lo s
 
 Una volta prodotto il TTL, può essere caricato in un endpoint SPARQL Virtuoso, in un catalogo DCAT-AP_IT su [dati.gov.it](https://www.dati.gov.it), o in un harvester piveau.
 
-Lo strumento [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) (open source) è quello che è stato usato per generare i 14 TTL di questa cartella e contiene il motore di matching colonne → [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets). Il suo README spiega come deployarlo per un uso autonomo, in locale o come servizio interno della propria PA.
+Lo strumento [`piersoft/CSV-to-RDF`](https://github.com/piersoft/CSV-to-RDF) (open source) è quello che è stato usato per generare i 15 TTL di questa cartella e contiene il motore di matching colonne → [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets). Il suo README spiega come deployarlo per un uso autonomo, in locale o come servizio interno della propria PA.
 
-**Nota**: i 14 TTL in questa cartella sono **statici, generati una tantum**. Non vengono rigenerati automaticamente. Se modifichi i CSV in `data/comuni/demo/`, ricordati di rigenerare manualmente i TTL corrispondenti col tuo strumento di conversione e ricommittarli.
+**Nota**: i 15 TTL in questa cartella sono **statici, generati una tantum**. Non vengono rigenerati automaticamente. Se modifichi i CSV in `data/comuni/demo/`, ricordati di rigenerare manualmente i TTL corrispondenti col tuo strumento di conversione e ricommittarli.
 
 ---
 
