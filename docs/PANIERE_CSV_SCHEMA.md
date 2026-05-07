@@ -297,7 +297,7 @@ Se hai pubblicato in passato CSV con nomi colonna diversi da quelli documentati 
 
 ## Linked Open Data — esposizione semantica DCAT-AP_IT
 
-I CSV del paniere sono progettati per produrre RDF/Turtle conforme alle [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets), pubblicate sul [Catalogo Nazionale Dati Semantici](https://schema.gov.it/). Quando convertiti, i 14 dataset mappano su classi semantiche corrette del profilo italiano DCAT-AP_IT.
+I CSV del paniere sono progettati per produrre RDF/Turtle conforme alle [ontologie per le PA italiane](https://github.com/italia/dati-semantic-assets), pubblicate sul [Catalogo Nazionale Dati Semantici](https://schema.gov.it/). Quando convertiti, i 15 dataset mappano su classi semantiche corrette del profilo italiano DCAT-AP_IT.
 
 ### Mapping canonico
 
@@ -317,6 +317,7 @@ I CSV del paniere sono progettati per produrre RDF/Turtle conforme alle [ontolog
 | Tributi | Indicator + QB + COV | `indicator:Indicator` |
 | Defibrillatori (DAE) | POI + CLV + SM | `poi:PointOfInterest` |
 | Parcheggi pubblici | PARK + POI + CLV | `park:CarPark` |
+| Strutture ricettive | ACCO + CLV + POI | `acco:Accommodation` |
 
 ### Esempi pre-generati
 

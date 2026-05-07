@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://piersoft.github.io/comune-metrics/schemas/csv/strutture_ricettive.csv-schema.json",
+  "title": "Paniere CSV — strutture_ricettive.csv (v2.0)",
+  "description": "Una riga per struttura ricettiva (B&B, alberghi, case vacanza, affittacamere, agriturismi, ostelli, residence) censita dal SUAP comunale via SCIA di avvio attività.",
+  "version": "2.0",
+  "rename_aliases": {},
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": true,
+    "required": ["denominazione", "tipologia"],
+    "properties": {
+      "denominazione": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500,
+        "description": "Nome commerciale della struttura (es. 'B&B Vico del Sole', 'Hotel President')",
+        "rdf_predicate": "rdfs:label@it"
+      },
+      "tipologia": {
+        "type": "string",
+        "maxLength": 100,
+        "description": "Tipologia ricettiva canonica: bed_and_breakfast, albergo, casa_vacanza, affittacamere, agriturismo, ostello, residence, campeggio, altro",
+        "rdf_predicate": "dct:type@it"
+      },
+      "indirizzo": {
+        "type": ["string", "null"],
+        "maxLength": 500,
+        "description": "Via e numero civico (aggregato in clv:Address dal tool RDF)"
+      },
+      "quartiere": {
+        "type": ["string", "null"],
+        "maxLength": 200,
+        "description": "Quartiere, zona o località (es. 'Centro', 'Marina')"
+      },
+      "classificazione": {
+        "type": ["integer", "string", "null"],
+        "description": "Numero di stelle (1-5) per alberghi; categoria testuale per altre tipologie. Null per B&B e affittacamere"
+      },
+      "posti_letto": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Capienza totale in posti letto",
+        "rdf_predicate": "sdmx-measure:obsValue"
+      },
+      "camere": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Numero di camere"
+      },
+      "stato": {
+        "type": ["string", "null"],
+        "maxLength": 50,
+        "description": "Stato amministrativo: ATTIVO, CESSATO, SOSPESO"
+      },
+      "tariffa_min": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Tariffa minima dichiarata in EUR (per persona o per camera secondo dichiarazione)"
+      },
+      "tariffa_max": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "description": "Tariffa massima dichiarata in EUR"
+      },
+      "lat": {
+        "type": ["number", "null"],
+        "minimum": 35,
+        "maximum": 48,
+        "rdf_predicate": "geo:lat"
+      },
+      "lon": {
+        "type": ["number", "null"],
+        "minimum": 6,
+        "maximum": 19,
+        "rdf_predicate": "geo:long"
+      },
+      "data_inizio_attivita": {
+        "type": ["string", "null"],
+        "description": "Data di inizio attività in formato ISO YYYY-MM-DD se disponibile"
+      },
+      "id": {
+        "type": ["string", "integer", "null"],
+        "description": "Identificativo univoco della struttura (numero pratica SUAP, codice albo, ecc.)"
+      },
+      "comune": {
+        "type": ["string", "null"]
+      }
+    }
+  },
+  "notes": [
+    "Mappabile su acco:Accommodation (vocabolario ACCO ex-OntoPiA, ora dati-semantic-assets).",
+    "Tipologia canonica: bed_and_breakfast, albergo, casa_vacanza, affittacamere, agriturismo, ostello, residence, campeggio, altro. Valori non canonici accettati ma normalizzati dal builder.",
+    "Fonte tipica: SUAP comunale (SCIA avvio attività). Anche se la classificazione 1-5 stelle è materia regionale (L. 217/1983 + L. 135/2001), la SCIA di avvio è 100% comunale: il Comune ha il dato dei suoi B&B, alberghi, case vacanza."
+  ]
+}

@@ -33,6 +33,7 @@ Sono il **gold standard** che ogni Comune che adotta il paniere dovrebbe ottener
 | 12 | Tributi | Indicator + QB + COV | `indicator:Indicator` |
 | 13 | Defibrillatori (DAE) | POI + CLV + SM | `poi:PointOfInterest` |
 | 14 | Parcheggi pubblici | PARK + POI + CLV | `park:CarPark` |
+| 15 | Strutture ricettive | ACCO + CLV + POI | `acco:Accommodation` |
 
 ---
 
