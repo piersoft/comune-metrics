@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ComuneMetrics — Cruscotto Civico Italiano</title>
-<meta name="description" content="Cruscotto civico open source basato su un paniere standardizzato di 14 dataset OpenData. Confronta come i Comuni italiani pubblicano i dati che contano per i cittadini.">
+<meta name="description" content="Cruscotto civico open source basato su un paniere standardizzato di 15 dataset OpenData. Confronta come i Comuni italiani pubblicano i dati che contano per i cittadini.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root {
@@ -378,7 +378,7 @@
           </a>
           <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE.md" target="_blank" rel="noopener">
             <div class="docs-link-title"><span class="docs-icon">📘</span>PANIERE.md</div>
-            <div class="docs-link-desc">Il manifesto del paniere: cosa contiene ognuno dei 14 dataset CORE, perché è stato scelto, fonti dati tipiche, esposizione come Linked Open Data 5 stelle.</div>
+            <div class="docs-link-desc">Il manifesto del paniere: cosa contiene ognuno dei 15 dataset CORE, perché è stato scelto, fonti dati tipiche, esposizione come Linked Open Data 5 stelle.</div>
           </a>
           <a href="https://github.com/piersoft/comune-metrics/blob/main/docs/PANIERE_CSV_SCHEMA.md" target="_blank" rel="noopener">
             <div class="docs-link-title"><span class="docs-icon">📐</span>PANIERE_CSV_SCHEMA.md</div>
@@ -386,11 +386,11 @@
           </a>
           <a href="https://github.com/piersoft/comune-metrics/tree/main/tests/expected-ttl" target="_blank" rel="noopener">
             <div class="docs-link-title"><span class="docs-icon">⭐</span>expected-ttl/</div>
-            <div class="docs-link-desc">I 14 file TTL ground-truth: esempi pre-generati di output Linked Open Data corretto, da usare come gold standard.</div>
+            <div class="docs-link-desc">I 15 file TTL ground-truth: esempi pre-generati di output Linked Open Data corretto, da usare come gold standard.</div>
           </a>
         </div>
       </details>
-      <span class="version-badge" id="versionBadge">v2026.05.05.54</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.55</span>
     </div>
   </div>
 </header>
@@ -430,6 +430,8 @@ const STATE = { dashboard: null, current: null, comuneData: {}, map: null, chart
 
 const PALETTE = ['#0066CC','#004D99','#3385D6','#005299','#6BA6E0','#003366','#1A75D2','#4D9BDB','#7FB8E5','#99C7E8','#0080FF','#0059B3','#002E5C','#2D7AC7','#5495D1'];
 const PALETTE_STATUS = { fresh: '#2E7D32', aged: '#E65100', stale: '#B71C1C' };
+
+const CORE_COUNT = 15;  // Numero totale di dataset CORE del paniere — usato per render denominatore /15
 
 const DATASET_LABELS = {
   popolazione:        { titolo: "Popolazione residente",         icona: "👥" },
@@ -985,16 +987,21 @@ function renderStrutture(canvasId, m) {
   };
   const niceLabel = (k) => TIP_LABELS[k] || (k || '?').replace(/_/g, ' ').replace(/^./, c => c.toUpperCase());
 
-  // Logica display:
-  // - Se ho punti georeferenziati: la mappa già mostra dove sono → mostro UN solo grafico
-  //   (la doughnut tipologia, più informativa). Comportamento storico.
-  // - Se NON ho punti georeferenziati (caso Lecce): la mappa è muta su questo dataset
-  //   → mostro DUE grafici, uno per tipologia + uno per quartiere, così la card
-  //   resta ricca anche senza visualizzazione geografica.
+  // Logica display (rivista UX):
+  // - SEMPRE mostro la doughnut "Per tipologia": è il dato più informativo della
+  //   strategia turistica del Comune (peso B&B vs alberghi vs case vacanza),
+  //   ortogonale alla mappa che mostra solo DOVE sono. Una mappa con 500 pin teal
+  //   non dice nulla sulla tipologia, mentre il "Comune con più alberghi" o
+  //   "Comune dei B&B" è un'informazione strutturale.
+  // - Se NON ho punti georeferenziati (caso Lecce): aggiungo anche bar chart per
+  //   quartiere, così la card compensa l'assenza di mappa.
+  // - Se ho geo (Bologna 500 punti, Demo 24 punti): la mappa già copre quella
+  //   dimensione, mostro solo la doughnut.
   const hasGeo = geo.length > 0;
-  const showTipologie = perTipologia.length >= 2;
-  const showQuartieriOnly = !showTipologie && perQuartiere.length >= 2;
-  const showQuartieriExtra = !hasGeo && showTipologie && perQuartiere.length >= 2;
+  const hasTipologie = perTipologia.length >= 2;
+  const showTipologie = hasTipologie;
+  const showQuartieriFallback = !hasTipologie && perQuartiere.length >= 2;  // niente tipologie ma ho quartieri
+  const showQuartieriExtra = !hasGeo && hasTipologie && perQuartiere.length >= 2;  // ho tipologie + niente geo → +quartieri
 
   // ID canvas separati per non sovrapporli
   const canvasIdTip = canvasId;
@@ -1008,7 +1015,7 @@ function renderStrutture(canvasId, m) {
       ${tariffaMedia != null ? `<div class="kpi-big"><div class="value">${fmtEuro(tariffaMedia)}</div><div class="label">Tariffa media min</div></div>` : ''}
     </div>
     ${showTipologie ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Per tipologia</div><div class="chart-wrap" style="height:220px;"><canvas id="${canvasIdTip}"></canvas></div>` : ''}
-    ${showQuartieriOnly ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Top 8 quartieri</div><div class="chart-wrap"><canvas id="${canvasIdTip}"></canvas></div>` : ''}
+    ${showQuartieriFallback ? `<div style="font-size:11px;color:var(--ink-soft);margin:8px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Top 8 quartieri</div><div class="chart-wrap"><canvas id="${canvasIdTip}"></canvas></div>` : ''}
     ${showQuartieriExtra ? `<div style="font-size:11px;color:var(--ink-soft);margin:14px 0 4px;text-transform:uppercase;letter-spacing:0.4px;">Distribuzione per quartiere</div><div class="chart-wrap"><canvas id="${canvasIdQ}"></canvas></div>` : ''}`;
   setTimeout(() => {
     if (showTipologie) {
@@ -1018,7 +1025,7 @@ function renderStrutture(canvasId, m) {
         data: { labels: top.map(d => niceLabel(d.nome)), datasets: [{ data: top.map(d => d.n), backgroundColor: PALETTE.slice(0, top.length), borderColor: '#fff', borderWidth: 2 }] },
         options: chartDoughnut(),
       });
-    } else if (showQuartieriOnly) {
+    } else if (showQuartieriFallback) {
       const top = perQuartiere.slice(0, 8);
       makeChart(canvasIdTip, {
         type: 'bar',
@@ -1087,7 +1094,7 @@ function renderDatasetCard(comuneKey, dsKey, ds) {
 
 function renderComuneInfo(c) {
   const datasets = c.datasets || {};
-  const totalCore = 15;
+  const totalCore = CORE_COUNT;
   const cablati = Object.values(datasets).filter(ds => ds.status !== 'not_published').length;
   const ok = Object.values(datasets).filter(ds => ds.status === 'ok').length;
   const fresh = Object.values(datasets).filter(ds => ds.freshness && ds.freshness.level === 'fresh').length;
@@ -1099,7 +1106,7 @@ function renderComuneInfo(c) {
       <div class="snapshot-banner">
         <strong>📌 Dati di ${c.nome} fotografati il ${dataSnap}</strong><br>
         <span style="font-size:13px;color:var(--ink);line-height:1.6;display:block;margin-top:6px;">
-          ${c.nome} è stato in passato un Comune <strong>virtuoso sull'OpenData</strong>: pubblicava i 14 dataset CORE del paniere ed era publisher attivo su <em>dati.gov.it</em>.
+          ${c.nome} è stato in passato un Comune <strong>virtuoso sull'OpenData</strong>: pubblicava i 15 dataset CORE del paniere ed era publisher attivo su <em>dati.gov.it</em>.
           Negli ultimi anni la pubblicazione si è progressivamente fermata: la maggior parte dei dataset risulta aggiornata fino al 2015-2019, con la sola eccezione degli <strong>incidenti stradali aggiornati al 2023</strong>.
           <br><br>
           A questo si aggiungono alcune <strong>configurazioni tecniche del portale comunale che impediscono l'accesso automatico</strong> da parte di servizi esterni come questa dashboard:
@@ -1121,7 +1128,7 @@ function renderComuneInfo(c) {
         <strong>⭐ Questo è il Comune IDEALE — modello canonico di riferimento</strong>
         <span style="display:block;font-size:13px;line-height:1.55;margin-top:6px;color:var(--ink);">
           Non è un Comune reale. È costruito con CSV e JSON perfettamente allineati agli schemi canonici del paniere ComuneMetrics.
-          Gli altri Comuni dovrebbero seguire <strong>alla lettera la stessa struttura del dato</strong> (nomi colonne, formati, tipi) per avvicinarsi al 14/14 e al pieno funzionamento della dashboard.
+          Gli altri Comuni dovrebbero seguire <strong>alla lettera la stessa struttura del dato</strong> (nomi colonne, formati, tipi) per avvicinarsi al ${CORE_COUNT}/${CORE_COUNT} e al pieno funzionamento della dashboard.
           I dati sono sintetici plausibili (Comune ~36k abitanti, capoluogo lombardo) e servono solo come riferimento di formattazione.
         </span>
       </div>`;
@@ -1143,7 +1150,7 @@ function renderComuneInfo(c) {
           <br><br>
           ComuneMetrics ha <strong>ricostruito quanto possibile da fonti nazionali pubbliche</strong>: ISTAT, MIM, ISPRA, ArCo (MiC) e MEF Federalismo Fiscale. Ogni dataset visualizzato qui sotto riporta in alto il <strong>badge della fonte originale con link diretto</strong> per la verifica.
           <br><br>
-          La copertura raggiunta è ${nRicostruiti}/14 dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i ${14 - nRicostruiti} dataset mancanti (pratiche edilizie, servizi sociali, incidenti, delibere) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico. <em>Bilancio e opere pubbliche sono stati ricostruiti da <a href="https://bdap-opendata.rgs.mef.gov.it/" target="_blank" rel="noopener noreferrer">BDAP-RGS (MEF)</a>: SIOPE Spese 2025 e MOP Soggetti Titolari Basilicata.</em>
+          La copertura raggiunta è ${nRicostruiti}/${CORE_COUNT} dataset CORE: il massimo onestamente ricostruibile da fonti nazionali. Per i ${CORE_COUNT - nRicostruiti} dataset mancanti (pratiche edilizie, servizi sociali, incidenti, delibere, strutture ricettive) <strong>non esiste una fonte nazionale aperta che dia il dato a livello comunale</strong> oppure le API esistenti applicano restrizioni tecniche che impediscono l'accesso automatico. <em>Bilancio e opere pubbliche sono stati ricostruiti da <a href="https://bdap-opendata.rgs.mef.gov.it/" target="_blank" rel="noopener noreferrer">BDAP-RGS (MEF)</a>: SIOPE Spese 2025 e MOP Soggetti Titolari Basilicata.</em>
           ${dataSnap ? `<br><br><em>Fotografia statica scattata il ${dataSnap}.</em>` : ''}
         </span>
       </div>`;
@@ -1303,9 +1310,9 @@ function renderComuneSelector(d) {
   let html = '<span class="label">Comune:</span>';
   for (const [key, c] of Object.entries(d.comuni)) {
     const cls = key === STATE.current ? 'active' : '';
-    const okText = `${c.n_datasets_pubblicati || 0}/14`;
+    const okText = `${c.n_datasets_pubblicati || 0}/${CORE_COUNT}`;
     const modeTag = c.mode === 'static_snapshot' ? ' · snapshot' : (c.mode === 'reconstructed_from_national' ? ' · ricostruito' : '');
-    html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su 14 del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
+    html += `<button class="comune-btn ${cls}" data-comune="${key}" title="${c.n_datasets_pubblicati || 0} dataset pubblicati su ${CORE_COUNT} del paniere CORE">${c.nome}<span class="meta">${okText} dataset paniere${modeTag}</span></button>`;
   }
   sel.innerHTML = html;
   sel.querySelectorAll('.comune-btn').forEach(btn => btn.addEventListener('click', () => switchComune(btn.dataset.comune)));

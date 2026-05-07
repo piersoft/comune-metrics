@@ -230,6 +230,50 @@ id,nome,indirizzo,comune,provincia,lat,lon,stalli,posti_disabili,tariffa_oraria,
 - `tipo_parcheggio`: valori liberi ma standardizzati: `Multipiano`, `Coperto`, `Scoperto`, `Raso`, `Struttura`, `Interscambio`
 - I dataset reali possono usare tariffa testuale invece che numerica (es. Bologna usa `abbonamento`/`pagamento`/`libero`); il calcolatore detecta automaticamente entrambi i formati
 
+### 15. Strutture ricettive
+
+**Cosa**: alberghi, B&B, case vacanza, agriturismi, ostelli, affittacamere, residence — l'anagrafica completa delle strutture turistiche autorizzate dal Comune via SCIA SUAP. Include classificazione (stelle per gli alberghi), capacità ricettiva (posti letto, camere) e tariffe minime/massime quando dichiarate dal gestore.
+
+**Fonte interna tipica**: SUAP (Sportello Unico Attività Produttive) del Comune. La SCIA di avvio attività ricettiva è competenza comunale al 100% (D.Lgs 222/2016 e Tabella A allegata). Ufficio operativo solitamente collocato nel Settore Sviluppo Economico, Commercio o Attività Produttive. Anche se la classificazione alberghiera 1-5 stelle è competenza regionale, l'anagrafica è del Comune.
+
+**Schema canonico** (15 colonne, allineato al fixture `data/comuni/demo/strutture_ricettive.csv`):
+
+```csv
+id,denominazione,tipologia,indirizzo,quartiere,classificazione,posti_letto,camere,stato,tariffa_min,tariffa_max,lat,lon,data_inizio_attivita,comune
+1,Hotel Centrale Stazione,albergo,Via Stazione 12,Centro,4,180,90,ATTIVO,90,180,45.4860,9.2050,2010-03-15,Comune Ideale
+2,B&B Il Glicine,bed_and_breakfast,Via Glicini 22,Centro,,8,3,ATTIVO,50,90,45.4660,9.1880,2018-05-10,Comune Ideale
+3,Casa Vacanze Navigli,casa_vacanza,Naviglio Grande 22,Navigli,,8,3,ATTIVO,80,150,45.4530,9.1690,2014-07-20,Comune Ideale
+4,Agriturismo Cascina Verde,agriturismo,Via Cascina Verde 1,Quartiere Verde,,16,8,ATTIVO,60,110,45.4380,9.1500,2009-05-15,Comune Ideale
+5,Ostello della Gioventù,ostello,Via Salmoiraghi 2,Ostello,,80,20,ATTIVO,28,45,45.5020,9.1340,2007-08-01,Comune Ideale
+```
+
+**Colonne**:
+
+| Colonna | Tipo | Obbligatoria | Note |
+|---|---|---|---|
+| `id` | intero | sì | identificativo univoco progressivo |
+| `denominazione` | stringa | sì | nome commerciale della struttura |
+| `tipologia` | enum | sì | valori canonici: `albergo`, `bed_and_breakfast`, `casa_vacanza`, `affittacamere`, `agriturismo`, `ostello`, `residence`, `campeggio`, `casa_per_ferie`, `villaggio_turistico` |
+| `indirizzo` | stringa | sì | via e numero civico |
+| `quartiere` | stringa | no | quartiere o zona urbanistica del Comune |
+| `classificazione` | intero | no | numero stelle 1-5 per alberghi e residence; vuoto per altre tipologie |
+| `posti_letto` | intero | no | capacità ricettiva totale |
+| `camere` | intero | no | numero di camere |
+| `stato` | enum | sì | valori ammessi: `ATTIVO`, `CESSATO`, `REVOCATO`, `IRRICEVIBILE`. Solo `ATTIVO` viene contato come struttura attiva nei KPI |
+| `tariffa_min` | float | no | tariffa minima notturna in euro |
+| `tariffa_max` | float | no | tariffa massima notturna in euro |
+| `lat` | float | no | latitudine WGS84 (consigliata per visualizzazione mappa) |
+| `lon` | float | no | longitudine WGS84 |
+| `data_inizio_attivita` | data ISO | no | data SCIA in formato YYYY-MM-DD |
+| `comune` | stringa | sì | denominazione del Comune (per dataset condivisi multi-Comune) |
+
+**Note**:
+- I valori di `tipologia` non standardizzati (es. `B&B`, `BED AND BREAKFAST`, `CASE E APPARTAMENTI PER VACANZA` da SUAP Lecce, `Strutture alberghiere`, `Altre tipologie ricettive` da SUAP Bologna) vengono normalizzati automaticamente dal calcolatore alle voci canoniche
+- Il calcolatore esclude dalle "attive" qualsiasi `stato` contenente `cessat`, `revocat`, `chiuso/chiusa`, `irricevibil`, `rifiut`, `annull`, `negativa`. Accetta `chiusura d'ufficio positiva` come ATTIVO (terminologia SUAP Bologna)
+- Se `lat`/`lon` mancano (caso Lecce: i CSV originali del SUAP non riportano coordinate), la card del dataset mostra una bar chart aggiuntiva `Distribuzione per quartiere` per compensare l'assenza della mappa
+
+**Mapping LOD**: classe `acco:Accommodation` (vocabolario [ACCO-AP_IT](https://w3id.org/italia/onto/ACCO)), con predicati `acco:hasAccommodationType`, `acco:numberOfRooms`, `acco:numberOfBeds`. Vedi tabella completa in [docs/PANIERE_CSV_SCHEMA.md#linked-open-data--esposizione-semantica-dcat-apit](#linked-open-data--esposizione-semantica-dcat-apit).
+
 ## Validazione
 
 ### CLI
