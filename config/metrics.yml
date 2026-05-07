@@ -285,7 +285,7 @@ datasets:
     calculator: calc_strutture_ricettive
     expected_fields:
       denominazione: ["denominazione", "DENOMINAZIONE", "DENOMINAZIONE STRUTTURA", "nome", "name", "Denominazione"]
-      tipologia: ["tipologia", "TIPOLOGIA", "tipo", "TIPO", "categoria", "Categoria", "tipo_struttura", "area", "sottoarea"]
+      tipologia: ["tipologia", "TIPOLOGIA", "tipo", "TIPO", "categoria", "Categoria", "tipo_struttura", "sottoarea", "area"]
       indirizzo: ["indirizzo", "INDIRIZZO", "UBICAZIONE", "via", "esercizio_via", "Indirizzo"]
       classificazione: ["classificazione", "CLASSIFICAZIONE", "stelle", "Stelle", "categoria_stelle"]
       posti_letto: ["posti_letto", "POSTI LETTO", "posti", "n_posti_letto", "Posti letto"]

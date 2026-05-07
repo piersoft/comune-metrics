@@ -761,8 +761,9 @@ export function calc_strutture_ricettive(rows, fieldMap) {
     const v = r[stato];
     if (v == null || v === '') return true;
     const s = String(v).toLowerCase().trim();
-    if (s.includes('cessat') || s.includes('revocat') || s.includes('chius')
-        || s.includes('irricevibil') || s.includes('rifiut') || s.includes('annull')) return false;
+    if (s.includes('cessat') || s.includes('revocat') || s.includes('chiuso')
+        || s.includes('chiusa') || s.includes('irricevibil') || s.includes('rifiut')
+        || s.includes('annull') || s.includes('negativa')) return false;
     return true;
   };
 

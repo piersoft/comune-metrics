@@ -41,6 +41,7 @@ comuni:
       tributi: null  # Bologna su Opendatasoft non espone dataset tributi facilmente aggregabili
       defibrillatori: registro-regionale-unico-dei-defibrillatori-dae  # Slug dati.gov.it (5060 record, filtrare per citta=BOLOGNA in fase di calcolo)
       parcheggi: parcheggi-strutture  # Slug dati.gov.it - 44 strutture (multipiano + raso)
+      strutture_ricettive: istanze-attivita-ricettive  # Bologna ODS - 19553 record SUAP (B&B, alberghi, agriturismi, altre tipologie)
 
   # Milano: rimosso dai casi d'uso ComuneMetrics v0.2 perché il WAF
   # Microsoft-Azure-Application-Gateway/v2 di dati.comune.milano.it
