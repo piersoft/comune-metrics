@@ -720,9 +720,20 @@ function normalizeTipologiaRicettiva(raw) {
   if (raw == null) return null;
   const s = String(raw).toLowerCase().trim();
   if (!s) return null;
+  // Extralberghiero / Extra-alberghiero (Bologna: "Strutture ricettive extralberghiere",
+  // "Attività extra-alberghiere"). DEVE essere controllato PRIMA del check 'alberg'
+  // perché "extralberghiere" contiene "alberghiere" come sottostringa e finirebbe
+  // erroneamente classificato come 'albergo'. Categoria a sé: insieme di B&B,
+  // affittacamere, case vacanza non distinguibili a livello di sottoarea Bologna.
+  if (s.includes('extralberg') || s.includes('extra-alberg') || s.includes('extra alberg')) return 'extralberghiera';
+  // Altre tipologie ricettive (categoria contenitore Bologna SUAP che raggruppa
+  // locazioni turistiche brevi, B&B non imprenditoriali, case e appartamenti
+  // vacanza). Controllata PRIMA di "casa vacanza/appartament/locazion" perché
+  // include sottoarea generica.
+  if (s.includes('altre tipologie ricettive') || s === 'altre tipologie') return 'altre_tipologie';
   // B&B, Bed and Breakfast, Bed-Breakfast
   if (s.includes('b&b') || s.includes('b & b') || (s.includes('bed') && s.includes('breakfast'))) return 'bed_and_breakfast';
-  // Albergo / Hotel / Strutture alberghiere
+  // Albergo / Hotel / Strutture alberghiere — DOPO i check extralberghiero
   if (s.includes('alberg') || s.includes('hotel')) return 'albergo';
   // Casa vacanza / Case appartamenti per vacanza / Locazione turistica
   if (s.includes('casa vacanz') || s.includes('case vacanz') || s.includes('appartament') || s.includes('locazion')) return 'casa_vacanza';
@@ -753,6 +764,42 @@ export function calc_strutture_ricettive(rows, fieldMap) {
     return isNaN(f) ? 0 : f;
   };
 
+  // ─── Detect: il dataset è uno STORICO PRATICHE (Bologna SUAP) o un'ANAGRAFICA STRUTTURE (Demo, Lecce)? ───
+  // Il dataset Bologna 'istanze-attivita-ricettive' è una sequenza di pratiche
+  // amministrative (apertura, cessazione, sospensione, comunicazioni varie) sulle
+  // stesse strutture nel tempo: 19553 righe per ~3000 strutture reali, contate più
+  // volte una per pratica. Per ottenere le strutture VIVE OGGI bisogna deduplicare
+  // per identificativo struttura (codice_impresa) e mantenere solo quelle la cui
+  // pratica più recente è di apertura/avvio (non cessazione/sospensione/divieto).
+  // Il signal della deduplica: presenza di 'codice_impresa' nel primo record.
+  const sample = rows[0] || {};
+  const isPraticheDataset = 'codice_impresa' in sample && 'tipo_intervento' in sample;
+
+  let workRows = rows;
+  if (isPraticheDataset) {
+    // Step 1: ordina per data più recente prima
+    const dateCol = 'data_richiesta' in sample ? 'data_richiesta' : null;
+    const sorted = [...rows].sort((a, b) => {
+      const da = a[dateCol] || '';
+      const db = b[dateCol] || '';
+      return db.localeCompare(da);  // desc
+    });
+    // Step 2: deduplica per codice_impresa tenendo la pratica più recente
+    const seen = new Map();
+    for (const r of sorted) {
+      const ci = r.codice_impresa;
+      if (!ci) continue;  // pratiche senza CI: scartate (sono <0.1% del totale)
+      if (!seen.has(ci)) seen.set(ci, r);
+    }
+    // Step 3: filtra: strutture vive = la pratica più recente NON è cessazione/sospensione/divieto
+    const isClosingIntervento = (ti) => {
+      const s = String(ti || '').toLowerCase();
+      return s.includes('cessazione') || s.includes('sospensione')
+          || s.includes('divieto') || s.includes('cessat');
+    };
+    workRows = [...seen.values()].filter(r => !isClosingIntervento(r.tipo_intervento));
+  }
+
   // Una struttura è "attiva" se manca lo stato (default: assumiamo attiva)
   // o se lo stato è esplicitamente ATTIVO/ACTIVE/AVVIO (esito SUAP positivo).
   // Esclusi: CESSATO, REVOCATO, CHIUSO, IRRICEVIBILE, RIFIUTATO.
@@ -767,8 +814,8 @@ export function calc_strutture_ricettive(rows, fieldMap) {
     return true;
   };
 
-  const totale = rows.length;
-  const attive = rows.filter(isAttiva);
+  const totale = workRows.length;
+  const attive = workRows.filter(isAttiva);
   const totaleAttive = attive.length;
 
   // Posti letto: somma sulle sole strutture attive

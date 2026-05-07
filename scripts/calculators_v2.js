@@ -611,6 +611,10 @@ function normalizeTipologiaRicettiva(raw) {
   if (raw == null) return null;
   const s = String(raw).toLowerCase().trim();
   if (!s) return null;
+  // Extralberghiero — PRIMA di 'alberg' perché 'extralberghiere' contiene 'alberg'
+  if (s.includes('extralberg') || s.includes('extra-alberg') || s.includes('extra alberg')) return 'extralberghiera';
+  // Altre tipologie ricettive — categoria contenitore Bologna SUAP
+  if (s.includes('altre tipologie ricettive') || s === 'altre tipologie') return 'altre_tipologie';
   if (s.includes('b&b') || s.includes('b & b') || (s.includes('bed') && s.includes('breakfast'))) return 'bed_and_breakfast';
   if (s.includes('alberg') || s.includes('hotel')) return 'albergo';
   if (s.includes('casa vacanz') || s.includes('case vacanz') || s.includes('appartament') || s.includes('locazion')) return 'casa_vacanza';
