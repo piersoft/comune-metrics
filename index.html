@@ -390,7 +390,7 @@
           </a>
         </div>
       </details>
-      <span class="version-badge" id="versionBadge">v2026.05.05.55</span>
+      <span class="version-badge" id="versionBadge">v2026.05.05.56</span>
     </div>
   </div>
 </header>
@@ -1174,7 +1174,7 @@ function renderComuneInfo(c) {
 }
 
 function renderDatasetGrid(c) {
-  const order = ['popolazione','bilancio','opere_pubbliche','pratiche_edilizie','servizi_sociali','istruzione','incidenti_stradali','rifiuti','eventi_culturali','delibere','patrimonio','tributi'];
+  const order = ['popolazione','bilancio','opere_pubbliche','pratiche_edilizie','servizi_sociali','istruzione','incidenti_stradali','rifiuti','eventi_culturali','delibere','patrimonio','tributi','defibrillatori','parcheggi','strutture_ricettive'];
   const cards = order.filter(k => c.datasets[k]).map(k => renderDatasetCard(c.key, k, c.datasets[k])).join('');
   return `<div class="dataset-grid">${cards}</div>`;
 }
