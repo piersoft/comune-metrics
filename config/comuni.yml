@@ -87,3 +87,4 @@ comuni:
       tributi: __fixture__:tributi                                                   # IMU riscosso 2015-2017 (€ 34M-37M annui), 6 righe
       defibrillatori: __fixture__:defibrillatori                                     # Progetto Comune Cardioprotetto, 113 postazioni DAE da Google Sheets (Dott. Fuggiano)
       parcheggi: null  # Piano Sosta Tariffata Lecce esiste come dataset Comune di Lecce su dati.gov.it, ma il GeoJSON è ospitato su dati.comune.lecce.it (HTTP geo-fenced) e non scaricabile da CI
+      strutture_ricettive: __fixture__:strutture_ricettive                          # Mashup di 2 dataset SUAP comunale Lecce: Albo B&B (433 attivi) + Altre strutture ricettive (123: alberghi, affittacamere, case vacanza, residence, agriturismi). Totale 556 strutture turistiche.

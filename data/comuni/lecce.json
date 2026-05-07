@@ -21862,6 +21862,159 @@
       "resource_format": "CSV",
       "error": null,
       "is_static_snapshot": true
+    },
+    "strutture_ricettive": {
+      "status": "ok",
+      "source": "data/fixtures/lecce/strutture_ricettive.csv",
+      "source_type": "fixture",
+      "source_url": "https://dati.comune.lecce.it (mashup di 2 dataset SUAP: Albo B&B + Altre Strutture Ricettive)",
+      "fetched_at": "2026-05-07T07:01:39.035Z",
+      "n_rows": 556,
+      "fields_present": [
+        "denominazione",
+        "tipologia",
+        "indirizzo",
+        "classificazione",
+        "posti_letto",
+        "camere",
+        "stato",
+        "tariffa_min",
+        "tariffa_max",
+        "lat",
+        "lon",
+        "quartiere",
+        "data_inizio_attivita"
+      ],
+      "fields_missing": [
+        "geo_point"
+      ],
+      "metrics": {
+        "totale": 556,
+        "totale_attive": 556,
+        "totale_posti_letto": 1167,
+        "tariffa_media_min": 154.81,
+        "per_tipologia": [
+          {
+            "nome": "bed_and_breakfast",
+            "n": 433
+          },
+          {
+            "nome": "affittacamere",
+            "n": 54
+          },
+          {
+            "nome": "casa_vacanza",
+            "n": 29
+          },
+          {
+            "nome": "albergo",
+            "n": 20
+          },
+          {
+            "nome": "residence",
+            "n": 16
+          },
+          {
+            "nome": "campeggio",
+            "n": 1
+          },
+          {
+            "nome": "ostello",
+            "n": 1
+          },
+          {
+            "nome": "casa_per_ferie",
+            "n": 1
+          },
+          {
+            "nome": "villaggio_turistico",
+            "n": 1
+          }
+        ],
+        "per_quartiere": [
+          {
+            "nome": "CENTRO",
+            "n": 160
+          },
+          {
+            "nome": "MAZZINI",
+            "n": 61
+          },
+          {
+            "nome": "LEUCA",
+            "n": 51
+          },
+          {
+            "nome": "FERROVIA - CASERMETTE",
+            "n": 39
+          },
+          {
+            "nome": "RUDIAE - SAN PIO",
+            "n": 39
+          },
+          {
+            "nome": "SALESIANI",
+            "n": 25
+          },
+          {
+            "nome": "SANTA ROSA",
+            "n": 16
+          },
+          {
+            "nome": "FRAZIONE SAN CATALDO",
+            "n": 10
+          },
+          {
+            "nome": "SAN SABINO",
+            "n": 7
+          },
+          {
+            "nome": "SAN CATALDO",
+            "n": 5
+          },
+          {
+            "nome": "BORGO SAN NICOLA",
+            "n": 4
+          },
+          {
+            "nome": "LECCE",
+            "n": 3
+          },
+          {
+            "nome": "BORGO PACE",
+            "n": 2
+          },
+          {
+            "nome": "CONTESTO DELL'ENTROTERRA COSTIERO",
+            "n": 2
+          },
+          {
+            "nome": "CONTESTO RUDIAE VILLACONVENTO",
+            "n": 2
+          },
+          {
+            "nome": "FERROVIA – CASERMETTE",
+            "n": 2
+          },
+          {
+            "nome": "TORRE RINALDA",
+            "n": 2
+          },
+          {
+            "nome": "FRIGOLE",
+            "n": 2
+          },
+          {
+            "nome": "FRAZIONE TORRE CHIANCA – SPIAGGIABELLA – TORRE RINALDA",
+            "n": 1
+          },
+          {
+            "nome": "FRAZIONE FRIGOLE",
+            "n": 1
+          }
+        ],
+        "strutture_geo": null
+      }
     }
   }
 }
